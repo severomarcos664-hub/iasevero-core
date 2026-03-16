@@ -11,7 +11,6 @@ from app.services.telegram_service import TelegramService
 from app.services.router_service import RouterService
 from app.agents.agent_factory import invoke_agent
 from app.tools.time_tool import get_brazil_time, get_current_time
-from app.memory_vector.memory_search import MemorySearch
 
 logger = logging.getLogger("iasevero.telegram")
 router = APIRouter(prefix="/telegram", tags=["telegram"])
@@ -46,19 +45,6 @@ async def telegram_webhook(
 
     if text:
         add_message(chat_id, "user", text)
-
-    memory_context = ""
-    if text and openai_service:
-        try:
-            memory_engine = MemorySearch()
-            remembered = memory_engine.recall(str(chat_id), text, top_k=3)
-            if remembered:
-                memory_context = "\n".join(
-                    [f"[{item['role']}] {item['content']}" for item in remembered]
-                )
-        except Exception as exc:
-            logger.exception("Falha ao buscar memória vetorial: %r", exc)
-            memory_context = ""
 
     text_low = text.lower()
 
@@ -125,14 +111,6 @@ async def telegram_webhook(
     except Exception as exc:
         logger.exception("Falha ao responder Telegram: %r", exc)
         raise HTTPException(status_code=502, detail="Falha ao enviar resposta ao Telegram.")
-
-    try:
-        if text:
-            memory_engine = MemorySearch()
-            memory_engine.remember(str(chat_id), "user", text)
-            memory_engine.remember(str(chat_id), "assistant", reply)
-    except Exception as exc:
-        logger.exception("Falha ao salvar memória vetorial: %r", exc)
 
     return {"status": "ok"}
 
