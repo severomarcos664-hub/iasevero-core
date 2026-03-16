@@ -10,3 +10,5 @@ pytz
 sqlalchemy
 asyncpg
 aiosqlite
+
+faiss-cpu
