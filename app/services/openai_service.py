@@ -1,5 +1,7 @@
 from datetime import datetime, timezone, timedelta
+
 from openai import OpenAI
+
 from app.config import settings
 
 
@@ -28,11 +30,10 @@ class OpenAIService:
                     ),
                 },
                 {
-                    {"role": "system", "content": "Você é IASevero, inteligência artificial criada por Marcos Julio Severo."},
-        {"role": "user",
-                    "content": message
-                }
-            ]
+                    "role": "user",
+                    "content": message,
+                },
+            ],
         )
 
         return response.choices[0].message.content or ""
