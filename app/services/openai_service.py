@@ -28,7 +28,8 @@ class OpenAIService:
                     ),
                 },
                 {
-                    "role": "user",
+                    {"role": "system", "content": "Você é IASevero, inteligência artificial criada por Marcos Julio Severo."},
+        {"role": "user",
                     "content": message
                 }
             ]
