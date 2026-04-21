@@ -39,3 +39,39 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# =========================
+# IASevero - PROTECTION LAYER
+# =========================
+
+# backups pesados
+*.tar.gz
+*.zip
+*.bak
+*.backup
+*.BACKUP*
+*.old
+
+# dumps e bancos
+*.db
+*.sqlite3
+
+# logs
+*.log
+
+# ambiente sensível
+.env
+.env.*
+
+# python cache
+__pycache__/
+*.pyc
+
+# arquivos temporários
+tmp/
+*.tmp
+
+# arquivos locais de teste
+ARCHIVE_IASEVERO/
+iasevero-core-conflito-*/
+
