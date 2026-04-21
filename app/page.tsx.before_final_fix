@@ -1,0 +1,396 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function HomePage() {
+  const router = useRouter()
+
+  return (
+    <main
+      style={{
+        minHeight: '100vh',
+        background:
+          'radial-gradient(circle at top left, rgba(85,120,255,.16), transparent 24%), radial-gradient(circle at top right, rgba(221,83,255,.14), transparent 18%), linear-gradient(180deg,#03050c 0%,#040814 56%,#050813 100%)',
+        color: '#f5f7ff',
+        fontFamily: 'Arial, Helvetica, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 980,
+          margin: '0 auto',
+          padding: '18px 12px 56px',
+        }}
+      >
+        {/* HERO SUPERIOR */}
+        <section
+          style={{
+            borderRadius: 30,
+            overflow: 'hidden',
+            border: '1px solid rgba(255,255,255,.06)',
+            background:
+              'linear-gradient(180deg, rgba(8,11,25,.96), rgba(5,8,19,.96))',
+            boxShadow: '0 18px 50px rgba(0,0,0,.34)',
+            marginBottom: 18,
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 230px',
+              alignItems: 'stretch',
+            }}
+          >
+            {/* LADO ESQUERDO */}
+            <div
+              style={{
+                position: 'relative',
+                minHeight: 520,
+                overflow: 'hidden',
+                background:
+                  'radial-gradient(circle at center, rgba(255,214,102,.10), transparent 16%), radial-gradient(circle at 22% 18%, rgba(72,164,255,.20), transparent 20%), radial-gradient(circle at 80% 18%, rgba(237,108,255,.14), transparent 18%), linear-gradient(180deg,#08101f,#090d18 55%,#060812)',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 18,
+                  left: 20,
+                  right: 20,
+                  zIndex: 2,
+                  fontSize: 18,
+                  lineHeight: 1.05,
+                  fontWeight: 900,
+                  background: 'linear-gradient(90deg,#9ae0ff,#f3a4ff)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                <br />
+                da Inteligência Artificial
+              </div>
+
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'grid',
+                  placeItems: 'center',
+                  padding: 20,
+                }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    width: 'min(100%, 500px)',
+                    aspectRatio: '1 / 1',
+                    borderRadius: 28,
+                    display: 'grid',
+                    placeItems: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: '50%',
+                      background:
+                        'radial-gradient(circle at center, rgba(255,222,120,.16), rgba(13,18,36,.35) 52%, rgba(7,9,18,.10) 68%, transparent 72%)',
+                      boxShadow: '0 0 70px rgba(255,196,70,.18)',
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: '8%',
+                      borderRadius: '50%',
+                      border: '2px solid rgba(255,220,110,.16)',
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: '18%',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(255,255,255,.08)',
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: '28%',
+                      borderRadius: '50%',
+                      border: '1px solid rgba(255,255,255,.06)',
+                    }}
+                  />
+
+                  {Array.from({ length: 18 }).map((_, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        position: 'absolute',
+                        left: '50%',
+                        top: '50%',
+                        width: 3,
+                        height: '42%',
+                        transform: `translate(-50%, -100%) rotate(${i * 20}deg)`,
+                        transformOrigin: 'center bottom',
+                        background:
+                          'linear-gradient(180deg, rgba(255,218,110,.94), rgba(120,170,255,.18))',
+                        boxShadow: '0 0 8px rgba(255,215,110,.20)',
+                      }}
+                    />
+                  ))}
+
+                  <div
+                    style={{
+                      position: 'relative',
+                      zIndex: 2,
+                      width: '42%',
+                      aspectRatio: '1 / 1',
+                      borderRadius: 34,
+                      background:
+                        'linear-gradient(180deg, rgba(43,58,142,.80), rgba(62,24,83,.72))',
+                      border: '1px solid rgba(255,255,255,.10)',
+                      boxShadow: '0 18px 40px rgba(0,0,0,.34)',
+                      display: 'grid',
+                      placeItems: 'center',
+                    }}
+                  >
+                    <img
+                    src="/omega.png"
+                    alt="IASevero Omega"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover', transform: 'scale(1.45)', transform: 'scale(1.45)',
+                      borderRadius: '50%',
+                    }}
+                  />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* LADO DIREITO */}
+            <div
+              style={{
+                padding: '26px 16px',
+                borderLeft: '1px solid rgba(255,255,255,.05)',
+                background:
+                  'linear-gradient(180deg, rgba(7,10,22,.98), rgba(6,8,18,.96))',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                gap: 14,
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 28,
+                  fontWeight: 900,
+                  lineHeight: 1,
+                  color: '#fff',
+                }}
+              >
+                SEVERO
+              </div>
+
+              <div
+                style={{
+                  color: '#aeb8cf',
+                  fontSize: 11,
+                  lineHeight: 1.4,
+                  letterSpacing: '.5px',
+                }}
+              >
+                NEURAL
+                <br />
+                INTERFACE •
+                <br />
+                OMEGA CORE
+              </div>
+
+              <div
+                style={{
+                  borderRadius: 999,
+                  border: '1px solid rgba(255,255,255,.10)',
+                  background: 'rgba(255,255,255,.03)',
+                  padding: '14px 14px',
+                  color: '#eef2ff',
+                  fontSize: 12,
+                  fontWeight: 800,
+                  lineHeight: 1.25,
+                }}
+              >
+                IASevero vΩ •
+                <br />
+                Futuristic
+                <br />
+                Premium
+                <br />
+                System
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BOTÕES */}
+        <section
+          style={{
+            borderRadius: 28,
+            border: '1px solid rgba(120,150,255,.14)',
+            background:
+              'linear-gradient(180deg, rgba(10,14,31,.94), rgba(6,9,20,.92))',
+            boxShadow: '0 18px 50px rgba(0,0,0,.30)',
+            padding: 18,
+            marginBottom: 18,
+          }}
+        >
+          <div style={{ display: 'grid', gap: 14 }}>
+            <button
+              onClick={() => router.push('/console')}
+              style={{
+                width: '100%',
+                border: 'none',
+                borderRadius: '50%',
+                padding: '22px 18px',
+                fontSize: 20,
+                fontWeight: 900,
+                color: '#fff',
+                cursor: 'pointer',
+                background: 'linear-gradient(90deg,#6486ff,#ec5ac7)',
+                boxShadow: '0 16px 40px rgba(124,58,237,.25)',
+              }}
+            >
+              Abrir console IASevero
+            </button>
+
+            <button
+              style={{
+                width: '100%',
+                borderRadius: '50%',
+                padding: '22px 18px',
+                fontSize: 18,
+                fontWeight: 900,
+                color: '#f5f7ff',
+                cursor: 'pointer',
+                border: '1px solid rgba(255,255,255,.10)',
+                background: 'rgba(255,255,255,.03)',
+              }}
+            >
+              Solicitar acesso
+            </button>
+          </div>
+        </section>
+
+        {/* HERO INFERIOR */}
+        <section
+          style={{
+            borderRadius: 32,
+            border: '1px solid rgba(120,150,255,.14)',
+            background:
+              'radial-gradient(circle at 25% 20%, rgba(72,164,255,.12), transparent 18%), radial-gradient(circle at 80% 18%, rgba(237,108,255,.10), transparent 16%), linear-gradient(180deg, rgba(10,14,31,.94), rgba(7,10,22,.94))',
+            boxShadow: '0 18px 50px rgba(0,0,0,.30)',
+            padding: 18,
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              borderRadius: '50%',
+              minHeight: 480,
+              overflow: 'hidden',
+              display: 'grid',
+              placeItems: 'center',
+              background:
+                'radial-gradient(circle at center, rgba(255,214,102,.10), transparent 16%), radial-gradient(circle at 22% 18%, rgba(72,164,255,.18), transparent 20%), radial-gradient(circle at 80% 18%, rgba(237,108,255,.12), transparent 18%), linear-gradient(180deg,#08101f,#090d18 55%,#060812)',
+              border: '1px solid rgba(255,255,255,.08)',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 18,
+                left: 18,
+                right: 18,
+                fontSize: 18,
+                lineHeight: 1.05,
+                fontWeight: 900,
+                background: 'linear-gradient(90deg,#9ae0ff,#f3a4ff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              <br />
+              da Inteligência Artificial
+            </div>
+
+            <div
+              style={{
+                position: 'relative',
+                width: 'min(100%, 430px)',
+                aspectRatio: '1 / 1',
+                borderRadius: '50%',
+                display: 'grid',
+                placeItems: 'center',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: '50%',
+                  background:
+                    'radial-gradient(circle at center, rgba(255,222,120,.16), rgba(13,18,36,.35) 52%, rgba(7,9,18,.10) 68%, transparent 72%)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '12%',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,220,110,.16)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '24%',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,.06)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  width: '62%',
+                  aspectRatio: '1 / 1',
+                  borderRadius: '50%',
+                  background:
+                    'linear-gradient(180deg, rgba(43,58,142,.80), rgba(62,24,83,.72))',
+                  border: '1px solid rgba(255,255,255,.10)',
+                  display: 'grid',
+                  placeItems: 'center',
+                }}
+              >
+                <img
+                  src="/omega.png"
+                  alt="IASevero Omega"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover', transform: 'scale(1.8)', transform: 'scale(1.45)',
+                    borderRadius: '50%',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  )
+}

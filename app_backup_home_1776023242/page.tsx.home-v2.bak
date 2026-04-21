@@ -1,0 +1,125 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function Home() {
+  const router = useRouter()
+
+  return (
+    <main
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(180deg,#071226,#04060d)',
+        color: 'white',
+        fontFamily: 'Arial, sans-serif',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '20px',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: 20,
+          left: 20,
+          fontSize: '18px',
+          color: '#a1a1aa',
+        }}
+      >
+        SEVERO • Neural Core
+      </div>
+
+      <h1
+        style={{
+          fontSize: '42px',
+          fontWeight: 'bold',
+          marginBottom: '10px',
+          background: 'linear-gradient(90deg,#7c3aed,#ec4899)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      >
+        IASEVERO vΩ
+      </h1>
+
+      <p
+        style={{
+          fontSize: '18px',
+          color: '#a1a1aa',
+          marginBottom: '30px',
+        }}
+      >
+        Neural Interface • Omega Core
+      </p>
+
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '350px',
+          background: 'rgba(255,255,255,0.03)',
+          borderRadius: '20px',
+          padding: '25px',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255,255,255,0.08)',
+          boxShadow: '0 0 40px rgba(124,58,237,0.15)',
+          textAlign: 'center',
+        }}
+      >
+        <p
+          style={{
+            marginBottom: '20px',
+            color: '#cbd5f5',
+          }}
+        >
+          Sistema ativo. Interface pronta para comandos.
+        </p>
+
+        <button
+          onClick={() => router.push('/console')}
+          style={{
+            width: '100%',
+            background: 'linear-gradient(90deg,#7c3aed,#ec4899)',
+            border: 'none',
+            borderRadius: '14px',
+            padding: '14px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            color: 'white',
+            marginBottom: '12px',
+            cursor: 'pointer',
+          }}
+        >
+          Abrir Console IASevero
+        </button>
+
+        <button
+          style={{
+            width: '100%',
+            background: 'transparent',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: '14px',
+            padding: '14px',
+            fontSize: '14px',
+            color: '#a1a1aa',
+            cursor: 'pointer',
+          }}
+        >
+          Solicitar acesso
+        </button>
+      </div>
+
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 20,
+          fontSize: '12px',
+          color: '#52525b',
+        }}
+      >
+        IASevero System • Cloud Neural Engine
+      </div>
+    </main>
+  )
+}

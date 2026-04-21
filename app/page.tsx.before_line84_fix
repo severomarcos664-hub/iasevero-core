@@ -1,0 +1,88 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function HomePage() {
+  const router = useRouter()
+
+  return (
+<main
+      style={{
+        minHeight: '100vh',
+        background:
+          'radial-gradient(circle at top left, rgba(85,120,255,.16), transparent 24%), radial-gradient(circle at top right, rgba(221,83,255,.14), transparent 18%), linear-gradient(180deg,#03050c 0%,#040814 56%,#050813 100%)',
+        color: '#f5f7ff',
+        fontFamily: 'Arial, Helvetica, sans-serif',
+      }}
+    >
+      
+
+              
+
+            <div
+              style={{
+                position: 'relative',
+                width: 'min(100%, 430px)',
+                aspectRatio: '1 / 1',
+                borderRadius: '50%',
+                display: 'grid',
+                placeItems: 'center',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: '50%',
+                  background:
+                    'radial-gradient(circle at center, rgba(255,222,120,.16), rgba(13,18,36,.35) 52%, rgba(7,9,18,.10) 68%, transparent 72%)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '12%',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,220,110,.16)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: '24%',
+                  borderRadius: '50%',
+                  border: '1px solid rgba(255,255,255,.06)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  width: '68%',
+                  aspectRatio: '1 / 1',
+                  borderRadius: '50%',
+                  background:
+                    'linear-gradient(180deg, rgba(43,58,142,.80), rgba(62,24,83,.72))',
+                  border: '1px solid rgba(255,255,255,.10)',
+                  display: 'grid',
+                  placeItems: 'center',
+                }}
+              >
+                <img
+                  src="/omega.png"
+                  alt="IASevero Omega"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover', transform: 'scale(1.8)', transform: 'scale(1.45)',
+                    borderRadius: '50%',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  )
+}

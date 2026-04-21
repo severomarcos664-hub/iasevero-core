@@ -1,0 +1,102 @@
+import OpenAI from 'openai'
+import { NextResponse } from 'next/server'
+import { buildSystemPrompt, normalizeReply } from '@/app/lib/iasevero-core'
+import { requiresFreshData } from '@/app/lib/fresh'
+import { detectIntentAdvanced } from '@/app/lib/router'
+import { getAppConfig, validateAppConfig } from '@/app/lib/config'
+
+export const runtime = 'nodejs'
+
+export async function POST(req: Request) {
+  const { readMemory, writeMemory } = require("../lib/memory");
+  let history = readMemory();
+  try {
+    const validation = validateAppConfig()
+
+    if (!validation.ok) {
+  history.push({ role: "user", content: message });
+  history.push({ role: "assistant", content: reply });
+  writeMemory(history);
+      return NextResponse.json(
+        {
+          error: 'Configuração inválida.',
+          details: validation.errors
+        },
+        { status: 500 }
+      )
+    }
+
+    const { openaiApiKey, openaiModel } = getAppConfig()
+    const client = new OpenAI({ apiKey: openaiApiKey })
+
+    const body = await req.json().catch(() => ({}))
+    const message = String(body?.message || '').trim()
+    const needsFresh = requiresFreshData(message)
+
+    if (!message) {
+  history.push({ role: "user", content: message });
+  history.push({ role: "assistant", content: reply });
+  writeMemory(history);
+      return NextResponse.json(
+        { error: 'Mensagem vazia.' },
+        { status: 400 }
+      )
+    }
+
+    if (needsFresh) {
+  history.push({ role: "user", content: message });
+  history.push({ role: "assistant", content: reply });
+  writeMemory(history);
+      return NextResponse.json({
+        reply: 'Para responder com precisão atual, preciso consultar dados externos em tempo real. Essa capacidade será integrada na próxima fase.',
+        intent: 'fresh_data_required',
+        ok: true
+      })
+    }
+
+    const intent = detectIntentAdvanced(message)
+    const { systemPrompt } = buildSystemPrompt(message, intent)
+
+    const response = await client.responses.create({
+      model: openaiModel,
+      input: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: message }
+      ]
+    })
+
+    const rawReply =
+      (response as any)?.output_text ||
+      (response as any)?.output?.[0]?.content?.[0]?.text ||
+      'Sem resposta do modelo.'
+
+    const reply = normalizeReply(String(rawReply), intent)
+    const safeReply =
+      reply && String(reply).trim()
+        ? String(reply).trim()
+        : 'IASevero está operacional, mas a resposta veio vazia. Reenvie a solicitação de forma mais específica.'
+
+  history.push({ role: "user", content: message });
+  history.push({ role: "assistant", content: reply });
+  writeMemory(history);
+    return NextResponse.json({
+      reply: safeReply,
+      intent,
+      ok: true
+    })
+  } catch (error: any) {
+    console.error('Erro em /api/chat:', error)
+
+  history.push({ role: "user", content: message });
+  history.push({ role: "assistant", content: reply });
+  writeMemory(history);
+    return NextResponse.json(
+      {
+        error: 'Falha ao processar a mensagem.',
+        detail: error?.message || 'Erro interno desconhecido.',
+        fallback: 'IASevero está temporariamente indisponível. Valide configuração, rota e integrações antes de avançar.'
+      },
+      { status: 500 }
+    )
+  }
+}

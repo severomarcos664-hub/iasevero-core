@@ -6,7 +6,7 @@ export default function HomePage() {
   const router = useRouter()
 
   return (
-    <main
+    <main style={{ animation: 'fadeIn 0.8s ease' }}
       style={{
         minHeight: '100vh',
         background:
@@ -314,3 +314,17 @@ export default function HomePage() {
     </main>
   )
 }
+
+
+<style jsx global>{`
+@keyframes pulseGlow {
+  0% { transform: scale(0.92); filter: drop-shadow(0 0 20px rgba(255,200,120,0.12)); }
+  50% { transform: scale(0.95); filter: drop-shadow(0 0 40px rgba(255,200,120,0.25)); }
+  100% { transform: scale(0.92); filter: drop-shadow(0 0 20px rgba(255,200,120,0.12)); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+`}</style>

@@ -1,0 +1,35 @@
+export function normalizeReply(text: string, intent?: IASeveroIntent) {
+  let out = (text || '').trim()
+
+  const banned = [
+    'Fui criado pela OpenAI.',
+    'Fui desenvolvido pela OpenAI.',
+    'Sou um modelo da OpenAI.',
+    'Fui criado por uma equipe de especialistas.',
+    'Fui desenvolvido por uma equipe de especialistas.',
+  ]
+
+  for (const phrase of banned) {
+    out = out.replaceAll(phrase, '').trim()
+  }
+
+  while (out.includes('\n\n\n')) {
+    out = out.replaceAll('\n\n\n', '\n\n')
+  }
+
+  if (intent === 'identidade') {
+    return 'Fui criado por Marcos Julio Severo.'
+  }
+
+  // melhoria leve e segura
+  out = out.replaceAll('  ', ' ')
+
+  const needsNextSteps =
+    ['diagnostico', 'execucao', 'arquitetura', 'seguranca', 'cloud', 'telegram', 'consultoria'].includes(intent || '')
+
+  if (needsNextSteps && out.length < 300 && !/próximos passos|proximos passos/i.test(out)) {
+    out += '\n\nPróximos passos:\n1. Refinar análise\n2. Validar execução\n3. Monitorar resultado'
+  }
+
+  return out.trim()
+}

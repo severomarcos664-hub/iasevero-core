@@ -1,0 +1,182 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function HomePage() {
+  const router = useRouter()
+
+  return (
+    <main
+      style={{
+        animation: 'fadeIn 0.8s ease',
+        minHeight: '100vh',
+        background:
+          'radial-gradient(circle at top left, rgba(85,120,255,.16), transparent 24%), radial-gradient(circle at top right, rgba(221,83,255,.14), transparent 18%), linear-gradient(180deg, #03050c 0%, #040814 56%, #050813 100%)',
+        color: '#f5f7ff',
+        fontFamily: 'Arial, Helvetica, sans-serif',
+        padding: 20,
+      }}
+    >
+      <section
+        style={{
+          maxWidth: 980,
+          margin: '0 auto',
+          borderRadius: 28,
+          overflow: 'hidden',
+          border: '1px solid rgba(255,255,255,.08)',
+          boxShadow: '0 18px 50px rgba(0,0,0,.30)',
+          background: 'linear-gradient(180deg, rgba(7,9,18,.92), rgba(4,7,18,.98))',
+        }}
+      >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            minHeight: 520,
+          }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              padding: 26,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 52,
+                fontWeight: 900,
+                lineHeight: 0.95,
+                letterSpacing: '-1px',
+                background: 'linear-gradient(90deg, #7bc6ff, #b36bff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              IASevero
+              <br />
+              Console
+            </div>
+
+            <div
+              style={{
+                marginTop: 14,
+                fontSize: 22,
+                color: 'rgba(255,255,255,.82)',
+              }}
+            >
+              Neural Interface • Omega Core
+            </div>
+
+            <div
+              style={{
+                marginTop: 30,
+                borderRadius: 30,
+                border: '1px solid rgba(255,255,255,.10)',
+                background: 'linear-gradient(180deg, rgba(5,10,26,.82), rgba(3,6,18,.92))',
+                boxShadow: '0 20px 60px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03)',
+                minHeight: 520,
+                padding: 24,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}
+            >
+              <div
+                style={{
+                  alignSelf: 'flex-start',
+                  maxWidth: '86%',
+                  padding: '16px 18px',
+                  borderRadius: 20,
+                  background: 'rgba(255,255,255,.04)',
+                  border: '1px solid rgba(255,255,255,.06)',
+                  color: 'rgba(255,255,255,.95)',
+                  lineHeight: 1.5,
+                  fontSize: 16,
+                  whiteSpace: 'pre-wrap',
+                }}
+              >
+                IASevero Console inicializado.
+                {'\n'}
+                Digite um comando para começar.
+              </div>
+
+              <div
+                style={{
+                  alignSelf: 'flex-end',
+                  maxWidth: '86%',
+                  padding: '16px 18px',
+                  borderRadius: 20,
+                  background: 'linear-gradient(90deg, rgba(110,130,255,.22), rgba(215,95,255,.20))',
+                  border: '1px solid rgba(180,180,255,.18)',
+                  color: 'rgba(255,255,255,.95)',
+                  lineHeight: 1.5,
+                  fontSize: 16,
+                }}
+              >
+                Quem te criou?
+              </div>
+
+              <div
+                style={{
+                  alignSelf: 'flex-start',
+                  maxWidth: '86%',
+                  padding: '16px 18px',
+                  borderRadius: 20,
+                  background: 'rgba(255,255,255,.04)',
+                  border: '1px solid rgba(255,255,255,.06)',
+                  color: 'rgba(255,255,255,.95)',
+                  lineHeight: 1.5,
+                  fontSize: 16,
+                }}
+              >
+                Fui criado por Marcos Julio Severo.
+              </div>
+
+              <div style={{ flex: 1 }} />
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr auto',
+                  gap: 14,
+                  marginTop: 8,
+                }}
+              >
+                <input
+                  placeholder="Digite seu comando ou mensagem..."
+                  style={{
+                    width: '100%',
+                    padding: '20px 24px',
+                    borderRadius: 22,
+                    border: '1px solid rgba(255,255,255,.08)',
+                    outline: 'none',
+                    background: 'rgba(8,12,28,.82)',
+                    color: '#f5f7ff',
+                    fontSize: 16,
+                  }}
+                />
+                <button
+                  onClick={() => router.push('/console')}
+                  style={{
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '0 28px',
+                    borderRadius: 22,
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: 'white',
+                    minWidth: 140,
+                    background: 'linear-gradient(90deg, rgba(110,130,255,.95), rgba(215,95,255,.92))',
+                    boxShadow: '0 10px 30px rgba(120,90,255,.28)',
+                  }}
+                >
+                  Enviar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}

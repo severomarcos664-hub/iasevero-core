@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:chat": "curl -X POST http://localhost:3000/api/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Quem te criou?\"}'"
   },
   "dependencies": {
+    "lucide-react": "^1.8.0",
     "next": "16.2.3",
+    "openai": "^6.34.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

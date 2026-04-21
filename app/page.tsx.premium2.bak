@@ -47,12 +47,12 @@ export default function HomePage() {
             <div
               style={{
                 position: 'absolute',
-                top: 22,
-                left: 22,
-                right: 22,
+                top: 18,
+                left: 18,
+                right: 18,
                 zIndex: 2,
-                fontSize: 15,
-                lineHeight: 1.18,
+                fontSize: 16,
+                lineHeight: 1.2,
         letterSpacing: '0.5px',
                 fontWeight: 900,
                 background: 'linear-gradient(90deg,#9ae0ff,#f3a4ff)',
@@ -67,12 +67,12 @@ export default function HomePage() {
 
             <div
               style={{
-                minHeight: 340,
+                minHeight: 360,
                 aspectRatio: '1 / 1',
                 borderRadius: '50%',
                 display: 'grid',
                 placeItems: 'center',
-                marginTop: 86,
+                marginTop: 70,
               }}
             >
               <div
@@ -87,16 +87,16 @@ export default function HomePage() {
               <div
                 style={{
                   position: 'absolute',
-                  inset: '16%',
+                  inset: '12%',
                   borderRadius: '50%',
-                  border: '1px solid rgba(255,220,110,.05)',
-        opacity: 0.42,
+                  border: '1px solid rgba(255,220,110,.08)',
+        opacity: 0.6,
                 }}
               />
               <div
                 style={{
                   position: 'absolute',
-                  inset: '30%',
+                  inset: '24%',
                   borderRadius: '50%',
                   border: '1px solid rgba(255,255,255,.06)',
                 }}

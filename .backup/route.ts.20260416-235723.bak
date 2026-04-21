@@ -1,0 +1,66 @@
+import OpenAI from 'openai'
+import { NextResponse } from 'next/server'
+import { buildSystemPrompt, normalizeReply } from '@/app/lib/iasevero-core'
+
+export const runtime = 'nodejs'
+
+const apiKey = process.env.OPENAI_API_KEY
+const model = process.env.OPENAI_MODEL || 'gpt-4.1-mini'
+
+const client = apiKey ? new OpenAI({ apiKey }) : null
+
+export async function POST(req: Request) {
+  try {
+    if (!client) {
+      return NextResponse.json(
+        { error: 'OPENAI_API_KEY não configurada no ambiente.' },
+        { status: 500 }
+      )
+    }
+
+    const body = await req.json().catch(() => ({}))
+    const message = String(body?.message || '').trim()
+
+    if (!message) {
+      return NextResponse.json(
+        { error: 'Mensagem vazia.' },
+        { status: 400 }
+      )
+    }
+
+    const { systemPrompt, intent, audience } = buildSystemPrompt(message)
+
+    const response = await client.responses.create({
+      model,
+      input: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: message },
+      ],
+    })
+
+    const rawReply =
+      (response as any)?.output_text ||
+      (response as any)?.output?.[0]?.content?.[0]?.text ||
+      ''
+
+    const reply = normalizeReply(String(rawReply || 'Sem resposta do modelo.'))
+
+    return NextResponse.json({
+      reply,
+      intent,
+      audience,
+      model,
+      ok: true,
+    })
+  } catch (error: any) {
+    console.error('Erro em /api/chat:', error)
+
+    return NextResponse.json(
+      {
+        error: 'Falha ao processar a mensagem.',
+        detail: error?.message || 'Erro interno desconhecido.',
+      },
+      { status: 500 }
+    )
+  }
+}

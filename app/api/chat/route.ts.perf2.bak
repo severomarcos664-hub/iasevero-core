@@ -1,0 +1,138 @@
+import OpenAI from 'openai'
+import { NextResponse } from 'next/server'
+import { buildSystemPrompt, normalizeReply } from '@/app/lib/iasevero-core'
+import { requiresFreshData } from '@/app/lib/fresh'
+import { detectIntentAdvanced } from '@/app/lib/router'
+import { getAppConfig, validateAppConfig } from '@/app/lib/config'
+import { readMemory, writeMemory } from '@/app/lib/memory'
+
+export const runtime = 'nodejs'
+
+type MemoryMessage = {
+  role: 'user' | 'assistant'
+  content: string
+}
+
+export async function POST(req: Request) {
+  let message = ''
+
+  try {
+    const validation = validateAppConfig()
+    if (!validation.ok) {
+      return NextResponse.json(
+        {
+          error: 'Configuração inválida.',
+          details: validation.errors,
+        },
+        { status: 500 }
+      )
+    }
+
+    const { openaiApiKey, openaiModel } = getAppConfig()
+    const client = new OpenAI({ apiKey: openaiApiKey })
+
+    const body = await req.json().catch(() => ({}))
+    message = String(body?.message || '').trim()
+
+    if (!message) {
+      return NextResponse.json(
+        { error: 'Mensagem vazia.' },
+        { status: 400 }
+      )
+    }
+
+    const needsFresh = requiresFreshData(message)
+    if (needsFresh) {
+      const freshReply =
+        'Para responder com precisão atual, preciso consultar dados externos em tempo real. Essa capacidade será integrada na próxima fase.'
+
+      const freshHistory = readMemory() as MemoryMessage[]
+      freshHistory.push({ role: 'user', content: message })
+      freshHistory.push({ role: 'assistant', content: freshReply })
+      writeMemory(freshHistory)
+
+      return NextResponse.json({
+        reply: freshReply,
+        intent: 'fresh-data-required',
+        ok: true,
+      })
+    }
+
+    const intent = detectIntentAdvanced(message)
+    const { systemPrompt } = buildSystemPrompt(message, intent)
+
+    const fullHistory = readMemory() as MemoryMessage[];
+
+const shortHistory = fullHistory.slice(-6);
+
+const importantMemory = fullHistory
+  .filter(m => m.role === 'user')
+  .slice(-20)
+  .map(m => m.content)
+  .join('\n');
+
+const systemMemory = importantMemory
+  ? `Memória relevante do usuário:
+${importantMemory}`
+  : '';
+
+const history = shortHistory
+
+    const input = [
+      { role: 'system' as const, content: systemPrompt },
+      ...history.map((m) => ({
+        role: m.role,
+        content: m.content,
+      })),
+      { role: 'user' as const, content: message },
+    ]
+
+    const response = await client.responses.create({
+      model: openaiModel,
+      input,
+    })
+
+    const rawReply =
+      (response as any)?.output_text ||
+      (response as any)?.output?.[0]?.content?.[0]?.text ||
+      'Sem resposta do modelo.'
+
+    const reply = normalizeReply(String(rawReply), intent)
+    const safeReply =
+      reply && String(reply).trim()
+        ? String(reply).trim()
+        : 'IASevero está operacional, mas a resposta veio vazia. Reenvie a solicitação de forma mais específica.'
+
+    const updatedHistory = readMemory() as MemoryMessage[]
+    updatedHistory.push({ role: 'user', content: message })
+    updatedHistory.push({ role: 'assistant', content: safeReply })
+    writeMemory(updatedHistory)
+
+    return NextResponse.json({
+      reply: safeReply,
+      intent,
+      ok: true,
+    })
+  } catch (error: any) {
+    console.error('Erro em /api/chat:', error)
+
+    if (message) {
+      const fallbackReply =
+        'IASevero está temporariamente indisponível. Valide configuração, rota e integrações antes de avançar.'
+      const updatedHistory = readMemory() as MemoryMessage[]
+      updatedHistory.push({ role: 'user', content: message })
+      updatedHistory.push({ role: 'assistant', content: fallbackReply })
+      writeMemory(updatedHistory)
+    }
+
+    return NextResponse.json(
+      {
+        error: 'Falha ao processar a mensagem.',
+        detail: error?.message || 'Erro interno desconhecido.',
+        fallback:
+          'IASevero está temporariamente indisponível. Valide configuração, rota e integrações antes de avançar.',
+      },
+      { status: 500 }
+    )
+  }
+}
