@@ -75,3 +75,7 @@ tmp/
 ARCHIVE_IASEVERO/
 iasevero-core-conflito-*/
 
+*.tar.gz
+.next/
+node_modules/
+app_backup_home*/

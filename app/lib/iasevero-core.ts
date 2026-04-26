@@ -1,205 +1,97 @@
-import type { IASeveroIntent } from '@/app/lib/router'
+function clean(message: string) {
+  return String(message || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
 
-export function buildSystemPrompt(message: string, intent: IASeveroIntent) {
-  let systemPrompt = `
-Você é IASevero, engenheira de sistemas de alto nível.
+function detectIntent(message: string) {
+  const msg = clean(message)
 
-Regras obrigatórias:
-- Nunca diga que foi criada pela OpenAI
-- Nunca cite empresa externa como criadora
-- Nunca responda como assistente genérica
-- Sempre seja técnica, direta e prática
-- Se a pergunta for simples, responda simples
-- Se a pergunta for técnica, responda estruturado
-- Quando perguntarem quem te criou, responda exatamente: "Fui criado por Marcos Julio Severo."
-- Em diagnóstico, priorize ação prática
-- Evite frases vagas como "verifique" sem indicar ação concreta
+  if (msg.includes('erro') || msg.includes('bug') || msg.includes('falha'))
+    return 'diagnostico'
 
-Contexto técnico obrigatório:
-- Projeto usa Next.js App Router
-- Backend via app/api/*/route.ts
-- Runtime principal: nodejs
-- Linguagem principal: TypeScript
-- Sempre priorizar respostas compatíveis com Next.js
-- Não sugerir Java, Spring Boot, Flask, Django, .NET, C# ou outras stacks, exceto se o usuário pedir explicitamente
-- Quando pedirem código de backend, priorizar route.ts, NextResponse e endpoints /api
-`.trim()
+  if (msg.includes('custo') || msg.includes('gasto') || msg.includes('zero'))
+    return 'custo'
+
+  if (msg.includes('seguranca') || msg.includes('token') || msg.includes('chave'))
+    return 'seguranca'
+
+  if (msg.includes('deploy') || msg.includes('cloud'))
+    return 'deploy'
+
+  if (msg.includes('quem te criou') || msg.includes('criador'))
+    return 'identidade'
+
+  return 'geral'
+}
+
+export function iaseveroCore(message: string, memory: string[] = []) {
+  const msg = clean(message)
+  const intent = detectIntent(msg)
+
+  const contextoArray = (memory || []).slice(-5)
+
+  // 🔥 CONTAR ERROS NO HISTÓRICO
+  const eventosErro = contextoArray.filter(m =>
+    m.includes('erro') || m.includes('bug') || m.includes('falha')
+  ).length
+
+  // 🔥 CONTAR REPETIÇÃO NA MENSAGEM ATUAL
+  const palavrasErro = (msg.match(/erro/g) || []).length
+
+  let reply = ''
 
   if (intent === 'diagnostico') {
-    systemPrompt += `
 
-Modo diagnóstico:
-Responder nesta estrutura:
-1. Resumo
-2. Diagnóstico
-3. Causa provável
-4. Correção segura
-5. Validação
+    // ✅ CASO 1 — usuário só repetiu palavra
+    if (palavrasErro >= 3 && eventosErro === 0) {
+      reply = 'Entrada repetitiva detectada. Nenhum erro real identificado.'
+    }
 
-Regras extras:
-- Sempre que possível, incluir comandos Shell curtos
-- Priorizar a menor correção segura
-- Não inventar caminhos de arquivo
-- Não citar tecnologias não confirmadas
-- Se faltar contexto, pedir o mínimo necessário
-- Se citar endpoint, priorizar /api/*
-`.trim()
+    // ✅ CASO 2 — pouco histórico
+    else if (eventosErro === 0) {
+      reply = 'Diagnóstico: erro isolado. Ação: verificar logs e entrada.'
+    }
+
+    // ✅ CASO 3 — recorrente leve
+    else if (eventosErro <= 2) {
+      reply = 'Erro recorrente leve. Ação: revisar última alteração.'
+    }
+
+    // ✅ CASO 4 — recorrente real
+    else if (eventosErro <= 4) {
+      reply = 'Erro recorrente. Ação: revisar fluxo e dependências.'
+    }
+
+    // ✅ CASO 5 — só aqui vira estrutural
+    else {
+      reply = 'Falha estrutural confirmada. Ação: rollback + análise completa.'
+    }
   }
 
-  if (intent === 'arquitetura') {
-    systemPrompt += `
-
-Modo arquitetura:
-Responder nesta estrutura:
-1. Objetivo
-2. Estrutura recomendada
-3. Decisão técnica
-4. Riscos
-5. Próximos passos
-
-Regras extras:
-- Foco em produção real
-- Evitar marketing
-- Priorizar evolução incremental sem quebrar o sistema
-- Considerar a arquitetura atual em Next.js App Router
-`.trim()
+  else if (intent === 'custo') {
+    reply = 'Modo custo zero ativo: execução local.'
   }
 
-  if (intent === 'codigo') {
-    systemPrompt += `
-
-Modo código:
-Responder com foco em implementação real.
-
-Regras extras:
-- Entregar código focado no stack atual
-- Priorizar TypeScript
-- Priorizar arquivos route.ts, lib/*.ts e componentes do projeto atual
-- Se a solicitação for de health check, priorizar app/api/health/route.ts
-- Evitar exemplos em outras linguagens
-- Explicar em no máximo:
-  1. onde criar
-  2. o código
-  3. como testar
-`.trim()
+  else if (intent === 'seguranca') {
+    reply = 'Segurança ativa: nunca exponha tokens.'
   }
 
-  if (intent === 'seguranca') {
-    systemPrompt += `
-
-Modo segurança:
-Responder com foco em risco, correção e validação.
-
-Estrutura:
-1. Risco
-2. Exposição atual
-3. Correção segura
-4. Validação
-
-Regras extras:
-- Priorizar proteção de rotas /api
-- Priorizar variáveis de ambiente e secrets
-- Considerar o stack atual em Next.js
-`.trim()
+  else if (intent === 'deploy') {
+    reply = 'Deploy bloqueado até validação completa.'
   }
 
-  if (intent === 'saudacao') {
-    systemPrompt += `
-
-Modo saudação:
-Responder em no máximo 2 frases, de forma profissional.
-`.trim()
+  else if (intent === 'identidade') {
+    reply = 'IASevero foi criada por Marcos Julio Severo.'
   }
 
-  if (intent === 'identidade') {
-    systemPrompt += `
-
-Modo identidade:
-Resposta obrigatória:
-Fui criado por Marcos Julio Severo.
-`.trim()
-  }
-
-  if (intent === 'geral') {
-    systemPrompt += `
-
-Modo geral:
-Responder como consultora técnica prática.
-Se a pergunta pedir ação, entregar ação.
-Se pedir análise, responder estruturado.
-Sempre respeitar o stack atual do projeto.
-`.trim()
+  else {
+    reply = 'IASevero analisando: ' + message
   }
 
   return {
-    systemPrompt,
     intent,
-    audience: 'technical'
+    reply
   }
-}
-
-export function normalizeReply(text: string, intent?: IASeveroIntent) {
-  let out = String(text || '').trim()
-
-  const banned = [
-    'Fui criado pela OpenAI.',
-    'Fui desenvolvido pela OpenAI.',
-    'Sou um modelo da OpenAI.',
-    'Fui criado por uma empresa de pesquisa em inteligência artificial.',
-    'Minha base de conhecimento é atualizada até junho de .',
-    'Como modelo de linguagem,',
-    'Como uma IA,',
-    'Como assistente de IA,'
-  ]
-
-  for (const phrase of banned) {
-    out = out.replaceAll(phrase, '').trim()
-  }
-
-  while (out.includes('\n\n\n')) {
-    out = out.replaceAll('\n\n\n', '\n\n')
-  }
-
-  out = out
-    .replaceAll('```bash', '')
-    .replaceAll('```typescript', '')
-    .replaceAll('```ts', '')
-    .replaceAll('```js', '')
-    .replaceAll('```json', '')
-    .replaceAll('```', '')
-    .trim()
-
-  if (intent === 'identidade') {
-    return 'Fui criado por Marcos Julio Severo.'
-  }
-
-  if (intent === 'saudacao') {
-    if (!out || out.length > 120) {
-      return 'Entendido. Como posso ajudar tecnicamente hoje?'
-    }
-    return out
-  }
-
-  if (!out) {
-    if (intent === 'diagnostico') {
-      return `1. Resumo
-Falha sem resposta útil.
-
-2. Diagnóstico
-Executar coleta mínima de erro.
-
-3. Causa provável
-Exceção não tratada ou configuração inválida.
-
-4. Correção segura
-Validar ambiente e reiniciar serviço.
-
-5. Validação
-Retestar o endpoint afetado.`
-    }
-
-    return 'Entendido. Pode seguir com a próxima instrução.'
-  }
-
-  return out
 }
