@@ -79,3 +79,8 @@ iasevero-core-conflito-*/
 .next/
 node_modules/
 app_backup_home*/
+
+# IASevero local backups
+backups/
+*.backup
+*.nivel*-backup
