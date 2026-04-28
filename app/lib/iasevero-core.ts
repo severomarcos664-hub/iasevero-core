@@ -1,97 +1,86 @@
-function clean(message: string) {
-  return String(message || '')
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
+import { simulateCommand, readLogs } from './tools-exec'
+
+export type Intent =
+  | "diagnostico"
+  | "infra"
+  | "custo"
+  | "seguranca"
+  | "deploy"
+  | "identidade"
+  | "geral"
+
+type ExecutionItem = {
+  cmd: string
+  output: string
 }
 
-function detectIntent(message: string) {
-  const msg = clean(message)
-
-  if (msg.includes('erro') || msg.includes('bug') || msg.includes('falha'))
-    return 'diagnostico'
-
-  if (msg.includes('custo') || msg.includes('gasto') || msg.includes('zero'))
-    return 'custo'
-
-  if (msg.includes('seguranca') || msg.includes('token') || msg.includes('chave'))
-    return 'seguranca'
-
-  if (msg.includes('deploy') || msg.includes('cloud'))
-    return 'deploy'
-
-  if (msg.includes('quem te criou') || msg.includes('criador'))
-    return 'identidade'
-
-  return 'geral'
+export type IASeveroResult = {
+  intent: Intent
+  reply: string
+  commands: string[]
+  execution: ExecutionItem[]
+  validation: {
+    passed: boolean
+    issues: string[]
+  }
 }
 
-export function iaseveroCore(message: string, memory: string[] = []) {
-  const msg = clean(message)
-  const intent = detectIntent(msg)
+function classifyIntent(msg: string): Intent {
+  const t = msg.toLowerCase()
 
-  const contextoArray = (memory || []).slice(-5)
+  if (t.includes("erro")) return "infra"
+  if (t.includes("custo")) return "custo"
+  if (t.includes("token")) return "seguranca"
+  if (t.includes("deploy")) return "deploy"
+  if (t.includes("quem te criou")) return "identidade"
 
-  // 🔥 CONTAR ERROS NO HISTÓRICO
-  const eventosErro = contextoArray.filter(m =>
-    m.includes('erro') || m.includes('bug') || m.includes('falha')
-  ).length
+  return "geral"
+}
 
-  // 🔥 CONTAR REPETIÇÃO NA MENSAGEM ATUAL
-  const palavrasErro = (msg.match(/erro/g) || []).length
-
-  let reply = ''
-
-  if (intent === 'diagnostico') {
-
-    // ✅ CASO 1 — usuário só repetiu palavra
-    if (palavrasErro >= 3 && eventosErro === 0) {
-      reply = 'Entrada repetitiva detectada. Nenhum erro real identificado.'
+export function iaseveroCore(message: string, memory: string[] = []): IASeveroResult {
+  try {
+    if (!message || message.length < 2) {
+      return {
+        intent: "geral",
+        reply: "Entrada inválida.",
+        commands: [],
+        execution: [],
+        validation: { passed: true, issues: [] }
+      }
     }
 
-    // ✅ CASO 2 — pouco histórico
-    else if (eventosErro === 0) {
-      reply = 'Diagnóstico: erro isolado. Ação: verificar logs e entrada.'
+    const intent = classifyIntent(message)
+
+    let commands: string[] = []
+    let reply = "IASevero analisando: " + message
+
+    if (intent === "infra") {
+      commands = ["rm -rf .next", "npm run build", "npm run dev"]
+
+      const logs = readLogs()
+
+      reply =
+        "Diagnóstico: erro de infraestrutura detectado.\n" +
+        logs
     }
 
-    // ✅ CASO 3 — recorrente leve
-    else if (eventosErro <= 2) {
-      reply = 'Erro recorrente leve. Ação: revisar última alteração.'
+    const execution = commands.map(simulateCommand)
+
+    return {
+      intent,
+      reply,
+      commands,
+      execution,
+      validation: { passed: true, issues: [] }
     }
 
-    // ✅ CASO 4 — recorrente real
-    else if (eventosErro <= 4) {
-      reply = 'Erro recorrente. Ação: revisar fluxo e dependências.'
+  } catch (error) {
+    return {
+      intent: "geral",
+      reply: "Erro interno controlado.",
+      commands: [],
+      execution: [],
+      validation: { passed: false, issues: ["erro interno"] }
     }
-
-    // ✅ CASO 5 — só aqui vira estrutural
-    else {
-      reply = 'Falha estrutural confirmada. Ação: rollback + análise completa.'
-    }
-  }
-
-  else if (intent === 'custo') {
-    reply = 'Modo custo zero ativo: execução local.'
-  }
-
-  else if (intent === 'seguranca') {
-    reply = 'Segurança ativa: nunca exponha tokens.'
-  }
-
-  else if (intent === 'deploy') {
-    reply = 'Deploy bloqueado até validação completa.'
-  }
-
-  else if (intent === 'identidade') {
-    reply = 'IASevero foi criada por Marcos Julio Severo.'
-  }
-
-  else {
-    reply = 'IASevero analisando: ' + message
-  }
-
-  return {
-    intent,
-    reply
   }
 }
