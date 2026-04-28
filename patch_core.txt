@@ -1,0 +1,15 @@
+const execution = commands.map(cmd => simulateCommand(cmd))
+
+const validation = validateQuality(reply, commands)
+
+if (!validation.passed) {
+  reply = improveReply(reply, commands)
+}
+
+return {
+  intent,
+  reply,
+  commands,
+  execution,
+  validation
+}

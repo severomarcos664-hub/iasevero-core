@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "user": "default",
+    "message": "USER: erro api",
+    "time": "2026-04-27T02:13:24.470Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: bug sistema",
+    "time": "2026-04-27T02:13:35.239Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: falha build",
+    "time": "2026-04-27T02:13:47.845Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: erro api",
+    "time": "2026-04-27T23:15:45.531Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: como reduzir custo",
+    "time": "2026-04-27T23:15:57.525Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: token vazou",
+    "time": "2026-04-27T23:16:09.468Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: quem te criou",
+    "time": "2026-04-27T23:16:21.870Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: quem te criou",
+    "time": "2026-04-27T23:16:37.286Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: quem te criou",
+    "time": "2026-04-27T23:19:31.070Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: erro api",
+    "time": "2026-04-27T23:38:10.910Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: como reduzir custo",
+    "time": "2026-04-27T23:38:20.008Z"
+  },
+  {
+    "user": "default",
+    "message": "USER: token vazou",
+    "time": "2026-04-27T23:38:36.180Z"
+  }
+]

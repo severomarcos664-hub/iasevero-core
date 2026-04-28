@@ -1,0 +1,81 @@
+function clean(message: string) {
+  return String(message || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+function detectIntent(message: string) {
+  const msg = clean(message)
+
+  const hasError = /erro|bug|falha|crash|quebrou|nao funciona|problema/.test(msg)
+  const hasInfra = /deploy|cloud|server|api|build|producao|rota|endpoint/.test(msg)
+  const hasSecurity = /token|chave|senha|vazou|seguranca|secret/.test(msg)
+
+  if (hasError && hasInfra) return 'infra_erro'
+  if (hasError) return 'diagnostico'
+  if (hasSecurity) return 'seguranca'
+  if (msg.includes('custo') || msg.includes('gasto') || msg.includes('zero')) return 'custo'
+  if (msg.includes('deploy') || msg.includes('cloud')) return 'deploy'
+  if (msg.includes('quem te criou') || msg.includes('criador')) return 'identidade'
+
+  return 'geral'
+}
+
+export function iaseveroCore(message: string, memory: string[] = []) {
+  const msg = clean(message)
+  const intent = detectIntent(msg)
+
+  const contextoArray = (memory || []).slice(-5)
+
+  const eventosErro = contextoArray.filter(m =>
+    m.includes('erro') || m.includes('bug') || m.includes('falha')
+  ).length
+
+  const palavrasErro = (msg.match(/erro/g) || []).length
+
+  let reply = ''
+
+  if (intent === 'infra_erro') {
+    reply = 'Diagnostico de infraestrutura: verificar build, rota, logs, variaveis de ambiente e ultima alteracao antes de qualquer deploy.'
+  }
+
+  else if (intent === 'diagnostico') {
+    if (palavrasErro >= 3 && eventosErro === 0) {
+      reply = 'Entrada repetitiva detectada. Nenhum erro real identificado.'
+    } else if (eventosErro === 0) {
+      reply = 'Diagnostico: erro isolado. Acao: verificar logs e entrada.'
+    } else if (eventosErro <= 2) {
+      reply = 'Erro recorrente leve. Acao: revisar ultima alteracao.'
+    } else if (eventosErro <= 4) {
+      reply = 'Erro recorrente. Acao: revisar fluxo e dependencias.'
+    } else {
+      reply = 'Falha estrutural confirmada. Acao: rollback + analise completa.'
+    }
+  }
+
+  else if (intent === 'custo') {
+    reply = 'Modo custo zero ativo: execucao local.'
+  }
+
+  else if (intent === 'seguranca') {
+    reply = 'Seguranca ativa: nunca exponha tokens, chaves ou secrets.'
+  }
+
+  else if (intent === 'deploy') {
+    reply = 'Deploy bloqueado ate validacao completa.'
+  }
+
+  else if (intent === 'identidade') {
+    reply = 'IASevero foi criada por Marcos Julio Severo.'
+  }
+
+  else {
+    reply = 'IASevero analisando: ' + message
+  }
+
+  return {
+    intent,
+    reply
+  }
+}

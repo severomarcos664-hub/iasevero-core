@@ -1,0 +1,93 @@
+import { diagnosticCommands } from "./tools"
+
+export type Intent =
+  | "diagnostico"
+  | "infra"
+  | "custo"
+  | "seguranca"
+  | "deploy"
+  | "identidade"
+  | "geral"
+
+function clean(text: string) {
+  return (text || "").toLowerCase()
+}
+
+function classifyIntent(msg: string): Intent {
+  const t = clean(msg)
+
+  if (t.includes("erro") && t.includes("api")) return "infra"
+  if (t.includes("erro")) return "diagnostico"
+  if (t.includes("custo")) return "custo"
+  if (t.includes("token")) return "seguranca"
+  if (t.includes("deploy")) return "deploy"
+  if (t.includes("quem te criou") || t.includes("criador")) return "identidade"
+
+  return "geral"
+}
+
+function safeFallback(message: string) {
+  return "IASevero: não foi possível classificar com precisão. Reescreva o pedido de forma mais clara."
+}
+
+export function iaseveroCore(message: string, memory: string[] = []) {
+  try {
+    if (!message || message.length < 2) {
+      return {
+        intent: "geral",
+        reply: "Entrada inválida. Descreva melhor o problema.",
+        commands: []
+      }
+    }
+
+    const intent = classifyIntent(message)
+    const commands = diagnosticCommands(intent)
+
+    let reply = ""
+
+    if (intent === "infra") {
+      reply = "Diagnóstico: erro de infraestrutura detectado."
+    }
+
+    else if (intent === "diagnostico") {
+      reply = "Diagnóstico: erro técnico identificado."
+    }
+
+    else if (intent === "custo") {
+      reply = "Modo custo zero ativo."
+    }
+
+    else if (intent === "seguranca") {
+      reply = "Risco de segurança detectado."
+    }
+
+    else if (intent === "deploy") {
+      reply = "Deploy precisa validação antes de executar."
+    }
+
+    else if (intent === "identidade") {
+      reply = "IASevero foi criada por Marcos Julio Severo."
+    }
+
+    else {
+      reply = "IASevero analisando: " + message
+    }
+
+    if (!reply || reply.length < 5) {
+      reply = safeFallback(message)
+    }
+
+    return {
+      intent,
+      reply,
+      commands
+    }
+
+  } catch (error) {
+    return {
+      intent: "geral",
+      reply: "Erro interno controlado. Nenhuma ação destrutiva executada.",
+      commands: []
+    }
+  }
+}
