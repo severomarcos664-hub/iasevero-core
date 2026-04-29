@@ -212,17 +212,17 @@ export default function IASeveroConsolePage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Digite seu comando..."
+              placeholder="Digite seu comando ou mensagem..."
               disabled={loading}
               style={{
                 width: '100%',
-                padding: '14px 16px',
-                borderRadius: 18,
+                padding: '20px 24px',
+                borderRadius: 22,
                 border: '1px solid rgba(255,255,255,.10)',
                 background: 'rgba(10,16,34,.92)',
                 color: '#ffffff',
                 outline: 'none',
-                fontSize: 15,
+                fontSize: 18,
                 boxShadow: 'inset 0 0 0 1px rgba(255,255,255,.04)',
               }}
             />
@@ -231,12 +231,12 @@ export default function IASeveroConsolePage() {
               onClick={handleSend}
               disabled={loading || !input.trim()}
               style={{
-                padding: '10px 14px',
-                minWidth: 84,
-                borderRadius: 18,
+                padding: '0 24px',
+                minWidth: 120,
+                borderRadius: 22,
                 border: 'none',
                 cursor: loading ? 'not-allowed' : 'pointer',
-                fontSize: 15,
+                fontSize: 18,
                 fontWeight: 800,
                 color: '#fff',
                 background:

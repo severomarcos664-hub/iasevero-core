@@ -1,25 +1,23 @@
-import { runSafeCommand } from './executor'
-import { createJob, runNextStep } from './queue'
-
 export function iaseveroCore(message: string) {
-  let steps: string[] = []
 
-  if (message.includes('erro')) {
-    steps = ['rm -rf .next', 'npm run build', 'npm run dev']
+  const m = message.toLowerCase()
+
+  if (m.includes('quem te criou') || m.includes('criador')) {
+    return {
+      reply: 'IASevero foi criada por Marcos Julio Severo.',
+      job: null
+    }
   }
 
-  const job = createJob(steps)
-
-  runNextStep(job, runSafeCommand)
-  runNextStep(job, runSafeCommand)
-  runNextStep(job, runSafeCommand)
-
-  const details = job.results.length
-    ? '\n\nResultados:\n' + job.results.map((r, i) => `${i + 1}. ${r}`).join('\n')
-    : ''
+  if (m.includes('erro')) {
+    return {
+      reply: 'Sistema detectou erro. Execute: rm -rf .next && npm run build',
+      job: null
+    }
+  }
 
   return {
-    reply: `Job ${job.id} concluído com status: ${job.status}${details}`,
-    job
+    reply: `IASevero analisando: ${message}`,
+    job: null
   }
 }
