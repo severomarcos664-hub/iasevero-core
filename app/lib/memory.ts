@@ -1,33 +1,29 @@
-import fs from "fs"
+import fs from 'fs'
+import path from 'path'
 
-const path = "./data/memory.json"
+const FILE = path.join(process.cwd(), 'memory.json')
 
-type MemoryItem = {
-  user: string
-  message: string
-  time: string
-}
+type Memory = Record<string, any>
 
-export function saveMemory(user: string, message: string) {
-  let db: MemoryItem[] = []
-
-  if (fs.existsSync(path)) {
-    db = JSON.parse(fs.readFileSync(path, "utf-8"))
+function load(): Memory {
+  try {
+    return JSON.parse(fs.readFileSync(FILE, 'utf-8'))
+  } catch {
+    return {}
   }
-
-  db.push({
-    user,
-    message,
-    time: new Date().toISOString()
-  })
-
-  fs.writeFileSync(path, JSON.stringify(db, null, 2))
 }
 
-export function getMemory(user: string): MemoryItem[] {
-  if (!fs.existsSync(path)) return []
+function save(data: Memory) {
+  fs.writeFileSync(FILE, JSON.stringify(data, null, 2))
+}
 
-  const db: MemoryItem[] = JSON.parse(fs.readFileSync(path, "utf-8"))
+export function getUser(userId: string) {
+  const db = load()
+  return db[userId] || {}
+}
 
-  return db.filter((item) => item.user === user).slice(-10)
+export function setUser(userId: string, data: any) {
+  const db = load()
+  db[userId] = { ...(db[userId] || {}), ...data }
+  save(db)
 }
