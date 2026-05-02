@@ -1,3 +1,7 @@
+import { fallbackLocal } from '../fallback'
+import { fallbackLocal } from '../fallback'
+import { fallbackLocal } from '../fallback'
+import { hybridProvider } from './hybrid'
 import { coreIdentity } from '../core-identity'
 import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
 import { detectIntent } from '../router'
@@ -65,6 +69,9 @@ export async function localProvider(message: string) {
 
   const learned = tryLearned(text)
   if (learned) return learned
+
+  const fallback = fallbackLocal(text)
+  if (fallback) return fallback
 
   for (const part of splitInput(text)) {
     const learnedPart = tryLearned(part)
