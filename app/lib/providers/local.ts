@@ -1,6 +1,4 @@
 import { fallbackLocal } from '../fallback'
-import { fallbackLocal } from '../fallback'
-import { fallbackLocal } from '../fallback'
 import { hybridProvider } from './hybrid'
 import { coreIdentity } from '../core-identity'
 import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
@@ -80,6 +78,9 @@ export async function localProvider(message: string) {
 
   const dynamic = smartReply(text, intent)
   if (dynamic) return dynamic
+
+  const hybrid = await hybridProvider(text)
+  if (hybrid) return hybrid
 
   logUnknown(text)
   return 'Ainda não sei isso. Posso aprender se você usar: ensinar: pergunta => resposta'
