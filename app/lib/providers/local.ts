@@ -84,6 +84,9 @@ export async function localProvider(message: string, userId = 'local') {
   const learned = tryLearned(text)
   if (learned) return reply(learned)
 
+  const intelligent = localIntelligence(text, contextSummary(userId) || '')
+  if (intelligent) return reply(intelligent)
+
   const fallback = fallbackLocal(text)
   if (fallback) return reply(fallback)
 
@@ -98,9 +101,7 @@ export async function localProvider(message: string, userId = 'local') {
   const hybrid = await hybridProvider(text)
   if (hybrid) return reply(hybrid)
 
-  const intelligent = localIntelligence(text, contextSummary(userId) || '')
-  if (intelligent) return reply(intelligent)
-
+  
   logUnknown(text)
   return reply('Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta')
 }
