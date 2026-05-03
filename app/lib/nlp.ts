@@ -8,37 +8,102 @@ export function normalizeText(text: string) {
     .trim()
 }
 
-export function hasAny(text: string, terms: string[]) {
-  const n = normalizeText(text)
-  return terms.some(term => n.includes(normalizeText(term)))
+function tokens(text: string) {
+  return normalizeText(text)
+    .split(' ')
+    .filter(w => w.length > 2)
+}
+
+function similarity(a: string, b: string) {
+  const A = new Set(tokens(a))
+  const B = new Set(tokens(b))
+
+  if (!A.size || !B.size) return 0
+
+  let common = 0
+  for (const x of A) {
+    if (B.has(x)) common++
+  }
+
+  return common / Math.max(A.size, B.size)
+}
+
+const INTENTS: Record<string, string[]> = {
+  'identity.creator': [
+    'quem te criou',
+    'quem criou voce',
+    'quem desenvolveu voce',
+    'qual seu criador',
+    'quem e seu criador',
+    'quem fez voce',
+    'quem criou a iasevero'
+  ],
+
+  'concept.humility': [
+    'o que e humildade',
+    'explique humildade',
+    'ser humilde',
+    'defina humildade'
+  ],
+
+  'ops.cost': [
+    'reduzir custo',
+    'custo zero',
+    'gastar menos',
+    'economizar api',
+    'api cara',
+    'api ta cara',
+    'ta caro usar api',
+    'gastando muito',
+    'custo alto',
+    'diminuir gastos',
+    'evitar cobranca'
+  ],
+
+  'ops.security': [
+    'token vazou',
+    'chave vazou',
+    'secret vazou',
+    'vazou minha chave',
+    'vazou token',
+    'problema de seguranca',
+    'proteger sistema',
+    'expor token'
+  ],
+
+  'ops.deploy': [
+    'fazer deploy',
+    'subir sistema',
+    'publicar sistema',
+    'cloud run',
+    'colocar online',
+    'subir para producao'
+  ],
+
+  'ops.diagnostic': [
+    'erro no build',
+    'build quebrou',
+    'erro next',
+    'bug no sistema',
+    'deu erro',
+    'falha no sistema',
+    'sistema travou'
+  ]
 }
 
 export function detectSemanticIntent(text: string): string | null {
-  const n = normalizeText(text)
+  let bestIntent: string | null = null
+  let bestScore = 0
 
-  if (
-    hasAny(n, ['quem te criou', 'quem criou voce', 'seu criador', 'qual seu criador', 'quem desenvolveu voce'])
-  ) return 'identity.creator'
+  for (const [intent, examples] of Object.entries(INTENTS)) {
+    for (const example of examples) {
+      const score = similarity(text, example)
+      if (score > bestScore) {
+        bestScore = score
+        bestIntent = intent
+      }
+    }
+  }
 
-  if (
-    hasAny(n, ['humildade', 'ser humilde', 'o que e humildade'])
-  ) return 'concept.humility'
-
-  if (
-    hasAny(n, ['reduzir custo', 'custo zero', 'gastar menos', 'economizar api', 'api cara'])
-  ) return 'ops.cost'
-
-  if (
-    hasAny(n, ['token vazou', 'chave vazou', 'secret vazou', 'expor token', 'seguranca'])
-  ) return 'ops.security'
-
-  if (
-    hasAny(n, ['deploy', 'subir sistema', 'cloud run', 'publicar sistema'])
-  ) return 'ops.deploy'
-
-  if (
-    hasAny(n, ['erro no build', 'build quebrou', 'erro next', 'bug no sistema', 'falha'])
-  ) return 'ops.diagnostic'
-
-  return null
+  return bestScore >= 0.34 ? bestIntent : null
 }
