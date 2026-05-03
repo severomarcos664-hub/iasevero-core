@@ -84,9 +84,6 @@ export async function localProvider(message: string, userId = 'local') {
   const learned = tryLearned(text)
   if (learned) return reply(learned)
 
-  const intelligent = localIntelligence(text, contextSummary(userId) || '')
-  if (intelligent && intelligent.length > 40) return reply(intelligent)
-
   const fallback = fallbackLocal(text)
   if (fallback) return reply(fallback)
 

@@ -1,5 +1,3 @@
-import { detectCommand } from '../command-detector'
-import { localIntelligence } from '../zero-cost-brain'
 import { smartContext } from '../context-smart';
 import { fallbackLocal } from '../fallback'
 import { hybridProvider } from './hybrid'
@@ -51,9 +49,6 @@ export async function localProvider(message: string, userId = 'local') {
 
   if (!text) return reply('Entrada vazia.')
 
-  const command = detectCommand(text)
-  if (command) return reply(command)
-
   if (text.toLowerCase() === 'contexto') {
     return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
   }
@@ -84,9 +79,6 @@ export async function localProvider(message: string, userId = 'local') {
   const learned = tryLearned(text)
   if (learned) return reply(learned)
 
-  const intelligent = localIntelligence(text, contextSummary(userId) || '')
-  if (intelligent && intelligent.length > 40) return reply(intelligent)
-
   const fallback = fallbackLocal(text)
   if (fallback) return reply(fallback)
 
@@ -101,7 +93,6 @@ export async function localProvider(message: string, userId = 'local') {
   const hybrid = await hybridProvider(text)
   if (hybrid) return reply(hybrid)
 
-  
   logUnknown(text)
   return reply('Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta')
 }

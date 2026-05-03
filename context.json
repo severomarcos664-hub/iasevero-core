@@ -16,5 +16,161 @@
     "message": "contexto",
     "reply": "Usuário: quem te criou\nIASevero: IASevero foi criada por Marcos Julio Severo.\n\nUsuário: minha api está muito cara\nIASevero: Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
     "at": "2026-05-03T19:00:48.183Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
+    "at": "2026-05-03T19:19:02.450Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta",
+    "at": "2026-05-03T19:19:13.418Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
+    "at": "2026-05-03T19:43:49.566Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Você mencionou custo de API. Próximo passo recomendado: manter provider local ativo, evitar API externa em testes, usar cache e só liberar IA avançada com limite diário de custo.",
+    "at": "2026-05-03T19:44:02.957Z"
+  },
+  {
+    "userId": "local",
+    "message": "git add app/lib/zero-cost-brain.ts app/lib/providers/local.ts git commit -m \"feat: add zero cost local intelligence v2\" git push",
+    "reply": "Modo custo zero ativo: manter local, sem API externa e sem deploy desnecessário.",
+    "at": "2026-05-03T19:44:26.202Z"
+  },
+  {
+    "userId": "local",
+    "message": "Humildade",
+    "reply": "Humildade é reconhecer limites, aprender constantemente, corrigir erros e respeitar os outros sem se considerar superior.",
+    "at": "2026-05-03T19:52:58.665Z"
+  },
+  {
+    "userId": "local",
+    "message": "npm run dev",
+    "reply": "Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta",
+    "at": "2026-05-03T19:53:06.955Z"
+  },
+  {
+    "userId": "local",
+    "message": "Quem tem criou",
+    "reply": "Marcos Julio Severo",
+    "at": "2026-05-03T19:53:29.768Z"
+  },
+  {
+    "userId": "local",
+    "message": "npm run dev",
+    "reply": "Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.",
+    "at": "2026-05-03T19:59:52.662Z"
+  },
+  {
+    "userId": "local",
+    "message": "npm run build",
+    "reply": "Comando detectado: npm run build. Ele valida se o projeto compila corretamente antes de rodar ou publicar.",
+    "at": "2026-05-03T20:00:04.631Z"
+  },
+  {
+    "userId": "local",
+    "message": "rm -rf .next",
+    "reply": "Comando detectado: rm -rf .next. Ele limpa o build anterior do Next.js para evitar cache corrompido.",
+    "at": "2026-05-03T20:00:18.353Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
+    "at": "2026-05-03T20:10:10.101Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Você mencionou custo de API. Próximo passo recomendado: manter provider local ativo, evitar API externa em testes, usar cache e só liberar IA avançada com limite diário de custo.",
+    "at": "2026-05-03T20:10:17.956Z"
+  },
+  {
+    "userId": "local",
+    "message": "Quem te criou",
+    "reply": "IASevero foi criada por Marcos Julio Severo.",
+    "at": "2026-05-03T20:10:31.754Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Modo custo zero ativo. Estratégia: usar provider local primeiro, evitar APIs externas em testes, cachear respostas úteis e só ativar inteligência avançada com limite diário.",
+    "at": "2026-05-03T21:02:52.324Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Você mencionou custo de API. Próximo passo recomendado: manter provider local ativo, evitar API externa em testes, usar cache e só liberar IA avançada com limite diário de custo.",
+    "at": "2026-05-03T21:03:03.849Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Custo detectado. Estratégia correta: provider local primeiro, cache de respostas, testes sem API externa e ativação futura de IA avançada com limite de uso.",
+    "at": "2026-05-03T21:26:17.951Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Pelo contexto, você está lidando com custo de API. Ação recomendada: manter IASevero em modo local, usar cache, evitar testes com API externa e só ativar inteligência avançada com limite diário.",
+    "at": "2026-05-03T21:26:26.351Z"
+  },
+  {
+    "userId": "local",
+    "message": "deu erro no build",
+    "reply": "Diagnóstico técnico: isole o erro, rode rm -rf .next, execute security_check, verify_iasevero e só depois npm run build.",
+    "at": "2026-05-03T21:26:40.894Z"
+  },
+  {
+    "userId": "local",
+    "message": "quero subir para produção",
+    "reply": "Deploy seguro: build OK, security_check OK, verify OK, Git atualizado, rollback preparado e Cloud Run com min instances 0.",
+    "at": "2026-05-03T21:26:51.157Z"
+  },
+  {
+    "userId": "local",
+    "message": "npm run dev",
+    "reply": "Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.",
+    "at": "2026-05-03T21:38:37.102Z"
+  },
+  {
+    "userId": "local",
+    "message": "contexto",
+    "reply": "Usuário: e agora?\nIASevero: Você mencionou custo de API. Próximo passo recomendado: manter provider local ativo, evitar API externa em testes, usar cache e só liberar IA avançada com limite diário de custo.\n\nUsuário: minha api está cara\nIASevero: Custo detectado. Estratégia correta: provider local primeiro, cache de respostas, testes sem API externa e ativação futura de IA avançada com limite de uso.\n\nUsuário: e agora?\nIASevero: Pelo contexto, você está lidando com custo de API. Ação recomendada: manter IASevero em modo local, usar cache, evitar testes com API externa e só ativar inteligência avançada com limite diário.\n\nUsuário: deu erro no build\nIASevero: Diagnóstico técnico: isole o erro, rode rm -rf .next, execute security_check, verify_iasevero e só depois npm run build.\n\nUsuário: quero subir para produção\nIASevero: Deploy seguro: build OK, security_check OK, verify OK, Git atualizado, rollback preparado e Cloud Run com min instances 0.\n\nUsuário: npm run dev\nIASevero: Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.",
+    "at": "2026-05-03T21:38:49.477Z"
+  },
+  {
+    "userId": "local",
+    "message": "contexto",
+    "reply": "Usuário: minha api está cara\nIASevero: Custo detectado. Estratégia correta: provider local primeiro, cache de respostas, testes sem API externa e ativação futura de IA avançada com limite de uso.\n\nUsuário: e agora?\nIASevero: Pelo contexto, você está lidando com custo de API. Ação recomendada: manter IASevero em modo local, usar cache, evitar testes com API externa e só ativar inteligência avançada com limite diário.\n\nUsuário: deu erro no build\nIASevero: Diagnóstico técnico: isole o erro, rode rm -rf .next, execute security_check, verify_iasevero e só depois npm run build.\n\nUsuário: quero subir para produção\nIASevero: Deploy seguro: build OK, security_check OK, verify OK, Git atualizado, rollback preparado e Cloud Run com min instances 0.\n\nUsuário: npm run dev\nIASevero: Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.\n\nUsuário: contexto\nIASevero: Usuário: e agora?\nIASevero: Você mencionou custo de API. Próximo passo recomendado: manter provider local ativo, evitar API externa em testes, usar cache e só liberar IA avançada com limite diário de custo.\n\nUsuário: minha api está cara\nIASevero: Custo detectado. Estratégia correta: provider local primeiro, cache de respostas, testes sem API externa e ativação futura de IA avançada com limite de uso.\n\nUsuário: e agora?\nIASevero: Pelo contexto, você está lidando com custo de API. Ação recomendada: manter IASevero em modo local, usar cache, evitar testes com API externa e só ativar inteligência avançada com limite diário.\n\nUsuário: deu erro no build\nIASevero: Diagnóstico técnico: isole o erro, rode rm -rf .next, execute security_check, verify_iasevero e só depois npm run build.\n\nUsuário: quero subir para produção\nIASevero: Deploy seguro: build OK, security_check OK, verify OK, Git atualizado, rollback preparado e Cloud Run com min instances 0.\n\nUsuário: npm run dev\nIASevero: Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.",
+    "at": "2026-05-03T21:39:08.988Z"
+  },
+  {
+    "userId": "local",
+    "message": "npm run dev",
+    "reply": "Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.",
+    "at": "2026-05-03T21:39:38.279Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está cara",
+    "reply": "Você está enfrentando custo de API.\nContexto recente:\nolvimento.\n\nUsuário: npm run dev\nIASevero: Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.\n\nAção: priorize execução local e reduza chamadas externas.",
+    "at": "2026-05-03T21:44:21.151Z"
+  },
+  {
+    "userId": "local",
+    "message": "e agora?",
+    "reply": "Você está pedindo próximo passo.\nBaseado no fluxo:\no: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.\n\nAção: priorize execução local e reduza chamadas externas.\n\nRecomendação: continuar com validação antes de avançar.",
+    "at": "2026-05-03T21:44:37.763Z"
   }
 ]

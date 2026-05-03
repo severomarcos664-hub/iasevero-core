@@ -3,8 +3,8 @@
     "message": "quem te criou",
     "response": "Marcos Julio Severo",
     "approved": true,
-    "uses": 4,
-    "score": 4.6,
+    "uses": 5,
+    "score": 5.1,
     "at": "2026-05-01T02:08:17.894Z"
   },
   {
@@ -48,5 +48,19 @@
     "uses": 0,
     "score": 0,
     "at": "2026-05-02T02:01:31.790Z"
+  },
+  {
+    "message": "e agora?",
+    "approved": false,
+    "uses": 0,
+    "score": 0,
+    "at": "2026-05-03T19:19:13.418Z"
+  },
+  {
+    "message": "npm run dev",
+    "approved": false,
+    "uses": 0,
+    "score": 0,
+    "at": "2026-05-03T19:53:06.954Z"
   }
 ]
