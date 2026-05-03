@@ -1,3 +1,4 @@
+import { detectCommand } from '../command-detector'
 import { localIntelligence } from '../zero-cost-brain'
 import { smartContext } from '../context-smart';
 import { fallbackLocal } from '../fallback'
@@ -49,6 +50,9 @@ export async function localProvider(message: string, userId = 'local') {
   }
 
   if (!text) return reply('Entrada vazia.')
+
+  const command = detectCommand(text)
+  if (command) return reply(command)
 
   if (text.toLowerCase() === 'contexto') {
     return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
