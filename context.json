@@ -1,0 +1,20 @@
+[
+  {
+    "userId": "local",
+    "message": "quem te criou",
+    "reply": "IASevero foi criada por Marcos Julio Severo.",
+    "at": "2026-05-03T19:00:23.132Z"
+  },
+  {
+    "userId": "local",
+    "message": "minha api está muito cara",
+    "reply": "Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
+    "at": "2026-05-03T19:00:31.083Z"
+  },
+  {
+    "userId": "local",
+    "message": "contexto",
+    "reply": "Usuário: quem te criou\nIASevero: IASevero foi criada por Marcos Julio Severo.\n\nUsuário: minha api está muito cara\nIASevero: Modo custo zero ativo.\nPrioridade técnica:\n1. usar provider local primeiro;\n2. evitar APIs externas em testes;\n3. cachear respostas úteis;\n4. só ligar inteligência avançada com limite diário de custo.",
+    "at": "2026-05-03T19:00:48.183Z"
+  }
+]

@@ -3,6 +3,7 @@ import { hybridProvider } from './hybrid'
 import { coreIdentity } from '../core-identity'
 import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
 import { detectIntent } from '../router'
+import { contextSummary, saveTurn } from '../context'
 
 function smartReply(message: string, intent: string) {
   const m = message.toLowerCase()
@@ -37,13 +38,22 @@ function splitInput(text: string) {
     .filter(Boolean)
 }
 
-export async function localProvider(message: string) {
+export async function localProvider(message: string, userId = 'local') {
   const text = (message || '').trim()
 
-  if (!text) return 'Entrada vazia.'
+  function reply(output: string) {
+    saveTurn(userId, text, output)
+    return output
+  }
+
+  if (!text) return reply('Entrada vazia.')
+
+  if (text.toLowerCase() === 'contexto') {
+    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+  }
 
   const fixed = coreIdentity(text)
-  if (fixed) return fixed
+  if (fixed) return reply(fixed)
 
   const intent = detectIntent(text)
 
@@ -51,37 +61,37 @@ export async function localProvider(message: string) {
     const [q, r] = text.replace('ensinar:', '').split('=>')
     if (q && r) {
       teach(q.trim(), r.trim())
-      return `Registrado. Use: aprovar: ${q.trim()}`
+      return reply(`Registrado. Use: aprovar: ${q.trim()}`)
     }
-    return 'Formato correto: ensinar: pergunta => resposta'
+    return reply('Formato correto: ensinar: pergunta => resposta')
   }
 
   if (intent === 'approve') {
     const q = text.replace('aprovar:', '').trim()
-    return approve(q) ? `Aprovado: ${q}` : 'Não encontrado.'
+    return reply(approve(q) ? `Aprovado: ${q}` : 'Não encontrado.')
   }
 
   if (intent === 'memory') {
-    return JSON.stringify(listMemory(), null, 2)
+    return reply(JSON.stringify(listMemory(), null, 2))
   }
 
   const learned = tryLearned(text)
-  if (learned) return learned
+  if (learned) return reply(learned)
 
   const fallback = fallbackLocal(text)
-  if (fallback) return fallback
+  if (fallback) return reply(fallback)
 
   for (const part of splitInput(text)) {
     const learnedPart = tryLearned(part)
-    if (learnedPart) return learnedPart
+    if (learnedPart) return reply(learnedPart)
   }
 
   const dynamic = smartReply(text, intent)
-  if (dynamic) return dynamic
+  if (dynamic) return reply(dynamic)
 
   const hybrid = await hybridProvider(text)
-  if (hybrid) return hybrid
+  if (hybrid) return reply(hybrid)
 
   logUnknown(text)
-  return 'Ainda não sei isso. Posso aprender se você usar: ensinar: pergunta => resposta'
+  return reply('Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta')
 }
