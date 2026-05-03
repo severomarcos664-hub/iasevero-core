@@ -1,44 +1,30 @@
-export function fallbackLocal(text: string): string | null {
-  const t = text.toLowerCase()
+import { detectSemanticIntent } from './nlp'
 
-  // IDENTIDADE
-  if (t.includes('quem te criou') || t.includes('seu criador')) {
+export function fallbackLocal(text: string): string | null {
+  const intent = detectSemanticIntent(text)
+
+  if (intent === 'identity.creator') {
     return 'IASevero foi criada por Marcos Julio Severo.'
   }
 
-  // CONCEITOS
-  if (t.includes('humildade')) {
-    return 'Humildade é reconhecer limites, aprender constantemente e respeitar os outros.'
+  if (intent === 'concept.humility') {
+    return 'Humildade é reconhecer limites, aprender constantemente e respeitar os outros sem se considerar superior.'
   }
 
-  // TECNOLOGIA
-  if (t.includes('ia') || t.includes('inteligencia')) {
-    return 'IASevero é um sistema de inteligência artificial em evolução com arquitetura híbrida.'
+  if (intent === 'ops.cost') {
+    return 'Modo atual: custo zero. Prioridade: usar provider local, evitar APIs externas e só ligar inteligência avançada com limite de custo.'
   }
 
-  // CUSTO
-  if (t.includes('custo') || t.includes('gastar')) {
-    return 'Modo atual: custo zero. Evitando uso de APIs externas.'
+  if (intent === 'ops.security') {
+    return 'Segurança detectada. Nunca exponha tokens, chaves ou secrets. Se vazou, revogue imediatamente e gere outro.'
   }
 
-  // SEGURANÇA
-  if (t.includes('token') || t.includes('chave')) {
-    return 'Nunca exponha tokens ou chaves. Segurança é prioridade máxima.'
+  if (intent === 'ops.deploy') {
+    return 'Deploy detectado. Só publique depois de build OK, security_check OK, verify OK, Git atualizado e rollback preparado.'
   }
 
-  // DEPLOY
-  if (t.includes('deploy')) {
-    return 'Faça deploy apenas com build validado e segurança verificada.'
-  }
-
-  // ERRO
-  if (t.includes('erro')) {
-    return 'Erro detectado. Verifique logs e execute limpeza de build.'
-  }
-
-  // VENDAS / PRODUTO
-  if (t.includes('vender') || t.includes('ganhar dinheiro')) {
-    return 'IASevero pode ser usada como assistente inteligente para negócios e automação.'
+  if (intent === 'ops.diagnostic') {
+    return 'Diagnóstico detectado. Primeiro rode: rm -rf .next && ./security_check.sh && ./verify_iasevero.sh'
   }
 
   return null
