@@ -4,5 +4,29 @@
     "message": "custo da api",
     "reply": "🧠 IASevero\n\n📩 Entrada:\ncusto da api\n\n⚙️ Análise:\nControle de custo ativo. Priorize execução local e reduza chamadas externas.\n\n🚀 Status: ativo",
     "at": "2026-05-03T23:58:38.066Z"
+  },
+  {
+    "userId": "local",
+    "message": "api cara",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\napi cara\n\n⚙️ Análise:\nControle de custo ativo. Priorize execução local e reduza chamadas externas.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T00:18:42.299Z"
+  },
+  {
+    "userId": "local",
+    "message": "deu bug",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\ndeu bug\n\n⚙️ Análise:\nErro detectado. Próximo passo: limpar build, validar logs e testar novamente.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T00:18:50.915Z"
+  },
+  {
+    "userId": "local",
+    "message": "requisição falhou",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nrequisição falhou\n\n⚙️ Análise:\nAPI operacional. Endpoint /api/chat deve responder normalmente.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T00:19:03.425Z"
+  },
+  {
+    "userId": "local",
+    "message": "requisição falhou",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nrequisição falhou\n\n⚙️ Análise:\nErro detectado. Próximo passo: limpar build, validar logs e testar novamente.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T00:22:48.572Z"
   }
 ]
