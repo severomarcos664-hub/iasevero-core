@@ -28,5 +28,77 @@
     "message": "requisição falhou",
     "reply": "🧠 IASevero\n\n📩 Entrada:\nrequisição falhou\n\n⚙️ Análise:\nErro detectado. Próximo passo: limpar build, validar logs e testar novamente.\n\n🚀 Status: ativo",
     "at": "2026-05-04T00:22:48.572Z"
+  },
+  {
+    "userId": "local",
+    "message": "deu erro",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\ndeu erro\n\n⚙️ Análise:\nErro detectado. Próximo passo: limpar build, validar logs e testar novamente.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:24.345Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:47.652Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:47.679Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:47.705Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:47.729Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T22:59:47.753Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste final",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste final\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:31:02.715Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:32:10.265Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:32:10.295Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:32:10.326Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:32:10.354Z"
+  },
+  {
+    "userId": "local",
+    "message": "teste",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nteste\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
+    "at": "2026-05-04T23:32:10.382Z"
   }
 ]
