@@ -1,0 +1,86 @@
+export type Intent = 'cost' | 'debug' | 'memory' | 'deploy' | 'guide' | 'identity' | 'general'
+
+// cache removido
+
+function norm(text: string) {
+  return (text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+function random(arr: string[]) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
+export function classifyIntent(message: string): Intent {
+  const m = norm(message)
+
+  const scores: Record<Intent, number> = {
+    cost: 0,
+    debug: 0,
+    memory: 0,
+    deploy: 0,
+    guide: 0,
+    identity: 0,
+    general: 0
+  }
+
+  if (m.includes('criador') || m.includes('quem te criou')) scores.identity += 5
+  if (m.includes('api') || m.includes('custo') || m.includes('caro')) scores.cost += 4
+  if (m.includes('erro') || m.includes('bug') || m.includes('falha')) scores.debug += 4
+  if (m.includes('memoria') || m.includes('contexto')) scores.memory += 4
+  if (m.includes('deploy') || m.includes('producao') || m.includes('build')) scores.deploy += 4
+  if (m.includes('como') || m.includes('agora') || m.includes('proximo')) scores.guide += 3
+
+  let best: Intent = 'general'
+  for (const key of Object.keys(scores) as Intent[]) {
+    if (scores[key] > scores[best]) best = key
+  }
+
+  return scores[best] > 0 ? best : 'general'
+}
+
+export function localIntelligence(message: string, context: string): string | null {
+  // cache removido
+
+  const intent = classifyIntent(message)
+  const ctx = context.slice(-150)
+
+  let response: string | null = null
+
+// evitar repetição de resposta
+
+  if (intent === 'cost') {
+    response = random([
+      `Você está enfrentando custo de API.\nContexto recente:\n${ctx}\n\nAção: priorize execução local e reduza chamadas externas.`,
+      `Custo alto detectado.\nBaseado no histórico:\n${ctx}\n\nRecomendado: usar cache e limitar API.`,
+    ])
+  }
+
+  else if (intent === 'debug') {
+    response = random([
+      `Erro identificado.\nHistórico:\n${ctx}\n\nPasso: limpar build, validar imports e rebuild.`,
+      `Falha detectada.\nContexto:\n${ctx}\n\nAção: rm -rf .next → checks → build.`,
+    ])
+  }
+
+  else if (intent === 'deploy') {
+    response = `Preparação de deploy:\n${ctx}\n\nChecklist:\n- build OK\n- security_check OK\n- verify OK\n- rollback pronto`
+  }
+
+  else if (intent === 'guide') {
+    return `Sistema ativo.
+
+Próximo passo:
+1. testar /api/chat
+2. validar resposta do provider local
+3. verificar memória/contexto
+
+Digite: testar api`
+  }
+
+  // cache removido
+
+  return response
+}

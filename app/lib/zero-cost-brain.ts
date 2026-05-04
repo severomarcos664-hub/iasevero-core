@@ -1,78 +1,26 @@
-export type Intent = 'cost' | 'debug' | 'memory' | 'deploy' | 'guide' | 'identity' | 'general'
 
-const responseCache = new Map<string, string>()
+export function localIntelligence(message: string, context: string): string {
+  const msg = message.toLowerCase()
 
-function norm(text: string) {
-  return (text || '')
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-}
+  let analysis = ""
 
-function random(arr: string[]) {
-  return arr[Math.floor(Math.random() * arr.length)]
-}
-
-export function classifyIntent(message: string): Intent {
-  const m = norm(message)
-
-  const scores: Record<Intent, number> = {
-    cost: 0,
-    debug: 0,
-    memory: 0,
-    deploy: 0,
-    guide: 0,
-    identity: 0,
-    general: 0
+  if (msg.includes("erro")) {
+    analysis = "Erro detectado. Próximo passo: limpar build, validar logs e testar novamente."
+  } else if (msg.includes("custo")) {
+    analysis = "Controle de custo ativo. Priorize execução local e reduza chamadas externas."
+  } else if (msg.includes("api")) {
+    analysis = "API operacional. Endpoint /api/chat deve responder normalmente."
+  } else {
+    analysis = "Sistema ativo e estável."
   }
 
-  if (m.includes('criador') || m.includes('quem te criou')) scores.identity += 5
-  if (m.includes('api') || m.includes('custo') || m.includes('caro')) scores.cost += 4
-  if (m.includes('erro') || m.includes('bug') || m.includes('falha')) scores.debug += 4
-  if (m.includes('memoria') || m.includes('contexto')) scores.memory += 4
-  if (m.includes('deploy') || m.includes('producao') || m.includes('build')) scores.deploy += 4
-  if (m.includes('como') || m.includes('agora') || m.includes('proximo')) scores.guide += 3
+  return `🧠 IASevero
 
-  let best: Intent = 'general'
-  for (const key of Object.keys(scores) as Intent[]) {
-    if (scores[key] > scores[best]) best = key
-  }
+📩 Entrada:
+${message}
 
-  return scores[best] > 0 ? best : 'general'
-}
+⚙️ Análise:
+${analysis}
 
-export function localIntelligence(message: string, context: string): string | null {
-  const cached = responseCache.get(message)
-  if (cached) return cached
-
-  const intent = classifyIntent(message)
-  const ctx = context.slice(-150)
-
-  let response: string | null = null
-
-  if (intent === 'cost') {
-    response = random([
-      `Você está enfrentando custo de API.\nContexto recente:\n${ctx}\n\nAção: priorize execução local e reduza chamadas externas.`,
-      `Custo alto detectado.\nBaseado no histórico:\n${ctx}\n\nRecomendado: usar cache e limitar API.`,
-    ])
-  }
-
-  else if (intent === 'debug') {
-    response = random([
-      `Erro identificado.\nHistórico:\n${ctx}\n\nPasso: limpar build, validar imports e rebuild.`,
-      `Falha detectada.\nContexto:\n${ctx}\n\nAção: rm -rf .next → checks → build.`,
-    ])
-  }
-
-  else if (intent === 'deploy') {
-    response = `Preparação de deploy:\n${ctx}\n\nChecklist:\n- build OK\n- security_check OK\n- verify OK\n- rollback pronto`
-  }
-
-  else if (intent === 'guide') {
-    response = `Você está pedindo próximo passo.\nBaseado no fluxo:\n${ctx}\n\nRecomendação: continuar com validação antes de avançar.`
-  }
-
-  if (response) responseCache.set(message, response)
-
-  return response
+🚀 Status: ativo`
 }
