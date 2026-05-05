@@ -1,13 +1,1 @@
-{
-  "local": {
-    "history": [
-      "Usuário: meu nome é Marcos",
-      "IASevero: 🧠 IASevero\n\n📩 Entrada:\nModo IASevero local.\n\nUse respostas objetivas, técnicas e seguras.\n\nFatos conhecidos: {\"nome\":\"Marcos\"}\n\nMensagem atual:\nmeu nome é Marcos\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
-      "Usuário: qual meu nome?",
-      "IASevero: Seu nome registrado é Marcos."
-    ],
-    "facts": {
-      "nome": "Marcos"
-    }
-  }
-}
+{}
