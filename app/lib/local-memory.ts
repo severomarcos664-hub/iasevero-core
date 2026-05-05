@@ -1,27 +1,31 @@
-type MemoryItem = {
-  role: 'user' | 'assistant'
-  text: string
-  at: string
-}
+import fs from 'fs'
 
-const memoryStore: Record<string, MemoryItem[]> = {}
+const FILE = 'data/memory.json'
 
-export function remember(userId: string, role: 'user' | 'assistant', text: string) {
-  if (!memoryStore[userId]) {
-    memoryStore[userId] = []
-  }
-
-  memoryStore[userId].push({
-    role,
-    text,
-    at: new Date().toISOString()
-  })
-
-  if (memoryStore[userId].length > 20) {
-    memoryStore[userId].shift()
+function readMemory() {
+  try {
+    return JSON.parse(fs.readFileSync(FILE, 'utf8'))
+  } catch {
+    return {}
   }
 }
 
-export function recall(userId: string) {
-  return (memoryStore[userId] || []).slice(-6)
+function writeMemory(data: any) {
+  fs.writeFileSync(FILE, JSON.stringify(data, null, 2))
+}
+
+export function saveMessage(userId: string, message: string) {
+  const db = readMemory()
+  db[userId] = db[userId] || []
+  db[userId].push(message)
+
+  // mantém só últimos 5
+  db[userId] = db[userId].slice(-5)
+
+  writeMemory(db)
+}
+
+export function getHistory(userId: string): string[] {
+  const db = readMemory()
+  return db[userId] || []
 }
