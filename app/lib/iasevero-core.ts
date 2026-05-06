@@ -1,5 +1,6 @@
 import { runProvider } from './provider'
 import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+import { buildDecision, validateDecisionAnswer } from './decision-engine'
 
 function detectFact(message: string): { key: string; value: string } | null {
   const nome = message.match(/meu nome (é|e)\s+(.+)/i)
@@ -45,15 +46,10 @@ export async function iaseveroCore(message: string, userId = 'local') {
   }
 
   const history = getHistory(userId).slice(-8).join('\n')
-  const context = [
-    'Modo IASevero local.',
-    'Use respostas objetivas, técnicas e seguras.',
-    `Fatos conhecidos: ${JSON.stringify(facts)}`,
-    history ? `Histórico recente:\n${history}` : '',
-    `Mensagem atual:\n${message}`
-  ].filter(Boolean).join('\n\n')
+  const decision = buildDecision({ message, facts, history })
 
-  const reply = await runProvider(context)
+  const rawReply = await runProvider(decision.context)
+  const reply = validateDecisionAnswer(message, rawReply)
 
   saveMessage(userId, `Usuário: ${message}`)
   saveMessage(userId, `IASevero: ${reply}`)
