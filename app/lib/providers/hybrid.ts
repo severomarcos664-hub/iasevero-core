@@ -1,5 +1,6 @@
+import { getIASeveroMode } from '../mode'
 export async function hybridProvider(message: string): Promise<string | null> {
-  const mode = process.env.AISEVERO_MODE || 'local'
+  const mode = getIASeveroMode()
 
   // 🔒 MODO LOCAL (ATUAL)
   if (mode === 'local') {
