@@ -19,7 +19,6 @@ for (const file of files) {
 const core = fs.readFileSync('app/lib/iasevero-core.ts', 'utf8')
 const memory = fs.readFileSync('app/lib/local-memory.ts', 'utf8')
 const engine = fs.readFileSync('app/lib/decision-engine.ts', 'utf8')
-const mode = fs.readFileSync('app/lib/mode.ts', 'utf8')
 
 const checks = [
   core.includes('runProvider'),
@@ -31,8 +30,7 @@ const checks = [
   memory.includes('facts'),
   engine.includes('classifyIntent'),
   engine.includes('buildDecision'),
-  engine.includes('validateDecisionAnswer'),
-  mode.includes("return 'safe'")
+  engine.includes('validateDecisionAnswer')
 ]
 
 if (!checks.every(Boolean)) {
