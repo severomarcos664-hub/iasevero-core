@@ -1,4 +1,7 @@
 import { resolveRuntimeDecision } from './runtime'
+import { createEvent } from './events'
+import { logEvent } from './event-logger'
+import { evaluatePolicy } from './policy'
 
 export type ProviderRoute = {
   provider: 'local' | 'openai' | 'hybrid'
@@ -6,8 +9,28 @@ export type ProviderRoute = {
   reason: string
 }
 
-export function resolveProviderRoute(intent = 'general'): ProviderRoute {
+export function resolveProviderRoute(
+  message = '',
+  intent = 'general'
+): ProviderRoute {
   const runtime = resolveRuntimeDecision()
+
+logEvent(
+  createEvent('routing', {
+    provider: runtime.mode,
+    risk: runtime.safe ? 'low' : 'medium',
+    details: runtime.reason
+  })
+)
+  const policy = evaluatePolicy(message)
+
+  if (!policy.allowed) {
+    return {
+      provider: 'local',
+      allowExternal: false,
+      reason: policy.reason
+    }
+  }
 
   if (!runtime.allowExternal) {
     return {
