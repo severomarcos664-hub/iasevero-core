@@ -4,6 +4,7 @@ const files = [
   'app/lib/iasevero-core.ts',
   'app/lib/local-memory.ts',
   'app/lib/decision-engine.ts',
+  'app/lib/local-brain.ts',
   'app/lib/response-quality.ts',
   'app/api/chat/route.ts',
   'data/memory.json'
@@ -19,6 +20,7 @@ for (const file of files) {
 const core = fs.readFileSync('app/lib/iasevero-core.ts', 'utf8')
 const memory = fs.readFileSync('app/lib/local-memory.ts', 'utf8')
 const engine = fs.readFileSync('app/lib/decision-engine.ts', 'utf8')
+const brain = fs.readFileSync('app/lib/local-brain.ts', 'utf8')
 const mode = fs.readFileSync('app/lib/mode.ts', 'utf8')
 
 const checks = [
@@ -32,6 +34,8 @@ const checks = [
   engine.includes('classifyIntent'),
   engine.includes('buildDecision'),
   engine.includes('validateDecisionAnswer'),
+  brain.includes('localBrain'),
+  core.includes("from './local-brain'"),
   mode.includes("return 'safe'")
 ]
 
