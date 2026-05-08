@@ -1,22 +1,47 @@
-export type IASeveroIntent =
-  | 'shell'
-  | 'diagnostic'
-  | 'memory'
-  | 'cost'
-  | 'general'
-
-export function resolvePriority(intent: IASeveroIntent) {
-  const priorities = {
-    shell: 100,
-    diagnostic: 90,
-    memory: 80,
-    cost: 70,
-    general: 10
-  }
-
-  return priorities[intent] || 0
+export type PolicyResult = {
+  allowed: boolean
+  risk: 'low' | 'medium' | 'high'
+  reason: string
 }
 
-export function shouldBlockExternal(intent: IASeveroIntent) {
-  return ['shell', 'diagnostic', 'cost'].includes(intent)
+const BLOCKED_PATTERNS = [
+  'rm -rf',
+  'shutdown',
+  'reboot',
+  'mkfs',
+  'dd if=',
+  'format c:',
+  ':(){:|:&};:',
+]
+
+export function evaluatePolicy(message: string): PolicyResult {
+  const input = message.toLowerCase()
+
+  for (const pattern of BLOCKED_PATTERNS) {
+    if (input.includes(pattern)) {
+      return {
+        allowed: false,
+        risk: 'high',
+        reason: `Comando bloqueado pela policy: ${pattern}`
+      }
+    }
+  }
+
+  if (
+    input.includes('delete') ||
+    input.includes('deletar') ||
+    input.includes('apagar')
+  ) {
+    return {
+      allowed: true,
+      risk: 'medium',
+      reason: 'Ação destrutiva detectada; exigir confirmação.'
+    }
+  }
+
+  return {
+    allowed: true,
+    risk: 'low',
+    reason: 'Policy aprovada.'
+  }
 }
