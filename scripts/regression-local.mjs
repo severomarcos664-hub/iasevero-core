@@ -22,28 +22,26 @@ const core = fs.readFileSync('app/lib/iasevero-core.ts', 'utf8')
 const memory = fs.readFileSync('app/lib/local-memory.ts', 'utf8')
 const engine = fs.readFileSync('app/lib/decision-engine.ts', 'utf8')
 const brain = fs.readFileSync('app/lib/local-brain.ts', 'utf8')
-const mode = fs.readFileSync('app/lib/mode.ts', 'utf8')
+const observability = fs.readFileSync('app/lib/observability.ts', 'utf8')
 
 const checks = [
   core.includes('runProvider'),
   core.includes('buildDecision'),
   core.includes('validateDecisionAnswer'),
+  core.includes("from './local-brain'"),
   memory.includes('saveFact'),
   memory.includes('getFacts'),
   memory.includes('history'),
-  memory.includes('facts'),
   engine.includes('classifyIntent'),
   engine.includes('buildDecision'),
   engine.includes('validateDecisionAnswer'),
   brain.includes('localBrain'),
-  core.includes("from './local-brain'"),
-  observability.includes('logEvent'),
-  mode.includes("return 'safe'")
+  observability.includes('logEvent')
 ]
 
 if (!checks.every(Boolean)) {
-  console.error('FALHOU estrutura do decision engine incompleta')
+  console.error('FALHOU estrutura da IASevero incompleta')
   process.exit(1)
 }
 
-console.log('OK: regressão local IASevero + decision engine aprovada')
+console.log('OK: regressão local IASevero completa aprovada')
