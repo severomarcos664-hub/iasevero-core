@@ -5,6 +5,7 @@ const files = [
   'app/lib/local-memory.ts',
   'app/lib/decision-engine.ts',
   'app/lib/local-brain.ts',
+  'app/lib/observability.ts',
   'app/lib/response-quality.ts',
   'app/api/chat/route.ts',
   'data/memory.json'
@@ -36,6 +37,7 @@ const checks = [
   engine.includes('validateDecisionAnswer'),
   brain.includes('localBrain'),
   core.includes("from './local-brain'"),
+  observability.includes('logEvent'),
   mode.includes("return 'safe'")
 ]
 
