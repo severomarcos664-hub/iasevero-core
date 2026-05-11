@@ -42,13 +42,3 @@ export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeCo
     }
   }
 }
-
-export function appendRuntimeTrace(
-  context: RuntimeContext,
-  entry: string
-): RuntimeContext {
-  return {
-    ...context,
-    trace: [...context.trace, entry]
-  }
-}
