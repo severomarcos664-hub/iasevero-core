@@ -52,16 +52,3 @@ export function appendRuntimeTrace(
     trace: [...context.trace, entry]
   }
 }
-
-let lastRuntimeState: RuntimeContext | null = null
-
-export function setLastRuntimeState(
-  context: RuntimeContext
-): RuntimeContext {
-  lastRuntimeState = context
-  return context
-}
-
-export function getLastRuntimeState(): RuntimeContext | null {
-  return lastRuntimeState
-}
