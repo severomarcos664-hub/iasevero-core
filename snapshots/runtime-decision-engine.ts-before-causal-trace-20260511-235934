@@ -1,7 +1,7 @@
 import { executeRuntimeConsciousLoop } from './runtime-conscious-loop'
 import { resolveHybridProvider } from './hybrid-router'
 import { executeSelfHealing } from './self-healing'
-import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+import { createRuntimeContext, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
 export function executeRuntimeDecisionEngine() {
   const consciousness = executeRuntimeConsciousLoop()
@@ -42,7 +42,7 @@ export function executeRuntimeDecisionEngine() {
     ? routing.provider as RuntimeProvider
     : 'local'
 
-  let context = createRuntimeContext({
+  const context = createRuntimeContext({
     mode,
     provider,
     allowExternal: routing.provider !== 'local',
@@ -51,16 +51,8 @@ export function executeRuntimeDecisionEngine() {
     healing: healing.healed,
     reason: routing.reason,
     decisions,
-    trace: []
+    trace: ['runtime-decision-engine']
   })
-
-
-
-context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
-context = appendRuntimeTrace(context, `routing:${routing.mode}`)
-context = appendRuntimeTrace(context, `provider:${provider}`)
-context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
-
 
   return {
     timestamp: new Date().toISOString(),
