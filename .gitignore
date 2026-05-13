@@ -84,3 +84,7 @@ app_backup_home*/
 backups/
 *.backup
 *.nivel*-backup
+
+# Backups locais do runtime
+snapshots/
+snapshots-backup-*.tar.gz

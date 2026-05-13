@@ -23,7 +23,15 @@ export type RuntimeContext = {
 
 export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
   return {
-    requestId: input?.requestId || `rtx_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,
+    
+requestId:
+  input?.requestId ||
+  (
+    typeof globalThis.crypto?.randomUUID === 'function'
+      ? globalThis.crypto.randomUUID()
+      : `rtx_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
+  ),
+
     userId: input?.userId || 'local',
     mode: input?.mode || 'local',
     provider: input?.provider || 'local',
@@ -43,13 +51,20 @@ export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeCo
   }
 }
 
+const MAX_TRACE = 200
+
 export function appendRuntimeTrace(
   context: RuntimeContext,
   entry: string
 ): RuntimeContext {
+  const nextTrace = [...context.trace, entry]
+
   return {
     ...context,
-    trace: [...context.trace, entry]
+    trace:
+      nextTrace.length > MAX_TRACE
+        ? nextTrace.slice(nextTrace.length - MAX_TRACE)
+        : nextTrace
   }
 }
 
