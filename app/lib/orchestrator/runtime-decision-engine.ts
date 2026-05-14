@@ -1,6 +1,7 @@
 import { executeRuntimeConsciousLoop } from './runtime-conscious-loop'
 import { resolveHybridProvider } from './hybrid-router'
 import { executeSelfHealing } from './self-healing'
+import { evaluateRuntimePolicy } from './runtime-policy'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
 export function executeRuntimeDecisionEngine() {
@@ -61,6 +62,15 @@ context = appendRuntimeTrace(context, `routing:${routing.mode}`)
 context = appendRuntimeTrace(context, `provider:${provider}`)
 context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
 
+const policy = evaluateRuntimePolicy(context)
+
+decisions.push(`policy:${policy.severity}:${policy.reason}`)
+
+context = appendRuntimeTrace(
+  context,
+  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+)
+
 
   return {
     timestamp: new Date().toISOString(),
@@ -68,6 +78,7 @@ context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' :
     consciousness,
     routing,
     healing,
+    policy,
     decisions,
     stable
   }
