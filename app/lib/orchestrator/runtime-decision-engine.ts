@@ -3,6 +3,7 @@ import { resolveHybridProvider } from './hybrid-router'
 import { executeSelfHealing } from './self-healing'
 import { evaluateRuntimePolicy } from './runtime-policy'
 import { evaluateRuntimeGovernance } from './runtime-governor'
+import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
 export function executeRuntimeDecisionEngine() {
@@ -81,6 +82,15 @@ context = appendRuntimeTrace(
   `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
 )
 
+const enforcement = enforceRuntimeExecution(context, governance)
+
+decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
+
+context = appendRuntimeTrace(
+  context,
+  `enforcement:${enforcement.allowed ? 'allowed' : 'blocked'}:${enforcement.severity}`
+)
+
 
   return {
     timestamp: new Date().toISOString(),
@@ -90,6 +100,7 @@ context = appendRuntimeTrace(
     healing,
     policy,
     governance,
+    enforcement,
     decisions,
     stable
   }
