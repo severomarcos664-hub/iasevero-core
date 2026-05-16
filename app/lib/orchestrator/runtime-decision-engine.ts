@@ -3,6 +3,7 @@ import { resolveHybridProvider } from './hybrid-router'
 import { executeSelfHealing } from './self-healing'
 import { evaluateRuntimePolicy } from './runtime-policy'
 import { evaluateRuntimeGovernance } from './runtime-governor'
+import { evaluateExecutionControl } from './runtime-execution-control'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -82,6 +83,17 @@ context = appendRuntimeTrace(
   `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
 )
 
+const executionControl = evaluateExecutionControl(context)
+
+decisions.push(
+  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `execution:${executionControl.timeoutMs}:${executionControl.maxRetries}`
+)
+
 const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
@@ -101,6 +113,7 @@ context = appendRuntimeTrace(
     policy,
     governance,
     enforcement,
+    executionControl,
     decisions,
     stable
   }
