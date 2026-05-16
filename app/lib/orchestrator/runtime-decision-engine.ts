@@ -4,6 +4,8 @@ import { executeSelfHealing } from './self-healing'
 import { evaluateRuntimePolicy } from './runtime-policy'
 import { evaluateRuntimeGovernance } from './runtime-governor'
 import { evaluateExecutionControl } from './runtime-execution-control'
+import { evaluateRuntimeBudget } from './runtime-budget-control'
+import { evaluateProviderGovernor } from './runtime-provider-governor'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -94,6 +96,28 @@ context = appendRuntimeTrace(
   `execution:${executionControl.timeoutMs}:${executionControl.maxRetries}`
 )
 
+const budget = evaluateRuntimeBudget(context)
+
+decisions.push(
+  `budget:${budget.estimatedCostLevel}:${budget.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+)
+
+const providerGovernor = evaluateProviderGovernor(context)
+
+decisions.push(
+  `providerGovernor:${providerGovernor.escalationLevel}:${providerGovernor.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+)
+
 const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
@@ -114,6 +138,7 @@ context = appendRuntimeTrace(
     governance,
     enforcement,
     executionControl,
+    budget,
     decisions,
     stable
   }
