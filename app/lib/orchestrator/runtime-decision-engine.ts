@@ -14,6 +14,7 @@ import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer
 import { registerRuntimeTelemetry } from './runtime-telemetry'
 import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
 import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
 import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
@@ -254,6 +255,20 @@ decisions.push(
 context = appendRuntimeTrace(
   context,
   `intelligence:${intelligence.stabilityRate}:${intelligence.recoveryFrequency}`
+)
+
+
+const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+  intelligence
+)
+
+decisions.push(
+  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
 )
 
 return {
