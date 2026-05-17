@@ -1,0 +1,269 @@
+
+=== IASevero Runtime Dependency Graph ===
+
+app/lib/orchestrator/adaptive-protection.ts
+  -> ./diagnostics
+  -> ./state-engine
+
+app/lib/orchestrator/audit-trail.ts
+  -> ./event-logger
+  -> ./trace
+  -> ./state-engine
+
+app/lib/orchestrator/awareness-engine.ts
+  -> ./state-engine
+  -> ./diagnostics
+  -> ./metrics
+
+app/lib/orchestrator/central-runtime-core.ts
+  -> ./runtime-supervisor
+  -> ./evolution-engine
+  -> ./self-healing
+  -> ./runtime-snapshot
+
+app/lib/orchestrator/decision-memory.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/decision-pipeline.ts
+  -> ./policy
+  -> ./routing
+  -> ./executor
+  -> ./events
+  -> ./event-logger
+  -> ./trace
+
+app/lib/orchestrator/diagnostics.ts
+  -> ./metrics
+
+app/lib/orchestrator/event-logger.ts
+  -> ./events
+
+app/lib/orchestrator/events.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/evolution-engine.ts
+  -> ./learning-engine
+  -> ./awareness-engine
+
+app/lib/orchestrator/executor.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/health-intelligence.ts
+  -> ./metrics
+  -> ./diagnostics
+  -> ./state-engine
+
+app/lib/orchestrator/hybrid-router.ts
+  -> ./awareness-engine
+  -> ./intelligent-selector
+
+app/lib/orchestrator/intelligent-selector.ts
+  -> ./provider-reputation
+
+app/lib/orchestrator/learning-engine.ts
+  -> ./decision-memory
+
+app/lib/orchestrator/memory-governor.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/metrics.ts
+  -> ./state-engine
+  -> ./event-logger
+  -> ./trace
+  -> ./memory-governor
+
+app/lib/orchestrator/policy.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/provider-reputation.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/queue-governor.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/routing.ts
+  -> ./runtime
+  -> ./events
+  -> ./event-logger
+  -> ./policy
+
+app/lib/orchestrator/runtime-action-executor.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-architecture-auditor.ts
+  -> ./runtime-graph-registry
+  -> ./runtime-topology-validator
+  -> ./runtime-structural-health
+  -> ./runtime-intelligence
+
+app/lib/orchestrator/runtime-architecture-index.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-autonomous-decision.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts
+  -> ./runtime-awareness
+  -> ./runtime-recovery
+
+app/lib/orchestrator/runtime-awareness.ts
+  -> ./runtime-state-registry
+
+app/lib/orchestrator/runtime-budget-control.ts
+  -> ./runtime-context
+
+app/lib/orchestrator/runtime-conscious-loop.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-context.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-contracts.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-coordinator.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-decision-engine.ts
+  -> ./runtime-conscious-loop
+  -> ./hybrid-router
+  -> ./self-healing
+  -> ./runtime-policy
+  -> ./runtime-governor
+  -> ./runtime-execution-control
+  -> ./runtime-budget-control
+  -> ./runtime-provider-governor
+  -> ./runtime-memory
+  -> ./runtime-state-registry
+  -> ./runtime-awareness
+  -> ./runtime-recovery
+  -> ./runtime-autonomous-stabilizer
+  -> ./runtime-telemetry
+  -> ./runtime-snapshot
+  -> ./runtime-intelligence
+  -> ./runtime-policy-engine
+  -> ./runtime-incidents
+  -> ./runtime-enforcement
+  -> ./runtime-context
+  -> ./runtime-lifecycle-manager
+
+app/lib/orchestrator/runtime-dependency-graph.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-dependency-scanner.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-dependency-validator.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-enforcement.ts
+  -> ./runtime-context
+  -> ./runtime-governor
+
+app/lib/orchestrator/runtime-event-bus.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-event-processor.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-execution-control.ts
+  -> ./runtime-context
+
+app/lib/orchestrator/runtime-governor.ts
+  -> ./runtime-context
+  -> ./runtime-policy
+
+app/lib/orchestrator/runtime-graph-registry.ts
+  -> ./runtime-dependency-graph
+
+app/lib/orchestrator/runtime-guardian.ts
+  -> ./metrics
+  -> ./runtime-limiter
+  -> ./state-engine
+
+app/lib/orchestrator/runtime-incidents.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-intelligence.ts
+  -> ./runtime-snapshot
+
+app/lib/orchestrator/runtime-lifecycle-manager.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-limiter.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-memory.ts
+  -> ./runtime-context
+
+app/lib/orchestrator/runtime-operational-memory.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-policy-engine.ts
+  -> ./runtime-intelligence
+
+app/lib/orchestrator/runtime-policy.ts
+  -> ./runtime-context
+
+app/lib/orchestrator/runtime-provider-governor.ts
+  -> ./runtime-context
+
+app/lib/orchestrator/runtime-recovery.ts
+  -> ./runtime-awareness
+
+app/lib/orchestrator/runtime-self-healing.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-snapshot.ts
+  -> fs
+  -> path
+
+app/lib/orchestrator/runtime-state-registry.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-structural-health.ts
+  -> ./runtime-topology-validator
+  -> ./runtime-intelligence
+
+app/lib/orchestrator/runtime-supervisor.ts
+  -> ./runtime-awareness
+  -> ./runtime-intelligence
+  -> ./runtime-topology-validator
+  -> ./runtime-structural-health
+
+app/lib/orchestrator/runtime-task-planner.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-telemetry.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/runtime-topology-validator.ts
+  -> ./runtime-dependency-graph
+
+app/lib/orchestrator/runtime.ts
+  -> ../env
+
+app/lib/orchestrator/self-healing.ts
+  -> ./diagnostics
+  -> ./state-engine
+  -> ./queue-governor
+  -> ./decision-memory
+
+app/lib/orchestrator/state-engine.ts
+  -> no runtime dependencies
+
+app/lib/orchestrator/trace.ts
+  -> no runtime dependencies
+
+app/runtime/runtime-lifecycle.ts
+  -> no runtime dependencies
+
+app/runtime/runtime-manifest.ts
+  -> no runtime dependencies
+
+app/runtime/runtime-registry.ts
+  -> no runtime dependencies
+
+---
+Runtime modules: 68
+Runtime dependencies: 95
