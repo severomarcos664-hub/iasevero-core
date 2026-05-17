@@ -10,6 +10,7 @@ import { evaluateRuntimeMemory } from './runtime-memory'
 import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
 import { evaluateRuntimeAwareness } from './runtime-awareness'
 import { evaluateRuntimeRecovery } from './runtime-recovery'
+import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
 import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
@@ -188,6 +189,21 @@ if (recovery.recoveryMode) {
   )
 }
 
+
+const autonomous = evaluateAutonomousStabilization(
+  awareness,
+  recovery
+)
+
+decisions.push(
+  `autonomous:${autonomous.stabilizationLevel}:${autonomous.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `autonomous:${autonomous.stabilizationScore}:${autonomous.cooldownMultiplier}`
+)
+
 const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
@@ -213,6 +229,7 @@ context = appendRuntimeTrace(
     runtimeRegistry,
     awareness,
     recovery,
+    autonomous,
     decisions,
     stable
   }
