@@ -7,6 +7,7 @@ import { evaluateExecutionControl } from './runtime-execution-control'
 import { evaluateRuntimeBudget } from './runtime-budget-control'
 import { evaluateProviderGovernor } from './runtime-provider-governor'
 import { evaluateRuntimeMemory } from './runtime-memory'
+import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -129,6 +130,20 @@ const memory = evaluateRuntimeMemory(context)
     `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
   )
 
+  const runtimeRegistry = updateRuntimeRegistry({
+    runtimeHealth: context.stable ? 'healthy' : 'degraded',
+    runtimePressure: context.safeMode ? 60 : 20,
+    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+    executionPressure: executionControl.allowed ? 20 : 85,
+    degradationState: !context.stable || !executionControl.allowed,
+    recoveryMode: !context.stable
+  })
+
+  if (!context.stable) {
+    appendRuntimeWarning('Runtime instável detectado pelo State Registry.')
+  }
+
   const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
@@ -151,6 +166,7 @@ context = appendRuntimeTrace(
     executionControl,
     budget,
     memory,
+    runtimeRegistry,
     decisions,
     stable
   }
