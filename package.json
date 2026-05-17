@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:chat": "curl -X POST http://localhost:3000/api/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Quem te criou?\"}'"
+    "test:chat": "curl -X POST http://localhost:3000/api/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Quem te criou?\"}'",
+    "verify:runtime": "node scripts/runtime/runtime-governance-check.mjs && node scripts/regression-local.mjs && npm run build"
   },
   "dependencies": {
     "lucide-react": "^1.8.0",
