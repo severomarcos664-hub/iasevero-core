@@ -1,0 +1,4 @@
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-decision-engine.ts',
+app/lib/orchestrator/runtime-decision-engine.ts:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/runtime/runtime-manifest.ts:    'runtime-decision-engine',
+app/runtime/runtime-registry.ts:    name: 'runtime-decision-engine',
