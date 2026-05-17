@@ -9,6 +9,8 @@ import { evaluateProviderGovernor } from './runtime-provider-governor'
 import { evaluateRuntimeMemory } from './runtime-memory'
 import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
 import { evaluateRuntimeAwareness } from './runtime-awareness'
+import { evaluateRuntimeRecovery } from './runtime-recovery'
+import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -155,7 +157,38 @@ const memory = evaluateRuntimeMemory(context)
     `awareness:${awareness.healthScore}:${awareness.severity}`
   )
 
-  const enforcement = enforceRuntimeExecution(context, governance)
+  
+const recovery = evaluateRuntimeRecovery(awareness)
+
+decisions.push(
+  `recovery:${recovery.recoveryMode}:${recovery.reason}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `recovery:${recovery.cooldownMs}:${recovery.recommendedProvider}`
+)
+
+
+if (!context.stable) {
+  registerRuntimeIncident(
+    'high',
+    'runtime-state',
+    'Runtime instável detectado.'
+  )
+}
+
+if (recovery.recoveryMode) {
+  registerRuntimeIncident(
+    awareness.severity === 'critical'
+      ? 'critical'
+      : 'medium',
+    'runtime-recovery',
+    recovery.reason
+  )
+}
+
+const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
 
@@ -179,6 +212,7 @@ context = appendRuntimeTrace(
     memory,
     runtimeRegistry,
     awareness,
+    recovery,
     decisions,
     stable
   }
