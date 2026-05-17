@@ -8,6 +8,7 @@ import { evaluateRuntimeBudget } from './runtime-budget-control'
 import { evaluateProviderGovernor } from './runtime-provider-governor'
 import { evaluateRuntimeMemory } from './runtime-memory'
 import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
+import { evaluateRuntimeAwareness } from './runtime-awareness'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -144,6 +145,16 @@ const memory = evaluateRuntimeMemory(context)
     appendRuntimeWarning('Runtime instável detectado pelo State Registry.')
   }
 
+  const awareness = evaluateRuntimeAwareness(runtimeRegistry)
+  decisions.push(
+    `awareness:${awareness.severity}:${awareness.diagnostic}`
+  )
+
+  context = appendRuntimeTrace(
+    context,
+    `awareness:${awareness.healthScore}:${awareness.severity}`
+  )
+
   const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
@@ -167,6 +178,7 @@ context = appendRuntimeTrace(
     budget,
     memory,
     runtimeRegistry,
+    awareness,
     decisions,
     stable
   }
