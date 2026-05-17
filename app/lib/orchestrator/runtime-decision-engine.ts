@@ -11,7 +11,7 @@ import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-reg
 import { evaluateRuntimeAwareness } from './runtime-awareness'
 import { evaluateRuntimeRecovery } from './runtime-recovery'
 import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
-import { registerRuntimeTelemetry } from './runtime-telemetry'
+import { generateRuntimeTelemetry } from './runtime-telemetry'
 import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
 import { analyzeRuntimeIntelligence } from './runtime-intelligence'
 import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
@@ -27,11 +27,11 @@ export function executeRuntimeDecisionEngine() {
 
   const decisions: string[] = []
 
-  if (!consciousness.consciousness.operational) {
+  if (!consciousness.operational) {
     decisions.push('Ativar modo seguro.')
   }
 
-  if (consciousness.consciousness.healed) {
+  if (consciousness.stable) {
     decisions.push('Runtime recuperado automaticamente.')
   }
 
@@ -40,7 +40,7 @@ export function executeRuntimeDecisionEngine() {
   }
 
   const healing =
-    consciousness.consciousness.operational
+    consciousness.operational
       ? {
           healed: false,
           reason: 'Healing não necessário.'
@@ -48,7 +48,7 @@ export function executeRuntimeDecisionEngine() {
       : executeSelfHealing()
 
   const stable =
-    consciousness.consciousness.operational &&
+    consciousness.operational &&
     routing.mode !== 'safe'
 
   const mode = (routing.mode === 'openai' || routing.mode === 'hybrid' || routing.mode === 'safe')
@@ -220,17 +220,7 @@ context = appendRuntimeTrace(
 
 
   
-registerRuntimeTelemetry({
-  timestamp: new Date().toISOString(),
-  latencyMs: Math.floor(Math.random() * 40) + 10,
-  provider,
-  mode,
-  stable,
-  awarenessSeverity: awareness.severity,
-  recoveryMode: recovery.recoveryMode,
-  stabilizationLevel: autonomous.stabilizationLevel,
-  memoryMode: memory.memoryMode
-})
+generateRuntimeTelemetry(consciousness)
 
 
 persistRuntimeSnapshot({

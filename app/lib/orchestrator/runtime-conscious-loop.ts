@@ -1,24 +1,42 @@
-import { runCentralRuntimeCore } from './central-runtime-core'
+import {
+  coordinateRuntime
+} from './runtime-coordinator'
 
-let lastRuntimeState: any = null
+import {
+  createAutonomousDecision
+} from './runtime-autonomous-decision'
 
-export function executeRuntimeConsciousLoop() {
-  const runtime = runCentralRuntimeCore()
+import {
+  executeSelfHealing
+} from './runtime-self-healing'
 
-  lastRuntimeState = {
-    timestamp: new Date().toISOString(),
-    operational: runtime.operational,
-    supervision: runtime.supervision.operational,
-    awareness: runtime.evolution.awareness.awareness.safe,
-    healed: runtime.healing.healed
-  }
-
-  return {
-    runtime,
-    consciousness: lastRuntimeState
-  }
+export type RuntimeConsciousState = {
+  stable: boolean
+  operational: boolean
+  processedEvents: number
+  decision: string
+  healingAction: string
+  generatedAt: string
 }
 
-export function getLastRuntimeState() {
-  return lastRuntimeState
+export function executeRuntimeConsciousLoop():
+  RuntimeConsciousState {
+
+  const coordination = coordinateRuntime()
+
+  const decision =
+    createAutonomousDecision(coordination)
+
+  const healing =
+    executeSelfHealing(decision)
+
+  return {
+    stable: healing.healed,
+    operational: healing.healed,
+    processedEvents:
+      coordination.processedEvents,
+    decision: decision.action,
+    healingAction: healing.action,
+    generatedAt: new Date().toISOString()
+  }
 }

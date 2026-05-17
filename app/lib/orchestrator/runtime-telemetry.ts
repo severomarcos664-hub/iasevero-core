@@ -1,31 +1,27 @@
-export type RuntimeTelemetrySnapshot = {
-  timestamp: string
-  latencyMs: number
-  provider: string
-  mode: string
-  stable: boolean
-  awarenessSeverity: string
-  recoveryMode: boolean
-  stabilizationLevel: string
-  memoryMode: string
+import {
+  RuntimeConsciousState
+} from './runtime-conscious-loop'
+
+export type RuntimeTelemetry = {
+  operational: boolean
+  stabilityScore: number
+  processedEvents: number
+  generatedAt: string
 }
 
-let telemetryHistory: RuntimeTelemetrySnapshot[] = []
+export function generateRuntimeTelemetry(
+  consciousness: RuntimeConsciousState
+): RuntimeTelemetry {
 
-export function registerRuntimeTelemetry(
-  snapshot: RuntimeTelemetrySnapshot
-): RuntimeTelemetrySnapshot {
+  const stabilityScore =
+    consciousness.operational
+      ? 100
+      : 40
 
-  telemetryHistory = [
-    snapshot,
-    ...telemetryHistory
-  ].slice(0, 200)
-
-  return snapshot
-}
-
-export function getRuntimeTelemetry():
-RuntimeTelemetrySnapshot[] {
-
-  return telemetryHistory
+  return {
+    operational: consciousness.operational,
+    stabilityScore,
+    processedEvents: consciousness.processedEvents,
+    generatedAt: new Date().toISOString()
+  }
 }
