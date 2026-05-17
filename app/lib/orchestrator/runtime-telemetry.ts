@@ -1,51 +1,31 @@
-import type { RuntimeContext } from './runtime-context'
-
-export type RuntimeTelemetryLevel = 'public' | 'internal'
-
-export type PublicRuntimeTelemetry = {
-  stable: boolean
-  safeMode: boolean
+export type RuntimeTelemetrySnapshot = {
   timestamp: string
+  latencyMs: number
+  provider: string
+  mode: string
+  stable: boolean
+  awarenessSeverity: string
+  recoveryMode: boolean
+  stabilizationLevel: string
+  memoryMode: string
 }
 
-export type InternalRuntimeTelemetry = PublicRuntimeTelemetry & {
-  requestId: string
-  userId: string
-  mode: RuntimeContext['mode']
-  provider: RuntimeContext['provider']
-  allowExternal: boolean
-  healing: boolean
-  intent: string
-  reason: string
-  decisions: string[]
-  trace: string[]
+let telemetryHistory: RuntimeTelemetrySnapshot[] = []
+
+export function registerRuntimeTelemetry(
+  snapshot: RuntimeTelemetrySnapshot
+): RuntimeTelemetrySnapshot {
+
+  telemetryHistory = [
+    snapshot,
+    ...telemetryHistory
+  ].slice(0, 200)
+
+  return snapshot
 }
 
-export function toRuntimeTelemetry(
-  context: RuntimeContext,
-  level: RuntimeTelemetryLevel = 'public'
-): PublicRuntimeTelemetry | InternalRuntimeTelemetry {
-  const base: PublicRuntimeTelemetry = {
-    stable: context.stable,
-    safeMode: context.safeMode,
-    timestamp: context.timestamp
-  }
+export function getRuntimeTelemetry():
+RuntimeTelemetrySnapshot[] {
 
-  if (level === 'public') {
-    return base
-  }
-
-  return {
-    ...base,
-    requestId: context.requestId,
-    userId: context.userId,
-    mode: context.mode,
-    provider: context.provider,
-    allowExternal: context.allowExternal,
-    healing: context.healing,
-    intent: context.intent,
-    reason: context.reason,
-    decisions: context.decisions,
-    trace: context.trace
-  }
+  return telemetryHistory
 }
