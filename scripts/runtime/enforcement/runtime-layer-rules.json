@@ -1,0 +1,27 @@
+{
+  "kernel": [
+    "governance",
+    "execution",
+    "observability",
+    "intelligence",
+    "autonomy",
+    "validation"
+  ],
+  "governance": [
+    "execution",
+    "observability"
+  ],
+  "execution": [
+    "observability"
+  ],
+  "observability": [],
+  "intelligence": [
+    "observability"
+  ],
+  "autonomy": [
+    "observability"
+  ],
+  "validation": [
+    "observability"
+  ]
+}

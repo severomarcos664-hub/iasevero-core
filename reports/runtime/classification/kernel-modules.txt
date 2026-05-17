@@ -1,0 +1,6 @@
+[kernel] app/lib/orchestrator/central-runtime-core.ts
+[kernel] app/lib/orchestrator/runtime-context.ts
+[kernel] app/lib/orchestrator/runtime-lifecycle-manager.ts
+[kernel] app/lib/orchestrator/runtime-state-registry.ts
+[kernel] app/runtime/runtime-lifecycle.ts
+[kernel] app/runtime/runtime-registry.ts
