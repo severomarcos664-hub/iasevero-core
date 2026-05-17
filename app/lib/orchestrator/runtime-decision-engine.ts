@@ -12,6 +12,7 @@ import { evaluateRuntimeAwareness } from './runtime-awareness'
 import { evaluateRuntimeRecovery } from './runtime-recovery'
 import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
 import { registerRuntimeTelemetry } from './runtime-telemetry'
+import { persistRuntimeSnapshot } from './runtime-snapshot'
 import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
@@ -225,6 +226,18 @@ registerRuntimeTelemetry({
   awarenessSeverity: awareness.severity,
   recoveryMode: recovery.recoveryMode,
   stabilizationLevel: autonomous.stabilizationLevel,
+  memoryMode: memory.memoryMode
+})
+
+
+persistRuntimeSnapshot({
+  timestamp: new Date().toISOString(),
+  stable,
+  provider,
+  mode,
+  awareness: awareness.severity,
+  recovery: recovery.recoveryMode,
+  stabilization: autonomous.stabilizationLevel,
   memoryMode: memory.memoryMode
 })
 

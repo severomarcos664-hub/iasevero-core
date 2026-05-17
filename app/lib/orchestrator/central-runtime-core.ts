@@ -1,7 +1,7 @@
 import { superviseRuntime } from './runtime-supervisor'
 import { evaluateRuntimeEvolution } from './evolution-engine'
 import { executeSelfHealing } from './self-healing'
-import { createRuntimeSnapshot } from './runtime-snapshot'
+import { persistRuntimeSnapshot } from './runtime-snapshot'
 
 export function runCentralRuntimeCore() {
   const supervision = superviseRuntime()
@@ -16,7 +16,7 @@ export function runCentralRuntimeCore() {
         }
       : executeSelfHealing()
 
-  const snapshot = createRuntimeSnapshot()
+  const snapshot = persistRuntimeSnapshot()
 
   return {
     timestamp: new Date().toISOString(),

@@ -3,7 +3,7 @@ import { iaseveroCore } from '@/app/lib/iasevero-core'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
-import { createRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
 
 const MAX_TEXT_LENGTH = 4000
 
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
     const runtimeDecision = executeRuntimeDecisionEngine()
     const runtimeState = superviseRuntime()
-    const runtimeSnapshot = createRuntimeSnapshot()
+    const runtimeSnapshot = persistRuntimeSnapshot()
 
     const result = await iaseveroCore(message, userId)
 
