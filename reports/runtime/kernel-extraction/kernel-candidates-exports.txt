@@ -1,0 +1,21 @@
+app/lib/orchestrator/runtime-context.ts:export type RuntimeMode = 'local' | 'openai' | 'hybrid' | 'safe'
+app/lib/orchestrator/runtime-context.ts:export type RuntimeProvider = 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/runtime-context.ts:export type RuntimeContext = {
+app/lib/orchestrator/runtime-context.ts:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:export function appendRuntimeTrace(
+app/lib/orchestrator/runtime-context.ts:export function setLastRuntimeState(
+app/lib/orchestrator/runtime-context.ts:export function getLastRuntimeState(): RuntimeContext | null {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export type RuntimeLifecycleState =
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export type RuntimeLifecycleTransition = {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export type RuntimeLifecycleSnapshot = {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export function getRuntimeLifecycle(): RuntimeLifecycleSnapshot {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export function transitionRuntimeLifecycle(
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export function isRuntimeOperational(): boolean {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export function isRuntimeDegraded(): boolean {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:export function isRuntimeRecovering(): boolean {
+app/lib/orchestrator/runtime-state-registry.ts:export type RuntimeHealth =
+app/lib/orchestrator/runtime-state-registry.ts:export type RuntimeStateRegistry = {
+app/lib/orchestrator/runtime-state-registry.ts:export function getRuntimeRegistry(): RuntimeStateRegistry {
+app/lib/orchestrator/runtime-state-registry.ts:export function updateRuntimeRegistry(
+app/lib/orchestrator/runtime-state-registry.ts:export function appendRuntimeWarning(
+app/lib/orchestrator/runtime-decision-engine.ts:export function executeRuntimeDecisionEngine() {

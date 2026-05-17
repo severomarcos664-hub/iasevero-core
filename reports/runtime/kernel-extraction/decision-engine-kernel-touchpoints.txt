@@ -1,0 +1,11 @@
+import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
+import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+import { transitionRuntimeLifecycle } from './runtime-lifecycle-manager'
+  let context = createRuntimeContext({
+  const runtimeRegistry = updateRuntimeRegistry({
+    appendRuntimeWarning('Runtime instável detectado pelo State Registry.')
+  const awareness = evaluateRuntimeAwareness(runtimeRegistry)
+  transitionRuntimeLifecycle(
+  transitionRuntimeLifecycle(
+  transitionRuntimeLifecycle(
+    runtimeRegistry,
