@@ -12,7 +12,8 @@ import { evaluateRuntimeAwareness } from './runtime-awareness'
 import { evaluateRuntimeRecovery } from './runtime-recovery'
 import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
 import { registerRuntimeTelemetry } from './runtime-telemetry'
-import { persistRuntimeSnapshot } from './runtime-snapshot'
+import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+import { analyzeRuntimeIntelligence } from './runtime-intelligence'
 import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
@@ -240,6 +241,20 @@ persistRuntimeSnapshot({
   stabilization: autonomous.stabilizationLevel,
   memoryMode: memory.memoryMode
 })
+
+
+const intelligence = analyzeRuntimeIntelligence(
+  readRuntimeSnapshots()
+)
+
+decisions.push(
+  `intelligence:${intelligence.operationalScore}:${intelligence.degradationRisk}`
+)
+
+context = appendRuntimeTrace(
+  context,
+  `intelligence:${intelligence.stabilityRate}:${intelligence.recoveryFrequency}`
+)
 
 return {
     timestamp: new Date().toISOString(),
