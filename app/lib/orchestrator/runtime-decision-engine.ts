@@ -18,6 +18,7 @@ import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
 import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+import { transitionRuntimeLifecycle } from './runtime-lifecycle-manager'
 
 export function executeRuntimeDecisionEngine() {
   const consciousness = executeRuntimeConsciousLoop()
@@ -270,6 +271,24 @@ context = appendRuntimeTrace(
   context,
   `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
 )
+
+
+if (awareness.severity === 'critical') {
+  transitionRuntimeLifecycle(
+    'recovery',
+    'Runtime crítico detectado.'
+  )
+} else if (intelligence.degradationRisk === 'high') {
+  transitionRuntimeLifecycle(
+    'degraded',
+    'Degradação operacional detectada.'
+  )
+} else {
+  transitionRuntimeLifecycle(
+    'operational',
+    'Runtime estabilizado.'
+  )
+}
 
 return {
     timestamp: new Date().toISOString(),
