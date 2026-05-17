@@ -6,6 +6,7 @@ import { evaluateRuntimeGovernance } from './runtime-governor'
 import { evaluateExecutionControl } from './runtime-execution-control'
 import { evaluateRuntimeBudget } from './runtime-budget-control'
 import { evaluateProviderGovernor } from './runtime-provider-governor'
+import { evaluateRuntimeMemory } from './runtime-memory'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 
@@ -118,7 +119,17 @@ context = appendRuntimeTrace(
   `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
 )
 
-const enforcement = enforceRuntimeExecution(context, governance)
+const memory = evaluateRuntimeMemory(context)
+  decisions.push(
+    `memory:${memory.memoryMode}:${memory.reason}`
+  )
+
+  context = appendRuntimeTrace(
+    context,
+    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+  )
+
+  const enforcement = enforceRuntimeExecution(context, governance)
 
 decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
 
@@ -139,6 +150,7 @@ context = appendRuntimeTrace(
     enforcement,
     executionControl,
     budget,
+    memory,
     decisions,
     stable
   }
