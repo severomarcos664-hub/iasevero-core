@@ -1,3 +1,4 @@
+import { emitRuntimeStateChanged } from './runtime-state-events'
 export type RuntimeStateAccessMode =
   | 'read'
   | 'write'
@@ -40,4 +41,12 @@ export function validateRuntimeStateAccess(
   }
 
   return false
+}
+
+
+export function notifyRuntimeStateChange(
+  key: string,
+  value: unknown
+) {
+  emitRuntimeStateChanged(key, value)
 }
