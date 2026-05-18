@@ -9,6 +9,8 @@ import {
   getQueueMetrics,
 } from './queue-governor'
 
+import { emitRuntimeEvent } from './runtime-event-bus'
+
 export type RuntimeExecutionResult = {
   allowed: boolean
   taskId?: string
@@ -21,6 +23,16 @@ export function executeRuntimePipeline(input: {
   requestId?: string
   provider?: RuntimeProvider
 }) : RuntimeExecutionResult {
+
+  emitRuntimeEvent({
+    id: crypto.randomUUID(),
+    type: 'runtime-audit',
+    payload: {
+      stage: 'pipeline:start',
+      requestId: input.requestId,
+    },
+    createdAt: new Date().toISOString(),
+  })
 
   const context = createRuntimeContext({
     requestId: input.requestId,
@@ -44,12 +56,33 @@ export function executeRuntimePipeline(input: {
   )
 
   if (!enforcement.allowed) {
+
+    emitRuntimeEvent({
+      id: crypto.randomUUID(),
+      type: 'runtime-audit',
+      payload: {
+        stage: 'pipeline:failed',
+        reason: enforcement.reason,
+      },
+      createdAt: new Date().toISOString(),
+    })
+
     return {
       allowed: false,
       reason: enforcement.reason,
       metrics: getQueueMetrics(),
     }
   }
+
+  emitRuntimeEvent({
+    id: crypto.randomUUID(),
+    type: 'runtime-audit',
+    payload: {
+      stage: 'pipeline:queued',
+      requestId: context.requestId,
+    },
+    createdAt: new Date().toISOString(),
+  })
 
   const task = addTask({
     id: context.requestId,
@@ -63,11 +96,31 @@ export function executeRuntimePipeline(input: {
 
   markTaskRunning(task.id)
 
+  emitRuntimeEvent({
+    id: crypto.randomUUID(),
+    type: 'runtime-audit',
+    payload: {
+      stage: 'pipeline:executed',
+      taskId: task.id,
+    },
+    createdAt: new Date().toISOString(),
+  })
+
   updateTaskStatus(
     task.id,
     'completed',
     'Pipeline executado com sucesso.',
   )
+
+  emitRuntimeEvent({
+    id: crypto.randomUUID(),
+    type: 'runtime-audit',
+    payload: {
+      stage: 'pipeline:completed',
+      taskId: task.id,
+    },
+    createdAt: new Date().toISOString(),
+  })
 
   return {
     allowed: true,
