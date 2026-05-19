@@ -28,11 +28,7 @@ export function evaluateRuntimeSupervisor(
     structural.structuralRisk === 'high' ? 30 : 0
   ]
 
-  const operationalScore =
-    Math.max(
-      0,
-      100 - penalties.reduce((a, b) => a + b, 0)
-    )
+  const operationalScore = intelligence.operationalScore
 
   const globalState =
     operationalScore < 40
