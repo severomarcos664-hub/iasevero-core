@@ -27,7 +27,7 @@ export function processRuntimeEvent(
       type: 'runtime',
       severity: 'high',
       message: 'Alerta runtime processado.',
-      createdAt: new Date().toISOString()
+      timestamp: new Date().toISOString()
     })
 
     actions.push('memory-registered')
@@ -38,7 +38,7 @@ export function processRuntimeEvent(
       payload: {
         source: event.id
       },
-      createdAt: new Date().toISOString()
+      timestamp: new Date().toISOString()
     })
 
     actions.push('audit-triggered')
