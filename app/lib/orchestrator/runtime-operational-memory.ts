@@ -83,8 +83,12 @@ export function buildRuntimeOperationalMemory(): RuntimeOperationalMemory {
 
 
 export type RuntimeMemoryEvent = {
+  id: string
   type: string
   timestamp: string
+  severity?: 'low' | 'medium' | 'high'
+  message?: string
+  source?: string
   payload?: Record<string, unknown>
 }
 
