@@ -52,7 +52,12 @@ export function evaluateRuntimeSupervisor(
 }
 
 
-export function superviseRuntime() {
+export function superviseRuntime(): {
+  operational: boolean
+  globalState: 'stable' | 'warning' | 'critical'
+  operationalScore: number
+  recommendation: string
+} {
   return {
     operational: true,
     globalState: 'stable',
