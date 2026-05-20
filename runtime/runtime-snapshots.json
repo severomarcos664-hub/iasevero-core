@@ -7,5 +7,32 @@
     "recovery": true,
     "stabilization": "containment",
     "memoryMode": "protected"
+  },
+  {
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
   }
 ]

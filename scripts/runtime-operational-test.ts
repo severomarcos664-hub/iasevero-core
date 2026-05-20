@@ -26,6 +26,7 @@ const telemetry =
 
 const snapshot =
   persistRuntimeSnapshot({
+    timestamp: new Date().toISOString(),
     stable: false,
     provider: recovery.recommendedProvider,
     mode: 'recovery',
