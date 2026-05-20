@@ -30,7 +30,7 @@ export function evaluateRuntimeSupervisor(
 
   const operationalScore = intelligence.operationalScore
 
-  const globalState =
+  const globalState: 'stable' | 'warning' | 'critical' =
     operationalScore < 40
       ? 'critical'
       : operationalScore < 70
