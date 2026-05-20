@@ -1,5 +1,45 @@
 [
   {
+    "timestamp": "2026-05-20T01:30:00.455Z",
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
+    "timestamp": "2026-05-20T01:12:46.910Z",
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
+    "timestamp": "2026-05-20T00:52:38.725Z",
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
+    "timestamp": "2026-05-20T00:29:00.104Z",
+    "stable": false,
+    "provider": "local",
+    "mode": "recovery",
+    "awareness": "critical",
+    "recovery": true,
+    "stabilization": "containment",
+    "memoryMode": "protected"
+  },
+  {
     "stable": false,
     "provider": "local",
     "mode": "recovery",
