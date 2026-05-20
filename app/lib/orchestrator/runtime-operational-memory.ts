@@ -80,3 +80,28 @@ export function buildRuntimeOperationalMemory(): RuntimeOperationalMemory {
     operationalConclusion,
   }
 }
+
+
+export type RuntimeMemoryEvent = {
+  type: string
+  timestamp: string
+  payload?: Record<string, unknown>
+}
+
+const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+
+export function registerRuntimeMemoryEvent(
+  event: RuntimeMemoryEvent
+): RuntimeMemoryEvent[] {
+  runtimeMemoryEvents.unshift(event)
+
+  if (runtimeMemoryEvents.length > 100) {
+    runtimeMemoryEvents.length = 100
+  }
+
+  return runtimeMemoryEvents
+}
+
+export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+  return runtimeMemoryEvents
+}
