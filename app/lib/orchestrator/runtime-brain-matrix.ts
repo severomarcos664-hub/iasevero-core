@@ -1,6 +1,7 @@
 import { getOperationalMetrics } from './metrics'
 import { readRuntimeSnapshots } from './runtime-snapshot'
 import { superviseRuntime } from './runtime-supervisor'
+import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
 
 export type RuntimeBrainMatrixState = {
   service: 'IASevero'
@@ -16,6 +17,7 @@ export type RuntimeBrainMatrixState = {
     latest: ReturnType<typeof readRuntimeSnapshots>[number] | null
   }
   supervision: ReturnType<typeof superviseRuntime>
+  causalTrace: ReturnType<typeof buildRuntimeCausalTraceMap>
 }
 
 export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
@@ -23,6 +25,7 @@ export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
   const snapshots = readRuntimeSnapshots()
   const latest = snapshots[0] ?? null
   const supervision = superviseRuntime()
+  const causalTrace = buildRuntimeCausalTraceMap()
 
   return {
     service: 'IASevero',
@@ -38,5 +41,6 @@ export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
       latest,
     },
     supervision,
+    causalTrace,
   }
 }
