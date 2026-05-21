@@ -6,7 +6,7 @@ export type RuntimeGovernanceEnforcement = {
   providerLocked: boolean
   forcedProvider: 'local' | 'hybrid' | 'openai'
   externalAccessAllowed: boolean
-  executionMode: 'normal' | 'safe' | 'containment'
+  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
   throttleEnabled: boolean
   maxRequestsPerMinute: number
   budgetProtectionEnabled: boolean
@@ -32,7 +32,7 @@ export function enforceRuntimeGovernance(): RuntimeGovernanceEnforcement {
 
     providerLocked,
 
-    forcedProvider: gateway.provider,
+    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
 
     externalAccessAllowed:
       gateway.allowExternal,
