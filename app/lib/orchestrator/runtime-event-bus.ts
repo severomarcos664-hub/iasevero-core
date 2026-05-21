@@ -7,7 +7,8 @@ export type RuntimeEvent = {
     | 'runtime-build'
     | 'runtime-regression'
   payload: Record<string, unknown>
-  createdAt: string
+  timestamp?: string
+  createdAt?: string
 }
 
 const runtimeEventBus: RuntimeEvent[] = []
@@ -15,7 +16,16 @@ const runtimeEventBus: RuntimeEvent[] = []
 export function emitRuntimeEvent(
   event: RuntimeEvent
 ) {
-  runtimeEventBus.unshift(event)
+  const normalizedTimestamp =
+    event.timestamp ?? event.createdAt ?? new Date().toISOString()
+
+  const normalizedEvent: RuntimeEvent = {
+    ...event,
+    timestamp: normalizedTimestamp,
+    createdAt: event.createdAt ?? normalizedTimestamp,
+  }
+
+  runtimeEventBus.unshift(normalizedEvent)
 
   if (runtimeEventBus.length > 500) {
     runtimeEventBus.pop()
