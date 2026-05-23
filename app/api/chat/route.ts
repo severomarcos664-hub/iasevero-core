@@ -4,6 +4,7 @@ import { iaseveroCore } from '@/app/lib/iasevero-core'
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
 
 const MAX_TEXT_LENGTH = 4000
 
@@ -57,12 +58,20 @@ export async function POST(req: Request) {
     const runtimeDecision = executeRuntimeDecisionEngine()
     const runtimeState = superviseRuntime()
     const runtimeSnapshot = persistRuntimeSnapshot()
+    const runtimeMaster = runRuntimeMasterOrchestrator()
 
     const result = await iaseveroCore(message, userId)
 
     return NextResponse.json({
       reply: result.reply,
-      job: result.job || null
+      job: result.job || null,
+      runtime: {
+        operationalState: runtimeMaster.operationalState,
+        governance: runtimeMaster.governance.decision,
+        integrity: runtimeMaster.integrity.integrity,
+        healing: runtimeMaster.healing.decision,
+        recovery: runtimeMaster.recovery.operationalState,
+      }
     })
 
   } catch (e) {
