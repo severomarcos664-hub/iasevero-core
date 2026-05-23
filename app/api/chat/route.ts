@@ -7,6 +7,7 @@ import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
 import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
 import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
 
 const MAX_TEXT_LENGTH = 4000
 
@@ -61,12 +62,21 @@ export async function POST(req: Request) {
     const runtimeState = superviseRuntime()
     const runtimeSnapshot = persistRuntimeSnapshot()
     const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+const actionPolicy = evaluateRuntimeActionPolicy()
 
     if (!decisionGate.allowed) {
       return NextResponse.json({
         reply: 'Execução pausada pelo Runtime Decision Gate. O sistema recomenda estabilização antes de continuar.',
         job: null,
         runtime: decisionGate,
+      })
+    }
+
+    if (!actionPolicy.allowExecution) {
+      return NextResponse.json({
+        reply: 'Execução bloqueada pela Runtime Action Policy.',
+        job: null,
+        runtime: actionPolicy,
       })
     }
 
