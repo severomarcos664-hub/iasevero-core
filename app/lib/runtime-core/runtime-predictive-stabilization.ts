@@ -1,5 +1,7 @@
 import { evaluateRuntimeSeverityGovernance }
 from './runtime-severity-governance'
+import { emitRuntimeTelemetry }
+from './runtime-telemetry-fabric'
 
 export type RuntimePredictiveStabilization = {
   generatedAt: string
@@ -40,7 +42,7 @@ export function evaluateRuntimePredictiveStabilization():
           ? 'observe'
           : 'normal'
 
-  return {
+  const result: RuntimePredictiveStabilization = {
     generatedAt: new Date().toISOString(),
     source: 'runtime-predictive-stabilization',
 
@@ -64,4 +66,25 @@ export function evaluateRuntimePredictiveStabilization():
       `mode:${stabilizationMode}`,
     ],
   }
+
+  emitRuntimeTelemetry({
+    source: 'runtime-predictive-stabilization',
+    type: 'runtime-predictive-cycle',
+    severity:
+      result.predictiveRisk === 'high'
+        ? 'critical'
+        : result.predictiveRisk === 'moderate'
+          ? 'warning'
+          : 'info',
+    correlationId: `predictive-${Date.now()}`,
+    message: `Predictive stabilization evaluated with risk ${result.predictiveRisk}.`,
+    payload: {
+      predictiveRisk: result.predictiveRisk,
+      preventiveAction: result.preventiveAction,
+      stabilizationMode: result.stabilizationMode,
+      recommendation: result.recommendation,
+    },
+  })
+
+  return result
 }
