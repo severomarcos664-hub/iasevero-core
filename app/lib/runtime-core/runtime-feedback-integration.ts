@@ -1,5 +1,6 @@
 import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
 import { superviseRuntimeAutonomously } from './runtime-autonomous-supervisor'
+import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
 
 export type RuntimeFeedbackLevel =
   | 'optimized'
@@ -24,7 +25,7 @@ RuntimeFeedbackIntegration {
   const memory = runRuntimeMemoryPersistenceLoop()
 
   const supervision =
-    superviseRuntimeAutonomously()
+  superviseRuntimeAutonomously()
 
   const feedbackLevel =
     memory.stabilityRate >= 90 &&
@@ -36,11 +37,11 @@ RuntimeFeedbackIntegration {
       ? 'warning'
       : 'critical'
 
-  return {
+  const result: RuntimeFeedbackIntegration = {
     generatedAt: new Date().toISOString(),
 
     source:
-      'runtime-feedback-integration',
+      'runtime-feedback-integration' as const,
 
     feedbackLevel,
 
@@ -66,4 +67,27 @@ RuntimeFeedbackIntegration {
       `feedback:${feedbackLevel}`
     ]
   }
+
+  emitRuntimeTelemetry({
+    source: 'runtime-feedback-integration',
+    type: 'runtime-feedback-cycle',
+    severity:
+      feedbackLevel === 'critical'
+        ? 'critical'
+        : feedbackLevel === 'warning'
+        ? 'warning'
+        : 'info',
+    correlationId:
+      `feedback-${Date.now()}`,
+    message:
+      `Feedback integration executed with level ${feedbackLevel}.`,
+    payload: {
+      feedbackLevel,
+      memoryInfluence: true,
+      supervisorInfluence: true,
+      recommendation: result.recommendation,
+    },
+  })
+
+  return result
 }
