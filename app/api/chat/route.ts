@@ -5,6 +5,7 @@ import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-dec
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
 import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
 
 const MAX_TEXT_LENGTH = 4000
 
@@ -60,7 +61,41 @@ export async function POST(req: Request) {
     const runtimeSnapshot = persistRuntimeSnapshot()
     const runtimeMaster = runRuntimeExecutionBridge(message, userId)
 
+    const traceRequest = createRuntimeTraceNode(
+      'chat.request.received',
+      null,
+      'ok',
+      {
+        userId,
+        correlationId: runtimeMaster.correlationId,
+        messageLength: message.length,
+      },
+    )
+
+    const traceRuntime = createRuntimeTraceNode(
+      'chat.runtime.evaluated',
+      traceRequest.id,
+      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+      {
+        operationalState: runtimeMaster.operationalState,
+        governance: runtimeMaster.governance.decision,
+        integrity: runtimeMaster.integrity.integrity,
+        healing: runtimeMaster.healing.decision,
+        recovery: runtimeMaster.recovery.operationalState,
+      },
+    )
+
     const result = await iaseveroCore(message, userId)
+
+    const traceResponse = createRuntimeTraceNode(
+      'chat.response.generated',
+      traceRuntime.id,
+      'ok',
+      {
+        hasJob: Boolean(result.job),
+        replyLength: result.reply.length,
+      },
+    )
 
     return NextResponse.json({
       reply: result.reply,
@@ -73,6 +108,7 @@ export async function POST(req: Request) {
         recovery: runtimeMaster.recovery.operationalState,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.executionAllowed,
+        traceId: traceResponse.id,
       }
     })
 
