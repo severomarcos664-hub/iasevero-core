@@ -4,7 +4,7 @@ import { iaseveroCore } from '@/app/lib/iasevero-core'
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
-import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
+import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
 
 const MAX_TEXT_LENGTH = 4000
 
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     const runtimeDecision = executeRuntimeDecisionEngine()
     const runtimeState = superviseRuntime()
     const runtimeSnapshot = persistRuntimeSnapshot()
-    const runtimeMaster = runRuntimeMasterOrchestrator()
+    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
 
     const result = await iaseveroCore(message, userId)
 
@@ -71,6 +71,8 @@ export async function POST(req: Request) {
         integrity: runtimeMaster.integrity.integrity,
         healing: runtimeMaster.healing.decision,
         recovery: runtimeMaster.recovery.operationalState,
+        correlationId: runtimeMaster.correlationId,
+        executionAllowed: runtimeMaster.executionAllowed,
       }
     })
 
