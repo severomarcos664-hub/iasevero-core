@@ -1,5 +1,25 @@
 [
   {
+    "timestamp": "2026-05-23T12:22:27.016Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-05-23T12:22:27.015Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
     "timestamp": "2026-05-20T01:30:00.455Z",
     "stable": false,
     "provider": "local",

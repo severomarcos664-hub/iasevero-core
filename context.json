@@ -112,5 +112,11 @@
     "message": "Modo IASevero local.\n\nUse respostas objetivas, técnicas e seguras.\n\nFatos conhecidos: {\"nome\":\"Marcos\"}\n\nMensagem atual:\nmeu nome é Marcos",
     "reply": "🧠 IASevero\n\n📩 Entrada:\nModo IASevero local.\n\nUse respostas objetivas, técnicas e seguras.\n\nFatos conhecidos: {\"nome\":\"Marcos\"}\n\nMensagem atual:\nmeu nome é Marcos\n\n⚙️ Análise:\nSistema ativo e estável.\n\n🚀 Status: ativo",
     "at": "2026-05-05T01:33:06.303Z"
+  },
+  {
+    "userId": "local",
+    "message": "IASevero Core: resposta técnica, objetiva, segura e útil.\n\nPrioridades: precisão, zero custo, não quebrar fluxo, comandos numerados quando houver Shell.\n\nFatos conhecidos: {}\n\nMensagem atual:\nstatus operacional da IASevero",
+    "reply": "🧠 IASevero\n\n📩 Entrada:\nIASevero Core: resposta técnica, objetiva, segura e útil.\n\nPrioridades: precisão, zero custo, não quebrar fluxo, comandos numerados quando houver Shell.\n\nFatos conhecidos: {}\n\nMensagem atual:\nstatus operacional da IASevero\n\n⚙️ Análise:\nControle de custo ativo. Priorize execução local e reduza chamadas externas.\n\n🚀 Status: ativo",
+    "at": "2026-05-23T12:22:27.024Z"
   }
 ]
