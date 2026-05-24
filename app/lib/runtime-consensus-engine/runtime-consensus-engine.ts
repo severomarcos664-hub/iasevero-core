@@ -1,0 +1,119 @@
+import {
+  evaluateRuntimePersistenceMemory,
+} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+
+import {
+  evaluateRuntimeExecutionGovernanceMatrix,
+} from '@/app/lib/runtime-governance-matrix/runtime-execution-governance-matrix'
+
+export type RuntimeConsensusEngineReport = {
+  consensusId: string
+  createdAt: string
+  source: 'runtime-consensus-engine'
+
+  totalValidators: number
+  approvedValidators: number
+
+  consensusRatio: number
+
+  executionConsensus: boolean
+
+  operationalMode:
+    | 'full-consensus'
+    | 'restricted-consensus'
+
+  recommendation: string
+  reasoning: string[]
+
+  validators: {
+    governance: boolean
+    persistence: boolean
+    stability: boolean
+    execution: boolean
+  }
+}
+
+export function evaluateRuntimeConsensusEngine():
+RuntimeConsensusEngineReport {
+
+  const memory =
+    evaluateRuntimePersistenceMemory()
+
+  const governance =
+    evaluateRuntimeExecutionGovernanceMatrix()
+
+  const validators = {
+    governance:
+      governance.globalExecutionAllowed,
+
+    persistence:
+      memory.runtimeEvolution !== 'degrading',
+
+    stability:
+      memory.historicalStability >= 80,
+
+    execution:
+      governance.executionConsensus,
+  }
+
+  const approvedValidators =
+    Object
+      .values(validators)
+      .filter(Boolean)
+      .length
+
+  const totalValidators =
+    Object
+      .values(validators)
+      .length
+
+  const consensusRatio =
+    Math.round(
+      (approvedValidators / totalValidators) * 100
+    )
+
+  const executionConsensus =
+    consensusRatio >= 75
+
+  const operationalMode =
+    executionConsensus
+      ? 'full-consensus'
+      : 'restricted-consensus'
+
+  return {
+    consensusId:
+      `consensus-${Date.now()}`,
+
+    createdAt:
+      new Date().toISOString(),
+
+    source:
+      'runtime-consensus-engine',
+
+    totalValidators,
+
+    approvedValidators,
+
+    consensusRatio,
+
+    executionConsensus,
+
+    operationalMode,
+
+    recommendation:
+      executionConsensus
+        ? 'Runtime consensus fully validated.'
+        : 'Runtime restricted consensus activated.',
+
+    reasoning: [
+      `validators:${approvedValidators}/${totalValidators}`,
+      `ratio:${consensusRatio}`,
+      `governance:${validators.governance}`,
+      `persistence:${validators.persistence}`,
+      `stability:${validators.stability}`,
+      `execution:${validators.execution}`,
+    ],
+
+    validators,
+  }
+}
