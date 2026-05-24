@@ -9,6 +9,7 @@ import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distribut
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
 
+import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -63,6 +64,7 @@ export async function POST(req: Request) {
     const runtimeSnapshot = persistRuntimeSnapshot()
     const decisionGate = evaluateRuntimeDecisionGate(message, userId)
 const actionPolicy = evaluateRuntimeActionPolicy()
+const consciousness = evaluateRuntimeConsciousnessIntegration()
 
     if (!decisionGate.allowed) {
       return NextResponse.json({
