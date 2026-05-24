@@ -7,9 +7,9 @@ export function evaluateRuntimeExecutionProfileBridge() {
     evaluateRuntimeCognitiveExecutionProfile()
 
   const runtimeBehaviorMode =
-    execution.executionIntensity === 'maximum-runtime-intensity'
+    execution.responseIntensity === 'high'
       ? 'autonomous-runtime-behavior'
-      : execution.executionIntensity === 'balanced-runtime-intensity'
+      : execution.responseIntensity === 'medium'
         ? 'adaptive-runtime-behavior'
         : 'restricted-runtime-behavior'
 
@@ -31,8 +31,8 @@ export function evaluateRuntimeExecutionProfileBridge() {
     executionProfile:
       execution.executionProfile,
 
-    executionIntensity:
-      execution.executionIntensity,
+    responseIntensity:
+      execution.responseIntensity,
 
     runtimeStable:
       execution.runtimeStable,
@@ -54,7 +54,7 @@ export function evaluateRuntimeExecutionProfileBridge() {
       `mode:${runtimeBehaviorMode}`,
       `orchestration:${orchestrationLevel}`,
       `profile:${execution.executionProfile}`,
-      `intensity:${execution.executionIntensity}`,
+      `intensity:${execution.responseIntensity}`,
       `stable:${execution.runtimeStable}`,
       `consensus:${execution.executionConsensus}`
     ]
