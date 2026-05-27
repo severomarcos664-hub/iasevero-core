@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
 import { iaseveroCore } from '@/app/lib/iasevero-core'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
@@ -107,6 +108,18 @@ const consciousness = evaluateRuntimeConsciousnessIntegration()
         recovery: runtimeMaster.recovery.operationalState,
       },
     )
+
+const executiveAuthority =
+  evaluateRuntimeExecutiveAuthorityGateway()
+
+if (!executiveAuthority.executionAllowed) {
+  return NextResponse.json({
+    reply: "Execução bloqueada pela Runtime Executive Authority.",
+    job: null,
+    runtime: executiveAuthority,
+  })
+}
+
 
     const result = await iaseveroCore(message, userId)
 
