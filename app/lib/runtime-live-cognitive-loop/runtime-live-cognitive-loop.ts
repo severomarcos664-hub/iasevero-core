@@ -1,10 +1,10 @@
 import {
-  evaluateRuntimeCognitiveStateFabric,
-} from '@/app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+  evaluateRuntimeCausalInfluence,
+} from '../runtime-causal-influence-engine/runtime-causal-influence-engine'
 
 import {
-  evaluateRuntimeCausalInfluence,
-} from '@/app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine'
+  evaluateRuntimeCognitiveStateFabric,
+} from '../runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
 
 export type RuntimeLoopDecision =
   | 'accelerate'
@@ -19,6 +19,8 @@ export interface RuntimeLiveCognitiveLoopReport {
 
   cognitiveState: string
   executionMode: string
+
+  executionAllowed: boolean
 
   decision: RuntimeLoopDecision
 
@@ -51,19 +53,19 @@ RuntimeLiveCognitiveLoopReport {
     !influence.executionAllowed
       ? 'contain'
       : influence.runtimePressure >= 90
-        ? 'stabilize'
-        : influence.cognitiveCoherence >= 95
-          ? 'accelerate'
-          : 'observe'
+      ? 'stabilize'
+      : influence.cognitiveCoherence >= 95
+      ? 'accelerate'
+      : 'observe'
 
   const nextAction =
     decision === 'accelerate'
       ? 'increase-adaptive-execution'
       : decision === 'stabilize'
-        ? 'reduce-runtime-pressure'
-        : decision === 'contain'
-          ? 'activate-runtime-protection'
-          : 'observe-runtime-state'
+      ? 'reduce-runtime-pressure'
+      : decision === 'contain'
+      ? 'activate-runtime-protection'
+      : 'observe-runtime-state'
 
   return {
     loopId: `loop-${Date.now()}`,
@@ -75,6 +77,9 @@ RuntimeLiveCognitiveLoopReport {
 
     executionMode:
       influence.executionMode,
+
+    executionAllowed:
+      influence.executionAllowed,
 
     decision,
 
@@ -105,6 +110,7 @@ RuntimeLiveCognitiveLoopReport {
       `Runtime live loop decision: ${decision}.`,
 
     reasoning: [
+      `allowed:${influence.executionAllowed}`,
       `decision:${decision}`,
       `next:${nextAction}`,
       `mode:${influence.executionMode}`,
