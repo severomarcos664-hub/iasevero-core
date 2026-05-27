@@ -54,7 +54,7 @@ RuntimeAdaptiveExecutionCoordinatorReport {
       ? 'protection'
       : governor.runtimeStability < 80
       ? 'stabilization'
-      : governor.executionDecision === 'expand'
+      : governor.executiveDecision === 'expand'
       ? 'adaptive-growth'
       : 'observation'
 
