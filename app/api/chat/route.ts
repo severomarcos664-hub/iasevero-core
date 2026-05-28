@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
 import { iaseveroCore } from '@/app/lib/iasevero-core'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
@@ -121,7 +122,10 @@ if (!executiveAuthority.executionAllowed) {
 }
 
 
-    const result = await iaseveroCore(message, userId)
+    const executiveState =
+  evaluateRuntimeExecutiveState(message, 'general')
+
+const result = await iaseveroCore(message, userId)
 
     const traceResponse = createRuntimeTraceNode(
       'chat.response.generated',
@@ -144,6 +148,8 @@ if (!executiveAuthority.executionAllowed) {
         recovery: runtimeMaster.recovery.operationalState,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.executionAllowed,
+        executiveAuthority,
+        executiveState,
         traceId: traceResponse.id,
       }
     })
