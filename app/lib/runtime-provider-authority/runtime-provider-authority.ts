@@ -17,6 +17,8 @@ export interface RuntimeProviderAuthorityReport {
 
   executionPolicy: string
   runtimeAction: string
+  executionPriority: string
+  executionRoute: string
 
   recommendation: string
   reasoning: string[]
@@ -64,6 +66,12 @@ export function evaluateRuntimeProviderAuthority(
     runtimeAction:
       authority.runtimeAction,
 
+    executionPriority:
+      authority.executionPriority,
+
+    executionRoute:
+      authority.executionRoute,
+
     recommendation:
       executionAllowed
         ? 'Provider execution approved.'
@@ -75,6 +83,8 @@ export function evaluateRuntimeProviderAuthority(
       `allowed:${executionAllowed}`,
       `policy:${authority.executionPolicy}`,
       `action:${authority.runtimeAction}`,
+      `priority:${authority.executionPriority}`,
+      `route:${authority.executionRoute}`,
       `route:${route.reason}`
     ]
   }
