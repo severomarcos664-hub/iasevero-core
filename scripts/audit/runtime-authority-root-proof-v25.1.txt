@@ -1,0 +1,426 @@
+IASevero Authority Root Proof v25.1
+
+1) Gateway source
+import {
+  evaluateRuntimeExecutiveAuthority,
+} from '../runtime-executive-authority/runtime-executive-authority'
+
+export interface RuntimeExecutiveAuthorityGatewayReport {
+  gatewayId: string
+  createdAt: string
+  source: 'runtime-executive-authority-gateway'
+
+  executionAllowed: boolean
+  coreState: string
+  executionPolicy: string
+  runtimeAction: string
+  executionPriority: string
+  executionRoute: string
+
+  recommendation: string
+  reasoning: string[]
+}
+
+export function evaluateRuntimeExecutiveAuthorityGateway():
+RuntimeExecutiveAuthorityGatewayReport {
+  const authority =
+    evaluateRuntimeExecutiveAuthority()
+
+  return {
+    gatewayId: `authority-gateway-${Date.now()}`,
+    createdAt: new Date().toISOString(),
+    source: 'runtime-executive-authority-gateway',
+
+    executionAllowed:
+      authority.executionAllowed,
+
+    coreState:
+      authority.coreState,
+
+    executionPolicy:
+      authority.executionPolicy,
+
+    runtimeAction:
+      authority.runtimeAction,
+
+    executionPriority:
+      authority.executionPriority,
+
+    executionRoute:
+      authority.executionRoute,
+
+    recommendation:
+      authority.executionAllowed
+        ? 'Runtime Executive Authority Gateway approved execution.'
+        : 'Runtime Executive Authority Gateway blocked execution.',
+
+    reasoning: [
+      `allowed:${authority.executionAllowed}`,
+      `core:${authority.coreState}`,
+      `policy:${authority.executionPolicy}`,
+      `action:${authority.runtimeAction}`,
+      `priority:${authority.executionPriority}`,
+      `route:${authority.executionRoute}`,
+    ],
+  }
+}
+
+2) Gateway dependencies
+1:import {
+2:  evaluateRuntimeExecutiveAuthority,
+21:export function evaluateRuntimeExecutiveAuthorityGateway():
+23:  const authority =
+24:    evaluateRuntimeExecutiveAuthority()
+
+3) Executive Authority source
+import {
+  evaluateExecutiveRuntimeCore,
+} from '../executive-runtime-core/executive-runtime-core'
+
+export interface RuntimeExecutiveAuthorityReport {
+  authorityId: string
+  createdAt: string
+  source: 'runtime-executive-authority'
+
+  executionAllowed: boolean
+
+  coreState: string
+  executionPolicy: string
+  runtimeAction: string
+
+  executionPriority: string
+  executionRoute: string
+
+  recommendation: string
+  reasoning: string[]
+}
+
+export function evaluateRuntimeExecutiveAuthority():
+RuntimeExecutiveAuthorityReport {
+
+  const core =
+    evaluateExecutiveRuntimeCore()
+
+  return {
+    authorityId:
+      `runtime-authority-${Date.now()}`,
+
+    createdAt:
+      new Date().toISOString(),
+
+    source:
+      'runtime-executive-authority',
+
+    executionAllowed:
+      core.executionAllowed,
+
+    coreState:
+      core.coreState,
+
+    executionPolicy:
+      core.executionPolicy,
+
+    runtimeAction:
+      core.runtimeAction,
+
+    executionPriority:
+      core.executionPriority,
+
+    executionRoute:
+      core.executionRoute,
+
+    recommendation:
+      `Runtime Executive Authority active: ${core.coreState}.`,
+
+    reasoning: [
+      `allowed:${core.executionAllowed}`,
+      `core:${core.coreState}`,
+      `policy:${core.executionPolicy}`,
+      `action:${core.runtimeAction}`,
+      `priority:${core.executionPriority}`,
+      `route:${core.executionRoute}`,
+    ],
+  }
+}
+
+4) Executive Authority dependencies
+1:import {
+23:export function evaluateRuntimeExecutiveAuthority():
+26:  const core =
+
+5) Executive Governor source
+import {
+  evaluateRuntimeLiveCognitiveLoop,
+} from '../runtime-live-cognitive-loop/runtime-live-cognitive-loop'
+
+export type RuntimeExecutiveDecision =
+  | 'expand'
+  | 'maintain'
+  | 'throttle'
+  | 'protect'
+
+export interface RuntimeExecutiveGovernorReport {
+  governorId: string
+  createdAt: string
+  source: 'runtime-executive-governor'
+
+  executionAllowed: boolean
+
+  executiveDecision: RuntimeExecutiveDecision
+  executionPolicy: string
+  runtimeAction: string
+
+  executionIntensity: number
+  runtimePressure: number
+  runtimeStability: number
+  cognitiveCoherence: number
+  adaptationScore: number
+
+  recommendation: string
+  reasoning: string[]
+}
+
+export function evaluateRuntimeExecutiveGovernor():
+RuntimeExecutiveGovernorReport {
+
+  const loop =
+    evaluateRuntimeLiveCognitiveLoop()
+
+  const executiveDecision: RuntimeExecutiveDecision =
+    !loop.executionAllowed
+      ? 'protect'
+      : loop.runtimePressure >= 90
+      ? 'throttle'
+      : loop.cognitiveCoherence >= 95 &&
+        loop.runtimeStability >= 95
+      ? 'expand'
+      : 'maintain'
+
+  const executionPolicy =
+    executiveDecision === 'protect'
+      ? 'protection-first'
+      : executiveDecision === 'throttle'
+      ? 'stability-first'
+      : executiveDecision === 'expand'
+      ? 'adaptive-growth'
+      : 'balanced-operation'
+
+  const runtimeAction =
+    executiveDecision === 'protect'
+      ? 'activate-runtime-protection'
+      : executiveDecision === 'throttle'
+      ? 'reduce-execution-pressure'
+      : executiveDecision === 'expand'
+      ? 'increase-adaptive-throughput'
+      : 'maintain-governed-execution'
+
+  return {
+    governorId: `governor-${Date.now()}`,
+    createdAt: new Date().toISOString(),
+    source: 'runtime-executive-governor',
+
+    executionAllowed:
+      loop.executionAllowed,
+
+    executiveDecision,
+    executionPolicy,
+    runtimeAction,
+
+    executionIntensity:
+      loop.executionIntensity,
+
+    runtimePressure:
+      loop.runtimePressure,
+
+    runtimeStability:
+      loop.runtimeStability,
+
+    cognitiveCoherence:
+      loop.cognitiveCoherence,
+
+    adaptationScore:
+      loop.adaptationScore,
+
+    recommendation:
+      `Runtime executive governor decision: ${executiveDecision}.`,
+
+    reasoning: [
+      `allowed:${loop.executionAllowed}`,
+      `decision:${executiveDecision}`,
+      `policy:${executionPolicy}`,
+      `action:${runtimeAction}`,
+      `pressure:${loop.runtimePressure}`,
+      `stability:${loop.runtimeStability}`,
+      `coherence:${loop.cognitiveCoherence}`,
+      `adaptation:${loop.adaptationScore}`,
+      `intensity:${loop.executionIntensity}`,
+    ],
+  }
+}
+
+6) Cognitive Fabric source
+import {
+  evaluateRuntimeCognitiveBus,
+} from '@/app/lib/runtime-cognitive-bus/runtime-cognitive-bus'
+
+export type RuntimeCognitiveFabricState =
+  | 'coherent'
+  | 'adaptive'
+  | 'restricted'
+
+export interface RuntimeCognitiveStateFabricReport {
+  fabricId: string
+  createdAt: string
+  source: 'runtime-cognitive-state-fabric'
+
+  fabricState: RuntimeCognitiveFabricState
+  globalState: string
+
+  identityStatus: string
+  attentionFocus: string
+  controllerMode: string
+  integrationState: string
+  reflectionState: string
+  memoryState: string
+
+  executionAllowed: boolean
+  pipelineStable: boolean
+
+  adaptationScore: number
+  synchronizationStrength: number
+  cognitiveCoherence: number
+
+  queueUtilization: number
+  consensusRatio: number
+
+  recommendation: string
+  reasoning: string[]
+}
+
+export function evaluateRuntimeCognitiveStateFabric():
+RuntimeCognitiveStateFabricReport {
+  const bus =
+    evaluateRuntimeCognitiveBus()
+
+  const cognitiveCoherence =
+    bus.busState === 'synchronized' &&
+    bus.executionAllowed &&
+    bus.pipelineStable
+      ? 98
+      : bus.pipelineStable
+        ? 82
+        : 45
+
+  const fabricState: RuntimeCognitiveFabricState =
+    !bus.executionAllowed
+      ? 'restricted'
+      : cognitiveCoherence >= 95
+        ? 'coherent'
+        : 'adaptive'
+
+  const globalState =
+    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+
+  return {
+    fabricId: `fabric-${Date.now()}`,
+    createdAt: new Date().toISOString(),
+    source: 'runtime-cognitive-state-fabric',
+
+    fabricState,
+    globalState,
+
+    identityStatus: bus.identityStatus,
+    attentionFocus: bus.attentionFocus,
+    controllerMode: bus.controllerMode,
+    integrationState: bus.integrationState,
+    reflectionState: bus.reflectionState,
+    memoryState: bus.memoryState,
+
+    executionAllowed: bus.executionAllowed,
+    pipelineStable: bus.pipelineStable,
+
+    adaptationScore: bus.adaptationScore,
+    synchronizationStrength: bus.synchronizationStrength,
+    cognitiveCoherence,
+
+    queueUtilization: bus.queueUtilization,
+    consensusRatio: bus.consensusRatio,
+
+    recommendation:
+      bus.executionAllowed
+        ? 'Runtime cognitive state fabric coherent.'
+        : 'Runtime cognitive state fabric restricted.',
+
+    reasoning: [
+      `fabric:${fabricState}`,
+      `global:${globalState}`,
+      `identity:${bus.identityStatus}`,
+      `focus:${bus.attentionFocus}`,
+      `controller:${bus.controllerMode}`,
+      `integration:${bus.integrationState}`,
+      `reflection:${bus.reflectionState}`,
+      `memory:${bus.memoryState}`,
+      `coherence:${cognitiveCoherence}`,
+      `sync:${bus.synchronizationStrength}`,
+      `adaptation:${bus.adaptationScore}`,
+      `queue:${bus.queueUtilization}`,
+      `consensus:${bus.consensusRatio}`,
+    ],
+  }
+}
+
+7) Core Identity source
+export type RuntimeCoreIdentityStatus =
+  | 'valid'
+  | 'restricted'
+  | 'blocked'
+
+export interface RuntimeCoreIdentityReport {
+  identityId: string
+  createdAt: string
+  source: 'runtime-core-identity'
+  project: 'IASevero'
+  owner: 'Marcos Julio Severo'
+  runtimePurpose: string
+  status: RuntimeCoreIdentityStatus
+  executionAllowed: boolean
+  principles: string[]
+  reasoning: string[]
+}
+
+export function evaluateRuntimeCoreIdentity():
+RuntimeCoreIdentityReport {
+  const principles = [
+    'governed-execution',
+    'zero-regression',
+    'cost-awareness',
+    'runtime-safety',
+    'auditability',
+    'incremental-evolution',
+  ]
+
+  return {
+    identityId: `identity-${Date.now()}`,
+    createdAt: new Date().toISOString(),
+    source: 'runtime-core-identity',
+
+    project: 'IASevero',
+    owner: 'Marcos Julio Severo',
+
+    runtimePurpose:
+      'Operate as a governed adaptive runtime for AI execution.',
+
+    status: 'valid',
+    executionAllowed: true,
+
+    principles,
+
+    reasoning: [
+      `project:IASevero`,
+      `owner:Marcos Julio Severo`,
+      `principles:${principles.length}`,
+      'identity:valid',
+      'execution:true',
+    ],
+  }
+}

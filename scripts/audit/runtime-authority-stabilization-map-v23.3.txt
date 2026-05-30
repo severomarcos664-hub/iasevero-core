@@ -1,0 +1,27 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:2:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:37:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:6:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:47:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:2:  coordinateRuntimeWorkflow,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:2:  createRuntimeExecutionGraph
+app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:39:export function evaluateRuntimeCognitiveStateFabric():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()

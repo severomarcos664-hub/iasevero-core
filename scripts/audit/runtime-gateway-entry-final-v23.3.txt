@@ -1,0 +1,61 @@
+IASevero Gateway Entry Final Audit v23.3
+
+1) All Gateway calls
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+
+2) Chat route critical path
+1:import { NextResponse } from 'next/server'
+2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+3:import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
+4:import { iaseveroCore } from '@/app/lib/iasevero-core'
+33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+37:      return NextResponse.json({
+58:      return NextResponse.json({
+72:      return NextResponse.json({
+80:      return NextResponse.json({
+114:  evaluateRuntimeExecutiveAuthorityGateway()
+117:  return NextResponse.json({
+126:  evaluateRuntimeExecutiveState(message, 'general')
+128:const result = await iaseveroCore(message, userId)
+140:    return NextResponse.json({
+158:    return NextResponse.json({
+
+3) All API route handlers
+app/api/runtime/telemetry/route.ts:6:export async function GET() {
+app/api/runtime/status/route.ts:4:export async function GET() {
+app/api/health/route.ts:5:export async function GET() {
+app/api/chat/route.ts:26:export async function POST(req: Request) {
+app/api/job/route.ts:5:export async function GET(req: Request) {
+
+4) All iaseveroCore calls
+app/api/chat/route.ts:128:const result = await iaseveroCore(message, userId)
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+
+5) All Executive Governor calls
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+
+6) All Authority / Enforcement calls
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:31:export function evaluateRuntimeEnforcementAuthority(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()

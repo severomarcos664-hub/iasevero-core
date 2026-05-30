@@ -1,0 +1,70 @@
+IASevero Runtime Entry Point Audit v23.3
+
+1) Authority Gateway consumers
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+
+2) API routes using Authority Gateway
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+
+3) Runtime endpoints
+app/api/chat/route.ts
+app/api/health/route.ts
+app/api/job/route.ts
+app/api/runtime/status/route.ts
+app/api/runtime/telemetry/route.ts
+
+4) Route handlers
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:6:export async function GET() {
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:4:export async function GET() {
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:3:export const runtime = 'nodejs'
+app/api/health/route.ts:5:export async function GET() {
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:26:export async function POST(req: Request) {
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:5:export async function GET(req: Request) {
+app/api/job/route.ts:11:  return NextResponse.json({
+
+5) Core runtime entry calls
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:4:import { iaseveroCore } from '@/app/lib/iasevero-core'
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:128:const result = await iaseveroCore(message, userId)
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/provider.ts:4:export async function runProvider(

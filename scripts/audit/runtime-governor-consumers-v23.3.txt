@@ -1,0 +1,83 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:13:  executionPolicy: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:14:  runtimeAction: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:45:    executionPolicy:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:46:      core.executionPolicy,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:48:    runtimeAction:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:49:      core.runtimeAction,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:63:      `policy:${core.executionPolicy}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:64:      `action:${core.runtimeAction}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:26:  executionPolicy: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:27:  runtimeAction: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:52:      : authority.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-state/runtime-executive-state.ts:77:    executionPolicy:
+app/lib/runtime-executive-state/runtime-executive-state.ts:78:      provider.executionPolicy,
+app/lib/runtime-executive-state/runtime-executive-state.ts:80:    runtimeAction:
+app/lib/runtime-executive-state/runtime-executive-state.ts:81:      provider.runtimeAction,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:92:      `action:${provider.runtimeAction}`
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:18:  executionPolicy: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:19:  runtimeAction: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:42:      authority.executionPolicy !== 'protection-first'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:63:    executionPolicy:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:64:      authority.executionPolicy,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:66:    runtimeAction:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:67:      authority.runtimeAction,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:30:  executionPolicy: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:31:  runtimeAction: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:24:  executiveDecision: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:25:  executionPolicy: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:26:  runtimeAction: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:53:      : governor.executiveDecision === 'expand' &&
+app/lib/executive-runtime-core/executive-runtime-core.ts:67:    executiveDecision: governor.executiveDecision,
+app/lib/executive-runtime-core/executive-runtime-core.ts:68:    executionPolicy: governor.executionPolicy,
+app/lib/executive-runtime-core/executive-runtime-core.ts:69:    runtimeAction: governor.runtimeAction,
+app/lib/executive-runtime-core/executive-runtime-core.ts:85:      `decision:${governor.executiveDecision}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:86:      `policy:${governor.executionPolicy}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:87:      `action:${governor.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:12:  executionPolicy: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:13:  runtimeAction: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:37:    executionPolicy:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:38:      authority.executionPolicy,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:40:    runtimeAction:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:18:  executiveDecision: RuntimeExecutiveDecision
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:19:  executionPolicy: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:20:  runtimeAction: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:38:  const executiveDecision: RuntimeExecutiveDecision =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:48:  const executionPolicy =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:49:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:51:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:53:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:57:  const runtimeAction =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:58:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:60:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:62:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:74:    executiveDecision,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:75:    executionPolicy,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:76:    runtimeAction,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:94:      `Runtime executive governor decision: ${executiveDecision}.`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:98:      `decision:${executiveDecision}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:99:      `policy:${executionPolicy}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:100:      `action:${runtimeAction}`,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:57:      : governor.executiveDecision === 'expand'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:19:  executionPolicy: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:20:  runtimeAction: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:65:    executionPolicy: governance.executionPolicy,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:66:    runtimeAction: governance.runtimeAction,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:84:      `policy:${governance.executionPolicy}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:85:      `action:${governance.runtimeAction}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:27:  runtimeAction: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,

@@ -1,0 +1,455 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:43:export function evaluateRuntimeLiveCognitiveLoop():
+app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:2:  coordinateRuntimeWorkflow,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:2:  generateRuntimeLearningSignal,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+app/lib/runtime-core/runtime-predictive-stabilization.ts:3:import { emitRuntimeTelemetry }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:70:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:39:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-resilience-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:24:export function emitRuntimeTelemetry(
+app/lib/runtime-core/runtime-evaluation-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-evaluation-engine.ts:6:  evaluateRuntimeResilience,
+app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-coordinator.ts:44:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-workflow-coordinator.ts:2:  createRuntimeExecutionGraph
+app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-execution-bridge.ts:13:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-action-engine.ts:67:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:71:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-learning-signals.ts:2:  evaluateRuntimeExecutionQuality,
+app/lib/runtime-core/runtime-learning-signals.ts:23:export function generateRuntimeLearningSignal():
+app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/executive-runtime-core/executive-runtime-core.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator,
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/executive-runtime-core/executive-runtime-core.ts:46:    evaluateRuntimeAdaptiveExecutionCoordinator()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:2:  evaluateRuntimeLiveCognitiveLoop,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:36:    evaluateRuntimeLiveCognitiveLoop()
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:37:export function evaluateRuntimeAdaptiveExecutionCoordinator():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:11:  return NextResponse.json({
+scripts/runtime-live-cognitive-loop/runtime-live-cognitive-loop-test.ts:2:  evaluateRuntimeLiveCognitiveLoop,
+scripts/runtime-live-cognitive-loop/runtime-live-cognitive-loop-test.ts:6:  evaluateRuntimeLiveCognitiveLoop()
+scripts/runtime-adaptive-execution-engine-test.ts:2:  evaluateRuntimeAdaptiveExecution,
+scripts/runtime-adaptive-execution-engine-test.ts:5:const report = evaluateRuntimeAdaptiveExecution()
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:6:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/runtime-learning-signals-test.ts:2:  generateRuntimeLearningSignal,
+scripts/runtime-learning-signals-test.ts:6:  generateRuntimeLearningSignal()
+scripts/runtime-executive-governor/runtime-executive-governor-test.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/runtime-executive-governor/runtime-executive-governor-test.ts:6:  evaluateRuntimeExecutiveGovernor()
+scripts/runtime-resilience-engine-test.ts:2:  evaluateRuntimeResilience,
+scripts/runtime-resilience-engine-test.ts:5:const report = evaluateRuntimeResilience()
+scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:2:  evaluateRuntimeAdaptiveExecutionCoordinator,
+scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator()
+scripts/audit/runtime-live-flow-audit-v24.3.txt:1:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:2:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-live-flow-audit-v24.3.txt:12:app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:24:app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:26:app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:35:app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:37:app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-live-flow-audit-v24.3.txt:71:app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+scripts/audit/runtime-live-flow-audit-v24.3.txt:79:app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+scripts/audit/runtime-live-flow-audit-v24.3.txt:87:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-executive-authority-root-v23.1.txt:4:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-executive-authority-root-v23.1.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-executive-authority-root-v23.1.txt:6:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-executive-authority-root-v23.1.txt:7:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-executive-authority-root-v23.1.txt:8:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-executive-authority-root-v23.1.txt:15:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-executive-authority-root-v23.1.txt:16:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-executive-authority-root-v23.1.txt:17:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-correlation-audit-v24.1.txt:1:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:2:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:9:app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+scripts/audit/runtime-correlation-audit-v24.1.txt:37:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-audit-v24.1.txt:48:scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:49:scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:63:scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-audit-v24.1.txt:70:scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:78:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:79:scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-path-v24.2.txt:29:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-flow-validation-v23.4.txt:4:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-flow-validation-v23.4.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-flow-validation-v23.4.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-flow-validation-v23.4.txt:7:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-flow-validation-v23.4.txt:8:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-flow-validation-v23.4.txt:11:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-flow-validation-v23.4.txt:12:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-flow-validation-v23.4.txt:13:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-flow-validation-v23.4.txt:16:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-flow-validation-v23.4.txt:17:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-flow-validation-v23.4.txt:20:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-flow-validation-v23.4.txt:21:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-flow-validation-v23.4.txt:22:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-flow-validation-v23.4.txt:25:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+scripts/audit/runtime-flow-validation-v23.4.txt:26:app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-flow-validation-v23.4.txt:27:app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-flow-validation-v23.4.txt:30:app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+scripts/audit/runtime-flow-validation-v23.4.txt:31:app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+scripts/audit/runtime-flow-validation-v23.4.txt:34:app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+scripts/audit/runtime-flow-validation-v23.4.txt:35:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:4:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-operational-root-confirmation-v23.txt:5:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:8:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:9:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:10:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-operational-root-confirmation-v23.txt:13:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+scripts/audit/runtime-operational-root-confirmation-v23.txt:14:app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:15:app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-operational-root-confirmation-v23.txt:18:app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+scripts/audit/runtime-operational-root-confirmation-v23.txt:19:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:4:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:7:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:8:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:12:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:15:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:16:37:      return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:17:58:      return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:18:72:      return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:19:80:      return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:20:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:21:117:  return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:24:140:    return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:25:158:    return NextResponse.json({
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:39:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:40:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:41:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:44:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:45:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:47:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:48:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:49:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:50:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:54:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:59:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-gateway-entry-final-v23.3.txt:61:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:1:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:2:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:9:app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:10:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:11:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:2:  coordinateRuntimeWorkflow,
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:12:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:13:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:14:app/lib/runtime-core/runtime-workflow-coordinator.ts:2:  createRuntimeExecutionGraph
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:15:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:16:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:17:app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:18:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:19:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:20:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:22:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:23:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:24:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:25:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:26:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-authority-stabilization-map-v23.3.txt:27:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:4:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:6:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:7:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:8:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:11:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:23:app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:26:app/api/runtime/status/route.ts:7:  return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:30:app/api/health/route.ts:6:  return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:33:app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:34:app/api/chat/route.ts:37:      return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:35:app/api/chat/route.ts:58:      return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:36:app/api/chat/route.ts:72:      return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:37:app/api/chat/route.ts:80:      return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:38:app/api/chat/route.ts:117:  return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:39:app/api/chat/route.ts:140:    return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:40:app/api/chat/route.ts:158:    return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:43:app/api/job/route.ts:11:  return NextResponse.json({
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:46:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:48:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:50:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:51:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:52:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:53:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:59:app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:60:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:61:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:62:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:63:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:64:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:67:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-entrypoint-audit-v23.3.txt:69:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-correlation-flow-v24.1.txt:1:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:2:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-flow-v24.1.txt:9:app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+scripts/audit/runtime-correlation-flow-v24.1.txt:15:app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+scripts/audit/runtime-correlation-flow-v24.1.txt:19:app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+scripts/audit/runtime-correlation-flow-v24.1.txt:21:app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+scripts/audit/runtime-correlation-flow-v24.1.txt:47:app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+scripts/audit/runtime-correlation-flow-v24.1.txt:48:app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+scripts/audit/runtime-correlation-flow-v24.1.txt:51:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-flow-v24.1.txt:64:scripts/audit/runtime-correlation-audit-v24.1.txt:1:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:65:scripts/audit/runtime-correlation-audit-v24.1.txt:2:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-flow-v24.1.txt:72:scripts/audit/runtime-correlation-audit-v24.1.txt:9:app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+scripts/audit/runtime-correlation-flow-v24.1.txt:100:scripts/audit/runtime-correlation-audit-v24.1.txt:37:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-flow-v24.1.txt:111:scripts/audit/runtime-correlation-audit-v24.1.txt:48:scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:112:scripts/audit/runtime-correlation-audit-v24.1.txt:49:scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-flow-v24.1.txt:126:scripts/audit/runtime-correlation-audit-v24.1.txt:63:scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-flow-v24.1.txt:133:scripts/audit/runtime-correlation-audit-v24.1.txt:70:scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:141:scripts/audit/runtime-correlation-audit-v24.1.txt:78:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:142:scripts/audit/runtime-correlation-audit-v24.1.txt:79:scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-flow-v24.1.txt:143:scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:144:scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-flow-v24.1.txt:158:scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-flow-v24.1.txt:165:scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:173:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-flow-v24.1.txt:174:scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()
+scripts/audit/authority-decision-map.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/authority-decision-map.txt:7:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/authority-decision-map.txt:16:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/authority-decision-map.txt:18:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/authority-decision-map.txt:58:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/authority-decision-map.txt:122:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/authority-decision-map.txt:124:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/authority-decision-map.txt:149:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/authority-decision-map.txt:151:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:1:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:2:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:3:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:4:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:5:app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:6:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:7:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:2:  coordinateRuntimeWorkflow,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:8:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:9:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:10:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:20:app/lib/runtime-core/runtime-optimization-intelligence.ts:2:  generateRuntimeLearningSignal,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:21:app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:23:app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:26:app/lib/runtime-core/runtime-resilience-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:27:app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:28:app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:32:app/lib/runtime-core/runtime-evaluation-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:33:app/lib/runtime-core/runtime-evaluation-engine.ts:6:  evaluateRuntimeResilience,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:34:app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:35:app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:36:app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:37:app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:38:app/lib/runtime-core/runtime-workflow-coordinator.ts:2:  createRuntimeExecutionGraph
+scripts/audit/runtime-execution-trace-v24.0-map.txt:39:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:40:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:41:app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:45:app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:46:app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:53:app/lib/runtime-core/runtime-learning-signals.ts:2:  evaluateRuntimeExecutionQuality,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:54:app/lib/runtime-core/runtime-learning-signals.ts:23:export function generateRuntimeLearningSignal():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:55:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:56:app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:57:app/lib/executive-runtime-core/executive-runtime-core.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:58:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:59:app/lib/executive-runtime-core/executive-runtime-core.ts:46:    evaluateRuntimeAdaptiveExecutionCoordinator()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:60:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:61:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:62:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:63:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:37:export function evaluateRuntimeAdaptiveExecutionCoordinator():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:64:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:104:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:105:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:108:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:109:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:115:scripts/runtime-adaptive-execution-engine-test.ts:2:  evaluateRuntimeAdaptiveExecution,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:116:scripts/runtime-adaptive-execution-engine-test.ts:5:const report = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:121:scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:122:scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:6:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:123:scripts/runtime-learning-signals-test.ts:2:  generateRuntimeLearningSignal,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:124:scripts/runtime-learning-signals-test.ts:6:  generateRuntimeLearningSignal()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:125:scripts/runtime-executive-governor/runtime-executive-governor-test.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:126:scripts/runtime-executive-governor/runtime-executive-governor-test.ts:6:  evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:130:scripts/runtime-resilience-engine-test.ts:2:  evaluateRuntimeResilience,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:131:scripts/runtime-resilience-engine-test.ts:5:const report = evaluateRuntimeResilience()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:132:scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:2:  evaluateRuntimeAdaptiveExecutionCoordinator,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:133:scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:134:scripts/audit/runtime-executive-authority-root-v23.1.txt:4:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:135:scripts/audit/runtime-executive-authority-root-v23.1.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:136:scripts/audit/runtime-executive-authority-root-v23.1.txt:6:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:137:scripts/audit/runtime-executive-authority-root-v23.1.txt:7:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:138:scripts/audit/runtime-executive-authority-root-v23.1.txt:8:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:139:scripts/audit/runtime-executive-authority-root-v23.1.txt:15:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:140:scripts/audit/runtime-executive-authority-root-v23.1.txt:16:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:141:scripts/audit/runtime-executive-authority-root-v23.1.txt:17:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:142:scripts/audit/runtime-flow-validation-v23.4.txt:4:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:143:scripts/audit/runtime-flow-validation-v23.4.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:144:scripts/audit/runtime-flow-validation-v23.4.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:145:scripts/audit/runtime-flow-validation-v23.4.txt:7:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:146:scripts/audit/runtime-flow-validation-v23.4.txt:8:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:147:scripts/audit/runtime-flow-validation-v23.4.txt:11:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:148:scripts/audit/runtime-flow-validation-v23.4.txt:12:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:149:scripts/audit/runtime-flow-validation-v23.4.txt:13:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:150:scripts/audit/runtime-flow-validation-v23.4.txt:16:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:151:scripts/audit/runtime-flow-validation-v23.4.txt:17:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:152:scripts/audit/runtime-flow-validation-v23.4.txt:20:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:153:scripts/audit/runtime-flow-validation-v23.4.txt:21:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:154:scripts/audit/runtime-flow-validation-v23.4.txt:22:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:155:scripts/audit/runtime-flow-validation-v23.4.txt:25:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:156:scripts/audit/runtime-flow-validation-v23.4.txt:26:app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:157:scripts/audit/runtime-flow-validation-v23.4.txt:27:app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:158:scripts/audit/runtime-flow-validation-v23.4.txt:30:app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:159:scripts/audit/runtime-flow-validation-v23.4.txt:31:app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:160:scripts/audit/runtime-flow-validation-v23.4.txt:34:app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:161:scripts/audit/runtime-flow-validation-v23.4.txt:35:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:162:scripts/audit/runtime-operational-root-confirmation-v23.txt:4:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:163:scripts/audit/runtime-operational-root-confirmation-v23.txt:5:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:164:scripts/audit/runtime-operational-root-confirmation-v23.txt:8:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:165:scripts/audit/runtime-operational-root-confirmation-v23.txt:9:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:166:scripts/audit/runtime-operational-root-confirmation-v23.txt:10:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:167:scripts/audit/runtime-operational-root-confirmation-v23.txt:13:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:168:scripts/audit/runtime-operational-root-confirmation-v23.txt:14:app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:169:scripts/audit/runtime-operational-root-confirmation-v23.txt:15:app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:170:scripts/audit/runtime-operational-root-confirmation-v23.txt:18:app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:171:scripts/audit/runtime-operational-root-confirmation-v23.txt:19:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:172:scripts/audit/runtime-gateway-entry-final-v23.3.txt:4:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:173:scripts/audit/runtime-gateway-entry-final-v23.3.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:174:scripts/audit/runtime-gateway-entry-final-v23.3.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:175:scripts/audit/runtime-gateway-entry-final-v23.3.txt:7:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:176:scripts/audit/runtime-gateway-entry-final-v23.3.txt:8:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:177:scripts/audit/runtime-gateway-entry-final-v23.3.txt:12:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:178:scripts/audit/runtime-gateway-entry-final-v23.3.txt:20:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:180:scripts/audit/runtime-gateway-entry-final-v23.3.txt:39:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:181:scripts/audit/runtime-gateway-entry-final-v23.3.txt:40:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:182:scripts/audit/runtime-gateway-entry-final-v23.3.txt:41:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:183:scripts/audit/runtime-gateway-entry-final-v23.3.txt:44:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:184:scripts/audit/runtime-gateway-entry-final-v23.3.txt:45:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:185:scripts/audit/runtime-gateway-entry-final-v23.3.txt:47:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:186:scripts/audit/runtime-gateway-entry-final-v23.3.txt:48:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:187:scripts/audit/runtime-gateway-entry-final-v23.3.txt:49:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:188:scripts/audit/runtime-gateway-entry-final-v23.3.txt:50:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:189:scripts/audit/runtime-gateway-entry-final-v23.3.txt:54:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:190:scripts/audit/runtime-gateway-entry-final-v23.3.txt:59:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:191:scripts/audit/runtime-gateway-entry-final-v23.3.txt:61:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:192:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:1:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:193:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:2:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:194:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:195:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:6:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:196:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:9:app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:197:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:10:app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:198:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:11:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:2:  coordinateRuntimeWorkflow,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:199:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:12:app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:200:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:13:app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:201:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:14:app/lib/runtime-core/runtime-workflow-coordinator.ts:2:  createRuntimeExecutionGraph
+scripts/audit/runtime-execution-trace-v24.0-map.txt:202:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:15:app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:203:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:16:app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:204:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:17:app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:205:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:18:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:206:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:19:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:207:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:20:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:208:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:22:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:209:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:23:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:210:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:24:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:211:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:25:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:212:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:26:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:213:scripts/audit/runtime-authority-stabilization-map-v23.3.txt:27:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:214:scripts/audit/runtime-entrypoint-audit-v23.3.txt:4:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:215:scripts/audit/runtime-entrypoint-audit-v23.3.txt:5:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:216:scripts/audit/runtime-entrypoint-audit-v23.3.txt:6:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:217:scripts/audit/runtime-entrypoint-audit-v23.3.txt:7:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:218:scripts/audit/runtime-entrypoint-audit-v23.3.txt:8:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:219:scripts/audit/runtime-entrypoint-audit-v23.3.txt:11:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:223:scripts/audit/runtime-entrypoint-audit-v23.3.txt:23:app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+scripts/audit/runtime-execution-trace-v24.0-map.txt:224:scripts/audit/runtime-entrypoint-audit-v23.3.txt:46:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:225:scripts/audit/runtime-entrypoint-audit-v23.3.txt:48:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:226:scripts/audit/runtime-entrypoint-audit-v23.3.txt:50:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:227:scripts/audit/runtime-entrypoint-audit-v23.3.txt:51:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:228:scripts/audit/runtime-entrypoint-audit-v23.3.txt:52:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:229:scripts/audit/runtime-entrypoint-audit-v23.3.txt:53:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:230:scripts/audit/runtime-entrypoint-audit-v23.3.txt:59:app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:231:scripts/audit/runtime-entrypoint-audit-v23.3.txt:60:app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:232:scripts/audit/runtime-entrypoint-audit-v23.3.txt:61:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:233:scripts/audit/runtime-entrypoint-audit-v23.3.txt:62:app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:234:scripts/audit/runtime-entrypoint-audit-v23.3.txt:63:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:235:scripts/audit/runtime-entrypoint-audit-v23.3.txt:64:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:236:scripts/audit/runtime-entrypoint-audit-v23.3.txt:67:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:237:scripts/audit/runtime-entrypoint-audit-v23.3.txt:69:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:238:scripts/audit/authority-decision-map.txt:5:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:239:scripts/audit/authority-decision-map.txt:7:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:240:scripts/audit/authority-decision-map.txt:16:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/runtime-execution-trace-v24.0-map.txt:241:scripts/audit/authority-decision-map.txt:18:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:242:scripts/audit/authority-decision-map.txt:58:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-execution-trace-v24.0-map.txt:243:scripts/audit/authority-decision-map.txt:122:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:244:scripts/audit/authority-decision-map.txt:124:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:245:scripts/audit/authority-decision-map.txt:149:app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+scripts/audit/runtime-execution-trace-v24.0-map.txt:246:scripts/audit/authority-decision-map.txt:151:app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:253:scripts/runtime-evaluation-engine-test.ts:2:  evaluateRuntimeExecutionQuality,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:254:scripts/runtime-evaluation-engine-test.ts:5:const report = evaluateRuntimeExecutionQuality()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:256:scripts/runtime-execution-graph-engine-test.ts:2:  createRuntimeExecutionGraph
+scripts/audit/runtime-execution-trace-v24.0-map.txt:257:scripts/runtime-execution-graph-engine-test.ts:5:const graph = createRuntimeExecutionGraph()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:258:scripts/runtime-workflow-coordinator-test.ts:2:  coordinateRuntimeWorkflow
+scripts/audit/runtime-execution-trace-v24.0-map.txt:259:scripts/runtime-workflow-coordinator-test.ts:5:const workflow = coordinateRuntimeWorkflow()
+scripts/audit/runtime-authority-root-proof-v25.1.txt:24:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-authority-root-proof-v25.1.txt:71:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/runtime-authority-root-proof-v25.1.txt:153:  evaluateRuntimeLiveCognitiveLoop,
+scripts/audit/runtime-authority-root-proof-v25.1.txt:183:export function evaluateRuntimeExecutiveGovernor():
+scripts/audit/runtime-authority-root-proof-v25.1.txt:187:    evaluateRuntimeLiveCognitiveLoop()
+scripts/runtime-telemetry-fabric-test.ts:2:  emitRuntimeTelemetry,
+scripts/runtime-telemetry-fabric-test.ts:9:emitRuntimeTelemetry({
+scripts/runtime-evaluation-engine-test.ts:2:  evaluateRuntimeExecutionQuality,
+scripts/runtime-evaluation-engine-test.ts:5:const report = evaluateRuntimeExecutionQuality()
+scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()
+scripts/runtime-execution-graph-engine-test.ts:2:  createRuntimeExecutionGraph
+scripts/runtime-execution-graph-engine-test.ts:5:const graph = createRuntimeExecutionGraph()
+scripts/runtime-workflow-coordinator-test.ts:2:  coordinateRuntimeWorkflow
+scripts/runtime-workflow-coordinator-test.ts:5:const workflow = coordinateRuntimeWorkflow()

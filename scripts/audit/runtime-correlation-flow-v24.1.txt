@@ -1,0 +1,174 @@
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:18:  const events = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-telemetry-fabric.ts:42:export function readRuntimeTelemetry(): RuntimeTelemetryEvent[] {
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-timeline-engine.ts:1:import { readRuntimeTelemetry }
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:33:export type RuntimeExecutionPipelineReport = {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:55:RuntimeExecutionPipelineReport {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+app/lib/orchestrator/runtime-context.ts:27:requestId:
+app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/runtime-action-engine-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/runtime-action-engine-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/runtime-predictive-telemetry-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/runtime-predictive-telemetry-test.ts:8:const telemetry = readRuntimeTelemetry()
+scripts/runtime-execution-pipeline/runtime-execution-pipeline-test.ts:2:  evaluateRuntimeExecutionPipeline,
+scripts/runtime-execution-pipeline/runtime-execution-pipeline-test.ts:6:  evaluateRuntimeExecutionPipeline()
+scripts/runtime-event-stream-engine-test.ts:9:const correlationId = `test-${Date.now()}`
+scripts/runtime-event-stream-engine-test.ts:11:publishRuntimeStreamEvent('request.received', correlationId, {
+scripts/runtime-event-stream-engine-test.ts:15:publishRuntimeStreamEvent('runtime.checked', correlationId, {
+scripts/runtime-event-stream-engine-test.ts:19:publishRuntimeStreamEvent('governance.evaluated', correlationId, {
+scripts/runtime-event-stream-engine-test.ts:23:publishRuntimeStreamEvent('execution.allowed', correlationId, {
+scripts/runtime-event-stream-engine-test.ts:27:publishRuntimeStreamEvent('response.generated', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:1:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:2:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:3:app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+scripts/audit/runtime-correlation-audit-v24.1.txt:4:app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:5:app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+scripts/audit/runtime-correlation-audit-v24.1.txt:6:app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:7:app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:8:app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:9:app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+scripts/audit/runtime-correlation-audit-v24.1.txt:10:app/lib/runtime-core/runtime-telemetry-correlation.ts:18:  const events = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:11:app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+scripts/audit/runtime-correlation-audit-v24.1.txt:12:app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:13:app/lib/runtime-core/runtime-telemetry-fabric.ts:42:export function readRuntimeTelemetry(): RuntimeTelemetryEvent[] {
+scripts/audit/runtime-correlation-audit-v24.1.txt:14:app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+scripts/audit/runtime-correlation-audit-v24.1.txt:15:app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+scripts/audit/runtime-correlation-audit-v24.1.txt:16:app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:17:app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:18:app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:19:app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:20:app/lib/runtime-core/runtime-timeline-engine.ts:1:import { readRuntimeTelemetry }
+scripts/audit/runtime-correlation-audit-v24.1.txt:21:app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:22:app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+scripts/audit/runtime-correlation-audit-v24.1.txt:23:app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+scripts/audit/runtime-correlation-audit-v24.1.txt:24:app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:25:app/lib/orchestrator/runtime-context.ts:27:requestId:
+scripts/audit/runtime-correlation-audit-v24.1.txt:26:app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+scripts/audit/runtime-correlation-audit-v24.1.txt:27:app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:28:app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+scripts/audit/runtime-correlation-audit-v24.1.txt:29:app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+scripts/audit/runtime-correlation-audit-v24.1.txt:30:app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:31:app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:32:app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:33:app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:34:app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:35:app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:36:app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:37:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-audit-v24.1.txt:38:scripts/runtime-action-engine-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:39:scripts/runtime-action-engine-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/audit/runtime-correlation-audit-v24.1.txt:40:scripts/runtime-predictive-telemetry-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:41:scripts/runtime-predictive-telemetry-test.ts:8:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:42:scripts/runtime-event-stream-engine-test.ts:9:const correlationId = `test-${Date.now()}`
+scripts/audit/runtime-correlation-audit-v24.1.txt:43:scripts/runtime-event-stream-engine-test.ts:11:publishRuntimeStreamEvent('request.received', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:44:scripts/runtime-event-stream-engine-test.ts:15:publishRuntimeStreamEvent('runtime.checked', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:45:scripts/runtime-event-stream-engine-test.ts:19:publishRuntimeStreamEvent('governance.evaluated', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:46:scripts/runtime-event-stream-engine-test.ts:23:publishRuntimeStreamEvent('execution.allowed', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:47:scripts/runtime-event-stream-engine-test.ts:27:publishRuntimeStreamEvent('response.generated', correlationId, {
+scripts/audit/runtime-correlation-audit-v24.1.txt:48:scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:49:scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:50:scripts/audit/runtime-execution-trace-v24.0-map.txt:29:app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:51:scripts/audit/runtime-execution-trace-v24.0-map.txt:43:app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:52:scripts/audit/runtime-execution-trace-v24.0-map.txt:68:app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:53:scripts/audit/runtime-execution-trace-v24.0-map.txt:69:app/lib/orchestrator/runtime-context.ts:27:requestId:
+scripts/audit/runtime-correlation-audit-v24.1.txt:54:scripts/audit/runtime-execution-trace-v24.0-map.txt:70:app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+scripts/audit/runtime-correlation-audit-v24.1.txt:55:scripts/audit/runtime-execution-trace-v24.0-map.txt:76:app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:56:scripts/audit/runtime-execution-trace-v24.0-map.txt:77:app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+scripts/audit/runtime-correlation-audit-v24.1.txt:57:scripts/audit/runtime-execution-trace-v24.0-map.txt:78:app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+scripts/audit/runtime-correlation-audit-v24.1.txt:58:scripts/audit/runtime-execution-trace-v24.0-map.txt:81:app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+scripts/audit/runtime-correlation-audit-v24.1.txt:59:scripts/audit/runtime-execution-trace-v24.0-map.txt:82:app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:60:scripts/audit/runtime-execution-trace-v24.0-map.txt:83:app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:61:scripts/audit/runtime-execution-trace-v24.0-map.txt:84:app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:62:scripts/audit/runtime-execution-trace-v24.0-map.txt:85:app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+scripts/audit/runtime-correlation-audit-v24.1.txt:63:scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-correlation-audit-v24.1.txt:64:scripts/audit/runtime-execution-trace-v24.0-map.txt:111:scripts/runtime-action-engine-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:65:scripts/audit/runtime-execution-trace-v24.0-map.txt:127:scripts/runtime-predictive-telemetry-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:66:scripts/audit/runtime-execution-trace-v24.0-map.txt:128:scripts/runtime-predictive-telemetry-test.ts:8:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:67:scripts/audit/runtime-execution-trace-v24.0-map.txt:247:scripts/runtime-execution-coordinator-test.ts:4:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:68:scripts/audit/runtime-execution-trace-v24.0-map.txt:248:scripts/runtime-feedback-telemetry-test.ts:2:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:69:scripts/audit/runtime-execution-trace-v24.0-map.txt:249:scripts/runtime-feedback-telemetry-test.ts:6:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:70:scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:71:scripts/runtime-execution-coordinator-test.ts:4:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:72:scripts/runtime-execution-coordinator-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/audit/runtime-correlation-audit-v24.1.txt:73:scripts/runtime-feedback-telemetry-test.ts:2:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-correlation-audit-v24.1.txt:74:scripts/runtime-feedback-telemetry-test.ts:6:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:75:scripts/runtime-telemetry-fabric-test.ts:3:  readRuntimeTelemetry,
+scripts/audit/runtime-correlation-audit-v24.1.txt:76:scripts/runtime-telemetry-fabric-test.ts:13:  correlationId: 'test-correlation',
+scripts/audit/runtime-correlation-audit-v24.1.txt:77:scripts/runtime-telemetry-fabric-test.ts:21:const events = readRuntimeTelemetry()
+scripts/audit/runtime-correlation-audit-v24.1.txt:78:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/audit/runtime-correlation-audit-v24.1.txt:79:scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:11:app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:12:app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:29:app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:43:app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:68:app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+scripts/audit/runtime-execution-trace-v24.0-map.txt:69:app/lib/orchestrator/runtime-context.ts:27:requestId:
+scripts/audit/runtime-execution-trace-v24.0-map.txt:70:app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+scripts/audit/runtime-execution-trace-v24.0-map.txt:76:app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+scripts/audit/runtime-execution-trace-v24.0-map.txt:77:app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+scripts/audit/runtime-execution-trace-v24.0-map.txt:78:app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:81:app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+scripts/audit/runtime-execution-trace-v24.0-map.txt:82:app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:83:app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:84:app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:85:app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:110:app/api/chat/route.ts:153:        traceId: traceResponse.id,
+scripts/audit/runtime-execution-trace-v24.0-map.txt:111:scripts/runtime-action-engine-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:127:scripts/runtime-predictive-telemetry-test.ts:3:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:128:scripts/runtime-predictive-telemetry-test.ts:8:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:247:scripts/runtime-execution-coordinator-test.ts:4:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:248:scripts/runtime-feedback-telemetry-test.ts:2:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/audit/runtime-execution-trace-v24.0-map.txt:249:scripts/runtime-feedback-telemetry-test.ts:6:const telemetry = readRuntimeTelemetry()
+scripts/audit/runtime-execution-trace-v24.0-map.txt:255:scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/runtime-execution-coordinator-test.ts:4:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/runtime-execution-coordinator-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/runtime-feedback-telemetry-test.ts:2:import { readRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-fabric'
+scripts/runtime-feedback-telemetry-test.ts:6:const telemetry = readRuntimeTelemetry()
+scripts/runtime-telemetry-fabric-test.ts:3:  readRuntimeTelemetry,
+scripts/runtime-telemetry-fabric-test.ts:13:  correlationId: 'test-correlation',
+scripts/runtime-telemetry-fabric-test.ts:21:const events = readRuntimeTelemetry()
+scripts/runtime-telemetry-correlation-test.ts:2:import { correlateRuntimeTelemetry } from '../app/lib/runtime-core/runtime-telemetry-correlation'
+scripts/runtime-telemetry-correlation-test.ts:6:const correlation = correlateRuntimeTelemetry()

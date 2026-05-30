@@ -1,0 +1,19 @@
+IASevero Authority Audit v23
+
+1) Execution Graph producers/consumers
+app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+
+2) Workflow consumers
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+
+3) Adaptive execution consumers
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+
+4) Evaluation consumers
+app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()

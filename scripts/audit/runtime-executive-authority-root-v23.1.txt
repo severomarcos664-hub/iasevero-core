@@ -1,0 +1,32 @@
+IASevero Executive Authority Root Audit v23.1
+
+1) Executive authority gateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+
+2) Executive authority
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+
+3) Executive governor
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+
+4) Execution governance matrix
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:10:  const matrix = evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:43:    evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:13:export function evaluateRuntimeExecutionGovernanceMatrix() {
+
+5) Provider authority
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+
+6) Executive runtime context
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(

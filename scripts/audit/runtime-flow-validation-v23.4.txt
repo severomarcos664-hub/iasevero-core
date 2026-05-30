@@ -1,0 +1,35 @@
+IASevero Runtime Flow Validation v23.4
+
+1) Authority Gateway consumers
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+
+2) Executive Governor consumers
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+
+3) Execution Graph consumers
+app/lib/runtime-core/runtime-execution-graph-engine.ts:17:export function createRuntimeExecutionGraph() {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:18:  const graph = createRuntimeExecutionGraph()
+
+4) Workflow consumers
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-workflow-coordinator.ts:17:export function coordinateRuntimeWorkflow() {
+
+5) Adaptive consumers
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+
+6) Resilience consumers
+app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+
+7) Evaluation consumers
+app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()

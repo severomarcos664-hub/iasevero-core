@@ -1,0 +1,87 @@
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:29:      : telemetry.warningEvents > 5
+app/lib/runtime-core/runtime-severity-governance.ts:31:        : telemetry.warningEvents > 2
+app/lib/runtime-core/runtime-severity-governance.ts:33:          : telemetry.infoEvents > 10
+app/lib/runtime-core/runtime-severity-governance.ts:66:      ...telemetry.reasoning,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:16:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-execution-orchestrator.ts:47:    telemetryRequired: true,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:4:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:10:  | 'telemetry.persisted'
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-persistence-fabric.ts:12:    | 'telemetry'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:5:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-correlation.ts:36:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-timeline-engine.ts:2:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-timeline-engine.ts:32:    telemetry.map(event => ({
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-decision-loop.ts:15:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-decision-loop.ts:48:    telemetryRequired: execution.telemetryRequired,
+app/lib/orchestrator/runtime-architecture-index.ts:13:  | 'telemetry'
+app/lib/orchestrator/runtime-architecture-index.ts:113:    file: 'runtime-telemetry.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:114:    layer: 'telemetry',
+app/lib/orchestrator/audit-trail.ts:1:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/trace.ts:19:  console.log(
+app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+app/lib/orchestrator/runtime-context.ts:27:requestId:
+app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+app/lib/orchestrator/runtime-dependency-validator.ts:30:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:47:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:64:  telemetry: [
+app/lib/orchestrator/runtime-dependency-validator.ts:70:    'telemetry',
+app/lib/orchestrator/event-logger.ts:12:  console.log(
+app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+app/lib/orchestrator/runtime-contracts.ts:99:      contract: 'telemetry',
+app/lib/orchestrator/runtime-contracts.ts:106:    contract: 'telemetry',
+app/lib/orchestrator/metrics.ts:2:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+app/lib/orchestrator/runtime-decision-engine.ts:14:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/decision-pipeline.ts:5:import { logEvent } from './event-logger'
+app/lib/orchestrator/routing.ts:3:import { logEvent } from './event-logger'
+app/lib/observability.ts:17:  console.log(JSON.stringify(payload))
+app/api/runtime/telemetry/route.ts:11:    source: 'runtime-live-telemetry',
+app/api/runtime/telemetry/route.ts:14:    telemetry: {
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+app/api/chat/route.ts:105:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:106:        governance: runtimeMaster.governance.decision,
+app/api/chat/route.ts:107:        integrity: runtimeMaster.integrity.integrity,
+app/api/chat/route.ts:108:        healing: runtimeMaster.healing.decision,
+app/api/chat/route.ts:109:        recovery: runtimeMaster.recovery.operationalState,
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:144:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:145:        governance: runtimeMaster.governance.decision,
+app/api/chat/route.ts:146:        integrity: runtimeMaster.integrity.integrity,
+app/api/chat/route.ts:147:        healing: runtimeMaster.healing.decision,
+app/api/chat/route.ts:148:        recovery: runtimeMaster.recovery.operationalState,
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:150:        executionAllowed: runtimeMaster.executionAllowed,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
