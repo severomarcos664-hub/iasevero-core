@@ -1,0 +1,59 @@
+IASevero Runtime Authority Final Map v23.2
+
+Executive Authority Root:
+Runtime Executive Authority Gateway
+
+Cognitive Root:
+Runtime Cognitive State Fabric
+
+Primary Governor:
+Runtime Executive Governor
+
+System Constitution:
+Runtime Core Identity
+
+Operational Engine:
+Runtime Execution Graph Engine
+
+Confirmed hierarchy:
+
+Runtime Core Identity
++
+Runtime Cognitive State Fabric
++
+Runtime Executive Authority Gateway
+        ↓
+Runtime Executive Governor
+        ↓
+Runtime Executive Authority / Executive State / Provider Authority
+        ↓
+Runtime Execution Graph Engine
+        ↓
+Runtime Workflow Coordinator
+        ↓
+Runtime Adaptive Execution
+        ↓
+Runtime Resilience
+        ↓
+Runtime Evaluation
+        ↓
+Runtime Learning Signals
+        ↓
+Runtime Optimization
+        ↓
+Runtime Strategic Intelligence
+        ↓
+Runtime Risk Escalation
+        ↓
+Runtime Confidence
+        ↓
+Runtime Unified Intelligence
+        ↓
+Runtime Cognitive Arbitration
+
+Conclusion:
+The IASevero runtime authority is layered, not singular.
+The Executive Authority Gateway is the highest execution authority discovered.
+The Cognitive State Fabric is the strongest cognitive root discovered.
+The Core Identity acts as the constitutional identity layer.
+The Execution Graph is the operational workflow engine, not the maximum authority.
