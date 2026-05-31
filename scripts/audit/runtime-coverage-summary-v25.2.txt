@@ -1,0 +1,10 @@
+IASevero Runtime Coverage Summary v25.2
+
+Modules:
+213 scripts/audit/runtime-all-modules-v25.2.txt
+
+Exported functions:
+275 scripts/audit/runtime-exported-functions-v25.2.txt
+
+Runtime call coverage:
+2098 scripts/audit/runtime-call-coverage-v25.2.txt

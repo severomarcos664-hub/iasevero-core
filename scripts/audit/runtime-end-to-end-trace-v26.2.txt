@@ -1,0 +1,157 @@
+IASevero End-to-End Runtime Trace Audit v26.2
+
+1) /api/chat execution path
+2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+37:      return NextResponse.json({
+58:      return NextResponse.json({
+72:      return NextResponse.json({
+80:      return NextResponse.json({
+87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+89:    const traceRequest = createRuntimeTraceNode(
+95:        correlationId: runtimeMaster.correlationId,
+100:    const traceRuntime = createRuntimeTraceNode(
+114:  evaluateRuntimeExecutiveAuthorityGateway()
+117:  return NextResponse.json({
+130:    const traceResponse = createRuntimeTraceNode(
+140:    return NextResponse.json({
+149:        correlationId: runtimeMaster.correlationId,
+153:        traceId: traceResponse.id,
+158:    return NextResponse.json({
+
+2) Executive Runtime Context
+app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:21:  executionAllowed: boolean
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:27:  runtimeAction: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:40:  const authority =
+app/lib/executive-runtime-context/executive-runtime-context.ts:49:  const executionAllowed =
+app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:62:    executionAllowed,
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:78:      `authority:${authority.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:21:  executionAllowed: boolean
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:27:  runtimeAction: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:40:  const authority =
+app/lib/executive-runtime-context/executive-runtime-context.ts:49:  const executionAllowed =
+app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:62:    executionAllowed,
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:78:      `authority:${authority.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+
+3) Runtime execution bridge
+2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+5:  const correlationId = `chat-${userId}-${Date.now()}`
+8:  const executionAllowed =
+9:    runtime.operationalState === 'stable' ||
+13:  emitRuntimeTelemetry({
+16:    severity: executionAllowed ? 'info' : 'warning',
+17:    correlationId,
+18:    message: 'Chat request evaluated by runtime execution bridge.',
+20:      userId,
+21:      messageLength: message.length,
+22:      executionAllowed,
+23:      operationalState: runtime.operationalState,
+27:      recovery: runtime.recovery.operationalState,
+33:    correlationId,
+34:    executionAllowed,
+
+4) Runtime master orchestrator
+1:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+2:import { validateRuntimeIntegrity } from './runtime-integrity-validator'
+6:import { coordinateRuntimeSelfHealing } from './runtime-self-healing-coordinator'
+7:import { recoverRuntimeState } from './runtime-recovery-engine'
+9:export function runRuntimeMasterOrchestrator() {
+10:  const governance = evaluateRuntimeGovernanceCenter()
+11:  const integrity = validateRuntimeIntegrity()
+15:  const healing = coordinateRuntimeSelfHealing()
+16:  const recovery = recoverRuntimeState()
+18:  const operationalState =
+19:    integrity.integrity === 'healthy' &&
+20:    governance.decision === 'NORMAL_OPERATION'
+28:    operationalState,
+30:    governance,
+31:    integrity,
+35:    healing,
+36:    recovery,
+39:      operationalState === 'stable'
+44:      `state:${operationalState}`,
+45:      `decision:${governance.decision}`,
+46:      `integrity:${integrity.integrity}`,
+48:      `healing:${healing.decision}`,
+
+5) Telemetry and trace
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-predictive-stabilization.ts:3:import { emitRuntimeTelemetry }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:70:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:39:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-telemetry-fabric.ts:24:export function emitRuntimeTelemetry(
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-coordinator.ts:44:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:13:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-action-engine.ts:67:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:71:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:12:export function createRuntimeTraceNode(
+app/api/chat/route.ts:10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:100:    const traceRuntime = createRuntimeTraceNode(
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,

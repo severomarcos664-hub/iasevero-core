@@ -1,0 +1,14 @@
+app/lib/orchestrator/runtime-budget-control.ts:5:  providerBudgetAllowed: boolean
+app/lib/orchestrator/runtime-budget-control.ts:17:      providerBudgetAllowed: false,
+app/lib/orchestrator/runtime-budget-control.ts:26:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:35:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:43:    providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:7:  providerEscalation: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:22:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:33:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:44:      providerEscalation: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:54:    providerEscalation: true,
+app/lib/orchestrator/runtime-decision-engine.ts:58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+app/lib/orchestrator/runtime-decision-engine.ts:59:    ? routing.provider as RuntimeProvider
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`

@@ -1,0 +1,484 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:6:  authorityId: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:8:  source: 'runtime-executive-authority'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:13:  executionPolicy: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:14:  runtimeAction: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:30:    authorityId:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:31:      `runtime-authority-${Date.now()}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:37:      'runtime-executive-authority',
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:39:    executionAllowed:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:40:      core.executionAllowed,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:45:    executionPolicy:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:46:      core.executionPolicy,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:48:    runtimeAction:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:49:      core.runtimeAction,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:61:      `allowed:${core.executionAllowed}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:63:      `policy:${core.executionPolicy}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:64:      `action:${core.runtimeAction}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-executive-state/runtime-executive-state.ts:7:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-executive-state/runtime-executive-state.ts:22:  executionAllowed: boolean
+app/lib/runtime-executive-state/runtime-executive-state.ts:23:  provider: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:26:  executionPolicy: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:27:  runtimeAction: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:38:  const authority =
+app/lib/runtime-executive-state/runtime-executive-state.ts:41:  const provider =
+app/lib/runtime-executive-state/runtime-executive-state.ts:48:    !authority.executionAllowed
+app/lib/runtime-executive-state/runtime-executive-state.ts:50:      : !provider.allowExternal
+app/lib/runtime-executive-state/runtime-executive-state.ts:52:      : authority.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-state/runtime-executive-state.ts:68:    executionAllowed:
+app/lib/runtime-executive-state/runtime-executive-state.ts:69:      provider.executionAllowed,
+app/lib/runtime-executive-state/runtime-executive-state.ts:71:    provider:
+app/lib/runtime-executive-state/runtime-executive-state.ts:72:      provider.provider,
+app/lib/runtime-executive-state/runtime-executive-state.ts:75:      provider.allowExternal,
+app/lib/runtime-executive-state/runtime-executive-state.ts:77:    executionPolicy:
+app/lib/runtime-executive-state/runtime-executive-state.ts:78:      provider.executionPolicy,
+app/lib/runtime-executive-state/runtime-executive-state.ts:80:    runtimeAction:
+app/lib/runtime-executive-state/runtime-executive-state.ts:81:      provider.runtimeAction,
+app/lib/runtime-executive-state/runtime-executive-state.ts:88:      `allowed:${provider.executionAllowed}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:89:      `provider:${provider.provider}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:90:      `external:${provider.allowExternal}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:92:      `action:${provider.runtimeAction}`
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:26:  executionAllowed: boolean
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:53:    !fabric.executionAllowed
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:99:    executionAllowed:
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:100:      fabric.executionAllowed,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:10:  authorityId: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:12:  source: 'runtime-provider-authority'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:14:  provider: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:16:  executionAllowed: boolean
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:18:  executionPolicy: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:19:  runtimeAction: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:32:  const authority =
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:38:  const executionAllowed =
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:39:    authority.executionAllowed &&
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:42:      authority.executionPolicy !== 'protection-first'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:46:    authorityId:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:47:      `provider-authority-${Date.now()}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:53:      'runtime-provider-authority',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:55:    provider:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:56:      route.provider,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:61:    executionAllowed,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:63:    executionPolicy:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:64:      authority.executionPolicy,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:66:    runtimeAction:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:67:      authority.runtimeAction,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:70:      authority.executionPriority,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:73:      authority.executionRoute,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:76:      executionAllowed
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:81:      `provider:${route.provider}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:83:      `allowed:${executionAllowed}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:87:      `route:${authority.executionRoute}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:25:  executionAllowed: boolean
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:27:  provider: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:30:  executionPolicy: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:31:  runtimeAction: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:47:    !context.executionAllowed
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:72:    executionAllowed: context.executionAllowed,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:23:  executionAllowed: boolean
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:53:    !influence.executionAllowed
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:81:    executionAllowed:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:82:      influence.executionAllowed,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:113:      `allowed:${influence.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-adaptive-response.ts:28:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:42:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:56:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:70:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:83:    providerMode: 'hybrid',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:19:  executionAllowed: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:53:      workflow.operationalState === 'stable',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:62:    executionAllowed:
+app/lib/runtime-core/runtime-tool-orchestrator.ts:63:      workflow.executionAllowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:66:      workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:10:  executionAllowed: boolean
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:27:    !workflow.executionAllowed ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:28:    workflow.operationalState !== 'stable' ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:32:    !workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:34:      : workflow.operationalState !== 'stable'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:45:    workflowState: workflow.operationalState,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:46:    executionAllowed: workflow.executionAllowed,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:61:      `workflow:${workflow.operationalState}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:62:      `allowed:${workflow.executionAllowed}`,
+app/lib/runtime-core/runtime-policy-enforcement.ts:4:  operationalState: string
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:43:    providerMode: adaptive.providerMode,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-master-orchestrator.ts:18:  const operationalState =
+app/lib/runtime-core/runtime-master-orchestrator.ts:28:    operationalState,
+app/lib/runtime-core/runtime-master-orchestrator.ts:39:      operationalState === 'stable'
+app/lib/runtime-core/runtime-master-orchestrator.ts:44:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-contracts.ts:50:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-resilience-engine.ts:32:    !adaptive.executionAllowed
+app/lib/runtime-core/runtime-recovery-engine.ts:13:  operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:64:  let operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:70:    operationalState = 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:72:    operationalState = 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:74:    operationalState = 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:88:    operationalState,
+app/lib/runtime-core/runtime-recovery-engine.ts:91:      operationalState === 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:93:        : operationalState === 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:101:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:39:    adaptive.executionAllowed ? 100 : 30
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/runtime-core/runtime-governance-enforcement.ts:35:    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
+app/lib/runtime-core/runtime-governance-enforcement.ts:53:      `provider:${gateway.provider}`,
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:8:  operationalState: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:12:  executionAllowed: boolean
+app/lib/runtime-core/runtime-workflow-coordinator.ts:26:  const executionAllowed =
+app/lib/runtime-core/runtime-workflow-coordinator.ts:34:    operationalState:
+app/lib/runtime-core/runtime-workflow-coordinator.ts:35:      executionAllowed
+app/lib/runtime-core/runtime-workflow-coordinator.ts:44:    executionAllowed,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:47:      executionAllowed
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:8:  const executionAllowed =
+app/lib/runtime-core/runtime-execution-bridge.ts:9:    runtime.operationalState === 'stable' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:16:    severity: executionAllowed ? 'info' : 'warning',
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:22:      executionAllowed,
+app/lib/runtime-core/runtime-execution-bridge.ts:23:      operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-execution-bridge.ts:27:      recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:34:    executionAllowed,
+app/lib/runtime-core/runtime-decision-gate.ts:6:  operationalState: string
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:33:    operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:41:    recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-cognitive-state.ts:37:    providerPressure: 70,
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:36:        recovery.operationalState === 'partial'
+app/lib/runtime-core/runtime-decision-loop.ts:8:  providerMode: string
+app/lib/runtime-core/runtime-decision-loop.ts:46:    providerMode: execution.providerMode,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:8:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-cognitive-gateway.ts:46:  const provider: RuntimeProvider =
+app/lib/runtime-core/runtime-cognitive-gateway.ts:57:    provider,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:65:        ? 'Gateway recomenda contenção operacional e provider local.'
+app/lib/executive-runtime-core/executive-runtime-core.ts:21:  authority: 'central-executive-runtime-core'
+app/lib/executive-runtime-core/executive-runtime-core.ts:23:  executionAllowed: boolean
+app/lib/executive-runtime-core/executive-runtime-core.ts:25:  executionPolicy: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:26:  runtimeAction: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:49:    !governor.executionAllowed
+app/lib/executive-runtime-core/executive-runtime-core.ts:64:    authority: 'central-executive-runtime-core',
+app/lib/executive-runtime-core/executive-runtime-core.ts:66:    executionAllowed: governor.executionAllowed,
+app/lib/executive-runtime-core/executive-runtime-core.ts:68:    executionPolicy: governor.executionPolicy,
+app/lib/executive-runtime-core/executive-runtime-core.ts:69:    runtimeAction: governor.runtimeAction,
+app/lib/executive-runtime-core/executive-runtime-core.ts:84:      `allowed:${governor.executionAllowed}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:86:      `policy:${governor.executionPolicy}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:87:      `action:${governor.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:3:} from '../runtime-executive-authority/runtime-executive-authority'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:8:  source: 'runtime-executive-authority-gateway'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:12:  executionPolicy: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:13:  runtimeAction: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:23:  const authority =
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:27:    gatewayId: `authority-gateway-${Date.now()}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:29:    source: 'runtime-executive-authority-gateway',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:31:    executionAllowed:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:32:      authority.executionAllowed,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:35:      authority.coreState,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:37:    executionPolicy:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:38:      authority.executionPolicy,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:40:    runtimeAction:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:44:      authority.executionPriority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:47:      authority.executionRoute,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:50:      authority.executionAllowed
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:56:      `core:${authority.coreState}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:60:      `route:${authority.executionRoute}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:16:  executionAllowed: boolean
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:19:  executionPolicy: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:20:  runtimeAction: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:39:    !loop.executionAllowed
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:48:  const executionPolicy =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:57:  const runtimeAction =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:71:    executionAllowed:
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:72:      loop.executionAllowed,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:75:    executionPolicy,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:76:    runtimeAction,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:97:      `allowed:${loop.executionAllowed}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:99:      `policy:${executionPolicy}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:100:      `action:${runtimeAction}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:25:  executionAllowed: boolean
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:46:    bus.executionAllowed &&
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:54:    !bus.executionAllowed
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:78:    executionAllowed: bus.executionAllowed,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:89:      bus.executionAllowed
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:14:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:42:    executionAllowed: true,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:20:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:34:    !identity.executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:44:  const executionAllowed =
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:45:    identity.executionAllowed &&
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:54:    executionAllowed,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:61:      executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:69:      `execution:${executionAllowed}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:20:  executionAllowed: boolean
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:57:    !integration.executionAllowed
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:74:    executionAllowed:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:75:      integration.executionAllowed,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:96:      integration.executionAllowed
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:103:      `allowed:${integration.executionAllowed}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:44:  executionAllowed: boolean
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:88:    !controller.executionAllowed
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:119:    executionAllowed:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:120:      controller.executionAllowed,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:137:      controller.executionAllowed
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:7:  operationalState: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:43:      operationalState: 'adaptive-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:52:      operationalState: 'stabilization-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:61:      operationalState: lifecycle.currentState,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:65:        lifecycle.executionAllowed ? 45 : 20,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:25:  executionAllowed: boolean
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:44:    !governor.executionAllowed
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:69:    executionAllowed:
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:70:      governor.executionAllowed,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:88:      governor.executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:57:  const executionAllowed =
+app/lib/runtime-execution-router/runtime-execution-router.ts:62:    executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:77:    executionAllowed,
+app/lib/runtime-execution-router/runtime-execution-router.ts:93:      executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:100:      `allowed:${executionAllowed}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:12:  source: 'runtime-enforcement-authority'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:19:  executionPolicy: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:20:  runtimeAction: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:24:  provider: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:52:    context.executionAllowed &&
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:53:    governance.executionAllowed
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:58:    source: 'runtime-enforcement-authority',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:65:    executionPolicy: governance.executionPolicy,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:66:    runtimeAction: governance.runtimeAction,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:70:    provider: governance.provider,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:82:      `provider:${governance.provider}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:84:      `policy:${governance.executionPolicy}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:85:      `action:${governance.runtimeAction}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:35:  executionAllowed: boolean
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:50:  const executionAllowed =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:51:    meta.executionAllowed &&
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:53:    router.executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:56:    !executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:81:    executionAllowed,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:87:      executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:98:      `allowed:${executionAllowed}`,
+app/lib/answer.ts:14:      '1. usar provider local primeiro;',
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:58:    executionAllowed: transition.executionAllowed,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:74:      `allowed:${transition.executionAllowed}`,
+app/lib/providers/local.ts:21:    if (m.includes('api')) return 'Evite APIs externas. Use provider local para manter custo zero.'
+app/lib/providers/hybrid.ts:12:    // aqui no futuro entra OpenAI ou outro provider
+app/lib/orchestrator/runtime-budget-control.ts:5:  providerBudgetAllowed: boolean
+app/lib/orchestrator/runtime-budget-control.ts:17:      providerBudgetAllowed: false,
+app/lib/orchestrator/runtime-budget-control.ts:19:      reason: 'Modo seguro bloqueia provider externo.'
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:26:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-budget-control.ts:35:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:43:    providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-architecture-index.ts:6:  | 'provider'
+app/lib/orchestrator/runtime-architecture-index.ts:59:    responsibility: 'controlar risco de custo e provider externo',
+app/lib/orchestrator/runtime-architecture-index.ts:64:    file: 'runtime-provider-governor.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:65:    layer: 'provider',
+app/lib/orchestrator/runtime-architecture-index.ts:66:    responsibility: 'governar provider recomendado e bloqueios',
+app/lib/orchestrator/learning-engine.ts:16:      acc[d.provider] =
+app/lib/orchestrator/learning-engine.ts:17:        (acc[d.provider] || 0) + 1
+app/lib/orchestrator/runtime-snapshot.ts:7:  provider: string
+app/lib/orchestrator/runtime-snapshot.ts:49:    provider: 'local',
+app/lib/orchestrator/runtime-operational-memory.ts:8:  providerPattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:33:      providerPattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:46:  const providerPattern = dominant(snapshots.map((snapshot) => snapshot.provider))
+app/lib/orchestrator/runtime-operational-memory.ts:77:    providerPattern,
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:31:      reason: 'Governance bloqueou provider externo.',
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-state-registry.ts:10:  providerPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:22:  providerPressure: 0,
+app/lib/orchestrator/trace.ts:4:  provider: string
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/provider-reputation.ts:6:const providers: Record<string, ProviderStats> = {}
+app/lib/orchestrator/provider-reputation.ts:9:  provider: string,
+app/lib/orchestrator/provider-reputation.ts:12:  if (!providers[provider]) {
+app/lib/orchestrator/provider-reputation.ts:13:    providers[provider] = {
+app/lib/orchestrator/provider-reputation.ts:20:    providers[provider].safe++
+app/lib/orchestrator/provider-reputation.ts:22:    providers[provider].risky++
+app/lib/orchestrator/provider-reputation.ts:25:  return providers[provider]
+app/lib/orchestrator/provider-reputation.ts:29:  return providers
+app/lib/orchestrator/runtime-context.ts:8:  provider: RuntimeProvider
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-awareness.ts:17:    registry.providerPressure +
+app/lib/orchestrator/runtime-dependency-validator.ts:23:    'provider',
+app/lib/orchestrator/runtime-dependency-validator.ts:38:    'provider',
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:28:      reason: 'SafeMode bloqueia provider externo.'
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime-contracts.ts:15:  provider: string
+app/lib/orchestrator/runtime-contracts.ts:45:  provider: string
+app/lib/orchestrator/events.ts:4:  provider?: string
+app/lib/orchestrator/decision-memory.ts:4:  provider: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:24:  provider?: RuntimeProvider
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:7:  providerEscalation: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:22:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:33:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:44:      providerEscalation: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:54:    providerEscalation: true,
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+app/lib/orchestrator/runtime-decision-engine.ts:59:    ? routing.provider as RuntimeProvider
+app/lib/orchestrator/runtime-decision-engine.ts:64:    provider,
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:124:  `providerGovernor:${providerGovernor.escalationLevel}:${providerGovernor.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+app/lib/orchestrator/runtime-decision-engine.ts:229:  provider,
+app/lib/orchestrator/runtime-causal-trace.ts:7:    provider: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:39:      provider: latest?.provider ?? null,
+app/lib/orchestrator/hybrid-router.ts:9:      provider: 'local',
+app/lib/orchestrator/hybrid-router.ts:18:    provider: selected.provider,
+app/lib/orchestrator/executor.ts:2:  provider: string
+app/lib/orchestrator/executor.ts:9:  provider: string
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/executor.ts:27:    provider: input.provider,
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/decision-pipeline.ts:10:  provider: string
+app/lib/orchestrator/decision-pipeline.ts:20:    provider: route.provider,
+app/lib/orchestrator/decision-pipeline.ts:28:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:36:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:44:    provider: execution.provider,
+app/lib/orchestrator/intelligent-selector.ts:1:import { getProviderReputation } from './provider-reputation'
+app/lib/orchestrator/intelligent-selector.ts:4:  const providers = getProviderReputation()
+app/lib/orchestrator/intelligent-selector.ts:6:  const ranked = Object.entries(providers)
+app/lib/orchestrator/intelligent-selector.ts:12:        provider: name,
+app/lib/orchestrator/intelligent-selector.ts:20:      provider: 'local',
+app/lib/orchestrator/intelligent-selector.ts:21:      reason: 'Nenhum provider analisado.'
+app/lib/orchestrator/intelligent-selector.ts:26:    provider: ranked[0].provider,
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/evolution-engine.ts:12:      'Reduzir uso de providers instáveis.'
+app/lib/orchestrator/runtime-intelligence.ts:37:  const providerMap = new Map<string, number>()
+app/lib/orchestrator/runtime-intelligence.ts:42:    providerMap.set(
+app/lib/orchestrator/runtime-intelligence.ts:43:      snapshot.provider,
+app/lib/orchestrator/runtime-intelligence.ts:44:      (providerMap.get(snapshot.provider) || 0) + 1
+app/lib/orchestrator/runtime-intelligence.ts:54:    [...providerMap.entries()]
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:20:    provider: runtime.mode,
+app/lib/orchestrator/routing.ts:29:      provider: 'local',
+app/lib/orchestrator/routing.ts:37:      provider: 'local',
+app/lib/orchestrator/routing.ts:45:      provider: 'openai',
+app/lib/orchestrator/routing.ts:53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+app/lib/orchestrator/routing.ts:62:    provider: 'local',
+app/lib/orchestrator/routing.ts:64:    reason: 'Fallback seguro para provider local.'
+app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:21:  executionAllowed: boolean
+app/lib/executive-runtime-context/executive-runtime-context.ts:23:  provider: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:27:  runtimeAction: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:40:  const authority =
+app/lib/executive-runtime-context/executive-runtime-context.ts:46:  const provider =
+app/lib/executive-runtime-context/executive-runtime-context.ts:49:  const executionAllowed =
+app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:62:    executionAllowed,
+app/lib/executive-runtime-context/executive-runtime-context.ts:64:    provider: provider.provider,
+app/lib/executive-runtime-context/executive-runtime-context.ts:65:    allowExternal: provider.allowExternal,
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:78:      `authority:${authority.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:81:      `provider:${provider.provider}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:83:      `external:${provider.allowExternal}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:16:  const operationalState: RuntimeOperationalState =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:26:    operationalState === 'fully-operational'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:28:      : operationalState === 'stabilization-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:30:        : operationalState === 'throttled-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:34:  const executionAllowed =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:35:    operationalState !== 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:44:    operationalState,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:47:    executionAllowed,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:62:      executionAllowed
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:67:      `state:${operationalState}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:69:      `allowed:${executionAllowed}`,
+app/lib/provider.ts:1:import { localProvider } from './providers/local'
+app/lib/provider.ts:8:  const provider = route?.provider || 'local'
+app/lib/provider.ts:10:  if (provider !== 'local') {
+app/lib/provider.ts:12:      '[IASevero] provider externo bloqueado:',
+app/lib/provider.ts:13:      provider
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:17:    state.operationalState === 'fully-operational'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:19:      : state.operationalState === 'throttled-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:21:        : state.operationalState === 'stabilization-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:23:          : state.executionAllowed
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:49:      state.operationalState,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:58:    executionAllowed:
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:59:      state.executionAllowed,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:76:      `current:${state.operationalState}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:80:      `allowed:${state.executionAllowed}`,
+app/lib/observability.ts:4:  provider?: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:20:  executionAllowed: boolean
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:47:    !reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:66:    executionAllowed:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:67:      reflection.executionAllowed,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:84:      reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:92:      `allowed:${reflection.executionAllowed}`,
+app/api/runtime/telemetry/route.ts:15:      operationalState:
+app/api/runtime/telemetry/route.ts:16:        runtime.operationalState,
+app/api/runtime/telemetry/route.ts:25:        runtime.recovery.operationalState,
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+app/api/chat/route.ts:105:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:109:        recovery: runtimeMaster.recovery.operationalState,
+app/api/chat/route.ts:116:if (!executiveAuthority.executionAllowed) {
+app/api/chat/route.ts:144:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:148:        recovery: runtimeMaster.recovery.operationalState,
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:150:        executionAllowed: runtimeMaster.executionAllowed,
