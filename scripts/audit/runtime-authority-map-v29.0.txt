@@ -1,0 +1,67 @@
+IASevero Runtime Authority Map v29.0
+
+1. Core authorization formula
+
+globalExecutionAllowed =
+  arbitration.executionConsensus
+  &&
+  consciousness.integratedExecution
+  &&
+  bridge.runtimeStable
+
+2. Authority chain
+
+Runtime Unified Intelligence
+↓
+Runtime Operational Mode
+↓
+Runtime Trust Engine
+↓
+Runtime Consciousness Engine
+↓
+Runtime Consciousness Integration
+↓
+Runtime Cognitive Arbitration
+↓
+Runtime Execution Profile Bridge
+↓
+Runtime Execution Governance Matrix
+↓
+globalExecutionAllowed
+↓
+Runtime Adaptive Decision Layer
+↓
+Runtime Consensus Engine
+↓
+Runtime Execution Scheduler
+↓
+Runtime Execution Arbitrator
+↓
+Runtime Execution Pipeline
+↓
+Runtime Dispatch Controller
+↓
+Runtime Execution Router
+
+3. Main authority signals
+
+unifiedScore
+unifiedMode
+runtimeTrusted
+operationalMode
+runtimeStable
+integratedExecution
+executionConsensus
+cognitiveStable
+globalExecutionAllowed
+runtimeExecutionAllowed
+
+4. Professional conclusion
+
+The IASevero runtime is no longer only a collection of modules.
+The current architecture shows a multi-layer runtime authority chain
+where execution is allowed only when cognitive arbitration, consciousness
+integration, and runtime stability agree.
+
+Next recommended phase:
+Executive Runtime Context consolidation.
