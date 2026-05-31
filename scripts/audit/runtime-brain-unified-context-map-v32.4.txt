@@ -1,0 +1,30 @@
+IASevero v32.4 — Brain Matrix and Unified Context Map
+
+Confirmed chain:
+
+RuntimeSupervisor
+↓
+globalState
+↓
+RuntimeBrainMatrix
+↓
+brain.globalState
+↓
+RuntimeUnifiedContext
+↓
+RuntimeCognitiveGateway
+
+Confirmed evidence:
+- buildRuntimeBrainMatrix() is consumed by runtime-unified-context.ts
+- RuntimeUnifiedContext exposes globalState from brain.globalState
+- RuntimeCognitiveGateway consumes buildRuntimeUnifiedContext()
+
+Professional conclusion:
+The IASevero runtime has a cognitive state distribution path.
+RuntimeSupervisor produces globalState.
+RuntimeBrainMatrix consolidates it.
+RuntimeUnifiedContext distributes it.
+RuntimeCognitiveGateway consumes it.
+
+Next phase:
+v32.5 — Cognitive Gateway Influence Audit.
