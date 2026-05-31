@@ -1,0 +1,30 @@
+IASevero v30.1 — Executive Runtime Core Map
+
+Confirmed chain:
+
+RuntimeExecutiveGovernor
++
+AdaptiveExecutionCoordinator
+↓
+ExecutiveRuntimeCore
+↓
+RuntimeExecutiveAuthority
+↓
+RuntimeExecutiveAuthorityGateway
+↓
+ExecutiveRuntimeContext
+↓
+RuntimeProviderAuthority
+↓
+Execution Pipeline
+↓
+Provider
+
+Conclusion:
+ExecutiveRuntimeCore is the current operational convergence point.
+It aggregates governance, adaptive coordination, execution policy,
+runtime action, execution priority, execution route, pressure,
+stability, cognitive coherence and adaptation score.
+
+Next step:
+Validate all consumers of ExecutiveRuntimeCore before modifying code.
