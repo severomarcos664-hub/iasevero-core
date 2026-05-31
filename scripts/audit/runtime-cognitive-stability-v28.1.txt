@@ -1,0 +1,6 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:34:      arbitration.cognitiveStable,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:48:      `stable:${arbitration.cognitiveStable}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:17:    workflowStable: matrix.cognitiveStable,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:53:    cognitiveStable: arbitration.cognitiveStable,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:70:      `stable:${arbitration.cognitiveStable}`,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:48:    cognitiveStable:

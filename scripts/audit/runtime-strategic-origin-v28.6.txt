@@ -1,0 +1,56 @@
+app/lib/runtime-core/runtime-strategic-intelligence.ts:3:} from './runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:25:  confidenceScore: number
+app/lib/runtime-core/runtime-strategic-intelligence.ts:26:  operationalRisk: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:34:  const optimization = evaluateRuntimeOptimization()
+app/lib/runtime-core/runtime-strategic-intelligence.ts:37:    optimization.executionScore >= 95
+app/lib/runtime-core/runtime-strategic-intelligence.ts:39:      : optimization.executionScore >= 85
+app/lib/runtime-core/runtime-strategic-intelligence.ts:41:        : optimization.executionScore >= 60
+app/lib/runtime-core/runtime-strategic-intelligence.ts:52:          : optimization.action === 'stabilize'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:56:  const operationalRisk =
+app/lib/runtime-core/runtime-strategic-intelligence.ts:66:    operationalRisk
+app/lib/runtime-core/runtime-strategic-intelligence.ts:76:    confidenceScore: optimization.executionScore,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:77:    operationalRisk,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:89:      ...optimization.reasoning,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:92:      `risk:${operationalRisk}`,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:93:      `confidence:${optimization.executionScore}`,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:12:  optimizationId: string
+app/lib/runtime-core/runtime-optimization-intelligence.ts:14:  source: 'runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:18:  optimizationRequired: boolean
+app/lib/runtime-core/runtime-optimization-intelligence.ts:44:  const optimizationRequired =
+app/lib/runtime-core/runtime-optimization-intelligence.ts:49:    optimizationId: `optimization_${Date.now()}`,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:51:    source: 'runtime-optimization-intelligence',
+app/lib/runtime-core/runtime-optimization-intelligence.ts:56:    optimizationRequired,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:64:            ? 'Runtime optimization recommended.'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:71:      `optimizationRequired:${optimizationRequired}`,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:29:  confidenceScore: number
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:31:  operationalRisk: string
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:46:    strategic.operationalRisk === 'low'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:48:      : strategic.operationalRisk === 'medium'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:50:        : strategic.operationalRisk === 'high'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:82:    confidenceScore: strategic.confidenceScore,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:84:    operationalRisk: strategic.operationalRisk,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:17:  confidenceScore: number
+app/lib/runtime-core/runtime-confidence-intelligence.ts:31:  const confidenceScore =
+app/lib/runtime-core/runtime-confidence-intelligence.ts:40:            : escalation.confidenceScore
+app/lib/runtime-core/runtime-confidence-intelligence.ts:43:    confidenceScore >= 95
+app/lib/runtime-core/runtime-confidence-intelligence.ts:45:      : confidenceScore >= 80
+app/lib/runtime-core/runtime-confidence-intelligence.ts:47:        : confidenceScore >= 60
+app/lib/runtime-core/runtime-confidence-intelligence.ts:49:          : confidenceScore >= 35
+app/lib/runtime-core/runtime-confidence-intelligence.ts:59:    confidenceScore,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:62:      confidenceScore >= 80 &&
+app/lib/runtime-core/runtime-confidence-intelligence.ts:66:      confidenceScore < 80 &&
+app/lib/runtime-core/runtime-confidence-intelligence.ts:67:      confidenceScore >= 35,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:70:      confidenceScore < 35 ||
+app/lib/runtime-core/runtime-confidence-intelligence.ts:86:      `confidence:${confidenceScore}`,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:88:      `trusted:${confidenceScore >= 80}`,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:13:  optimizationRequired: boolean
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:31:  const optimizationRequired = false
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:51:    optimizationRequired,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:64:      `optimization:${optimizationRequired}`,
+app/lib/runtime-core/runtime-learning-signals.ts:19:  optimizationRecommended: boolean
+app/lib/runtime-core/runtime-learning-signals.ts:29:  const optimizationRecommended =
+app/lib/runtime-core/runtime-learning-signals.ts:50:    optimizationRecommended,
+app/lib/runtime-core/runtime-learning-signals.ts:55:      `optimization:${optimizationRecommended}`,
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:12:      confidence.confidenceScore +
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:33:      escalation.operationalRisk === 'low',
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:42:      `risk:${escalation.operationalRisk}`,

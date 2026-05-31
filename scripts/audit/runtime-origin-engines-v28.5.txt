@@ -1,0 +1,63 @@
+app/lib/runtime-core/runtime-strategic-intelligence.ts:25:  confidenceScore: number
+app/lib/runtime-core/runtime-strategic-intelligence.ts:26:  operationalRisk: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:56:  const operationalRisk =
+app/lib/runtime-core/runtime-strategic-intelligence.ts:66:    operationalRisk
+app/lib/runtime-core/runtime-strategic-intelligence.ts:76:    confidenceScore: optimization.executionScore,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:77:    operationalRisk,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:92:      `risk:${operationalRisk}`,
+app/lib/runtime-core/runtime-unified-context.ts:9:  operationalScore: number
+app/lib/runtime-core/runtime-unified-context.ts:22:    operationalScore: brain.operationalScore,
+app/lib/runtime-core/runtime-contracts.ts:61:  operationalScore: number
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:25:  escalationLevel: RuntimeEscalationLevel
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:29:  confidenceScore: number
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:31:  operationalRisk: string
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:45:  const escalationLevel: RuntimeEscalationLevel =
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:46:    strategic.operationalRisk === 'low'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:48:      : strategic.operationalRisk === 'medium'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:50:        : strategic.operationalRisk === 'high'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:57:    escalationLevel === 'normal'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:59:      : escalationLevel === 'monitoring'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:61:        : escalationLevel === 'elevated'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:63:          : escalationLevel === 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:68:    escalationLevel !== 'normal'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:71:    escalationLevel === 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:78:    escalationLevel,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:82:    confidenceScore: strategic.confidenceScore,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:84:    operationalRisk: strategic.operationalRisk,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:97:      `escalation:${escalationLevel}`,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:17:  confidenceScore: number
+app/lib/runtime-core/runtime-confidence-intelligence.ts:18:  executionTrusted: boolean
+app/lib/runtime-core/runtime-confidence-intelligence.ts:31:  const confidenceScore =
+app/lib/runtime-core/runtime-confidence-intelligence.ts:34:      : escalation.escalationLevel === 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:36:        : escalation.escalationLevel === 'elevated'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:38:          : escalation.escalationLevel === 'monitoring'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:40:            : escalation.confidenceScore
+app/lib/runtime-core/runtime-confidence-intelligence.ts:43:    confidenceScore >= 95
+app/lib/runtime-core/runtime-confidence-intelligence.ts:45:      : confidenceScore >= 80
+app/lib/runtime-core/runtime-confidence-intelligence.ts:47:        : confidenceScore >= 60
+app/lib/runtime-core/runtime-confidence-intelligence.ts:49:          : confidenceScore >= 35
+app/lib/runtime-core/runtime-confidence-intelligence.ts:59:    confidenceScore,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:61:    executionTrusted:
+app/lib/runtime-core/runtime-confidence-intelligence.ts:62:      confidenceScore >= 80 &&
+app/lib/runtime-core/runtime-confidence-intelligence.ts:66:      confidenceScore < 80 &&
+app/lib/runtime-core/runtime-confidence-intelligence.ts:67:      confidenceScore >= 35,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:70:      confidenceScore < 35 ||
+app/lib/runtime-core/runtime-confidence-intelligence.ts:86:      `confidence:${confidenceScore}`,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:88:      `trusted:${confidenceScore >= 80}`,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:11:  escalationLevel: string
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:29:  const escalationLevel = 'normal'
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:49:    escalationLevel,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:63:      `escalation:${escalationLevel}`,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:2:  const operationalScore = 100
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:4:  const adaptiveMode =
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:5:    operationalScore >= 95
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:7:      : operationalScore >= 80
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:11:  const adaptationRequired = adaptiveMode !== 'adaptive-performance'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:19:    operationalScore,
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:20:    adaptiveMode,
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:24:      adaptiveMode === 'adaptive-performance'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:26:        : adaptiveMode === 'adaptive-balanced'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:31:      adaptiveMode === 'adaptive-performance'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:36:      `score:${operationalScore}`,
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:37:      `mode:${adaptiveMode}`,

@@ -1,0 +1,8 @@
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:16:  const integratedExecution =
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:21:    integratedExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:33:    integratedExecution,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:42:      integratedExecution
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:22:      (consciousness.integratedExecution ? 100 : 60)
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:35:    consciousness.integratedExecution &&
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:20:        (consciousness.integratedExecution ? 100 : 40)
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:33:    consciousness.integratedExecution

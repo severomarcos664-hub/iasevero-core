@@ -1,0 +1,11 @@
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:31:    runtimeTrusted:
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:53:      `trusted:${unified.runtimeTrusted}`,
+app/lib/runtime-trust/runtime-trust-engine.ts:11:  const runtimeTrusted =
+app/lib/runtime-trust/runtime-trust-engine.ts:16:    runtimeTrusted
+app/lib/runtime-trust/runtime-trust-engine.ts:34:    runtimeTrusted,
+app/lib/runtime-trust/runtime-trust-engine.ts:38:      runtimeTrusted
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:32:    unified.runtimeTrusted &&
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:61:      `trusted:${unified.runtimeTrusted}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:14:    trust.runtimeTrusted &&
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:40:    runtimeTrusted: trust.runtimeTrusted,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:49:      `trust:${trust.runtimeTrusted}`,

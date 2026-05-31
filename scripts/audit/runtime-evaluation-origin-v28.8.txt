@@ -1,0 +1,30 @@
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:38:        : fusion.overallScore < 85
+app/lib/runtime-core/runtime-evaluation-engine.ts:21:  overallScore: number
+app/lib/runtime-core/runtime-evaluation-engine.ts:22:  quality:
+app/lib/runtime-core/runtime-evaluation-engine.ts:67:  const overallScore =
+app/lib/runtime-core/runtime-evaluation-engine.ts:77:  const quality =
+app/lib/runtime-core/runtime-evaluation-engine.ts:78:    overallScore >= 90
+app/lib/runtime-core/runtime-evaluation-engine.ts:80:      : overallScore >= 75
+app/lib/runtime-core/runtime-evaluation-engine.ts:82:        : overallScore >= 50
+app/lib/runtime-core/runtime-evaluation-engine.ts:95:    overallScore,
+app/lib/runtime-core/runtime-evaluation-engine.ts:96:    quality,
+app/lib/runtime-core/runtime-evaluation-engine.ts:99:      quality === 'excellent'
+app/lib/runtime-core/runtime-evaluation-engine.ts:100:        ? 'Runtime execution quality is excellent.'
+app/lib/runtime-core/runtime-evaluation-engine.ts:101:        : quality === 'healthy'
+app/lib/runtime-core/runtime-evaluation-engine.ts:102:          ? 'Runtime execution quality is healthy.'
+app/lib/runtime-core/runtime-evaluation-engine.ts:103:          : quality === 'degraded'
+app/lib/runtime-core/runtime-evaluation-engine.ts:112:      `overall:${overallScore}`,
+app/lib/runtime-core/runtime-evaluation-engine.ts:113:      `quality:${quality}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:70:        ? 'Stabilization recommended. Reduce autonomy and monitor workflow quality.'
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:7:  overallScore: number
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:25:  const overallScore = 100
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:45:    overallScore,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:60:      `overall:${overallScore}`,
+app/lib/runtime-core/runtime-learning-signals.ts:30:    evaluation.overallScore < 85
+app/lib/runtime-core/runtime-learning-signals.ts:38:      evaluation.quality,
+app/lib/runtime-core/runtime-learning-signals.ts:41:      evaluation.overallScore,
+app/lib/runtime-core/runtime-learning-signals.ts:44:      evaluation.overallScore >= 90
+app/lib/runtime-core/runtime-learning-signals.ts:46:        : evaluation.overallScore >= 70
+app/lib/runtime-core/runtime-learning-signals.ts:53:      `quality:${evaluation.quality}`,
+app/lib/runtime-core/runtime-learning-signals.ts:54:      `overall:${evaluation.overallScore}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'

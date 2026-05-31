@@ -1,0 +1,5 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:2:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:7:    evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:10:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:16:  const arbitration = evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:9:export function evaluateRuntimeCognitiveArbitration() {

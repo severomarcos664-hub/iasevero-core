@@ -1,0 +1,17 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:2:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:7:    evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:9:export function evaluateRuntimeConsciousnessIntegration() {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:10:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:15:  const consciousness = evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:16:  const arbitration = evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:5:export function evaluateUnifiedRuntimeIntelligence() {
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:6:  const unified = evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:9:export function evaluateRuntimeCognitiveArbitration() {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:11:    evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:14:    evaluateRuntimeConsciousnessIntegration()
+app/api/chat/route.ts:14:import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+app/api/chat/route.ts:69:const consciousness = evaluateRuntimeConsciousnessIntegration()

@@ -1,0 +1,15 @@
+app/lib/runtime-core/runtime-strategic-intelligence.ts:2:  evaluateRuntimeOptimization,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:34:  const optimization = evaluateRuntimeOptimization()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:18:  optimizationRequired: boolean
+app/lib/runtime-core/runtime-optimization-intelligence.ts:23:export function evaluateRuntimeOptimization():
+app/lib/runtime-core/runtime-optimization-intelligence.ts:44:  const optimizationRequired =
+app/lib/runtime-core/runtime-optimization-intelligence.ts:56:    optimizationRequired,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:71:      `optimizationRequired:${optimizationRequired}`,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:13:  optimizationRequired: boolean
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:31:  const optimizationRequired = false
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:51:    optimizationRequired,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:64:      `optimization:${optimizationRequired}`,
+app/lib/runtime-core/runtime-learning-signals.ts:19:  optimizationRecommended: boolean
+app/lib/runtime-core/runtime-learning-signals.ts:29:  const optimizationRecommended =
+app/lib/runtime-core/runtime-learning-signals.ts:50:    optimizationRecommended,
+app/lib/runtime-core/runtime-learning-signals.ts:55:      `optimization:${optimizationRecommended}`,

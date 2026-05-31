@@ -1,0 +1,159 @@
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:30:    recommendation:
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:39:    recommendation:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:19:  recommendation: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:57:    recommendation:
+app/lib/runtime-executive-state/runtime-executive-state.ts:29:  recommendation: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:83:    recommendation:
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:29:  recommendation: string
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:105:    recommendation:
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:41:  recommendation: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:23:  recommendation: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:75:    recommendation:
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:34:  recommendation: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:81:    recommendation:
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:48:    recommendation: coordination.recommendation,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:39:  recommendation: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:109:    recommendation:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:30:  recommendation: string
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:98:    recommendation:
+app/lib/runtime-core/runtime-action-policy-engine.ts:16:  recommendation: string
+app/lib/runtime-core/runtime-action-policy-engine.ts:54:    recommendation:
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:17:  recommendation: string
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:51:    recommendation:
+app/lib/runtime-core/runtime-lane-supervisor.ts:20:  recommendation: string
+app/lib/runtime-core/runtime-lane-supervisor.ts:72:    recommendation:
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:16:  recommendation: string
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:52:    recommendation:
+app/lib/runtime-core/runtime-strategic-intelligence.ts:27:  recommendation: string
+app/lib/runtime-core/runtime-strategic-intelligence.ts:79:    recommendation:
+app/lib/runtime-core/runtime-retention-manager.ts:8:  recommendation: string
+app/lib/runtime-core/runtime-retention-manager.ts:25:    recommendation:
+app/lib/runtime-core/runtime-severity-governance.ts:17:  recommendation: string
+app/lib/runtime-core/runtime-severity-governance.ts:54:    recommendation:
+app/lib/runtime-core/runtime-optimization-intelligence.ts:19:  recommendation: string
+app/lib/runtime-core/runtime-optimization-intelligence.ts:58:    recommendation:
+app/lib/runtime-core/runtime-predictive-stabilization.ts:16:  recommendation: string
+app/lib/runtime-core/runtime-predictive-stabilization.ts:56:    recommendation:
+app/lib/runtime-core/runtime-predictive-stabilization.ts:85:      recommendation: result.recommendation,
+app/lib/runtime-core/runtime-master-orchestrator.ts:38:    recommendation:
+app/lib/runtime-core/runtime-unified-context.ts:10:  recommendation: string
+app/lib/runtime-core/runtime-unified-context.ts:23:    recommendation: brain.recommendation,
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:12:  recommendation: string
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:37:    recommendation:
+app/lib/runtime-core/runtime-contracts.ts:62:  recommendation: string
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:35:  recommendation: string
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:88:    recommendation:
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:23:  recommendation: string
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:55:    recommendation:
+app/lib/runtime-core/runtime-resilience-engine.ts:22:  recommendation: string
+app/lib/runtime-core/runtime-resilience-engine.ts:80:    recommendation:
+app/lib/runtime-core/runtime-recovery-engine.ts:17:  recommendation: string
+app/lib/runtime-core/runtime-recovery-engine.ts:90:    recommendation:
+app/lib/runtime-core/runtime-load-balancer.ts:20:  recommendation: string
+app/lib/runtime-core/runtime-load-balancer.ts:49:    recommendation:
+app/lib/runtime-core/runtime-telemetry-correlation.ts:13:  recommendation: string
+app/lib/runtime-core/runtime-telemetry-correlation.ts:44:    recommendation:
+app/lib/runtime-core/runtime-confidence-intelligence.ts:21:  recommendation: string
+app/lib/runtime-core/runtime-confidence-intelligence.ts:73:    recommendation:
+app/lib/runtime-core/runtime-evaluation-engine.ts:27:  recommendation: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:98:    recommendation:
+app/lib/runtime-core/runtime-execution-coordinator.ts:12:  recommendation: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:33:    recommendation:
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:13:  recommendation: string
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:43:    recommendation:
+app/lib/runtime-core/runtime-workflow-coordinator.ts:13:  recommendation: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:46:    recommendation:
+app/lib/runtime-core/runtime-integrity-validator.ts:17:  recommendation: string
+app/lib/runtime-core/runtime-integrity-validator.ts:85:    recommendation:
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:23:  recommendation: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:56:    recommendation:
+app/lib/runtime-core/runtime-task-planner.ts:35:  recommendation: string
+app/lib/runtime-core/runtime-task-planner.ts:132:    recommendation:
+app/lib/runtime-core/runtime-adaptive-coordination.ts:23:  recommendation: string;
+app/lib/runtime-core/runtime-timeline-engine.ts:21:  recommendation: string
+app/lib/runtime-core/runtime-timeline-engine.ts:62:    recommendation:
+app/lib/runtime-core/runtime-action-engine.ts:17:  recommendation: string
+app/lib/runtime-core/runtime-action-engine.ts:38:    recommendation:
+app/lib/runtime-core/runtime-state-replay-engine.ts:20:  recommendation: string
+app/lib/runtime-core/runtime-state-replay-engine.ts:95:    recommendation:
+app/lib/runtime-core/runtime-cognitive-state.ts:29:  recommendation: string
+app/lib/runtime-core/runtime-governance-center.ts:21:  recommendation: string
+app/lib/runtime-core/runtime-governance-center.ts:68:    recommendation:
+app/lib/runtime-core/runtime-feedback-integration.ts:18:  recommendation: string
+app/lib/runtime-core/runtime-feedback-integration.ts:55:    recommendation:
+app/lib/runtime-core/runtime-feedback-integration.ts:88:      recommendation: result.recommendation,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:18:  recommendation: string
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:55:    recommendation:
+app/lib/runtime-core/runtime-cognitive-gateway.ts:14:  recommendation: string
+app/lib/runtime-core/runtime-cognitive-gateway.ts:63:    recommendation:
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:7:  recommendation: string
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:32:    recommendation: supervision.recommendation,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:25:  recommendation: string
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:103:    recommendation:
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:35:  recommendation: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:36:  recommendation: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:79:    recommendation:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:17:  recommendation: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:49:    recommendation:
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:41:    recommendation:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:38:  recommendation: string
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:106:    recommendation:
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:28:  recommendation: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:93:    recommendation:
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:35:  recommendation: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:88:    recommendation:
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:24:  recommendation: string
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:60:    recommendation:
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:20:  recommendation: string
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:58:    recommendation:
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:57:    recommendation:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:32:  recommendation: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:95:    recommendation:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:53:  recommendation: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:136:    recommendation:
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:38:  recommendation: string
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:32:  recommendation: string
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:35:    recommendation:
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:28:  recommendation: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:115:    recommendation:
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:34:  recommendation: string
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:33:  recommendation: string
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:87:    recommendation:
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:35:  recommendation: string
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:90:    recommendation:
+app/lib/runtime-execution-router/runtime-execution-router.ts:92:    recommendation:
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:40:    recommendation:
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:34:  recommendation: string
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:114:    recommendation:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:50:  recommendation: string
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:125:    recommendation:
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:36:  recommendation: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:27:  recommendation: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:73:    recommendation:
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:44:  recommendation: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:40:  recommendation: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:86:    recommendation:
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:61:    recommendation:
+app/lib/orchestrator/runtime-architecture-auditor.ts:11:  recommendation: string
+app/lib/orchestrator/runtime-architecture-auditor.ts:37:    recommendation: structural.recommendation
+app/lib/orchestrator/runtime-supervisor.ts:14:  recommendation: string
+app/lib/orchestrator/runtime-supervisor.ts:59:  recommendation: string
+app/lib/orchestrator/runtime-supervisor.ts:65:    recommendation: 'Supervisor compatível operacional.'
+app/lib/orchestrator/runtime-brain-matrix.ts:14:  recommendation: string
+app/lib/orchestrator/runtime-brain-matrix.ts:40:    recommendation: supervision.recommendation,
+app/lib/orchestrator/runtime-structural-health.ts:8:  recommendation: string
+app/lib/orchestrator/runtime-intelligence.ts:10:  recommendation: string
+app/lib/orchestrator/runtime-intelligence.ts:25:      recommendation: 'Sem histórico. Runtime considerado estável.'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:43:    recommendation:
+app/lib/runtime-trust/runtime-trust-engine.ts:37:    recommendation:
+app/lib/executive-runtime-context/executive-runtime-context.ts:31:  recommendation: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:61:    recommendation:
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:46:  recommendation: string
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:47:    recommendation:
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:64:    recommendation:
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:52:    recommendation:
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:43:    recommendation:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:29:  recommendation: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:83:    recommendation:
+app/api/runtime/telemetry/route.ts:33:      recommendation:

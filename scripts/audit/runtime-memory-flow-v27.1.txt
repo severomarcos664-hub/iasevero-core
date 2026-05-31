@@ -1,0 +1,27 @@
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/local-memory.ts:17:function readMemory(): MemoryDB {
+app/lib/local-memory.ts:26:function writeMemory(data: MemoryDB) {
+app/lib/local-memory.ts:37:  const db = readMemory()
+app/lib/local-memory.ts:41:  writeMemory(db)
+app/lib/local-memory.ts:45:  const db = readMemory()
+app/lib/local-memory.ts:48:  writeMemory(db)
+app/lib/local-memory.ts:52:  const db = readMemory()
+app/lib/local-memory.ts:57:  const db = readMemory()
+app/lib/orchestrator/runtime-snapshot.ts:35:export function persistRuntimeSnapshot(
+app/lib/orchestrator/memory-governor.ts:17:export function trimHistory(history: string[]): string[] {
+app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+app/lib/orchestrator/central-runtime-core.ts:4:import { persistRuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/central-runtime-core.ts:19:  const snapshot = persistRuntimeSnapshot()
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:15:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-decision-engine.ts:132:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:226:persistRuntimeSnapshot({
+app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/api/chat/route.ts:8:import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+app/api/chat/route.ts:66:    const runtimeSnapshot = persistRuntimeSnapshot()

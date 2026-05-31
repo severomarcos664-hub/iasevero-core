@@ -1,0 +1,42 @@
+app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+app/lib/runtime-core/runtime-adaptive-response.ts:29:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:43:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:57:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+app/lib/runtime-core/runtime-adaptive-response.ts:84:    memoryMode: 'session',
+app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+app/lib/runtime-core/runtime-cognitive-state.ts:38:    memoryPressure: 90,
+app/lib/orchestrator/runtime-snapshot.ts:12:  memoryMode: string
+app/lib/orchestrator/runtime-snapshot.ts:54:    memoryMode: 'unknown'
+app/lib/orchestrator/memory-governor.ts:17:export function trimHistory(history: string[]): string[] {
+app/lib/orchestrator/runtime-operational-memory.ts:9:  memoryModePattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:34:      memoryModePattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:47:  const memoryModePattern = dominant(snapshots.map((snapshot) => snapshot.memoryMode))
+app/lib/orchestrator/runtime-operational-memory.ts:78:    memoryModePattern,
+app/lib/orchestrator/runtime-state-registry.ts:11:  memoryPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:23:  memoryPressure: 0,
+app/lib/orchestrator/trace.ts:26:  return traces.slice(-20)
+app/lib/orchestrator/runtime-awareness.ts:18:    registry.memoryPressure +
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-contracts.ts:20:  memoryMode: string
+app/lib/orchestrator/runtime-contracts.ts:21:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-contracts.ts:22:  memoryPressure: number
+app/lib/orchestrator/decision-memory.ts:17:    history.shift()
+app/lib/orchestrator/decision-memory.ts:24:  return history.slice(-20)
+app/lib/orchestrator/runtime-decision-engine.ts:134:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:139:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:146:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:234:  memoryMode: memory.memoryMode
+app/lib/orchestrator/runtime-causal-trace.ts:12:    memoryMode: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:44:      memoryMode: latest?.memoryMode ?? null,
+app/lib/orchestrator/runtime-memory.ts:4:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+app/lib/orchestrator/runtime-memory.ts:16:      memoryEnabled: false,
+app/lib/orchestrator/runtime-memory.ts:17:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:26:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:27:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:36:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:37:      memoryMode: 'session',
+app/lib/orchestrator/runtime-memory.ts:45:    memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',

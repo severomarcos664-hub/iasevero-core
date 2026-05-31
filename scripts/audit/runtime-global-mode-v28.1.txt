@@ -1,0 +1,6 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:10:    arbitration.runtimeGlobalMode === 'cognitive-orchestration'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:12:      : arbitration.runtimeGlobalMode === 'adaptive-orchestration'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:24:  const runtimeGlobalMode =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:44:    runtimeGlobalMode,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:49:      runtimeGlobalMode !==
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:59:      `mode:${runtimeGlobalMode}`,

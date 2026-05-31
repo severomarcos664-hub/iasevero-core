@@ -1,0 +1,7 @@
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:9:export function evaluateRuntimeConsciousnessIntegration() {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:15:  const consciousness = evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:14:    evaluateRuntimeConsciousnessIntegration()
+app/api/chat/route.ts:14:import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+app/api/chat/route.ts:69:const consciousness = evaluateRuntimeConsciousnessIntegration()

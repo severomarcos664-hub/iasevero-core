@@ -1,0 +1,29 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:36:    executionConsensus:
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:37:      arbitration.executionConsensus,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:49:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:19:    resilienceActive: matrix.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:93:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:96:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:99:      consensus.executionConsensus
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:108:      `consensus:${consensus.executionConsensus}`,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:19:  executionConsensus: boolean
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:56:      governance.executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:75:  const executionConsensus =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:79:    executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:99:    executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:104:      executionConsensus
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:34:    arbitration.executionConsensus &&
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:54:    executionConsensus: arbitration.executionConsensus,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:71:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:24:  executionConsensus: boolean
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:73:    !consensus.executionConsensus
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:91:    consensus.executionConsensus &&
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:41:    executionConsensus: profiler.executionConsensus,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:54:      `consensus:${profiler.executionConsensus}`,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:40:    executionConsensus:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:41:      execution.executionConsensus,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:59:      `consensus:${execution.executionConsensus}`
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:31:  const executionConsensus =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:46:    executionConsensus,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:53:      executionConsensus
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:60:      `consensus:${executionConsensus}`,

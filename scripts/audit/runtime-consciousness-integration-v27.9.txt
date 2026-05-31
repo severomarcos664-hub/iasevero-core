@@ -1,0 +1,83 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:36:    executionConsensus:
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:37:      arbitration.executionConsensus,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:49:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:19:    resilienceActive: matrix.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:93:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:96:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:99:      consensus.executionConsensus
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:108:      `consensus:${consensus.executionConsensus}`,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:19:  executionConsensus: boolean
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:56:      governance.executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:75:  const executionConsensus =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:79:    executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:99:    executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:104:      executionConsensus
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:3:} from '@/app/lib/runtime-consciousness/runtime-consciousness-engine'
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:9:export function evaluateRuntimeConsciousnessIntegration() {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:10:  const consciousness =
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:16:  const integratedExecution =
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:17:    consciousness.autonomousConsciousness &&
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:21:    integratedExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:29:    source: 'runtime-consciousness-integration',
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:33:    integratedExecution,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:35:    consciousnessLevel:
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:36:      consciousness.consciousnessLevel,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:42:      integratedExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:43:        ? 'Runtime consciousness fully integrated into execution pipeline.'
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:44:        : 'Runtime operating under restricted consciousness integration.',
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:47:      `consciousness:${consciousness.consciousnessLevel}`,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:7:} from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:15:  const consciousness = evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:22:      (consciousness.integratedExecution ? 100 : 60)
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:34:    arbitration.executionConsensus &&
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:35:    consciousness.integratedExecution &&
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:54:    executionConsensus: arbitration.executionConsensus,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:55:    consciousnessLevel: consciousness.consciousnessLevel,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:71:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:72:      `consciousness:${consciousness.consciousnessLevel}`,
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:31:    runtimeTrusted:
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:24:  executionConsensus: boolean
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:53:      `trusted:${unified.runtimeTrusted}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:73:    !consensus.executionConsensus
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:91:    consensus.executionConsensus &&
+app/lib/orchestrator/runtime-telemetry.ts:13:  consciousness: RuntimeConsciousState
+app/lib/orchestrator/runtime-telemetry.ts:17:    consciousness.operational
+app/lib/orchestrator/runtime-telemetry.ts:22:    operational: consciousness.operational,
+app/lib/orchestrator/runtime-telemetry.ts:24:    processedEvents: consciousness.processedEvents,
+app/lib/orchestrator/runtime-decision-engine.ts:24:  const consciousness = executeRuntimeConsciousLoop()
+app/lib/orchestrator/runtime-decision-engine.ts:30:  if (!consciousness.operational) {
+app/lib/orchestrator/runtime-decision-engine.ts:34:  if (consciousness.stable) {
+app/lib/orchestrator/runtime-decision-engine.ts:43:    consciousness.operational
+app/lib/orchestrator/runtime-decision-engine.ts:51:    consciousness.operational &&
+app/lib/orchestrator/runtime-decision-engine.ts:223:generateRuntimeTelemetry(consciousness)
+app/lib/orchestrator/runtime-decision-engine.ts:286:    consciousness,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:41:    executionConsensus: profiler.executionConsensus,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:54:      `consensus:${profiler.executionConsensus}`,
+app/lib/runtime-trust/runtime-trust-engine.ts:11:  const runtimeTrusted =
+app/lib/runtime-trust/runtime-trust-engine.ts:16:    runtimeTrusted
+app/lib/runtime-trust/runtime-trust-engine.ts:34:    runtimeTrusted,
+app/lib/runtime-trust/runtime-trust-engine.ts:38:      runtimeTrusted
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:40:    executionConsensus:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:41:      execution.executionConsensus,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:59:      `consensus:${execution.executionConsensus}`
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:7:} from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:13:  const consciousness =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:20:        (consciousness.integratedExecution ? 100 : 40)
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:31:  const executionConsensus =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:32:    unified.runtimeTrusted &&
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:33:    consciousness.integratedExecution
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:46:    executionConsensus,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:53:      executionConsensus
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:60:      `consensus:${executionConsensus}`,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:61:      `trusted:${unified.runtimeTrusted}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:13:  const consciousnessLevel =
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:14:    trust.runtimeTrusted &&
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:22:    consciousnessLevel === 'fully-aware'
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:30:    consciousnessId: `consciousness_${Date.now()}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:33:    source: 'runtime-consciousness-engine',
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:35:    consciousnessLevel,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:40:    runtimeTrusted: trust.runtimeTrusted,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:45:        ? 'Runtime consciousness fully operational.'
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:46:        : 'Runtime consciousness operating under restriction.',
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:49:      `trust:${trust.runtimeTrusted}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:51:      `consciousness:${consciousnessLevel}`,

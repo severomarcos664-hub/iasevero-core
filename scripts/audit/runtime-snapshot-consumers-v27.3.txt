@@ -1,0 +1,4 @@
+app/lib/orchestrator/runtime-snapshot.ts:35:export function persistRuntimeSnapshot(
+app/lib/orchestrator/central-runtime-core.ts:19:  const snapshot = persistRuntimeSnapshot()
+app/lib/orchestrator/runtime-decision-engine.ts:226:persistRuntimeSnapshot({
+app/api/chat/route.ts:66:    const runtimeSnapshot = persistRuntimeSnapshot()
