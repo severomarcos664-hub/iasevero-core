@@ -1,0 +1,57 @@
+IASevero v31.2 — Runtime Real Flow Validation
+
+Goal:
+Validate whether a real API chat request passes through the canonical authority chain before producing a response.
+
+Confirmed observed route:
+app/api/chat/route.ts
+
+Expected real flow:
+Request
+↓
+Runtime Decision Gate
+↓
+Runtime Action Policy
+↓
+Runtime Consciousness Integration
+↓
+Runtime Execution Bridge
+↓
+Runtime Executive Authority Gateway
+↓
+Runtime Executive State
+↓
+iaseveroCore(message, userId)
+↓
+Response
+
+Critical validation point:
+app/api/chat/route.ts calls evaluateRuntimeExecutiveAuthorityGateway()
+before iaseveroCore(message, userId).
+
+Meaning:
+The Executive Authority Gateway can approve or block a real chat request before core response generation.
+
+Authority chain already documented:
+RuntimeExecutiveGovernor
++
+RuntimeAdaptiveExecutionCoordinator
+↓
+ExecutiveRuntimeCore
+↓
+RuntimeExecutiveAuthority
+↓
+RuntimeExecutiveAuthorityGateway
+↓
+ExecutiveRuntimeContext
+↓
+RuntimeProviderAuthority
+↓
+Execution Pipeline
+↓
+Provider
+
+Professional conclusion:
+If route.ts keeps evaluateRuntimeExecutiveAuthorityGateway()
+before iaseveroCore(), then the authority chain is not only decorative.
+It participates in the real request flow.

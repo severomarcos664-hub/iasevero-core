@@ -1,0 +1,10 @@
+2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+4:import { iaseveroCore } from '@/app/lib/iasevero-core'
+9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+68:const actionPolicy = evaluateRuntimeActionPolicy()
+87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+114:  evaluateRuntimeExecutiveAuthorityGateway()
+128:const result = await iaseveroCore(message, userId)
