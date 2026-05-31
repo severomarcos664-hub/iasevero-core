@@ -1,0 +1,59 @@
+IASevero Runtime Authority Chain v30.0
+
+Core discovery:
+The current runtime authority chain is driven by:
+
+Runtime Confidence Intelligence
++
+Runtime Adaptive Intelligence
++
+Runtime Risk Escalation
+↓
+Runtime Unified Intelligence Bus
+↓
+Runtime Operational Mode Switcher
+↓
+Runtime Trust Engine
+↓
+Runtime Consciousness Engine
+↓
+Runtime Consciousness Integration
+↓
+Runtime Execution Governance Matrix
+↓
+Runtime Provider Governor
+↓
+Runtime Executive Governor
+↓
+Executive Runtime Core
+↓
+Executive Authority
+↓
+Executive Authority Gateway
+↓
+Executive Runtime Context
+↓
+Execution Pipeline
+
+Key root signals:
+- confidenceScore
+- operationalScore
+- operationalRisk
+- escalationLevel
+- unifiedScore
+- unifiedMode
+- runtimeTrusted
+- autonomousConsciousness
+- integratedExecution
+- globalExecutionAllowed
+- providerLocked
+
+Professional conclusion:
+IASevero is not moved by a single module.
+It is moved by a governed chain of confidence, adaptive intelligence,
+risk escalation, unified intelligence, trust, consciousness, governance,
+provider control, and executive execution.
+
+Next phase:
+Do not create random modules.
+Start v30.1 with Executive Runtime Context consolidation or root signal validation.
