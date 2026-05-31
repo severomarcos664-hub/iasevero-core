@@ -1,0 +1,3 @@
+app/api/chat/route.ts:90:      'chat.request.received',
+app/api/chat/route.ts:101:      'chat.runtime.evaluated',
+app/api/chat/route.ts:131:      'chat.response.generated',

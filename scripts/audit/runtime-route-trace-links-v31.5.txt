@@ -1,0 +1,23 @@
+87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+95:        correlationId: runtimeMaster.correlationId,
+100:    const traceRuntime = createRuntimeTraceNode(
+103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+105:        operationalState: runtimeMaster.operationalState,
+106:        governance: runtimeMaster.governance.decision,
+107:        integrity: runtimeMaster.integrity.integrity,
+108:        healing: runtimeMaster.healing.decision,
+109:        recovery: runtimeMaster.recovery.operationalState,
+113:const executiveAuthority =
+116:if (!executiveAuthority.executionAllowed) {
+120:    runtime: executiveAuthority,
+130:    const traceResponse = createRuntimeTraceNode(
+132:      traceRuntime.id,
+144:        operationalState: runtimeMaster.operationalState,
+145:        governance: runtimeMaster.governance.decision,
+146:        integrity: runtimeMaster.integrity.integrity,
+147:        healing: runtimeMaster.healing.decision,
+148:        recovery: runtimeMaster.recovery.operationalState,
+149:        correlationId: runtimeMaster.correlationId,
+150:        executionAllowed: runtimeMaster.executionAllowed,
+151:        executiveAuthority,
+153:        traceId: traceResponse.id,
