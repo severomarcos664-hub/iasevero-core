@@ -1,0 +1,25 @@
+IASevero v31.1 Authority Dependency Matrix
+
+app/api/chat/route.ts
+  -> RuntimeExecutiveAuthorityGateway
+
+RuntimeExecutiveAuthorityGateway
+  -> RuntimeExecutiveAuthority
+
+RuntimeExecutiveAuthority
+  -> ExecutiveRuntimeCore
+
+ExecutiveRuntimeCore
+  -> RuntimeExecutiveGovernor
+  -> AdaptiveExecutionCoordinator
+
+ExecutiveRuntimeContext
+  -> RuntimeExecutiveAuthorityGateway
+  -> RuntimeProviderAuthority
+
+RuntimeProviderAuthority
+  -> RuntimeExecutiveAuthority
+
+RuntimeExecutiveState
+  -> RuntimeExecutiveAuthority
+  -> RuntimeProviderAuthority
