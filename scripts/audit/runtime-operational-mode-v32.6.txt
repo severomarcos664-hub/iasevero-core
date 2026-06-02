@@ -1,0 +1,27 @@
+app/lib/runtime-core/runtime-governance-enforcement.ts:20:    gateway.operationalMode === 'containment'
+app/lib/runtime-core/runtime-governance-enforcement.ts:41:      gateway.operationalMode,
+app/lib/runtime-core/runtime-governance-enforcement.ts:54:      `mode:${gateway.operationalMode}`,
+app/lib/runtime-core/runtime-cognitive-state.ts:23:  operationalMode:
+app/lib/runtime-core/runtime-cognitive-state.ts:109:  const operationalMode =
+app/lib/runtime-core/runtime-cognitive-state.ts:112:      : gateway.operationalMode
+app/lib/runtime-core/runtime-cognitive-state.ts:119:    `gateway:${gateway.operationalMode}`
+app/lib/runtime-core/runtime-cognitive-state.ts:138:    operationalMode,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:39:  const operationalMode =
+app/lib/runtime-core/runtime-cognitive-gateway.ts:56:    operationalMode,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:21:  operationalMode:
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:78:  const operationalMode =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:101:    operationalMode,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:8:  const operationalMode =
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:18:    operationalMode === 'maximum-performance'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:20:      : operationalMode === 'balanced-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:22:        : operationalMode === 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:34:    operationalMode,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:38:      operationalMode !== 'recovery-runtime',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:41:      operationalMode === 'maximum-performance'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:43:        : operationalMode === 'balanced-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:45:          : operationalMode === 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:51:      `mode:${operationalMode}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:15:    operational.operationalMode === 'maximum-performance'
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:41:    operationalMode: operational.operationalMode,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:50:      `mode:${operational.operationalMode}`,

@@ -1,0 +1,88 @@
+app/lib/runtime-core/runtime-strategic-intelligence.ts:8:  | 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:42:          ? 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:50:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:61:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:84:          : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:85:            ? 'Strategic runtime posture: safe degradation mode.'
+app/lib/runtime-core/runtime-retention-manager.ts:7:  retentionMode: 'safe' | 'balanced' | 'aggressive'
+app/lib/runtime-core/runtime-retention-manager.ts:24:    retentionMode: 'safe',
+app/lib/runtime-core/runtime-retention-manager.ts:31:      'mode:safe',
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:93:          : 'Runtime operating within safe strategic limits.',
+app/lib/runtime-core/runtime-resilience-engine.ts:88:              ? 'Resilience recommends degraded safe mode.'
+app/lib/runtime-core/runtime-tool-registry.ts:55:      fallback: 'workflow.safe-analysis',
+app/lib/runtime-core/runtime-tool-registry.ts:77:      fallback: 'validation.safe',
+app/lib/runtime-core/runtime-governance-enforcement.ts:9:  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:20:  executionProfile: 'safe' | 'balanced' | 'aggressive';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:57:    mode === 'contain' ? 'safe' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:73:          : 'Containment required. Block unsafe execution and validate recovery path.';
+app/lib/runtime-core/runtime-cognitive-state.ts:25:    | 'safe'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:43:        ? 'safe'
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:25:    'runtime-safety',
+app/lib/mode.ts:5:  | 'safe'
+app/lib/mode.ts:9:    (process.env.IASEVERO_MODE || 'safe').toLowerCase()
+app/lib/mode.ts:15:    mode === 'safe'
+app/lib/mode.ts:20:  return 'safe'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:10:      ? 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:22:        : operationalMode === 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:45:          : operationalMode === 'safe-protection'
+app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/learning-engine.ts:7:    d => d.safe === false
+app/lib/orchestrator/learning-engine.ts:10:  const safe = decisions.filter(
+app/lib/orchestrator/learning-engine.ts:11:    d => d.safe === true
+app/lib/orchestrator/learning-engine.ts:23:    safe,
+app/lib/orchestrator/runtime-snapshot.ts:46:  const safeSnapshot: RuntimeSnapshot = snapshot || {
+app/lib/orchestrator/runtime-snapshot.ts:58:    safeSnapshot,
+app/lib/orchestrator/runtime-snapshot.ts:67:  return safeSnapshot
+app/lib/orchestrator/health-intelligence.ts:14:      safe: state.safe
+app/lib/orchestrator/runtime-governor.ts:7:  safeModeRequired: boolean
+app/lib/orchestrator/runtime-governor.ts:20:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:30:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:39:    safeModeRequired: policy.forceSafeMode,
+app/lib/orchestrator/runtime-guardian.ts:21:      safe: false,
+app/lib/orchestrator/runtime-guardian.ts:32:    safe: true,
+app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-policy.ts:17:      reason: 'Runtime em safeMode: execução permitida apenas em modo seguro.',
+app/lib/orchestrator/trace.ts:6:  safe: boolean
+app/lib/orchestrator/state-engine.ts:6:  safe: boolean
+app/lib/orchestrator/state-engine.ts:12:  safe: true,
+app/lib/orchestrator/state-engine.ts:35:    safe: true,
+app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+app/lib/orchestrator/provider-reputation.ts:2:  safe: number
+app/lib/orchestrator/provider-reputation.ts:10:  safe: boolean
+app/lib/orchestrator/provider-reputation.ts:14:      safe: 0,
+app/lib/orchestrator/provider-reputation.ts:19:  if (safe) {
+app/lib/orchestrator/provider-reputation.ts:20:    providers[provider].safe++
+app/lib/orchestrator/runtime-context.ts:1:export type RuntimeMode = 'local' | 'openai' | 'hybrid' | 'safe'
+app/lib/orchestrator/runtime-context.ts:10:  safeMode: boolean
+app/lib/orchestrator/runtime-context.ts:39:    safeMode: input?.safeMode ?? true,
+app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+app/lib/orchestrator/runtime.ts:6:  safe: boolean
+app/lib/orchestrator/runtime.ts:17:      safe: true,
+app/lib/orchestrator/runtime.ts:25:    safe: status.safe,
+app/lib/orchestrator/metrics.ts:19:    healthy: state.safe === true
+app/lib/orchestrator/decision-memory.ts:5:  safe: boolean
+app/lib/orchestrator/central-runtime-core.ts:29:      evolution.awareness.awareness.safe
+app/lib/orchestrator/runtime-execution-pipeline.ts:43:    safeMode: true,
+app/lib/orchestrator/runtime-decision-engine.ts:38:  if (routing.mode === 'safe') {
+app/lib/orchestrator/runtime-decision-engine.ts:52:    routing.mode !== 'safe'
+app/lib/orchestrator/runtime-decision-engine.ts:54:  const mode = (routing.mode === 'openai' || routing.mode === 'hybrid' || routing.mode === 'safe')
+app/lib/orchestrator/runtime-decision-engine.ts:66:    safeMode: routing.mode === 'safe',
+app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimePressure: context.safeMode ? 60 : 20,
+app/lib/orchestrator/hybrid-router.ts:7:  if (!awareness.awareness.safe) {
+app/lib/orchestrator/hybrid-router.ts:10:      mode: 'safe',
+app/lib/orchestrator/adaptive-protection.ts:9:      safe: false,
+app/lib/orchestrator/adaptive-protection.ts:21:    safe: true,
+app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+app/lib/orchestrator/decision-pipeline.ts:38:    safe: policy.allowed,
+app/lib/orchestrator/intelligent-selector.ts:9:        (stats.safe * 2) - stats.risky
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/awareness-engine.ts:12:      safe: state.safe,
+app/lib/orchestrator/evolution-engine.ts:10:  if (patterns.risky > patterns.safe) {
+app/lib/orchestrator/evolution-engine.ts:16:  if (!awareness.awareness.safe) {
+app/lib/orchestrator/routing.ts:21:    risk: runtime.safe ? 'low' : 'medium',
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:14:        : 'restricted-safe-execution'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:20:    executionProfile !== 'restricted-safe-execution'
+app/lib/observability.ts:7:  safe?: boolean
+app/lib/env.ts:26:    safe: mode !== 'openai' || Boolean(process.env.OPENAI_API_KEY)

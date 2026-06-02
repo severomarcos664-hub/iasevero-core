@@ -1,0 +1,14 @@
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:19:  criticalityLevel: RuntimeCriticalityLevel
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:33:  const criticalityLevel: RuntimeCriticalityLevel =
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:47:    criticalityLevel,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:48:    executionSafe: criticalityLevel === 'low',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:50:      criticalityLevel === 'medium' ||
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:51:      criticalityLevel === 'high',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:53:      criticalityLevel === 'critical',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:56:      criticalityLevel === 'low'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:58:        : criticalityLevel === 'medium'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:60:          : criticalityLevel === 'high'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:67:      `criticality:${criticalityLevel}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:35:    criticality.criticalityLevel === 'critical'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:37:      : criticality.criticalityLevel === 'high'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:39:        : criticality.criticalityLevel === 'medium'

@@ -1,0 +1,8 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:2:  evaluateExecutiveRuntimeCore,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:27:    evaluateExecutiveRuntimeCore()
+app/lib/executive-runtime-core/executive-runtime-core.ts:9:export type ExecutiveRuntimeCoreState =
+app/lib/executive-runtime-core/executive-runtime-core.ts:15:export interface ExecutiveRuntimeCoreReport {
+app/lib/executive-runtime-core/executive-runtime-core.ts:20:  coreState: ExecutiveRuntimeCoreState
+app/lib/executive-runtime-core/executive-runtime-core.ts:40:export function evaluateExecutiveRuntimeCore():
+app/lib/executive-runtime-core/executive-runtime-core.ts:41:ExecutiveRuntimeCoreReport {
+app/lib/executive-runtime-core/executive-runtime-core.ts:48:  const coreState: ExecutiveRuntimeCoreState =

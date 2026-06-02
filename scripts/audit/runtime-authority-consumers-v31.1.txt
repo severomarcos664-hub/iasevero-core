@@ -1,0 +1,2 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()

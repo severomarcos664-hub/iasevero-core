@@ -1,0 +1,10 @@
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:21:    globalState: brain.globalState,
+app/lib/runtime-core/runtime-contracts.ts:60:  globalState: RuntimeGlobalState
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:16:  globalState: string
+app/lib/orchestrator/runtime-supervisor.ts:7:  globalState:
+app/lib/orchestrator/runtime-supervisor.ts:33:  const globalState: 'stable' | 'warning' | 'critical' =
+app/lib/orchestrator/runtime-supervisor.ts:57:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:63:    globalState: 'stable',
+app/lib/orchestrator/runtime-brain-matrix.ts:13:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-brain-matrix.ts:39:    globalState: supervision.globalState,

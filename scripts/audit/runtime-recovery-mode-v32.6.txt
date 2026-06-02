@@ -1,0 +1,140 @@
+app/lib/runtime-core/runtime-action-policy-engine.ts:58:          ? 'Action policy: recovery mode required.'
+app/lib/runtime-core/runtime-severity-governance.ts:15:  recoveryRequired: boolean
+app/lib/runtime-core/runtime-severity-governance.ts:47:    recoveryRequired:
+app/lib/runtime-core/runtime-execution-orchestrator.ts:8:  | 'recovery-cycle'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:35:      : 'recovery-cycle'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:54:      `recovery:${registry.recoveryMode}`
+app/lib/runtime-core/runtime-master-orchestrator.ts:7:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:16:  const recovery = recoverRuntimeState()
+app/lib/runtime-core/runtime-master-orchestrator.ts:36:    recovery,
+app/lib/runtime-core/runtime-state-transition-engine.ts:9:  | 'recovery'
+app/lib/runtime-core/runtime-state-transition-engine.ts:36:            : 'recovery'
+app/lib/runtime-core/runtime-state-transition-engine.ts:41:    recoveryMode: nextState === 'recovery',
+app/lib/runtime-core/runtime-state-transition-engine.ts:42:    degradationState: nextState === 'contained' || nextState === 'recovery',
+app/lib/runtime-core/runtime-persistence-fabric.ts:11:    | 'recovery'
+app/lib/runtime-core/runtime-contracts.ts:21:  | 'recovery'
+app/lib/runtime-core/runtime-contracts.ts:53:  recovery: boolean
+app/lib/runtime-core/runtime-recovery-engine.ts:12:  recoveryRecovered: boolean
+app/lib/runtime-core/runtime-recovery-engine.ts:46:  const recovery =
+app/lib/runtime-core/runtime-recovery-engine.ts:47:    latestFile(path.join(ROOT, 'recovery'))
+app/lib/runtime-core/runtime-recovery-engine.ts:55:  const recoveryRecovered =
+app/lib/runtime-core/runtime-recovery-engine.ts:56:    Boolean(recovery)
+app/lib/runtime-core/runtime-recovery-engine.ts:61:    recoveryRecovered,
+app/lib/runtime-core/runtime-recovery-engine.ts:82:      'runtime-recovery-engine',
+app/lib/runtime-core/runtime-recovery-engine.ts:86:    recoveryRecovered,
+app/lib/runtime-core/runtime-recovery-engine.ts:100:      `recovery:${recoveryRecovered}`,
+app/lib/runtime-core/runtime-load-balancer.ts:9:  | 'recovery-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:34:          ? 'recovery-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:52:        : lane === 'recovery-lane'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:81:              ? 'Runtime confidence low: recovery or degradation required.'
+app/lib/runtime-core/runtime-governance-enforcement.ts:9:  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-execution-bridge.ts:27:      recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-integrity-validator.ts:12:  recoveryValid: boolean
+app/lib/runtime-core/runtime-integrity-validator.ts:48:  const recoveryValid =
+app/lib/runtime-core/runtime-integrity-validator.ts:50:      path.join(ROOT, 'recovery')
+app/lib/runtime-core/runtime-integrity-validator.ts:56:    recoveryValid,
+app/lib/runtime-core/runtime-integrity-validator.ts:81:    recoveryValid,
+app/lib/runtime-core/runtime-integrity-validator.ts:95:      `recovery:${recoveryValid}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:62:            ? 'Runtime recovery recommended.'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:73:          : 'Containment required. Block unsafe execution and validate recovery path.';
+app/lib/runtime-core/runtime-decision-gate.ts:10:  recovery: string
+app/lib/runtime-core/runtime-decision-gate.ts:41:    recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-state-replay-engine.ts:58:  const recovery =
+app/lib/runtime-core/runtime-state-replay-engine.ts:60:      path.join(ROOT, 'recovery'),
+app/lib/runtime-core/runtime-state-replay-engine.ts:61:      'recovery',
+app/lib/runtime-core/runtime-state-replay-engine.ts:67:    ...recovery,
+app/lib/runtime-core/runtime-state-replay-engine.ts:109:      `recovery:${recovery.length}`,
+app/lib/runtime-core/runtime-cognitive-state.ts:2:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:27:    | 'recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:45:    recoveryMode: false,
+app/lib/runtime-core/runtime-cognitive-state.ts:49:      'recovery-frequency-high'
+app/lib/runtime-core/runtime-cognitive-state.ts:55:  const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/runtime-core/runtime-cognitive-state.ts:67:          intelligence.recoveryFrequency +
+app/lib/runtime-core/runtime-cognitive-state.ts:79:          intelligence.recoveryFrequency +
+app/lib/runtime-core/runtime-cognitive-state.ts:80:          (recovery.recoveryMode ? 40 : 0)
+app/lib/runtime-core/runtime-cognitive-state.ts:110:    recovery.recoveryMode
+app/lib/runtime-core/runtime-cognitive-state.ts:111:      ? 'recovery'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:2:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:26:  const recovery = recoverRuntimeState()
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:36:        recovery.operationalState === 'partial'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:66:      ...recovery.reasoning,
+app/lib/runtime-core/runtime-decision-loop.ts:6:  cycleStatus: 'normal' | 'throttled' | 'contained' | 'recovery'
+app/lib/runtime-core/runtime-decision-loop.ts:30:          : 'recovery'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:120:          : 'Runtime recovery recommended.',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:15:          : 'recovery-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:38:      operationalMode !== 'recovery-runtime',
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:37:            ? 'execute-runtime-recovery'
+app/lib/orchestrator/runtime-architecture-index.ts:10:  | 'recovery'
+app/lib/orchestrator/runtime-architecture-index.ts:92:    file: 'runtime-recovery.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:93:    layer: 'recovery',
+app/lib/orchestrator/runtime-snapshot.ts:10:  recovery: boolean
+app/lib/orchestrator/runtime-snapshot.ts:52:    recovery: false,
+app/lib/orchestrator/runtime-operational-memory.ts:6:  recoveryFrequency: number
+app/lib/orchestrator/runtime-operational-memory.ts:31:      recoveryFrequency: 0,
+app/lib/orchestrator/runtime-operational-memory.ts:40:  const recoveryCount = snapshots.filter((snapshot) => snapshot.recovery).length
+app/lib/orchestrator/runtime-operational-memory.ts:43:  const recoveryFrequency = Math.floor((recoveryCount / total) * 100)
+app/lib/orchestrator/runtime-operational-memory.ts:50:    recoveryFrequency >= 70
+app/lib/orchestrator/runtime-operational-memory.ts:54:        : recoveryFrequency >= 30
+app/lib/orchestrator/runtime-operational-memory.ts:59:    recoveryFrequency >= 70
+app/lib/orchestrator/runtime-operational-memory.ts:61:      : recoveryFrequency >= 30
+app/lib/orchestrator/runtime-operational-memory.ts:67:      ? 'Histórico indica recovery recorrente e necessidade de contenção operacional.'
+app/lib/orchestrator/runtime-operational-memory.ts:75:    recoveryFrequency,
+app/lib/orchestrator/runtime-state-registry.ts:14:  recoveryMode: boolean
+app/lib/orchestrator/runtime-state-registry.ts:26:  recoveryMode: false,
+app/lib/orchestrator/runtime-operational-metrics.ts:9:  recoveryFrequency: number
+app/lib/orchestrator/runtime-awareness.ts:7:  recoveryRequired: boolean
+app/lib/orchestrator/runtime-awareness.ts:31:      recoveryRequired: true,
+app/lib/orchestrator/runtime-awareness.ts:41:      recoveryRequired: true,
+app/lib/orchestrator/runtime-awareness.ts:51:      recoveryRequired: false,
+app/lib/orchestrator/runtime-awareness.ts:60:    recoveryRequired: false,
+app/lib/orchestrator/runtime-dependency-validator.ts:27:    'recovery',
+app/lib/orchestrator/runtime-dependency-validator.ts:52:  recovery: [
+app/lib/orchestrator/runtime-dependency-validator.ts:60:    'recovery',
+app/lib/orchestrator/runtime-recovery.ts:4:  recoveryMode: boolean
+app/lib/orchestrator/runtime-recovery.ts:17:      recoveryMode: true,
+app/lib/orchestrator/runtime-recovery.ts:27:      recoveryMode: true,
+app/lib/orchestrator/runtime-recovery.ts:37:      recoveryMode: false,
+app/lib/orchestrator/runtime-recovery.ts:46:    recoveryMode: false,
+app/lib/orchestrator/runtime-event-bus.ts:5:    | 'runtime-recovery'
+app/lib/orchestrator/runtime-contracts.ts:32:  recoveryMode: boolean
+app/lib/orchestrator/runtime-event-processor.ts:47:  if (event.type === 'runtime-recovery') {
+app/lib/orchestrator/runtime-event-processor.ts:49:    actions.push('recovery-validated')
+app/lib/orchestrator/runtime-self-healing.ts:21:      message: 'Runtime recovery executado.',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:2:import type { RuntimeRecoveryPlan } from './runtime-recovery'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:15:  recovery: RuntimeRecoveryPlan
+app/lib/orchestrator/runtime-decision-engine.ts:12:import { evaluateRuntimeRecovery } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:149:    recoveryMode: !context.stable
+app/lib/orchestrator/runtime-decision-engine.ts:167:const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/orchestrator/runtime-decision-engine.ts:170:  `recovery:${recovery.recoveryMode}:${recovery.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:175:  `recovery:${recovery.cooldownMs}:${recovery.recommendedProvider}`
+app/lib/orchestrator/runtime-decision-engine.ts:187:if (recovery.recoveryMode) {
+app/lib/orchestrator/runtime-decision-engine.ts:192:    'runtime-recovery',
+app/lib/orchestrator/runtime-decision-engine.ts:193:    recovery.reason
+app/lib/orchestrator/runtime-decision-engine.ts:200:  recovery
+app/lib/orchestrator/runtime-decision-engine.ts:232:  recovery: recovery.recoveryMode,
+app/lib/orchestrator/runtime-decision-engine.ts:248:  `intelligence:${intelligence.stabilityRate}:${intelligence.recoveryFrequency}`
+app/lib/orchestrator/runtime-decision-engine.ts:268:    'recovery',
+app/lib/orchestrator/runtime-decision-engine.ts:297:    recovery,
+app/lib/orchestrator/runtime-causal-trace.ts:10:    recovery: boolean | null
+app/lib/orchestrator/runtime-causal-trace.ts:24:  if (latest?.recovery) causalSignals.push('recovery-active')
+app/lib/orchestrator/runtime-causal-trace.ts:42:      recovery: latest?.recovery ?? null,
+app/lib/orchestrator/runtime-action-executor.ts:7:    | 'recovery'
+app/lib/orchestrator/runtime-action-executor.ts:28:    'recovery',
+app/lib/orchestrator/runtime-lifecycle-manager.ts:5:  | 'recovery'
+app/lib/orchestrator/runtime-lifecycle-manager.ts:64:  return runtimeLifecycle.currentState === 'recovery'
+app/lib/orchestrator/runtime-intelligence.ts:9:  recoveryFrequency: number
+app/lib/orchestrator/runtime-intelligence.ts:24:      recoveryFrequency: 0,
+app/lib/orchestrator/runtime-intelligence.ts:33:  const recoveryCount = snapshots.filter(
+app/lib/orchestrator/runtime-intelligence.ts:34:    s => s.recovery
+app/lib/orchestrator/runtime-intelligence.ts:64:  const recoveryFrequency =
+app/lib/orchestrator/runtime-intelligence.ts:65:    Math.floor((recoveryCount / snapshots.length) * 100)
+app/lib/orchestrator/runtime-intelligence.ts:70:      stabilityRate - Math.floor(recoveryFrequency / 2)
+app/lib/orchestrator/runtime-intelligence.ts:93:    recoveryFrequency,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:72:              ? 'Runtime recovery transition active.'
+app/api/runtime/telemetry/route.ts:24:      recovery:
+app/api/runtime/telemetry/route.ts:25:        runtime.recovery.operationalState,
+app/api/chat/route.ts:109:        recovery: runtimeMaster.recovery.operationalState,
+app/api/chat/route.ts:148:        recovery: runtimeMaster.recovery.operationalState,

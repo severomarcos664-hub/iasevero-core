@@ -1,0 +1,99 @@
+IASevero Runtime Canonical Architecture Map v34
+
+Conclusion:
+IASevero is not a single-authority runtime.
+IASevero operates as a distributed governance runtime.
+
+Canonical Layers:
+
+1. Constitutional Layer
+- Runtime Core Identity
+- Defines project identity, principles and base execution permission.
+
+2. Cognitive Governance Layer
+- Runtime Attention Registry
+- Runtime Meta Controller
+- Converts identity and attention into cognitive execution control.
+
+3. Cognitive Propagation Layer
+- Runtime Cognitive Bus
+- Runtime Cognitive State Fabric
+- Runtime Causal Influence
+- Runtime Live Cognitive Loop
+
+4. Executive Governance Layer
+- Runtime Executive Governor
+- Runtime Adaptive Execution Coordinator
+- Executive Runtime Core
+- Runtime Executive Authority
+- Runtime Executive Authority Gateway
+
+5. Operational Center
+- Runtime Master Orchestrator
+- Aggregates governance, integrity, policy, scheduler, lanes, healing and recovery.
+
+6. Provider Governance Layer
+- Runtime Provider Authority
+- Provider Router
+- Controls local, hybrid and external provider execution.
+
+7. Execution Layer
+- Runtime Execution Bridge
+- Runtime Execution Graph
+- Workflow Coordinator
+- Adaptive Execution
+- Resilience
+- Evaluation
+- Learning Signals
+
+8. Observability Layer
+- Telemetry
+- Correlation
+- Trace
+- Runtime Status
+
+Canonical Flow:
+
+Runtime Core Identity
+↓
+Runtime Attention Registry
+↓
+Runtime Meta Controller
+↓
+Runtime Cognitive Bus
+↓
+Runtime Cognitive State Fabric
+↓
+Runtime Causal Influence
+↓
+Runtime Live Cognitive Loop
+↓
+Runtime Executive Governor
+↓
+Runtime Adaptive Execution Coordinator
+↓
+Executive Runtime Core
+↓
+Runtime Executive Authority
+↓
+Runtime Executive Authority Gateway
+↓
+Runtime Master Orchestrator
+↓
+Runtime Provider Authority
+↓
+Runtime Execution Bridge
+↓
+Runtime Execution Graph
+↓
+Workflow / Adaptive / Resilience / Evaluation / Learning
+↓
+Telemetry / Correlation
+↓
+Response
+
+Strategic Rule:
+Do not add new runtime authority layers before consolidating this canonical architecture.
+
+Next Phase:
+v35 — Executive Runtime Context Consolidation

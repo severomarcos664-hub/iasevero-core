@@ -1,0 +1,21 @@
+app/lib/runtime-core/runtime-severity-governance.ts:16:  containmentRequired: boolean
+app/lib/runtime-core/runtime-severity-governance.ts:51:    containmentRequired:
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:33:  containmentRequired: boolean
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:70:  const containmentRequired =
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:86:    containmentRequired,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:89:      containmentRequired
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:99:      `containment:${containmentRequired}`,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:34:    fusion.containmentRequired || drift.driftLevel === 'high'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:32:    escalation.containmentRequired
+app/lib/runtime-core/runtime-confidence-intelligence.ts:63:      !escalation.containmentRequired,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:71:      escalation.containmentRequired,
+app/lib/runtime-core/runtime-governance-center.ts:35:    severity.containmentRequired || lanes.isolationRecommended
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:14:  containmentRequired: boolean
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:32:  const containmentRequired = false
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:52:    containmentRequired,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:65:      `containment:${containmentRequired}`,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:8:  containmentRequired: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:23:      containmentRequired: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:34:      containmentRequired: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:45:      containmentRequired: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:55:    containmentRequired: false,

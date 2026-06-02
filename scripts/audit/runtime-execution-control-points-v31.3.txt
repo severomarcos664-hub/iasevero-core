@@ -1,0 +1,36 @@
+app/api/chat/route.ts:4:import { iaseveroCore } from '@/app/lib/iasevero-core'
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:128:const result = await iaseveroCore(message, userId)
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:6:  resolveProviderRoute
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:36:    resolveProviderRoute(message, intent)
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/orchestrator/runtime-recovery.ts:7:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-recovery.ts:20:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-recovery.ts:30:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-recovery.ts:40:      recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-recovery.ts:49:    recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:5:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:17:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:26:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:35:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:44:      recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:52:    recommendedProvider: 'openai',
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+app/lib/orchestrator/runtime-decision-engine.ts:175:  `recovery:${recovery.cooldownMs}:${recovery.recommendedProvider}`
+app/lib/orchestrator/decision-pipeline.ts:2:import { resolveProviderRoute } from './routing'
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/routing.ts:12:export function resolveProviderRoute(

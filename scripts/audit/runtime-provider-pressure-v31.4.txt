@@ -1,0 +1,5 @@
+app/lib/runtime-core/runtime-cognitive-state.ts:37:    providerPressure: 70,
+app/lib/orchestrator/runtime-state-registry.ts:10:  providerPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:22:  providerPressure: 0,
+app/lib/orchestrator/runtime-awareness.ts:17:    registry.providerPressure +
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,

@@ -1,0 +1,11 @@
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,

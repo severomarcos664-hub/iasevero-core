@@ -1,0 +1,565 @@
+app/lib/runtime-core/runtime-adaptive-response.ts:23:  if (state.cognitiveState === 'critical') {
+app/lib/runtime-core/runtime-tool-orchestrator.ts:9:  critical: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:36:    critical: tool.critical
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:15:    | 'stabilize'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:35:        ? 'stabilize'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:56:          : strategy === 'stabilize'
+app/lib/runtime-core/runtime-lane-supervisor.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:13:  criticalLaneItems: number
+app/lib/runtime-core/runtime-lane-supervisor.ts:29:  const criticalLaneItems =
+app/lib/runtime-core/runtime-lane-supervisor.ts:30:    queue.filter(item => item.priority === 'critical').length
+app/lib/runtime-core/runtime-lane-supervisor.ts:44:    criticalLaneItems > 3
+app/lib/runtime-core/runtime-lane-supervisor.ts:45:      ? 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:57:    criticalLaneItems,
+app/lib/runtime-core/runtime-lane-supervisor.ts:67:      laneHealth === 'critical',
+app/lib/runtime-core/runtime-lane-supervisor.ts:70:      laneHealth === 'critical',
+app/lib/runtime-core/runtime-lane-supervisor.ts:73:      laneHealth === 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:83:      `critical:${criticalLaneItems}`,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:26:    policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:27:      ? 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:42:      priority === 'critical' ||
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:45:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:53:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:64:        priority === 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:7:  | 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:8:  | 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:24:  priority: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:26:  operationalRisk: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:40:        ? 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:42:          ? 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:48:      : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:50:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:52:          : optimization.action === 'stabilize'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:59:      : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:61:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:63:          : 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:82:        : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:83:          ? 'Strategic runtime posture: balanced monitoring mode.'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:84:          : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:85:            ? 'Strategic runtime posture: safe degradation mode.'
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:21:      ? 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:22:      : severity.severityLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:31:    policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:36:          ? 'stabilize'
+app/lib/runtime-core/runtime-policy-engine.ts:44:    allowed: policyLevel !== 'critical',
+app/lib/runtime-core/runtime-policy-engine.ts:48:      policyLevel === 'critical'
+app/lib/runtime-core/runtime-retention-manager.ts:7:  retentionMode: 'safe' | 'balanced' | 'aggressive'
+app/lib/runtime-core/runtime-retention-manager.ts:24:    retentionMode: 'safe',
+app/lib/runtime-core/runtime-retention-manager.ts:31:      'mode:safe',
+app/lib/runtime-core/runtime-severity-governance.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:30:        ? 'critical'
+app/lib/runtime-core/runtime-severity-governance.ts:44:      severityLevel === 'critical' ||
+app/lib/runtime-core/runtime-severity-governance.ts:48:      severityLevel === 'critical' ||
+app/lib/runtime-core/runtime-severity-governance.ts:57:        : severityLevel === 'critical'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:9:  | 'stabilize'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:35:          : 'stabilize'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:46:    action === 'stabilize'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:28:      : governance.severityLevel === 'critical'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:75:        ? 'critical'
+app/lib/runtime-core/runtime-state-transition-engine.ts:50:            : 'critical',
+app/lib/runtime-core/runtime-event-bus.ts:6:  priority: 'low' | 'normal' | 'high' | 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:6:  supervisionLevel: 'normal' | 'watch' | 'intervene' | 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:26:          : 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:32:    approved: supervisionLevel !== 'critical',
+app/lib/runtime-core/runtime-contracts.ts:4:  | 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:9:  | 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:54:            : 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:63:          : escalationLevel === 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:93:          : 'Runtime operating within safe strategic limits.',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:13:  | 'critical'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:16:  criticalityId: string
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:18:  source: 'runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:19:  criticalityLevel: RuntimeCriticalityLevel
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:33:  const criticalityLevel: RuntimeCriticalityLevel =
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:35:      ? 'critical'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:43:    criticalityId: `criticality_${Date.now()}`,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:45:    source: 'runtime-execution-criticality-intelligence',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:47:    criticalityLevel,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:48:    executionSafe: criticalityLevel === 'low',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:50:      criticalityLevel === 'medium' ||
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:51:      criticalityLevel === 'high',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:53:      criticalityLevel === 'critical',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:56:      criticalityLevel === 'low'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:57:        ? 'Execution criticality low: continue runtime operation.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:58:        : criticalityLevel === 'medium'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:59:          ? 'Execution criticality medium: monitor execution carefully.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:60:          : criticalityLevel === 'high'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:61:            ? 'Execution criticality high: degradation/review recommended.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:62:            : 'Execution criticality critical: containment required.',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:67:      `criticality:${criticalityLevel}`,
+app/lib/runtime-core/runtime-resilience-engine.ts:36:        : adaptive.strategy === 'stabilize'
+app/lib/runtime-core/runtime-resilience-engine.ts:88:              ? 'Resilience recommends degraded safe mode.'
+app/lib/runtime-core/runtime-recovery-engine.ts:16:    | 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:67:    | 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:74:    operationalState = 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:8:  | 'critical-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:30:    priority === 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:31:      ? 'critical-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:50:      lane === 'critical-lane'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:7:  criticalEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:12:  observabilityHealth: 'healthy' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:20:  const criticalEvents = events.filter(e => e.severity === 'critical').length
+app/lib/runtime-core/runtime-telemetry-correlation.ts:28:    criticalEvents > 0
+app/lib/runtime-core/runtime-telemetry-correlation.ts:29:      ? 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:38:    criticalEvents,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:45:      observabilityHealth === 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:52:      `critical:${criticalEvents}`,
+app/lib/runtime-core/runtime-telemetry-fabric.ts:5:  | 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:10:  | 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:34:      : escalation.escalationLevel === 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:51:            : 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:82:              : 'Runtime confidence critical: containment required.',
+app/lib/runtime-core/runtime-tool-registry.ts:21:  critical: boolean
+app/lib/runtime-core/runtime-tool-registry.ts:46:      critical: false,
+app/lib/runtime-core/runtime-tool-registry.ts:55:      fallback: 'workflow.safe-analysis',
+app/lib/runtime-core/runtime-tool-registry.ts:57:      critical: true,
+app/lib/runtime-core/runtime-tool-registry.ts:68:      critical: true,
+app/lib/runtime-core/runtime-tool-registry.ts:77:      fallback: 'validation.safe',
+app/lib/runtime-core/runtime-tool-registry.ts:79:      critical: true,
+app/lib/runtime-core/runtime-queue-manager.ts:5:  | 'critical'
+app/lib/runtime-core/runtime-queue-manager.ts:40:      critical: 4,
+app/lib/runtime-core/runtime-evaluation-engine.ts:26:    | 'critical'
+app/lib/runtime-core/runtime-evaluation-engine.ts:84:          : 'critical'
+app/lib/runtime-core/runtime-evaluation-engine.ts:105:            : 'Runtime execution is critical; containment required.',
+app/lib/runtime-core/runtime-governance-enforcement.ts:9:  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-execution-coordinator.ts:48:      policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-execution-coordinator.ts:49:        ? 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:16:    | 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:62:    | 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:69:    integrity = 'critical'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:3:} from './runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:31:  const criticality =
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:35:    criticality.criticalityLevel === 'critical'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:37:      : criticality.criticalityLevel === 'high'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:39:        : criticality.criticalityLevel === 'medium'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:66:      ...criticality.reasoning,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:3:  | 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:20:  executionProfile: 'safe' | 'balanced' | 'aggressive';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:49:        ? 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:53:    mode === 'normal' ? 'high' : mode === 'stabilize' ? 'medium' : 'low';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:57:    mode === 'contain' ? 'safe' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:58:    'balanced';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:62:    mode === 'stabilize' ? 70 :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:69:      : mode === 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:73:          : 'Containment required. Block unsafe execution and validate recovery path.';
+app/lib/runtime-core/runtime-timeline-engine.ts:20:    | 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:46:    latestSeverity === 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:47:      ? 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:63:      operationalTrend === 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:7:  | 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:16:  severity: 'info' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:27:      ? 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:28:      : action === 'throttle' || action === 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:45:            : action === 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:59:      severity === 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:60:        ? 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:19:    | 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:73:    | 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:80:    replayHealth = 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:21:    | 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:25:    | 'safe'
+app/lib/runtime-core/runtime-cognitive-state.ts:100:      ? 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:123:    cognitiveState === 'critical'
+app/lib/runtime-core/runtime-governance-center.ts:20:  riskLevel: 'low' | 'moderate' | 'high' | 'critical'
+app/lib/runtime-core/runtime-governance-center.ts:47:      ? 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:9:  | 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:38:      : 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:76:        ? 'critical'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:31:    integrity.integrity === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:43:        ? 'safe'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:6:  status: 'ok' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:15:  status: 'ok' | 'warning' | 'critical',
+app/lib/runtime-core/runtime-learning-signals.ts:13:    | 'critical'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:15:  criticalEvents: number
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:46:  const criticalEvents =
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:48:      item => item.supervisionLevel === 'critical'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:57:    criticalEvents >= 3
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:75:    criticalEvents,
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:81:      `critical:${criticalEvents}`,
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:8:        ? 'adaptive-balanced'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:26:        : adaptiveMode === 'adaptive-balanced'
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:27:          ? 'balanced-runtime'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:20:        ? 'balanced-runtime-intensity'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:61:      ? 'critical-protection'
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:5:  | 'critical-topology'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:9:  | 'stabilize'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:12:  | 'critical'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:14:  | 'balanced'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:53:      : 'stabilize'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:59:      ? 'critical'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:62:      : 'balanced'
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:25:      : coordination.mode === 'stabilize'
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:26:        ? 'stabilize-runtime-before-execution'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:11:  | 'stabilize'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:56:      ? 'stabilize'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:64:      : decision === 'stabilize'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:7:  | 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:9:  | 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:23:    | 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:42:      ? 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:46:          ? 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:50:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:54:        : executionPriority === 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:59:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:63:        : executionPriority === 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:68:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:71:        ? 'balanced'
+app/lib/runtime-core/runtime-adaptive-response.ts:23:  if (state.cognitiveState === 'critical') {
+app/lib/runtime-core/runtime-tool-orchestrator.ts:9:  critical: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:36:    critical: tool.critical
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:15:    | 'stabilize'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:35:        ? 'stabilize'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:56:          : strategy === 'stabilize'
+app/lib/runtime-core/runtime-lane-supervisor.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:13:  criticalLaneItems: number
+app/lib/runtime-core/runtime-lane-supervisor.ts:29:  const criticalLaneItems =
+app/lib/runtime-core/runtime-lane-supervisor.ts:30:    queue.filter(item => item.priority === 'critical').length
+app/lib/runtime-core/runtime-lane-supervisor.ts:44:    criticalLaneItems > 3
+app/lib/runtime-core/runtime-lane-supervisor.ts:45:      ? 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:57:    criticalLaneItems,
+app/lib/runtime-core/runtime-lane-supervisor.ts:67:      laneHealth === 'critical',
+app/lib/runtime-core/runtime-lane-supervisor.ts:70:      laneHealth === 'critical',
+app/lib/runtime-core/runtime-lane-supervisor.ts:73:      laneHealth === 'critical'
+app/lib/runtime-core/runtime-lane-supervisor.ts:83:      `critical:${criticalLaneItems}`,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:26:    policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:27:      ? 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:42:      priority === 'critical' ||
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:45:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:53:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:64:        priority === 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:7:  | 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:8:  | 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:24:  priority: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:26:  operationalRisk: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:40:        ? 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:42:          ? 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:48:      : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:50:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:52:          : optimization.action === 'stabilize'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:59:      : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:61:        : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:63:          : 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:82:        : posture === 'balanced'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:83:          ? 'Strategic runtime posture: balanced monitoring mode.'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:84:          : posture === 'safe'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:85:            ? 'Strategic runtime posture: safe degradation mode.'
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:21:      ? 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:22:      : severity.severityLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:31:    policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:36:          ? 'stabilize'
+app/lib/runtime-core/runtime-policy-engine.ts:44:    allowed: policyLevel !== 'critical',
+app/lib/runtime-core/runtime-policy-engine.ts:48:      policyLevel === 'critical'
+app/lib/runtime-core/runtime-retention-manager.ts:7:  retentionMode: 'safe' | 'balanced' | 'aggressive'
+app/lib/runtime-core/runtime-retention-manager.ts:24:    retentionMode: 'safe',
+app/lib/runtime-core/runtime-retention-manager.ts:31:      'mode:safe',
+app/lib/runtime-core/runtime-severity-governance.ts:7:  | 'critical'
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:30:        ? 'critical'
+app/lib/runtime-core/runtime-severity-governance.ts:44:      severityLevel === 'critical' ||
+app/lib/runtime-core/runtime-severity-governance.ts:48:      severityLevel === 'critical' ||
+app/lib/runtime-core/runtime-severity-governance.ts:57:        : severityLevel === 'critical'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:9:  | 'stabilize'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:35:          : 'stabilize'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:46:    action === 'stabilize'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:28:      : governance.severityLevel === 'critical'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:75:        ? 'critical'
+app/lib/runtime-core/runtime-state-transition-engine.ts:50:            : 'critical',
+app/lib/runtime-core/runtime-event-bus.ts:6:  priority: 'low' | 'normal' | 'high' | 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:6:  supervisionLevel: 'normal' | 'watch' | 'intervene' | 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:26:          : 'critical'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:32:    approved: supervisionLevel !== 'critical',
+app/lib/runtime-core/runtime-contracts.ts:4:  | 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:9:  | 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:54:            : 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:63:          : escalationLevel === 'critical'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:93:          : 'Runtime operating within safe strategic limits.',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:13:  | 'critical'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:16:  criticalityId: string
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:18:  source: 'runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:19:  criticalityLevel: RuntimeCriticalityLevel
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:33:  const criticalityLevel: RuntimeCriticalityLevel =
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:35:      ? 'critical'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:43:    criticalityId: `criticality_${Date.now()}`,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:45:    source: 'runtime-execution-criticality-intelligence',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:47:    criticalityLevel,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:48:    executionSafe: criticalityLevel === 'low',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:50:      criticalityLevel === 'medium' ||
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:51:      criticalityLevel === 'high',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:53:      criticalityLevel === 'critical',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:56:      criticalityLevel === 'low'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:57:        ? 'Execution criticality low: continue runtime operation.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:58:        : criticalityLevel === 'medium'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:59:          ? 'Execution criticality medium: monitor execution carefully.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:60:          : criticalityLevel === 'high'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:61:            ? 'Execution criticality high: degradation/review recommended.'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:62:            : 'Execution criticality critical: containment required.',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:67:      `criticality:${criticalityLevel}`,
+app/lib/runtime-core/runtime-resilience-engine.ts:36:        : adaptive.strategy === 'stabilize'
+app/lib/runtime-core/runtime-resilience-engine.ts:88:              ? 'Resilience recommends degraded safe mode.'
+app/lib/runtime-core/runtime-recovery-engine.ts:16:    | 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:67:    | 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:74:    operationalState = 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:8:  | 'critical-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:30:    priority === 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:31:      ? 'critical-lane'
+app/lib/runtime-core/runtime-load-balancer.ts:50:      lane === 'critical-lane'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:7:  criticalEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:12:  observabilityHealth: 'healthy' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:20:  const criticalEvents = events.filter(e => e.severity === 'critical').length
+app/lib/runtime-core/runtime-telemetry-correlation.ts:28:    criticalEvents > 0
+app/lib/runtime-core/runtime-telemetry-correlation.ts:29:      ? 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:38:    criticalEvents,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:45:      observabilityHealth === 'critical'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:52:      `critical:${criticalEvents}`,
+app/lib/runtime-core/runtime-telemetry-fabric.ts:5:  | 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:10:  | 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:34:      : escalation.escalationLevel === 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:51:            : 'critical'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:82:              : 'Runtime confidence critical: containment required.',
+app/lib/runtime-core/runtime-tool-registry.ts:21:  critical: boolean
+app/lib/runtime-core/runtime-tool-registry.ts:46:      critical: false,
+app/lib/runtime-core/runtime-tool-registry.ts:55:      fallback: 'workflow.safe-analysis',
+app/lib/runtime-core/runtime-tool-registry.ts:57:      critical: true,
+app/lib/runtime-core/runtime-tool-registry.ts:68:      critical: true,
+app/lib/runtime-core/runtime-tool-registry.ts:77:      fallback: 'validation.safe',
+app/lib/runtime-core/runtime-tool-registry.ts:79:      critical: true,
+app/lib/runtime-core/runtime-queue-manager.ts:5:  | 'critical'
+app/lib/runtime-core/runtime-queue-manager.ts:40:      critical: 4,
+app/lib/runtime-core/runtime-evaluation-engine.ts:26:    | 'critical'
+app/lib/runtime-core/runtime-evaluation-engine.ts:84:          : 'critical'
+app/lib/runtime-core/runtime-evaluation-engine.ts:105:            : 'Runtime execution is critical; containment required.',
+app/lib/runtime-core/runtime-governance-enforcement.ts:9:  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-execution-coordinator.ts:48:      policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-execution-coordinator.ts:49:        ? 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:16:    | 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:62:    | 'critical'
+app/lib/runtime-core/runtime-integrity-validator.ts:69:    integrity = 'critical'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:3:} from './runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:31:  const criticality =
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:35:    criticality.criticalityLevel === 'critical'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:37:      : criticality.criticalityLevel === 'high'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:39:        : criticality.criticalityLevel === 'medium'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:66:      ...criticality.reasoning,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:3:  | 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:20:  executionProfile: 'safe' | 'balanced' | 'aggressive';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:49:        ? 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:53:    mode === 'normal' ? 'high' : mode === 'stabilize' ? 'medium' : 'low';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:57:    mode === 'contain' ? 'safe' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:58:    'balanced';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:62:    mode === 'stabilize' ? 70 :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:69:      : mode === 'stabilize'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:73:          : 'Containment required. Block unsafe execution and validate recovery path.';
+app/lib/runtime-core/runtime-timeline-engine.ts:20:    | 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:46:    latestSeverity === 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:47:      ? 'critical'
+app/lib/runtime-core/runtime-timeline-engine.ts:63:      operationalTrend === 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:7:  | 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:16:  severity: 'info' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:27:      ? 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:28:      : action === 'throttle' || action === 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:45:            : action === 'stabilize'
+app/lib/runtime-core/runtime-action-engine.ts:59:      severity === 'critical'
+app/lib/runtime-core/runtime-action-engine.ts:60:        ? 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:19:    | 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:73:    | 'critical'
+app/lib/runtime-core/runtime-state-replay-engine.ts:80:    replayHealth = 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:21:    | 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:25:    | 'safe'
+app/lib/runtime-core/runtime-cognitive-state.ts:100:      ? 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:123:    cognitiveState === 'critical'
+app/lib/runtime-core/runtime-governance-center.ts:20:  riskLevel: 'low' | 'moderate' | 'high' | 'critical'
+app/lib/runtime-core/runtime-governance-center.ts:47:      ? 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:9:  | 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:38:      : 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:76:        ? 'critical'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:31:    integrity.integrity === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:43:        ? 'safe'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:6:  status: 'ok' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:15:  status: 'ok' | 'warning' | 'critical',
+app/lib/runtime-core/runtime-learning-signals.ts:13:    | 'critical'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:15:  criticalEvents: number
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:46:  const criticalEvents =
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:48:      item => item.supervisionLevel === 'critical'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:57:    criticalEvents >= 3
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:75:    criticalEvents,
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:81:      `critical:${criticalEvents}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:11:  | 'balanced'
+app/lib/executive-runtime-core/executive-runtime-core.ts:56:      : 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:8:  | 'balanced-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:18:  | 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:20:  | 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:54:      : executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:58:          : executionPriority === 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:63:    executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:67:        : executionPriority === 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:68:          ? 'balanced-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:72:    executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:76:        : executionPriority === 'balanced'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:55:      : 'balanced-operation'
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:25:    'runtime-safety',
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:36:      : attention.priority === 'critical'
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:16:  priority: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:39:      ? 'critical'
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:10:  | 'stabilize'
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:5:  | 'critical'
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:10:  | 'stabilize'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:18:    escalation.escalationLevel === 'critical'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:53:      lifecyclePhase: 'stabilize',
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:11:  | 'stabilize'
+app/lib/mode.ts:5:  | 'safe'
+app/lib/mode.ts:9:    (process.env.IASEVERO_MODE || 'safe').toLowerCase()
+app/lib/mode.ts:15:    mode === 'safe'
+app/lib/mode.ts:20:  return 'safe'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:6:  | 'critical'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:8:  | 'balanced'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:47:      ? 'critical'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:50:      : 'balanced'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:53:    executionPriority === 'critical'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:8:  | 'stabilize'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:14:  | 'balanced-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:25:      ? 'stabilize'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:31:    pipeline.executionPriority === 'critical'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:35:      : pipeline.executionPriority === 'balanced'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:36:      ? 'balanced-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:48:      : dispatchMode === 'stabilize'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:57:      : dispatchMode === 'stabilize'
+app/lib/runtime-execution-router/runtime-execution-router.ts:8:  | 'balanced-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:26:      : dispatch.dispatchTarget === 'balanced-runtime'
+app/lib/runtime-execution-router/runtime-execution-router.ts:27:      ? 'balanced-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:35:      : dispatch.dispatchMode === 'stabilize'
+app/lib/runtime-execution-router/runtime-execution-router.ts:44:      : executionLane === 'balanced-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:53:      : executionLane === 'balanced-lane'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:10:      ? 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:14:          ? 'balanced-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:20:      : operationalMode === 'balanced-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:21:        ? 'balanced-execution'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:22:        : operationalMode === 'safe-protection'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:43:        : operationalMode === 'balanced-runtime'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:45:          : operationalMode === 'safe-protection'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:8:  | 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:45:    arbitration.executionPriority === 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:49:        : arbitration.executionPriority === 'balanced'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:54:    arbitration.executionPriority === 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:58:        : arbitration.executionPriority === 'balanced'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:73:        ? 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:83:        : queueState === 'critical'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:75:      : queue.queueState === 'critical'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:77:        : scheduler.executionPriority === 'critical'
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:6:  | 'critical'
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:11:  | 'stabilize'
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:10:  | 'stabilize'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:10:  | 'stabilize'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:23:        : transition.transition === 'stabilize'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:24:          ? 'stabilize'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:34:        : lifecyclePhase === 'stabilize'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:35:          ? 'stabilize-runtime-state'
+app/lib/orchestrator/runtime-autonomous-decision.ts:10:    | 'stabilize'
+app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-architecture-index.ts:106:    file: 'runtime-autonomous-stabilizer.ts',
+app/lib/orchestrator/learning-engine.ts:7:    d => d.safe === false
+app/lib/orchestrator/learning-engine.ts:10:  const safe = decisions.filter(
+app/lib/orchestrator/learning-engine.ts:11:    d => d.safe === true
+app/lib/orchestrator/learning-engine.ts:23:    safe,
+app/lib/orchestrator/runtime-snapshot.ts:46:  const safeSnapshot: RuntimeSnapshot = snapshot || {
+app/lib/orchestrator/runtime-snapshot.ts:58:    safeSnapshot,
+app/lib/orchestrator/runtime-snapshot.ts:67:  return safeSnapshot
+app/lib/orchestrator/health-intelligence.ts:14:      safe: state.safe
+app/lib/orchestrator/runtime-governor.ts:7:  safeModeRequired: boolean
+app/lib/orchestrator/runtime-governor.ts:20:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:30:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:39:    safeModeRequired: policy.forceSafeMode,
+app/lib/orchestrator/runtime-state-registry.ts:5:  | 'critical'
+app/lib/orchestrator/runtime-guardian.ts:21:      safe: false,
+app/lib/orchestrator/runtime-guardian.ts:32:    safe: true,
+app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-policy.ts:17:      reason: 'Runtime em safeMode: execução permitida apenas em modo seguro.',
+app/lib/orchestrator/trace.ts:6:  safe: boolean
+app/lib/orchestrator/state-engine.ts:6:  safe: boolean
+app/lib/orchestrator/state-engine.ts:12:  safe: true,
+app/lib/orchestrator/state-engine.ts:35:    safe: true,
+app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+app/lib/orchestrator/provider-reputation.ts:2:  safe: number
+app/lib/orchestrator/provider-reputation.ts:10:  safe: boolean
+app/lib/orchestrator/provider-reputation.ts:14:      safe: 0,
+app/lib/orchestrator/provider-reputation.ts:19:  if (safe) {
+app/lib/orchestrator/provider-reputation.ts:20:    providers[provider].safe++
+app/lib/orchestrator/runtime-context.ts:1:export type RuntimeMode = 'local' | 'openai' | 'hybrid' | 'safe'
+app/lib/orchestrator/runtime-context.ts:10:  safeMode: boolean
+app/lib/orchestrator/runtime-context.ts:39:    safeMode: input?.safeMode ?? true,
+app/lib/orchestrator/runtime-awareness.ts:5:  severity: 'low' | 'medium' | 'high' | 'critical'
+app/lib/orchestrator/runtime-awareness.ts:29:      severity: 'critical',
+app/lib/orchestrator/runtime-recovery.ts:15:  if (awareness.severity === 'critical') {
+app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+app/lib/orchestrator/runtime-supervisor.ts:10:    | 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:25:    awareness.severity === 'critical' ? 30 : 0,
+app/lib/orchestrator/runtime-supervisor.ts:33:  const globalState: 'stable' | 'warning' | 'critical' =
+app/lib/orchestrator/runtime-supervisor.ts:35:      ? 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:41:    globalState === 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:57:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/runtime.ts:6:  safe: boolean
+app/lib/orchestrator/runtime.ts:17:      safe: true,
+app/lib/orchestrator/runtime.ts:25:    safe: status.safe,
+app/lib/orchestrator/runtime-contracts.ts:27:  severity: 'low' | 'medium' | 'high' | 'critical'
+app/lib/orchestrator/metrics.ts:19:    healthy: state.safe === true
+app/lib/orchestrator/decision-memory.ts:5:  safe: boolean
+app/lib/orchestrator/central-runtime-core.ts:29:      evolution.awareness.awareness.safe
+app/lib/orchestrator/runtime-execution-pipeline.ts:43:    safeMode: true,
+app/lib/orchestrator/runtime-incidents.ts:5:  | 'critical'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:18:  if (awareness.severity === 'critical') {
+app/lib/orchestrator/runtime-decision-engine.ts:13:import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
+app/lib/orchestrator/runtime-decision-engine.ts:38:  if (routing.mode === 'safe') {
+app/lib/orchestrator/runtime-decision-engine.ts:52:    routing.mode !== 'safe'
+app/lib/orchestrator/runtime-decision-engine.ts:54:  const mode = (routing.mode === 'openai' || routing.mode === 'hybrid' || routing.mode === 'safe')
+app/lib/orchestrator/runtime-decision-engine.ts:66:    safeMode: routing.mode === 'safe',
+app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimePressure: context.safeMode ? 60 : 20,
+app/lib/orchestrator/runtime-decision-engine.ts:189:    awareness.severity === 'critical'
+app/lib/orchestrator/runtime-decision-engine.ts:190:      ? 'critical'
+app/lib/orchestrator/runtime-decision-engine.ts:266:if (awareness.severity === 'critical') {
+app/lib/orchestrator/hybrid-router.ts:7:  if (!awareness.awareness.safe) {
+app/lib/orchestrator/hybrid-router.ts:10:      mode: 'safe',
+app/lib/orchestrator/adaptive-protection.ts:9:      safe: false,
+app/lib/orchestrator/adaptive-protection.ts:21:    safe: true,
+app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+app/lib/orchestrator/decision-pipeline.ts:38:    safe: policy.allowed,
+app/lib/orchestrator/runtime-brain-matrix.ts:13:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/intelligent-selector.ts:9:        (stats.safe * 2) - stats.risky
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/runtime-structural-health.ts:6:  status: 'healthy' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-structural-health.ts:39:      ? 'critical'
+app/lib/orchestrator/awareness-engine.ts:12:      safe: state.safe,
+app/lib/orchestrator/evolution-engine.ts:10:  if (patterns.risky > patterns.safe) {
+app/lib/orchestrator/evolution-engine.ts:16:  if (!awareness.awareness.safe) {
+app/lib/orchestrator/routing.ts:21:    risk: runtime.safe ? 'low' : 'medium',
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:13:        ? 'balanced-governed-execution'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:14:        : 'restricted-safe-execution'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:20:    executionProfile !== 'restricted-safe-execution'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:25:      : profiler.executionIntensity === 'balanced-runtime-intensity'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:46:        : 'Restricted or balanced execution profile enabled.',
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:19:      : adaptive.coordinationMode === 'stabilize'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:32:          : 'critical'
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:5:  | 'critical'
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:10:  | 'stabilize'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:8:  | 'stabilize'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:22:          ? 'stabilize'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:32:        : transition === 'stabilize'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:69:          : transition === 'stabilize'
+app/lib/observability.ts:7:  safe?: boolean
+app/lib/env.ts:26:    safe: mode !== 'openai' || Boolean(process.env.OPENAI_API_KEY)

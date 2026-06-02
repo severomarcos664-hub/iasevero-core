@@ -1,0 +1,3 @@
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:27:export function evaluateRuntimeExecutionCriticality():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:2:  evaluateRuntimeExecutionCriticality,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:32:    evaluateRuntimeExecutionCriticality()

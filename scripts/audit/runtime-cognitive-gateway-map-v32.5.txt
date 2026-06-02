@@ -1,0 +1,5 @@
+app/lib/runtime-core/runtime-governance-enforcement.ts:1:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-governance-enforcement.ts:17:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-cognitive-state.ts:4:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-state.ts:59:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:17:export function evaluateRuntimeCognitiveGateway(): RuntimeCognitiveDecision {
