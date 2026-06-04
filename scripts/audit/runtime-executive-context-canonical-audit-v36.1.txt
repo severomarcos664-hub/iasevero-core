@@ -1,0 +1,4 @@
+v36.1 Executive Runtime Context Canonical Audit
+Status: IN_PROGRESS
+Objective: identify canonical executionAllowed authority chain
+Date: Thu Jun  4 02:06:49 AM UTC 2026
