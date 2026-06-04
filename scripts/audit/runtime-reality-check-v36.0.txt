@@ -1,0 +1,100 @@
+IASevero Runtime Reality Check v36.0
+
+Status:
+Runtime reality check strongly evidenced by static audit.
+
+Main conclusion:
+No single canonical supreme authority was identified.
+The runtime shows a distributed operational governance model.
+
+Strongly evidenced critical path:
+Request
+↓
+Route
+↓
+Decision Gate
+↓
+Action Policy
+↓
+Runtime Execution Bridge
+↓
+Runtime Master Orchestrator
+↓
+Governance / Policy / Scheduler / Recovery
+↓
+Execution Pipeline
+↓
+Dispatch Controller
+↓
+Execution Router
+↓
+Provider Authority
+↓
+Provider Route
+↓
+Provider
+↓
+Response
+
+Operational consensus path:
+Governance Matrix
+↓
+Consensus Engine
+↓
+Execution Scheduler
+↓
+Execution Arbitrator
+↓
+Queue Manager
+↓
+Execution Pipeline
+
+Key signal pattern:
+executionAllowed is not produced by one absolute module.
+It is repeatedly derived through AND-composition of trusted signals.
+
+Examples:
+- authority.executionAllowed && state.executionAllowed && provider.executionAllowed
+- pipeline.runtimeExecutionAllowed && pipeline.pipelineStable
+- dispatch.dispatchAllowed && dispatch.runtimeProtected
+
+Classification:
+[A] Critical Path:
+route.ts
+runtime-execution-bridge
+runtime-master-orchestrator
+runtime-execution-pipeline
+runtime-dispatch-controller
+runtime-execution-router
+runtime-provider-authority
+provider routing
+response
+
+[B] Operational Path:
+runtime-governance-matrix
+runtime-consensus-engine
+runtime-execution-scheduler
+runtime-execution-arbitrator
+runtime-queue-manager
+
+[C] Support Path:
+telemetry
+correlation
+event stream
+trace nodes
+recovery
+self-healing
+integrity
+
+[D] Consultive / To Validate:
+awareness matrix
+neural coordination
+neural synchronization
+signal intelligence
+causal propagation
+unified operational graph
+
+Next phase:
+v36.05 Critical Path Classification
+v36.1 Executive Runtime Context Canonical Audit
+v36.2 End-to-End Trace Proof

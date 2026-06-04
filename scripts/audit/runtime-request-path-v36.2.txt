@@ -1,0 +1,108 @@
+app/api/chat/route.ts:11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/api/chat/route.ts:68:const actionPolicy = evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/runtime/status/route.ts:2:import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
+app/api/runtime/status/route.ts:5:  const runtime = runRuntimeMasterOrchestrator()
+app/api/runtime/telemetry/route.ts:3:import { runRuntimeMasterOrchestrator }
+app/api/runtime/telemetry/route.ts:7:  const runtime = runRuntimeMasterOrchestrator()
+app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/orchestrator/decision-pipeline.ts:15:export function runDecisionPipeline(message: string, intent = 'general'): PipelineResult {
+app/lib/orchestrator/decision-pipeline.ts:8:export type PipelineResult = {
+app/lib/orchestrator/runtime-execution-pipeline.ts:112:    'Pipeline executado com sucesso.',
+app/lib/orchestrator/runtime-execution-pipeline.ts:21:export function executeRuntimePipeline(input: {
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:19:    resilienceActive: matrix.executionConsensus,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:31:  const executionConsensus =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:46:    executionConsensus,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:53:      executionConsensus
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:60:      `consensus:${executionConsensus}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:14:    evaluateRuntimeActionPolicy()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:6:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:104:      executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:19:  executionConsensus: boolean
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:36:export function evaluateRuntimeConsensusEngine():
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:37:RuntimeConsensusEngineReport {
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:56:      governance.executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:75:  const executionConsensus =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:79:    executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:99:    executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:9:export type RuntimeConsensusEngineReport = {
+app/lib/runtime-core/runtime-action-policy-engine.ts:20:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:21:RuntimeActionPolicyReport {
+app/lib/runtime-core/runtime-action-policy-engine.ts:5:export type RuntimeActionPolicyReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-execution-bridge.ts:1:import { runRuntimeMasterOrchestrator } from './runtime-master-orchestrator'
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-execution-bridge.ts:6:  const runtime = runRuntimeMasterOrchestrator()
+app/lib/runtime-core/runtime-master-orchestrator.ts:9:export function runRuntimeMasterOrchestrator() {
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:11:export type RuntimeDispatchTarget =
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:17:export function evaluateRuntimeDispatchController() {
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:21:  const dispatchMode: RuntimeDispatchMode =
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:30:  const dispatchTarget: RuntimeDispatchTarget =
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:5:export type RuntimeDispatchMode =
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:2:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:42:export function evaluateRuntimeExecutionArbitrator():
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:46:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:40:    executionConsensus:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:41:      execution.executionConsensus,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:59:      `consensus:${execution.executionConsensus}`
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:24:  executionConsensus: boolean
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:10:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:14:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:21:export type RuntimePipelineState =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:27:export type RuntimePipelineAction =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:33:export type RuntimeExecutionPipelineReport = {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:38:  pipelineState: RuntimePipelineState
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:39:  pipelineAction: RuntimePipelineAction
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:55:RuntimeExecutionPipelineReport {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:61:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:64:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:67:    evaluateRuntimeExecutionArbitrator()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:6:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:72:  const pipelineState: RuntimePipelineState =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:73:    !consensus.executionConsensus
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:81:  const pipelineAction: RuntimePipelineAction =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:91:    consensus.executionConsensus &&
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:41:    executionConsensus: profiler.executionConsensus,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:54:      `consensus:${profiler.executionConsensus}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:17:export function evaluateRuntimeExecutionRouter() {
+app/lib/runtime-execution-router/runtime-execution-router.ts:19:    evaluateRuntimeDispatchController()
+app/lib/runtime-execution-router/runtime-execution-router.ts:2:  evaluateRuntimeDispatchController,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:108:      `consensus:${consensus.executionConsensus}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:11:export type RuntimeExecutionSchedulerReport = {
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:2:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:34:export function evaluateRuntimeExecutionScheduler():
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:35:RuntimeExecutionSchedulerReport {
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:38:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:93:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:96:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:99:      consensus.executionConsensus
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:34:    arbitration.executionConsensus &&
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:54:    executionConsensus: arbitration.executionConsensus,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:71:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:10:  evaluateRuntimeExecutionRouter,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:48:  const router = evaluateRuntimeExecutionRouter()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:36:    executionConsensus:
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:37:      arbitration.executionConsensus,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:49:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:30:): RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:9:export interface RuntimeProviderAuthorityReport {
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:2:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:42:    evaluateRuntimeExecutionArbitrator()
