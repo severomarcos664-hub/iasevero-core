@@ -1,0 +1,39 @@
+IASevero v37.1 — Runtime Critical Path Canonical Map
+
+Purpose:
+Identify what participates directly in the real request path and what remains consultive until proven otherwise.
+
+Canonical question:
+What changes the final response?
+
+CRITICAL PATH — confirmed or high-priority candidates:
+1. /api/chat/route.ts
+2. Executive Authority Gateway
+3. Executive Runtime Authority
+4. Executive Runtime Context
+5. Runtime Execution Bridge
+6. Runtime Master / Runtime Orchestration
+7. iaseveroCore
+8. Provider selection / provider execution
+9. Response generation
+
+CONSULTIVE PATH — until proven as response-changing:
+1. Attention Registry
+2. Reflection Feedback
+3. Memory Consolidation
+4. Cognitive Bus
+5. Cognitive State Fabric
+6. Causal Influence
+7. Live Cognitive Loop
+8. Telemetry
+9. Metrics
+10. Awareness
+
+Classification rule:
+- Critical Path: component can directly change, block, route, or generate the final response.
+- Response Influencer: component changes decisions indirectly.
+- Observer: component records, measures, or reports without changing the final response.
+
+Next phase:
+v37.15 — Runtime Execution Coverage Audit
+v37.2  — Response Influence Audit

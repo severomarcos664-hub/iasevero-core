@@ -1,0 +1,36 @@
+IASevero v37.15 — Runtime Execution Coverage Audit
+
+Purpose:
+Document the real execution coverage found by static audit.
+
+Confirmed request path:
+
+/api/chat
+↓
+runRuntimeExecutionBridge()
+↓
+runRuntimeMasterOrchestrator()
+↓
+buildExecutiveRuntimeContext()
+↓
+evaluateRuntimeExecutiveAuthorityGateway()
+↓
+evaluateRuntimeConsensusEngine()
+↓
+evaluateRuntimeExecutionScheduler()
+↓
+evaluateRuntimeExecutionArbitrator()
+↓
+Execution Pipeline
+↓
+Response
+
+Status:
+Strongly evidenced by static audit.
+
+Conclusion:
+The IASevero runtime has a real critical execution chain.
+The next phase should identify which components directly change the final response.
+
+Next phase:
+v37.2 — Response Influence Audit
