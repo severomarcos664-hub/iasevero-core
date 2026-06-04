@@ -1,0 +1,47 @@
+IASevero v37.7
+
+Runtime Authority Convergence Audit
+
+QUESTION
+
+Where does executionAllowed converge?
+
+STRONG EVIDENCE
+
+Signals identified:
+
+- authority.executionAllowed
+- state.executionAllowed
+- context.executionAllowed
+- meta.executionAllowed
+- bus.executionAllowed
+- identity.executionAllowed
+
+OBSERVATION
+
+No single runtime controller was identified.
+
+Authority appears to be distributed.
+
+CONVERGENCE POINT
+
+ExecutiveRuntimeContext
+
+MODEL
+
+Distributed Authority
+↓
+Signal Aggregation
+↓
+ExecutiveRuntimeContext
+↓
+executionAllowed
+↓
+API Route
+↓
+Execution
+
+STATUS
+
+Strong static evidence.
+
