@@ -1,0 +1,28 @@
+IASEVERO v37.0
+STATUS: IN PROGRESS
+
+LAYER 1 - COGNITIVE INPUTS
+Attention Registry
+Reflection Feedback
+Memory Consolidation
+
+LAYER 2 - COGNITIVE PROCESSING
+Cognitive Bus
+Cognitive State Fabric
+Live Cognitive Loop
+
+LAYER 3 - EXECUTIVE GOVERNANCE
+Executive Governor
+Executive Runtime Core
+Executive Authority
+Executive Authority Gateway
+
+LAYER 4 - EXECUTION
+Executive Runtime Context
+/api/chat
+
+PENDING:
+- producers
+- consumers
+- authority chain
+- execution path
