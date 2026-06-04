@@ -1,0 +1,49 @@
+IASevero v37.25 — Runtime Response Generation Chain
+
+Observed chain:
+
+runtime-cognitive-response-profiler
+↓
+responseProfile
+↓
+runtime-cognitive-execution-profiles
+↓
+responseIntensity
+↓
+runtime-execution-profile-bridge
+↓
+runtime-adaptive-response
+↓
+runtime-autonomous-response-intelligence
+↓
+response.generated
+↓
+chat.response.generated
+
+Evidence:
+Static audit confirms signal propagation across response-related modules.
+
+Classification:
+
+HIGH PRIORITY RESPONSE INFLUENCE
+- runtime-cognitive-response-profiler
+- runtime-adaptive-response
+- runtime-autonomous-response-intelligence
+
+RESPONSE SIGNALS
+- responseProfile
+- responseIntensity
+
+PROVIDER SIGNALS
+- recommendedProvider
+- providerAllowed
+
+OUTPUT SIGNALS
+- response.generated
+- chat.response.generated
+
+Conclusion:
+A preliminary response generation chain has been identified.
+
+Next phase:
+v37.3 — Runtime Response Consumer Audit
