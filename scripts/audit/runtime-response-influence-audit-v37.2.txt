@@ -1,0 +1,49 @@
+IASevero v37.2 — Response Influence Audit
+
+Question:
+Which components can influence the final response?
+
+Strong evidence found:
+
+Provider Influence:
+- recommendedProvider
+- providerAllowed
+- Provider Governor
+- Provider Authority
+
+Response Influence:
+- runtime-cognitive-response-profiler
+- runtime-adaptive-response
+- runtime-autonomous-response-intelligence
+- runtime-action-policy-engine
+- runtime-execution-profile-bridge
+- runtime-cognitive-execution-profiles
+
+Observed response signals:
+- responseProfile
+- responseIntensity
+- response.generated
+- final response
+
+Preliminary classification:
+
+CRITICAL RESPONSE INFLUENCE
+- runtime-cognitive-response-profiler
+- runtime-adaptive-response
+- runtime-autonomous-response-intelligence
+
+DECISION INFLUENCE
+- Provider Governor
+- Provider Authority
+- Execution Governance Matrix
+
+OBSERVER
+- Learning
+- Telemetry
+- Metrics
+
+Conclusion:
+Execution Path and Response Influence Path are now partially documented.
+
+Next phase:
+v37.25 — Runtime Response Coverage Audit
