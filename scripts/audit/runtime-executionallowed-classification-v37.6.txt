@@ -1,0 +1,17 @@
+IASevero v37.6
+ExecutionAllowed Classification Audit
+
+PRODUCERS
+(geram ou calculam executionAllowed)
+
+PROPAGATORS
+(recebem e repassam executionAllowed)
+
+CONSUMERS
+(usam executionAllowed para decidir)
+
+OBSERVERS
+(apenas registram executionAllowed)
+
+STATUS:
+IN PROGRESS

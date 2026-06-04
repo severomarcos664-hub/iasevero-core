@@ -1,0 +1,61 @@
+IASevero v37.5
+Runtime Operational Canonical Map
+
+QUESTION:
+Which components actually influence execution and response generation?
+
+EXECUTION CHAIN
+
+/api/chat
+↓
+RuntimeExecutionBridge
+↓
+RuntimeMasterOrchestrator
+↓
+ExecutiveRuntimeContext
+↓
+ExecutiveAuthorityGateway
+↓
+ConsensusEngine
+↓
+ExecutionScheduler
+↓
+ExecutionArbitrator
+↓
+ExecutionPipeline
+↓
+Provider
+
+RESPONSE CHAIN
+
+runtime-cognitive-response-profiler
+↓
+runtime-cognitive-execution-profiles
+↓
+runtime-execution-profile-bridge
+↓
+runtime-adaptive-response
+↓
+runtime-autonomous-response-intelligence
+↓
+response.generated
+↓
+chat.response.generated
+
+DECISION SIGNALS
+
+recommendedProvider
+providerAllowed
+responseProfile
+responseIntensity
+
+STATUS
+
+Static audit evidence:
+CONFIRMED
+
+Build:
+PENDING
+
+Regression:
+PENDING

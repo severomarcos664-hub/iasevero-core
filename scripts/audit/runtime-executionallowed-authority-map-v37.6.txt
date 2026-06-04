@@ -1,0 +1,36 @@
+IASevero v37.6
+
+ExecutionAllowed Authority Map
+
+PRODUCERS
+- runtime-provider-authority
+- runtime-workflow-coordinator
+- runtime-execution-bridge
+- runtime-meta-controller
+- runtime-execution-router
+- runtime-operational-integration
+
+PROPAGATORS
+- executive-runtime-context
+- runtime-cognitive-state-fabric
+- runtime-enforcement-authority
+
+CONSUMERS
+- /api/chat
+- runtimeMaster
+- execution-router
+
+CONCLUSION
+
+executionAllowed is not controlled by a single runtime controller.
+
+The runtime operates through a distributed authority model.
+
+Multiple components generate execution signals.
+
+ExecutiveRuntimeContext consolidates authority signals.
+
+API route consumes final authority decisions.
+
+STATUS:
+Strong static evidence.
