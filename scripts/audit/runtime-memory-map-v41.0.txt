@@ -1,0 +1,127 @@
+app/lib/iasevero-core.ts:2:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+app/lib/runtime-core/runtime-adaptive-response.ts:29:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:43:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:57:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+app/lib/runtime-core/runtime-adaptive-response.ts:84:    memoryMode: 'session',
+app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+app/lib/runtime-core/runtime-tool-registry.ts:2:  | 'memory'
+app/lib/runtime-core/runtime-tool-registry.ts:39:      id: 'memory.search',
+app/lib/runtime-core/runtime-tool-registry.ts:40:      category: 'memory',
+app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+app/lib/runtime-core/runtime-cognitive-state.ts:38:    memoryPressure: 90,
+app/lib/runtime-core/runtime-cognitive-state.ts:48:      'memory-pressure-high',
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:16:  memoryInfluence: boolean
+app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+app/lib/runtime-core/runtime-feedback-integration.ts:31:    memory.stabilityRate >= 90 &&
+app/lib/runtime-core/runtime-feedback-integration.ts:34:      : memory.stabilityRate >= 70
+app/lib/runtime-core/runtime-feedback-integration.ts:36:      : memory.stabilityRate >= 50
+app/lib/runtime-core/runtime-feedback-integration.ts:51:    memoryInfluence: true,
+app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+app/lib/runtime-core/runtime-feedback-integration.ts:86:      memoryInfluence: true,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:26:  const memory = context.brain.operationalMemory
+app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:39:  const memory =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:50:      memory.runtimeEvolution !== 'degrading',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:53:      memory.historicalStability >= 80,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:23:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:75:  const memory =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:15:  memoryId: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:95:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:117:        ? 'Runtime persistence memory healthy.'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:119:          ? 'Runtime memory stable.'
+app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
+app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+app/lib/providers/local.ts:80:  if (intent === 'memory') {
+app/lib/orchestrator/runtime-architecture-index.ts:7:  | 'memory'
+app/lib/orchestrator/runtime-architecture-index.ts:71:    file: 'runtime-memory.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:72:    layer: 'memory',
+app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/runtime-snapshot.ts:12:  memoryMode: string
+app/lib/orchestrator/runtime-snapshot.ts:54:    memoryMode: 'unknown'
+app/lib/orchestrator/runtime-operational-memory.ts:9:  memoryModePattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:34:      memoryModePattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:47:  const memoryModePattern = dominant(snapshots.map((snapshot) => snapshot.memoryMode))
+app/lib/orchestrator/runtime-operational-memory.ts:78:    memoryModePattern,
+app/lib/orchestrator/runtime-state-registry.ts:11:  memoryPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:23:  memoryPressure: 0,
+app/lib/orchestrator/runtime-awareness.ts:18:    registry.memoryPressure +
+app/lib/orchestrator/runtime-dependency-validator.ts:24:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:39:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:66:    'memory'
+app/lib/orchestrator/event-logger.ts:3:const memory: IASeveroEvent[] = []
+app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+app/lib/orchestrator/event-logger.ts:8:  if (memory.length > 1000) {
+app/lib/orchestrator/event-logger.ts:9:    memory.shift()
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-contracts.ts:20:  memoryMode: string
+app/lib/orchestrator/runtime-contracts.ts:21:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-contracts.ts:22:  memoryPressure: number
+app/lib/orchestrator/runtime-event-processor.ts:8:} from './runtime-operational-memory'
+app/lib/orchestrator/runtime-event-processor.ts:33:    actions.push('memory-registered')
+app/lib/orchestrator/metrics.ts:4:import { getMemoryPolicy } from './memory-governor'
+app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:132:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:134:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:139:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:146:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:234:  memoryMode: memory.memoryMode
+app/lib/orchestrator/runtime-decision-engine.ts:294:    memory,
+app/lib/orchestrator/runtime-causal-trace.ts:12:    memoryMode: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:44:      memoryMode: latest?.memoryMode ?? null,
+app/lib/orchestrator/runtime-memory.ts:4:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+app/lib/orchestrator/runtime-memory.ts:16:      memoryEnabled: false,
+app/lib/orchestrator/runtime-memory.ts:17:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:26:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:27:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:36:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:37:      memoryMode: 'session',
+app/lib/orchestrator/runtime-memory.ts:45:    memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',
+app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/runtime-brain-matrix.ts:5:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+app/lib/router.ts:4:  | 'memory'
+app/lib/router.ts:16:  if (m.includes('memoria') || m.includes('memória')) return 'memory'
+app/lib/decision-engine.ts:15:  if (msg.includes('qual meu nome') || msg.includes('meu nome?')) return 'memory_query'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:11:  memoryId: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:13:  source: 'runtime-memory-consolidation'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:24:  memoryStrength: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:38:  const memoryStrength =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:49:      : memoryStrength >= 90
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:54:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:56:    source: 'runtime-memory-consolidation',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:75:    memoryStrength,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:85:        ? 'Runtime memory consolidation active.'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:86:        : 'Runtime memory consolidation restricted.',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:95:      `memoryStrength:${memoryStrength}`,

@@ -1,0 +1,24 @@
+IASevero v41.0 — Runtime Memory Audit
+
+Question:
+Can IASevero persist and recover information?
+
+Goal:
+
+Identify:
+
+- memory producers
+- memory consumers
+- persistence layers
+- retrieval layers
+- memory flow
+
+Focus:
+
+Behavior.
+
+Not architecture.
+
+No production changes.
+
+Audit only.

@@ -1,0 +1,33 @@
+IASevero v39.1 — Runtime Decision Signal Ownership
+
+Findings:
+
+executionPolicy
+→ Executive Governor
+
+runtimeAction
+→ Executive Governor
+
+executionRoute
+→ Adaptive Execution Coordinator / Execution Router
+
+executionPriority
+→ Adaptive Execution Coordinator / Scheduler / Arbitrator
+
+Conclusion:
+
+Decision ownership is distributed.
+
+Policy and Action converge through Executive Governor.
+
+Route and Priority converge through Adaptive Execution.
+
+This confirms the runtime does not operate through a single controller.
+
+Status:
+Strong static evidence.
+Build approved.
+Regression approved.
+
+Next phase:
+v40.0 — Architecture Freeze Candidate
