@@ -1,0 +1,44 @@
+IASevero v38.0 — Runtime Authority Consolidation
+
+Question:
+Who consolidates the final execution authority?
+
+Strong evidence reviewed:
+- executive-runtime-context.ts
+- runtime-executive-authority-gateway.ts
+- app/api/chat/route.ts
+
+Observed authority signals:
+- authority.executionAllowed
+- state.executionAllowed
+- context.executionAllowed
+- meta.executionAllowed
+- bus.executionAllowed
+
+Current conclusion:
+The IASevero runtime does not operate through a single RuntimeController.
+
+Authority is distributed across multiple runtime layers and converges through ExecutiveRuntimeContext before being consumed by the API route and execution flow.
+
+Operational model:
+Distributed Authority
+↓
+Signal Aggregation
+↓
+ExecutiveRuntimeContext
+↓
+Executive Authority Gateway
+↓
+/api/chat
+↓
+Runtime Execution
+↓
+Response
+
+Status:
+Strong static evidence.
+Build: passed.
+Regression: passed.
+
+Next phase:
+v38.1 — Authority Consumer and Veto Audit
