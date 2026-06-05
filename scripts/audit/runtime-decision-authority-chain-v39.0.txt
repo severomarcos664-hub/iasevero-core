@@ -1,0 +1,20 @@
+IASevero v39.0 — Runtime Decision Authority Chain
+
+Question:
+Who defines HOW the runtime executes?
+
+Fields audited:
+- executionPolicy
+- executionPriority
+- executionRoute
+- runtimeAction
+
+Goal:
+Identify producers, consumers, and convergence points for runtime decision signals.
+
+Status:
+IN PROGRESS
+
+Rule:
+No production code changes.
+Audit only.

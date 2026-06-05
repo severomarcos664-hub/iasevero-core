@@ -1,0 +1,17 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:13:  executionPolicy: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:45:    executionPolicy:
+app/lib/runtime-executive-state/runtime-executive-state.ts:26:  executionPolicy: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:77:    executionPolicy:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:18:  executionPolicy: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:63:    executionPolicy:
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:30:  executionPolicy: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/executive-runtime-core/executive-runtime-core.ts:25:  executionPolicy: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:68:    executionPolicy: governor.executionPolicy,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:12:  executionPolicy: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:37:    executionPolicy:
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:19:  executionPolicy: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:19:  executionPolicy: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:65:    executionPolicy: governance.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,

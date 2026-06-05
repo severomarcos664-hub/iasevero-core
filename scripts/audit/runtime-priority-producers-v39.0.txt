@@ -1,0 +1,28 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:16:  executionPriority: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:51:    executionPriority:
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:38:  executionPriority: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:20:  executionPriority: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:69:    executionPriority:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:16:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:32:  executionPriority: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:27:  executionPriority: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:70:    executionPriority: coordinator.executionPriority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:14:  executionPriority: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:43:    executionPriority:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:30:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:35:  executionPriority: string
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:29:  executionPriority: string
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:28:  executionPriority: string
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:22:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:43:  const executionPriority: RuntimeExecutionPriority =
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:32:  executionPriority: string
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:81:    executionPriority:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:44:  executionPriority: string
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:114:    executionPriority:
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:30:  executionPriority: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:21:  executionPriority: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:67:    executionPriority: governance.priority,
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:41:  executionPriority: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:28:  executionPriority: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:43:  executionPriority: string

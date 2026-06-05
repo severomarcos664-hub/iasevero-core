@@ -1,0 +1,30 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:17:  executionRoute: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:54:    executionRoute:
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:39:  executionRoute: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:21:  executionRoute: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:72:    executionRoute:
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:32:  executionRoute: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:79:    executionRoute: context.executionRoute,
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:33:  executionRoute: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:28:  executionRoute: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:71:    executionRoute: coordinator.executionRoute,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:15:  executionRoute: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:46:    executionRoute:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:24:  executionRoute: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:83:    executionRoute:
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:36:  executionRoute: string
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:30:  executionRoute: string
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:29:  executionRoute: string
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:23:  executionRoute: RuntimeExecutionRoute
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:52:  const executionRoute: RuntimeExecutionRoute =
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:33:  executionRoute: string
+app/lib/runtime-execution-router/runtime-execution-router.ts:30:  const executionRoute: RuntimeExecutionRoute =
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:31:  executionRoute: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:22:  executionRoute: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:68:    executionRoute: governance.executionRoute,
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:42:  executionRoute: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:34:  executionRoute: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:80:    executionRoute: router.executionRoute,
+app/lib/executive-runtime-context/executive-runtime-context.ts:29:  executionRoute: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:44:  executionRoute: string
