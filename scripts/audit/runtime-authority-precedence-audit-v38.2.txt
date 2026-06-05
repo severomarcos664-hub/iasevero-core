@@ -1,0 +1,28 @@
+IASevero v38.2 — Authority Precedence Audit
+
+Question:
+When executionAllowed signals conflict, which layer has final precedence?
+
+Goal:
+Identify precedence logic among:
+- identity executionAllowed
+- bus executionAllowed
+- meta executionAllowed
+- state executionAllowed
+- provider executionAllowed
+- authority executionAllowed
+- context executionAllowed
+- runtimeMaster executionAllowed
+- API route veto
+
+Initial hypothesis:
+IASevero does not use a single RuntimeController.
+Authority is distributed, then converges through ExecutiveRuntimeContext and API-level enforcement.
+
+Files generated:
+- runtime-authority-precedence-logic-v38.2.txt
+- runtime-authority-precedence-signals-v38.2.txt
+- runtime-authority-precedence-veto-v38.2.txt
+
+Status:
+IN PROGRESS

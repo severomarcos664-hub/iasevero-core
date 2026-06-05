@@ -1,0 +1,3 @@
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:39:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&

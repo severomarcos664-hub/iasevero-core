@@ -1,0 +1,53 @@
+IASevero v38.3 — Authority Conflict Resolution Audit
+
+Question:
+When executionAllowed signals conflict, who wins?
+
+Evidence:
+executive-runtime-context.ts consolidates execution authority using:
+
+executionAllowed =
+  authority.executionAllowed &&
+  state.executionAllowed &&
+  provider.executionAllowed
+
+Conclusion:
+IASevero does not use:
+- a single RuntimeController
+- majority vote
+- last writer wins
+
+IASevero uses:
+Hierarchical AND Veto
+
+Meaning:
+- authority=false blocks execution
+- state=false blocks execution
+- provider=false blocks execution
+- all three must be true for final executionAllowed=true
+
+Operational model:
+Authority Layer
+↓
+State Layer
+↓
+Provider Layer
+↓
+ExecutiveRuntimeContext
+↓
+ExecutiveAuthorityGateway
+↓
+/api/chat
+↓
+Runtime Execution
+↓
+Response
+
+Status:
+Strong static evidence.
+
+Next phase:
+v39.0 — Runtime Decision Authority Chain
+
+Next question:
+Who defines executionPolicy, executionPriority, executionRoute, and runtimeAction?
