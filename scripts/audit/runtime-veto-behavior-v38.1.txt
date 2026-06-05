@@ -1,0 +1,258 @@
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:81:        reply: 'Execução bloqueada pela Runtime Action Policy.',
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:118:    reply: "Execução bloqueada pela Runtime Executive Authority.",
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:21:        : 'restricted-runtime-intensity'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-executive-state/runtime-executive-state.ts:12:  | 'restricted'
+app/lib/runtime-executive-state/runtime-executive-state.ts:49:      ? 'restricted'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:8:  | 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:54:      ? 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:60:    executionMode === 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:67:    executionMode === 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:68:      ? 'restricted'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:74:    executionMode === 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:106:      executionMode === 'containment'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:107:        ? 'Runtime containment active.'
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:11:  | 'restricted-flow'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:78:        : 'Provider execution blocked.',
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:7:  | 'restrict'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:15:  | 'restricted'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:48:      ? 'restrict'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:56:    decision === 'restrict'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:57:      ? 'restricted'
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:29:          : 'contain-runtime-execution'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:12:  | 'contain'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:54:      ? 'contain'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:66:      : decision === 'contain'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:101:        : 'Runtime execution restricted.',
+app/lib/runtime-core/runtime-adaptive-response.ts:10:    | 'enter-containment'
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-adaptive-response.ts:41:      action: 'enter-containment',
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:56:        ? 'Action policy: containment enforced.'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:18:  blockedTools: number
+app/lib/runtime-core/runtime-tool-orchestrator.ts:33:        ? 'restricted'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:42:  const blockedTools =
+app/lib/runtime-core/runtime-tool-orchestrator.ts:60:    blockedTools,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:68:        : 'restricted-orchestration',
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:28:      : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:9:  | 'containment'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:15:  | 'contain'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:43:          : 'containment'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:54:            : 'contain'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:86:            : 'Strategic runtime posture: containment mode required.',
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:20:    severity.severityLevel === 'containment' || predictive.predictiveRisk === 'high'
+app/lib/runtime-core/runtime-policy-engine.ts:23:        ? 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:32:      ? 'contain'
+app/lib/runtime-core/runtime-policy-engine.ts:33:      : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:50:        : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-enforcement.ts:59:      reason: 'runtime governance restriction',
+app/lib/runtime-core/runtime-severity-governance.ts:8:  | 'containment'
+app/lib/runtime-core/runtime-severity-governance.ts:16:  containmentRequired: boolean
+app/lib/runtime-core/runtime-severity-governance.ts:28:      ? 'containment'
+app/lib/runtime-core/runtime-severity-governance.ts:45:      severityLevel === 'containment',
+app/lib/runtime-core/runtime-severity-governance.ts:49:      severityLevel === 'containment',
+app/lib/runtime-core/runtime-severity-governance.ts:51:    containmentRequired:
+app/lib/runtime-core/runtime-severity-governance.ts:52:      severityLevel === 'containment',
+app/lib/runtime-core/runtime-severity-governance.ts:55:      severityLevel === 'containment'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:7:  | 'containment-mode'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:33:      : adaptive.action === 'enter-containment'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:34:      ? 'containment-mode'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:15:    | 'preventive-containment'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:26:    governance.severityLevel === 'containment'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:38:      ? 'preventive-containment'
+app/lib/runtime-core/runtime-state-transition-engine.ts:8:  | 'contained'
+app/lib/runtime-core/runtime-state-transition-engine.ts:34:          : loop.nextStep === 'contain'
+app/lib/runtime-core/runtime-state-transition-engine.ts:35:            ? 'contained'
+app/lib/runtime-core/runtime-state-transition-engine.ts:42:    degradationState: nextState === 'contained' || nextState === 'recovery',
+app/lib/runtime-core/runtime-event-stream-engine.ts:8:  | 'execution.blocked'
+app/lib/runtime-core/runtime-event-stream-engine.ts:43:      type === 'execution.blocked'
+app/lib/runtime-core/runtime-contracts.ts:27:  | 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:10:  | 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:17:  | 'contain'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:33:  containmentRequired: boolean
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:52:          : strategic.posture === 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:53:            ? 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:65:            : 'contain'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:70:  const containmentRequired =
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:71:    escalationLevel === 'containment'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:86:    containmentRequired,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:89:      containmentRequired
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:90:        ? 'Runtime containment required immediately.'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:99:      `containment:${containmentRequired}`,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:34:    fusion.containmentRequired || drift.driftLevel === 'high'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:62:            : 'Execution criticality critical: containment required.',
+app/lib/runtime-core/runtime-confidence-intelligence.ts:20:  containmentRecommended: boolean
+app/lib/runtime-core/runtime-confidence-intelligence.ts:32:    escalation.containmentRequired
+app/lib/runtime-core/runtime-confidence-intelligence.ts:63:      !escalation.containmentRequired,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:69:    containmentRecommended:
+app/lib/runtime-core/runtime-confidence-intelligence.ts:71:      escalation.containmentRequired,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:82:              : 'Runtime confidence critical: containment required.',
+app/lib/runtime-core/runtime-tool-registry.ts:31:  blockedTools: number
+app/lib/runtime-core/runtime-tool-registry.ts:95:    blockedTools:
+app/lib/runtime-core/runtime-evaluation-engine.ts:105:            : 'Runtime execution is critical; containment required.',
+app/lib/runtime-core/runtime-governance-enforcement.ts:9:  executionMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-governance-enforcement.ts:20:    gateway.operationalMode === 'containment'
+app/lib/runtime-core/runtime-execution-coordinator.ts:50:        : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-workflow-coordinator.ts:37:        : 'blocked',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:49:        : 'Workflow execution blocked.',
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:10:  | 'contain'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:36:      ? 'contain'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:63:            : 'Runtime containment required.',
+app/lib/runtime-core/runtime-task-planner.ts:14:    | 'blocked'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:5:  | 'contain';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:45:    ? 'contain'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:57:    mode === 'contain' ? 'safe' :
+app/lib/runtime-core/runtime-decision-gate.ts:21:  const blocked =
+app/lib/runtime-core/runtime-decision-gate.ts:27:    allowed: !blocked,
+app/lib/runtime-core/runtime-decision-gate.ts:29:    reason: blocked
+app/lib/runtime-core/runtime-decision-gate.ts:30:      ? 'runtime execution blocked by governance'
+app/lib/runtime-core/runtime-action-engine.ts:8:  | 'contain'
+app/lib/runtime-core/runtime-action-engine.ts:26:    action === 'contain' || action === 'recover'
+app/lib/runtime-core/runtime-action-engine.ts:39:      action === 'contain'
+app/lib/runtime-core/runtime-cognitive-state.ts:26:    | 'containment'
+app/lib/runtime-core/runtime-governance-center.ts:35:    severity.containmentRequired || lanes.isolationRecommended
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:14:  containmentRequired: boolean
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:32:  const containmentRequired = false
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:52:    containmentRequired,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:65:      `containment:${containmentRequired}`,
+app/lib/runtime-core/runtime-decision-loop.ts:6:  cycleStatus: 'normal' | 'throttled' | 'contained' | 'recovery'
+app/lib/runtime-core/runtime-decision-loop.ts:13:    | 'contain'
+app/lib/runtime-core/runtime-decision-loop.ts:28:        : execution.action === 'containment-mode'
+app/lib/runtime-core/runtime-decision-loop.ts:29:          ? 'contained'
+app/lib/runtime-core/runtime-decision-loop.ts:37:        : execution.action === 'containment-mode'
+app/lib/runtime-core/runtime-decision-loop.ts:38:          ? 'contain'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:7:  operationalMode: 'normal' | 'safe' | 'recovery' | 'containment'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:41:      ? 'containment'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:23:    | 'restricted-consensus'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:81:      : 'restricted-consensus'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:106:        : 'Runtime restricted consensus activated.',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:52:        : 'Runtime Executive Authority Gateway blocked execution.',
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:23:      : 'restricted-runtime'
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:44:        : 'Runtime operating under restricted consciousness integration.',
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:9:  | 'restricted-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:15:  | 'contain'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:53:      ? 'contain'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:60:            : 'contain'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:69:          : 'restricted-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:113:            : 'Runtime containment arbitration active.',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:8:  | 'restricted'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:55:      ? 'restricted'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:91:        : 'Runtime cognitive state fabric restricted.',
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:3:  | 'restricted'
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:4:  | 'blocked'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:13:  | 'contain'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:35:      ? 'contain'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:37:        ? 'contain'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:46:    controllerMode !== 'contain'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:63:        : 'Runtime meta-controller restricted execution.',
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:9:  | 'containment'
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:30:      ? 'containment'
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:38:    focus === 'containment'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:31:        : 'restricted-governance'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:60:        : 'Runtime execution governance matrix operating under restriction.',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:9:  | 'restricted'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:58:      ? 'restricted'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:28:  | 'restricted'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:89:      ? 'restricted'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:139:        : 'Runtime cognitive bus restricted.',
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:11:  | 'contain'
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:6:  | 'containment-runtime'
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:12:  | 'contain'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:9:  | 'restricted'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:45:      ? 'restricted'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:90:        : 'Runtime adaptive execution restricted.',
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:9:  | 'contain'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:15:  | 'restricted-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:28:      : 'contain'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:37:      : 'restricted-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:62:    dispatchMode !== 'contain'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:93:        : 'Runtime dispatch blocked.',
+app/lib/runtime-execution-router/runtime-execution-router.ts:9:  | 'restricted-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:15:  | 'containment-execution'
+app/lib/runtime-execution-router/runtime-execution-router.ts:28:      : 'restricted-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:37:      : 'containment-execution'
+app/lib/runtime-execution-router/runtime-execution-router.ts:95:        : 'Runtime execution routing blocked.',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:23:          ? 'restricted-execution'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:15:  | 'contain'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:85:          : 'contain'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:121:            : 'Runtime queue containment activated.',
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:25:  | 'contained'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:31:  | 'contain-runtime'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:74:      ? 'contained'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:88:          : 'contain-runtime'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:132:            : 'Runtime execution pipeline containment active.',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:76:        : 'Runtime Enforcement Authority blocked execution.',
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:5:  | 'restricted'
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:11:  | 'contain'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:17:  | 'restricted'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:57:      ? 'restricted'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:89:        : 'Runtime operational integration restricted.',
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:12:  | 'contain'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:27:            : 'contain'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:38:            : 'activate-runtime-containment'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:41:    lifecyclePhase !== 'contain'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:64:        : 'Runtime lifecycle containment required.',
+app/lib/orchestrator/runtime-architecture-index.ts:108:    responsibility: 'avaliar estabilização autônoma e containment',
+app/lib/orchestrator/runtime-policy-engine.ts:7:    | 'restricted'
+app/lib/orchestrator/runtime-policy-engine.ts:8:    | 'containment'
+app/lib/orchestrator/runtime-policy-engine.ts:26:      enforcementLevel: 'containment',
+app/lib/orchestrator/runtime-policy-engine.ts:39:      enforcementLevel: 'restricted',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:5:  stabilizationLevel: 'stable' | 'adaptive' | 'containment'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:8:  containmentRequired: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:20:      stabilizationLevel: 'containment',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:23:      containmentRequired: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:34:      containmentRequired: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:45:      containmentRequired: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:55:    containmentRequired: false,
+app/lib/orchestrator/queue-governor.ts:2:export type RuntimeTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'blocked'
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/runtime-decision-engine.ts:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:96:  `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:102:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:218:  `enforcement:${enforcement.allowed ? 'allowed' : 'blocked'}:${enforcement.severity}`
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/runtime-action-executor.ts:37:      message: 'Ação bloqueada pela governança.'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:14:        : 'restricted-safe-execution'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:20:    executionProfile !== 'restricted-safe-execution'
+app/lib/runtime-trust/runtime-trust-engine.ts:20:        : 'restricted'
+app/lib/runtime-trust/runtime-trust-engine.ts:23:    trustLevel !== 'restricted'
+app/lib/runtime-trust/runtime-trust-engine.ts:40:        : 'Runtime operating under restricted trust.',
+app/lib/executive-runtime-context/executive-runtime-context.ts:74:      : 'Executive Runtime Context restricted execution.',
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:10:  | 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:23:          : 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:35:    operationalState !== 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:64:        : 'Runtime execution containment enabled.',
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:11:  | 'contain'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:14:        : 'restricted-runtime-behavior'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:51:        : 'Runtime execution bridge operating with restrictions.',
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:10:  | 'contain'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:25:            : 'contain'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:36:            : 'containment-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:73:              : 'Runtime containment transition active.',
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:29:        : 'restricted-orchestration'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:50:      'restricted-orchestration',
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:55:        : 'Runtime arbitration operating under restrictions.',
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:19:        : 'restricted-awareness'
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:27:      : 'restricted-execution'
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:46:        : 'Runtime consciousness operating under restriction.',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:8:  | 'restricted'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:48:      ? 'restricted'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:86:        : 'Runtime memory consolidation restricted.',

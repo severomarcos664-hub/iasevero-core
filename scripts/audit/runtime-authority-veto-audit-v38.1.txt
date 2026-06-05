@@ -1,0 +1,36 @@
+IASevero v38.1 — Authority Consumer and Veto Audit
+
+Question:
+Who can veto final execution when executionAllowed is false?
+
+Goal:
+Identify all consumers of executionAllowed and classify which components can:
+- block a request
+- restrict provider execution
+- change routing
+- return early
+- only observe/report the decision
+
+Status:
+IN PROGRESS
+
+Inputs:
+- runtime-veto-points-v38.1.txt
+- runtime-veto-behavior-v38.1.txt
+- runtime-authority-consumers-v38.1.txt
+
+Findings:
+- executionAllowed is produced and consumed across multiple runtime layers.
+- No single RuntimeController was identified as the sole veto source.
+- Multiple modules can generate executionAllowed signals.
+- ExecutiveRuntimeContext remains the strongest convergence point for final execution authority.
+- /api/chat consumes the consolidated authority through the execution flow.
+
+Preliminary conclusion:
+IASevero uses distributed veto signals, not a single veto controller.
+
+Next phase:
+v38.2 — Authority Precedence Audit
+
+Central question:
+When executionAllowed signals conflict, which layer has final precedence?
