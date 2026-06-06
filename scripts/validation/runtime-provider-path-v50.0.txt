@@ -1,0 +1,188 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:7:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-executive-state/runtime-executive-state.ts:23:  provider: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:41:  const provider =
+app/lib/runtime-executive-state/runtime-executive-state.ts:50:      : !provider.allowExternal
+app/lib/runtime-executive-state/runtime-executive-state.ts:69:      provider.executionAllowed,
+app/lib/runtime-executive-state/runtime-executive-state.ts:71:    provider:
+app/lib/runtime-executive-state/runtime-executive-state.ts:72:      provider.provider,
+app/lib/runtime-executive-state/runtime-executive-state.ts:75:      provider.allowExternal,
+app/lib/runtime-executive-state/runtime-executive-state.ts:78:      provider.executionPolicy,
+app/lib/runtime-executive-state/runtime-executive-state.ts:81:      provider.runtimeAction,
+app/lib/runtime-executive-state/runtime-executive-state.ts:88:      `allowed:${provider.executionAllowed}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:89:      `provider:${provider.provider}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:90:      `external:${provider.allowExternal}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:92:      `action:${provider.runtimeAction}`
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:12:  source: 'runtime-provider-authority'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:14:  provider: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:47:      `provider-authority-${Date.now()}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:53:      'runtime-provider-authority',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:55:    provider:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:56:      route.provider,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:81:      `provider:${route.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:27:  provider: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-adaptive-response.ts:28:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:42:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:56:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:70:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:83:    providerMode: 'hybrid',
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:43:    providerMode: adaptive.providerMode,
+app/lib/runtime-core/runtime-contracts.ts:50:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/runtime-core/runtime-governance-enforcement.ts:35:    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
+app/lib/runtime-core/runtime-governance-enforcement.ts:53:      `provider:${gateway.provider}`,
+app/lib/runtime-core/runtime-cognitive-state.ts:37:    providerPressure: 70,
+app/lib/runtime-core/runtime-decision-loop.ts:8:  providerMode: string
+app/lib/runtime-core/runtime-decision-loop.ts:46:    providerMode: execution.providerMode,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:8:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-cognitive-gateway.ts:46:  const provider: RuntimeProvider =
+app/lib/runtime-core/runtime-cognitive-gateway.ts:57:    provider,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:65:        ? 'Gateway recomenda contenção operacional e provider local.'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:24:  provider: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:70:    provider: governance.provider,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:82:      `provider:${governance.provider}`,
+app/lib/answer.ts:14:      '1. usar provider local primeiro;',
+app/lib/providers/local.ts:21:    if (m.includes('api')) return 'Evite APIs externas. Use provider local para manter custo zero.'
+app/lib/providers/hybrid.ts:12:    // aqui no futuro entra OpenAI ou outro provider
+app/lib/orchestrator/runtime-budget-control.ts:5:  providerBudgetAllowed: boolean
+app/lib/orchestrator/runtime-budget-control.ts:17:      providerBudgetAllowed: false,
+app/lib/orchestrator/runtime-budget-control.ts:19:      reason: 'Modo seguro bloqueia provider externo.'
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:26:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-budget-control.ts:35:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:43:    providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-architecture-index.ts:6:  | 'provider'
+app/lib/orchestrator/runtime-architecture-index.ts:59:    responsibility: 'controlar risco de custo e provider externo',
+app/lib/orchestrator/runtime-architecture-index.ts:63:    name: 'RuntimeProviderGovernor',
+app/lib/orchestrator/runtime-architecture-index.ts:64:    file: 'runtime-provider-governor.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:65:    layer: 'provider',
+app/lib/orchestrator/runtime-architecture-index.ts:66:    responsibility: 'governar provider recomendado e bloqueios',
+app/lib/orchestrator/learning-engine.ts:16:      acc[d.provider] =
+app/lib/orchestrator/learning-engine.ts:17:        (acc[d.provider] || 0) + 1
+app/lib/orchestrator/runtime-snapshot.ts:7:  provider: string
+app/lib/orchestrator/runtime-snapshot.ts:49:    provider: 'local',
+app/lib/orchestrator/runtime-operational-memory.ts:8:  providerPattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:33:      providerPattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:46:  const providerPattern = dominant(snapshots.map((snapshot) => snapshot.provider))
+app/lib/orchestrator/runtime-operational-memory.ts:77:    providerPattern,
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:31:      reason: 'Governance bloqueou provider externo.',
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-state-registry.ts:10:  providerPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:22:  providerPressure: 0,
+app/lib/orchestrator/trace.ts:4:  provider: string
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/provider-reputation.ts:6:const providers: Record<string, ProviderStats> = {}
+app/lib/orchestrator/provider-reputation.ts:9:  provider: string,
+app/lib/orchestrator/provider-reputation.ts:12:  if (!providers[provider]) {
+app/lib/orchestrator/provider-reputation.ts:13:    providers[provider] = {
+app/lib/orchestrator/provider-reputation.ts:20:    providers[provider].safe++
+app/lib/orchestrator/provider-reputation.ts:22:    providers[provider].risky++
+app/lib/orchestrator/provider-reputation.ts:25:  return providers[provider]
+app/lib/orchestrator/provider-reputation.ts:29:  return providers
+app/lib/orchestrator/runtime-context.ts:8:  provider: RuntimeProvider
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-awareness.ts:17:    registry.providerPressure +
+app/lib/orchestrator/runtime-dependency-validator.ts:23:    'provider',
+app/lib/orchestrator/runtime-dependency-validator.ts:38:    'provider',
+app/lib/orchestrator/runtime-provider-governor.ts:3:export type RuntimeProviderGovernorResult = {
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:10:export function evaluateProviderGovernor(
+app/lib/orchestrator/runtime-provider-governor.ts:12:): RuntimeProviderGovernorResult {
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:28:      reason: 'SafeMode bloqueia provider externo.'
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime-contracts.ts:15:  provider: string
+app/lib/orchestrator/runtime-contracts.ts:45:  provider: string
+app/lib/orchestrator/events.ts:4:  provider?: string
+app/lib/orchestrator/decision-memory.ts:4:  provider: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:24:  provider?: RuntimeProvider
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:7:  providerEscalation: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:22:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:33:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:44:      providerEscalation: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:54:    providerEscalation: true,
+app/lib/orchestrator/runtime-decision-engine.ts:2:import { resolveHybridProvider } from './hybrid-router'
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:26:  const routing = resolveHybridProvider()
+app/lib/orchestrator/runtime-decision-engine.ts:58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+app/lib/orchestrator/runtime-decision-engine.ts:59:    ? routing.provider as RuntimeProvider
+app/lib/orchestrator/runtime-decision-engine.ts:64:    provider,
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:124:  `providerGovernor:${providerGovernor.escalationLevel}:${providerGovernor.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+app/lib/orchestrator/runtime-decision-engine.ts:229:  provider,
+app/lib/orchestrator/runtime-causal-trace.ts:7:    provider: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:39:      provider: latest?.provider ?? null,
+app/lib/orchestrator/hybrid-router.ts:4:export function resolveHybridProvider() {
+app/lib/orchestrator/hybrid-router.ts:9:      provider: 'local',
+app/lib/orchestrator/hybrid-router.ts:18:    provider: selected.provider,
+app/lib/orchestrator/executor.ts:2:  provider: string
+app/lib/orchestrator/executor.ts:9:  provider: string
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/executor.ts:27:    provider: input.provider,
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/decision-pipeline.ts:10:  provider: string
+app/lib/orchestrator/decision-pipeline.ts:20:    provider: route.provider,
+app/lib/orchestrator/decision-pipeline.ts:28:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:36:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:44:    provider: execution.provider,
+app/lib/orchestrator/intelligent-selector.ts:1:import { getProviderReputation } from './provider-reputation'
+app/lib/orchestrator/intelligent-selector.ts:4:  const providers = getProviderReputation()
+app/lib/orchestrator/intelligent-selector.ts:6:  const ranked = Object.entries(providers)
+app/lib/orchestrator/intelligent-selector.ts:12:        provider: name,
+app/lib/orchestrator/intelligent-selector.ts:20:      provider: 'local',
+app/lib/orchestrator/intelligent-selector.ts:21:      reason: 'Nenhum provider analisado.'
+app/lib/orchestrator/intelligent-selector.ts:26:    provider: ranked[0].provider,
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/evolution-engine.ts:12:      'Reduzir uso de providers instáveis.'
+app/lib/orchestrator/runtime-intelligence.ts:37:  const providerMap = new Map<string, number>()
+app/lib/orchestrator/runtime-intelligence.ts:42:    providerMap.set(
+app/lib/orchestrator/runtime-intelligence.ts:43:      snapshot.provider,
+app/lib/orchestrator/runtime-intelligence.ts:44:      (providerMap.get(snapshot.provider) || 0) + 1
+app/lib/orchestrator/runtime-intelligence.ts:54:    [...providerMap.entries()]
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:20:    provider: runtime.mode,
+app/lib/orchestrator/routing.ts:29:      provider: 'local',
+app/lib/orchestrator/routing.ts:37:      provider: 'local',
+app/lib/orchestrator/routing.ts:45:      provider: 'openai',
+app/lib/orchestrator/routing.ts:53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+app/lib/orchestrator/routing.ts:62:    provider: 'local',
+app/lib/orchestrator/routing.ts:64:    reason: 'Fallback seguro para provider local.'
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:23:  provider: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:46:  const provider =
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:64:    provider: provider.provider,
+app/lib/executive-runtime-context/executive-runtime-context.ts:65:    allowExternal: provider.allowExternal,
+app/lib/executive-runtime-context/executive-runtime-context.ts:81:      `provider:${provider.provider}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:83:      `external:${provider.allowExternal}`,
+app/lib/provider.ts:1:import { localProvider } from './providers/local'
+app/lib/provider.ts:8:  const provider = route?.provider || 'local'
+app/lib/provider.ts:10:  if (provider !== 'local') {
+app/lib/provider.ts:12:      '[IASevero] provider externo bloqueado:',
+app/lib/provider.ts:13:      provider
+app/lib/observability.ts:4:  provider?: string

@@ -1,0 +1,35 @@
+IASevero v50.0 - Platform Validation
+
+Goal:
+
+Validate a complete runtime execution path.
+
+Expected flow:
+
+Request
+↓
+Decision Engine
+↓
+Memory
+↓
+Router
+↓
+Provider
+↓
+Response
+↓
+Telemetry
+
+Validation:
+
+- request received
+- decision generated
+- memory consulted
+- route selected
+- provider selected
+- response generated
+- telemetry recorded
+
+No production changes.
+
+Validation only.

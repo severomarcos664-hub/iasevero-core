@@ -1,0 +1,89 @@
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:29:      : telemetry.warningEvents > 5
+app/lib/runtime-core/runtime-severity-governance.ts:31:        : telemetry.warningEvents > 2
+app/lib/runtime-core/runtime-severity-governance.ts:33:          : telemetry.infoEvents > 10
+app/lib/runtime-core/runtime-severity-governance.ts:66:      ...telemetry.reasoning,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:16:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-execution-orchestrator.ts:47:    telemetryRequired: true,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:4:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:10:  | 'telemetry.persisted'
+app/lib/runtime-core/runtime-persistence-fabric.ts:12:    | 'telemetry'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:5:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:36:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-timeline-engine.ts:2:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-timeline-engine.ts:32:    telemetry.map(event => ({
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-decision-loop.ts:15:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-decision-loop.ts:48:    telemetryRequired: execution.telemetryRequired,
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:19:    id: `trace_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+app/lib/orchestrator/runtime-architecture-index.ts:13:  | 'telemetry'
+app/lib/orchestrator/runtime-architecture-index.ts:113:    file: 'runtime-telemetry.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:114:    layer: 'telemetry',
+app/lib/orchestrator/audit-trail.ts:2:import { getRecentTraces } from './trace'
+app/lib/orchestrator/audit-trail.ts:10:    traces: getRecentTraces()
+app/lib/orchestrator/runtime-operational-metrics.ts:5:  traceCount: number
+app/lib/orchestrator/runtime-guardian.ts:10:    traces: metrics.traceCount,
+app/lib/orchestrator/runtime-guardian.ts:16:    exceeded.traces ||
+app/lib/orchestrator/trace.ts:10:const traces: RuntimeTrace[] = []
+app/lib/orchestrator/trace.ts:12:export function addTrace(trace: RuntimeTrace) {
+app/lib/orchestrator/trace.ts:13:  traces.push(trace)
+app/lib/orchestrator/trace.ts:15:  if (traces.length > 200) {
+app/lib/orchestrator/trace.ts:16:    traces.shift()
+app/lib/orchestrator/trace.ts:21:    JSON.stringify(trace)
+app/lib/orchestrator/trace.ts:26:  return traces.slice(-20)
+app/lib/orchestrator/runtime-context.ts:17:  trace: string[]
+app/lib/orchestrator/runtime-context.ts:46:    trace: input?.trace || [],
+app/lib/orchestrator/runtime-context.ts:56:export function appendRuntimeTrace(
+app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+app/lib/orchestrator/runtime-context.ts:64:    trace:
+app/lib/orchestrator/runtime-dependency-validator.ts:30:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:47:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:64:  telemetry: [
+app/lib/orchestrator/runtime-dependency-validator.ts:70:    'telemetry',
+app/lib/orchestrator/runtime-limiter.ts:19:  traces: number
+app/lib/orchestrator/runtime-limiter.ts:24:    traces: data.traces > limits.maxTraces,
+app/lib/orchestrator/runtime-contracts.ts:99:      contract: 'telemetry',
+app/lib/orchestrator/runtime-contracts.ts:106:    contract: 'telemetry',
+app/lib/orchestrator/metrics.ts:3:import { getRecentTraces } from './trace'
+app/lib/orchestrator/metrics.ts:9:  const traces = getRecentTraces()
+app/lib/orchestrator/metrics.ts:17:    traceCount: traces.length,
+app/lib/orchestrator/runtime-decision-engine.ts:14:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:71:    trace: []
+app/lib/orchestrator/runtime-decision-engine.ts:76:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:85:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:94:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:105:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:116:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:127:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:137:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:161:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:173:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:207:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:216:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:246:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:260:context = appendRuntimeTrace(
+app/lib/orchestrator/diagnostics.ts:22:  if (metrics.traceCount > 500) {
+app/lib/orchestrator/diagnostics.ts:23:    issues.push('Volume elevado de traces.')
+app/lib/orchestrator/decision-pipeline.ts:6:import { addTrace } from './trace'
+app/lib/orchestrator/runtime-brain-matrix.ts:4:import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
+app/api/runtime/telemetry/route.ts:11:    source: 'runtime-live-telemetry',
+app/api/runtime/telemetry/route.ts:14:    telemetry: {
+app/api/chat/route.ts:10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:100:    const traceRuntime = createRuntimeTraceNode(
+app/api/chat/route.ts:102:      traceRequest.id,
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:132:      traceRuntime.id,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
