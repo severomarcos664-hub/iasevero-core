@@ -1,0 +1,54 @@
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:16:  schedulerPriority: string
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:59:  const schedulerPriority =
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:86:    schedulerPriority,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:114:      `priority:${schedulerPriority}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:12:  schedulerId: string
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:14:  source: 'runtime-execution-scheduler'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:28:  schedulerStable: boolean
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:75:    schedulerId:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:76:      `scheduler-${Date.now()}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:82:      'runtime-execution-scheduler',
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:95:    schedulerStable:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:100:        ? 'Runtime execution scheduler active.'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:11:  source: 'runtime-adaptive-scheduler'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:38:    source: 'runtime-adaptive-scheduler',
+app/lib/runtime-core/runtime-master-orchestrator.ts:4:import { scheduleRuntimeExecution } from './runtime-adaptive-scheduler'
+app/lib/runtime-core/runtime-master-orchestrator.ts:13:  const scheduler = scheduleRuntimeExecution()
+app/lib/runtime-core/runtime-master-orchestrator.ts:33:    scheduler,
+app/lib/runtime-core/runtime-governance-center.ts:5:import { scheduleRuntimeExecution } from './runtime-adaptive-scheduler'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:3:} from '@/app/lib/runtime-execution-scheduler/runtime-execution-scheduler'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:26:  source: 'runtime-execution-arbitrator'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:45:  const scheduler =
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:49:    scheduler.executionPriority
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:52:    !scheduler.runtimeExecutionAllowed
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:81:    scheduler.schedulerStable
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:84:    arbitrationId: `arbitrator-${Date.now()}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:90:      'runtime-execution-arbitrator',
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:99:      scheduler.executionWindowMs,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:102:      scheduler.runtimeExecutionAllowed,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:120:      `window:${scheduler.executionWindowMs}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:121:      `throughput:${scheduler.executionThroughput}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:61:  const routerStable =
+app/lib/runtime-execution-router/runtime-execution-router.ts:65:    routerId: `router-${Date.now()}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:69:      'runtime-execution-router',
+app/lib/runtime-execution-router/runtime-execution-router.ts:78:    routerStable,
+app/lib/runtime-execution-router/runtime-execution-router.ts:101:      `stable:${routerStable}`,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:3:} from '@/app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:11:} from '@/app/lib/runtime-execution-scheduler/runtime-execution-scheduler'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:15:} from '@/app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:63:  const scheduler =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:66:  const arbitrator =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:77:        : scheduler.executionPriority === 'critical'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:93:    arbitrator.arbitrationStable
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:115:      scheduler.executionPriority,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:118:      arbitrator.executionAction,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:121:      arbitrator.runtimeExecutionAllowed,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:137:      `priority:${scheduler.executionPriority}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:138:      `arbitration:${arbitrator.executionAction}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:11:} from '@/app/lib/runtime-execution-router/runtime-execution-router'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:48:  const router = evaluateRuntimeExecutionRouter()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:53:    router.executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:80:    executionRoute: router.executionRoute,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:97:      `route:${router.executionRoute}`,
+app/lib/providers/local.ts:8:import { detectIntent } from '../router'
+app/lib/orchestrator/runtime-decision-engine.ts:2:import { resolveHybridProvider } from './hybrid-router'

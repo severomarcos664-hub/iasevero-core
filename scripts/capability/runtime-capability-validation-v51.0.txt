@@ -1,0 +1,25 @@
+IASevero v51.0 - Runtime Capability Validation
+
+Question:
+
+Can IASevero actively use:
+
+- Memory
+- Routing
+- Provider Selection
+- Telemetry
+
+during a request lifecycle?
+
+Goal:
+
+Validate runtime behavior.
+
+Not architecture.
+
+Not ownership.
+
+Not discovery.
+
+Behavior.
+

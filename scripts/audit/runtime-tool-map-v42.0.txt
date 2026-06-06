@@ -1,0 +1,31 @@
+app/lib/runtime-core/runtime-tool-orchestrator.ts:1:import { createRuntimeToolRegistry } from './runtime-tool-registry'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:21:  tools: RuntimeOrchestratedTool[]
+app/lib/runtime-core/runtime-tool-orchestrator.ts:28:  const tools = registry.tools.map((tool: any) => ({
+app/lib/runtime-core/runtime-tool-orchestrator.ts:29:    id: tool.id,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:30:    selected: tool.allowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:32:      tool.risk === 'high'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:35:    fallback: tool.fallback,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:36:    critical: tool.critical
+app/lib/runtime-core/runtime-tool-orchestrator.ts:40:    tools.filter((t: any) => t.selected).length
+app/lib/runtime-core/runtime-tool-orchestrator.ts:43:    tools.filter((t: any) => !t.selected).length
+app/lib/runtime-core/runtime-tool-orchestrator.ts:56:      tools.length,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:70:    tools
+app/lib/runtime-core/runtime-tool-registry.ts:27:  source: 'runtime-tool-registry'
+app/lib/runtime-core/runtime-tool-registry.ts:28:  tools: RuntimeTool[]
+app/lib/runtime-core/runtime-tool-registry.ts:37:  const tools: RuntimeTool[] = [
+app/lib/runtime-core/runtime-tool-registry.ts:86:    source: 'runtime-tool-registry',
+app/lib/runtime-core/runtime-tool-registry.ts:88:    tools,
+app/lib/runtime-core/runtime-tool-registry.ts:90:    totalTools: tools.length,
+app/lib/runtime-core/runtime-tool-registry.ts:93:      tools.filter(t => t.allowed).length,
+app/lib/runtime-core/runtime-tool-registry.ts:96:      tools.filter(t => !t.allowed).length,
+app/lib/runtime-core/runtime-evaluation-engine.ts:11:} from './runtime-tool-orchestrator'
+app/lib/runtime-core/runtime-evaluation-engine.ts:19:  toolScore: number
+app/lib/runtime-core/runtime-evaluation-engine.ts:36:  const tools = orchestrateRuntimeTools()
+app/lib/runtime-core/runtime-evaluation-engine.ts:53:  const toolScore =
+app/lib/runtime-core/runtime-evaluation-engine.ts:54:    tools.totalTools === 0
+app/lib/runtime-core/runtime-evaluation-engine.ts:56:      : Math.round((tools.selectedTools / tools.totalTools) * 100)
+app/lib/runtime-core/runtime-evaluation-engine.ts:72:        toolScore +
+app/lib/runtime-core/runtime-evaluation-engine.ts:93:    toolScore,
+app/lib/runtime-core/runtime-evaluation-engine.ts:104:            ? 'Runtime execution is degraded; review workflow and tools.'
+app/lib/runtime-core/runtime-evaluation-engine.ts:110:      `tools:${toolScore}`,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:51:      `tools:${allowAdvancedTools}`,

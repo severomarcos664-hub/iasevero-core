@@ -1,0 +1,42 @@
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:17:    workflowStable: matrix.cognitiveStable,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:15:  workflowStable: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-tool-orchestrator.ts:52:    workflowStable:
+app/lib/runtime-core/runtime-tool-orchestrator.ts:53:      workflow.operationalState === 'stable',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:63:      workflow.executionAllowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:66:      workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:3:} from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:9:  workflowState: string
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:27:    !workflow.executionAllowed ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:28:    workflow.operationalState !== 'stable' ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:29:    workflow.pendingSteps > workflow.completedSteps + 3
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:32:    !workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:34:      : workflow.operationalState !== 'stable'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:45:    workflowState: workflow.operationalState,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:46:    executionAllowed: workflow.executionAllowed,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:53:        ? 'Adaptive execution approved: continue workflow.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:57:            ? 'Adaptive execution recommends workflow stabilization.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:61:      `workflow:${workflow.operationalState}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:62:      `allowed:${workflow.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:63:      `completed:${workflow.completedSteps}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:64:      `pending:${workflow.pendingSteps}`,
+app/lib/runtime-core/runtime-tool-registry.ts:6:  | 'workflow'
+app/lib/runtime-core/runtime-tool-registry.ts:50:      id: 'workflow.analysis',
+app/lib/runtime-core/runtime-tool-registry.ts:55:      fallback: 'workflow.safe-analysis',
+app/lib/runtime-core/runtime-evaluation-engine.ts:42:    adaptive.workflowState === 'stable' &&
+app/lib/runtime-core/runtime-evaluation-engine.ts:104:            ? 'Runtime execution is degraded; review workflow and tools.'
+app/lib/runtime-core/runtime-workflow-coordinator.ts:6:  workflowId: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:31:    workflowId: `workflow_${Date.now()}`,
+app/lib/runtime-core/runtime-task-planner.ts:19:  source: 'runtime-task-planner'
+app/lib/runtime-core/runtime-task-planner.ts:71:export function planRuntimeTask(message: string): RuntimeTaskPlan {
+app/lib/runtime-core/runtime-task-planner.ts:101:      title: 'Prepare controlled execution plan',
+app/lib/runtime-core/runtime-task-planner.ts:126:    source: 'runtime-task-planner',
+app/lib/runtime-core/runtime-task-planner.ts:133:      'Task planned with controlled execution, validation, and synthesis.',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:10:  workflowStable: boolean;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:41:    !input.workflowStable ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:70:        ? 'Stabilization recommended. Reduce autonomy and monitor workflow quality.'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:87:      `workflowStable:${input.workflowStable}`,
+app/lib/orchestrator/runtime-architecture-index.ts:94:    responsibility: 'gerar plano de recuperação e cooldown',

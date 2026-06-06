@@ -1,0 +1,19 @@
+IASevero v53.0 - Runtime Coverage Audit
+
+Question:
+Which runtime modules are actually consumed by the execution path?
+
+Goal:
+Identify:
+- active modules
+- imported modules
+- runtime consumers
+- dead modules
+- orphan modules
+
+Focus:
+Execution reality.
+
+Not architecture.
+
+Audit only.

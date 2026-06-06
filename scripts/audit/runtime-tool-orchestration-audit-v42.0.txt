@@ -1,0 +1,29 @@
+IASevero v42.0 — Tool Orchestration Audit
+
+Question:
+
+Can IASevero:
+
+1. Plan
+2. Select Tool
+3. Execute Tool
+4. Validate Result
+5. Integrate Response
+
+Goal:
+
+Identify:
+
+- planning layer
+- tool selection layer
+- execution layer
+- validation layer
+- response integration layer
+
+Focus:
+
+Behavior.
+
+No production changes.
+
+Audit only.
