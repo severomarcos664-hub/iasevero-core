@@ -1,0 +1,31 @@
+app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+app/lib/runtime-core/runtime-event-stream-engine.ts:10:  | 'telemetry.persisted'
+app/lib/runtime-core/runtime-persistence-fabric.ts:18:  path.join(process.cwd(), 'runtime', 'persistence')
+app/lib/runtime-core/runtime-persistence-fabric.ts:26:export function persistRuntimeRecord(
+app/lib/runtime-core/runtime-contracts.ts:34:  | 'persistent'
+app/lib/runtime-core/runtime-recovery-engine.ts:5:  path.join(process.cwd(), 'runtime', 'persistence')
+app/lib/runtime-core/runtime-integrity-validator.ts:5:  path.join(process.cwd(), 'runtime', 'persistence')
+app/lib/runtime-core/runtime-state-replay-engine.ts:5:  path.join(process.cwd(), 'runtime', 'persistence')
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:30:    persistence: boolean
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:49:    persistence:
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:112:      `persistence:${validators.persistence}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:117:        ? 'Runtime persistence memory healthy.'
+app/lib/orchestrator/runtime-architecture-index.ts:122:    responsibility: 'persistir snapshots operacionais locais',
+app/lib/orchestrator/runtime-snapshot.ts:35:export function persistRuntimeSnapshot(
+app/lib/orchestrator/central-runtime-core.ts:4:import { persistRuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/central-runtime-core.ts:19:  const snapshot = persistRuntimeSnapshot()
+app/lib/orchestrator/runtime-decision-engine.ts:15:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-decision-engine.ts:146:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:226:persistRuntimeSnapshot({
+app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',
+app/lib/orchestrator/runtime-memory.ts:49:    reason: 'Memória persistente supervisionada.'
+app/api/chat/route.ts:8:import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+app/api/chat/route.ts:66:    const runtimeSnapshot = persistRuntimeSnapshot()

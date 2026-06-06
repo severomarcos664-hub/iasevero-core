@@ -1,0 +1,30 @@
+app/lib/runtime-core/runtime-persistence-fabric.ts:26:export function persistRuntimeRecord(
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/learning-engine.ts:4:  const decisions = getRecentDecisions()
+app/lib/orchestrator/runtime-snapshot.ts:35:export function persistRuntimeSnapshot(
+app/lib/orchestrator/runtime-snapshot.ts:70:export function readRuntimeSnapshots():
+app/lib/orchestrator/runtime-operational-memory.ts:1:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-operational-memory.ts:24:  const snapshots = readRuntimeSnapshots()
+app/lib/orchestrator/decision-memory.ts:11:export function rememberDecision(
+app/lib/orchestrator/decision-memory.ts:23:export function getRecentDecisions() {
+app/lib/orchestrator/decision-memory.ts:27:export function clearDecisionMemory() {
+app/lib/orchestrator/central-runtime-core.ts:4:import { persistRuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/central-runtime-core.ts:19:  const snapshot = persistRuntimeSnapshot()
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:15:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-decision-engine.ts:132:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:226:persistRuntimeSnapshot({
+app/lib/orchestrator/runtime-decision-engine.ts:239:  readRuntimeSnapshots()
+app/lib/orchestrator/runtime-causal-trace.ts:1:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-causal-trace.ts:19:  const snapshots = readRuntimeSnapshots()
+app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/self-healing.ts:18:  clearDecisionMemory()
+app/lib/orchestrator/runtime-brain-matrix.ts:2:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-brain-matrix.ts:18:    latest: ReturnType<typeof readRuntimeSnapshots>[number] | null
+app/lib/orchestrator/runtime-brain-matrix.ts:27:  const snapshots = readRuntimeSnapshots()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/api/chat/route.ts:8:import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+app/api/chat/route.ts:66:    const runtimeSnapshot = persistRuntimeSnapshot()

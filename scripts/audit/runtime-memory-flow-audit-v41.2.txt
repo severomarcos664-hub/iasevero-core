@@ -1,0 +1,31 @@
+IASevero v41.2 — Runtime Memory Flow Audit
+
+Question:
+How does memory flow through the runtime?
+
+Goal:
+Identify:
+- memory producers
+- memory consumers
+- persistence triggers
+- recovery readers
+- reuse points
+
+Focus:
+Behavior, not new architecture.
+
+No production changes.
+Audit only.
+
+Expected flow:
+Request
+↓
+Decision
+↓
+Memory
+↓
+Persist
+↓
+Recovery
+↓
+Reuse
