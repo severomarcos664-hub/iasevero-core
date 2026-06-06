@@ -1,0 +1,3 @@
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:28:export function evaluateRuntimeMetaController():
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:67:    evaluateRuntimeMetaController()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:46:  const meta = evaluateRuntimeMetaController()
