@@ -1,0 +1,6 @@
+app/lib/orchestrator/runtime-decision-engine.ts:38:  if (routing.mode === 'safe') {
+app/lib/orchestrator/runtime-decision-engine.ts:52:    routing.mode !== 'safe'
+app/lib/orchestrator/runtime-decision-engine.ts:54:  const mode = (routing.mode === 'openai' || routing.mode === 'hybrid' || routing.mode === 'safe')
+app/lib/orchestrator/runtime-decision-engine.ts:55:    ? routing.mode as RuntimeMode
+app/lib/orchestrator/runtime-decision-engine.ts:66:    safeMode: routing.mode === 'safe',
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)

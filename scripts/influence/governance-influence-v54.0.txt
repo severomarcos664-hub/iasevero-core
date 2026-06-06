@@ -1,0 +1,19 @@
+app/lib/runtime-core/runtime-master-orchestrator.ts:20:    governance.decision === 'NORMAL_OPERATION'
+app/lib/runtime-core/runtime-master-orchestrator.ts:45:      `decision:${governance.decision}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:10:    runtime.governance.decision === 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:11:    runtime.governance.decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-execution-bridge.ts:24:      governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-decision-gate.ts:22:    runtime.governance.decision !== 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-decision-gate.ts:35:    governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:33:    governance.decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:62:    governanceDecision: governance.decision,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:80:      `decision:${governance.decision}`,
+app/api/runtime/telemetry/route.ts:19:        runtime.governance.decision,
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/api/chat/route.ts:68:const actionPolicy = evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:71:    if (!decisionGate.allowed) {
+app/api/chat/route.ts:75:        runtime: decisionGate,
+app/api/chat/route.ts:79:    if (!actionPolicy.allowExecution) {
+app/api/chat/route.ts:83:        runtime: actionPolicy,
+app/api/chat/route.ts:106:        governance: runtimeMaster.governance.decision,
+app/api/chat/route.ts:145:        governance: runtimeMaster.governance.decision,
