@@ -1,0 +1,20 @@
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:14:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:42:    executionAllowed: true,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:20:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:21:  identityStatus: string
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:34:    !identity.executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:44:  const executionAllowed =
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:45:    identity.executionAllowed &&
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:54:    executionAllowed,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:56:    identityStatus: identity.status,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:61:      executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:69:      `execution:${executionAllowed}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:37:  identityStatus: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:44:  executionAllowed: boolean
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:88:    !controller.executionAllowed
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:101:    identityStatus:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:102:      controller.identityStatus,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:119:    executionAllowed:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:120:      controller.executionAllowed,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:137:      controller.executionAllowed
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:143:      `identity:${controller.identityStatus}`,

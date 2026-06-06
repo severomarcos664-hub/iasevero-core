@@ -1,0 +1,1 @@
+app/api/chat/route.ts:71:    if (!decisionGate.allowed) {

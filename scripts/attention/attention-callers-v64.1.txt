@@ -1,0 +1,3 @@
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:31:  const attention = evaluateRuntimeAttentionRegistry()
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:24:export function evaluateRuntimeAttentionRegistry():
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:64:    evaluateRuntimeAttentionRegistry()

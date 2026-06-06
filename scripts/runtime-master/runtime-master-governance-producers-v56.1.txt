@@ -1,0 +1,10 @@
+app/lib/runtime-core/runtime-master-orchestrator.ts:20:    governance.decision === 'NORMAL_OPERATION'
+app/lib/runtime-core/runtime-master-orchestrator.ts:45:      `decision:${governance.decision}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:10:    runtime.governance.decision === 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:11:    runtime.governance.decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-execution-bridge.ts:24:      governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-decision-gate.ts:22:    runtime.governance.decision !== 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-decision-gate.ts:35:    governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:33:    governance.decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:62:    governanceDecision: governance.decision,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:80:      `decision:${governance.decision}`,

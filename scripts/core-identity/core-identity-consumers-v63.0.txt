@@ -1,0 +1,3 @@
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:19:export function evaluateRuntimeCoreIdentity():
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:30:  const identity = evaluateRuntimeCoreIdentity()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:61:    evaluateRuntimeCoreIdentity()

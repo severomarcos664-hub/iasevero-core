@@ -1,0 +1,4 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:39:    executionAllowed:
+app/lib/runtime-executive-state/runtime-executive-state.ts:22:  executionAllowed: boolean
+app/lib/runtime-executive-state/runtime-executive-state.ts:68:    executionAllowed:

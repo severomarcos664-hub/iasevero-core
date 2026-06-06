@@ -1,0 +1,15 @@
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:19:  attentionFocus: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:72:    attentionFocus: bus.attentionFocus,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:97:      `focus:${bus.attentionFocus}`,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:22:  attentionFocus: string
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:57:    attentionFocus: attention.focus,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:23:  attentionFocus: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:80:    attentionFocus:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:81:      integration.attentionFocus,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:105:      `focus:${integration.attentionFocus}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:38:  attentionFocus: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:104:    attentionFocus:
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:27:  attentionFocus: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:73:    attentionFocus: meta.attentionFocus,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:94:      `attention:${meta.attentionFocus}`,
