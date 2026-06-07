@@ -1,0 +1,7 @@
+7:  provider: 'local' | 'openai' | 'hybrid'
+20:    provider: runtime.mode,
+29:      provider: 'local',
+37:      provider: 'local',
+45:      provider: 'openai',
+53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+62:    provider: 'local',
