@@ -1,0 +1,18 @@
+app/lib/orchestrator/runtime-policy.ts:8:  allowExternal: boolean
+app/lib/orchestrator/runtime-policy.ts:20:      allowExternal: false
+app/lib/orchestrator/runtime-policy.ts:30:      allowExternal: false
+app/lib/orchestrator/runtime-policy.ts:39:    allowExternal: false
+app/lib/orchestrator/runtime-context.ts:9:  allowExternal: boolean
+app/lib/orchestrator/runtime-context.ts:38:    allowExternal: input?.allowExternal ?? false,
+app/lib/orchestrator/runtime.ts:5:  allowExternal: boolean
+app/lib/orchestrator/runtime.ts:16:      allowExternal: false,
+app/lib/orchestrator/runtime.ts:24:    allowExternal: status.mode === 'openai' || status.mode === 'hybrid',
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/routing.ts:8:  allowExternal: boolean
+app/lib/orchestrator/routing.ts:30:      allowExternal: false,
+app/lib/orchestrator/routing.ts:38:      allowExternal: false,
+app/lib/orchestrator/routing.ts:46:      allowExternal: true,
+app/lib/orchestrator/routing.ts:54:      allowExternal: intent !== 'cost',
+app/lib/orchestrator/routing.ts:63:    allowExternal: false,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:10:  allowExternal: boolean
+app/lib/runtime-core/runtime-cognitive-gateway.ts:59:    allowExternal: riskLevel === 'low',
