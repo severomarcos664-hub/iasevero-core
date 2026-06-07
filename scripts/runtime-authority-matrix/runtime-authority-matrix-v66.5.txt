@@ -1,0 +1,48 @@
+IASevero v66.5
+
+Runtime Authority Matrix
+
+Executive Runtime Context
+- PRODUCER
+- CONSUMER
+- ENFORCER
+
+Action Policy Engine
+- PRODUCER
+- ENFORCER
+
+Consciousness Integration
+- CONSUMER
+- PROPAGATOR
+
+Operational State Engine
+- PRODUCER
+- CONSUMER
+
+Execution Scheduler
+- PRODUCER
+- CONSUMER
+
+Execution Arbitrator
+- PRODUCER
+- CONSUMER
+
+Execution Pipeline
+- CONSUMER
+- PROPAGATOR
+
+Queue Manager
+- CONSUMER
+- PROPAGATOR
+
+Dispatch Controller
+- CONSUMER
+- PROPAGATOR
+
+API Route
+- FINAL ENFORCEMENT
+
+Conclusion:
+
+IASevero uses a federated runtime authority architecture.
+The API Route remains the final execution enforcement layer.

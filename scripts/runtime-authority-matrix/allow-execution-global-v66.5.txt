@@ -1,0 +1,9 @@
+app/lib/runtime-core/runtime-action-policy-engine.ts:10:  allowExecution: boolean
+app/lib/runtime-core/runtime-action-policy-engine.ts:40:    allowExecution:
+app/lib/runtime-core/runtime-action-policy-engine.ts:65:      `allowExecution:${!requireContainment}`,
+app/lib/runtime-core/runtime-governance-center.ts:18:  allowExecution: boolean
+app/lib/runtime-core/runtime-governance-center.ts:60:    allowExecution:
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:18:    policy.allowExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:39:      policy.allowExecution,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:48:      `execution:${policy.allowExecution}`,
+app/api/chat/route.ts:79:    if (!actionPolicy.allowExecution) {
