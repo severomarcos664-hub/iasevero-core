@@ -1,0 +1,113 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:16:  executionPriority: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:51:    executionPriority:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:52:      core.executionPriority,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:65:      `priority:${core.executionPriority}`,
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:38:  executionPriority: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:20:  executionPriority: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:69:    executionPriority:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:70:      authority.executionPriority,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:60:      : context.executionPriority === 'high'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:16:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:18:  executionWindowMs: number
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:19:  executionThroughput: number
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:26:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:28:  schedulerStable: boolean
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:40:  const executionPriority =
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:49:  const executionWindowMs =
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:50:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:52:      : executionPriority === 'high'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:54:        : executionPriority === 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:58:  const executionThroughput =
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:59:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:61:      : executionPriority === 'high'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:63:        : executionPriority === 'balanced'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:68:    executionPriority === 'critical'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:70:      : executionPriority === 'high'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:84:    executionPriority,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:86:    executionWindowMs,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:88:    executionThroughput,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:92:    runtimeExecutionAllowed:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:95:    schedulerStable:
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:104:      `priority:${executionPriority}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:105:      `window:${executionWindowMs}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:106:      `throughput:${executionThroughput}`,
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:32:  executionPriority: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:27:  executionPriority: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:54:        coordinator.executionPriority === 'high'
+app/lib/executive-runtime-core/executive-runtime-core.ts:70:    executionPriority: coordinator.executionPriority,
+app/lib/executive-runtime-core/executive-runtime-core.ts:88:      `priority:${coordinator.executionPriority}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:14:  executionPriority: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:43:    executionPriority:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:44:      authority.executionPriority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:30:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:33:  executionWindowMs: number
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:35:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:48:  const executionPriority =
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:49:    scheduler.executionPriority
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:52:    !scheduler.runtimeExecutionAllowed
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:54:      : executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:56:        : executionPriority === 'high'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:58:          : executionPriority === 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:63:    executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:65:      : executionPriority === 'high'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:67:        : executionPriority === 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:72:    executionPriority === 'critical'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:74:      : executionPriority === 'high'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:76:        : executionPriority === 'balanced'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:81:    scheduler.schedulerStable
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:94:    executionPriority,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:98:    executionWindowMs:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:99:      scheduler.executionWindowMs,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:101:    runtimeExecutionAllowed:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:102:      scheduler.runtimeExecutionAllowed,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:116:      `priority:${executionPriority}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:120:      `window:${scheduler.executionWindowMs}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:121:      `throughput:${scheduler.executionThroughput}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:29:    !pipeline.runtimeExecutionAllowed
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:35:  executionPriority: string
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:29:  executionPriority: string
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:28:  executionPriority: string
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:22:  executionPriority: RuntimeExecutionPriority
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:43:  const executionPriority: RuntimeExecutionPriority =
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:53:    executionPriority === 'critical'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:66:    executionPriority,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:93:      `priority:${executionPriority}`,
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:32:  executionPriority: string
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:31:    pipeline.executionPriority === 'critical'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:33:      : pipeline.executionPriority === 'high'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:35:      : pipeline.executionPriority === 'balanced'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:40:    pipeline.runtimeExecutionAllowed &&
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:81:    executionPriority:
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:82:      pipeline.executionPriority,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:101:      `priority:${pipeline.executionPriority}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:48:  const executionThroughput =
+app/lib/runtime-execution-router/runtime-execution-router.ts:75:    executionThroughput,
+app/lib/runtime-execution-router/runtime-execution-router.ts:103:      `throughput:${executionThroughput}`,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:31:  runtimeExecutionAllowed: boolean
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:45:    arbitration.executionPriority === 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:47:      : arbitration.executionPriority === 'high'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:49:        : arbitration.executionPriority === 'balanced'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:54:    arbitration.executionPriority === 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:56:      : arbitration.executionPriority === 'high'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:58:        : arbitration.executionPriority === 'balanced'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:109:    runtimeExecutionAllowed:
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:110:      arbitration.runtimeExecutionAllowed,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:44:  executionPriority: string
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:47:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:77:        : scheduler.executionPriority === 'critical'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:114:    executionPriority:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:115:      scheduler.executionPriority,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:120:    runtimeExecutionAllowed:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:121:      arbitrator.runtimeExecutionAllowed,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:137:      `priority:${scheduler.executionPriority}`,
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:30:  executionPriority: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:21:  executionPriority: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:67:    executionPriority: governance.priority,
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:41:  executionPriority: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:52:    pipeline.runtimeExecutionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:28:  executionPriority: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:43:  executionPriority: string
