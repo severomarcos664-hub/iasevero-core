@@ -1,0 +1,17 @@
+IASevero Runtime Authority Chain
+
+Runtime Policy
+    ↓
+Runtime Governor
+    ↓
+RuntimeGovernanceDecision
+    ↓
+Governor.executionAllowed
+    ↓
+Executive Runtime Core
+    ↓
+Adaptive Execution Coordinator
+    ↓
+Runtime Master
+    ↓
+API Chat Route
