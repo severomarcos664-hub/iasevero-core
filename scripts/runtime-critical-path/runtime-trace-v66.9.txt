@@ -1,0 +1,5 @@
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:12:export function createRuntimeTraceNode(
+app/api/chat/route.ts:10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:100:    const traceRuntime = createRuntimeTraceNode(
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
