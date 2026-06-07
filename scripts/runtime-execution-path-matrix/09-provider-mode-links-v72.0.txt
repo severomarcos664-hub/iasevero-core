@@ -1,0 +1,10 @@
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-adaptive-response.ts:28:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:42:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:56:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:70:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:83:    providerMode: 'hybrid',
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:43:    providerMode: adaptive.providerMode,
+app/lib/runtime-core/runtime-decision-loop.ts:8:  providerMode: string
+app/lib/runtime-core/runtime-decision-loop.ts:46:    providerMode: execution.providerMode,

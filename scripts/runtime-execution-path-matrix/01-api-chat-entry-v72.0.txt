@@ -1,0 +1,4 @@
+app/console/page.tsx:35:      const res = await fetch('/api/chat', {
+app/console/page.tsx:63:      console.error('Erro ao chamar /api/chat:', error)
+app/console/page.tsx:69:            'Falha ao conectar com a IA no endpoint /api/chat. Verifique se a rota está ativa e se o payload de resposta está correto.',
+app/lib/zero-cost-brain.ts:16:    analysis = "API operacional. Endpoint /api/chat deve responder normalmente."
