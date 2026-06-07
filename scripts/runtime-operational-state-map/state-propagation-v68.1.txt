@@ -1,0 +1,16 @@
+app/lib/runtime-core/runtime-policy-enforcement.ts:4:  operationalState: string
+app/lib/runtime-core/runtime-recovery-engine.ts:13:  operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:64:  let operationalState:
+app/lib/runtime-core/runtime-workflow-coordinator.ts:8:  operationalState: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:34:    operationalState:
+app/lib/runtime-core/runtime-execution-bridge.ts:23:      operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:6:  operationalState: string
+app/lib/runtime-core/runtime-decision-gate.ts:33:    operationalState: runtime.operationalState,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:7:  operationalState: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:43:      operationalState: 'adaptive-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:52:      operationalState: 'stabilization-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:61:      operationalState: lifecycle.currentState,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:16:  const operationalState: RuntimeOperationalState =
+app/api/runtime/telemetry/route.ts:15:      operationalState:
+app/api/chat/route.ts:105:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:144:        operationalState: runtimeMaster.operationalState,

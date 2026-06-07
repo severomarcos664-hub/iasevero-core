@@ -1,0 +1,6 @@
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:52:      operationalState: 'stabilization-runtime',
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:8:  | 'stabilization-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:20:        ? 'stabilization-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:28:      : operationalState === 'stabilization-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:21:        : state.operationalState === 'stabilization-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:33:          ? 'stabilization-runtime'
