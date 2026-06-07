@@ -1,0 +1,29 @@
+IASevero Runtime Provider Chain
+
+Runtime Policy
+    ↓
+Runtime Governor
+    ↓
+RuntimeGovernanceDecision
+    ↓
+Provider Governor
+    ↓
+recommendedProvider
+
+Runtime Recovery
+    ↓
+recommendedProvider
+
+Routing
+    ↓
+routing.provider
+
+Runtime Decision Engine
+    ↓
+provider
+
+allowExternal
+    ↓
+Provider Runtime
+
+External Provider
