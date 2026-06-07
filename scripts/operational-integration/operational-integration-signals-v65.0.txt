@@ -1,0 +1,173 @@
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:27:  pipelineStable: boolean
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:40:    fabric.queueUtilization >= 85
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:42:      : fabric.queueUtilization >= 70
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:48:    fabric.pipelineStable
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:102:    pipelineStable:
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:103:      fabric.pipelineStable,
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:35:  consensusRatio: number
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:36:  queueUtilization: number
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:41:    consensus.consensusRatio >= 95
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:43:      : consensus.consensusRatio >= 85
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:45:        : consensus.consensusRatio >= 70
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:109:      `ratio:${consensus.consensusRatio}`,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:17:  consensusRatio: number
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:70:  const consensusRatio =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:76:    consensusRatio >= 75
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:97:    consensusRatio,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:110:      `ratio:${consensusRatio}`,
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:29:  consensusRatio: number
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:30:  queueUtilization: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:19:  attentionFocus: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:21:  integrationState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:26:  pipelineStable: boolean
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:32:  queueUtilization: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:33:  consensusRatio: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:47:    bus.pipelineStable
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:49:      : bus.pipelineStable
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:72:    attentionFocus: bus.attentionFocus,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:74:    integrationState: bus.integrationState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:79:    pipelineStable: bus.pipelineStable,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:85:    queueUtilization: bus.queueUtilization,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:86:    consensusRatio: bus.consensusRatio,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:97:      `focus:${bus.attentionFocus}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:99:      `integration:${bus.integrationState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:105:      `queue:${bus.queueUtilization}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:106:      `consensus:${bus.consensusRatio}`,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:22:  attentionFocus: string
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:57:    attentionFocus: attention.focus,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:17:  queueUtilization: number
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:18:  consensusRatio: number
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:19:  pipelineStable: boolean
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:31:      : pipeline.queueUtilization >= 75
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:33:        : pipeline.pipelineStable
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:54:    queueUtilization: pipeline.queueUtilization,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:55:    consensusRatio: pipeline.consensusRatio,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:56:    pipelineStable: pipeline.pipelineStable,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:64:      `queue:${pipeline.queueUtilization}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:65:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:66:      `stable:${pipeline.pipelineStable}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:18:  integrationState: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:21:  pipelineStable: boolean
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:23:  attentionFocus: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:29:  queueUtilization: number
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:30:  consensusRatio: number
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:42:    integration.queueUtilization >= 85
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:44:      : integration.queueUtilization >= 70
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:49:    integration.consensusRatio >= 95 &&
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:50:    integration.pipelineStable
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:52:      : integration.pipelineStable
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:72:    integrationState: integration.integrationState,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:77:    pipelineStable:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:78:      integration.pipelineStable,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:80:    attentionFocus:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:81:      integration.attentionFocus,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:89:    queueUtilization:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:90:      integration.queueUtilization,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:92:    consensusRatio:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:93:      integration.consensusRatio,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:102:      `integration:${integration.integrationState}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:104:      `stable:${integration.pipelineStable}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:105:      `focus:${integration.attentionFocus}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:109:      `queue:${integration.queueUtilization}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:110:      `consensus:${integration.consensusRatio}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:38:  attentionFocus: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:40:  integrationState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:45:  pipelineStable: boolean
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:50:  queueUtilization: number
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:51:  consensusRatio: number
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:79:    integration.pipelineStable &&
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:80:    reflection.pipelineStable &&
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:83:      : integration.pipelineStable
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:104:    attentionFocus:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:110:    integrationState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:111:      integration.integrationState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:122:    pipelineStable:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:123:      integration.pipelineStable,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:130:    queueUtilization:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:131:      integration.queueUtilization,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:133:    consensusRatio:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:134:      integration.consensusRatio,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:146:      `integration:${integration.integrationState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:151:      `queue:${integration.queueUtilization}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:152:      `consensus:${integration.consensusRatio}`,
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:32:  consensusRatio: number
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:33:  queueUtilization: number
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:26:  queueUtilization: number
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:27:  consensusRatio: number
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:26:  pipelineStable: boolean
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:31:  queueUtilization: number
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:32:  consensusRatio: number
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:29:  queueUtilization: number
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:30:  consensusRatio: number
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:41:    pipeline.pipelineStable
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:84:    queueUtilization:
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:85:      pipeline.queueUtilization,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:87:    consensusRatio:
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:88:      pipeline.consensusRatio,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:102:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:103:      `queue:${pipeline.queueUtilization}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:86:    queueUtilization:
+app/lib/runtime-execution-router/runtime-execution-router.ts:87:      dispatch.queueUtilization,
+app/lib/runtime-execution-router/runtime-execution-router.ts:89:    consensusRatio:
+app/lib/runtime-execution-router/runtime-execution-router.ts:90:      dispatch.consensusRatio,
+app/lib/runtime-execution-router/runtime-execution-router.ts:106:      `queue:${dispatch.queueUtilization}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:107:      `consensus:${dispatch.consensusRatio}`,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:29:  queueUtilization: number
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:64:  const queueUtilization =
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:70:    queueUtilization >= 95
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:72:      : queueUtilization >= 75
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:74:        : queueUtilization >= 45
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:107:    queueUtilization,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:129:      `utilization:${queueUtilization}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:41:  consensusRatio: number
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:42:  queueUtilization: number
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:48:  pipelineStable: boolean
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:90:  const pipelineStable =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:108:    consensusRatio:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:109:      consensus.consensusRatio,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:111:    queueUtilization:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:112:      queue.queueUtilization,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:123:    pipelineStable,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:136:      `consensus:${consensus.consensusRatio}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:140:      `utilization:${queue.queueUtilization}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:141:      `stable:${pipelineStable}`,
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:27:  queueUtilization: number
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:28:  consensusRatio: number
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:38:  consensusRatio: number
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:39:  queueUtilization: number
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:24:  integrationState: RuntimeOperationalIntegrationState
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:27:  attentionFocus: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:32:  pipelineStable: boolean
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:37:  queueUtilization: number
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:38:  consensusRatio: number
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:55:  const integrationState: RuntimeOperationalIntegrationState =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:70:    integrationState,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:73:    attentionFocus: meta.attentionFocus,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:78:    pipelineStable: pipeline.pipelineStable,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:83:    queueUtilization: pipeline.queueUtilization,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:84:    consensusRatio: pipeline.consensusRatio,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:92:      `integration:${integrationState}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:94:      `attention:${meta.attentionFocus}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:99:      `queue:${pipeline.queueUtilization}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:100:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:40:  consensusRatio: number
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:41:  queueUtilization: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:18:  integrationState: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:21:  pipelineStable: boolean
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:26:  queueUtilization: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:27:  consensusRatio: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:40:    reflection.pipelineStable
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:42:      : reflection.pipelineStable
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:63:    integrationState:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:64:      reflection.integrationState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:69:    pipelineStable:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:70:      reflection.pipelineStable,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:77:    queueUtilization:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:78:      reflection.queueUtilization,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:80:    consensusRatio:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:81:      reflection.consensusRatio,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:91:      `integration:${reflection.integrationState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:93:      `stable:${reflection.pipelineStable}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:96:      `queue:${reflection.queueUtilization}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:97:      `consensus:${reflection.consensusRatio}`,
