@@ -1,0 +1,55 @@
+IASevero v66.0 - Runtime Flow Validation
+
+Confirmed entry point:
+
+POST /api/chat
+app/api/chat/route.ts
+
+Confirmed runtime decision entry:
+
+executeRuntimeDecisionEngine()
+app/api/chat/route.ts
+
+Confirmed decision engine role:
+
+Runtime Decision Engine acts as the principal operational aggregation layer.
+
+Confirmed aggregated layers:
+
+- Governance
+- Policy
+- Enforcement
+- Execution Control
+- Budget Control
+- Memory
+- Runtime Registry
+- Awareness
+- Recovery
+- Autonomous Stabilization
+- Intelligence
+- Telemetry
+- Trace
+
+Confirmed flow:
+
+HTTP Request
+↓
+POST /api/chat
+↓
+Runtime Decision Engine
+↓
+Operational Runtime Stack
+↓
+Runtime Master / Authority / Execution
+↓
+Telemetry / Trace
+↓
+Response
+
+Conclusion:
+
+IASevero has a confirmed runtime flow from API entry to operational decision stack.
+
+Status:
+
+Runtime Flow Validation Confirmed.

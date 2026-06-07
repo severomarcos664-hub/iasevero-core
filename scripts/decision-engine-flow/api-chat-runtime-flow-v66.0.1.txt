@@ -1,0 +1,26 @@
+64:    const runtimeDecision = executeRuntimeDecisionEngine()
+67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+68:const actionPolicy = evaluateRuntimeActionPolicy()
+71:    if (!decisionGate.allowed) {
+75:        runtime: decisionGate,
+79:    if (!actionPolicy.allowExecution) {
+83:        runtime: actionPolicy,
+87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+89:    const traceRequest = createRuntimeTraceNode(
+95:        correlationId: runtimeMaster.correlationId,
+102:      traceRequest.id,
+103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+105:        operationalState: runtimeMaster.operationalState,
+106:        governance: runtimeMaster.governance.decision,
+107:        integrity: runtimeMaster.integrity.integrity,
+108:        healing: runtimeMaster.healing.decision,
+109:        recovery: runtimeMaster.recovery.operationalState,
+130:    const traceResponse = createRuntimeTraceNode(
+144:        operationalState: runtimeMaster.operationalState,
+145:        governance: runtimeMaster.governance.decision,
+146:        integrity: runtimeMaster.integrity.integrity,
+147:        healing: runtimeMaster.healing.decision,
+148:        recovery: runtimeMaster.recovery.operationalState,
+149:        correlationId: runtimeMaster.correlationId,
+150:        executionAllowed: runtimeMaster.executionAllowed,
+153:        traceId: traceResponse.id,
