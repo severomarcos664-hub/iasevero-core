@@ -1,0 +1,51 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:24:  allowExternal: boolean
+app/lib/runtime-executive-state/runtime-executive-state.ts:50:      : !provider.allowExternal
+app/lib/runtime-executive-state/runtime-executive-state.ts:74:    allowExternal:
+app/lib/runtime-executive-state/runtime-executive-state.ts:75:      provider.allowExternal,
+app/lib/runtime-executive-state/runtime-executive-state.ts:90:      `external:${provider.allowExternal}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:15:  allowExternal: boolean
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:41:      !route.allowExternal ||
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:58:    allowExternal:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:59:      route.allowExternal,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:82:      `external:${route.allowExternal}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:28:  allowExternal: boolean
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:75:    allowExternal: context.allowExternal,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:90:      `external:${context.allowExternal}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:12:  allowExternalCalls: boolean
+app/lib/runtime-core/runtime-action-policy-engine.ts:47:    allowExternalCalls:
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-governance-enforcement.ts:38:      gateway.allowExternal,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:10:  allowExternal: boolean
+app/lib/runtime-core/runtime-cognitive-gateway.ts:59:    allowExternal: riskLevel === 'low',
+app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+app/lib/orchestrator/runtime-policy-engine.ts:11:  allowExternalProviders: boolean
+app/lib/orchestrator/runtime-policy-engine.ts:28:      allowExternalProviders: false,
+app/lib/orchestrator/runtime-policy-engine.ts:41:      allowExternalProviders: true,
+app/lib/orchestrator/runtime-policy-engine.ts:53:    allowExternalProviders: true,
+app/lib/orchestrator/runtime-policy.ts:8:  allowExternal: boolean
+app/lib/orchestrator/runtime-policy.ts:20:      allowExternal: false
+app/lib/orchestrator/runtime-policy.ts:24:  if (context.allowExternal) {
+app/lib/orchestrator/runtime-policy.ts:30:      allowExternal: false
+app/lib/orchestrator/runtime-policy.ts:39:    allowExternal: false
+app/lib/orchestrator/runtime-context.ts:9:  allowExternal: boolean
+app/lib/orchestrator/runtime-context.ts:38:    allowExternal: input?.allowExternal ?? false,
+app/lib/orchestrator/runtime.ts:5:  allowExternal: boolean
+app/lib/orchestrator/runtime.ts:16:      allowExternal: false,
+app/lib/orchestrator/runtime.ts:24:    allowExternal: status.mode === 'openai' || status.mode === 'hybrid',
+app/lib/orchestrator/runtime-contracts.ts:39:  allowExternalProviders: boolean
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/decision-pipeline.ts:21:    allowed: policy.allowed && route.allowExternal !== false,
+app/lib/orchestrator/routing.ts:8:  allowExternal: boolean
+app/lib/orchestrator/routing.ts:30:      allowExternal: false,
+app/lib/orchestrator/routing.ts:35:  if (!runtime.allowExternal) {
+app/lib/orchestrator/routing.ts:38:      allowExternal: false,
+app/lib/orchestrator/routing.ts:46:      allowExternal: true,
+app/lib/orchestrator/routing.ts:54:      allowExternal: intent !== 'cost',
+app/lib/orchestrator/routing.ts:63:    allowExternal: false,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:19:  const allowExternalCalls =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:38:    allowExternalCalls,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:52:      `external:${allowExternalCalls}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:24:  allowExternal: boolean
+app/lib/executive-runtime-context/executive-runtime-context.ts:65:    allowExternal: provider.allowExternal,
+app/lib/executive-runtime-context/executive-runtime-context.ts:83:      `external:${provider.allowExternal}`,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:17:    execution.allowExternalCalls

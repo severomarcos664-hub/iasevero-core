@@ -1,0 +1,107 @@
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:28:      reason: 'Provider local com baixo custo.'
+app/lib/orchestrator/runtime-snapshot.ts:49:    provider: 'local',
+app/lib/orchestrator/runtime-snapshot.ts:50:    mode: 'local',
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-policy-engine.ts:12:  forceLocalMode: boolean
+app/lib/orchestrator/runtime-policy-engine.ts:29:      forceLocalMode: true,
+app/lib/orchestrator/runtime-policy-engine.ts:42:      forceLocalMode: false,
+app/lib/orchestrator/runtime-policy-engine.ts:54:    forceLocalMode: false,
+app/lib/orchestrator/runtime-policy.ts:27:      reason: 'Provider externo bloqueado pela política local-first.',
+app/lib/orchestrator/runtime-policy.ts:36:    reason: 'RuntimePolicy aprovada em modo local.',
+app/lib/orchestrator/state-engine.ts:11:  mode: 'local',
+app/lib/orchestrator/state-engine.ts:34:    mode: 'local',
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-execution-control.ts:41:      reason: 'Provider local controlado.'
+app/lib/orchestrator/runtime-context.ts:1:export type RuntimeMode = 'local' | 'openai' | 'hybrid' | 'safe'
+app/lib/orchestrator/runtime-context.ts:2:export type RuntimeProvider = 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/runtime-context.ts:35:    userId: input?.userId || 'local',
+app/lib/orchestrator/runtime-context.ts:36:    mode: input?.mode || 'local',
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-recovery.ts:7:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-recovery.ts:20:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-recovery.ts:30:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:5:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:17:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:19:      reason: 'Runtime instável exige isolamento local.'
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:26:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:35:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:37:      reason: 'Provider local operacional.'
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime.ts:15:      mode: 'local',
+app/lib/orchestrator/runtime.ts:18:      reason: 'OpenAI não configurado; fallback local ativado.'
+app/lib/orchestrator/runtime.ts:26:    reason: status.mode === 'local'
+app/lib/orchestrator/runtime.ts:27:      ? 'Modo local ativo; custo externo bloqueado.'
+app/lib/orchestrator/runtime-contracts.ts:14:  mode: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/queue-governor.ts:2:export type RuntimeTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'blocked'
+app/lib/orchestrator/queue-governor.ts:29:    return a.createdAt.localeCompare(b.createdAt)
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/runtime-decision-engine.ts:39:    decisions.push('Provider local forçado.')
+app/lib/orchestrator/runtime-decision-engine.ts:56:    : 'local'
+app/lib/orchestrator/runtime-decision-engine.ts:60:    : 'local'
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:96:  `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:102:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+app/lib/orchestrator/runtime-decision-engine.ts:218:  `enforcement:${enforcement.allowed ? 'allowed' : 'blocked'}:${enforcement.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:262:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/hybrid-router.ts:9:      provider: 'local',
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/adaptive-protection.ts:11:      lastProvider: 'local'
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-memory.ts:40:      reason: 'Provider local com memória expandida.'
+app/lib/orchestrator/intelligent-selector.ts:20:      provider: 'local',
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/runtime-intelligence.ts:22:      dominantProvider: 'local',
+app/lib/orchestrator/runtime-intelligence.ts:23:      dominantMode: 'local',
+app/lib/orchestrator/runtime-intelligence.ts:55:      .sort((a, b) => b[1] - a[1])[0]?.[0] || 'local'
+app/lib/orchestrator/runtime-intelligence.ts:59:      .sort((a, b) => b[1] - a[1])[0]?.[0] || 'local'
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:29:      provider: 'local',
+app/lib/orchestrator/routing.ts:37:      provider: 'local',
+app/lib/orchestrator/routing.ts:53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+app/lib/orchestrator/routing.ts:56:        ? 'Intent de custo detectado; fallback local obrigatório.'
+app/lib/orchestrator/routing.ts:62:    provider: 'local',
+app/lib/orchestrator/routing.ts:64:    reason: 'Fallback seguro para provider local.'
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:28:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-adaptive-response.ts:42:      providerMode: 'local',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:18:  blockedTools: number
+app/lib/runtime-core/runtime-tool-orchestrator.ts:42:  const blockedTools =
+app/lib/runtime-core/runtime-tool-orchestrator.ts:60:    blockedTools,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-event-stream-engine.ts:8:  | 'execution.blocked'
+app/lib/runtime-core/runtime-event-stream-engine.ts:43:      type === 'execution.blocked'
+app/lib/runtime-core/runtime-contracts.ts:12:  | 'local'
+app/lib/runtime-core/runtime-contracts.ts:18:  | 'local'
+app/lib/runtime-core/runtime-tool-registry.ts:31:  blockedTools: number
+app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+app/lib/runtime-core/runtime-tool-registry.ts:95:    blockedTools:
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:7:  forcedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/runtime-core/runtime-governance-enforcement.ts:35:    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:37:        : 'blocked',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:49:        : 'Workflow execution blocked.',
+app/lib/runtime-core/runtime-task-planner.ts:14:    | 'blocked'
+app/lib/runtime-core/runtime-decision-gate.ts:21:  const blocked =
+app/lib/runtime-core/runtime-decision-gate.ts:27:    allowed: !blocked,
+app/lib/runtime-core/runtime-decision-gate.ts:29:    reason: blocked
+app/lib/runtime-core/runtime-decision-gate.ts:30:      ? 'runtime execution blocked by governance'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:48:      ? 'local'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:65:        ? 'Gateway recomenda contenção operacional e provider local.'

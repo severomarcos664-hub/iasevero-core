@@ -1,0 +1,22 @@
+app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-governor.ts:7:  safeModeRequired: boolean
+app/lib/orchestrator/runtime-governor.ts:20:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:30:      safeModeRequired: true,
+app/lib/orchestrator/runtime-governor.ts:39:    safeModeRequired: policy.forceSafeMode,
+app/lib/orchestrator/runtime-policy-engine.ts:12:  forceLocalMode: boolean
+app/lib/orchestrator/runtime-policy-engine.ts:29:      forceLocalMode: true,
+app/lib/orchestrator/runtime-policy-engine.ts:42:      forceLocalMode: false,
+app/lib/orchestrator/runtime-policy-engine.ts:54:    forceLocalMode: false,
+app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-policy.ts:17:      reason: 'Runtime em safeMode: execução permitida apenas em modo seguro.',
+app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+app/lib/orchestrator/runtime-context.ts:10:  safeMode: boolean
+app/lib/orchestrator/runtime-context.ts:39:    safeMode: input?.safeMode ?? true,
+app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+app/lib/orchestrator/runtime-execution-pipeline.ts:43:    safeMode: true,
+app/lib/orchestrator/runtime-decision-engine.ts:66:    safeMode: routing.mode === 'safe',
+app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimePressure: context.safeMode ? 60 : 20,
+app/lib/orchestrator/runtime-decision-engine.ts:262:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',

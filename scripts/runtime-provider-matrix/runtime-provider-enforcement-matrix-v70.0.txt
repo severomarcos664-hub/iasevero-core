@@ -1,0 +1,68 @@
+IASevero v70.0 — Runtime Provider Enforcement Matrix
+
+MISSION
+Map the complete provider authority and enforcement chain.
+
+CORE QUESTIONS
+1. Who recommends the provider?
+2. Who locks the provider?
+3. Who forces local execution?
+4. Who allows external execution?
+5. Who routes the provider?
+6. Who executes the provider?
+7. Who blocks unsafe execution?
+
+PROVIDER AUTHORITY CHAIN
+
+Runtime Policy
+  ↓
+Runtime Governor
+  ↓
+RuntimeGovernanceDecision
+  ↓
+Provider Governor
+  ↓
+recommendedProvider
+
+PROVIDER ENFORCEMENT CHAIN
+
+providerLocked
+  ↓
+forceLocalMode / safeMode
+  ↓
+allowExternal
+  ↓
+route.provider / routing.provider
+  ↓
+execution.provider / providerMode
+  ↓
+Executor
+
+BLOCKING CHAIN
+
+Provider Enforcement
+  ↓
+Governance Enforcement
+  ↓
+Decision Gate
+  ↓
+Workflow Coordinator
+  ↓
+Execution Blocked
+
+CONFIRMED AUDIT FILES
+
+01-recommenders-v70.0.txt
+02-provider-locks-v70.0.txt
+03-local-enforcement-v70.0.txt
+04-external-permission-v70.0.txt
+05-routing-provider-v70.0.txt
+06-execution-provider-v70.0.txt
+07-blockers-v70.0.txt
+
+CONCLUSION
+IASevero now has a mapped Provider Enforcement Matrix connecting:
+recommendation, routing, external permission, local fallback, provider locking, execution provider, and execution blocking.
+
+STATUS
+Runtime Provider Enforcement Matrix v70.0 prepared for validation.
