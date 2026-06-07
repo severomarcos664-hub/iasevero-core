@@ -1,0 +1,3 @@
+58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+59:    ? routing.provider as RuntimeProvider
+65:    allowExternal: routing.provider !== 'local',

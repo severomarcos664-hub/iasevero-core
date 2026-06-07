@@ -1,0 +1,3 @@
+app/api/chat/route.ts:103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+app/api/chat/route.ts:116:if (!executiveAuthority.executionAllowed) {
+app/api/chat/route.ts:150:        executionAllowed: runtimeMaster.executionAllowed,

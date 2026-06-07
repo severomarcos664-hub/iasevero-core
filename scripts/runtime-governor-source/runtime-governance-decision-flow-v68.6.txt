@@ -1,0 +1,7 @@
+app/lib/orchestrator/runtime-governor.ts:4:export type RuntimeGovernanceDecision = {
+app/lib/orchestrator/runtime-governor.ts:15:): RuntimeGovernanceDecision {
+app/lib/orchestrator/runtime-enforcement.ts:2:import type { RuntimeGovernanceDecision } from './runtime-governor'
+app/lib/orchestrator/runtime-enforcement.ts:12:  governance: RuntimeGovernanceDecision
+app/lib/runtime-core/runtime-governance-center.ts:7:export type RuntimeGovernanceDecision =
+app/lib/runtime-core/runtime-governance-center.ts:17:  decision: RuntimeGovernanceDecision
+app/lib/runtime-core/runtime-governance-center.ts:34:  const decision: RuntimeGovernanceDecision =

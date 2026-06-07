@@ -1,0 +1,8 @@
+2:import type { RuntimePolicyDecision } from './runtime-policy'
+14:  policy: RuntimePolicyDecision
+16:  if (!policy.allowed) {
+21:      reason: policy.reason,
+22:      severity: policy.severity
+26:  if (context.allowExternal && !policy.allowExternal) {
+39:    safeModeRequired: policy.forceSafeMode,
+41:    severity: policy.severity

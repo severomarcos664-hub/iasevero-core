@@ -1,0 +1,11 @@
+app/lib/orchestrator/runtime-recovery.ts:7:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-recovery.ts:20:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-recovery.ts:30:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-recovery.ts:40:      recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-recovery.ts:49:    recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-provider-governor.ts:5:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-provider-governor.ts:17:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:26:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:35:      recommendedProvider: 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:44:      recommendedProvider: 'hybrid',
+app/lib/orchestrator/runtime-provider-governor.ts:52:    recommendedProvider: 'openai',
