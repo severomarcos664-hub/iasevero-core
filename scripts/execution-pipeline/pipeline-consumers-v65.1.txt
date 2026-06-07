@@ -1,0 +1,4 @@
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
