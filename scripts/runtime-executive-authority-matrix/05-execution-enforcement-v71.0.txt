@@ -1,0 +1,5 @@
+app/lib/orchestrator/runtime-execution-pipeline.ts:4:import { enforceRuntimeExecution } from './runtime-enforcement'
+app/lib/orchestrator/runtime-execution-pipeline.ts:53:  const enforcement = enforceRuntimeExecution(
+app/lib/orchestrator/runtime-decision-engine.ts:19:import { enforceRuntimeExecution } from './runtime-enforcement'
+app/lib/orchestrator/runtime-decision-engine.ts:212:const enforcement = enforceRuntimeExecution(context, governance)
+app/lib/orchestrator/runtime-enforcement.ts:10:export function enforceRuntimeExecution(

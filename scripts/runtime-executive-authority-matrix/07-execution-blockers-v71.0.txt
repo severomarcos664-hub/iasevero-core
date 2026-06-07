@@ -1,0 +1,120 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:61:      `allowed:${core.executionAllowed}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:88:      `allowed:${provider.executionAllowed}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:78:        : 'Provider execution blocked.',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:83:      `allowed:${executionAllowed}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:58:      `allowed:${matrix.globalExecutionAllowed}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:113:      `allowed:${influence.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:18:  blockedTools: number
+app/lib/runtime-core/runtime-tool-orchestrator.ts:30:    selected: tool.allowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:42:  const blockedTools =
+app/lib/runtime-core/runtime-tool-orchestrator.ts:60:    blockedTools,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:62:      `allowed:${workflow.executionAllowed}`,
+app/lib/runtime-core/runtime-policy-engine.ts:8:  allowed: boolean
+app/lib/runtime-core/runtime-policy-engine.ts:44:    allowed: policyLevel !== 'critical',
+app/lib/runtime-core/runtime-policy-enforcement.ts:9:  allowed: boolean
+app/lib/runtime-core/runtime-policy-enforcement.ts:42:      allowed: false,
+app/lib/runtime-core/runtime-policy-enforcement.ts:50:      allowed: false,
+app/lib/runtime-core/runtime-policy-enforcement.ts:58:      allowed: false,
+app/lib/runtime-core/runtime-policy-enforcement.ts:65:    allowed: true,
+app/lib/runtime-core/runtime-event-stream-engine.ts:7:  | 'execution.allowed'
+app/lib/runtime-core/runtime-event-stream-engine.ts:8:  | 'execution.blocked'
+app/lib/runtime-core/runtime-event-stream-engine.ts:43:      type === 'execution.blocked'
+app/lib/runtime-core/runtime-tool-registry.ts:20:  allowed: boolean
+app/lib/runtime-core/runtime-tool-registry.ts:30:  allowedTools: number
+app/lib/runtime-core/runtime-tool-registry.ts:31:  blockedTools: number
+app/lib/runtime-core/runtime-tool-registry.ts:45:      allowed: true,
+app/lib/runtime-core/runtime-tool-registry.ts:56:      allowed: true,
+app/lib/runtime-core/runtime-tool-registry.ts:67:      allowed: true,
+app/lib/runtime-core/runtime-tool-registry.ts:78:      allowed: true,
+app/lib/runtime-core/runtime-tool-registry.ts:92:    allowedTools:
+app/lib/runtime-core/runtime-tool-registry.ts:93:      tools.filter(t => t.allowed).length,
+app/lib/runtime-core/runtime-tool-registry.ts:95:    blockedTools:
+app/lib/runtime-core/runtime-tool-registry.ts:96:      tools.filter(t => !t.allowed).length,
+app/lib/runtime-core/runtime-execution-coordinator.ts:9:  allowed: boolean
+app/lib/runtime-core/runtime-execution-coordinator.ts:30:    allowed: policy.allowed,
+app/lib/runtime-core/runtime-execution-coordinator.ts:34:      policy.allowed
+app/lib/runtime-core/runtime-workflow-coordinator.ts:37:        : 'blocked',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:49:        : 'Workflow execution blocked.',
+app/lib/runtime-core/runtime-task-planner.ts:14:    | 'blocked'
+app/lib/runtime-core/runtime-decision-gate.ts:4:  allowed: boolean
+app/lib/runtime-core/runtime-decision-gate.ts:21:  const blocked =
+app/lib/runtime-core/runtime-decision-gate.ts:27:    allowed: !blocked,
+app/lib/runtime-core/runtime-decision-gate.ts:29:    reason: blocked
+app/lib/runtime-core/runtime-decision-gate.ts:30:      ? 'runtime execution blocked by governance'
+app/lib/executive-runtime-core/executive-runtime-core.ts:84:      `allowed:${governor.executionAllowed}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:52:        : 'Runtime Executive Authority Gateway blocked execution.',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:97:      `allowed:${loop.executionAllowed}`,
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:4:  | 'blocked'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:65:      `allowed:${globalExecutionAllowed}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:103:      `allowed:${integration.executionAllowed}`,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:93:        : 'Runtime dispatch blocked.',
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:98:      `allowed:${dispatchAllowed}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:95:        : 'Runtime execution routing blocked.',
+app/lib/runtime-execution-router/runtime-execution-router.ts:100:      `allowed:${executionAllowed}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:76:        : 'Runtime Enforcement Authority blocked execution.',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:79:      `allowed:${finalExecutionAllowed}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:98:      `allowed:${executionAllowed}`,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:74:      `allowed:${transition.executionAllowed}`,
+app/lib/orchestrator/runtime-budget-control.ts:4:  allowed: boolean
+app/lib/orchestrator/runtime-budget-control.ts:16:      allowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:25:      allowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:34:      allowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:42:    allowed: true,
+app/lib/orchestrator/policy.ts:2:  allowed: boolean
+app/lib/orchestrator/policy.ts:23:        allowed: false,
+app/lib/orchestrator/policy.ts:36:      allowed: true,
+app/lib/orchestrator/policy.ts:43:    allowed: true,
+app/lib/orchestrator/runtime-governor.ts:16:  if (!policy.allowed) {
+app/lib/orchestrator/runtime-policy.ts:4:  allowed: boolean
+app/lib/orchestrator/runtime-policy.ts:16:      allowed: true,
+app/lib/orchestrator/runtime-policy.ts:26:      allowed: false,
+app/lib/orchestrator/runtime-policy.ts:35:    allowed: true,
+app/lib/orchestrator/runtime-execution-control.ts:4:  allowed: boolean
+app/lib/orchestrator/runtime-execution-control.ts:17:      allowed: false,
+app/lib/orchestrator/runtime-execution-control.ts:27:      allowed: true,
+app/lib/orchestrator/runtime-execution-control.ts:37:      allowed: true,
+app/lib/orchestrator/runtime-execution-control.ts:46:    allowed: true,
+app/lib/orchestrator/runtime-dependency-validator.ts:18:const allowedDependencies: Record<string, string[]> = {
+app/lib/orchestrator/runtime-dependency-validator.ts:109:    const allowed = allowedDependencies[module.layer]
+app/lib/orchestrator/runtime-dependency-validator.ts:111:    if (!allowed && module.layer !== 'core') {
+app/lib/orchestrator/runtime-execution-pipeline.ts:15:  allowed: boolean
+app/lib/orchestrator/runtime-execution-pipeline.ts:58:  if (!enforcement.allowed) {
+app/lib/orchestrator/runtime-execution-pipeline.ts:71:      allowed: false,
+app/lib/orchestrator/runtime-execution-pipeline.ts:126:    allowed: true,
+app/lib/orchestrator/queue-governor.ts:2:export type RuntimeTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'blocked'
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/runtime-decision-engine.ts:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:96:  `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:102:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:147:    executionPressure: executionControl.allowed ? 20 : 85,
+app/lib/orchestrator/runtime-decision-engine.ts:148:    degradationState: !context.stable || !executionControl.allowed,
+app/lib/orchestrator/runtime-decision-engine.ts:218:  `enforcement:${enforcement.allowed ? 'allowed' : 'blocked'}:${enforcement.severity}`
+app/lib/orchestrator/executor.ts:3:  allowed: boolean
+app/lib/orchestrator/executor.ts:17:  if (!input.allowed) {
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/runtime-action-executor.ts:24:  const allowed = [
+app/lib/orchestrator/runtime-action-executor.ts:32:  if (!allowed.includes(action.type)) {
+app/lib/orchestrator/decision-pipeline.ts:9:  allowed: boolean
+app/lib/orchestrator/decision-pipeline.ts:21:    allowed: policy.allowed && route.allowExternal !== false,
+app/lib/orchestrator/decision-pipeline.ts:22:    reason: policy.allowed ? route.reason : policy.reason
+app/lib/orchestrator/decision-pipeline.ts:38:    safe: policy.allowed,
+app/lib/orchestrator/decision-pipeline.ts:43:    allowed: policy.allowed,
+app/lib/orchestrator/runtime-enforcement.ts:5:  allowed: boolean
+app/lib/orchestrator/runtime-enforcement.ts:17:      allowed: false,
+app/lib/orchestrator/runtime-enforcement.ts:25:      allowed: false,
+app/lib/orchestrator/runtime-enforcement.ts:33:      allowed: false,
+app/lib/orchestrator/runtime-enforcement.ts:40:    allowed: true,
+app/lib/orchestrator/routing.ts:27:  if (!policy.allowed) {
+app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:69:      `allowed:${executionAllowed}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:80:      `allowed:${state.executionAllowed}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:92:      `allowed:${reflection.executionAllowed}`,
+app/api/chat/route.ts:71:    if (!decisionGate.allowed) {
+app/api/chat/route.ts:81:        reply: 'Execução bloqueada pela Runtime Action Policy.',
+app/api/chat/route.ts:118:    reply: "Execução bloqueada pela Runtime Executive Authority.",
