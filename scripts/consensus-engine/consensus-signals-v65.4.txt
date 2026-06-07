@@ -1,0 +1,79 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:36:    executionConsensus:
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:37:      arbitration.executionConsensus,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:49:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:35:  consensusRatio: number
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:19:    resilienceActive: matrix.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:41:    consensus.consensusRatio >= 95
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:43:      : consensus.consensusRatio >= 85
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:45:        : consensus.consensusRatio >= 70
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:93:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:96:      consensus.executionConsensus,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:99:      consensus.executionConsensus
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:108:      `consensus:${consensus.executionConsensus}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:109:      `ratio:${consensus.consensusRatio}`,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:17:  consensusRatio: number
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:19:  executionConsensus: boolean
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:56:      governance.executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:70:  const consensusRatio =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:75:  const executionConsensus =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:76:    consensusRatio >= 75
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:79:    executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:97:    consensusRatio,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:99:    executionConsensus,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:104:      executionConsensus
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:110:      `ratio:${consensusRatio}`,
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:29:  consensusRatio: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:33:  consensusRatio: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:86:    consensusRatio: bus.consensusRatio,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:106:      `consensus:${bus.consensusRatio}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:18:  consensusRatio: number
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:55:    consensusRatio: pipeline.consensusRatio,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:65:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:34:    arbitration.executionConsensus &&
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:54:    executionConsensus: arbitration.executionConsensus,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:71:      `consensus:${arbitration.executionConsensus}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:30:  consensusRatio: number
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:49:    integration.consensusRatio >= 95 &&
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:92:    consensusRatio:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:93:      integration.consensusRatio,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:110:      `consensus:${integration.consensusRatio}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:51:  consensusRatio: number
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:133:    consensusRatio:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:134:      integration.consensusRatio,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:152:      `consensus:${integration.consensusRatio}`,
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:32:  consensusRatio: number
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:27:  consensusRatio: number
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:24:  executionConsensus: boolean
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:32:  consensusRatio: number
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:30:  consensusRatio: number
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:87:    consensusRatio:
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:88:      pipeline.consensusRatio,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:102:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:89:    consensusRatio:
+app/lib/runtime-execution-router/runtime-execution-router.ts:90:      dispatch.consensusRatio,
+app/lib/runtime-execution-router/runtime-execution-router.ts:107:      `consensus:${dispatch.consensusRatio}`,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:41:  consensusRatio: number
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:73:    !consensus.executionConsensus
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:91:    consensus.executionConsensus &&
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:108:    consensusRatio:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:109:      consensus.consensusRatio,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:136:      `consensus:${consensus.consensusRatio}`,
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:28:  consensusRatio: number
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:38:  consensusRatio: number
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:38:  consensusRatio: number
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:84:    consensusRatio: pipeline.consensusRatio,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:100:      `consensus:${pipeline.consensusRatio}`,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:41:    executionConsensus: profiler.executionConsensus,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:54:      `consensus:${profiler.executionConsensus}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:40:  consensusRatio: number
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:40:    executionConsensus:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:41:      execution.executionConsensus,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:59:      `consensus:${execution.executionConsensus}`
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:31:  const executionConsensus =
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:46:    executionConsensus,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:53:      executionConsensus
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:60:      `consensus:${executionConsensus}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:27:  consensusRatio: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:80:    consensusRatio:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:81:      reflection.consensusRatio,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:97:      `consensus:${reflection.consensusRatio}`,

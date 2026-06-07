@@ -1,0 +1,15 @@
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:26:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:92:    runtimeExecutionAllowed:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:35:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:52:    !scheduler.runtimeExecutionAllowed
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:101:    runtimeExecutionAllowed:
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:102:      scheduler.runtimeExecutionAllowed,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:29:    !pipeline.runtimeExecutionAllowed
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:40:    pipeline.runtimeExecutionAllowed &&
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:31:  runtimeExecutionAllowed: boolean
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:109:    runtimeExecutionAllowed:
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:110:      arbitration.runtimeExecutionAllowed,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:47:  runtimeExecutionAllowed: boolean
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:120:    runtimeExecutionAllowed:
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:121:      arbitrator.runtimeExecutionAllowed,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:52:    pipeline.runtimeExecutionAllowed &&
