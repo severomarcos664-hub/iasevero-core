@@ -1,0 +1,8 @@
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:15:      : 'STABILIZATION_REQUIRED',
+app/lib/runtime-core/runtime-execution-bridge.ts:11:    runtime.governance.decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:8:  governance: 'NORMAL_OPERATION' | 'STABILIZATION_REQUIRED' | 'THROTTLING_REQUIRED' | 'CONTAINMENT_REQUIRED' | 'RECOVERY_REQUIRED';
+app/lib/runtime-core/runtime-adaptive-coordination.ts:40:    input.governance === 'STABILIZATION_REQUIRED' ||
+app/lib/runtime-core/runtime-governance-center.ts:9:  | 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:42:            ? 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:50:        : decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:75:            : decision === 'STABILIZATION_REQUIRED'

@@ -1,0 +1,45 @@
+app/lib/runtime-core/runtime-tool-orchestrator.ts:53:      workflow.operationalState === 'stable',
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:28:    workflow.operationalState !== 'stable' ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:34:      : workflow.operationalState !== 'stable'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:45:    workflowState: workflow.operationalState,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:61:      `workflow:${workflow.operationalState}`,
+app/lib/runtime-core/runtime-policy-enforcement.ts:4:  operationalState: string
+app/lib/runtime-core/runtime-master-orchestrator.ts:18:  const operationalState =
+app/lib/runtime-core/runtime-master-orchestrator.ts:28:    operationalState,
+app/lib/runtime-core/runtime-master-orchestrator.ts:39:      operationalState === 'stable'
+app/lib/runtime-core/runtime-master-orchestrator.ts:44:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-recovery-engine.ts:13:  operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:64:  let operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:70:    operationalState = 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:72:    operationalState = 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:74:    operationalState = 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:88:    operationalState,
+app/lib/runtime-core/runtime-recovery-engine.ts:91:      operationalState === 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:93:        : operationalState === 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:101:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:8:  operationalState: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:34:    operationalState:
+app/lib/runtime-core/runtime-execution-bridge.ts:9:    runtime.operationalState === 'stable' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:23:      operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-execution-bridge.ts:27:      recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:6:  operationalState: string
+app/lib/runtime-core/runtime-decision-gate.ts:33:    operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:41:    recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:36:        recovery.operationalState === 'partial'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:7:  operationalState: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:43:      operationalState: 'adaptive-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:52:      operationalState: 'stabilization-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:61:      operationalState: lifecycle.currentState,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:16:  const operationalState: RuntimeOperationalState =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:26:    operationalState === 'fully-operational'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:28:      : operationalState === 'stabilization-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:30:        : operationalState === 'throttled-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:35:    operationalState !== 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:44:    operationalState,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:67:      `state:${operationalState}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:17:    state.operationalState === 'fully-operational'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:19:      : state.operationalState === 'throttled-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:21:        : state.operationalState === 'stabilization-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:49:      state.operationalState,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:76:      `current:${state.operationalState}`,

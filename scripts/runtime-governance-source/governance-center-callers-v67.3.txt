@@ -1,0 +1,5 @@
+app/lib/runtime-core/runtime-master-orchestrator.ts:1:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-master-orchestrator.ts:10:  const governance = evaluateRuntimeGovernanceCenter()
+app/lib/runtime-core/runtime-governance-center.ts:25:export function evaluateRuntimeGovernanceCenter():
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:4:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:28:  const governance = evaluateRuntimeGovernanceCenter()

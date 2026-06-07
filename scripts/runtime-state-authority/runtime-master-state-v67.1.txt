@@ -1,0 +1,2 @@
+app/api/chat/route.ts:105:        operationalState: runtimeMaster.operationalState,
+app/api/chat/route.ts:144:        operationalState: runtimeMaster.operationalState,

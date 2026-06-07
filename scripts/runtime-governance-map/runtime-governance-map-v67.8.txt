@@ -1,0 +1,29 @@
+IASevero Governance Model
+
+Runtime Governance Center
+  ↓
+RuntimeGovernanceDecision
+  ↓
+NORMAL_OPERATION
+STABILIZATION_REQUIRED
+THROTTLING_REQUIRED
+CONTAINMENT_REQUIRED
+RECOVERY_REQUIRED
+
+Consumers:
+- Runtime Master
+- Adaptive Coordinator
+- Self Healing Coordinator
+- Execution Bridge
+- API Route
+
+Parallel Contracts:
+
+Runtime Governor
+  -> Policy Decision
+
+Executive Governance Layer
+  -> Governance Report
+
+Canonical Governance Source:
+Runtime Governance Center
