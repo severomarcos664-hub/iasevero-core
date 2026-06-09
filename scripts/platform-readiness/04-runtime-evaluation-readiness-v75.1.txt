@@ -1,0 +1,84 @@
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:36:      `score:${operationalScore}`,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:50:      `score:${arbitration.arbitrationScore}`,
+app/lib/nlp.ts:100:      const score = similarity(text, example)
+app/lib/nlp.ts:101:      if (score > bestScore) {
+app/lib/nlp.ts:102:        bestScore = score
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:16:    evaluationScore: matrix.governanceScore,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:57:      `score:${matrix.governanceScore}`,
+app/lib/runtime-core/runtime-evaluation-engine.ts:14:  evaluationId: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:16:  source: 'runtime-evaluation-engine'
+app/lib/runtime-core/runtime-evaluation-engine.ts:22:  quality:
+app/lib/runtime-core/runtime-evaluation-engine.ts:77:  const quality =
+app/lib/runtime-core/runtime-evaluation-engine.ts:87:    evaluationId: `eval_${Date.now()}`,
+app/lib/runtime-core/runtime-evaluation-engine.ts:89:    source: 'runtime-evaluation-engine',
+app/lib/runtime-core/runtime-evaluation-engine.ts:96:    quality,
+app/lib/runtime-core/runtime-evaluation-engine.ts:99:      quality === 'excellent'
+app/lib/runtime-core/runtime-evaluation-engine.ts:100:        ? 'Runtime execution quality is excellent.'
+app/lib/runtime-core/runtime-evaluation-engine.ts:101:        : quality === 'healthy'
+app/lib/runtime-core/runtime-evaluation-engine.ts:102:          ? 'Runtime execution quality is healthy.'
+app/lib/runtime-core/runtime-evaluation-engine.ts:103:          : quality === 'degraded'
+app/lib/runtime-core/runtime-evaluation-engine.ts:113:      `quality:${quality}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:9:  evaluationScore: number;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:32:    input.evaluationScore < 50;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:36:    input.evaluationScore < 70 ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:42:    input.evaluationScore < 85;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:56:    mode === 'normal' && input.evaluationScore >= 90 ? 'aggressive' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:70:        ? 'Stabilization recommended. Reduce autonomy and monitor workflow quality.'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:86:      `evaluation:${input.evaluationScore}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-core/runtime-learning-signals.ts:3:} from './runtime-evaluation-engine'
+app/lib/runtime-core/runtime-learning-signals.ts:26:  const evaluation =
+app/lib/runtime-core/runtime-learning-signals.ts:30:    evaluation.overallScore < 85
+app/lib/runtime-core/runtime-learning-signals.ts:38:      evaluation.quality,
+app/lib/runtime-core/runtime-learning-signals.ts:41:      evaluation.overallScore,
+app/lib/runtime-core/runtime-learning-signals.ts:44:      evaluation.overallScore >= 90
+app/lib/runtime-core/runtime-learning-signals.ts:46:        : evaluation.overallScore >= 70
+app/lib/runtime-core/runtime-learning-signals.ts:53:      `quality:${evaluation.quality}`,
+app/lib/runtime-core/runtime-learning-signals.ts:54:      `overall:${evaluation.overallScore}`,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:63:      `score:${governanceScore}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/learning.ts:11:  score: number
+app/lib/learning.ts:42:    .sort((a, b) => (b.score + b.uses) - (a.score + a.uses))
+app/lib/learning.ts:57:      score: 0,
+app/lib/learning.ts:73:    .sort((a, b) => b.sim - a.sim || b.item.score - a.item.score)
+app/lib/learning.ts:79:  best.item.score += best.sim
+app/lib/learning.ts:99:      score: 0,
+app/lib/learning.ts:115:  item.score += 2
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:44:      `score:${unifiedScore}`,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:50:      `score:${unified.unifiedScore}`,
+app/lib/orchestrator/runtime-architecture-index.ts:87:    responsibility: 'calcular health score e severidade operacional',
+app/lib/orchestrator/intelligent-selector.ts:8:      const score =
+app/lib/orchestrator/intelligent-selector.ts:13:        score
+app/lib/orchestrator/intelligent-selector.ts:16:    .sort((a, b) => b.score - a.score)
+app/lib/orchestrator/runtime-structural-health.ts:5:  score: number
+app/lib/orchestrator/runtime-structural-health.ts:29:  const score = Math.max(
+app/lib/orchestrator/runtime-structural-health.ts:38:    score < 40
+app/lib/orchestrator/runtime-structural-health.ts:40:      : score < 70
+app/lib/orchestrator/runtime-structural-health.ts:45:    score < 40
+app/lib/orchestrator/runtime-structural-health.ts:47:      : score < 70
+app/lib/orchestrator/runtime-structural-health.ts:59:    score,
+app/lib/runtime-trust/runtime-trust-engine.ts:43:      `score:${operational.unifiedScore}`,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:58:      `score:${arbitrationScore}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
