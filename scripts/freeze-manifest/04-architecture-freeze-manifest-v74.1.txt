@@ -1,0 +1,30 @@
+IASevero Architecture Freeze Manifest v74.1
+
+MISSION
+Preserve the validated runtime architecture before Platform Mode.
+
+VALIDATED CHAINS
+- Runtime Authority Chain
+- Provider Authority Chain
+- Provider Enforcement Matrix
+- Executive Authority Matrix
+- Runtime Execution Path Matrix
+- Authority Precedence Audit
+
+FREEZE CONDITIONS
+- Build approved
+- Local regression approved
+- Git history preserved
+- Tags recoverable
+- Runtime audit artifacts recoverable
+
+NEXT PHASE
+IASevero Platform Mode:
+1. Memory
+2. Tool Orchestration
+3. Provider Router
+4. Runtime Evaluation
+5. Real-world execution
+
+RULE
+No architectural refactoring before a proven operational need.

@@ -1,0 +1,15 @@
+3f47dba audit(runtime): authority precedence audit v73.0
+1773c25 audit(runtime): platform flow validation v75.0
+fd2d8e4 audit(runtime): architecture freeze candidate v74.0
+12b3d00 audit(runtime): authority precedence v73.0
+f35a624 audit(runtime): execution path matrix v72.0
+f4e874a audit(runtime): executive authority matrix v71.0
+9907f5a audit(runtime): provider enforcement matrix v70.0
+075b029 audit(runtime): provider enforcement audit v69.6
+b22e8e5 audit(runtime): provider enforcement flow v69.7
+1904bf8 audit(runtime): provider authority final v69.4
+a601c2d audit(runtime): routing provider authority v69.5
+7d0f068 audit(runtime): provider and governor authority audits v69.3
+ade7308 audit(runtime): provider authority chain map v69.2
+efde8ea audit(runtime): authority chain map v68.8
+e30c414 audit(runtime): governance authority consolidation v68.2
