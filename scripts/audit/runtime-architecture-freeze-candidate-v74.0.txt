@@ -1,0 +1,85 @@
+IASevero v74.0 — Architecture Freeze Candidate
+
+Purpose:
+Freeze the current architectural understanding of IASevero before entering Platform Mode.
+
+Confirmed findings:
+
+1. No single RuntimeController was identified.
+
+2. Runtime authority is distributed.
+
+3. executionAllowed is produced and propagated across multiple layers.
+
+4. ExecutiveRuntimeContext is the main authority convergence point identified by static audit.
+
+5. ExecutiveAuthority participates in the logical execution decision.
+
+6. API Route applies final practical enforcement through guard checks and return NextResponse.json(...).
+
+7. Authority precedence observed:
+
+Decision Gate
+↓
+Action Policy
+↓
+Executive Authority
+↓
+Runtime Master
+↓
+API Route
+↓
+Response
+
+8. Critical execution path is documented.
+
+9. Response influence path is documented.
+
+10. Response generation chain is documented.
+
+11. Authority convergence is documented.
+
+12. Authority precedence is documented.
+
+Architecture model:
+
+Distributed Authority
+↓
+Signal Aggregation
+↓
+ExecutiveRuntimeContext
+↓
+Executive Authority
+↓
+API Enforcement
+↓
+Execution
+↓
+Response
+
+Freeze status:
+CANDIDATE
+
+Meaning:
+The architecture is sufficiently understood to pause deep architectural discovery and begin Platform Mode after final validation.
+
+Not frozen:
+- Code evolution
+- Runtime improvements
+- Memory
+- Tool orchestration
+- Provider router
+- Evaluation layer
+- API productization
+
+Frozen:
+- Current understanding of authority
+- Current understanding of execution path
+- Current understanding of response path
+- Current understanding of enforcement path
+
+Next phase:
+v74.1 — Freeze Validation
+
+Then:
+IASevero Platform Mode
