@@ -1,0 +1,33 @@
+IASevero v75.0
+
+Platform Flow Validation
+
+Request Entry:
+POST /api/chat
+
+Execution Path:
+RuntimeExecutionBridge
+RuntimeMaster
+GovernanceDecision
+OperationalState
+Integrity
+Healing
+Recovery
+
+Authority:
+ExecutiveRuntimeContext
+ExecutiveAuthority
+
+Provider Signals:
+recommendedProvider
+providerAllowed
+
+Observability:
+correlationId
+traceId
+
+Response:
+runtimeMaster.response
+
+Status:
+VALIDATING PLATFORM FLOW
