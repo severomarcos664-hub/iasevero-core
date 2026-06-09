@@ -1,0 +1,31 @@
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:78:        : 'Provider execution blocked.',
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:18:  blockedTools: number
+app/lib/runtime-core/runtime-tool-orchestrator.ts:42:  const blockedTools =
+app/lib/runtime-core/runtime-tool-orchestrator.ts:60:    blockedTools,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-event-stream-engine.ts:8:  | 'execution.blocked'
+app/lib/runtime-core/runtime-event-stream-engine.ts:43:      type === 'execution.blocked'
+app/lib/runtime-core/runtime-tool-registry.ts:31:  blockedTools: number
+app/lib/runtime-core/runtime-tool-registry.ts:95:    blockedTools:
+app/lib/runtime-core/runtime-workflow-coordinator.ts:37:        : 'blocked',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:49:        : 'Workflow execution blocked.',
+app/lib/runtime-core/runtime-task-planner.ts:14:    | 'blocked'
+app/lib/runtime-core/runtime-decision-gate.ts:21:  const blocked =
+app/lib/runtime-core/runtime-decision-gate.ts:27:    allowed: !blocked,
+app/lib/runtime-core/runtime-decision-gate.ts:29:    reason: blocked
+app/lib/runtime-core/runtime-decision-gate.ts:30:      ? 'runtime execution blocked by governance'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:52:        : 'Runtime Executive Authority Gateway blocked execution.',
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:4:  | 'blocked'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:93:        : 'Runtime dispatch blocked.',
+app/lib/runtime-execution-router/runtime-execution-router.ts:95:        : 'Runtime execution routing blocked.',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:76:        : 'Runtime Enforcement Authority blocked execution.',
+app/lib/orchestrator/queue-governor.ts:2:export type RuntimeTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'blocked'
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/runtime-decision-engine.ts:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:96:  `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:102:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:218:  `enforcement:${enforcement.allowed ? 'allowed' : 'blocked'}:${enforcement.severity}`
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
