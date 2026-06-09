@@ -1,0 +1,58 @@
+IASevero v73.0 — Authority Precedence Audit
+
+QUESTION:
+When multiple authority layers disagree, who wins?
+
+Evidence found in app/api/chat/route.ts:
+
+1. Decision Gate guard:
+if (!decisionGate.allowed)
+
+2. Action Policy guard:
+if (!actionPolicy.allowExecution)
+
+3. Executive Authority guard:
+if (!executiveAuthority.executionAllowed)
+
+4. Final API enforcement:
+return NextResponse.json(...)
+
+Observed precedence:
+
+Decision Gate
+↓
+Action Policy
+↓
+Executive Authority
+↓
+Runtime Master
+↓
+API Route Final Response
+
+Conclusion:
+The IASevero runtime does not use a single RuntimeController.
+
+Authority is distributed, but enforcement is layered.
+
+Logical authority:
+ExecutiveRuntimeContext / ExecutiveAuthority
+
+Practical final enforcement:
+API Route
+
+Model:
+Distributed Authority
+↓
+Layered Veto
+↓
+Executive Authority
+↓
+API Enforcement
+↓
+Response
+
+Status:
+Strong static evidence.
+
+Next phase:
+v74.0 — Architecture Freeze Candidate

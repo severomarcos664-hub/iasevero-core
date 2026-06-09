@@ -1,0 +1,8 @@
+33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+37:      return NextResponse.json({
+58:      return NextResponse.json({
+72:      return NextResponse.json({
+80:      return NextResponse.json({
+117:  return NextResponse.json({
+140:    return NextResponse.json({
+158:    return NextResponse.json({
