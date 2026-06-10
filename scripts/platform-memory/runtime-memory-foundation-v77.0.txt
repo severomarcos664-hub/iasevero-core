@@ -1,0 +1,23 @@
+IASevero Operational Memory Foundation v77.0
+
+MISSION
+Begin the Platform Mode memory layer without modifying validated architecture.
+
+PURPOSE
+Establish the conceptual foundation for operational memory integration.
+
+MEMORY DOMAINS
+1. Session Memory
+2. Runtime Operational Memory
+3. Workflow Memory
+4. Provider Decision Memory
+5. Evaluation & Feedback Memory
+
+RULES
+- No architectural redesign.
+- No new authority layers.
+- No Runtime Resolver introduction.
+- Preserve Architecture Freeze and Platform Mode protocol.
+
+NEXT STEP
+Map existing memory-related runtime components before any implementation.
