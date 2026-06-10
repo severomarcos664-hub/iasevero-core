@@ -1,0 +1,25 @@
+app/lib/runtime-core/runtime-tool-registry.ts:39:      id: 'memory.search',
+app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+app/lib/runtime-core/runtime-feedback-integration.ts:31:    memory.stabilityRate >= 90 &&
+app/lib/runtime-core/runtime-feedback-integration.ts:34:      : memory.stabilityRate >= 70
+app/lib/runtime-core/runtime-feedback-integration.ts:36:      : memory.stabilityRate >= 50
+app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:50:      memory.runtimeEvolution !== 'degrading',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:53:      memory.historicalStability >= 80,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
+app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+app/lib/orchestrator/runtime-architecture-index.ts:71:    file: 'runtime-memory.ts',
+app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+app/lib/orchestrator/event-logger.ts:8:  if (memory.length > 1000) {
+app/lib/orchestrator/event-logger.ts:9:    memory.shift()
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-decision-engine.ts:134:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:139:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:146:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:234:  memoryMode: memory.memoryMode

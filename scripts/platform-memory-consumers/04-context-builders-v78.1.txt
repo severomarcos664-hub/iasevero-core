@@ -1,0 +1,7 @@
+app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+app/lib/memory-filter.ts:1:export function extractRelevantContext(history: any[]) {
+app/lib/response-quality.ts:1:export function buildSystemContext(message: string, facts: Record<string, string>, history: string) {
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/decision-engine.ts:23:  const context = buildSystemContext(

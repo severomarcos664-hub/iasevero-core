@@ -1,0 +1,3 @@
+app/lib/runtime-core/runtime-feedback-integration.ts:16:  memoryInfluence: boolean
+app/lib/runtime-core/runtime-feedback-integration.ts:51:    memoryInfluence: true,
+app/lib/runtime-core/runtime-feedback-integration.ts:86:      memoryInfluence: true,

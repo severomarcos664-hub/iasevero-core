@@ -1,0 +1,17 @@
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,

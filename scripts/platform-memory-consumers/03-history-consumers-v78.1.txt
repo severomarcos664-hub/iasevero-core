@@ -1,0 +1,21 @@
+app/lib/iasevero-core.ts:29:  const history = getHistory(userId).slice(-8).join('\n')
+app/lib/iasevero-core.ts:30:  const decision = buildDecision({ message, facts, history })
+app/lib/memory-filter.ts:1:export function extractRelevantContext(history: any[]) {
+app/lib/memory-filter.ts:2:  return history
+app/lib/response-quality.ts:1:export function buildSystemContext(message: string, facts: Record<string, string>, history: string) {
+app/lib/response-quality.ts:6:    history ? `Histórico recente:\n${history}` : '',
+app/lib/local-memory.ts:6:  history: string[]
+app/lib/local-memory.ts:32:  db[userId] = db[userId] || { history: [], facts: {} }
+app/lib/local-memory.ts:39:  user.history.push(message)
+app/lib/local-memory.ts:40:  user.history = user.history.slice(-12)
+app/lib/local-memory.ts:53:  return db[userId]?.history || []
+app/lib/orchestrator/memory-governor.ts:17:export function trimHistory(history: string[]): string[] {
+app/lib/orchestrator/memory-governor.ts:19:  return history.slice(-policy.maxHistoryItems)
+app/lib/orchestrator/decision-memory.ts:9:const history: DecisionRecord[] = []
+app/lib/orchestrator/decision-memory.ts:14:  history.push(record)
+app/lib/orchestrator/decision-memory.ts:16:  if (history.length > 100) {
+app/lib/orchestrator/decision-memory.ts:17:    history.shift()
+app/lib/orchestrator/decision-memory.ts:24:  return history.slice(-20)
+app/lib/orchestrator/decision-memory.ts:28:  history.length = 0
+app/lib/decision-engine.ts:6:  history: string
+app/lib/decision-engine.ts:26:    input.history

@@ -1,0 +1,20 @@
+IASevero Runtime Memory Consumers Map v78.1
+
+MISSION
+Map existing memory consumers without modifying validated architecture.
+
+CONSUMER DOMAINS
+1. Memory State Consumers
+2. Memory Object Consumers
+3. History Consumers
+4. Context Builders
+5. Feedback-Memory Consumers
+6. Persistence-Memory Consumers
+
+EXPECTED DISCOVERY
+The runtime memory layer is distributed and consumed by cognitive, feedback,
+persistence, context-building and runtime decision components.
+
+RULE
+Do not create a new memory engine before mapping existing consumers.
+Do not redesign validated architecture before operational validation.

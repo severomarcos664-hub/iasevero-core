@@ -1,0 +1,9 @@
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:23:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:13:  source: 'runtime-memory-consolidation'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:56:    source: 'runtime-memory-consolidation',
