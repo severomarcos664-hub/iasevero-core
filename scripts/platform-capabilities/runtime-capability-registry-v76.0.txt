@@ -1,0 +1,17 @@
+IASevero Runtime Capability Registry v76.0
+
+MISSION
+Transform validated architecture into governed platform capabilities.
+
+CAPABILITY DOMAINS
+1. Runtime Governance
+2. Operational Memory
+3. Tool Orchestration
+4. Dynamic Provider Routing
+5. Workflow Coordination
+6. Runtime Evaluation
+7. Observability & Telemetry
+8. Real-world Execution
+
+RULE
+New evolution should extend platform capabilities before introducing new architectural layers.
