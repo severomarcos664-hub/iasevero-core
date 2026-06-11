@@ -1,0 +1,5 @@
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,

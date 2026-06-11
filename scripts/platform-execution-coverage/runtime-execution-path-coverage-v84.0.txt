@@ -1,0 +1,19 @@
+IASevero Runtime Execution Path Coverage v84.0
+
+MISSION
+Map execution-related signal coverage across the validated runtime architecture.
+
+COVERAGE TARGETS
+1. executionAllowed
+2. executionPolicy
+3. runtimeAction
+4. providerAllowed
+5. Decision / Policy / Bridge / Authority components
+
+OBJECTIVE
+Validate how execution decisions propagate through the IASevero runtime without modifying validated architecture.
+
+RULES
+- Do not redesign validated architecture.
+- Do not create new execution managers.
+- Document existing signal propagation only.

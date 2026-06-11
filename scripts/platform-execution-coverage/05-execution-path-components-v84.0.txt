@@ -1,0 +1,17 @@
+app/lib/runtime-core/runtime-action-policy-engine.ts:5:export type RuntimeActionPolicyReport = {
+app/lib/runtime-core/runtime-action-policy-engine.ts:20:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:21:RuntimeActionPolicyReport {
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:6:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:14:    evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/api/chat/route.ts:68:const actionPolicy = evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
