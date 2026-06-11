@@ -1,0 +1,51 @@
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/orchestrator/runtime-causal-trace.ts:14:  causalSignals: string[]
+app/lib/orchestrator/runtime-causal-trace.ts:22:  const causalSignals: string[] = []
+app/lib/orchestrator/runtime-causal-trace.ts:24:  if (latest?.recovery) causalSignals.push('recovery-active')
+app/lib/orchestrator/runtime-causal-trace.ts:25:  if (latest?.stabilization) causalSignals.push(`stabilization:${latest.stabilization}`)
+app/lib/orchestrator/runtime-causal-trace.ts:26:  if (latest?.awareness) causalSignals.push(`awareness:${latest.awareness}`)
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:31:    causalSignals.length === 0
+app/lib/orchestrator/runtime-causal-trace.ts:33:      : `Estado atual explicado por ${causalSignals.join(' -> ')}.`
+app/lib/orchestrator/runtime-causal-trace.ts:46:    causalSignals,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,

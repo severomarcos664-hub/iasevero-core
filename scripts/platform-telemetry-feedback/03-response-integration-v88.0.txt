@@ -1,0 +1,31 @@
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:5:export function evaluateRuntimeCognitiveResponseProfiler() {
+app/lib/runtime-core/runtime-adaptive-response.ts:3:export type RuntimeAdaptiveResponse = {
+app/lib/runtime-core/runtime-adaptive-response.ts:20:export function evaluateRuntimeAdaptiveResponse(): RuntimeAdaptiveResponse {
+app/lib/runtime-core/runtime-action-policy-engine.ts:2:  evaluateRuntimeAutonomousResponse,
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:26:  const adaptive = evaluateRuntimeAdaptiveResponse()
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:13:export type RuntimeAutonomousResponseReport = {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:28:export function evaluateRuntimeAutonomousResponse():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:29:RuntimeAutonomousResponseReport {
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:2:  evaluateRuntimeCognitiveResponseProfiler,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:7:    evaluateRuntimeCognitiveResponseProfiler()
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:11:  return NextResponse.json({
