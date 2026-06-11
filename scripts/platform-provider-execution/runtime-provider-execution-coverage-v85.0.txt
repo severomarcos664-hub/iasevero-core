@@ -1,0 +1,18 @@
+IASevero Runtime Provider Execution Coverage v85.0
+
+MISSION
+Map the validated provider execution path across the runtime architecture.
+
+COVERAGE TARGETS
+1. providerAllowed
+2. providerRecommendation
+3. provider routing
+4. provider governance
+
+OBJECTIVE
+Document how runtime execution decisions reach provider selection without modifying validated architecture.
+
+RULES
+- Do not redesign validated architecture.
+- Do not create new provider managers.
+- Document existing execution and routing paths only.
