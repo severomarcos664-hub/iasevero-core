@@ -1,0 +1,17 @@
+IASevero Runtime Signal Map Audit v86.0
+
+MISSION
+Map the validated runtime signal propagation across the current architecture.
+
+AUDIT TARGETS
+1. Runtime Context
+2. Execution Signals
+3. Provider Signals
+
+OBJECTIVE
+Document how operational context propagates through the IASevero runtime without modifying validated components.
+
+RULES
+- Do not redesign validated architecture.
+- Do not create parallel runtime managers.
+- Document existing signal propagation only.
