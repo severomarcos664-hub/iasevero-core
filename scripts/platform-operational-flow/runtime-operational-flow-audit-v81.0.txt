@@ -1,0 +1,19 @@
+IASevero Runtime Operational Flow Audit v81.0
+
+MISSION
+Map the validated operational execution flow without modifying the current architecture.
+
+AUDIT TARGETS
+1. Runtime Unified Context
+2. Cognitive Gateway
+3. Cognitive State Fabric
+4. Runtime Cognitive Bus
+5. Persistence & Feedback Integration
+
+OBJECTIVE
+Confirm how operational memory and context propagate across runtime components.
+
+RULES
+- Do not redesign validated architecture.
+- Do not introduce new runtime managers.
+- Extend the documented platform model only.

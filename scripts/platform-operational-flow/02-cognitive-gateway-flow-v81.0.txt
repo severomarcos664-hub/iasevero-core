@@ -1,0 +1,10 @@
+app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+app/lib/runtime-core/runtime-governance-enforcement.ts:1:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-governance-enforcement.ts:17:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-cognitive-state.ts:4:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-state.ts:59:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:6:  source: 'runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:17:export function evaluateRuntimeCognitiveGateway(): RuntimeCognitiveDecision {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:55:    source: 'runtime-cognitive-gateway',

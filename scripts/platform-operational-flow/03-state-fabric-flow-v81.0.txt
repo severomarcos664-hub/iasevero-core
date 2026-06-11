@@ -1,0 +1,48 @@
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:2:  const operationalScore = 100
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:5:    operationalScore >= 95
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:7:      : operationalScore >= 80
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:19:    operationalScore,
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:36:      `score:${operationalScore}`,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:3:} from '@/app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:7:} from '../runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-core/runtime-unified-context.ts:9:  operationalScore: number
+app/lib/runtime-core/runtime-unified-context.ts:22:    operationalScore: brain.operationalScore,
+app/lib/runtime-core/runtime-contracts.ts:61:  operationalScore: number
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:13:  source: 'runtime-cognitive-state-fabric'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:66:    source: 'runtime-cognitive-state-fabric',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:13:      adaptive.operationalScore
+app/lib/orchestrator/runtime-operational-metrics.ts:7:  operationalScore: number
+app/lib/orchestrator/runtime-supervisor.ts:12:  operationalScore: number
+app/lib/orchestrator/runtime-supervisor.ts:31:  const operationalScore = intelligence.operationalScore
+app/lib/orchestrator/runtime-supervisor.ts:34:    operationalScore < 40
+app/lib/orchestrator/runtime-supervisor.ts:36:      : operationalScore < 70
+app/lib/orchestrator/runtime-supervisor.ts:49:    operationalScore,
+app/lib/orchestrator/runtime-supervisor.ts:58:  operationalScore: number
+app/lib/orchestrator/runtime-supervisor.ts:64:    operationalScore: 100,
+app/lib/orchestrator/runtime-decision-engine.ts:243:  `intelligence:${intelligence.operationalScore}:${intelligence.degradationRisk}`
+app/lib/orchestrator/runtime-brain-matrix.ts:12:  operationalScore: number
+app/lib/orchestrator/runtime-brain-matrix.ts:38:    operationalScore: supervision.operationalScore,
+app/lib/orchestrator/runtime-intelligence.ts:4:  operationalScore: number
+app/lib/orchestrator/runtime-intelligence.ts:19:      operationalScore: 100,
+app/lib/orchestrator/runtime-intelligence.ts:67:  const operationalScore =
+app/lib/orchestrator/runtime-intelligence.ts:74:    operationalScore < 40
+app/lib/orchestrator/runtime-intelligence.ts:76:      : operationalScore < 70
+app/lib/orchestrator/runtime-intelligence.ts:88:    operationalScore,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
