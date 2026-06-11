@@ -1,0 +1,11 @@
+app/lib/orchestrator/runtime-architecture-index.ts:63:    name: 'RuntimeProviderGovernor',
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-provider-governor.ts:3:export type RuntimeProviderGovernorResult = {
+app/lib/orchestrator/runtime-provider-governor.ts:10:export function evaluateProviderGovernor(
+app/lib/orchestrator/runtime-provider-governor.ts:12:): RuntimeProviderGovernorResult {
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
