@@ -1,0 +1,57 @@
+IASevero Runtime Platform Constitution v100.0
+
+MISSION
+Establish the canonical constitution of the IASevero Runtime Platform.
+
+FOUNDATION
+This constitution consolidates the validated architectural sequence from v80.0 to v99.0.
+
+CANONICAL RUNTIME FLOW
+Context
+  ↓
+Memory
+  ↓
+Decision
+  ↓
+Execution
+  ↓
+Provider Governance
+  ↓
+Signals
+  ↓
+Telemetry / Feedback
+  ↓
+Response
+
+OFFICIAL RUNTIME DOMAINS
+1. Context Domain
+2. Memory Domain
+3. Decision Domain
+4. Execution Domain
+5. Provider Governance Domain
+6. Signal Domain
+7. Telemetry Domain
+8. Response Domain
+
+GOVERNANCE RULES
+- RuntimeContext is the operational source.
+- Memory extends validated context.
+- Decision authorizes execution.
+- Execution materializes approved runtime actions.
+- Provider Governance controls provider selection.
+- Signals propagate trusted runtime state.
+- Telemetry records operational evidence.
+- Response delivers validated output.
+
+EVOLUTION POLICY
+- Preserve validated architecture.
+- Extend existing operational domains first.
+- Avoid duplicate governance layers.
+- Do not introduce parallel runtime managers without proven operational need.
+- Every evolution must pass build and regression validation.
+
+CONSTITUTIONAL RULE
+Every future IASevero runtime capability must strengthen an existing validated runtime domain before introducing a new architectural structure.
+
+STATUS
+IASevero Runtime Platform Constitution: ESTABLISHED.
