@@ -1,0 +1,269 @@
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:30:        : policy.policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:25:          ? 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:35:        : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:52:          : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:53:            ? 'Política preventiva exige estabilização.'
+app/lib/runtime-core/runtime-retention-manager.ts:5:  maxTelemetryEvents: number
+app/lib/runtime-core/runtime-retention-manager.ts:15:  const maxTelemetryEvents = 200
+app/lib/runtime-core/runtime-retention-manager.ts:22:    maxTelemetryEvents,
+app/lib/runtime-core/runtime-retention-manager.ts:29:      `maxTelemetryEvents:${maxTelemetryEvents}`,
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:29:      : telemetry.warningEvents > 5
+app/lib/runtime-core/runtime-severity-governance.ts:31:        : telemetry.warningEvents > 2
+app/lib/runtime-core/runtime-severity-governance.ts:33:          : telemetry.infoEvents > 10
+app/lib/runtime-core/runtime-optimization-intelligence.ts:2:  generateRuntimeLearningSignal,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:3:} from './runtime-learning-signals'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:29:    signal.executionScore >= 90
+app/lib/runtime-core/runtime-optimization-intelligence.ts:31:      : signal.executionScore >= 75
+app/lib/runtime-core/runtime-optimization-intelligence.ts:33:        : signal.executionScore >= 50
+app/lib/runtime-core/runtime-optimization-intelligence.ts:55:    executionScore: signal.executionScore,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:68:      ...signal.reasoning,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:10:  preventiveAction: boolean
+app/lib/runtime-core/runtime-predictive-stabilization.ts:15:    | 'preventive-containment'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:38:      ? 'preventive-containment'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:51:    preventiveAction:
+app/lib/runtime-core/runtime-predictive-stabilization.ts:58:        ? 'Ativar contenção preventiva imediatamente.'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:83:      preventiveAction: result.preventiveAction,
+app/lib/runtime-core/runtime-event-bus.ts:1:export type RuntimeBusEvent = {
+app/lib/runtime-core/runtime-event-bus.ts:10:const runtimeEventBus: RuntimeBusEvent[] = []
+app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+app/lib/runtime-core/runtime-event-bus.ts:17:  event: Omit<RuntimeBusEvent, 'id' | 'timestamp'>
+app/lib/runtime-core/runtime-event-bus.ts:18:): RuntimeBusEvent {
+app/lib/runtime-core/runtime-event-bus.ts:19:  const normalizedEvent: RuntimeBusEvent = {
+app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+app/lib/runtime-core/runtime-event-bus.ts:22:    ...event,
+app/lib/runtime-core/runtime-event-bus.ts:25:  runtimeEventBus.unshift(normalizedEvent)
+app/lib/runtime-core/runtime-event-bus.ts:27:  if (runtimeEventBus.length > 300) {
+app/lib/runtime-core/runtime-event-bus.ts:28:    runtimeEventBus.pop()
+app/lib/runtime-core/runtime-event-bus.ts:31:  return normalizedEvent
+app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+app/lib/runtime-core/runtime-event-bus.ts:35:  return [...runtimeEventBus]
+app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+app/lib/runtime-core/runtime-event-bus.ts:39:  runtimeEventBus.length = 0
+app/lib/runtime-core/runtime-event-stream-engine.ts:3:export type RuntimeStreamEventType =
+app/lib/runtime-core/runtime-event-stream-engine.ts:12:export type RuntimeStreamEvent = {
+app/lib/runtime-core/runtime-event-stream-engine.ts:15:  source: 'runtime-event-stream-engine'
+app/lib/runtime-core/runtime-event-stream-engine.ts:16:  type: RuntimeStreamEventType
+app/lib/runtime-core/runtime-event-stream-engine.ts:21:const runtimeEventStream: RuntimeStreamEvent[] = []
+app/lib/runtime-core/runtime-event-stream-engine.ts:23:export function publishRuntimeStreamEvent(
+app/lib/runtime-core/runtime-event-stream-engine.ts:24:  type: RuntimeStreamEventType,
+app/lib/runtime-core/runtime-event-stream-engine.ts:27:): RuntimeStreamEvent {
+app/lib/runtime-core/runtime-event-stream-engine.ts:28:  const event: RuntimeStreamEvent = {
+app/lib/runtime-core/runtime-event-stream-engine.ts:31:    source: 'runtime-event-stream-engine',
+app/lib/runtime-core/runtime-event-stream-engine.ts:37:  runtimeEventStream.push(event)
+app/lib/runtime-core/runtime-event-stream-engine.ts:40:    source: 'runtime-event-stream-engine',
+app/lib/runtime-core/runtime-event-stream-engine.ts:41:    type: 'runtime-stream-event',
+app/lib/runtime-core/runtime-event-stream-engine.ts:47:    message: `Runtime stream event published: ${type}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:48:    payload: event,
+app/lib/runtime-core/runtime-event-stream-engine.ts:51:  return event
+app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+app/lib/runtime-core/runtime-event-stream-engine.ts:55:  return [...runtimeEventStream]
+app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+app/lib/runtime-core/runtime-event-stream-engine.ts:59:  runtimeEventStream.length = 0
+app/lib/runtime-core/runtime-contracts.ts:37:export type RuntimeBaseEvent = {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:6:  totalEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:7:  criticalEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:8:  warningEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:9:  infoEvents: number
+app/lib/runtime-core/runtime-telemetry-correlation.ts:18:  const events = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-telemetry-correlation.ts:20:  const criticalEvents = events.filter(e => e.severity === 'critical').length
+app/lib/runtime-core/runtime-telemetry-correlation.ts:21:  const warningEvents = events.filter(e => e.severity === 'warning').length
+app/lib/runtime-core/runtime-telemetry-correlation.ts:22:  const infoEvents = events.filter(e => e.severity === 'info').length
+app/lib/runtime-core/runtime-telemetry-correlation.ts:24:  const uniqueSources = new Set(events.map(e => e.source)).size
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-correlation.ts:28:    criticalEvents > 0
+app/lib/runtime-core/runtime-telemetry-correlation.ts:30:      : warningEvents > 2
+app/lib/runtime-core/runtime-telemetry-correlation.ts:37:    totalEvents: events.length,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:38:    criticalEvents,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:39:    warningEvents,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:40:    infoEvents,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:46:        ? 'Telemetry indica eventos críticos; investigar imediatamente.'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:51:      `events:${events.length}`,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:52:      `critical:${criticalEvents}`,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:53:      `warning:${warningEvents}`,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:54:      `info:${infoEvents}`,
+app/lib/runtime-core/runtime-telemetry-fabric.ts:7:export type RuntimeTelemetryEvent = {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:18:const runtimeTelemetryBuffer: RuntimeTelemetryEvent[] = []
+app/lib/runtime-core/runtime-telemetry-fabric.ts:25:  event: Omit<RuntimeTelemetryEvent, 'id' | 'timestamp'>
+app/lib/runtime-core/runtime-telemetry-fabric.ts:26:): RuntimeTelemetryEvent {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:27:  const normalizedEvent: RuntimeTelemetryEvent = {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:30:    ...event,
+app/lib/runtime-core/runtime-telemetry-fabric.ts:33:  runtimeTelemetryBuffer.unshift(normalizedEvent)
+app/lib/runtime-core/runtime-telemetry-fabric.ts:39:  return normalizedEvent
+app/lib/runtime-core/runtime-telemetry-fabric.ts:42:export function readRuntimeTelemetry(): RuntimeTelemetryEvent[] {
+app/lib/runtime-core/runtime-adaptive-coordination.ts:24:  signals: string[];
+app/lib/runtime-core/runtime-adaptive-coordination.ts:84:    signals: [
+app/lib/runtime-core/runtime-timeline-engine.ts:32:    telemetry.map(event => ({
+app/lib/runtime-core/runtime-timeline-engine.ts:33:      timestamp: event.timestamp,
+app/lib/runtime-core/runtime-timeline-engine.ts:34:      source: event.source,
+app/lib/runtime-core/runtime-timeline-engine.ts:35:      severity: event.severity,
+app/lib/runtime-core/runtime-timeline-engine.ts:36:      type: event.type,
+app/lib/runtime-core/runtime-timeline-engine.ts:37:      message: event.message,
+app/lib/runtime-core/runtime-action-engine.ts:1:import { publishRuntimeEvent } from './runtime-event-bus'
+app/lib/runtime-core/runtime-action-engine.ts:46:              ? 'Aplicar estabilização preventiva.'
+app/lib/runtime-core/runtime-action-engine.ts:55:  publishRuntimeEvent({
+app/lib/runtime-core/runtime-governance-center.ts:41:          : predictive.preventiveAction
+app/lib/runtime-core/runtime-governance-center.ts:76:              ? 'Governance Center recomenda estabilização preventiva.'
+app/lib/runtime-core/runtime-event-subscribers.ts:2:  RuntimeBusEvent,
+app/lib/runtime-core/runtime-event-subscribers.ts:3:  publishRuntimeEvent,
+app/lib/runtime-core/runtime-event-subscribers.ts:4:} from './runtime-event-bus'
+app/lib/runtime-core/runtime-event-subscribers.ts:6:export type RuntimeEventSubscriber = {
+app/lib/runtime-core/runtime-event-subscribers.ts:8:  eventType: string
+app/lib/runtime-core/runtime-event-subscribers.ts:9:  onEvent: (event: RuntimeBusEvent) => void
+app/lib/runtime-core/runtime-event-subscribers.ts:12:const runtimeSubscribers: RuntimeEventSubscriber[] = []
+app/lib/runtime-core/runtime-event-subscribers.ts:15:  subscriber: RuntimeEventSubscriber
+app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+app/lib/runtime-core/runtime-event-subscribers.ts:21:  event: Omit<RuntimeBusEvent, 'id' | 'timestamp'>
+app/lib/runtime-core/runtime-event-subscribers.ts:22:): RuntimeBusEvent {
+app/lib/runtime-core/runtime-event-subscribers.ts:23:  const emittedEvent = publishRuntimeEvent(event)
+app/lib/runtime-core/runtime-event-subscribers.ts:27:      subscriber.eventType === emittedEvent.type
+app/lib/runtime-core/runtime-event-subscribers.ts:32:      subscriber.onEvent(emittedEvent)
+app/lib/runtime-core/runtime-event-subscribers.ts:35:        '[runtime-event-subscriber-error]',
+app/lib/runtime-core/runtime-event-subscribers.ts:42:  return emittedEvent
+app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+app/lib/runtime-core/runtime-learning-signals.ts:5:export type RuntimeLearningSignal = {
+app/lib/runtime-core/runtime-learning-signals.ts:6:  signalId: string
+app/lib/runtime-core/runtime-learning-signals.ts:8:  source: 'runtime-learning-signals'
+app/lib/runtime-core/runtime-learning-signals.ts:23:export function generateRuntimeLearningSignal():
+app/lib/runtime-core/runtime-learning-signals.ts:24:RuntimeLearningSignal {
+app/lib/runtime-core/runtime-learning-signals.ts:33:    signalId: `signal_${Date.now()}`,
+app/lib/runtime-core/runtime-learning-signals.ts:35:    source: 'runtime-learning-signals',
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:15:  criticalEvents: number
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:46:  const criticalEvents =
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:57:    criticalEvents >= 3
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:75:    criticalEvents,
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:81:      `critical:${criticalEvents}`,
+app/lib/orchestrator/runtime-autonomous-decision.ts:25:  if (report.failedEvents >= 5) {
+app/lib/orchestrator/runtime-autonomous-decision.ts:35:  if (report.failedEvents >= 1) {
+app/lib/orchestrator/audit-trail.ts:1:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/audit-trail.ts:9:    events: getRecentEvents(),
+app/lib/orchestrator/runtime-operational-memory.ts:85:export type RuntimeMemoryEvent = {
+app/lib/orchestrator/runtime-operational-memory.ts:95:const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+app/lib/orchestrator/runtime-operational-memory.ts:98:  event: RuntimeMemoryEvent
+app/lib/orchestrator/runtime-operational-memory.ts:99:): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:100:  runtimeMemoryEvents.unshift(event)
+app/lib/orchestrator/runtime-operational-memory.ts:102:  if (runtimeMemoryEvents.length > 100) {
+app/lib/orchestrator/runtime-operational-memory.ts:103:    runtimeMemoryEvents.length = 100
+app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-operational-memory.ts:109:export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-operational-metrics.ts:2:  eventCount: number
+app/lib/orchestrator/runtime-operational-metrics.ts:3:  processedEvents: number
+app/lib/orchestrator/runtime-operational-metrics.ts:4:  failedEvents: number
+app/lib/orchestrator/runtime-guardian.ts:9:    events: metrics.eventCount,
+app/lib/orchestrator/runtime-guardian.ts:15:    exceeded.events ||
+app/lib/orchestrator/runtime-coordinator.ts:2:  RuntimeEvent,
+app/lib/orchestrator/runtime-coordinator.ts:3:  getRuntimeEvents
+app/lib/orchestrator/runtime-coordinator.ts:4:} from './runtime-event-bus'
+app/lib/orchestrator/runtime-coordinator.ts:7:  processRuntimeEvent
+app/lib/orchestrator/runtime-coordinator.ts:8:} from './runtime-event-processor'
+app/lib/orchestrator/runtime-coordinator.ts:11:  processedEvents: number
+app/lib/orchestrator/runtime-coordinator.ts:12:  successfulEvents: number
+app/lib/orchestrator/runtime-coordinator.ts:13:  failedEvents: number
+app/lib/orchestrator/runtime-coordinator.ts:19:  const events = getRuntimeEvents()
+app/lib/orchestrator/runtime-coordinator.ts:21:  let successfulEvents = 0
+app/lib/orchestrator/runtime-coordinator.ts:22:  let failedEvents = 0
+app/lib/orchestrator/runtime-coordinator.ts:24:  for (const event of events) {
+app/lib/orchestrator/runtime-coordinator.ts:28:      const result = processRuntimeEvent(event)
+app/lib/orchestrator/runtime-coordinator.ts:31:        successfulEvents++
+app/lib/orchestrator/runtime-coordinator.ts:33:        failedEvents++
+app/lib/orchestrator/runtime-coordinator.ts:37:      failedEvents++
+app/lib/orchestrator/runtime-coordinator.ts:42:    processedEvents: events.length,
+app/lib/orchestrator/runtime-coordinator.ts:43:    successfulEvents,
+app/lib/orchestrator/runtime-coordinator.ts:44:    failedEvents,
+app/lib/orchestrator/event-logger.ts:1:import { IASeveroEvent } from './events'
+app/lib/orchestrator/event-logger.ts:3:const memory: IASeveroEvent[] = []
+app/lib/orchestrator/event-logger.ts:5:export function logEvent(event: IASeveroEvent) {
+app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+app/lib/orchestrator/event-logger.ts:13:    '[IASevero Event]',
+app/lib/orchestrator/event-logger.ts:14:    JSON.stringify(event)
+app/lib/orchestrator/event-logger.ts:18:export function getRecentEvents() {
+app/lib/orchestrator/runtime-event-bus.ts:1:export type RuntimeEvent = {
+app/lib/orchestrator/runtime-event-bus.ts:14:const runtimeEventBus: RuntimeEvent[] = []
+app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+app/lib/orchestrator/runtime-event-bus.ts:17:  event: RuntimeEvent
+app/lib/orchestrator/runtime-event-bus.ts:20:    event.timestamp ?? event.createdAt ?? new Date().toISOString()
+app/lib/orchestrator/runtime-event-bus.ts:22:  const normalizedEvent: RuntimeEvent = {
+app/lib/orchestrator/runtime-event-bus.ts:23:    ...event,
+app/lib/orchestrator/runtime-event-bus.ts:25:    createdAt: event.createdAt ?? normalizedTimestamp,
+app/lib/orchestrator/runtime-event-bus.ts:28:  runtimeEventBus.unshift(normalizedEvent)
+app/lib/orchestrator/runtime-event-bus.ts:30:  if (runtimeEventBus.length > 500) {
+app/lib/orchestrator/runtime-event-bus.ts:31:    runtimeEventBus.pop()
+app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+app/lib/orchestrator/runtime-event-bus.ts:36:  return runtimeEventBus
+app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+app/lib/orchestrator/runtime-event-bus.ts:40:  type: RuntimeEvent['type']
+app/lib/orchestrator/runtime-event-bus.ts:42:  return runtimeEventBus.filter(
+app/lib/orchestrator/runtime-event-bus.ts:43:    event => event.type === type
+app/lib/orchestrator/runtime-telemetry.ts:8:  processedEvents: number
+app/lib/orchestrator/runtime-telemetry.ts:24:    processedEvents: consciousness.processedEvents,
+app/lib/orchestrator/runtime-limiter.ts:2:  maxEvents: number
+app/lib/orchestrator/runtime-limiter.ts:8:  maxEvents: 500,
+app/lib/orchestrator/runtime-limiter.ts:18:  events: number
+app/lib/orchestrator/runtime-limiter.ts:23:    events: data.events > limits.maxEvents,
+app/lib/orchestrator/runtime-event-processor.ts:2:  RuntimeEvent,
+app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+app/lib/orchestrator/runtime-event-processor.ts:4:} from './runtime-event-bus'
+app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+app/lib/orchestrator/runtime-event-processor.ts:10:export type RuntimeEventProcessingResult = {
+app/lib/orchestrator/runtime-event-processor.ts:12:  eventId: string
+app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+app/lib/orchestrator/runtime-event-processor.ts:18:  event: RuntimeEvent
+app/lib/orchestrator/runtime-event-processor.ts:19:): RuntimeEventProcessingResult {
+app/lib/orchestrator/runtime-event-processor.ts:23:  if (event.type === 'runtime-alert') {
+app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+app/lib/orchestrator/runtime-event-processor.ts:39:        source: event.id
+app/lib/orchestrator/runtime-event-processor.ts:47:  if (event.type === 'runtime-recovery') {
+app/lib/orchestrator/runtime-event-processor.ts:54:    eventId: event.id,
+app/lib/orchestrator/metrics.ts:2:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/metrics.ts:8:  const events = getRecentEvents()
+app/lib/orchestrator/metrics.ts:16:    eventCount: events.length,
+app/lib/orchestrator/events.ts:1:export type IASeveroEvent = {
+app/lib/orchestrator/events.ts:10:export function createEvent(
+app/lib/orchestrator/events.ts:12:  data: Partial<IASeveroEvent> = {}
+app/lib/orchestrator/events.ts:13:): IASeveroEvent {
+app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+app/lib/orchestrator/runtime-causal-trace.ts:14:  causalSignals: string[]
+app/lib/orchestrator/runtime-causal-trace.ts:22:  const causalSignals: string[] = []
+app/lib/orchestrator/runtime-causal-trace.ts:24:  if (latest?.recovery) causalSignals.push('recovery-active')
+app/lib/orchestrator/runtime-causal-trace.ts:25:  if (latest?.stabilization) causalSignals.push(`stabilization:${latest.stabilization}`)
+app/lib/orchestrator/runtime-causal-trace.ts:26:  if (latest?.awareness) causalSignals.push(`awareness:${latest.awareness}`)
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:31:    causalSignals.length === 0
+app/lib/orchestrator/runtime-causal-trace.ts:33:      : `Estado atual explicado por ${causalSignals.join(' -> ')}.`
+app/lib/orchestrator/runtime-causal-trace.ts:46:    causalSignals,
+app/lib/orchestrator/diagnostics.ts:18:  if (metrics.eventCount > 500) {
+app/lib/orchestrator/diagnostics.ts:19:    issues.push('Volume elevado de eventos.')
+app/lib/orchestrator/decision-pipeline.ts:4:import { createEvent } from './events'
+app/lib/orchestrator/decision-pipeline.ts:5:import { logEvent } from './event-logger'
+app/lib/orchestrator/decision-pipeline.ts:27:  logEvent(createEvent('decision_pipeline', {
+app/lib/orchestrator/evolution-engine.ts:18:      'Ativar modo seguro preventivo.'
+app/lib/orchestrator/runtime-conscious-loop.ts:16:  processedEvents: number
+app/lib/orchestrator/runtime-conscious-loop.ts:36:    processedEvents:
+app/lib/orchestrator/runtime-conscious-loop.ts:37:      coordination.processedEvents,
+app/lib/orchestrator/routing.ts:2:import { createEvent } from './events'
+app/lib/orchestrator/routing.ts:3:import { logEvent } from './event-logger'
+app/lib/orchestrator/routing.ts:18:logEvent(
+app/lib/orchestrator/routing.ts:19:  createEvent('routing', {
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:1:export type RuntimeSignalState =
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:7:export type RuntimeSignalAction =
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:13:export interface RuntimeSignalIntelligenceReport {
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:14:  signalId: string
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:20:  signalState: RuntimeSignalState
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:21:  signalAction: RuntimeSignalAction
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:37:  signalClarity: number
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:38:  signalStability: number
+app/lib/observability.ts:1:export type IASeveroEvent = {
+app/lib/observability.ts:2:  event: string
+app/lib/observability.ts:10:export function logEvent(data: IASeveroEvent) {

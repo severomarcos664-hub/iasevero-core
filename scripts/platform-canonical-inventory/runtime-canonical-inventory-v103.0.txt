@@ -1,0 +1,26 @@
+IASevero Runtime Canonical Inventory v103.0
+
+MISSION
+Create the canonical inventory of runtime source files and operational domains.
+
+OBJECTIVE
+Map the implementation surface of the IASevero runtime without modifying production code.
+
+CANONICAL DOMAINS
+1. Context
+2. Memory
+3. Decision
+4. Execution
+5. Provider Governance
+6. Signals / Events
+7. Telemetry / Feedback
+8. Response
+
+INVENTORY RULES
+- Every runtime component must belong to a validated operational domain.
+- Every future evolution must update the canonical inventory.
+- Runtime documentation must stay synchronized with implementation evidence.
+- No new runtime modules should be introduced without domain ownership.
+
+STATUS
+Runtime canonical inventory prepared for validation.
