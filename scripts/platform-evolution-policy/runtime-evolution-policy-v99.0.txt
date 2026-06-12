@@ -1,0 +1,31 @@
+IASevero Runtime Evolution Policy v99.0
+
+MISSION
+Define the official evolution policy for the IASevero runtime platform.
+
+EVOLUTION PRINCIPLES
+
+1. Preserve validated architecture.
+2. Extend existing operational domains.
+3. Reuse validated runtime integrations.
+4. Avoid duplicate governance layers.
+5. Keep RuntimeContext as the operational source.
+6. Require build and regression approval for every evolution.
+7. Document before expanding.
+
+EVOLUTION WORKFLOW
+
+Audit
+  ↓
+Document
+  ↓
+Build
+  ↓
+Regression
+  ↓
+Commit / Tag / Push
+  ↓
+Controlled Evolution
+
+RULE
+Future runtime growth must strengthen the validated platform instead of creating parallel runtime structures.
