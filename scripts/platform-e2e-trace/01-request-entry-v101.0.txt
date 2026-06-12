@@ -1,0 +1,189 @@
+app/api/chat/route.ts:29:    const message = (body.message || '').toString().trim()
+app/api/chat/route.ts:32:    if (!message) {
+app/api/chat/route.ts:36:    if (message.length > MAX_TEXT_LENGTH) {
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/api/chat/route.ts:90:      'chat.request.received',
+app/api/chat/route.ts:96:        messageLength: message.length,
+app/api/chat/route.ts:126:  evaluateRuntimeExecutiveState(message, 'general')
+app/api/chat/route.ts:128:const result = await iaseveroCore(message, userId)
+app/lib/runtime-executive-state/runtime-executive-state.ts:34:  message: string,
+app/lib/runtime-executive-state/runtime-executive-state.ts:43:      message,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:28:  message: string,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:36:    resolveProviderRoute(message, intent)
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:39:  message: string,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/iasevero-core.ts:6:function detectFact(message: string): { key: string; value: string } | null {
+app/lib/iasevero-core.ts:7:  const nome = message.match(/meu nome (é|e)\s+(.+)/i)
+app/lib/iasevero-core.ts:10:  const projeto = message.match(/projeto (é|e)\s+(.+)/i)
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+app/lib/iasevero-core.ts:17:  const fact = detectFact(message)
+app/lib/iasevero-core.ts:21:  const direct = localBrain(message, facts)
+app/lib/iasevero-core.ts:24:    saveMessage(userId, `Usuário: ${message}`)
+app/lib/iasevero-core.ts:30:  const decision = buildDecision({ message, facts, history })
+app/lib/iasevero-core.ts:33:  const reply = validateDecisionAnswer(message, rawReply)
+app/lib/iasevero-core.ts:35:  saveMessage(userId, `Usuário: ${message}`)
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-adaptive-response.ts:44:      requestPolicy: 'throttled',
+app/lib/runtime-core/runtime-adaptive-response.ts:58:      requestPolicy: 'throttled',
+app/lib/runtime-core/runtime-adaptive-response.ts:72:      requestPolicy: 'normal',
+app/lib/runtime-core/runtime-adaptive-response.ts:85:    requestPolicy: 'normal',
+app/lib/runtime-core/runtime-policy-enforcement.ts:3:  message: string
+app/lib/runtime-core/runtime-policy-enforcement.ts:20:  input: RuntimePolicyInput,
+app/lib/runtime-core/runtime-policy-enforcement.ts:26:    userRuntimeMap[input.userId] || {
+app/lib/runtime-core/runtime-policy-enforcement.ts:38:  userRuntimeMap[input.userId] = current
+app/lib/runtime-core/runtime-policy-enforcement.ts:48:  if (input.message.length > 4000) {
+app/lib/runtime-core/runtime-policy-enforcement.ts:56:  if (input.governance !== 'NORMAL_OPERATION') {
+app/lib/runtime-core/runtime-predictive-stabilization.ts:80:    message: `Predictive stabilization evaluated with risk ${result.predictiveRisk}.`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:4:  | 'request.received'
+app/lib/runtime-core/runtime-event-stream-engine.ts:47:    message: `Runtime stream event published: ${type}`,
+app/lib/runtime-core/runtime-contracts.ts:43:  message?: string
+app/lib/runtime-core/runtime-telemetry-fabric.ts:14:  message: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:54:    message: `Runtime execution coordinated with action ${policy.requiredAction}.`,
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-execution-bridge.ts:18:    message: 'Chat request evaluated by runtime execution bridge.',
+app/lib/runtime-core/runtime-execution-bridge.ts:21:      messageLength: message.length,
+app/lib/runtime-core/runtime-task-planner.ts:39:function classifyIntent(message: string): RuntimeTaskPlan['intent'] {
+app/lib/runtime-core/runtime-task-planner.ts:40:  const text = message.toLowerCase()
+app/lib/runtime-core/runtime-task-planner.ts:71:export function planRuntimeTask(message: string): RuntimeTaskPlan {
+app/lib/runtime-core/runtime-task-planner.ts:72:  const intent = classifyIntent(message)
+app/lib/runtime-core/runtime-task-planner.ts:93:      title: 'Analyze request and runtime context',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:27:export function coordinateAdaptiveRuntime(input: RuntimeCoordinationInput): RuntimeCoordinationReport {
+app/lib/runtime-core/runtime-adaptive-coordination.ts:29:    input.governance === 'CONTAINMENT_REQUIRED' ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:30:    input.governance === 'RECOVERY_REQUIRED' ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:31:    !input.policyAllowed ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:32:    input.evaluationScore < 50;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:35:    input.governance === 'THROTTLING_REQUIRED' ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:36:    input.evaluationScore < 70 ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:37:    input.resilienceActive;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:40:    input.governance === 'STABILIZATION_REQUIRED' ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:41:    !input.workflowStable ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:42:    input.evaluationScore < 85;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:56:    mode === 'normal' && input.evaluationScore >= 90 ? 'aggressive' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:85:      `governance:${input.governance}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:86:      `evaluation:${input.evaluationScore}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:87:      `workflowStable:${input.workflowStable}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:88:      `policyAllowed:${input.policyAllowed}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:89:      `resilienceActive:${input.resilienceActive}`,
+app/lib/runtime-core/runtime-decision-gate.ts:15:  message: string,
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-core/runtime-timeline-engine.ts:9:  message: string
+app/lib/runtime-core/runtime-timeline-engine.ts:37:      message: event.message,
+app/lib/runtime-core/runtime-action-engine.ts:72:    message: `Runtime action executed: ${action}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:82:    message:
+app/lib/local-brain.ts:1:export function localBrain(message: string, facts: Record<string, string>): string | null {
+app/lib/local-brain.ts:2:  const msg = message.toLowerCase()
+app/lib/zero-cost-brain.ts:2:export function localIntelligence(message: string, context: string): string {
+app/lib/zero-cost-brain.ts:3:  const msg = message.toLowerCase()
+app/lib/zero-cost-brain.ts:24:${message}
+app/lib/core-identity.ts:1:export function coreIdentity(message: string): string | null {
+app/lib/core-identity.ts:2:  const m = (message || '')
+app/lib/learning.ts:7:  message: string
+app/lib/learning.ts:40:    .filter(i => i.message)
+app/lib/learning.ts:48:export function logUnknown(message: string) {
+app/lib/learning.ts:50:  const n = normalize(message)
+app/lib/learning.ts:52:  if (!db.find(x => normalize(x.message) === n)) {
+app/lib/learning.ts:54:      message,
+app/lib/learning.ts:64:export function tryLearned(message: string) {
+app/lib/learning.ts:70:      sim: similarity(message, item.message)
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:87:  const n = normalize(message)
+app/lib/learning.ts:88:  const item = db.find(x => normalize(x.message) === n)
+app/lib/learning.ts:95:      message,
+app/lib/learning.ts:107:export function approve(message: string) {
+app/lib/learning.ts:109:  const n = normalize(message)
+app/lib/learning.ts:110:  const item = db.find(x => normalize(x.message) === n)
+app/lib/response-quality.ts:1:export function buildSystemContext(message: string, facts: Record<string, string>, history: string) {
+app/lib/response-quality.ts:7:    `Mensagem atual:\n${message}`
+app/lib/response-quality.ts:11:export function improveLocalAnswer(message: string, answer: string) {
+app/lib/response-quality.ts:12:  const msg = message.toLowerCase()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:32:  message: string,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:39:      message,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:46:      message,
+app/lib/local-memory.ts:36:export function saveMessage(userId: string, message: string) {
+app/lib/local-memory.ts:39:  user.history.push(message)
+app/lib/providers/local.ts:11:function smartReply(message: string, intent: string) {
+app/lib/providers/local.ts:12:  const m = message.toLowerCase()
+app/lib/providers/local.ts:44:export async function localProvider(message: string, userId = 'local') {
+app/lib/providers/local.ts:45:  const text = (message || '').trim()
+app/lib/providers/hybrid.ts:2:export async function hybridProvider(message: string): Promise<string | null> {
+app/lib/orchestrator/policy.ts:17:export function evaluatePolicy(message: string): PolicyResult {
+app/lib/orchestrator/policy.ts:18:  const input = message.toLowerCase()
+app/lib/orchestrator/policy.ts:21:    if (input.includes(pattern)) {
+app/lib/orchestrator/policy.ts:31:    input.includes('delete') ||
+app/lib/orchestrator/policy.ts:32:    input.includes('deletar') ||
+app/lib/orchestrator/policy.ts:33:    input.includes('apagar')
+app/lib/orchestrator/runtime-operational-memory.ts:90:  message?: string
+app/lib/orchestrator/runtime-context.ts:5:  requestId: string
+app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:27:requestId:
+app/lib/orchestrator/runtime-context.ts:28:  input?.requestId ||
+app/lib/orchestrator/runtime-context.ts:35:    userId: input?.userId || 'local',
+app/lib/orchestrator/runtime-context.ts:36:    mode: input?.mode || 'local',
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-context.ts:38:    allowExternal: input?.allowExternal ?? false,
+app/lib/orchestrator/runtime-context.ts:39:    safeMode: input?.safeMode ?? true,
+app/lib/orchestrator/runtime-context.ts:40:    stable: input?.stable ?? true,
+app/lib/orchestrator/runtime-context.ts:41:    healing: input?.healing ?? false,
+app/lib/orchestrator/runtime-context.ts:42:    intent: input?.intent || 'general',
+app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+app/lib/orchestrator/runtime-context.ts:44:    timestamp: input?.timestamp || new Date().toISOString(),
+app/lib/orchestrator/runtime-context.ts:45:    decisions: input?.decisions || [],
+app/lib/orchestrator/runtime-context.ts:46:    trace: input?.trace || [],
+app/lib/orchestrator/runtime-contracts.ts:12:  requestId: string
+app/lib/orchestrator/runtime-contracts.ts:53:  if (!contract.requestId) {
+app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+app/lib/orchestrator/runtime-event-processor.ts:29:      message: 'Alerta runtime processado.',
+app/lib/orchestrator/runtime-self-healing.ts:8:  message: string
+app/lib/orchestrator/runtime-self-healing.ts:21:      message: 'Runtime recovery executado.',
+app/lib/orchestrator/runtime-self-healing.ts:31:      message: 'Runtime audit executado.',
+app/lib/orchestrator/runtime-self-healing.ts:39:    message: 'Runtime mantido estável.',
+app/lib/orchestrator/events.ts:6:  message?: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:21:export function executeRuntimePipeline(input: {
+app/lib/orchestrator/runtime-execution-pipeline.ts:22:  message: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:23:  requestId?: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:32:      requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:38:    requestId: input.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:93:      message: input.message,
+app/lib/orchestrator/runtime-incidents.ts:12:  message: string
+app/lib/orchestrator/runtime-incidents.ts:20:  message: string
+app/lib/orchestrator/runtime-incidents.ts:31:    message
+app/lib/orchestrator/executor.ts:14:  input: ExecutionInput
+app/lib/orchestrator/executor.ts:17:  if (!input.allowed) {
+app/lib/orchestrator/executor.ts:21:      reason: input.reason
+app/lib/orchestrator/executor.ts:27:    provider: input.provider,
+app/lib/orchestrator/executor.ts:28:    reason: input.reason
+app/lib/orchestrator/runtime-action-executor.ts:17:  message: string
+app/lib/orchestrator/runtime-action-executor.ts:37:      message: 'Ação bloqueada pela governança.'
+app/lib/orchestrator/runtime-action-executor.ts:45:    message: `Ação ${action.type} executada com sucesso.`
+app/lib/orchestrator/decision-pipeline.ts:15:export function runDecisionPipeline(message: string, intent = 'general'): PipelineResult {
+app/lib/orchestrator/decision-pipeline.ts:16:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/routing.ts:13:  message = '',
+app/lib/orchestrator/routing.ts:25:  const policy = evaluatePolicy(message)
+app/lib/executive-runtime-context/executive-runtime-context.ts:36:  message: string,
+app/lib/executive-runtime-context/executive-runtime-context.ts:44:    evaluateRuntimeExecutiveState(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/provider.ts:5:  message: string,
+app/lib/provider.ts:16:    return await localProvider(message)
+app/lib/provider.ts:19:  return await localProvider(message)
+app/lib/context.ts:8:  message: string
+app/lib/context.ts:25:export function saveTurn(userId: string, message: string, reply: string) {
+app/lib/context.ts:29:    message,
+app/lib/context.ts:42:    .map(x => `Usuário: ${x.message}\nIASevero: ${x.reply}`)
+app/lib/router.ts:11:export function detectIntent(message: string): Intent {
+app/lib/router.ts:12:  const m = (message || '').toLowerCase()
+app/lib/decision-engine.ts:4:  message: string
+app/lib/decision-engine.ts:9:export function classifyIntent(message: string) {
+app/lib/decision-engine.ts:10:  const msg = message.toLowerCase()
+app/lib/decision-engine.ts:20:export function buildDecision(input: DecisionInput) {
+app/lib/decision-engine.ts:21:  const intent = classifyIntent(input.message)
+app/lib/decision-engine.ts:24:    input.message,
+app/lib/decision-engine.ts:25:    input.facts,
+app/lib/decision-engine.ts:26:    input.history
+app/lib/decision-engine.ts:42:export function validateDecisionAnswer(message: string, answer: string) {
+app/lib/decision-engine.ts:43:  return improveLocalAnswer(message, answer)
