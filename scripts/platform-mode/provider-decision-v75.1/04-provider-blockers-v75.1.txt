@@ -1,0 +1,2 @@
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',

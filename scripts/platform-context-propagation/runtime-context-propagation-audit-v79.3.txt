@@ -1,0 +1,17 @@
+IASevero Runtime Context Propagation Audit v79.3
+
+MISSION
+Map how the Runtime Unified Context propagates across runtime components.
+
+PURPOSE
+Validate whether context propagation provides operational coherence for distributed runtime memory.
+
+TARGETS
+1. Context Origins
+2. Context Propagation
+3. Global Context Map
+
+RULE
+Do not redesign validated architecture.
+Do not introduce a central runtime coordinator.
+Document existing propagation paths only.

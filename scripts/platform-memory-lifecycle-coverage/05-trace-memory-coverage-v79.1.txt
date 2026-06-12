@@ -1,0 +1,32 @@
+app/lib/orchestrator/runtime-context.ts:56:export function appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:76:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:85:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:94:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:105:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:116:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:127:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:137:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:161:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:173:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:207:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:216:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:246:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:260:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-causal-trace.ts:14:  causalSignals: string[]
+app/lib/orchestrator/runtime-causal-trace.ts:22:  const causalSignals: string[] = []
+app/lib/orchestrator/runtime-causal-trace.ts:24:  if (latest?.recovery) causalSignals.push('recovery-active')
+app/lib/orchestrator/runtime-causal-trace.ts:25:  if (latest?.stabilization) causalSignals.push(`stabilization:${latest.stabilization}`)
+app/lib/orchestrator/runtime-causal-trace.ts:26:  if (latest?.awareness) causalSignals.push(`awareness:${latest.awareness}`)
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:31:    causalSignals.length === 0
+app/lib/orchestrator/runtime-causal-trace.ts:33:      : `Estado atual explicado por ${causalSignals.join(' -> ')}.`
+app/lib/orchestrator/runtime-causal-trace.ts:46:    causalSignals,
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:102:      traceRequest.id,
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:153:        traceId: traceResponse.id,

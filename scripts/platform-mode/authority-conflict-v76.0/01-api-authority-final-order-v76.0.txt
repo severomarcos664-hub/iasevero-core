@@ -1,0 +1,13 @@
+33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+37:      return NextResponse.json({
+58:      return NextResponse.json({
+71:    if (!decisionGate.allowed) {
+72:      return NextResponse.json({
+79:    if (!actionPolicy.allowExecution) {
+80:      return NextResponse.json({
+103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+116:if (!executiveAuthority.executionAllowed) {
+117:  return NextResponse.json({
+140:    return NextResponse.json({
+150:        executionAllowed: runtimeMaster.executionAllowed,
+158:    return NextResponse.json({

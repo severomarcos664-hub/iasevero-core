@@ -1,0 +1,23 @@
+IASevero Runtime Memory Lifecycle Coverage v79.1
+
+MISSION
+Expand memory lifecycle discovery using broader file and signal coverage.
+
+WHY
+The v79.0 exact-pattern audit returned zero matches for some lifecycle stages.
+This indicates the lifecycle may be distributed across differently named runtime components.
+
+COVERAGE TARGETS
+1. Memory-related files
+2. Unified Context coverage
+3. Memory signal coverage
+4. History and context coverage
+5. Trace and causal memory coverage
+
+EXPECTED RESULT
+Identify the real implementation surface of operational memory before any integration work.
+
+RULE
+Do not redesign memory architecture.
+Do not create a new memory manager.
+Do not refactor validated runtime paths.

@@ -1,0 +1,55 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:23:  provider: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:71:    provider:
+app/lib/runtime-executive-state/runtime-executive-state.ts:89:      `provider:${provider.provider}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:14:  provider: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:55:    provider:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:81:      `provider:${route.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:27:  provider: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/runtime-core/runtime-contracts.ts:50:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-governance-enforcement.ts:53:      `provider:${gateway.provider}`,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:8:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-cognitive-gateway.ts:46:  const provider: RuntimeProvider =
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:24:  provider: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:70:    provider: governance.provider,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:82:      `provider:${governance.provider}`,
+app/lib/orchestrator/runtime-snapshot.ts:7:  provider: string
+app/lib/orchestrator/runtime-snapshot.ts:49:    provider: 'local',
+app/lib/orchestrator/trace.ts:4:  provider: string
+app/lib/orchestrator/provider-reputation.ts:9:  provider: string,
+app/lib/orchestrator/runtime-context.ts:8:  provider: RuntimeProvider
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-contracts.ts:15:  provider: string
+app/lib/orchestrator/runtime-contracts.ts:45:  provider: string
+app/lib/orchestrator/decision-memory.ts:4:  provider: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-causal-trace.ts:7:    provider: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:39:      provider: latest?.provider ?? null,
+app/lib/orchestrator/hybrid-router.ts:9:      provider: 'local',
+app/lib/orchestrator/hybrid-router.ts:18:    provider: selected.provider,
+app/lib/orchestrator/executor.ts:2:  provider: string
+app/lib/orchestrator/executor.ts:9:  provider: string
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/executor.ts:27:    provider: input.provider,
+app/lib/orchestrator/decision-pipeline.ts:10:  provider: string
+app/lib/orchestrator/decision-pipeline.ts:20:    provider: route.provider,
+app/lib/orchestrator/decision-pipeline.ts:28:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:36:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:44:    provider: execution.provider,
+app/lib/orchestrator/intelligent-selector.ts:12:        provider: name,
+app/lib/orchestrator/intelligent-selector.ts:20:      provider: 'local',
+app/lib/orchestrator/intelligent-selector.ts:26:    provider: ranked[0].provider,
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:20:    provider: runtime.mode,
+app/lib/orchestrator/routing.ts:29:      provider: 'local',
+app/lib/orchestrator/routing.ts:37:      provider: 'local',
+app/lib/orchestrator/routing.ts:45:      provider: 'openai',
+app/lib/orchestrator/routing.ts:53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+app/lib/orchestrator/routing.ts:62:    provider: 'local',
+app/lib/executive-runtime-context/executive-runtime-context.ts:23:  provider: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:64:    provider: provider.provider,
+app/lib/executive-runtime-context/executive-runtime-context.ts:81:      `provider:${provider.provider}`,

@@ -1,0 +1,4 @@
+app/lib/runtime-core/runtime-cognitive-gateway.ts:21:  if (!context.operational) reasoning.push('runtime-not-operational')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
