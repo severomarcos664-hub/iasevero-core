@@ -1,0 +1,23 @@
+IASevero Runtime Domain Registry v95.0
+
+MISSION
+Document the validated operational domains that compose the IASevero runtime platform.
+
+RUNTIME DOMAINS
+
+1. Context Domain
+2. Memory Domain
+3. Decision Domain
+4. Execution Domain
+5. Provider Governance Domain
+6. Signal Domain
+7. Telemetry Domain
+8. Response Domain
+
+DOMAIN POLICY
+- Every runtime component belongs to one validated domain.
+- Domains cooperate through the validated runtime flow.
+- New features must extend an existing domain before creating a new one.
+
+RULE
+The Runtime Domain Registry is the canonical operational classification of the IASevero platform.

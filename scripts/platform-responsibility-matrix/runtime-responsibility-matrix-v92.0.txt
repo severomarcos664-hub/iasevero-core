@@ -1,0 +1,33 @@
+IASevero Runtime Responsibility Matrix v92.0
+
+MISSION
+Consolidate ownership and responsibility across validated runtime layers.
+
+RUNTIME RESPONSIBILITY MATRIX
+
+RuntimeContext
+- Owns operational context.
+
+RuntimeMemory
+- Owns context persistence and lifecycle.
+
+RuntimeDecision
+- Owns decision evaluation and authorization.
+
+RuntimeExecution
+- Owns execution orchestration.
+
+ProviderGovernance
+- Owns provider routing and control.
+
+RuntimeSignals
+- Owns runtime signal propagation.
+
+RuntimeTelemetry
+- Owns operational event recording and feedback.
+
+RuntimeResponse
+- Owns final response composition.
+
+RULE
+New runtime components must integrate into an existing responsibility domain before creating a new one.

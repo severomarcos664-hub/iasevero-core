@@ -1,0 +1,26 @@
+IASevero Runtime Integration Registry v96.0
+
+MISSION
+Document the validated integration relationships between the major IASevero runtime domains.
+
+INTEGRATION MAP
+
+Context -> Memory
+Memory -> Decision
+Decision -> Execution
+Execution -> Provider Governance
+Provider Governance -> Signals
+Signals -> Telemetry
+Telemetry -> Response
+
+INTEGRATION PRINCIPLES
+- Context provides operational state.
+- Memory enriches decisions.
+- Decision authorizes execution.
+- Execution invokes provider governance.
+- Signals distribute execution state.
+- Telemetry records operational evidence.
+- Response assembles validated output.
+
+RULE
+Future runtime evolution should strengthen existing validated integrations before introducing new integration layers.

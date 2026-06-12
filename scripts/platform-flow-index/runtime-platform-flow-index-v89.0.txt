@@ -1,0 +1,36 @@
+IASevero Runtime Platform Flow Index v89.0
+
+MISSION
+Consolidate the validated end-to-end runtime flow into a single operational reference.
+
+VALIDATED PLATFORM FLOW
+
+Context
+  ↓
+Memory
+  ↓
+Decision
+  ↓
+Execution
+  ↓
+Provider
+  ↓
+Signals
+  ↓
+Telemetry / Feedback
+  ↓
+Response
+
+REFERENCE AUDITS
+- v80.0 Runtime Memory & Context Summary
+- v81.0 Runtime Operational Flow Audit
+- v82.0 Runtime Decision Chain Audit
+- v83.0 Runtime Execution Chain Audit
+- v84.0 Runtime Execution Path Coverage
+- v85.0 Runtime Provider Execution Coverage
+- v86.0 Runtime Signal Map Audit
+- v87.0 Runtime Platform Architecture Index
+- v88.0 Runtime Telemetry Feedback Audit
+
+RULE
+Future evolution must extend this validated operational flow before introducing new runtime layers.

@@ -1,0 +1,35 @@
+IASevero Runtime Platform Dependency Index v90.0
+
+MISSION
+Document the validated dependency relationships between major runtime layers.
+
+RUNTIME DEPENDENCY CHAIN
+
+RuntimeContext
+  ↓
+RuntimeMemory
+  ↓
+RuntimeDecision
+  ↓
+RuntimeExecution
+  ↓
+ProviderGovernance
+  ↓
+RuntimeSignals
+  ↓
+RuntimeTelemetry
+  ↓
+RuntimeResponse
+
+DEPENDENCY RULES
+- RuntimeContext is the operational source.
+- RuntimeMemory extends operational context.
+- RuntimeDecision consumes validated context.
+- RuntimeExecution materializes decisions.
+- ProviderGovernance controls provider selection.
+- RuntimeSignals propagate execution state.
+- RuntimeTelemetry records operational events.
+- RuntimeResponse delivers the final output.
+
+RULE
+Future runtime components must integrate into this validated dependency chain.

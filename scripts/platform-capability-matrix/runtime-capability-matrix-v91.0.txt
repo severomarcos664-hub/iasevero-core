@@ -1,0 +1,41 @@
+IASevero Runtime Capability Matrix v91.0
+
+MISSION
+Document the validated responsibilities of each major runtime layer.
+
+RUNTIME CAPABILITIES
+
+RuntimeContext
+- Operational context propagation
+- Unified runtime state
+
+RuntimeMemory
+- Context persistence
+- Memory lifecycle management
+
+RuntimeDecision
+- Decision analysis
+- Execution authorization
+
+RuntimeExecution
+- Execution orchestration
+- Runtime action dispatch
+
+ProviderGovernance
+- Provider selection
+- Provider execution control
+
+RuntimeSignals
+- Runtime signal propagation
+- Operational state distribution
+
+RuntimeTelemetry
+- Event recording
+- Feedback integration
+
+RuntimeResponse
+- Response assembly
+- Final output delivery
+
+RULE
+Future runtime capabilities should extend existing validated layers before creating new architectural domains.
