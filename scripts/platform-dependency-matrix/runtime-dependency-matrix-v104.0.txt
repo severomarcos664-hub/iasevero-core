@@ -1,0 +1,47 @@
+IASevero Runtime Dependency Matrix v104.0
+
+MISSION
+Document the canonical dependency relationships between IASevero runtime domains.
+
+CANONICAL DEPENDENCY CHAIN
+
+RuntimeContext
+  depends on: Request Input
+  provides to: RuntimeMemory, RuntimeDecision
+
+RuntimeMemory
+  depends on: RuntimeContext
+  provides to: RuntimeDecision
+
+RuntimeDecision
+  depends on: RuntimeContext, RuntimeMemory
+  provides to: RuntimeExecution
+
+RuntimeExecution
+  depends on: RuntimeDecision
+  provides to: ProviderGovernance, RuntimeSignals
+
+ProviderGovernance
+  depends on: RuntimeExecution, RuntimeDecision
+  provides to: RuntimeSignals, RuntimeTelemetry
+
+RuntimeSignals
+  depends on: RuntimeExecution, ProviderGovernance
+  provides to: RuntimeTelemetry
+
+RuntimeTelemetry
+  depends on: RuntimeSignals, RuntimeExecution, ProviderGovernance
+  provides to: RuntimeResponse
+
+RuntimeResponse
+  depends on: RuntimeTelemetry, RuntimeExecution, RuntimeDecision
+  provides to: Client Output
+
+DEPENDENCY RULES
+- Dependencies must follow the canonical runtime flow.
+- New dependencies must strengthen an existing validated domain.
+- Cross-domain dependencies must be documented before implementation.
+- Parallel authority paths are not allowed without explicit audit evidence.
+
+STATUS
+Runtime dependency matrix prepared for validation.
