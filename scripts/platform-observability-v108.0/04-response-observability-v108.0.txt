@@ -1,0 +1,88 @@
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:131:      'chat.response.generated',
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:5:export function evaluateRuntimeCognitiveResponseProfiler() {
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:9:  const responseProfile =
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:30:    responseProfile,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:40:      responseProfile ===
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:46:      `profile:${responseProfile}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:3:export type RuntimeAdaptiveResponse = {
+app/lib/runtime-core/runtime-adaptive-response.ts:5:  source: 'runtime-adaptive-response'
+app/lib/runtime-core/runtime-adaptive-response.ts:20:export function evaluateRuntimeAdaptiveResponse(): RuntimeAdaptiveResponse {
+app/lib/runtime-core/runtime-adaptive-response.ts:26:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:40:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:54:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:68:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:81:    source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-action-policy-engine.ts:2:  evaluateRuntimeAutonomousResponse,
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:28:    response.autonomousAction === 'recover'
+app/lib/runtime-core/runtime-action-policy-engine.ts:31:    response.autonomousAction === 'monitor'
+app/lib/runtime-core/runtime-action-policy-engine.ts:38:    action: response.autonomousAction,
+app/lib/runtime-core/runtime-action-policy-engine.ts:44:      response.autonomousAction === 'continue' ||
+app/lib/runtime-core/runtime-action-policy-engine.ts:45:      response.autonomousAction === 'monitor',
+app/lib/runtime-core/runtime-action-policy-engine.ts:48:      response.autonomousAction === 'continue',
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:66:      `allowTools:${response.autonomousAction === 'continue' || response.autonomousAction === 'monitor'}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:45:      title: 'Synthesize final response',
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:26:  const adaptive = evaluateRuntimeAdaptiveResponse()
+app/lib/runtime-core/runtime-event-stream-engine.ts:9:  | 'response.generated'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:13:export type RuntimeAutonomousResponseReport = {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:14:  responseId: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:28:export function evaluateRuntimeAutonomousResponse():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:29:RuntimeAutonomousResponseReport {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:44:    responseId: `response_${Date.now()}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:117:      title: 'Synthesize final operational response',
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:51:    responseIntensity: bridge.responseIntensity,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:69:      `intensity:${bridge.responseIntensity}`,
+app/lib/learning.ts:8:  response?: string
+app/lib/learning.ts:41:    .filter(i => i.response || i.uses < 3)
+app/lib/learning.ts:67:    .filter(x => x.approved && x.response)
+app/lib/learning.ts:82:  return best.item.response || null
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:91:    item.response = response
+app/lib/learning.ts:96:      response,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:2:  evaluateRuntimeCognitiveResponseProfiler,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:7:    evaluateRuntimeCognitiveResponseProfiler()
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:22:  const responseIntensity =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:36:    responseIntensity,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:50:      `intensity:${responseIntensity}`,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:10:    execution.responseIntensity === 'high'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:12:      : execution.responseIntensity === 'medium'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:34:    responseIntensity:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:35:      execution.responseIntensity,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:57:      `intensity:${execution.responseIntensity}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'

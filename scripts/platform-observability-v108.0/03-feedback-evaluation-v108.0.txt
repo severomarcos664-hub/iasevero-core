@@ -1,0 +1,57 @@
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:16:    evaluationScore: matrix.governanceScore,
+app/lib/runtime-core/runtime-evaluation-engine.ts:13:export type RuntimeEvaluationReport = {
+app/lib/runtime-core/runtime-evaluation-engine.ts:14:  evaluationId: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:16:  source: 'runtime-evaluation-engine'
+app/lib/runtime-core/runtime-evaluation-engine.ts:32:RuntimeEvaluationReport {
+app/lib/runtime-core/runtime-evaluation-engine.ts:87:    evaluationId: `eval_${Date.now()}`,
+app/lib/runtime-core/runtime-evaluation-engine.ts:89:    source: 'runtime-evaluation-engine',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:9:  evaluationScore: number;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:32:    input.evaluationScore < 50;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:36:    input.evaluationScore < 70 ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:42:    input.evaluationScore < 85;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:56:    mode === 'normal' && input.evaluationScore >= 90 ? 'aggressive' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:86:      `evaluation:${input.evaluationScore}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:5:export type RuntimeFeedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:11:export type RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:22:export function integrateRuntimeFeedback():
+app/lib/runtime-core/runtime-feedback-integration.ts:23:RuntimeFeedbackIntegration {
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:40:  const result: RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-learning-signals.ts:3:} from './runtime-evaluation-engine'
+app/lib/runtime-core/runtime-learning-signals.ts:26:  const evaluation =
+app/lib/runtime-core/runtime-learning-signals.ts:30:    evaluation.overallScore < 85
+app/lib/runtime-core/runtime-learning-signals.ts:38:      evaluation.quality,
+app/lib/runtime-core/runtime-learning-signals.ts:41:      evaluation.overallScore,
+app/lib/runtime-core/runtime-learning-signals.ts:44:      evaluation.overallScore >= 90
+app/lib/runtime-core/runtime-learning-signals.ts:46:        : evaluation.overallScore >= 70
+app/lib/runtime-core/runtime-learning-signals.ts:53:      `quality:${evaluation.quality}`,
+app/lib/runtime-core/runtime-learning-signals.ts:54:      `overall:${evaluation.overallScore}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:11:export interface RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:37:RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()
