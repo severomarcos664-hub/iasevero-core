@@ -1,0 +1,352 @@
+app/runtime/contracts/runtime-capability-contracts.ts:26:    module: 'runtime-telemetry',
+app/runtime/runtime-manifest.ts:9:    'runtime-telemetry',
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:10:    telemetryEvents.push(event)
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:15:  return telemetryEvents
+app/runtime/capabilities/runtime-capability-registry.ts:18:    'emit-telemetry',
+app/runtime/central-runtime-manifest.ts:29:      'runtime-telemetry',
+app/runtime/central-runtime-manifest.ts:32:      'trace',
+app/runtime/runtime-registry.ts:19:    name: 'runtime-telemetry',
+app/console/page.tsx:53:        data.response ||
+app/api/runtime/telemetry/route.ts:11:    source: 'runtime-live-telemetry',
+app/api/runtime/telemetry/route.ts:14:    telemetry: {
+app/api/chat/route.ts:10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:100:    const traceRuntime = createRuntimeTraceNode(
+app/api/chat/route.ts:102:      traceRequest.id,
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:131:      'chat.response.generated',
+app/api/chat/route.ts:132:      traceRuntime.id,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:9:  const responseProfile =
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:30:    responseProfile,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:40:      responseProfile ===
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:46:      `profile:${responseProfile}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:5:  source: 'runtime-adaptive-response'
+app/lib/runtime-core/runtime-adaptive-response.ts:26:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:40:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:54:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:68:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:81:    source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:28:    response.autonomousAction === 'recover'
+app/lib/runtime-core/runtime-action-policy-engine.ts:31:    response.autonomousAction === 'monitor'
+app/lib/runtime-core/runtime-action-policy-engine.ts:38:    action: response.autonomousAction,
+app/lib/runtime-core/runtime-action-policy-engine.ts:44:      response.autonomousAction === 'continue' ||
+app/lib/runtime-core/runtime-action-policy-engine.ts:45:      response.autonomousAction === 'monitor',
+app/lib/runtime-core/runtime-action-policy-engine.ts:48:      response.autonomousAction === 'continue',
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:66:      `allowTools:${response.autonomousAction === 'continue' || response.autonomousAction === 'monitor'}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:45:      title: 'Synthesize final response',
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:29:      : telemetry.warningEvents > 5
+app/lib/runtime-core/runtime-severity-governance.ts:31:        : telemetry.warningEvents > 2
+app/lib/runtime-core/runtime-severity-governance.ts:33:          : telemetry.infoEvents > 10
+app/lib/runtime-core/runtime-severity-governance.ts:66:      ...telemetry.reasoning,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:16:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-execution-orchestrator.ts:47:    telemetryRequired: true,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:3:} from './runtime-learning-signals'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:29:    signal.executionScore >= 90
+app/lib/runtime-core/runtime-optimization-intelligence.ts:31:      : signal.executionScore >= 75
+app/lib/runtime-core/runtime-optimization-intelligence.ts:33:        : signal.executionScore >= 50
+app/lib/runtime-core/runtime-optimization-intelligence.ts:55:    executionScore: signal.executionScore,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:68:      ...signal.reasoning,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:4:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:9:  | 'response.generated'
+app/lib/runtime-core/runtime-event-stream-engine.ts:10:  | 'telemetry.persisted'
+app/lib/runtime-core/runtime-persistence-fabric.ts:12:    | 'telemetry'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:5:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:36:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:14:  responseId: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:44:    responseId: `response_${Date.now()}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:117:      title: 'Synthesize final operational response',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:24:  signals: string[];
+app/lib/runtime-core/runtime-adaptive-coordination.ts:84:    signals: [
+app/lib/runtime-core/runtime-timeline-engine.ts:2:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-timeline-engine.ts:32:    telemetry.map(event => ({
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-decision-loop.ts:15:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-decision-loop.ts:48:    telemetryRequired: execution.telemetryRequired,
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:19:    id: `trace_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+app/lib/runtime-core/runtime-learning-signals.ts:6:  signalId: string
+app/lib/runtime-core/runtime-learning-signals.ts:8:  source: 'runtime-learning-signals'
+app/lib/runtime-core/runtime-learning-signals.ts:33:    signalId: `signal_${Date.now()}`,
+app/lib/runtime-core/runtime-learning-signals.ts:35:    source: 'runtime-learning-signals',
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:51:    responseIntensity: bridge.responseIntensity,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:69:      `intensity:${bridge.responseIntensity}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/learning.ts:8:  response?: string
+app/lib/learning.ts:41:    .filter(i => i.response || i.uses < 3)
+app/lib/learning.ts:67:    .filter(x => x.approved && x.response)
+app/lib/learning.ts:82:  return best.item.response || null
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:91:    item.response = response
+app/lib/learning.ts:96:      response,
+app/lib/orchestrator/runtime-architecture-index.ts:13:  | 'telemetry'
+app/lib/orchestrator/runtime-architecture-index.ts:113:    file: 'runtime-telemetry.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:114:    layer: 'telemetry',
+app/lib/orchestrator/audit-trail.ts:2:import { getRecentTraces } from './trace'
+app/lib/orchestrator/audit-trail.ts:10:    traces: getRecentTraces()
+app/lib/orchestrator/runtime-operational-metrics.ts:5:  traceCount: number
+app/lib/orchestrator/runtime-guardian.ts:10:    traces: metrics.traceCount,
+app/lib/orchestrator/runtime-guardian.ts:16:    exceeded.traces ||
+app/lib/orchestrator/trace.ts:10:const traces: RuntimeTrace[] = []
+app/lib/orchestrator/trace.ts:12:export function addTrace(trace: RuntimeTrace) {
+app/lib/orchestrator/trace.ts:13:  traces.push(trace)
+app/lib/orchestrator/trace.ts:15:  if (traces.length > 200) {
+app/lib/orchestrator/trace.ts:16:    traces.shift()
+app/lib/orchestrator/trace.ts:21:    JSON.stringify(trace)
+app/lib/orchestrator/trace.ts:26:  return traces.slice(-20)
+app/lib/orchestrator/runtime-context.ts:17:  trace: string[]
+app/lib/orchestrator/runtime-context.ts:46:    trace: input?.trace || [],
+app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+app/lib/orchestrator/runtime-context.ts:64:    trace:
+app/lib/orchestrator/runtime-dependency-validator.ts:30:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:47:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:64:  telemetry: [
+app/lib/orchestrator/runtime-dependency-validator.ts:70:    'telemetry',
+app/lib/orchestrator/runtime-limiter.ts:19:  traces: number
+app/lib/orchestrator/runtime-limiter.ts:24:    traces: data.traces > limits.maxTraces,
+app/lib/orchestrator/runtime-contracts.ts:99:      contract: 'telemetry',
+app/lib/orchestrator/runtime-contracts.ts:106:    contract: 'telemetry',
+app/lib/orchestrator/metrics.ts:3:import { getRecentTraces } from './trace'
+app/lib/orchestrator/metrics.ts:9:  const traces = getRecentTraces()
+app/lib/orchestrator/metrics.ts:17:    traceCount: traces.length,
+app/lib/orchestrator/runtime-decision-engine.ts:14:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:71:    trace: []
+app/lib/orchestrator/diagnostics.ts:22:  if (metrics.traceCount > 500) {
+app/lib/orchestrator/diagnostics.ts:23:    issues.push('Volume elevado de traces.')
+app/lib/orchestrator/decision-pipeline.ts:6:import { addTrace } from './trace'
+app/lib/orchestrator/runtime-brain-matrix.ts:4:import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:22:  const responseIntensity =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:36:    responseIntensity,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:50:      `intensity:${responseIntensity}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:14:  signalId: string
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:20:  signalState: RuntimeSignalState
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:21:  signalAction: RuntimeSignalAction
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:37:  signalClarity: number
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:38:  signalStability: number
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:10:    execution.responseIntensity === 'high'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:12:      : execution.responseIntensity === 'medium'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:34:    responseIntensity:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:35:      execution.responseIntensity,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:57:      `intensity:${execution.responseIntensity}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/api/runtime/telemetry/route.ts:11:    source: 'runtime-live-telemetry',
+app/api/runtime/telemetry/route.ts:14:    telemetry: {
+app/api/chat/route.ts:10:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:89:    const traceRequest = createRuntimeTraceNode(
+app/api/chat/route.ts:100:    const traceRuntime = createRuntimeTraceNode(
+app/api/chat/route.ts:102:      traceRequest.id,
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:131:      'chat.response.generated',
+app/api/chat/route.ts:132:      traceRuntime.id,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:9:  const responseProfile =
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:30:    responseProfile,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:40:      responseProfile ===
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:46:      `profile:${responseProfile}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:5:  source: 'runtime-adaptive-response'
+app/lib/runtime-core/runtime-adaptive-response.ts:26:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:40:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:54:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:68:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:81:    source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:28:    response.autonomousAction === 'recover'
+app/lib/runtime-core/runtime-action-policy-engine.ts:31:    response.autonomousAction === 'monitor'
+app/lib/runtime-core/runtime-action-policy-engine.ts:38:    action: response.autonomousAction,
+app/lib/runtime-core/runtime-action-policy-engine.ts:44:      response.autonomousAction === 'continue' ||
+app/lib/runtime-core/runtime-action-policy-engine.ts:45:      response.autonomousAction === 'monitor',
+app/lib/runtime-core/runtime-action-policy-engine.ts:48:      response.autonomousAction === 'continue',
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:66:      `allowTools:${response.autonomousAction === 'continue' || response.autonomousAction === 'monitor'}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:45:      title: 'Synthesize final response',
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-severity-governance.ts:27:    telemetry.criticalEvents > 0
+app/lib/runtime-core/runtime-severity-governance.ts:29:      : telemetry.warningEvents > 5
+app/lib/runtime-core/runtime-severity-governance.ts:31:        : telemetry.warningEvents > 2
+app/lib/runtime-core/runtime-severity-governance.ts:33:          : telemetry.infoEvents > 10
+app/lib/runtime-core/runtime-severity-governance.ts:66:      ...telemetry.reasoning,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:16:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-execution-orchestrator.ts:47:    telemetryRequired: true,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:3:} from './runtime-learning-signals'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:29:    signal.executionScore >= 90
+app/lib/runtime-core/runtime-optimization-intelligence.ts:31:      : signal.executionScore >= 75
+app/lib/runtime-core/runtime-optimization-intelligence.ts:33:        : signal.executionScore >= 50
+app/lib/runtime-core/runtime-optimization-intelligence.ts:55:    executionScore: signal.executionScore,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:68:      ...signal.reasoning,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:4:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:9:  | 'response.generated'
+app/lib/runtime-core/runtime-event-stream-engine.ts:10:  | 'telemetry.persisted'
+app/lib/runtime-core/runtime-persistence-fabric.ts:12:    | 'telemetry'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:5:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:36:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:14:  responseId: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:44:    responseId: `response_${Date.now()}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:117:      title: 'Synthesize final operational response',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:24:  signals: string[];
+app/lib/runtime-core/runtime-adaptive-coordination.ts:84:    signals: [
+app/lib/runtime-core/runtime-timeline-engine.ts:2:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-timeline-engine.ts:32:    telemetry.map(event => ({
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-decision-loop.ts:15:  telemetryRequired: boolean
+app/lib/runtime-core/runtime-decision-loop.ts:48:    telemetryRequired: execution.telemetryRequired,
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:19:    id: `trace_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+app/lib/runtime-core/runtime-learning-signals.ts:6:  signalId: string
+app/lib/runtime-core/runtime-learning-signals.ts:8:  source: 'runtime-learning-signals'
+app/lib/runtime-core/runtime-learning-signals.ts:33:    signalId: `signal_${Date.now()}`,
+app/lib/runtime-core/runtime-learning-signals.ts:35:    source: 'runtime-learning-signals',
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:51:    responseIntensity: bridge.responseIntensity,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:69:      `intensity:${bridge.responseIntensity}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/learning.ts:8:  response?: string
+app/lib/learning.ts:41:    .filter(i => i.response || i.uses < 3)
+app/lib/learning.ts:67:    .filter(x => x.approved && x.response)
+app/lib/learning.ts:82:  return best.item.response || null
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:91:    item.response = response
+app/lib/learning.ts:96:      response,
+app/lib/orchestrator/runtime-architecture-index.ts:13:  | 'telemetry'
+app/lib/orchestrator/runtime-architecture-index.ts:113:    file: 'runtime-telemetry.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:114:    layer: 'telemetry',
+app/lib/orchestrator/audit-trail.ts:2:import { getRecentTraces } from './trace'
+app/lib/orchestrator/audit-trail.ts:10:    traces: getRecentTraces()
+app/lib/orchestrator/runtime-operational-metrics.ts:5:  traceCount: number
+app/lib/orchestrator/runtime-guardian.ts:10:    traces: metrics.traceCount,
+app/lib/orchestrator/runtime-guardian.ts:16:    exceeded.traces ||
+app/lib/orchestrator/trace.ts:10:const traces: RuntimeTrace[] = []
+app/lib/orchestrator/trace.ts:12:export function addTrace(trace: RuntimeTrace) {
+app/lib/orchestrator/trace.ts:13:  traces.push(trace)
+app/lib/orchestrator/trace.ts:15:  if (traces.length > 200) {
+app/lib/orchestrator/trace.ts:16:    traces.shift()
+app/lib/orchestrator/trace.ts:21:    JSON.stringify(trace)
+app/lib/orchestrator/trace.ts:26:  return traces.slice(-20)
+app/lib/orchestrator/runtime-context.ts:17:  trace: string[]
+app/lib/orchestrator/runtime-context.ts:46:    trace: input?.trace || [],
+app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+app/lib/orchestrator/runtime-context.ts:64:    trace:
+app/lib/orchestrator/runtime-dependency-validator.ts:30:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:47:    'telemetry',
+app/lib/orchestrator/runtime-dependency-validator.ts:64:  telemetry: [
+app/lib/orchestrator/runtime-dependency-validator.ts:70:    'telemetry',
+app/lib/orchestrator/runtime-limiter.ts:19:  traces: number
+app/lib/orchestrator/runtime-limiter.ts:24:    traces: data.traces > limits.maxTraces,
+app/lib/orchestrator/runtime-contracts.ts:99:      contract: 'telemetry',
+app/lib/orchestrator/runtime-contracts.ts:106:    contract: 'telemetry',
+app/lib/orchestrator/metrics.ts:3:import { getRecentTraces } from './trace'
+app/lib/orchestrator/metrics.ts:9:  const traces = getRecentTraces()
+app/lib/orchestrator/metrics.ts:17:    traceCount: traces.length,
+app/lib/orchestrator/runtime-decision-engine.ts:14:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:71:    trace: []
+app/lib/orchestrator/diagnostics.ts:22:  if (metrics.traceCount > 500) {
+app/lib/orchestrator/diagnostics.ts:23:    issues.push('Volume elevado de traces.')
+app/lib/orchestrator/decision-pipeline.ts:6:import { addTrace } from './trace'
+app/lib/orchestrator/runtime-brain-matrix.ts:4:import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:22:  const responseIntensity =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:36:    responseIntensity,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:50:      `intensity:${responseIntensity}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:14:  signalId: string
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:20:  signalState: RuntimeSignalState
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:21:  signalAction: RuntimeSignalAction
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:37:  signalClarity: number
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:38:  signalStability: number
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:10:    execution.responseIntensity === 'high'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:12:      : execution.responseIntensity === 'medium'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:34:    responseIntensity:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:35:      execution.responseIntensity,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:57:      `intensity:${execution.responseIntensity}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
