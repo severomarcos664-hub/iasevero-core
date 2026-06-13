@@ -1,0 +1,24 @@
+IASevero Runtime Dependency Evidence Matrix v104.1
+
+MISSION
+Attach implementation evidence to the canonical runtime dependency matrix.
+
+OBJECTIVE
+Strengthen the v104.0 Dependency Matrix with concrete source-level evidence for each operational domain.
+
+EVIDENCE DOMAINS
+1. Context Dependency Evidence
+2. Memory Dependency Evidence
+3. Decision Dependency Evidence
+4. Execution Dependency Evidence
+5. Provider Dependency Evidence
+6. Signal / Telemetry / Response Dependency Evidence
+
+DEPENDENCY EVIDENCE RULES
+- Every canonical dependency must have implementation evidence.
+- Every future dependency must be documented before expansion.
+- Runtime dependencies must follow the validated platform constitution.
+- No hidden cross-domain dependency should remain undocumented.
+
+STATUS
+Runtime dependency evidence matrix prepared for validation.

@@ -1,0 +1,175 @@
+app/lib/context-smart.ts:1:import { contextSummary } from './context'
+app/lib/context-smart.ts:4:  const raw = contextSummary(userId)
+app/lib/context-smart.ts:20:  if (lower.includes('memoria') || lower.includes('contexto')) {
+app/lib/context-smart.ts:21:    insights.push('Usuário interessado em memória e contexto')
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:43:  const context =
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:47:    !context.executionAllowed
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:49:      : context.executiveState === 'protected'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:60:      : context.executionPriority === 'high'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:72:    executionAllowed: context.executionAllowed,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:73:    executiveState: context.executiveState,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:75:    allowExternal: context.allowExternal,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:79:    executionRoute: context.executionRoute,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:88:      `state:${context.executiveState}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:90:      `external:${context.allowExternal}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:93:      `route:${context.executionRoute}`,
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/runtime-core/runtime-execution-graph-engine.ts:21:      title: 'Analyze runtime context',
+app/lib/runtime-core/runtime-unified-context.ts:3:export type RuntimeUnifiedContext = {
+app/lib/runtime-core/runtime-unified-context.ts:5:  source: 'runtime-unified-context'
+app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+app/lib/runtime-core/runtime-unified-context.ts:18:    source: 'runtime-unified-context',
+app/lib/runtime-core/runtime-task-planner.ts:93:      title: 'Analyze request and runtime context',
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:21:  if (!context.operational) reasoning.push('runtime-not-operational')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:26:  const memory = context.brain.operationalMemory
+app/lib/zero-cost-brain.ts:2:export function localIntelligence(message: string, context: string): string {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:37:  const context =
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:52:    context.executionAllowed &&
+app/lib/providers/local.ts:3:import { smartContext } from '../context-smart';
+app/lib/providers/local.ts:9:import { contextSummary, saveTurn } from '../context'
+app/lib/providers/local.ts:57:  if (text.toLowerCase() === 'contexto') {
+app/lib/providers/local.ts:58:    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+app/lib/providers/local.ts:87:  const intelligent = localIntelligence(text, contextSummary(userId) || '')
+app/lib/orchestrator/runtime-graph-registry.ts:5:    module: 'RuntimeContext',
+app/lib/orchestrator/runtime-graph-registry.ts:11:      'RuntimeContext'
+app/lib/orchestrator/runtime-graph-registry.ts:17:      'RuntimeContext'
+app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-architecture-index.ts:35:    name: 'RuntimeContext',
+app/lib/orchestrator/runtime-architecture-index.ts:36:    file: 'runtime-context.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:38:    responsibility: 'manter contexto transitório da execução atual',
+app/lib/orchestrator/runtime-architecture-index.ts:45:    responsibility: 'avaliar política baseada no contexto runtime',
+app/lib/orchestrator/runtime-architecture-index.ts:73:    responsibility: 'governar modo de memória e janela de contexto',
+app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-policy.ts:24:  if (context.allowExternal) {
+app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-execution-control.ts:15:  if (!context.stable) {
+app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-context.ts:4:export type RuntimeContext = {
+app/lib/orchestrator/runtime-context.ts:19:    source: 'runtime-context'
+app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+app/lib/orchestrator/runtime-context.ts:48:      source: 'runtime-context',
+app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+app/lib/orchestrator/runtime-context.ts:59:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+app/lib/orchestrator/runtime-context.ts:63:    ...context,
+app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:75:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:76:  lastRuntimeState = context
+app/lib/orchestrator/runtime-context.ts:77:  return context
+app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-provider-governor.ts:14:  if (!context.stable) {
+app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:49:    context,
+app/lib/orchestrator/runtime-execution-pipeline.ts:54:    context,
+app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:62:  let context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:76:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:81:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:85:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:86:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:90:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:94:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:95:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:99:const executionControl = evaluateExecutionControl(context)
+app/lib/orchestrator/runtime-decision-engine.ts:105:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:106:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:110:const budget = evaluateRuntimeBudget(context)
+app/lib/orchestrator/runtime-decision-engine.ts:116:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:117:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:127:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:128:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:132:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:137:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:138:    context,
+app/lib/orchestrator/runtime-decision-engine.ts:139:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:143:    runtimeHealth: context.stable ? 'healthy' : 'degraded',
+app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimePressure: context.safeMode ? 60 : 20,
+app/lib/orchestrator/runtime-decision-engine.ts:148:    degradationState: !context.stable || !executionControl.allowed,
+app/lib/orchestrator/runtime-decision-engine.ts:149:    recoveryMode: !context.stable
+app/lib/orchestrator/runtime-decision-engine.ts:152:  if (!context.stable) {
+app/lib/orchestrator/runtime-decision-engine.ts:161:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:162:    context,
+app/lib/orchestrator/runtime-decision-engine.ts:173:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:174:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:179:if (!context.stable) {
+app/lib/orchestrator/runtime-decision-engine.ts:207:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:208:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:212:const enforcement = enforceRuntimeExecution(context, governance)
+app/lib/orchestrator/runtime-decision-engine.ts:216:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:217:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:246:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:247:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:260:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:261:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:285:    context,
+app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-memory.ts:6:  contextWindow: number
+app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-memory.ts:14:  if (!context.stable) {
+app/lib/orchestrator/runtime-memory.ts:18:      contextWindow: 2,
+app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+app/lib/orchestrator/runtime-memory.ts:28:      contextWindow: 4,
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-memory.ts:38:      contextWindow: 12,
+app/lib/orchestrator/runtime-memory.ts:47:    contextWindow: 24,
+app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:31:  if (!context.stable) {
+app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:14:  contextId: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:16:  source: 'executive-runtime-context'
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:55:    contextId: `executive-context-${Date.now()}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:57:    source: 'executive-runtime-context',
+app/lib/context.ts:4:const FILE = path.join(process.cwd(), 'context.json')
+app/lib/context.ts:36:export function contextSummary(userId: string) {
+app/lib/decision-engine.ts:23:  const context = buildSystemContext(
+app/lib/decision-engine.ts:31:    context,
