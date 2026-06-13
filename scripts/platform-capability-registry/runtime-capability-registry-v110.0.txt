@@ -1,0 +1,30 @@
+IASevero Runtime Capability Registry v110.0
+
+MISSION
+Create the canonical registry of runtime capabilities and operational signals.
+
+OBJECTIVES
+- Identify implemented runtime capabilities.
+- Associate capabilities with validated operational domains.
+- Identify signal producers and signal consumers.
+- Distinguish active capabilities from future infrastructure.
+- Preserve a canonical platform capability inventory.
+
+CAPABILITY DOMAINS
+1. Context Management
+2. Memory Management
+3. Decision Intelligence
+4. Execution Control
+5. Provider Governance
+6. Signal Processing
+7. Telemetry & Observability
+8. Response Generation
+
+REGISTRY RULES
+- Every capability must belong to a validated domain.
+- Every operational signal must have an identified producer.
+- Every consumed signal must have a documented source.
+- Future capabilities must not break the canonical architecture.
+
+STATUS
+Runtime capability registry prepared for validation.
