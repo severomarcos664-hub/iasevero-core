@@ -1,0 +1,30 @@
+IASevero Runtime Capability & Signal Integration Review v111.0
+
+MISSION
+Validate the integration between validated runtime capabilities and operational signals.
+
+OBJECTIVES
+- Confirm capability ownership.
+- Confirm signal producers and consumers.
+- Verify observability integration.
+- Preserve canonical runtime architecture.
+- Prepare the platform for future adaptive intelligence expansion.
+
+VALIDATED DOMAINS
+1. RuntimeContext
+2. RuntimeMemory
+3. RuntimeDecision
+4. RuntimeExecution
+5. ProviderGovernance
+6. RuntimeSignals
+7. RuntimeTelemetry
+8. RuntimeResponse
+
+REVIEW RULES
+- No capability should exist without a validated domain.
+- No operational signal should lack a producer and a consumer.
+- Observability must remain integrated with governance.
+- Future evolution must preserve architectural coherence.
+
+STATUS
+Runtime capability integration review prepared for validation.

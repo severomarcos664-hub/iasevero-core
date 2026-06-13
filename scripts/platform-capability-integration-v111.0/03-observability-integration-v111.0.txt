@@ -1,0 +1,124 @@
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:131:      'chat.response.generated',
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:9:  const responseProfile =
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:30:    responseProfile,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:40:      responseProfile ===
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:46:      `profile:${responseProfile}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:16:    evaluationScore: matrix.governanceScore,
+app/lib/runtime-core/runtime-adaptive-response.ts:5:  source: 'runtime-adaptive-response'
+app/lib/runtime-core/runtime-adaptive-response.ts:26:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:40:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:54:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:68:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:81:    source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:28:    response.autonomousAction === 'recover'
+app/lib/runtime-core/runtime-action-policy-engine.ts:31:    response.autonomousAction === 'monitor'
+app/lib/runtime-core/runtime-action-policy-engine.ts:38:    action: response.autonomousAction,
+app/lib/runtime-core/runtime-action-policy-engine.ts:44:      response.autonomousAction === 'continue' ||
+app/lib/runtime-core/runtime-action-policy-engine.ts:45:      response.autonomousAction === 'monitor',
+app/lib/runtime-core/runtime-action-policy-engine.ts:48:      response.autonomousAction === 'continue',
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:66:      `allowTools:${response.autonomousAction === 'continue' || response.autonomousAction === 'monitor'}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:45:      title: 'Synthesize final response',
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:9:  | 'response.generated'
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:5:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-correlation.ts:36:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-telemetry-correlation.ts:56:      `correlations:${uniqueCorrelations}`,
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:14:  evaluationId: string
+app/lib/runtime-core/runtime-evaluation-engine.ts:16:  source: 'runtime-evaluation-engine'
+app/lib/runtime-core/runtime-evaluation-engine.ts:87:    evaluationId: `eval_${Date.now()}`,
+app/lib/runtime-core/runtime-evaluation-engine.ts:89:    source: 'runtime-evaluation-engine',
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:14:  responseId: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:44:    responseId: `response_${Date.now()}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:117:      title: 'Synthesize final operational response',
+app/lib/runtime-core/runtime-adaptive-coordination.ts:9:  evaluationScore: number;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:32:    input.evaluationScore < 50;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:36:    input.evaluationScore < 70 ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:42:    input.evaluationScore < 85;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:56:    mode === 'normal' && input.evaluationScore >= 90 ? 'aggressive' :
+app/lib/runtime-core/runtime-adaptive-coordination.ts:86:      `evaluation:${input.evaluationScore}`,
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-learning-signals.ts:3:} from './runtime-evaluation-engine'
+app/lib/runtime-core/runtime-learning-signals.ts:26:  const evaluation =
+app/lib/runtime-core/runtime-learning-signals.ts:30:    evaluation.overallScore < 85
+app/lib/runtime-core/runtime-learning-signals.ts:38:      evaluation.quality,
+app/lib/runtime-core/runtime-learning-signals.ts:41:      evaluation.overallScore,
+app/lib/runtime-core/runtime-learning-signals.ts:44:      evaluation.overallScore >= 90
+app/lib/runtime-core/runtime-learning-signals.ts:46:        : evaluation.overallScore >= 70
+app/lib/runtime-core/runtime-learning-signals.ts:53:      `quality:${evaluation.quality}`,
+app/lib/runtime-core/runtime-learning-signals.ts:54:      `overall:${evaluation.overallScore}`,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:51:    responseIntensity: bridge.responseIntensity,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:69:      `intensity:${bridge.responseIntensity}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/learning.ts:8:  response?: string
+app/lib/learning.ts:41:    .filter(i => i.response || i.uses < 3)
+app/lib/learning.ts:67:    .filter(x => x.approved && x.response)
+app/lib/learning.ts:82:  return best.item.response || null
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:91:    item.response = response
+app/lib/learning.ts:96:      response,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:22:  const responseIntensity =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:36:    responseIntensity,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:50:      `intensity:${responseIntensity}`,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:10:    execution.responseIntensity === 'high'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:12:      : execution.responseIntensity === 'medium'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:34:    responseIntensity:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:35:      execution.responseIntensity,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:57:      `intensity:${execution.responseIntensity}`,
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
