@@ -1,0 +1,67 @@
+IASevero Runtime Governance Authority Map v106.0
+
+MISSION
+Define the canonical authority model for validating, allowing, blocking and escalating runtime operations.
+
+OBJECTIVE
+Map which governance authority controls each operational runtime domain.
+
+AUTHORITY CHAIN
+
+1. RuntimeContext Authority
+- Controls: operational context boundaries
+- Can allow: context propagation
+- Can block: invalid or missing operational context
+- Escalates to: Runtime Governance
+
+2. RuntimeMemory Authority
+- Controls: memory retrieval and persistence
+- Can allow: memory enrichment
+- Can block: inconsistent memory state
+- Escalates to: RuntimeContext Authority
+
+3. RuntimeDecision Authority
+- Controls: execution authorization
+- Can allow: approved execution path
+- Can block: unsafe or unauthorized runtime decision
+- Escalates to: Runtime Governance
+
+4. RuntimeExecution Authority
+- Controls: runtime action dispatch
+- Can allow: authorized runtime action
+- Can block: execution without valid decision
+- Escalates to: RuntimeDecision Authority
+
+5. ProviderGovernance Authority
+- Controls: provider selection and routing
+- Can allow: approved provider usage
+- Can block: unauthorized provider routing
+- Escalates to: RuntimeExecution Authority
+
+6. RuntimeSignals Authority
+- Controls: runtime signal propagation
+- Can allow: trusted state propagation
+- Can block: untrusted or conflicting runtime signals
+- Escalates to: ProviderGovernance Authority
+
+7. RuntimeTelemetry Authority
+- Controls: operational evidence recording
+- Can allow: telemetry persistence and feedback recording
+- Can block: incomplete trace propagation
+- Escalates to: RuntimeSignals Authority
+
+8. RuntimeResponse Authority
+- Controls: final output assembly
+- Can allow: validated response delivery
+- Can block: response without validated telemetry or decision evidence
+- Escalates to: RuntimeTelemetry Authority
+
+AUTHORITY RULES
+- Every runtime decision must be traceable to a canonical authority.
+- Parallel authority paths are not allowed without explicit audit evidence.
+- Runtime authorization must flow through validated domains.
+- Blocking decisions must be observable through telemetry.
+- Future governance extensions must preserve this authority chain.
+
+STATUS
+Runtime governance authority map prepared for validation.
