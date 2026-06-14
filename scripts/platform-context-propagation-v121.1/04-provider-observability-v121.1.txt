@@ -1,0 +1,118 @@
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:95:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:149:        correlationId: runtimeMaster.correlationId,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:9:export interface RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:30:): RuntimeProviderAuthorityReport {
+app/lib/runtime-core/runtime-retention-manager.ts:5:  maxTelemetryEvents: number
+app/lib/runtime-core/runtime-retention-manager.ts:15:  const maxTelemetryEvents = 200
+app/lib/runtime-core/runtime-retention-manager.ts:22:    maxTelemetryEvents,
+app/lib/runtime-core/runtime-retention-manager.ts:29:      `maxTelemetryEvents:${maxTelemetryEvents}`,
+app/lib/runtime-core/runtime-severity-governance.ts:1:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-severity-governance.ts:24:  const telemetry = correlateRuntimeTelemetry()
+app/lib/runtime-core/runtime-predictive-stabilization.ts:3:import { emitRuntimeTelemetry }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:70:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-predictive-stabilization.ts:79:    correlationId: `predictive-${Date.now()}`,
+app/lib/runtime-core/runtime-event-stream-engine.ts:1:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-stream-engine.ts:17:  correlationId: string
+app/lib/runtime-core/runtime-event-stream-engine.ts:25:  correlationId: string,
+app/lib/runtime-core/runtime-event-stream-engine.ts:33:    correlationId,
+app/lib/runtime-core/runtime-event-stream-engine.ts:39:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-event-stream-engine.ts:46:    correlationId,
+app/lib/runtime-core/runtime-telemetry-correlation.ts:1:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:3:export type RuntimeTelemetryCorrelation = {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:17:export function correlateRuntimeTelemetry(): RuntimeTelemetryCorrelation {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:18:  const events = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-telemetry-correlation.ts:25:  const uniqueCorrelations = new Set(events.map(e => e.correlationId)).size
+app/lib/runtime-core/runtime-telemetry-correlation.ts:46:        ? 'Telemetry indica eventos críticos; investigar imediatamente.'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:48:          ? 'Telemetry indica sinais de atenção; ampliar observação.'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:49:          : 'Telemetry saudável; continuar operação.',
+app/lib/runtime-core/runtime-telemetry-fabric.ts:1:export type RuntimeTelemetrySeverity =
+app/lib/runtime-core/runtime-telemetry-fabric.ts:7:export type RuntimeTelemetryEvent = {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:12:  severity: RuntimeTelemetrySeverity
+app/lib/runtime-core/runtime-telemetry-fabric.ts:13:  correlationId: string
+app/lib/runtime-core/runtime-telemetry-fabric.ts:18:const runtimeTelemetryBuffer: RuntimeTelemetryEvent[] = []
+app/lib/runtime-core/runtime-telemetry-fabric.ts:20:function createTelemetryId(): string {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:24:export function emitRuntimeTelemetry(
+app/lib/runtime-core/runtime-telemetry-fabric.ts:25:  event: Omit<RuntimeTelemetryEvent, 'id' | 'timestamp'>
+app/lib/runtime-core/runtime-telemetry-fabric.ts:26:): RuntimeTelemetryEvent {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:27:  const normalizedEvent: RuntimeTelemetryEvent = {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:28:    id: createTelemetryId(),
+app/lib/runtime-core/runtime-telemetry-fabric.ts:33:  runtimeTelemetryBuffer.unshift(normalizedEvent)
+app/lib/runtime-core/runtime-telemetry-fabric.ts:35:  if (runtimeTelemetryBuffer.length > 200) {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:36:    runtimeTelemetryBuffer.pop()
+app/lib/runtime-core/runtime-telemetry-fabric.ts:42:export function readRuntimeTelemetry(): RuntimeTelemetryEvent[] {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:43:  return [...runtimeTelemetryBuffer]
+app/lib/runtime-core/runtime-telemetry-fabric.ts:46:export function clearRuntimeTelemetry(): void {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:47:  runtimeTelemetryBuffer.length = 0
+app/lib/runtime-core/runtime-execution-coordinator.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-coordinator.ts:44:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-execution-coordinator.ts:53:    correlationId: `coordinator-${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:5:  const correlationId = `chat-${userId}-${Date.now()}`
+app/lib/runtime-core/runtime-execution-bridge.ts:13:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-execution-bridge.ts:17:    correlationId,
+app/lib/runtime-core/runtime-execution-bridge.ts:33:    correlationId,
+app/lib/runtime-core/runtime-decision-gate.ts:11:  correlationId: string
+app/lib/runtime-core/runtime-decision-gate.ts:43:    correlationId: runtime.correlationId,
+app/lib/runtime-core/runtime-timeline-engine.ts:1:import { readRuntimeTelemetry }
+app/lib/runtime-core/runtime-timeline-engine.ts:29:  const telemetry = readRuntimeTelemetry()
+app/lib/runtime-core/runtime-action-engine.ts:2:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-action-engine.ts:67:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-action-engine.ts:71:    correlationId: `action-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:3:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-feedback-integration.ts:5:export type RuntimeFeedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:11:export type RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:22:export function integrateRuntimeFeedback():
+app/lib/runtime-core/runtime-feedback-integration.ts:23:RuntimeFeedbackIntegration {
+app/lib/runtime-core/runtime-feedback-integration.ts:40:  const result: RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:71:  emitRuntimeTelemetry({
+app/lib/runtime-core/runtime-feedback-integration.ts:80:    correlationId:
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:11:export interface RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:37:RuntimeReflectionFeedbackReport {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+app/lib/orchestrator/runtime-graph-registry.ts:15:    module: 'RuntimeTelemetry',
+app/lib/orchestrator/runtime-graph-registry.ts:23:      'RuntimeTelemetry'
+app/lib/orchestrator/runtime-graph-registry.ts:30:      'RuntimeTelemetry',
+app/lib/orchestrator/runtime-architecture-index.ts:63:    name: 'RuntimeProviderGovernor',
+app/lib/orchestrator/runtime-architecture-index.ts:112:    name: 'RuntimeTelemetry',
+app/lib/orchestrator/runtime-provider-governor.ts:3:export type RuntimeProviderGovernorResult = {
+app/lib/orchestrator/runtime-provider-governor.ts:10:export function evaluateProviderGovernor(
+app/lib/orchestrator/runtime-provider-governor.ts:12:): RuntimeProviderGovernorResult {
+app/lib/orchestrator/runtime-telemetry.ts:5:export type RuntimeTelemetry = {
+app/lib/orchestrator/runtime-telemetry.ts:12:export function generateRuntimeTelemetry(
+app/lib/orchestrator/runtime-telemetry.ts:14:): RuntimeTelemetry {
+app/lib/orchestrator/runtime-contracts.ts:43:export type RuntimeTelemetryContract = {
+app/lib/orchestrator/runtime-contracts.ts:94:export function validateTelemetryContract(
+app/lib/orchestrator/runtime-contracts.ts:95:  contract: RuntimeTelemetryContract
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:14:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:223:generateRuntimeTelemetry(consciousness)
+app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()
