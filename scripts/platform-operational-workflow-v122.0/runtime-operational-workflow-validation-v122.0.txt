@@ -1,0 +1,32 @@
+IASevero v122.0 — Integrated Operational Workflow Validation
+
+MISSION
+Validate the canonical operational workflow using existing Platform Mode capabilities only.
+
+TARGET FLOW
+Request
+↓
+RuntimeContext
+↓
+ExecutiveRuntimeContext
+↓
+Decision Gate
+↓
+Action Policy
+↓
+Executive Authority Gateway
+↓
+RuntimeExecutionBridge
+↓
+Provider Selection
+↓
+Telemetry / Trace / Correlation
+↓
+Feedback
+↓
+Response
+
+ENGINEERING RULE
+Reuse existing runtime capabilities.
+Validate integration before expansion.
+Store only compact canonical evidence in Git.
