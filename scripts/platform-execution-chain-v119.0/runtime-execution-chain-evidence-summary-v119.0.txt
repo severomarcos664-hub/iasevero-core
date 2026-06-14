@@ -1,0 +1,17 @@
+IASevero Runtime Execution Chain Evidence Summary v119.0
+
+RAW AUDIT RESULT
+The full execution chain audit generated very large evidence files:
+- Context / State / Authority / Execution evidence
+- Workflow / Routing / Provider chain evidence
+- Graph / Response / Feedback chain evidence
+
+REASON FOR COMPACT VERSION
+The raw files exceeded GitHub file size limits and were intentionally excluded from Git.
+
+CANONICAL DECISION
+Preserve compact architecture records in Git.
+Preserve full raw audit locally as an external archive.
+
+STATUS
+Compact evidence summary created.

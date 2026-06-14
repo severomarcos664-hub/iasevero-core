@@ -1,0 +1,42 @@
+IASevero Runtime Execution Chain Validation v119.0
+
+MISSION
+Validate the canonical end-to-end execution chain of the IASevero Runtime Platform without committing oversized audit dumps.
+
+CANONICAL EXECUTION CHAIN
+RuntimeContext
+  ↓
+RuntimeState
+  ↓
+RuntimeAuthority
+  ↓
+WorkflowAuthority
+  ↓
+RoutingAuthority
+  ↓
+ProviderAuthority
+  ↓
+ExecutionBoundary
+  ↓
+UnifiedOperationalGraph
+  ↓
+RuntimeTelemetry
+  ↓
+RuntimeFeedback
+  ↓
+RuntimeResponse
+
+ARCHIVE POLICY
+Full raw audit evidence was archived outside Git because generated evidence exceeded GitHub file size limits.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-execution-chain-v119.0-full-audit.tar.gz
+
+RULES
+- Git stores canonical summaries and architecture records.
+- Oversized raw audit dumps remain outside the repository.
+- Execution must remain governed by the validated authority chain.
+- Future audit evidence must be summarized before commit.
+
+STATUS
+Runtime execution chain validation compact edition prepared for validation.
