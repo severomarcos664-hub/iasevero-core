@@ -1,0 +1,23 @@
+IASevero v121.4 — Telemetry Feedback Evidence Summary
+
+RAW EVIDENCE:
+Large telemetry and closed-loop evidence files were generated but intentionally archived outside Git.
+
+LOCAL ARCHIVE:
+~/iasevero-archives/platform-telemetry-feedback-v121.4/
+
+REASON:
+Raw evidence exceeded GitHub file size limits.
+
+GIT POLICY:
+Git stores compact canonical summaries only.
+Raw oversized operational evidence remains archived locally.
+
+VALIDATION DOMAINS:
+- Telemetry evidence
+- Trace / correlation evidence
+- Feedback propagation evidence
+- Closed operational loop evidence
+
+STATUS:
+Compact telemetry feedback evidence summary prepared for Git.
