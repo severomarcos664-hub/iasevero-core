@@ -1,0 +1,31 @@
+IASevero v121.2 — Executive Authority & Decision Flow
+
+Request
+  ↓
+API Route
+  ↓
+RuntimeContext
+  ↓
+ExecutiveRuntimeContext
+  ↓
+Decision Gate
+  ↓
+Action Policy
+  ↓
+Executive Authority Gateway
+  ↓
+RuntimeExecutionBridge
+  ↓
+Provider Selection
+  ↓
+Telemetry / Trace / Correlation
+  ↓
+Feedback
+  ↓
+Response
+
+MISSION:
+Validate that authority and decision signals propagate through the canonical execution chain using existing runtime components only.
+
+RULE:
+No new architecture is introduced. This validation documents existing operational behavior.
