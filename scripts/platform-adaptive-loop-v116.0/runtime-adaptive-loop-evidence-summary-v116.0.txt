@@ -1,0 +1,17 @@
+IASevero Runtime Adaptive Loop Evidence Summary v116.0
+
+RAW AUDIT RESULT
+The full adaptive loop audit generated very large evidence files:
+- Context / Memory / Decision evidence
+- Intelligence / Signal / Telemetry evidence
+- Feedback / Adaptation evidence
+
+REASON FOR COMPACT VERSION
+The raw files exceeded GitHub file size limits and were intentionally excluded from Git.
+
+CANONICAL DECISION
+Preserve compact architecture records in Git.
+Preserve full raw audit locally as an external archive.
+
+STATUS
+Compact evidence summary created.

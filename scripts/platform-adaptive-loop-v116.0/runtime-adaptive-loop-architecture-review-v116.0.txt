@@ -1,0 +1,38 @@
+IASevero Runtime Adaptive Loop Architecture Review v116.0
+
+MISSION
+Validate the canonical adaptive loop architecture of the IASevero Runtime Platform without committing oversized audit dumps.
+
+CANONICAL ADAPTIVE LOOP
+RuntimeContext
+  ↓
+RuntimeMemory
+  ↓
+RuntimeDecision
+  ↓
+RuntimeIntelligence
+  ↓
+RuntimeSignals
+  ↓
+RuntimeTelemetry
+  ↓
+RuntimeFeedback
+  ↓
+RuntimeAdaptation
+  ↓
+RuntimeContext
+
+ARCHIVE POLICY
+Full raw audit evidence was archived outside Git because generated evidence exceeded GitHub file size limits.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-adaptive-loop-v116.0-full-audit.tar.gz
+
+RULES
+- Git stores canonical summaries and architecture records.
+- Oversized raw audit dumps remain outside the repository.
+- Adaptive behavior must remain governed by the control plane.
+- Future audit evidence must be summarized before commit.
+
+STATUS
+Runtime adaptive loop architecture review compact edition prepared for validation.
