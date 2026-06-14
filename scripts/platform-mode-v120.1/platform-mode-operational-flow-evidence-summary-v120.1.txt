@@ -1,0 +1,16 @@
+IASevero v120.1 — Operational Flow Evidence Summary
+
+RAW EVIDENCE GENERATED
+- API enforcement flow evidence
+- Execution / provider / response evidence
+- Telemetry / trace / feedback evidence
+
+REASON FOR COMPACT VERSION
+Raw evidence exceeded GitHub file size limits and was intentionally excluded from Git.
+
+CANONICAL DECISION
+Preserve compact operational validation records in Git.
+Preserve full raw evidence locally as an external archive.
+
+STATUS
+Compact evidence summary created.

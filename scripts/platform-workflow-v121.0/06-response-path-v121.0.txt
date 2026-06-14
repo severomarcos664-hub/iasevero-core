@@ -1,0 +1,13 @@
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/learning.ts:82:  return best.item.response || null

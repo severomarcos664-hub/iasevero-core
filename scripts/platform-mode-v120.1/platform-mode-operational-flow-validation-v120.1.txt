@@ -1,0 +1,40 @@
+IASevero v120.1 — Platform Mode Operational Flow Validation
+
+MISSION
+Validate the first operational flow after Platform Mode transition using existing runtime components only.
+
+TARGET FLOW
+Request
+  ↓
+API Route
+  ↓
+Decision Gate
+  ↓
+Action Policy
+  ↓
+Executive Authority Gateway
+  ↓
+ExecutiveRuntimeContext
+  ↓
+RuntimeExecutionBridge
+  ↓
+Provider / Execution
+  ↓
+Telemetry / Trace / Correlation
+  ↓
+Feedback
+  ↓
+Response
+
+RESULT
+Large raw evidence files were generated and archived outside Git because they exceeded GitHub file size limits.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-mode-v120.1-full-audit.tar.gz
+
+ENGINEERING RULE
+Platform Mode validates real behavior before introducing new components.
+Git stores compact canonical records; raw oversized evidence remains archived externally.
+
+STATUS
+Operational flow validation compact edition prepared for validation.
