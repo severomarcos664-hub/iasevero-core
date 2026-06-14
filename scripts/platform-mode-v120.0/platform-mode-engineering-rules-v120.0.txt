@@ -1,0 +1,9 @@
+IASevero Platform Engineering Rules
+
+1. Preserve validated architecture.
+2. Prefer integration over expansion.
+3. Prefer capability evolution over module proliferation.
+4. Validate operational workflows before introducing new components.
+5. Preserve audit evidence and architectural history.
+6. Build and regression must pass before any architectural milestone is saved.
+7. Architecture changes require operational justification.

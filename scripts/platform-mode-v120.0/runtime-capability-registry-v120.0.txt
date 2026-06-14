@@ -1,0 +1,44 @@
+IASevero v120.0 — Runtime Capability Registry
+
+GOVERNANCE
+- Executive Authority Gateway ............ VALIDATED
+- Runtime Decision Gate .................. VALIDATED
+- Runtime Action Policy .................. VALIDATED
+- Runtime Enforcement Authority .......... VALIDATED
+
+CONTEXT
+- RuntimeContext ......................... VALIDATED
+- ExecutiveRuntimeContext ................ VALIDATED
+- Runtime Unified Context ................ CONSOLIDATED
+
+EXECUTION
+- RuntimeExecutionBridge ................. VALIDATED
+- Runtime Master ......................... VALIDATED
+- Runtime Execution Pipeline ............. VALIDATED
+- Runtime Execution Coordinator .......... VALIDATED
+
+PROVIDER
+- Runtime Provider Authority ............. VALIDATED
+- Runtime Provider Governor .............. VALIDATED
+- Dynamic Provider Routing ............... VALIDATED
+
+OBSERVABILITY
+- Runtime Telemetry ...................... VALIDATED
+- TraceId / CorrelationId ................ VALIDATED
+- Feedback Layer ......................... VALIDATED
+- Event Stream ........................... VALIDATED
+
+RESILIENCE
+- Operational State ...................... VALIDATED
+- Integrity .............................. VALIDATED
+- Healing ................................ VALIDATED
+- Recovery ............................... VALIDATED
+
+MEMORY
+- Operational Memory ..................... FOUNDATIONAL
+- Memory Consolidation ................... IN PROGRESS
+- Memory Topology ........................ DOCUMENTED
+- Context Propagation .................... VALIDATED
+
+ENGINEERING RULE
+Prefer reuse and integration of existing capabilities before introducing new architectural components.
