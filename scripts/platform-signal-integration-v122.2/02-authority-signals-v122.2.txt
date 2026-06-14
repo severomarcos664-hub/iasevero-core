@@ -1,0 +1,408 @@
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:68:const actionPolicy = evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:79:    if (!actionPolicy.allowExecution) {
+app/api/chat/route.ts:81:        reply: 'Execução bloqueada pela Runtime Action Policy.',
+app/api/chat/route.ts:83:        runtime: actionPolicy,
+app/api/chat/route.ts:103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+app/api/chat/route.ts:113:const executiveAuthority =
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:116:if (!executiveAuthority.executionAllowed) {
+app/api/chat/route.ts:118:    reply: "Execução bloqueada pela Runtime Executive Authority.",
+app/api/chat/route.ts:120:    runtime: executiveAuthority,
+app/api/chat/route.ts:150:        executionAllowed: runtimeMaster.executionAllowed,
+app/api/chat/route.ts:151:        executiveAuthority,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:5:export interface RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:6:  authorityId: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:8:  source: 'runtime-executive-authority'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:13:  executionPolicy: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:24:RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:30:    authorityId:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:31:      `runtime-authority-${Date.now()}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:37:      'runtime-executive-authority',
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:39:    executionAllowed:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:40:      core.executionAllowed,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:45:    executionPolicy:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:46:      core.executionPolicy,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:58:      `Runtime Executive Authority active: ${core.coreState}.`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:61:      `allowed:${core.executionAllowed}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:63:      `policy:${core.executionPolicy}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:7:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-executive-state/runtime-executive-state.ts:22:  executionAllowed: boolean
+app/lib/runtime-executive-state/runtime-executive-state.ts:26:  executionPolicy: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:38:  const authority =
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-executive-state/runtime-executive-state.ts:48:    !authority.executionAllowed
+app/lib/runtime-executive-state/runtime-executive-state.ts:52:      : authority.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-state/runtime-executive-state.ts:68:    executionAllowed:
+app/lib/runtime-executive-state/runtime-executive-state.ts:69:      provider.executionAllowed,
+app/lib/runtime-executive-state/runtime-executive-state.ts:77:    executionPolicy:
+app/lib/runtime-executive-state/runtime-executive-state.ts:78:      provider.executionPolicy,
+app/lib/runtime-executive-state/runtime-executive-state.ts:88:      `allowed:${provider.executionAllowed}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:26:  executionAllowed: boolean
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:53:    !fabric.executionAllowed
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:99:    executionAllowed:
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:100:      fabric.executionAllowed,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:9:export interface RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:10:  authorityId: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:12:  source: 'runtime-provider-authority'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:16:  executionAllowed: boolean
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:18:  executionPolicy: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:30:): RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:32:  const authority =
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:38:  const executionAllowed =
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:39:    authority.executionAllowed &&
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:42:      authority.executionPolicy !== 'protection-first'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:46:    authorityId:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:47:      `provider-authority-${Date.now()}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:53:      'runtime-provider-authority',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:61:    executionAllowed,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:63:    executionPolicy:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:64:      authority.executionPolicy,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:67:      authority.runtimeAction,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:70:      authority.executionPriority,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:73:      authority.executionRoute,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:76:      executionAllowed
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:83:      `allowed:${executionAllowed}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:87:      `route:${authority.executionRoute}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:25:  executionAllowed: boolean
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:30:  executionPolicy: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:47:    !context.executionAllowed
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:72:    executionAllowed: context.executionAllowed,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:18:    policyAllowed: matrix.globalExecutionAllowed,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:23:  executionAllowed: boolean
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:53:    !influence.executionAllowed
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:81:    executionAllowed:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:82:      influence.executionAllowed,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:113:      `allowed:${influence.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:14:  requestPolicy: 'normal' | 'throttled' | 'blocked'
+app/lib/runtime-core/runtime-adaptive-response.ts:30:      requestPolicy: 'blocked',
+app/lib/runtime-core/runtime-adaptive-response.ts:44:      requestPolicy: 'throttled',
+app/lib/runtime-core/runtime-adaptive-response.ts:58:      requestPolicy: 'throttled',
+app/lib/runtime-core/runtime-adaptive-response.ts:72:      requestPolicy: 'normal',
+app/lib/runtime-core/runtime-adaptive-response.ts:85:    requestPolicy: 'normal',
+app/lib/runtime-core/runtime-action-policy-engine.ts:5:export type RuntimeActionPolicyReport = {
+app/lib/runtime-core/runtime-action-policy-engine.ts:6:  policyId: string
+app/lib/runtime-core/runtime-action-policy-engine.ts:8:  source: 'runtime-action-policy-engine'
+app/lib/runtime-core/runtime-action-policy-engine.ts:20:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:21:RuntimeActionPolicyReport {
+app/lib/runtime-core/runtime-action-policy-engine.ts:34:    policyId: `action_policy_${Date.now()}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:36:    source: 'runtime-action-policy-engine',
+app/lib/runtime-core/runtime-action-policy-engine.ts:56:        ? 'Action policy: containment enforced.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:58:          ? 'Action policy: recovery mode required.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:60:            ? 'Action policy: monitoring required.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:61:            : 'Action policy: execution approved.',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:19:  executionAllowed: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:62:    executionAllowed:
+app/lib/runtime-core/runtime-tool-orchestrator.ts:63:      workflow.executionAllowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:66:      workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:10:  executionAllowed: boolean
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:27:    !workflow.executionAllowed ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:32:    !workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:46:    executionAllowed: workflow.executionAllowed,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:62:      `allowed:${workflow.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:23:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:26:    policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:28:      : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:30:        : policy.policyLevel === 'preventive'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:32:          : policy.policyLevel === 'observe'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:40:    scheduledAction: policy.requiredAction,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:61:      ...policy.reasoning,
+app/lib/runtime-core/runtime-policy-engine.ts:5:export type RuntimePolicyDecision = {
+app/lib/runtime-core/runtime-policy-engine.ts:7:  source: 'runtime-policy-engine'
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:15:export function evaluateRuntimePolicy(): RuntimePolicyDecision {
+app/lib/runtime-core/runtime-policy-engine.ts:19:  const policyLevel =
+app/lib/runtime-core/runtime-policy-engine.ts:31:    policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:33:      : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:35:        : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:37:          : policyLevel === 'observe'
+app/lib/runtime-core/runtime-policy-engine.ts:43:    source: 'runtime-policy-engine',
+app/lib/runtime-core/runtime-policy-engine.ts:44:    allowed: policyLevel !== 'critical',
+app/lib/runtime-core/runtime-policy-engine.ts:46:    policyLevel,
+app/lib/runtime-core/runtime-policy-engine.ts:48:      policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:50:        : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:52:          : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:54:            : policyLevel === 'observe'
+app/lib/runtime-core/runtime-policy-engine.ts:60:      `policy:${policyLevel}`,
+app/lib/runtime-core/runtime-policy-enforcement.ts:1:export type RuntimePolicyInput = {
+app/lib/runtime-core/runtime-policy-enforcement.ts:8:export type RuntimePolicyReport = {
+app/lib/runtime-core/runtime-policy-enforcement.ts:19:export function enforceRuntimePolicy(
+app/lib/runtime-core/runtime-policy-enforcement.ts:20:  input: RuntimePolicyInput,
+app/lib/runtime-core/runtime-policy-enforcement.ts:21:): RuntimePolicyReport {
+app/lib/runtime-core/runtime-policy-enforcement.ts:66:    reason: 'runtime policy approved',
+app/lib/runtime-core/runtime-master-orchestrator.ts:3:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:12:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-master-orchestrator.ts:32:    policy,
+app/lib/runtime-core/runtime-master-orchestrator.ts:47:      `policy:${policy.policyLevel}`,
+app/lib/runtime-core/runtime-resilience-engine.ts:32:    !adaptive.executionAllowed
+app/lib/runtime-core/runtime-evaluation-engine.ts:39:    adaptive.executionAllowed ? 100 : 30
+app/lib/runtime-core/runtime-execution-coordinator.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:8:  policyLevel: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:19:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-execution-coordinator.ts:22:    policy.requiredAction,
+app/lib/runtime-core/runtime-execution-coordinator.ts:23:    policy.reason
+app/lib/runtime-core/runtime-execution-coordinator.ts:29:    policyLevel: policy.policyLevel,
+app/lib/runtime-core/runtime-execution-coordinator.ts:30:    allowed: policy.allowed,
+app/lib/runtime-core/runtime-execution-coordinator.ts:31:    selectedAction: policy.requiredAction,
+app/lib/runtime-core/runtime-execution-coordinator.ts:34:      policy.allowed
+app/lib/runtime-core/runtime-execution-coordinator.ts:35:        ? `Coordinator executou ação permitida: ${policy.requiredAction}.`
+app/lib/runtime-core/runtime-execution-coordinator.ts:36:        : `Coordinator executou ação restritiva: ${policy.requiredAction}.`,
+app/lib/runtime-core/runtime-execution-coordinator.ts:38:      ...policy.reasoning,
+app/lib/runtime-core/runtime-execution-coordinator.ts:48:      policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-execution-coordinator.ts:50:        : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-execution-coordinator.ts:54:    message: `Runtime execution coordinated with action ${policy.requiredAction}.`,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:12:  executionAllowed: boolean
+app/lib/runtime-core/runtime-workflow-coordinator.ts:26:  const executionAllowed =
+app/lib/runtime-core/runtime-workflow-coordinator.ts:35:      executionAllowed
+app/lib/runtime-core/runtime-workflow-coordinator.ts:44:    executionAllowed,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:47:      executionAllowed
+app/lib/runtime-core/runtime-execution-bridge.ts:8:  const executionAllowed =
+app/lib/runtime-core/runtime-execution-bridge.ts:16:    severity: executionAllowed ? 'info' : 'warning',
+app/lib/runtime-core/runtime-execution-bridge.ts:22:      executionAllowed,
+app/lib/runtime-core/runtime-execution-bridge.ts:34:    executionAllowed,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:11:  policyAllowed: boolean;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:31:    !input.policyAllowed ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:88:      `policyAllowed:${input.policyAllowed}`,
+app/lib/runtime-core/runtime-governance-center.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-governance-center.ts:30:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-governance-center.ts:37:      : policy.requiredAction === 'recover'
+app/lib/runtime-core/runtime-governance-center.ts:64:      policy.requiredAction,
+app/lib/runtime-core/runtime-governance-center.ts:82:      ...policy.reasoning,
+app/lib/executive-runtime-core/executive-runtime-core.ts:21:  authority: 'central-executive-runtime-core'
+app/lib/executive-runtime-core/executive-runtime-core.ts:23:  executionAllowed: boolean
+app/lib/executive-runtime-core/executive-runtime-core.ts:25:  executionPolicy: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:49:    !governor.executionAllowed
+app/lib/executive-runtime-core/executive-runtime-core.ts:64:    authority: 'central-executive-runtime-core',
+app/lib/executive-runtime-core/executive-runtime-core.ts:66:    executionAllowed: governor.executionAllowed,
+app/lib/executive-runtime-core/executive-runtime-core.ts:68:    executionPolicy: governor.executionPolicy,
+app/lib/executive-runtime-core/executive-runtime-core.ts:84:      `allowed:${governor.executionAllowed}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:86:      `policy:${governor.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:3:} from '../runtime-executive-authority/runtime-executive-authority'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:5:export interface RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:8:  source: 'runtime-executive-authority-gateway'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:12:  executionPolicy: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:22:RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:23:  const authority =
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:27:    gatewayId: `authority-gateway-${Date.now()}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:29:    source: 'runtime-executive-authority-gateway',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:31:    executionAllowed:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:32:      authority.executionAllowed,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:35:      authority.coreState,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:37:    executionPolicy:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:38:      authority.executionPolicy,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:44:      authority.executionPriority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:47:      authority.executionRoute,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:50:      authority.executionAllowed
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:51:        ? 'Runtime Executive Authority Gateway approved execution.'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:52:        : 'Runtime Executive Authority Gateway blocked execution.',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:56:      `core:${authority.coreState}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:60:      `route:${authority.executionRoute}`,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:6:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:7:} from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:13:  const policy =
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:14:    evaluateRuntimeActionPolicy()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:18:    policy.allowExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:39:      policy.allowExecution,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:48:      `execution:${policy.allowExecution}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:16:  executionAllowed: boolean
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:19:  executionPolicy: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:39:    !loop.executionAllowed
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:48:  const executionPolicy =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:71:    executionAllowed:
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:72:      loop.executionAllowed,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:75:    executionPolicy,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:97:      `allowed:${loop.executionAllowed}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:99:      `policy:${executionPolicy}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:25:  executionAllowed: boolean
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:46:    bus.executionAllowed &&
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:54:    !bus.executionAllowed
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:78:    executionAllowed: bus.executionAllowed,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:89:      bus.executionAllowed
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:14:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:42:    executionAllowed: true,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:20:  executionAllowed: boolean
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:34:    !identity.executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:44:  const executionAllowed =
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:45:    identity.executionAllowed &&
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:54:    executionAllowed,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:61:      executionAllowed
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:69:      `execution:${executionAllowed}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:20:  executionAllowed: boolean
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:57:    !integration.executionAllowed
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:74:    executionAllowed:
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:75:      integration.executionAllowed,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:96:      integration.executionAllowed
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:103:      `allowed:${integration.executionAllowed}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:44:  executionAllowed: boolean
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:88:    !controller.executionAllowed
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:119:    executionAllowed:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:120:      controller.executionAllowed,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:137:      controller.executionAllowed
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:65:        lifecycle.executionAllowed ? 45 : 20,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:25:  executionAllowed: boolean
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:44:    !governor.executionAllowed
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:69:    executionAllowed:
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:70:      governor.executionAllowed,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:88:      governor.executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:57:  const executionAllowed =
+app/lib/runtime-execution-router/runtime-execution-router.ts:62:    executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:77:    executionAllowed,
+app/lib/runtime-execution-router/runtime-execution-router.ts:93:      executionAllowed
+app/lib/runtime-execution-router/runtime-execution-router.ts:100:      `allowed:${executionAllowed}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:9:export interface RuntimeEnforcementAuthorityReport {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:12:  source: 'runtime-enforcement-authority'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:19:  executionPolicy: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:31:export function evaluateRuntimeEnforcementAuthority(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:35:): RuntimeEnforcementAuthorityReport {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:52:    context.executionAllowed &&
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:53:    governance.executionAllowed
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:58:    source: 'runtime-enforcement-authority',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:65:    executionPolicy: governance.executionPolicy,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:75:        ? 'Runtime Enforcement Authority approved execution.'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:76:        : 'Runtime Enforcement Authority blocked execution.',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:84:      `policy:${governance.executionPolicy}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:35:  executionAllowed: boolean
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:50:  const executionAllowed =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:51:    meta.executionAllowed &&
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:53:    router.executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:56:    !executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:81:    executionAllowed,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:87:      executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:98:      `allowed:${executionAllowed}`,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:58:    executionAllowed: transition.executionAllowed,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:74:      `allowed:${transition.executionAllowed}`,
+app/lib/orchestrator/runtime-graph-registry.ts:35:    module: 'RuntimePolicy',
+app/lib/orchestrator/runtime-architecture-index.ts:16:  | 'policy'
+app/lib/orchestrator/runtime-architecture-index.ts:42:    name: 'RuntimePolicy',
+app/lib/orchestrator/runtime-architecture-index.ts:43:    file: 'runtime-policy.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:49:    name: 'RuntimeIntelligencePolicy',
+app/lib/orchestrator/runtime-architecture-index.ts:50:    file: 'runtime-policy-engine.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:51:    layer: 'policy',
+app/lib/orchestrator/policy.ts:1:export type PolicyResult = {
+app/lib/orchestrator/policy.ts:17:export function evaluatePolicy(message: string): PolicyResult {
+app/lib/orchestrator/policy.ts:25:        reason: `Comando bloqueado pela policy: ${pattern}`
+app/lib/orchestrator/policy.ts:45:    reason: 'Policy aprovada.'
+app/lib/orchestrator/memory-governor.ts:1:export type MemoryPolicy = {
+app/lib/orchestrator/memory-governor.ts:8:export function getMemoryPolicy(): MemoryPolicy {
+app/lib/orchestrator/memory-governor.ts:18:  const policy = getMemoryPolicy()
+app/lib/orchestrator/memory-governor.ts:19:  return history.slice(-policy.maxHistoryItems)
+app/lib/orchestrator/runtime-governor.ts:2:import type { RuntimePolicyDecision } from './runtime-policy'
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:9:  severity: RuntimePolicyDecision['severity']
+app/lib/orchestrator/runtime-governor.ts:14:  policy: RuntimePolicyDecision
+app/lib/orchestrator/runtime-governor.ts:16:  if (!policy.allowed) {
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:21:      reason: policy.reason,
+app/lib/orchestrator/runtime-governor.ts:22:      severity: policy.severity
+app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-governor.ts:39:    safeModeRequired: policy.forceSafeMode,
+app/lib/orchestrator/runtime-governor.ts:41:    severity: policy.severity
+app/lib/orchestrator/runtime-policy-engine.ts:3:export type RuntimePolicyDecision = {
+app/lib/orchestrator/runtime-policy-engine.ts:20:export function evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-policy-engine.ts:22:): RuntimePolicyDecision {
+app/lib/orchestrator/runtime-policy.ts:3:export type RuntimePolicyDecision = {
+app/lib/orchestrator/runtime-policy.ts:11:export function evaluateRuntimePolicy(
+app/lib/orchestrator/runtime-policy.ts:13:): RuntimePolicyDecision {
+app/lib/orchestrator/runtime-policy.ts:36:    reason: 'RuntimePolicy aprovada em modo local.',
+app/lib/orchestrator/runtime-dependency-validator.ts:33:    'policy'
+app/lib/orchestrator/runtime-dependency-validator.ts:42:    'policy'
+app/lib/orchestrator/runtime-contracts.ts:37:export type RuntimePolicyContract = {
+app/lib/orchestrator/metrics.ts:4:import { getMemoryPolicy } from './memory-governor'
+app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+app/lib/orchestrator/runtime-execution-pipeline.ts:2:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:50:    policy,
+app/lib/orchestrator/runtime-decision-engine.ts:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:81:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:83:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:90:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:252:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-decision-engine.ts:257:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:262:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-decision-engine.ts:289:    policy,
+app/lib/orchestrator/decision-pipeline.ts:1:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/decision-pipeline.ts:16:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/decision-pipeline.ts:21:    allowed: policy.allowed && route.allowExternal !== false,
+app/lib/orchestrator/decision-pipeline.ts:22:    reason: policy.allowed ? route.reason : policy.reason
+app/lib/orchestrator/decision-pipeline.ts:25:  const risk = policy.risk
+app/lib/orchestrator/decision-pipeline.ts:38:    safe: policy.allowed,
+app/lib/orchestrator/decision-pipeline.ts:43:    allowed: policy.allowed,
+app/lib/orchestrator/routing.ts:4:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/routing.ts:25:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/routing.ts:27:  if (!policy.allowed) {
+app/lib/orchestrator/routing.ts:31:      reason: policy.reason
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:21:  executionAllowed: boolean
+app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:40:  const authority =
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:49:  const executionAllowed =
+app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:62:    executionAllowed,
+app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:78:      `authority:${authority.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:34:  const executionAllowed =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:47:    executionAllowed,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:62:      executionAllowed
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:69:      `allowed:${executionAllowed}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:23:          : state.executionAllowed
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:58:    executionAllowed:
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:59:      state.executionAllowed,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:80:      `allowed:${state.executionAllowed}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:20:  executionAllowed: boolean
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:47:    !reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:66:    executionAllowed:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:67:      reflection.executionAllowed,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:84:      reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:92:      `allowed:${reflection.executionAllowed}`,

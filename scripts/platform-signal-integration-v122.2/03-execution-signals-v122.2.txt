@@ -1,0 +1,54 @@
+app/api/chat/route.ts:9:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:87:    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:14:  runtimeAction: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:48:    runtimeAction:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:49:      core.runtimeAction,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:64:      `action:${core.runtimeAction}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:27:  runtimeAction: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:80:    runtimeAction:
+app/lib/runtime-executive-state/runtime-executive-state.ts:81:      provider.runtimeAction,
+app/lib/runtime-executive-state/runtime-executive-state.ts:92:      `action:${provider.runtimeAction}`
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:19:  runtimeAction: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:66:    runtimeAction:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:67:      authority.runtimeAction,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:85:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:31:  runtimeAction: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+app/lib/runtime-core/runtime-execution-coordinator.ts:5:export type RuntimeExecutionCoordinatorResult = {
+app/lib/runtime-core/runtime-execution-coordinator.ts:17:RuntimeExecutionCoordinatorResult {
+app/lib/runtime-core/runtime-execution-coordinator.ts:26:  const result: RuntimeExecutionCoordinatorResult = {
+app/lib/runtime-core/runtime-execution-bridge.ts:4:export function runRuntimeExecutionBridge(message: string, userId: string) {
+app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+app/lib/executive-runtime-core/executive-runtime-core.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator,
+app/lib/executive-runtime-core/executive-runtime-core.ts:26:  runtimeAction: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:46:    evaluateRuntimeAdaptiveExecutionCoordinator()
+app/lib/executive-runtime-core/executive-runtime-core.ts:69:    runtimeAction: governor.runtimeAction,
+app/lib/executive-runtime-core/executive-runtime-core.ts:87:      `action:${governor.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:13:  runtimeAction: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:40:    runtimeAction:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:20:  runtimeAction: string
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:57:  const runtimeAction =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:76:    runtimeAction,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:100:      `action:${runtimeAction}`,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:17:export interface RuntimeAdaptiveExecutionCoordinatorReport {
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:37:export function evaluateRuntimeAdaptiveExecutionCoordinator():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:38:RuntimeAdaptiveExecutionCoordinatorReport {
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:33:export type RuntimeExecutionPipelineReport = {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:55:RuntimeExecutionPipelineReport {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:20:  runtimeAction: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:66:    runtimeAction: governance.runtimeAction,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:85:      `action:${governance.runtimeAction}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/executive-runtime-context/executive-runtime-context.ts:27:  runtimeAction: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,

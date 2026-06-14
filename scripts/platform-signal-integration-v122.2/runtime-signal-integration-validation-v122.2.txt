@@ -1,0 +1,19 @@
+IASevero v122.2 — Runtime Signal & Integration Map
+
+MISSION
+Validate runtime signal propagation using existing Platform Mode capabilities.
+
+VALIDATED DOMAINS
+- Context propagation.
+- Authority propagation.
+- Execution signal flow.
+- Provider integration.
+- Observability integration.
+- Response generation path.
+
+ENGINEERING RULE
+Integrate before expanding.
+Store only compact canonical evidence in Git.
+
+STATUS
+Runtime signal integration validation prepared for archival.

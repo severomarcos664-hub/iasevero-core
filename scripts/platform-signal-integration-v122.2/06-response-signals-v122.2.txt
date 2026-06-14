@@ -1,0 +1,70 @@
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:38:        reply: 'Mensagem muito longa. Limite: 4000 caracteres.',
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:59:        reply: 'Muitas requisições. Aguarde um momento.',
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:73:        reply: 'Execução pausada pelo Runtime Decision Gate. O sistema recomenda estabilização antes de continuar.',
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:81:        reply: 'Execução bloqueada pela Runtime Action Policy.',
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:118:    reply: "Execução bloqueada pela Runtime Executive Authority.",
+app/api/chat/route.ts:130:    const traceResponse = createRuntimeTraceNode(
+app/api/chat/route.ts:136:        replyLength: result.reply.length,
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:141:      reply: result.reply,
+app/api/chat/route.ts:153:        traceId: traceResponse.id,
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/chat/route.ts:159:      reply: 'Erro interno controlado.',
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:5:export function evaluateRuntimeCognitiveResponseProfiler() {
+app/lib/iasevero-core.ts:26:    return { reply: direct, job: null, userId }
+app/lib/iasevero-core.ts:33:  const reply = validateDecisionAnswer(message, rawReply)
+app/lib/iasevero-core.ts:36:  saveMessage(userId, `IASevero: ${reply}`)
+app/lib/iasevero-core.ts:38:  return { reply, job: null, userId }
+app/lib/runtime-core/runtime-adaptive-response.ts:3:export type RuntimeAdaptiveResponse = {
+app/lib/runtime-core/runtime-adaptive-response.ts:20:export function evaluateRuntimeAdaptiveResponse(): RuntimeAdaptiveResponse {
+app/lib/runtime-core/runtime-action-policy-engine.ts:2:  evaluateRuntimeAutonomousResponse,
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:26:  const adaptive = evaluateRuntimeAdaptiveResponse()
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:13:export type RuntimeAutonomousResponseReport = {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:28:export function evaluateRuntimeAutonomousResponse():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:29:RuntimeAutonomousResponseReport {
+app/lib/providers/local.ts:47:  function reply(output: string) {
+app/lib/providers/local.ts:52:  if (!text) return reply('Entrada vazia.')
+app/lib/providers/local.ts:55:  if (command) return reply(command)
+app/lib/providers/local.ts:58:    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+app/lib/providers/local.ts:62:  if (fixed) return reply(fixed)
+app/lib/providers/local.ts:70:      return reply(`Registrado. Use: aprovar: ${q.trim()}`)
+app/lib/providers/local.ts:72:    return reply('Formato correto: ensinar: pergunta => resposta')
+app/lib/providers/local.ts:77:    return reply(approve(q) ? `Aprovado: ${q}` : 'Não encontrado.')
+app/lib/providers/local.ts:81:    return reply(JSON.stringify(listMemory(), null, 2))
+app/lib/providers/local.ts:85:  if (learned) return reply(learned)
+app/lib/providers/local.ts:88:  if (intelligent && intelligent.length > 40) return reply(intelligent)
+app/lib/providers/local.ts:91:  if (fallback) return reply(fallback)
+app/lib/providers/local.ts:95:    if (learnedPart) return reply(learnedPart)
+app/lib/providers/local.ts:99:  if (dynamic) return reply(dynamic)
+app/lib/providers/local.ts:102:  if (hybrid) return reply(hybrid)
+app/lib/providers/local.ts:106:  return reply('Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta')
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:2:  evaluateRuntimeCognitiveResponseProfiler,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:7:    evaluateRuntimeCognitiveResponseProfiler()
+app/lib/validator.ts:1:export function validateQuality(reply: string, commands: string[]) {
+app/lib/validator.ts:4:  if (!reply || reply.length < 20) {
+app/lib/validator.ts:8:  if (reply.toLowerCase().includes("não sei")) {
+app/lib/validator.ts:12:  if (reply.toLowerCase().includes("erro") && commands.length === 0) {
+app/lib/validator.ts:22:export function improveReply(reply: string, commands: string[]) {
+app/lib/validator.ts:24:    return reply + "\n\nValidação IASevero: resposta contém ação prática sugerida."
+app/lib/validator.ts:27:  return reply + "\n\nValidação IASevero: resposta segura, sem comando necessário."
+app/lib/context.ts:9:  reply: string
+app/lib/context.ts:25:export function saveTurn(userId: string, message: string, reply: string) {
+app/lib/context.ts:30:    reply,
+app/lib/context.ts:42:    .map(x => `Usuário: ${x.message}\nIASevero: ${x.reply}`)
