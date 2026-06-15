@@ -1,0 +1,45 @@
+IASevero v123.5 — Decision Provenance Foundation
+
+MISSION
+Define how runtime decisions are traced, explained and connected to the CanonicalOperationalModel.
+
+DEFINITION
+DecisionProvenance records who decided, why the decision was made,
+which policy participated, and how the decision affected execution.
+
+CORE STRUCTURE
+
+DecisionProvenance
+├── provenanceId
+├── sessionId
+├── requestId
+├── traceId
+├── correlationId
+├── source
+│   ├── decisionGate
+│   ├── actionPolicy
+│   ├── executiveAuthority
+│   ├── providerGovernor
+│   └── runtimeEvaluation
+├── decision
+│   ├── executionAllowed
+│   ├── providerAllowed
+│   ├── runtimeAction
+│   └── providerSelected
+├── rationale
+│   ├── decisionReason
+│   ├── policyApplied
+│   ├── blockingReason
+│   └── confidence
+├── operationalState
+└── version
+
+PURPOSE
+Enable explanation, replay, audit, dashboard visibility and runtime evaluation.
+
+RULE
+Decision provenance must derive from existing runtime authority, policy,
+provider and execution signals. Do not create parallel decision authority.
+
+STATUS
+Decision Provenance Foundation prepared for validation.

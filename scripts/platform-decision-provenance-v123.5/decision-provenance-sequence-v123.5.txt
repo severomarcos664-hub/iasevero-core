@@ -1,0 +1,20 @@
+IASevero v123.5 — Decision Provenance Sequence
+
+CANONICAL DECISION TRACE
+
+1. request.received
+2. runtimeContext.created
+3. decisionGate.evaluated
+4. actionPolicy.evaluated
+5. executiveAuthority.resolved
+6. executionAllowed.resolved
+7. providerAllowed.resolved
+8. provider.selected
+9. decisionProvenance.attachedToCanonicalOperationalModel
+
+RULE
+Every decision exposed through Dashboard, Replay, Audit or API must be traceable
+back to an existing runtime decision source.
+
+STATUS
+Decision Provenance Sequence prepared for validation.
