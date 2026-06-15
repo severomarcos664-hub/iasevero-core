@@ -1,0 +1,14 @@
+IASevero v124.4 — Dashboard Contract Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects operational state.
+3. Live Operational Views provide optimized read models.
+4. Replay Engine reconstructs historical execution.
+5. Dashboard consumes views and replay outputs.
+6. Dashboard displays operational state without owning it.
+
+RULE
+The Dashboard must never create independent operational truth.
+
+STATUS
+Dashboard Contract Sequence prepared for validation.

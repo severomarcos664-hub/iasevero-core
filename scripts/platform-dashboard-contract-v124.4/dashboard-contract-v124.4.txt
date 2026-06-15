@@ -1,0 +1,40 @@
+IASevero v124.4 — Dashboard Contract Foundation
+
+MISSION
+Define the Dashboard as a read-only operational interface derived from
+Live Operational Views, Runtime Digital Twin, Replay Engine and the
+CanonicalOperationalModel.
+
+SOURCE CHAIN
+CanonicalOperationalModel (SSOT)
+        ↓
+Runtime Digital Twin
+        ↓
+Live Operational Views
+        ↓
+Replay Engine
+        ↓
+Operational Dashboard
+
+DASHBOARD SECTIONS
+- Live Sessions Overview
+- Active Session Detail
+- Runtime Digital Twin View
+- Operational Timeline
+- Decision Provenance Trace
+- Provider Activity
+- Telemetry Overview
+- Replay View
+- Audit View
+- System Health Summary
+
+INVARIANTS
+- read-only
+- no frontend business logic
+- no independent state
+- no runtime mutation
+- no policy decision inside UI
+- reconstructable from CanonicalOperationalModel
+
+STATUS
+Dashboard Contract Foundation prepared for validation.
