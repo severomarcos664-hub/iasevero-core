@@ -1,0 +1,14 @@
+IASevero v124.3 — Replay Engine Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects the operational state.
+3. Live Operational Views derive optimized read models.
+4. Replay Engine reconstructs execution from canonical evidence.
+5. Dashboard, Audit and API may consume replay outputs.
+6. No independent replay state is introduced.
+
+RULE
+Every replay operation must be reproducible from the CanonicalOperationalModel.
+
+STATUS
+Replay Engine Sequence prepared for validation.

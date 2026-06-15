@@ -1,0 +1,33 @@
+IASevero v124.3 — Replay Engine Foundation
+
+MISSION
+Define the Replay Engine as a read-only operational replay layer derived exclusively from the CanonicalOperationalModel.
+
+SOURCE OF TRUTH
+CanonicalOperationalModel (SSOT)
+
+DERIVED INPUTS
+- RuntimeExecutionSession
+- RuntimeEventStream
+- DecisionProvenance
+- MaterializedOperationalState
+- Runtime Digital Twin
+- Live Operational Views
+
+CAPABILITIES
+- Replay operational timeline
+- Reconstruct execution state
+- Rebuild decision trace
+- Support audit and investigation
+- Support future Dashboard and Public API
+- Enable time-travel visualization
+
+INVARIANTS
+- replay-only
+- read-only
+- no independent state
+- no runtime mutation
+- reconstructable from CanonicalOperationalModel
+
+STATUS
+Replay Engine Foundation prepared for validation.
