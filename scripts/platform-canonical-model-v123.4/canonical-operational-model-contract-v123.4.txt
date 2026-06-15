@@ -1,0 +1,34 @@
+IASevero v123.4 — Canonical Operational Model Foundation
+
+MISSION
+Define the Single Source of Operational Truth (SSOT) for the IASevero Platform.
+
+DEFINITION
+
+CanonicalOperationalModel =
+  RuntimeExecutionSession
++ RuntimeEventStream
++ MaterializedOperationalState
+
+The CanonicalOperationalModel is the unified, reproducible and auditable
+operational projection of a runtime execution.
+
+ENGINEERING RULE
+
+- Do not create parallel operational states.
+- All observable platform representations must derive from this model.
+- Preserve Architecture Freeze and Platform Mode principles.
+
+DERIVED CAPABILITIES
+
+CanonicalOperationalModel
+├── Runtime Digital Twin
+├── Operational Dashboard
+├── Public API
+├── Replay Engine
+├── Metrics & Telemetry
+├── Audit Reports
+└── Living Documentation
+
+STATUS
+Canonical Operational Model Foundation prepared for validation.

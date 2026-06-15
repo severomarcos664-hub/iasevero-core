@@ -1,0 +1,15 @@
+IASevero v123.4 — Operational Capability Snapshot
+
+governance............. active
+context................ active
+authority.............. active
+execution.............. active
+providerRouting........ active
+telemetry.............. active
+feedback............... active
+memory................. active
+toolOrchestration...... experimental
+runtimeEvaluation...... beta
+
+PURPOSE
+Capture the operational capability state associated with a RuntimeExecutionSession.
