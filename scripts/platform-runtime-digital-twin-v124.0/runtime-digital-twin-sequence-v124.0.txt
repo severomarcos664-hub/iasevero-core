@@ -1,0 +1,15 @@
+IASevero v124.0 — Runtime Digital Twin Sequence
+
+1. RuntimeExecutionSession established.
+2. RuntimeEventStream updated.
+3. DecisionProvenance attached.
+4. MaterializedOperationalState derived.
+5. CanonicalOperationalModel assembled.
+6. Runtime Digital Twin projected.
+7. Dashboard, Replay and API consume the Digital Twin view.
+
+RULE
+The Runtime Digital Twin must never introduce independent state.
+
+STATUS
+Runtime Digital Twin Sequence prepared for validation.

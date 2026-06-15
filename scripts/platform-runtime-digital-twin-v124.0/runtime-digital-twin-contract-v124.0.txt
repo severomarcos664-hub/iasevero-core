@@ -1,0 +1,38 @@
+IASevero v124.0 — Runtime Digital Twin Foundation
+
+MISSION
+Define the Runtime Digital Twin as a derived operational representation
+of the CanonicalOperationalModel.
+
+FOUNDATION RULE
+The Runtime Digital Twin does not own operational state.
+All information must be derived from the CanonicalOperationalModel (SSOT).
+
+DATA SOURCE
+
+RuntimeExecutionSession
+        +
+RuntimeEventStream
+        +
+DecisionProvenance
+        +
+MaterializedOperationalState
+        ↓
+CanonicalOperationalModel (SSOT)
+        ↓
+Runtime Digital Twin
+
+DIGITAL TWIN VIEWS
+- Live Runtime View
+- Operational Timeline
+- Decision Trace
+- Provider Activity
+- Telemetry Overview
+- Execution Replay
+
+ENGINEERING RULE
+Do not create parallel operational state.
+The Runtime Digital Twin is a projection layer only.
+
+STATUS
+Runtime Digital Twin Foundation prepared for validation.
