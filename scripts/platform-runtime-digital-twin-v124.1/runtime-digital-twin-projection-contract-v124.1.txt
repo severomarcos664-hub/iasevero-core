@@ -1,0 +1,36 @@
+IASevero v124.1 — Runtime Digital Twin Projection Layer
+
+MISSION
+Define the Runtime Digital Twin as a read-only projection layer derived exclusively from the CanonicalOperationalModel.
+
+FOUNDATION RULE
+The Runtime Digital Twin must never own independent operational state.
+
+SOURCE OF TRUTH
+CanonicalOperationalModel (SSOT)
+
+DERIVED FROM
+- RuntimeExecutionSession
+- RuntimeEventStream
+- DecisionProvenance
+- MaterializedOperationalState
+
+PROJECTION VIEWS
+- liveRuntimeView
+- operationalTimeline
+- decisionTrace
+- providerActivity
+- telemetryOverview
+- replayView
+- auditView
+
+INVARIANTS
+- projection-only
+- read-only
+- no side effects
+- no parallel state
+- no new authority
+- no runtime mutation
+
+STATUS
+Runtime Digital Twin Projection Layer prepared for validation.

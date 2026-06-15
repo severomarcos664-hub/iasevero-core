@@ -1,0 +1,13 @@
+IASevero v124.1 — Runtime Digital Twin Projection Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin reads CanonicalOperationalModel.
+3. Projection views are derived.
+4. Dashboard, Replay, Audit and API may consume those views.
+5. No independent state is introduced.
+
+RULE
+Every Digital Twin view must be reconstructable from the CanonicalOperationalModel.
+
+STATUS
+Projection sequence prepared for validation.
