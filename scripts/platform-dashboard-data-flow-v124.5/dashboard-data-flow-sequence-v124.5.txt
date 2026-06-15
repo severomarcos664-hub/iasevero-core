@@ -1,0 +1,15 @@
+IASevero v124.5 — Dashboard Data Flow Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects current operational state.
+3. Live Operational Views expose optimized read models.
+4. Replay Engine reconstructs historical execution when requested.
+5. Dashboard Contract defines required sections.
+6. Dashboard Data Flow maps each section to its derived source.
+7. Dashboard consumes data without owning operational truth.
+
+RULE
+Every dashboard data field must be traceable back to CanonicalOperationalModel.
+
+STATUS
+Dashboard Data Flow Sequence prepared for validation.

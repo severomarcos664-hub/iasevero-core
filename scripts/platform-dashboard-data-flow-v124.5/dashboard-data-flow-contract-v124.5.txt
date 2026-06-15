@@ -1,0 +1,41 @@
+IASevero v124.5 — Dashboard Data Flow Foundation
+
+MISSION
+Define how operational data flows into the Dashboard without creating independent frontend state.
+
+SOURCE CHAIN
+CanonicalOperationalModel (SSOT)
+        ↓
+Runtime Digital Twin
+        ↓
+Live Operational Views
+        ↓
+Replay Engine
+        ↓
+Dashboard Contract
+        ↓
+Dashboard Data Flow
+
+DATA FLOW DOMAINS
+- session overview data
+- active session detail data
+- runtime digital twin data
+- operational timeline data
+- decision provenance data
+- provider activity data
+- telemetry overview data
+- replay data
+- audit data
+- system health data
+
+INVARIANTS
+- read-only
+- projection-only
+- no independent dashboard state
+- no business logic in UI
+- no runtime mutation
+- no policy decisions in frontend
+- all dashboard data derived from CanonicalOperationalModel
+
+STATUS
+Dashboard Data Flow Foundation prepared for validation.

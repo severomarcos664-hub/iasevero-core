@@ -1,0 +1,25 @@
+IASevero v124.5 — Dashboard Data Flow Evidence Map Summary
+
+RAW EVIDENCE
+Full dashboard data flow evidence map was generated and archived outside Git.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-dashboard-data-flow-v124.5/dashboard-data-flow-evidence-map-full-v124.5.txt
+
+VALIDATED SOURCES
+- CanonicalOperationalModel
+- Runtime Digital Twin
+- Live Operational Views
+- Replay Engine
+- Dashboard Contract
+- DecisionProvenance
+- Telemetry
+- Provider
+- Audit
+
+RULE
+Git stores compact canonical evidence only.
+Raw oversized operational evidence remains archived locally.
+
+STATUS
+Dashboard Data Flow evidence summary prepared for Git.
