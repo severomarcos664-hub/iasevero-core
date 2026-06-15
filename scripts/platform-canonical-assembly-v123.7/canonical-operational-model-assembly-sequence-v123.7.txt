@@ -1,0 +1,16 @@
+IASevero v123.7 — Canonical Operational Model Assembly Sequence
+
+1. RuntimeExecutionSession established
+2. RuntimeEventStream attached
+3. DecisionProvenance attached
+4. MaterializedOperationalState derived
+5. CanonicalOperationalModel assembled
+6. Derived operational capabilities become available
+
+RULE
+
+Every future dashboard, replay, API or audit artifact must consume the CanonicalOperationalModel.
+
+STATUS
+
+Assembly sequence prepared for validation.

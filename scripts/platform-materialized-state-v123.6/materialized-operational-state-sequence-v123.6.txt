@@ -1,0 +1,20 @@
+IASevero v123.6 — Materialized Operational State Sequence
+
+CANONICAL MATERIALIZATION FLOW
+
+1. RuntimeExecutionSession.created
+2. RuntimeEventStream.updated
+3. DecisionProvenance.attached
+4. RuntimeContext.resolved
+5. ExecutiveRuntimeContext.resolved
+6. AuthorityState.materialized
+7. ProviderState.materialized
+8. ExecutionState.materialized
+9. TelemetryState.materialized
+10. MaterializedOperationalState.completed
+
+RULE
+The MaterializedOperationalState must be reconstructable from existing runtime evidence.
+
+STATUS
+Materialized Operational State Sequence prepared for validation.

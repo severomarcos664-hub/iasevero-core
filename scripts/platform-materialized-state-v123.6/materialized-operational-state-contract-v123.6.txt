@@ -1,0 +1,47 @@
+IASevero v123.6 — Materialized Operational State Foundation
+
+MISSION
+Define the canonical derived operational state generated from validated runtime signals.
+
+DEFINITION
+MaterializedOperationalState is the current operational view derived from:
+- RuntimeExecutionSession
+- RuntimeEventStream
+- DecisionProvenance
+
+It does not create new authority. It materializes existing validated runtime evidence.
+
+CORE STRUCTURE
+
+MaterializedOperationalState
+├── sessionId
+├── requestId
+├── traceId
+├── correlationId
+├── operationalMode
+├── runtimeContext
+├── executiveRuntimeContext
+├── authorityState
+│   ├── executionAllowed
+│   ├── decisionGate
+│   ├── actionPolicy
+│   └── executiveAuthority
+├── providerState
+│   ├── providerAllowed
+│   ├── recommended
+│   └── selected
+├── executionState
+│   ├── runtimeAction
+│   ├── workflow
+│   └── operationalState
+├── telemetryState
+├── feedbackState
+├── memoryState
+├── capabilitySnapshot
+└── lastUpdated
+
+RULE
+MaterializedOperationalState must be fully derived from existing runtime evidence.
+
+STATUS
+Materialized Operational State Foundation prepared for validation.

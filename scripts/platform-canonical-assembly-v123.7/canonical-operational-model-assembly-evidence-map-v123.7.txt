@@ -1,0 +1,293 @@
+scripts/runtime-action-engine-test.ts:2:import { readRuntimeEvents } from '../app/lib/runtime-core/runtime-event-bus'
+scripts/runtime-action-engine-test.ts:16:console.log(readRuntimeEvents())
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:8:RuntimeExecutionSession
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:10:RuntimeEventStream
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:12:DecisionProvenance
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:14:MaterializedOperationalState
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:16:CanonicalOperationalModel (SSOT)
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:20:CanonicalOperationalModel
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-v123.7.txt:32:The CanonicalOperationalModel is the Single Source of Operational Truth.
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:3:1. RuntimeExecutionSession established
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:4:2. RuntimeEventStream attached
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:5:3. DecisionProvenance attached
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:6:4. MaterializedOperationalState derived
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:7:5. CanonicalOperationalModel assembled
+scripts/platform-canonical-assembly-v123.7/canonical-operational-model-assembly-sequence-v123.7.txt:12:Every future dashboard, replay, API or audit artifact must consume the CanonicalOperationalModel.
+scripts/platform-canonical-model-v123.4/capability-snapshot-v123.4.txt:15:Capture the operational capability state associated with a RuntimeExecutionSession.
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:8:CanonicalOperationalModel =
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:9:  RuntimeExecutionSession
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:10:+ RuntimeEventStream
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:11:+ MaterializedOperationalState
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:13:The CanonicalOperationalModel is the unified, reproducible and auditable
+scripts/platform-canonical-model-v123.4/canonical-operational-model-contract-v123.4.txt:24:CanonicalOperationalModel
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:59:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:60:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:61:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:62:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:63:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:70:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:71:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:100:app/lib/runtime-core/runtime-action-engine.ts:1:import { publishRuntimeEvent } from './runtime-event-bus'
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:102:app/lib/runtime-core/runtime-action-engine.ts:55:  publishRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:123:app/lib/runtime-core/runtime-event-subscribers.ts:3:  publishRuntimeEvent,
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:124:app/lib/runtime-core/runtime-event-subscribers.ts:6:export type RuntimeEventSubscriber = {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:125:app/lib/runtime-core/runtime-event-subscribers.ts:12:const runtimeSubscribers: RuntimeEventSubscriber[] = []
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:126:app/lib/runtime-core/runtime-event-subscribers.ts:15:  subscriber: RuntimeEventSubscriber
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:127:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:128:app/lib/runtime-core/runtime-event-subscribers.ts:23:  const emittedEvent = publishRuntimeEvent(event)
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:129:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:220:app/lib/orchestrator/runtime-coordinator.ts:2:  RuntimeEvent,
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:221:app/lib/orchestrator/runtime-coordinator.ts:3:  getRuntimeEvents
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:222:app/lib/orchestrator/runtime-coordinator.ts:7:  processRuntimeEvent
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:223:app/lib/orchestrator/runtime-coordinator.ts:19:  const events = getRuntimeEvents()
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:224:app/lib/orchestrator/runtime-coordinator.ts:28:      const result = processRuntimeEvent(event)
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:240:app/lib/orchestrator/runtime-event-bus.ts:1:export type RuntimeEvent = {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:241:app/lib/orchestrator/runtime-event-bus.ts:14:const runtimeEventBus: RuntimeEvent[] = []
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:242:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:243:app/lib/orchestrator/runtime-event-bus.ts:17:  event: RuntimeEvent
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:244:app/lib/orchestrator/runtime-event-bus.ts:22:  const normalizedEvent: RuntimeEvent = {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:245:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:246:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:247:app/lib/orchestrator/runtime-event-bus.ts:40:  type: RuntimeEvent['type']
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:250:app/lib/orchestrator/runtime-event-processor.ts:2:  RuntimeEvent,
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:251:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:252:app/lib/orchestrator/runtime-event-processor.ts:10:export type RuntimeEventProcessingResult = {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:253:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:254:app/lib/orchestrator/runtime-event-processor.ts:18:  event: RuntimeEvent
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:255:app/lib/orchestrator/runtime-event-processor.ts:19:): RuntimeEventProcessingResult {
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:256:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:258:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:259:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:261:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:262:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:263:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-evidence-map-v123.4.txt:264:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/platform-canonical-model-v123.4/canonical-operational-model-sequence-v123.4.txt:3:RuntimeExecutionSession
+scripts/platform-canonical-model-v123.4/canonical-operational-model-sequence-v123.4.txt:5:RuntimeEventStream
+scripts/platform-canonical-model-v123.4/canonical-operational-model-sequence-v123.4.txt:7:MaterializedOperationalState
+scripts/platform-canonical-model-v123.4/canonical-operational-model-sequence-v123.4.txt:9:CanonicalOperationalModel (SSOT)
+scripts/platform-canonical-model-v123.4/canonical-operational-model-sequence-v123.4.txt:20:Every observable platform artifact must derive from the CanonicalOperationalModel.
+scripts/platform-runtime-state-v117.0/03-transition-and-graph-v117.0.txt:11061:scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:1068:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-runtime-state-v117.0/03-transition-and-graph-v117.0.txt:12789:scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:25637:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-runtime-state-v117.0/03-transition-and-graph-v117.0.txt:16518:scripts/platform-adaptive-intelligence-v115.0/04-feedback-adaptation-readiness-v115.0.txt:19244:scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:25637:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-runtime-state-v117.0/03-transition-and-graph-v117.0.txt:21027:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:31:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:32:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:36:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:42:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:44:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:62:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:64:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:105:app/lib/runtime-core/runtime-action-engine.ts:1:import { publishRuntimeEvent } from './runtime-event-bus'
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:107:app/lib/runtime-core/runtime-action-engine.ts:55:  publishRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:111:app/lib/runtime-core/runtime-event-subscribers.ts:3:  publishRuntimeEvent,
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:113:app/lib/runtime-core/runtime-event-subscribers.ts:6:export type RuntimeEventSubscriber = {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:116:app/lib/runtime-core/runtime-event-subscribers.ts:12:const runtimeSubscribers: RuntimeEventSubscriber[] = []
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:117:app/lib/runtime-core/runtime-event-subscribers.ts:15:  subscriber: RuntimeEventSubscriber
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:118:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:121:app/lib/runtime-core/runtime-event-subscribers.ts:23:  const emittedEvent = publishRuntimeEvent(event)
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:126:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:159:app/lib/orchestrator/runtime-coordinator.ts:2:  RuntimeEvent,
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:160:app/lib/orchestrator/runtime-coordinator.ts:3:  getRuntimeEvents
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:162:app/lib/orchestrator/runtime-coordinator.ts:7:  processRuntimeEvent
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:167:app/lib/orchestrator/runtime-coordinator.ts:19:  const events = getRuntimeEvents()
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:171:app/lib/orchestrator/runtime-coordinator.ts:28:      const result = processRuntimeEvent(event)
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:185:app/lib/orchestrator/runtime-event-bus.ts:1:export type RuntimeEvent = {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:186:app/lib/orchestrator/runtime-event-bus.ts:14:const runtimeEventBus: RuntimeEvent[] = []
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:187:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:188:app/lib/orchestrator/runtime-event-bus.ts:17:  event: RuntimeEvent
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:190:app/lib/orchestrator/runtime-event-bus.ts:22:  const normalizedEvent: RuntimeEvent = {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:196:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:198:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:199:app/lib/orchestrator/runtime-event-bus.ts:40:  type: RuntimeEvent['type']
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:208:app/lib/orchestrator/runtime-event-processor.ts:2:  RuntimeEvent,
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:209:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:212:app/lib/orchestrator/runtime-event-processor.ts:10:export type RuntimeEventProcessingResult = {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:214:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:215:app/lib/orchestrator/runtime-event-processor.ts:18:  event: RuntimeEvent
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:216:app/lib/orchestrator/runtime-event-processor.ts:19:): RuntimeEventProcessingResult {
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:219:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:230:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:231:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:232:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:233:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:234:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/platform-canonical-inventory/07-signal-event-inventory-v103.0.txt:235:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:72:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:73:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:77:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:83:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:85:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:106:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:108:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:162:app/lib/runtime-core/runtime-action-engine.ts:1:import { publishRuntimeEvent } from './runtime-event-bus'
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:165:app/lib/runtime-core/runtime-action-engine.ts:55:  publishRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:187:app/lib/runtime-core/runtime-event-subscribers.ts:3:  publishRuntimeEvent,
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:189:app/lib/runtime-core/runtime-event-subscribers.ts:6:export type RuntimeEventSubscriber = {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:192:app/lib/runtime-core/runtime-event-subscribers.ts:12:const runtimeSubscribers: RuntimeEventSubscriber[] = []
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:193:app/lib/runtime-core/runtime-event-subscribers.ts:15:  subscriber: RuntimeEventSubscriber
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:194:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:197:app/lib/runtime-core/runtime-event-subscribers.ts:23:  const emittedEvent = publishRuntimeEvent(event)
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:202:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:254:app/lib/orchestrator/runtime-coordinator.ts:2:  RuntimeEvent,
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:255:app/lib/orchestrator/runtime-coordinator.ts:3:  getRuntimeEvents
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:257:app/lib/orchestrator/runtime-coordinator.ts:7:  processRuntimeEvent
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:262:app/lib/orchestrator/runtime-coordinator.ts:19:  const events = getRuntimeEvents()
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:266:app/lib/orchestrator/runtime-coordinator.ts:28:      const result = processRuntimeEvent(event)
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:284:app/lib/orchestrator/runtime-event-bus.ts:1:export type RuntimeEvent = {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:285:app/lib/orchestrator/runtime-event-bus.ts:14:const runtimeEventBus: RuntimeEvent[] = []
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:286:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:287:app/lib/orchestrator/runtime-event-bus.ts:17:  event: RuntimeEvent
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:289:app/lib/orchestrator/runtime-event-bus.ts:22:  const normalizedEvent: RuntimeEvent = {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:295:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:297:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:298:app/lib/orchestrator/runtime-event-bus.ts:40:  type: RuntimeEvent['type']
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:309:app/lib/orchestrator/runtime-event-processor.ts:2:  RuntimeEvent,
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:310:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:313:app/lib/orchestrator/runtime-event-processor.ts:10:export type RuntimeEventProcessingResult = {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:315:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:316:app/lib/orchestrator/runtime-event-processor.ts:18:  event: RuntimeEvent
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:317:app/lib/orchestrator/runtime-event-processor.ts:19:): RuntimeEventProcessingResult {
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:320:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:331:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:332:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:333:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:334:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:335:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/platform-dependency-evidence/06-signal-telemetry-response-evidence-v104.1.txt:336:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/runtime-event-bus-test.ts:2:  publishRuntimeEvent,
+scripts/runtime-event-bus-test.ts:3:  readRuntimeEvents,
+scripts/runtime-event-bus-test.ts:4:  clearRuntimeEvents,
+scripts/runtime-event-bus-test.ts:7:clearRuntimeEvents()
+scripts/runtime-event-bus-test.ts:9:publishRuntimeEvent({
+scripts/runtime-event-bus-test.ts:20:console.log(readRuntimeEvents())
+scripts/platform-runtime-session-v123.2/runtime-execution-session-contract-v123.2.txt:8:RuntimeExecutionSession
+scripts/runtime-event-subscribers-test.ts:2:  dispatchRuntimeEvent,
+scripts/runtime-event-subscribers-test.ts:16:dispatchRuntimeEvent({
+scripts/runtime-event-stream-engine-test.ts:2:  clearRuntimeEventStream,
+scripts/runtime-event-stream-engine-test.ts:4:  readRuntimeEventStream,
+scripts/runtime-event-stream-engine-test.ts:7:clearRuntimeEventStream()
+scripts/runtime-event-stream-engine-test.ts:32:console.log(readRuntimeEventStream())
+scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:4:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:1068:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:24919:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:4:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:25637:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-adaptive-intelligence-v115.0/04-feedback-adaptation-readiness-v115.0.txt:18526:scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:24919:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:4:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-adaptive-intelligence-v115.0/04-feedback-adaptation-readiness-v115.0.txt:19244:scripts/platform-adaptive-intelligence-v115.0/03-signals-telemetry-readiness-v115.0.txt:25637:scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/audit/runtime-exported-functions-v25.2.txt:40:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/audit/runtime-exported-functions-v25.2.txt:41:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-exported-functions-v25.2.txt:42:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/audit/runtime-exported-functions-v25.2.txt:46:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-exported-functions-v25.2.txt:47:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/audit/runtime-exported-functions-v25.2.txt:85:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/audit/runtime-exported-functions-v25.2.txt:86:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/audit/runtime-exported-functions-v25.2.txt:193:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-exported-functions-v25.2.txt:194:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/audit/runtime-exported-functions-v25.2.txt:195:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/audit/runtime-exported-functions-v25.2.txt:206:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:192:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:193:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-coverage-map-v25.2.txt:194:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/audit/runtime-coverage-map-v25.2.txt:198:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-coverage-map-v25.2.txt:199:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/audit/runtime-coverage-map-v25.2.txt:237:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:238:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/audit/runtime-coverage-map-v25.2.txt:301:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:302:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/audit/runtime-coverage-map-v25.2.txt:303:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/audit/runtime-coverage-map-v25.2.txt:314:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:446:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/audit/runtime-coverage-map-v25.2.txt:447:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/audit/runtime-coverage-map-v25.2.txt:641:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-coverage-map-v25.2.txt:644:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/audit/runtime-coverage-map-v25.2.txt:645:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/audit/runtime-coverage-map-v25.2.txt:651:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/audit/runtime-coverage-map-v25.2.txt:652:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/audit/runtime-coverage-map-v25.2.txt:656:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/audit/runtime-coverage-map-v25.2.txt:657:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/audit/runtime-coverage-map-v25.2.txt:658:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/audit/runtime-coverage-map-v25.2.txt:659:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:80:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/audit/runtime-call-coverage-v25.2.txt:81:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/audit/runtime-call-coverage-v25.2.txt:82:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:85:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:291:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-call-coverage-v25.2.txt:294:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/audit/runtime-call-coverage-v25.2.txt:295:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:301:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/audit/runtime-call-coverage-v25.2.txt:302:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:306:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:307:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:308:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:309:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:400:scripts/runtime-action-engine-test.ts:2:import { readRuntimeEvents } from '../app/lib/runtime-core/runtime-event-bus'
+scripts/audit/runtime-call-coverage-v25.2.txt:402:scripts/runtime-action-engine-test.ts:16:console.log(readRuntimeEvents())
+scripts/audit/runtime-call-coverage-v25.2.txt:511:scripts/runtime-event-bus-test.ts:3:  readRuntimeEvents,
+scripts/audit/runtime-call-coverage-v25.2.txt:512:scripts/runtime-event-bus-test.ts:20:console.log(readRuntimeEvents())
+scripts/audit/runtime-call-coverage-v25.2.txt:531:scripts/runtime-event-stream-engine-test.ts:4:  readRuntimeEventStream,
+scripts/audit/runtime-call-coverage-v25.2.txt:532:scripts/runtime-event-stream-engine-test.ts:32:console.log(readRuntimeEventStream())
+scripts/audit/runtime-call-coverage-v25.2.txt:572:scripts/audit/runtime-exported-functions-v25.2.txt:41:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:573:scripts/audit/runtime-exported-functions-v25.2.txt:46:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:633:scripts/audit/runtime-exported-functions-v25.2.txt:193:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-call-coverage-v25.2.txt:799:scripts/audit/runtime-coverage-map-v25.2.txt:193:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:800:scripts/audit/runtime-coverage-map-v25.2.txt:198:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:860:scripts/audit/runtime-coverage-map-v25.2.txt:301:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-call-coverage-v25.2.txt:951:scripts/audit/runtime-coverage-map-v25.2.txt:446:app/lib/runtime-core/runtime-event-bus.ts:12:function createRuntimeEventId(): string {
+scripts/audit/runtime-call-coverage-v25.2.txt:952:scripts/audit/runtime-coverage-map-v25.2.txt:447:app/lib/runtime-core/runtime-event-bus.ts:20:    id: createRuntimeEventId(),
+scripts/audit/runtime-call-coverage-v25.2.txt:1146:scripts/audit/runtime-coverage-map-v25.2.txt:641:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-call-coverage-v25.2.txt:1149:scripts/audit/runtime-coverage-map-v25.2.txt:644:app/lib/orchestrator/runtime-event-processor.ts:3:  emitRuntimeEvent
+scripts/audit/runtime-call-coverage-v25.2.txt:1150:scripts/audit/runtime-coverage-map-v25.2.txt:645:app/lib/orchestrator/runtime-event-processor.ts:35:    emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1156:scripts/audit/runtime-coverage-map-v25.2.txt:651:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/audit/runtime-call-coverage-v25.2.txt:1157:scripts/audit/runtime-coverage-map-v25.2.txt:652:app/lib/orchestrator/runtime-execution-pipeline.ts:27:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1161:scripts/audit/runtime-coverage-map-v25.2.txt:656:app/lib/orchestrator/runtime-execution-pipeline.ts:60:    emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1162:scripts/audit/runtime-coverage-map-v25.2.txt:657:app/lib/orchestrator/runtime-execution-pipeline.ts:77:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1163:scripts/audit/runtime-coverage-map-v25.2.txt:658:app/lib/orchestrator/runtime-execution-pipeline.ts:99:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1164:scripts/audit/runtime-coverage-map-v25.2.txt:659:app/lib/orchestrator/runtime-execution-pipeline.ts:115:  emitRuntimeEvent({
+scripts/audit/runtime-call-coverage-v25.2.txt:1283:scripts/audit/runtime-functions-v25.2.txt:39:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:1284:scripts/audit/runtime-functions-v25.2.txt:44:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-call-coverage-v25.2.txt:1344:scripts/audit/runtime-functions-v25.2.txt:188:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-call-coverage-v25.2.txt:2058:scripts/runtime-execution-coordinator-test.ts:3:import { readRuntimeEvents } from '../app/lib/runtime-core/runtime-event-bus'
+scripts/audit/runtime-call-coverage-v25.2.txt:2061:scripts/runtime-execution-coordinator-test.ts:16:console.log(readRuntimeEvents())
+scripts/audit/runtime-functions-v25.2.txt:38:app/lib/runtime-core/runtime-event-bus.ts:16:export function publishRuntimeEvent(
+scripts/audit/runtime-functions-v25.2.txt:39:app/lib/runtime-core/runtime-event-bus.ts:34:export function readRuntimeEvents(): RuntimeBusEvent[] {
+scripts/audit/runtime-functions-v25.2.txt:40:app/lib/runtime-core/runtime-event-bus.ts:38:export function clearRuntimeEvents(): void {
+scripts/audit/runtime-functions-v25.2.txt:44:app/lib/runtime-core/runtime-event-stream-engine.ts:54:export function readRuntimeEventStream(): RuntimeStreamEvent[] {
+scripts/audit/runtime-functions-v25.2.txt:45:app/lib/runtime-core/runtime-event-stream-engine.ts:58:export function clearRuntimeEventStream(): void {
+scripts/audit/runtime-functions-v25.2.txt:83:app/lib/runtime-core/runtime-event-subscribers.ts:20:export function dispatchRuntimeEvent(
+scripts/audit/runtime-functions-v25.2.txt:84:app/lib/runtime-core/runtime-event-subscribers.ts:45:export function getRuntimeSubscribers(): RuntimeEventSubscriber[] {
+scripts/audit/runtime-functions-v25.2.txt:188:app/lib/orchestrator/runtime-event-bus.ts:16:export function emitRuntimeEvent(
+scripts/audit/runtime-functions-v25.2.txt:189:app/lib/orchestrator/runtime-event-bus.ts:35:export function getRuntimeEvents() {
+scripts/audit/runtime-functions-v25.2.txt:190:app/lib/orchestrator/runtime-event-bus.ts:39:export function getRuntimeEventsByType(
+scripts/audit/runtime-functions-v25.2.txt:201:app/lib/orchestrator/runtime-event-processor.ts:17:export function processRuntimeEvent(
+scripts/coverage/runtime-imports-v53.0.txt:36:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:139:app/lib/runtime-core/runtime-action-engine.ts:1:import { publishRuntimeEvent } from './runtime-event-bus'
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:180:app/lib/runtime-core/runtime-event-subscribers.ts:23:  const emittedEvent = publishRuntimeEvent(event)
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:211:app/lib/orchestrator/runtime-coordinator.ts:19:  const events = getRuntimeEvents()
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:213:app/lib/orchestrator/runtime-coordinator.ts:28:      const result = processRuntimeEvent(event)
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:223:app/lib/orchestrator/runtime-event-bus.ts:17:  event: RuntimeEvent
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:240:app/lib/orchestrator/runtime-event-processor.ts:18:  event: RuntimeEvent
+scripts/platform-event-stream-v123.3/runtime-event-evidence-map-v123.3.txt:248:app/lib/orchestrator/runtime-execution-pipeline.ts:12:import { emitRuntimeEvent } from './runtime-event-bus'
+scripts/platform-event-stream-v123.3/runtime-event-contract-v123.3.txt:4:Define the canonical runtime event structure that will feed RuntimeExecutionSession.
+scripts/platform-event-stream-v123.3/runtime-event-contract-v123.3.txt:8:RuntimeEvent
+scripts/platform-event-stream-v123.3/runtime-event-contract-v123.3.txt:36:Define the event stream that will feed the canonical RuntimeExecutionSession model.
+scripts/platform-event-stream-v123.3/runtime-event-sequence-v123.3.txt:16:Each RuntimeExecutionSession should be reconstructable from ordered RuntimeEvent entries.
+scripts/runtime-execution-coordinator-test.ts:3:import { readRuntimeEvents } from '../app/lib/runtime-core/runtime-event-bus'
+scripts/runtime-execution-coordinator-test.ts:16:console.log(readRuntimeEvents())
+scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:4:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-knowledge-intelligence-v114.0/03-signal-feedback-learning-v114.0.txt:1033:scripts/platform-unified-operational-graph-v112.0/03-signals-and-observability-v112.0.txt:3:app/runtime/telemetry/runtime-telemetry-subscriber.ts:6:const telemetryEvents: RuntimeEvent[] = []
+scripts/platform-decision-provenance-v123.5/decision-provenance-contract-v123.5.txt:4:Define how runtime decisions are traced, explained and connected to the CanonicalOperationalModel.
+scripts/platform-decision-provenance-v123.5/decision-provenance-contract-v123.5.txt:7:DecisionProvenance records who decided, why the decision was made,
+scripts/platform-decision-provenance-v123.5/decision-provenance-contract-v123.5.txt:12:DecisionProvenance
+scripts/platform-decision-provenance-v123.5/decision-provenance-sequence-v123.5.txt:13:9. decisionProvenance.attachedToCanonicalOperationalModel
+scripts/platform-materialized-state-v123.6/materialized-operational-state-sequence-v123.6.txt:5:1. RuntimeExecutionSession.created
+scripts/platform-materialized-state-v123.6/materialized-operational-state-sequence-v123.6.txt:6:2. RuntimeEventStream.updated
+scripts/platform-materialized-state-v123.6/materialized-operational-state-sequence-v123.6.txt:7:3. DecisionProvenance.attached
+scripts/platform-materialized-state-v123.6/materialized-operational-state-sequence-v123.6.txt:14:10. MaterializedOperationalState.completed
+scripts/platform-materialized-state-v123.6/materialized-operational-state-sequence-v123.6.txt:17:The MaterializedOperationalState must be reconstructable from existing runtime evidence.
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:7:MaterializedOperationalState is the current operational view derived from:
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:8:- RuntimeExecutionSession
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:9:- RuntimeEventStream
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:10:- DecisionProvenance
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:16:MaterializedOperationalState
+scripts/platform-materialized-state-v123.6/materialized-operational-state-contract-v123.6.txt:44:MaterializedOperationalState must be fully derived from existing runtime evidence.
