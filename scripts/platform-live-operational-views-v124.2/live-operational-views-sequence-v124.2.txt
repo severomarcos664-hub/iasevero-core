@@ -1,0 +1,13 @@
+IASevero v124.2 — Live Operational Views Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects the canonical model.
+3. Live Operational Views are derived from the Digital Twin.
+4. Dashboard, API, Monitoring and Replay may consume those views.
+5. No view introduces independent state.
+
+RULE
+Every Live Operational View must be reconstructable from the CanonicalOperationalModel.
+
+STATUS
+Live Operational Views Sequence prepared for validation.

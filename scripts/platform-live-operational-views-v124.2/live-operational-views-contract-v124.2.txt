@@ -1,0 +1,31 @@
+IASevero v124.2 — Live Operational Views Foundation
+
+MISSION
+Define optimized read-only operational views derived from the Runtime Digital Twin.
+
+SOURCE CHAIN
+CanonicalOperationalModel (SSOT)
+        ↓
+Runtime Digital Twin
+        ↓
+Live Operational Views
+
+DEFINED VIEWS
+- LiveSessionView
+- OperationalTimelineView
+- DecisionTraceView
+- ProviderActivityView
+- TelemetryOverviewView
+- AuditView
+- ReplayView
+
+INVARIANTS
+- read-only
+- projection-only
+- no independent state
+- no frontend business logic
+- no runtime mutation
+- reconstructable from CanonicalOperationalModel
+
+STATUS
+Live Operational Views Foundation prepared for validation.
