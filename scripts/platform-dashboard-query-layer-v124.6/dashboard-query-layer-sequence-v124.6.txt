@@ -1,0 +1,15 @@
+IASevero v124.6 — Dashboard Query Layer Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects operational state.
+3. Live Operational Views expose optimized read models.
+4. Replay Engine reconstructs historical execution.
+5. Dashboard Data Flow maps sections to derived sources.
+6. Dashboard Query Layer exposes read-only query domains.
+7. Dashboard UI and future Public API consume query results.
+
+RULE
+Every Dashboard Query must be traceable back to CanonicalOperationalModel.
+
+STATUS
+Dashboard Query Layer Sequence prepared for validation.

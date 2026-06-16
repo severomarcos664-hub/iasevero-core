@@ -1,0 +1,42 @@
+IASevero v124.6 — Dashboard Query Layer Foundation
+
+MISSION
+Define the read-only query layer that the Dashboard will use to consume operational data.
+
+SOURCE CHAIN
+CanonicalOperationalModel (SSOT)
+        ↓
+Runtime Digital Twin
+        ↓
+Live Operational Views
+        ↓
+Replay Engine
+        ↓
+Dashboard Contract
+        ↓
+Dashboard Data Flow
+        ↓
+Dashboard Query Layer
+
+QUERY DOMAINS
+- getLiveSessions
+- getActiveSessionDetail
+- getRuntimeDigitalTwinView
+- getOperationalTimeline
+- getDecisionProvenanceTrace
+- getProviderActivity
+- getTelemetryOverview
+- getReplayView
+- getAuditView
+- getSystemHealthSummary
+
+INVARIANTS
+- read-only
+- query-only
+- no independent state
+- no runtime mutation
+- no policy decision inside query layer
+- every query result must be derived from CanonicalOperationalModel
+
+STATUS
+Dashboard Query Layer Foundation prepared for validation.

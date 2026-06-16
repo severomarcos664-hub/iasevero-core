@@ -1,0 +1,26 @@
+IASevero v124.6 — Dashboard Query Layer Evidence Map Summary
+
+RAW EVIDENCE
+Full dashboard query layer evidence map was generated and archived outside Git.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-dashboard-query-layer-v124.6/dashboard-query-layer-evidence-map-full-v124.6.txt
+
+VALIDATED SOURCES
+- CanonicalOperationalModel
+- Runtime Digital Twin
+- Live Operational Views
+- Replay Engine
+- Dashboard Contract
+- Dashboard Data Flow
+- DecisionProvenance
+- Telemetry
+- Provider
+- Audit
+
+RULE
+Git stores compact canonical evidence only.
+Raw oversized operational evidence remains archived locally.
+
+STATUS
+Dashboard Query Layer evidence summary prepared for Git.
