@@ -1,0 +1,27 @@
+IASevero v125.0 — Platform Integration Evidence Map Summary
+
+RAW EVIDENCE
+Full platform integration evidence map was generated and archived outside Git.
+
+LOCAL ARCHIVE
+~/iasevero-archives/platform-integration-validation-v125.0/platform-integration-evidence-map-full-v125.0.txt
+
+VALIDATED SOURCES
+- RuntimeExecutionSession
+- CanonicalOperationalModel
+- Runtime Digital Twin
+- Live Operational Views
+- Replay Engine
+- Dashboard Query Layer
+- Dashboard Query Registry
+- Public API Contract
+- Telemetry
+- Provider
+- Audit
+
+RULE
+Git stores compact canonical evidence only.
+Raw oversized operational evidence remains archived locally.
+
+STATUS
+Platform Integration evidence summary prepared for Git.

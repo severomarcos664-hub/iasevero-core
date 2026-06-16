@@ -1,0 +1,19 @@
+IASevero v125.0 — End-to-End Operational Flow
+
+FLOW
+1. User Request is received.
+2. RuntimeExecutionSession represents the execution session.
+3. CanonicalOperationalModel records the operational truth.
+4. Runtime Digital Twin projects the canonical model.
+5. Live Operational Views expose optimized read models.
+6. Replay Engine reconstructs historical execution.
+7. Dashboard Query Layer exposes query access.
+8. Dashboard Query Registry catalogs approved queries.
+9. Public API Contract exposes read-only projections.
+10. API Response returns derived operational output.
+
+RULE
+Every step must remain traceable back to CanonicalOperationalModel.
+
+STATUS
+End-to-End Operational Flow prepared for validation.

@@ -1,0 +1,22 @@
+IASevero v125.0 — Architectural Constitution Rule
+
+SSOT RULE
+The CanonicalOperationalModel is the only official source of operational truth.
+
+ABSOLUTE CONSTRAINT
+No new operational component may introduce an independent source of truth.
+
+DERIVATION RULE
+Every dashboard, replay engine, API endpoint, telemetry view, query layer, digital twin representation, metric or audit report must derive its operational state from the CanonicalOperationalModel.
+
+FORBIDDEN
+- independent dashboard state
+- independent replay state
+- independent API state
+- parallel provider truth
+- parallel authority truth
+- runtime mutation by projection layers
+- new governor created only for visualization
+
+STATUS
+Architectural Constitution Rule prepared for validation.

@@ -1,0 +1,21 @@
+IASevero v125.0 — SSOT Consumer Matrix
+
+CanonicalOperationalModel is the Single Source of Operational Truth.
+
+COMPONENT | ROLE | CONSUMES SSOT | STATE OWNERSHIP
+Runtime Digital Twin | Projection | yes | none
+Live Operational Views | Read Model | yes | none
+Replay Engine | Historical Replay | yes | none
+Dashboard Contract | Visualization Contract | yes | none
+Dashboard Data Flow | Data Mapping | yes | none
+Dashboard Query Layer | Query Interface | yes | none
+Dashboard Query Registry | Query Catalog | yes | none
+Public API Contract | External Read API | yes | none
+Future Metrics | Analytics | yes | none
+Future Monitoring | Observability | yes | none
+
+RULE
+No consumer may introduce independent operational truth.
+
+STATUS
+SSOT Consumer Matrix prepared for validation.
