@@ -1,0 +1,15 @@
+IASevero v124.8 — Public API Contract Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects operational state.
+3. Live Operational Views expose optimized read models.
+4. Replay Engine reconstructs historical execution.
+5. Dashboard Query Registry catalogs available queries.
+6. Public API exposes approved query domains.
+7. External consumers receive read-only projections.
+
+RULE
+Every Public API response must be derivable from the CanonicalOperationalModel.
+
+STATUS
+Public API Contract Sequence prepared for validation.

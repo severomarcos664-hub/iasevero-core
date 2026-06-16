@@ -1,0 +1,37 @@
+IASevero v124.8 — Public API Contract Foundation
+
+MISSION
+Define the canonical contract for the future Public API as a read-only consumer of the Runtime Platform.
+
+SOURCE OF TRUTH
+CanonicalOperationalModel (SSOT)
+
+API PRINCIPLES
+- read-only by default
+- projection-only
+- no independent operational state
+- versioned interfaces
+- deterministic responses
+- traceable back to CanonicalOperationalModel
+
+PUBLIC DOMAINS
+- Sessions
+- Runtime Digital Twin
+- Live Operational Views
+- Replay Views
+- Dashboard Query Registry
+- Telemetry Overview
+- Audit View
+- System Health Summary
+
+INVARIANTS
+- no runtime mutation
+- no business logic inside API layer
+- no policy decision inside API endpoints
+- every response reconstructable from canonical evidence
+
+RULE
+The Public API must never become a new source of operational truth.
+
+STATUS
+Public API Contract Foundation prepared for validation.
