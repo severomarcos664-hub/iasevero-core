@@ -1,0 +1,33 @@
+IASevero v124.7 — Dashboard Query Registry Foundation
+
+MISSION
+Define the canonical registry of all dashboard query domains derived from the CanonicalOperationalModel.
+
+SOURCE OF TRUTH
+CanonicalOperationalModel (SSOT)
+
+QUERY REGISTRY
+- getLiveSessions
+- getActiveSessionDetail
+- getRuntimeDigitalTwinView
+- getOperationalTimeline
+- getDecisionProvenanceTrace
+- getProviderActivity
+- getTelemetryOverview
+- getReplayView
+- getAuditView
+- getSystemHealthSummary
+
+INVARIANTS
+- read-only
+- query-only
+- no independent state
+- no runtime mutation
+- no policy decisions inside registry
+- every query traceable back to CanonicalOperationalModel
+
+RULE
+The Dashboard Query Registry must never introduce a new operational source of truth.
+
+STATUS
+Dashboard Query Registry Foundation prepared for validation.

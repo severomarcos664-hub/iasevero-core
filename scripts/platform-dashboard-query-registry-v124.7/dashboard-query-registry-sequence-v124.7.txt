@@ -1,0 +1,16 @@
+IASevero v124.7 — Dashboard Query Registry Sequence
+
+1. CanonicalOperationalModel exists as SSOT.
+2. Runtime Digital Twin projects operational state.
+3. Live Operational Views expose optimized read models.
+4. Replay Engine reconstructs historical execution.
+5. Dashboard Data Flow maps sections to derived sources.
+6. Dashboard Query Layer exposes read-only domains.
+7. Dashboard Query Registry catalogs all available queries.
+8. Dashboard UI and future Public API consume registered queries.
+
+RULE
+Every registered query must be reconstructable from the CanonicalOperationalModel.
+
+STATUS
+Dashboard Query Registry Sequence prepared for validation.
