@@ -1,0 +1,21 @@
+IASevero v125.9
+
+GOAL
+
+Classify platform components into canonical layers.
+
+LAYERS
+
+CORE
+GOVERNANCE
+EXECUTION
+MEMORY
+OBSERVABILITY
+PROJECTION
+API
+AUDIT
+
+RULE
+
+No runtime changes.
+Documentation only.
