@@ -1,0 +1,14 @@
+IASevero v125.4 — Operational Gap Analysis Plan
+
+MISSION
+Identify what is already validated and what remains planned.
+
+RULES
+- no runtime changes
+- no governor changes
+- no provider changes
+- no authority changes
+- documentation only
+
+STATUS
+Operational Gap Analysis Plan prepared for validation.
