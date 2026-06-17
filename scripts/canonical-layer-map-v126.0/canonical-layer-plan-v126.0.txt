@@ -1,0 +1,21 @@
+IASevero v126.0
+
+GOAL
+
+Map platform components into canonical architectural layers.
+
+LAYERS
+
+CORE
+GOVERNANCE
+EXECUTION
+MEMORY
+OBSERVABILITY
+PROJECTION
+API
+AUDIT
+
+RULE
+
+No runtime changes.
+Documentation only.

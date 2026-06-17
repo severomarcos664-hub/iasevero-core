@@ -1,0 +1,48 @@
+IASevero v126.0
+
+CANONICAL LAYER MAP
+
+CORE
+- Runtime Core
+- Runtime Context
+- Runtime State
+
+GOVERNANCE
+- Executive Authority Gateway
+- Executive Governor
+- Policy Engine
+- Decision Gate
+
+EXECUTION
+- Execution Graph
+- Workflow Coordinator
+- Scheduler
+- Queue Manager
+
+MEMORY
+- Runtime Memory
+- Replay Engine
+- Persistence
+
+OBSERVABILITY
+- Runtime Telemetry
+- Correlation Layer
+- Distributed Trace
+
+PROJECTION
+- Runtime Digital Twin
+- Dashboard Contract
+- Dashboard Data Flow
+
+API
+- API Chat
+- Public API Contract
+
+AUDIT
+- Audit Reports
+- Validation Artifacts
+- Coverage Maps
+
+RULE
+
+CanonicalOperationalModel remains the operational source of truth.
