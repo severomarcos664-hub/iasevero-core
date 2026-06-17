@@ -1,0 +1,20 @@
+IASevero v125.6
+
+Frozen Components
+
+CanonicalOperationalModel
+Authority Chain
+Runtime Governance
+Runtime Execution Session
+Runtime Digital Twin
+Replay Engine
+Dashboard Contract
+Dashboard Data Flow
+Dashboard Query Layer
+Dashboard Query Registry
+Public API Contract
+
+RULE
+
+No implementation phase may introduce
+a parallel operational truth.

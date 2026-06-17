@@ -1,0 +1,51 @@
+IASevero v125.6
+
+Platform Implementation Roadmap
+
+PHASE 1
+Dashboard UI
+
+GOAL
+Visualize operational projections.
+
+SOURCE
+CanonicalOperationalModel
+
+STATUS
+Planned
+
+PHASE 2
+Public API Read Layer
+
+GOAL
+Expose read-only operational projections.
+
+SOURCE
+CanonicalOperationalModel
+
+STATUS
+Planned
+
+PHASE 3
+Monitoring Views
+
+GOAL
+Operational observability.
+
+SOURCE
+CanonicalOperationalModel
+
+STATUS
+Planned
+
+PHASE 4
+Operational Metrics Views
+
+GOAL
+Metrics and reporting.
+
+SOURCE
+CanonicalOperationalModel
+
+STATUS
+Planned
