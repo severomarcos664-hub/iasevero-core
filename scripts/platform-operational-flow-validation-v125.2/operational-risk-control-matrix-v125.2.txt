@@ -1,0 +1,16 @@
+IASevero v125.2 — Operational Risk Control Matrix
+
+RISK | CONTROL | STATUS
+Parallel source of truth | CanonicalOperationalModel SSOT rule | controlled
+Dashboard state duplication | Read-only projection rule | controlled
+Replay state duplication | Reconstructable from SSOT | controlled
+API mutation risk | Public API read-only contract | controlled
+Governor duplication | No new governor rule | controlled
+Runtime mutation | No runtime change in this sprint | controlled
+Evidence bloat | Compact evidence policy | controlled
+
+ENGINEERING DECISION
+Continue validating integration before implementing UI, API or runtime changes.
+
+STATUS
+Operational Risk Control Matrix prepared for validation.
