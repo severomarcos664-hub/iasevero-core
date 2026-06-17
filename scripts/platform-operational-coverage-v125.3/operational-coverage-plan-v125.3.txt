@@ -1,0 +1,20 @@
+IASevero v125.3 — Operational Coverage Plan
+
+MISSION
+Map the current platform coverage without modifying runtime behavior.
+
+SCOPE
+- RuntimeExecutionSession
+- CanonicalOperationalModel
+- Runtime Digital Twin
+- Live Operational Views
+- Replay Engine
+- Dashboard Query Layer
+- Dashboard Query Registry
+- Public API Contract
+
+RULE
+No new runtime component may be introduced.
+
+STATUS
+Operational Coverage Plan prepared for validation.

@@ -1,0 +1,45 @@
+IASevero v123.1 — Real Workflow Evidence Contract
+
+MISSION
+Define the minimum evidence contract for the first live IASevero workflow demonstration.
+
+LIVE DEMONSTRATION OUTPUT
+A successful workflow demonstration must produce:
+
+- requestId
+- traceId
+- correlationId
+- runtimeContext
+- authorityDecision
+- executionAllowed
+- providerSelected
+- telemetryEvents
+- feedbackGenerated
+- finalResponse
+
+TARGET FLOW
+User Request
+↓
+RuntimeContext
+↓
+ExecutiveRuntimeContext
+↓
+Decision / Authority
+↓
+Execution Bridge
+↓
+Provider Selection
+↓
+Telemetry / Trace / Correlation
+↓
+Feedback
+↓
+Final Response
+
+ENGINEERING RULE
+Do not create new architecture.
+Use existing runtime capabilities.
+Prove operational behavior before adding dashboard or public API.
+
+STATUS
+Real workflow evidence contract prepared for validation.

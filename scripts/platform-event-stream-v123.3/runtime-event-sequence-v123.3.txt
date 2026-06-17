@@ -1,0 +1,19 @@
+IASevero v123.3 — Runtime Event Sequence
+
+CANONICAL EVENT SEQUENCE
+
+1. request.received
+2. context.created
+3. executiveContext.resolved
+4. authority.evaluated
+5. execution.allowed
+6. provider.selected
+7. telemetry.emitted
+8. feedback.generated
+9. response.finalized
+
+TARGET
+Each RuntimeExecutionSession should be reconstructable from ordered RuntimeEvent entries.
+
+STATUS
+Runtime Event Sequence prepared for validation.

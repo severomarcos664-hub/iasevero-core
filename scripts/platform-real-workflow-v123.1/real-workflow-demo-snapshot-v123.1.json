@@ -1,0 +1,30 @@
+{
+  "version": "v123.1",
+  "type": "real-workflow-demo-snapshot",
+  "requestId": "pending-runtime-request-id",
+  "traceId": "pending-runtime-trace-id",
+  "correlationId": "pending-runtime-correlation-id",
+  "runtimeContext": {
+    "status": "pending-validation",
+    "source": "existing-runtime-capability"
+  },
+  "authorityDecision": {
+    "executionAllowed": "pending-validation",
+    "source": "existing-authority-chain"
+  },
+  "providerSelected": {
+    "provider": "pending-validation",
+    "source": "existing-provider-routing"
+  },
+  "telemetryEvents": {
+    "status": "pending-validation",
+    "source": "existing-telemetry-layer"
+  },
+  "feedbackGenerated": {
+    "status": "pending-validation",
+    "source": "existing-feedback-layer"
+  },
+  "finalResponse": {
+    "status": "pending-validation"
+  }
+}

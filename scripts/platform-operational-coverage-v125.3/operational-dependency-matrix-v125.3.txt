@@ -1,0 +1,21 @@
+IASevero v125.3 — Operational Dependency Matrix
+
+SOURCE OF TRUTH
+CanonicalOperationalModel
+
+DEPENDENCIES
+
+Runtime Digital Twin -> CanonicalOperationalModel
+Live Operational Views -> Runtime Digital Twin
+Replay Engine -> CanonicalOperationalModel
+Dashboard Contract -> CanonicalOperationalModel
+Dashboard Data Flow -> Dashboard Contract
+Dashboard Query Layer -> Dashboard Data Flow
+Dashboard Query Registry -> Dashboard Query Layer
+Public API Contract -> Dashboard Query Registry
+
+RULE
+All dependencies remain downstream from CanonicalOperationalModel.
+
+STATUS
+Operational Dependency Matrix prepared for validation.

@@ -1,0 +1,42 @@
+IASevero v123.2 — Runtime Execution Session Contract
+
+MISSION
+Define the canonical operational object representing one complete runtime execution.
+
+CORE OBJECT
+
+RuntimeExecutionSession
+├── sessionId
+├── requestId
+├── traceId
+├── correlationId
+├── createdAt
+├── runtimeContext
+├── executiveRuntimeContext
+├── authority
+│   ├── decisionGate
+│   ├── actionPolicy
+│   ├── executiveAuthority
+│   └── executionAllowed
+├── provider
+│   ├── recommended
+│   ├── selected
+│   └── providerAllowed
+├── execution
+│   ├── bridge
+│   ├── workflow
+│   ├── operationalState
+│   └── runtimeAction
+├── telemetryEvents[]
+├── feedbackEvents[]
+├── executionTimeline[]
+├── operationalMetrics
+├── memorySnapshot
+└── finalResponse
+
+ENGINEERING RULE
+Do not create new architecture.
+Represent existing runtime capabilities through a single canonical operational model.
+
+STATUS
+Runtime Execution Session contract prepared for validation.
