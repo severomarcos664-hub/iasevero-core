@@ -1,0 +1,27 @@
+IASevero v125.1 — Platform Integration Evidence Summary
+
+BASELINE VERIFIED FROM PREVIOUS CHECKPOINTS
+- v124.8 Public API Contract Foundation
+- v125.0 Platform Integration & Operational Validation
+
+VALIDATED CHAIN
+CanonicalOperationalModel
+↓
+Runtime Digital Twin
+↓
+Live Operational Views
+↓
+Replay Engine
+↓
+Dashboard Query Layer
+↓
+Dashboard Query Registry
+↓
+Public API Contract
+
+ENGINEERING POLICY
+Use compact canonical evidence in Git.
+Do not generate oversized evidence maps unless specifically required.
+
+STATUS
+Integration evidence summary prepared for Git.

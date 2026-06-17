@@ -1,0 +1,23 @@
+IASevero v125.1 — No Fragmentation Rule
+
+ABSOLUTE RULE
+No future dashboard, replay engine, API, monitoring view, telemetry view or query layer may introduce an independent operational state.
+
+ALLOWED
+- read-only projections
+- derived views
+- query contracts
+- replay reconstruction
+- audit reports
+- dashboard visualization
+
+FORBIDDEN
+- parallel source of truth
+- independent dashboard state
+- independent replay state
+- independent API state
+- new governor for visualization
+- runtime mutation from projection layers
+
+STATUS
+No Fragmentation Rule prepared for validation.

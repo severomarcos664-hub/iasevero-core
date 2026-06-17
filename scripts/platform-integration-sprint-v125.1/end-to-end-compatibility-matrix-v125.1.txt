@@ -1,0 +1,20 @@
+IASevero v125.1 — End-to-End Compatibility Matrix
+
+COMPONENT | INPUT | OUTPUT | STATE OWNER
+RuntimeExecutionSession | Request | Session Context | none
+CanonicalOperationalModel | Session Context | Operational Truth | SSOT
+Runtime Digital Twin | CanonicalOperationalModel | Projection View | none
+Live Operational Views | Digital Twin | Read Models | none
+Replay Engine | CanonicalOperationalModel | Replay View | none
+Dashboard Query Layer | Live Views / Replay | Query Results | none
+Dashboard Query Registry | Query Layer | Query Catalog | none
+Public API Contract | Query Registry | Read-only Response Contract | none
+
+VALIDATION RESULT
+All components are consumers or projections of CanonicalOperationalModel.
+
+RULE
+Only CanonicalOperationalModel may represent operational truth.
+
+STATUS
+Compatibility Matrix prepared for validation.
