@@ -1,0 +1,20 @@
+IASevero v125.5
+
+Platform Readiness Assessment
+
+GOAL
+
+Assess platform readiness without introducing
+new runtime components.
+
+CLASSIFICATIONS
+
+READY
+PARTIAL
+PLANNED
+NOT REQUIRED
+
+RULE
+
+CanonicalOperationalModel remains the single
+source of operational truth.
