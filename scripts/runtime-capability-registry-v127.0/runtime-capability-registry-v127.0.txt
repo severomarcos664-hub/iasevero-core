@@ -1,0 +1,50 @@
+IASevero v127.0
+
+Runtime Capability Registry
+
+PURPOSE
+
+Define the visible runtime capabilities that can be exposed by the IASevero platform without introducing new runtime state.
+
+CAPABILITIES
+
+1. Runtime Health
+- Reads runtime health status.
+- Source: existing runtime status APIs and runtime state.
+
+2. Runtime Telemetry
+- Reads operational telemetry.
+- Source: runtime telemetry layer.
+
+3. Runtime Authority
+- Reads authority and execution permission state.
+- Source: Executive Authority Gateway and ExecutiveRuntimeContext.
+
+4. Runtime Memory
+- Reads memory availability and persistence status.
+- Source: runtime memory and persistence layer.
+
+5. Runtime Execution
+- Reads execution graph and workflow readiness.
+- Source: execution graph and workflow coordinator.
+
+6. Runtime Governance
+- Reads governance and policy status.
+- Source: policy engine and governance matrix.
+
+7. Runtime Observability
+- Reads trace, correlation and replay readiness.
+- Source: telemetry, trace, replay and audit artifacts.
+
+RULES
+
+- Read-only.
+- No mutation.
+- No new source of truth.
+- No new governor.
+- No new runtime.
+- Every capability must derive from existing runtime components.
+
+STATUS
+
+Prepared for validation.
