@@ -1,0 +1,11 @@
+IASevero v131.0
+
+Dependency Domain Summary
+
+Governance: 15
+Authority: 14
+Execution: 44
+Memory: 8
+Telemetry: 17
+Recovery: 13
+Provider: 8

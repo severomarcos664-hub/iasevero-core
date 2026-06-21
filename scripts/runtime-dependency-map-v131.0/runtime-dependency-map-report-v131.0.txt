@@ -1,0 +1,28 @@
+IASevero v131.0
+
+Runtime Dependency Map
+
+GOAL
+Map real runtime dependencies based on code references and imports.
+
+SOURCE
+app/**/*.ts
+app/**/*.tsx
+
+SCOPE
+Read-only audit.
+No runtime changes.
+No new modules.
+No dashboard changes.
+
+DOMAINS
+Governance
+Authority
+Execution
+Memory
+Telemetry
+Recovery
+Provider
+
+STATUS
+Prepared for dependency analysis.

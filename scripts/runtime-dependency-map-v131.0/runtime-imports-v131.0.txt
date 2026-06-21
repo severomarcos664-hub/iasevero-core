@@ -1,0 +1,333 @@
+app/layout.tsx:import './globals.css'
+app/runtime/scheduler/runtime-scheduler.ts:import {
+app/runtime/integration/runtime-integration-layer.ts:import {
+app/runtime/integration/runtime-integration-layer.ts:import {
+app/runtime/integration/runtime-integration-layer.ts:import {
+app/runtime/integration/runtime-integration-layer.ts:import {
+app/runtime/state/runtime-state-kernel.ts:import { emitRuntimeStateChanged } from './runtime-state-events'
+app/runtime/state/runtime-state-events.ts:import {
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:import {
+app/page.tsx:import { useRouter } from 'next/navigation'
+app/console/page.tsx:import { useEffect, useRef, useState } from 'react'
+app/api/runtime/telemetry/route.ts:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:import { runRuntimeMasterOrchestrator }
+app/api/runtime/status/route.ts:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
+app/api/health/route.ts:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
+app/api/chat/route.ts:import { iaseveroCore } from '@/app/lib/iasevero-core'
+app/api/chat/route.ts:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
+app/api/chat/route.ts:import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+app/api/chat/route.ts:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/api/chat/route.ts:import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+app/api/chat/route.ts:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+app/api/job/route.ts:import { NextResponse } from "next/server"
+app/api/job/route.ts:import { getJob } from "@/app/lib/queue"
+app/api/job/route.ts:import { tickJobs } from "@/app/lib/runner"
+app/lib/context-smart.ts:import { contextSummary } from './context'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:import {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:import {
+app/lib/runtime-executive-state/runtime-executive-state.ts:import {
+app/lib/runtime-executive-state/runtime-executive-state.ts:import {
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:import {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:import {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:import {
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:import {
+app/lib/iasevero-core.ts:import { runProvider } from './provider'
+app/lib/iasevero-core.ts:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+app/lib/iasevero-core.ts:import { buildDecision, validateDecisionAnswer } from './decision-engine'
+app/lib/iasevero-core.ts:import { localBrain } from './local-brain'
+app/lib/openai-client.ts:import OpenAI from "openai";
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:import {
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:import {
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:import {
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:import {
+app/lib/runner.ts:import { queue, runNextStep } from './queue'
+app/lib/runner.ts:import { runSafeCommand } from './executor'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:import {
+app/lib/runtime-core/runtime-adaptive-response.ts:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-action-policy-engine.ts:import {
+app/lib/runtime-core/runtime-tool-orchestrator.ts:import { createRuntimeToolRegistry } from './runtime-tool-registry'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:import {
+app/lib/runtime-core/runtime-lane-supervisor.ts:import { readRuntimeQueue } from './runtime-queue-manager'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:import {
+app/lib/runtime-core/runtime-policy-engine.ts:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-policy-engine.ts:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-policy-engine.ts:import { RuntimeActionType } from './runtime-action-engine'
+app/lib/runtime-core/runtime-severity-governance.ts:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:import { getRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:import {
+app/lib/runtime-core/runtime-predictive-stabilization.ts:import { evaluateRuntimeSeverityGovernance }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:import { emitRuntimeTelemetry }
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { validateRuntimeIntegrity } from './runtime-integrity-validator'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { scheduleRuntimeExecution } from './runtime-adaptive-scheduler'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { superviseRuntimeLanes } from './runtime-lane-supervisor'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { coordinateRuntimeSelfHealing } from './runtime-self-healing-coordinator'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-state-transition-engine.ts:import { updateRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-state-transition-engine.ts:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+app/lib/runtime-core/runtime-unified-context.ts:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:import { transitionRuntimeState } from './runtime-state-transition-engine'
+app/lib/runtime-core/runtime-event-stream-engine.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-persistence-fabric.ts:import fs from 'fs'
+app/lib/runtime-core/runtime-persistence-fabric.ts:import path from 'path'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:import {
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:import {
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:import {
+app/lib/runtime-core/runtime-resilience-engine.ts:import {
+app/lib/runtime-core/runtime-recovery-engine.ts:import fs from 'fs'
+app/lib/runtime-core/runtime-recovery-engine.ts:import path from 'path'
+app/lib/runtime-core/runtime-load-balancer.ts:import {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:import {
+app/lib/runtime-core/runtime-evaluation-engine.ts:import {
+app/lib/runtime-core/runtime-evaluation-engine.ts:import {
+app/lib/runtime-core/runtime-evaluation-engine.ts:import {
+app/lib/runtime-core/runtime-governance-enforcement.ts:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-execution-coordinator.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:import { executeRuntimeAction } from './runtime-action-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:import {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:import {
+app/lib/runtime-core/runtime-execution-bridge.ts:import { runRuntimeMasterOrchestrator } from './runtime-master-orchestrator'
+app/lib/runtime-core/runtime-execution-bridge.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-integrity-validator.ts:import fs from 'fs'
+app/lib/runtime-core/runtime-integrity-validator.ts:import path from 'path'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:import {
+app/lib/runtime-core/runtime-decision-gate.ts:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-timeline-engine.ts:import { readRuntimeTelemetry }
+app/lib/runtime-core/runtime-action-engine.ts:import { publishRuntimeEvent } from './runtime-event-bus'
+app/lib/runtime-core/runtime-action-engine.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-state-replay-engine.ts:import fs from 'fs'
+app/lib/runtime-core/runtime-state-replay-engine.ts:import path from 'path'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeAwareness } from '../orchestrator/runtime-awareness'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-governance-center.ts:import { superviseRuntimeLanes } from './runtime-lane-supervisor'
+app/lib/runtime-core/runtime-governance-center.ts:import { scheduleRuntimeExecution } from './runtime-adaptive-scheduler'
+app/lib/runtime-core/runtime-feedback-integration.ts:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:import { superviseRuntimeAutonomously } from './runtime-autonomous-supervisor'
+app/lib/runtime-core/runtime-feedback-integration.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-event-subscribers.ts:import {
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { validateRuntimeIntegrity } from './runtime-integrity-validator'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { replayRuntimeState } from './runtime-state-replay-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-decision-loop.ts:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:import type { RuntimeProvider, RuntimeRiskLevel } from './runtime-contracts'
+app/lib/runtime-core/runtime-learning-signals.ts:import {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:import { superviseRuntimeAutonomously } from './runtime-autonomous-supervisor'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:import {
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:import {
+app/lib/executive-runtime-core/executive-runtime-core.ts:import {
+app/lib/executive-runtime-core/executive-runtime-core.ts:import {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:import {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:import {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:import {
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:import {
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:import {
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:import {
+app/lib/fallback.ts:import { detectSemanticIntent } from './nlp'
+app/lib/fallback.ts:import { buildAnswer } from './answer'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:import {
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:import {
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:import {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:import {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:import {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:import {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:import {
+app/lib/learning.ts:import fs from 'fs'
+app/lib/learning.ts:import path from 'path'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeConfidence } from '@/app/lib/runtime-core/runtime-confidence-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeRiskEscalation } from '@/app/lib/runtime-core/runtime-risk-escalation-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeAdaptiveIntelligence } from '@/app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:import {
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:import {
+app/lib/memory.ts:import fs from 'fs'
+app/lib/memory.ts:import path from 'path'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:import {
+app/lib/runtime-execution-router/runtime-execution-router.ts:import {
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:import {
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:import {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:import {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:import {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:import {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:import {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:import {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:import {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:import {
+app/lib/local-memory.ts:import fs from 'fs'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:import {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:import {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:import {
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:import {
+app/lib/executor.ts:import { execSync } from "child_process"
+app/lib/providers/local.ts:import { detectCommand } from '../command-detector'
+app/lib/providers/local.ts:import { localIntelligence } from '../zero-cost-brain'
+app/lib/providers/local.ts:import { smartContext } from '../context-smart';
+app/lib/providers/local.ts:import { fallbackLocal } from '../fallback'
+app/lib/providers/local.ts:import { hybridProvider } from './hybrid'
+app/lib/providers/local.ts:import { coreIdentity } from '../core-identity'
+app/lib/providers/local.ts:import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
+app/lib/providers/local.ts:import { detectIntent } from '../router'
+app/lib/providers/local.ts:import { contextSummary, saveTurn } from '../context'
+app/lib/providers/hybrid.ts:import { getIASeveroMode } from '../mode'
+app/lib/orchestrator/runtime-autonomous-decision.ts:import {
+app/lib/orchestrator/runtime-topology-validator.ts:import type { RuntimeDependencyGraph } from './runtime-dependency-graph'
+app/lib/orchestrator/runtime-graph-registry.ts:import { buildRuntimeDependencyGraph } from './runtime-dependency-graph'
+app/lib/orchestrator/runtime-budget-control.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/learning-engine.ts:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/runtime-snapshot.ts:import fs from 'fs'
+app/lib/orchestrator/runtime-snapshot.ts:import path from 'path'
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { runtimeGraphRegistry } from './runtime-graph-registry'
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { validateRuntimeTopology } from './runtime-topology-validator'
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { evaluateStructuralHealth } from './runtime-structural-health'
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/health-intelligence.ts:import { getOperationalMetrics } from './metrics'
+app/lib/orchestrator/health-intelligence.ts:import { runDiagnostics } from './diagnostics'
+app/lib/orchestrator/health-intelligence.ts:import { getState } from './state-engine'
+app/lib/orchestrator/audit-trail.ts:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/audit-trail.ts:import { getRecentTraces } from './trace'
+app/lib/orchestrator/audit-trail.ts:import { getState } from './state-engine'
+app/lib/orchestrator/runtime-operational-memory.ts:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-governor.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-governor.ts:import type { RuntimePolicyDecision } from './runtime-policy'
+app/lib/orchestrator/runtime-policy-engine.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-guardian.ts:import { getOperationalMetrics } from './metrics'
+app/lib/orchestrator/runtime-guardian.ts:import { isLimitExceeded } from './runtime-limiter'
+app/lib/orchestrator/runtime-guardian.ts:import { updateState } from './state-engine'
+app/lib/orchestrator/runtime-policy.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-execution-control.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-coordinator.ts:import {
+app/lib/orchestrator/runtime-coordinator.ts:import {
+app/lib/orchestrator/runtime-awareness.ts:import type { RuntimeStateRegistry } from './runtime-state-registry'
+app/lib/orchestrator/runtime-dependency-validator.ts:import {
+app/lib/orchestrator/runtime-recovery.ts:import type { RuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/event-logger.ts:import { IASeveroEvent } from './events'
+app/lib/orchestrator/runtime-provider-governor.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeTopologyReport } from './runtime-topology-validator'
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeStructuralHealthReport } from './runtime-structural-health'
+app/lib/orchestrator/runtime-telemetry.ts:import {
+app/lib/orchestrator/runtime.ts:import { getRuntimeStatus } from '../env'
+app/lib/orchestrator/runtime-event-processor.ts:import {
+app/lib/orchestrator/runtime-event-processor.ts:import {
+app/lib/orchestrator/metrics.ts:import { getState } from './state-engine'
+app/lib/orchestrator/metrics.ts:import { getRecentEvents } from './event-logger'
+app/lib/orchestrator/metrics.ts:import { getRecentTraces } from './trace'
+app/lib/orchestrator/metrics.ts:import { getMemoryPolicy } from './memory-governor'
+app/lib/orchestrator/runtime-self-healing.ts:import {
+app/lib/orchestrator/central-runtime-core.ts:import { superviseRuntime } from './runtime-supervisor'
+app/lib/orchestrator/central-runtime-core.ts:import { evaluateRuntimeEvolution } from './evolution-engine'
+app/lib/orchestrator/central-runtime-core.ts:import { executeSelfHealing } from './self-healing'
+app/lib/orchestrator/central-runtime-core.ts:import { persistRuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { enforceRuntimeExecution } from './runtime-enforcement'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import {
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { emitRuntimeEvent } from './runtime-event-bus'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:import type { RuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:import type { RuntimeRecoveryPlan } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:import { executeRuntimeConsciousLoop } from './runtime-conscious-loop'
+app/lib/orchestrator/runtime-decision-engine.ts:import { resolveHybridProvider } from './hybrid-router'
+app/lib/orchestrator/runtime-decision-engine.ts:import { executeSelfHealing } from './self-healing'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateExecutionControl } from './runtime-execution-control'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeBudget } from './runtime-budget-control'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeRecovery } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
+app/lib/orchestrator/runtime-decision-engine.ts:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-decision-engine.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:import { registerRuntimeIncident } from './runtime-incidents'
+app/lib/orchestrator/runtime-decision-engine.ts:import { enforceRuntimeExecution } from './runtime-enforcement'
+app/lib/orchestrator/runtime-decision-engine.ts:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:import { transitionRuntimeLifecycle } from './runtime-lifecycle-manager'
+app/lib/orchestrator/runtime-causal-trace.ts:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/hybrid-router.ts:import { getRuntimeAwareness } from './awareness-engine'
+app/lib/orchestrator/hybrid-router.ts:import { selectBestProvider } from './intelligent-selector'
+app/lib/orchestrator/adaptive-protection.ts:import { runDiagnostics } from './diagnostics'
+app/lib/orchestrator/adaptive-protection.ts:import { updateState } from './state-engine'
+app/lib/orchestrator/runtime-memory.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/self-healing.ts:import { runDiagnostics } from './diagnostics'
+app/lib/orchestrator/self-healing.ts:import { resetState } from './state-engine'
+app/lib/orchestrator/self-healing.ts:import { clearQueue } from './queue-governor'
+app/lib/orchestrator/self-healing.ts:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/diagnostics.ts:import { getOperationalMetrics } from './metrics'
+app/lib/orchestrator/decision-pipeline.ts:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/decision-pipeline.ts:import { resolveProviderRoute } from './routing'
+app/lib/orchestrator/decision-pipeline.ts:import { executeRoute } from './executor'
+app/lib/orchestrator/decision-pipeline.ts:import { createEvent } from './events'
+app/lib/orchestrator/decision-pipeline.ts:import { logEvent } from './event-logger'
+app/lib/orchestrator/decision-pipeline.ts:import { addTrace } from './trace'
+app/lib/orchestrator/runtime-brain-matrix.ts:import { getOperationalMetrics } from './metrics'
+app/lib/orchestrator/runtime-brain-matrix.ts:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-brain-matrix.ts:import { superviseRuntime } from './runtime-supervisor'
+app/lib/orchestrator/runtime-brain-matrix.ts:import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
+app/lib/orchestrator/runtime-brain-matrix.ts:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+app/lib/orchestrator/intelligent-selector.ts:import { getProviderReputation } from './provider-reputation'
+app/lib/orchestrator/runtime-enforcement.ts:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-enforcement.ts:import type { RuntimeGovernanceDecision } from './runtime-governor'
+app/lib/orchestrator/runtime-structural-health.ts:import type { RuntimeTopologyReport } from './runtime-topology-validator'
+app/lib/orchestrator/runtime-structural-health.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/awareness-engine.ts:import { getState } from './state-engine'
+app/lib/orchestrator/awareness-engine.ts:import { runDiagnostics } from './diagnostics'
+app/lib/orchestrator/awareness-engine.ts:import { getOperationalMetrics } from './metrics'
+app/lib/orchestrator/evolution-engine.ts:import { analyzeRuntimePatterns } from './learning-engine'
+app/lib/orchestrator/evolution-engine.ts:import { getRuntimeAwareness } from './awareness-engine'
+app/lib/orchestrator/runtime-conscious-loop.ts:import {
+app/lib/orchestrator/runtime-conscious-loop.ts:import {
+app/lib/orchestrator/runtime-conscious-loop.ts:import {
+app/lib/orchestrator/runtime-intelligence.ts:import type { RuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/routing.ts:import { resolveRuntimeDecision } from './runtime'
+app/lib/orchestrator/routing.ts:import { createEvent } from './events'
+app/lib/orchestrator/routing.ts:import { logEvent } from './event-logger'
+app/lib/orchestrator/routing.ts:import { evaluatePolicy } from './policy'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:import {
+app/lib/runtime-trust/runtime-trust-engine.ts:import {
+app/lib/executive-runtime-context/executive-runtime-context.ts:import {
+app/lib/executive-runtime-context/executive-runtime-context.ts:import {
+app/lib/executive-runtime-context/executive-runtime-context.ts:import {
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:import {
+app/lib/tools-logs.ts:import { execSync } from "child_process"
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:import {
+app/lib/provider.ts:import { localProvider } from './providers/local'
+app/lib/provider.ts:import type { ProviderRoute } from './orchestrator/routing'
+app/lib/context.ts:import fs from 'fs'
+app/lib/context.ts:import path from 'path'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:import {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:import {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:import {
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:import {
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:import {
+app/lib/decision-engine.ts:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:import {

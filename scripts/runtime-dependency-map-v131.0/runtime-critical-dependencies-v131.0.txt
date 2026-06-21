@@ -1,0 +1,113 @@
+app/runtime/contracts/runtime-capability-contracts.ts:    module: 'runtime-telemetry',
+app/runtime/contracts/runtime-capability-contracts.ts:    module: 'runtime-recovery',
+app/runtime/runtime-manifest.ts:  codename: 'runtime-governance-layer',
+app/runtime/runtime-manifest.ts:    'runtime-telemetry',
+app/runtime/central-runtime-manifest.ts:      'runtime-provider-governor',
+app/runtime/central-runtime-manifest.ts:      'runtime-execution-control',
+app/runtime/central-runtime-manifest.ts:      'runtime-telemetry',
+app/runtime/central-runtime-manifest.ts:      'runtime-recovery',
+app/runtime/runtime-registry.ts:    name: 'runtime-telemetry',
+app/api/chat/route.ts:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
+app/api/chat/route.ts:import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:  source: 'runtime-executive-authority'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:      'runtime-executive-authority',
+app/lib/runtime-executive-state/runtime-executive-state.ts:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-executive-state/runtime-executive-state.ts:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-executive-state/runtime-executive-state.ts:  source: 'runtime-executive-state'
+app/lib/runtime-executive-state/runtime-executive-state.ts:      'runtime-executive-state',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:  source: 'runtime-provider-authority'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:      'runtime-provider-authority',
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:  source: 'runtime-executive-governance-layer'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:    source: 'runtime-executive-governance-layer',
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:} from '@/app/lib/runtime-governance-matrix/runtime-execution-governance-matrix'
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:          : 'contain-runtime-execution'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:  source: 'runtime-execution-scheduler'
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:      'runtime-execution-scheduler',
+app/lib/runtime-core/runtime-severity-governance.ts:import { correlateRuntimeTelemetry } from './runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:  source: 'runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:    source: 'runtime-execution-orchestrator',
+app/lib/runtime-core/runtime-predictive-stabilization.ts:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-event-stream-engine.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  source: 'runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:    source: 'runtime-execution-criticality-intelligence',
+app/lib/runtime-core/runtime-recovery-engine.ts:      'runtime-recovery-engine',
+app/lib/runtime-core/runtime-telemetry-correlation.ts:import { readRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:  source: 'runtime-telemetry-correlation'
+app/lib/runtime-core/runtime-telemetry-correlation.ts:    source: 'runtime-telemetry-correlation',
+app/lib/runtime-core/runtime-governance-enforcement.ts:  source: 'runtime-governance-enforcement'
+app/lib/runtime-core/runtime-governance-enforcement.ts:    source: 'runtime-governance-enforcement',
+app/lib/runtime-core/runtime-execution-coordinator.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-coordinator.ts:  source: 'runtime-execution-coordinator'
+app/lib/runtime-core/runtime-execution-coordinator.ts:    source: 'runtime-execution-coordinator',
+app/lib/runtime-core/runtime-execution-coordinator.ts:    source: 'runtime-execution-coordinator',
+app/lib/runtime-core/runtime-execution-coordinator.ts:    type: 'runtime-execution-coordinated',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:} from './runtime-execution-graph-engine'
+app/lib/runtime-core/runtime-execution-bridge.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-execution-bridge.ts:    source: 'runtime-execution-bridge',
+app/lib/runtime-core/runtime-execution-bridge.ts:    bridge: 'runtime-execution-bridge',
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:} from './runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-decision-gate.ts:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+app/lib/runtime-core/runtime-timeline-engine.ts:from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-action-engine.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-governance-center.ts:  source: 'runtime-governance-center'
+app/lib/runtime-core/runtime-governance-center.ts:    source: 'runtime-governance-center',
+app/lib/runtime-core/runtime-feedback-integration.ts:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-decision-loop.ts:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:} from '@/app/lib/runtime-governance-matrix/runtime-execution-governance-matrix'
+app/lib/executive-runtime-core/executive-runtime-core.ts:} from '../runtime-executive-governor/runtime-executive-governor'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:} from '../runtime-executive-authority/runtime-executive-authority'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:  source: 'runtime-executive-authority-gateway'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:    source: 'runtime-executive-authority-gateway',
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:} from '@/app/lib/runtime-execution-scheduler/runtime-execution-scheduler'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:  source: 'runtime-execution-arbitrator'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:      'runtime-execution-arbitrator',
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:  source: 'runtime-executive-governor'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:    source: 'runtime-executive-governor',
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:} from '@/app/lib/runtime-execution-bridge/runtime-execution-profile-bridge'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:    source: 'runtime-execution-governance-matrix',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:} from '../runtime-executive-governor/runtime-executive-governor'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/runtime-execution-router/runtime-execution-router.ts:      'runtime-execution-router',
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:} from '@/app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:} from '@/app/lib/runtime-execution-scheduler/runtime-execution-scheduler'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:} from '@/app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  source: 'runtime-execution-pipeline'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:      'runtime-execution-pipeline',
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:} from '../runtime-executive-governance-layer/runtime-executive-governance-layer'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:} from '@/app/lib/runtime-execution-router/runtime-execution-router'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:            ? 'execute-runtime-recovery'
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-provider-governor.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-memory.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-recovery.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-telemetry.ts',
+app/lib/orchestrator/runtime-event-bus.ts:    | 'runtime-recovery'
+app/lib/orchestrator/runtime-event-processor.ts:  if (event.type === 'runtime-recovery') {
+app/lib/orchestrator/runtime-execution-pipeline.ts:    reason: 'runtime-execution-pipeline',
+app/lib/orchestrator/runtime-execution-pipeline.ts:    type: 'runtime-execution',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:import type { RuntimeRecoveryPlan } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateExecutionControl } from './runtime-execution-control'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeRecovery } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:import { generateRuntimeTelemetry } from './runtime-telemetry'
+app/lib/orchestrator/runtime-decision-engine.ts:    'runtime-recovery',
+app/lib/executive-runtime-context/executive-runtime-context.ts:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:} from '../runtime-executive-state/runtime-executive-state'
+app/lib/executive-runtime-context/executive-runtime-context.ts:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:} from '@/app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:      'runtime-execution-profile-bridge',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:  source: 'runtime-memory-consolidation'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:    source: 'runtime-memory-consolidation',
