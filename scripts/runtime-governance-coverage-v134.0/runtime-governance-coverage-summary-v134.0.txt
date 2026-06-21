@@ -1,0 +1,10 @@
+IASevero v134.0
+
+Runtime Governance Coverage Audit
+
+Total Runtime Files: 256
+Governance Covered Files: 68
+Governance Uncovered Files: 188
+
+STATUS
+Prepared for governance coverage review.
