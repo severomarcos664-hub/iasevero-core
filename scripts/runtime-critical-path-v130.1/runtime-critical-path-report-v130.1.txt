@@ -1,0 +1,34 @@
+IASevero v130.1
+
+Runtime Critical Path Report
+
+CONFIRMED FLOW
+
+Request
+↓
+API Route
+↓
+Runtime Decision Gate
+↓
+Runtime Action Policy
+↓
+Executive Authority Gateway
+↓
+Executive Runtime Context
+↓
+Provider Authority
+↓
+Execution Layer
+↓
+Telemetry
+↓
+Response
+
+STATUS
+
+Critical execution path identified through code references.
+
+No runtime modifications.
+
+Documentation only.
+
