@@ -1,0 +1,7 @@
+IASevero v140.0
+
+Runtime Intelligence Coverage Audit
+
+Total Runtime Files: 256
+Intelligence Covered Files: 75
+Intelligence Uncovered Files: 181
