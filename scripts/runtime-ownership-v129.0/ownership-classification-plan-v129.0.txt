@@ -1,0 +1,30 @@
+IASevero v129.0
+
+Runtime Ownership Classification Plan
+
+GOAL
+Classify mapped runtime components by operational ownership domain.
+
+SOURCE
+runtime-ownership-map.txt
+
+DOMAINS
+CORE
+GOVERNANCE
+AUTHORITY
+EXECUTION
+MEMORY
+TELEMETRY
+RECOVERY
+INTELLIGENCE
+PROVIDER
+OPERATIONS
+DASHBOARD
+UNKNOWN
+
+RULE
+No runtime changes.
+Documentation and classification only.
+
+STATUS
+Prepared for classification.
