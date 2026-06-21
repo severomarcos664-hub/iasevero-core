@@ -1,0 +1,8 @@
+IASevero v129.0
+
+Ownership Classification Summary
+
+Governance: 46
+Memory: 44
+Telemetry: 31
+Recovery: 60
