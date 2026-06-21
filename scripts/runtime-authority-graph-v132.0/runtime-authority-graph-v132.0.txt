@@ -1,0 +1,33 @@
+IASevero v132.0
+
+Runtime Authority Dependency Graph
+
+CONFIRMED AUTHORITY FLOW
+
+Request
+↓
+API Route
+↓
+RuntimeDecisionGate
+↓
+RuntimeActionPolicy
+↓
+ExecutiveAuthorityGateway
+↓
+ExecutiveRuntimeContext
+↓
+RuntimeProviderAuthority
+↓
+Execution Layer
+↓
+Telemetry
+↓
+Response
+
+STATUS
+
+Authority chain confirmed through code references.
+
+No runtime modifications.
+
+Documentation only.
