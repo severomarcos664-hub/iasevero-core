@@ -1,0 +1,10 @@
+IASevero v139.0
+
+Runtime Provider Coverage Audit
+
+Total Runtime Files: 256
+Provider Covered Files: 32
+Provider Uncovered Files: 224
+
+STATUS
+Prepared for provider coverage review.
