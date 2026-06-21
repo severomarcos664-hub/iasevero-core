@@ -1,0 +1,10 @@
+IASevero v133.0
+
+Runtime Authority Coverage Audit
+
+Total Runtime Files: 256
+Authority Covered Files: 11
+Authority Uncovered Files: 245
+
+STATUS
+Prepared for authority coverage review.

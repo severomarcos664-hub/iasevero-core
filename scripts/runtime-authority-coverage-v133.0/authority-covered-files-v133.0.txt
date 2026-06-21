@@ -1,0 +1,11 @@
+app/api/chat/route.ts
+app/lib/executive-runtime-context/executive-runtime-context.ts
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts
+app/lib/runtime-core/runtime-action-policy-engine.ts
+app/lib/runtime-core/runtime-decision-gate.ts
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts
+app/lib/runtime-executive-authority/runtime-executive-authority.ts
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts
+app/lib/runtime-executive-state/runtime-executive-state.ts
+app/lib/runtime-provider-authority/runtime-provider-authority.ts
