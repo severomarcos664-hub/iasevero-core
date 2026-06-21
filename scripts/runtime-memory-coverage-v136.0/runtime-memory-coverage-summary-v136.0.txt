@@ -1,0 +1,10 @@
+IASevero v136.0
+
+Runtime Memory Coverage Audit
+
+Total Runtime Files: 256
+Memory Covered Files: 46
+Memory Uncovered Files: 210
+
+STATUS
+Prepared for memory coverage review.
