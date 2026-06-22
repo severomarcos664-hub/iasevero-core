@@ -1,0 +1,10 @@
+IASevero v141.0
+
+Runtime Cognitive Engine Readiness Audit
+
+Total Runtime Files: 256
+Cognitive Covered Files: 135
+Cognitive Uncovered Files: 121
+
+STATUS
+Prepared for cognitive readiness review.
