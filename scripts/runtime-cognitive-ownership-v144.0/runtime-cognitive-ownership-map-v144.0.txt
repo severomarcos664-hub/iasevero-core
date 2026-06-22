@@ -1,0 +1,27 @@
+IASevero v144.0
+
+Runtime Cognitive Ownership Map
+
+GOAL
+Map cognitive responsibility ownership across the runtime.
+
+OWNERSHIP DOMAINS
+Planner -> Planning responsibility
+Reasoning -> Reasoning responsibility
+Arbitration -> Conflict resolution responsibility
+Decision Engine -> Decision responsibility
+Decision Gate -> Request decision checkpoint
+Action Policy -> Policy decision checkpoint
+Executive Authority -> Final authority responsibility
+Executive Runtime Context -> Runtime context responsibility
+Execution Pipeline -> Execution responsibility
+Memory -> State and persistence responsibility
+Telemetry -> Observation and tracing responsibility
+Recovery -> Recovery and resilience responsibility
+Provider -> Model/provider responsibility
+Governance -> Governance responsibility
+
+Mapped Files: 97
+
+STATUS
+Prepared for cognitive ownership review.
