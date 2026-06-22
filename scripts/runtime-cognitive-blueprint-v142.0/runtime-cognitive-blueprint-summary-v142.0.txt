@@ -1,0 +1,10 @@
+IASevero v142.0
+
+Runtime Cognitive Engine Blueprint
+
+Total Runtime Files: 256
+Blueprint Files: 37
+Outside Blueprint: 219
+
+STATUS
+Prepared for cognitive engine blueprint review.
