@@ -1,0 +1,28 @@
+IASevero v145.0
+
+Runtime Cognitive Decision Chain Audit
+
+TARGET
+Map the complete decision chain from request to response.
+
+CHAIN
+Request
+Decision Gate
+Action Policy
+Executive Authority
+Executive Runtime Context
+Planner
+Reasoning
+Arbitration
+Decision Engine
+Execution Pipeline
+Provider
+Telemetry
+Memory
+Response
+
+Total Runtime Files: 256
+Decision Chain Files: 88
+
+STATUS
+Prepared for decision chain review.
