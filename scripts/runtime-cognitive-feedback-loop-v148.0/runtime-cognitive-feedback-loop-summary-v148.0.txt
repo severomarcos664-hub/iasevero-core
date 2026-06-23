@@ -1,0 +1,22 @@
+IASevero v148.0
+
+Runtime Cognitive Feedback Loop Audit
+
+GOAL
+Map feedback influence on future decisions.
+
+LOOP
+Execution
+Telemetry
+Feedback
+Brain Matrix
+Recommendation
+Runtime Intelligence
+Next Decision
+
+Total Runtime Files: 256
+Feedback Loop Files: 192
+Outside Feedback Loop: 64
+
+STATUS
+Prepared for feedback loop review.
