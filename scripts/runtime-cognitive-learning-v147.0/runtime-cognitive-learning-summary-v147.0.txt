@@ -1,0 +1,37 @@
+IASevero v147.0
+
+Runtime Cognitive Learning Architecture Audit
+
+GOAL
+Map runtime learning architecture.
+
+LEARNING DOMAINS
+Feedback
+Signals
+Evaluation
+Scoring
+Recommendation
+Adaptation
+Optimization
+Confidence
+Risk
+Reflection
+Next Decision Influence
+
+EXPECTED CHAIN
+Execution
+Telemetry
+Feedback
+Signals
+Evaluation
+Scoring
+Recommendation
+Adaptation
+Next Decision
+
+Total Runtime Files: 256
+Learning Files: 159
+Outside Learning Map: 97
+
+STATUS
+Prepared for cognitive learning review.
