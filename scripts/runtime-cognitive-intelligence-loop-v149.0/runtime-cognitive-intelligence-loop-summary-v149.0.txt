@@ -1,0 +1,24 @@
+IASevero v149.0
+
+Runtime Cognitive Intelligence Loop Audit
+
+GOAL
+Map runtime intelligence influence on future decisions.
+
+INTELLIGENCE LOOP
+Execution
+Telemetry
+Feedback
+Learning
+Memory
+Brain Matrix
+Recommendation
+Runtime Intelligence
+Next Decision
+
+Total Runtime Files: 256
+Intelligence Loop Files: 147
+Outside Intelligence Loop: 109
+
+STATUS
+Prepared for intelligence loop review.
