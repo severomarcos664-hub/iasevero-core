@@ -1,0 +1,20 @@
+IASevero v151.2
+
+Runtime Dependency Graph
+
+GOAL
+Map runtime module dependencies and architectural coupling.
+
+DEPENDENCY DOMAINS
+Imports
+Runtime internal dependencies
+Governance dependencies
+Authority dependencies
+Context dependencies
+Memory dependencies
+Intelligence dependencies
+Provider dependencies
+Telemetry dependencies
+
+STATUS
+Prepared for enterprise dependency graph review.
