@@ -1,0 +1,28 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:5:export interface RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:24:RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-core/runtime-action-policy-engine.ts:5:export type RuntimeActionPolicyReport = {
+app/lib/runtime-core/runtime-action-policy-engine.ts:20:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:21:RuntimeActionPolicyReport {
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:5:export interface RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:22:RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:6:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:14:    evaluateRuntimeActionPolicy()
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/api/chat/route.ts:68:const actionPolicy = evaluateRuntimeActionPolicy()
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()

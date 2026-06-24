@@ -1,0 +1,22 @@
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:6:export async function GET() {
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:4:export async function GET() {
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:5:export async function GET() {
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:26:export async function POST(req: Request) {
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:5:export async function GET(req: Request) {
+app/api/job/route.ts:11:  return NextResponse.json({

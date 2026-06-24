@@ -1,0 +1,47 @@
+app/lib/config.ts:2:  openaiApiKey: string
+app/lib/config.ts:3:  openaiModel: string
+app/lib/config.ts:7:  const openaiApiKey = process.env.OPENAI_API_KEY || ''
+app/lib/config.ts:8:  const openaiModel = process.env.OPENAI_MODEL || 'gpt-4.1-mini'
+app/lib/config.ts:11:    openaiApiKey,
+app/lib/config.ts:12:    openaiModel,
+app/lib/config.ts:20:  if (!config.openaiApiKey) {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:6:  resolveProviderRoute
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:36:    resolveProviderRoute(message, intent)
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/openai-client.ts:1:import OpenAI from "openai";
+app/lib/openai-client.ts:9:export const openai = new OpenAI({
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-contracts.ts:14:  | 'openai'
+app/lib/runtime-core/runtime-contracts.ts:20:  | 'openai'
+app/lib/runtime-core/runtime-governance-enforcement.ts:7:  forcedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-governance-enforcement.ts:35:    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
+app/lib/mode.ts:3:  | 'openai'
+app/lib/mode.ts:13:    mode === 'openai' ||
+app/lib/mode.ts:26:  return mode === 'openai' || mode === 'hybrid'
+app/lib/providers/local.ts:44:export async function localProvider(message: string, userId = 'local') {
+app/lib/orchestrator/runtime-context.ts:1:export type RuntimeMode = 'local' | 'openai' | 'hybrid' | 'safe'
+app/lib/orchestrator/runtime-context.ts:2:export type RuntimeProvider = 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/runtime-recovery.ts:7:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-provider-governor.ts:5:  recommendedProvider: 'local' | 'hybrid' | 'openai'
+app/lib/orchestrator/runtime-provider-governor.ts:52:    recommendedProvider: 'openai',
+app/lib/orchestrator/runtime.ts:13:  if (status.mode === 'openai' && !status.openaiConfigured) {
+app/lib/orchestrator/runtime.ts:24:    allowExternal: status.mode === 'openai' || status.mode === 'hybrid',
+app/lib/orchestrator/runtime-contracts.ts:14:  mode: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/runtime-decision-engine.ts:54:  const mode = (routing.mode === 'openai' || routing.mode === 'hybrid' || routing.mode === 'safe')
+app/lib/orchestrator/runtime-decision-engine.ts:58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+app/lib/orchestrator/decision-pipeline.ts:2:import { resolveProviderRoute } from './routing'
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:12:export function resolveProviderRoute(
+app/lib/orchestrator/routing.ts:43:  if (runtime.mode === 'openai') {
+app/lib/orchestrator/routing.ts:45:      provider: 'openai',
+app/lib/provider.ts:1:import { localProvider } from './providers/local'
+app/lib/provider.ts:4:export async function runProvider(
+app/lib/provider.ts:16:    return await localProvider(message)
+app/lib/provider.ts:19:  return await localProvider(message)
+app/lib/env.ts:1:const VALID_MODES = ['local', 'openai', 'hybrid'] as const
+app/lib/env.ts:12:  if (mode === 'openai' && !process.env.OPENAI_API_KEY) {
+app/lib/env.ts:24:    openaiConfigured: Boolean(process.env.OPENAI_API_KEY),
+app/lib/env.ts:26:    safe: mode !== 'openai' || Boolean(process.env.OPENAI_API_KEY)

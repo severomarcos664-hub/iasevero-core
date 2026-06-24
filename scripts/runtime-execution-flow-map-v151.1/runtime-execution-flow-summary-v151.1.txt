@@ -1,0 +1,27 @@
+IASevero v151.1
+
+Runtime Execution Flow Map
+
+ENTERPRISE EXECUTION CHAIN
+HTTP Request
+  -> API Route
+  -> Decision Gate / Action Policy
+  -> Executive Authority
+  -> Runtime Unified Context
+  -> Brain Matrix
+  -> Cognitive State
+  -> Runtime Intelligence
+  -> Provider Authority / Provider Route
+  -> Execution
+  -> Telemetry / Trace
+  -> HTTP Response
+
+AUDIT FILES
+api-route-flow-v151.1.txt
+authority-decision-flow-v151.1.txt
+cognitive-flow-v151.1.txt
+provider-execution-flow-v151.1.txt
+telemetry-trace-flow-v151.1.txt
+
+STATUS
+Prepared for enterprise execution flow review.
