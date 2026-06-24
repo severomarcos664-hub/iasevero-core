@@ -1,0 +1,18 @@
+IASevero v155.0
+
+Runtime Contract Validation
+
+GOAL
+Validate exported runtime contracts, critical contract usage, behavior markers, and state markers.
+
+CONTRACT DOMAINS
+Exported runtime contracts
+Critical contract usage
+Return and error behavior
+Execution state markers
+Provider state markers
+Fallback and recovery markers
+Telemetry contract markers
+
+STATUS
+Prepared for runtime contract validation review.
