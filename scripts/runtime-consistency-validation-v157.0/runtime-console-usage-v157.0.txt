@@ -1,0 +1,273 @@
+app/runtime/scheduler/runtime-scheduler.ts:23:      console.log(
+app/runtime/events/runtime-event-bus.ts:27:        console.error(
+app/console/page.tsx:63:      console.error('Erro ao chamar /api/chat:', error)
+app/lib/runtime-core/runtime-event-subscribers.ts:34:      console.error(
+app/lib/orchestrator/trace.ts:19:  console.log(
+app/lib/orchestrator/event-logger.ts:12:  console.log(
+app/lib/provider.ts:11:    console.warn(
+app/lib/observability.ts:17:  console.log(JSON.stringify(payload))
+scripts/runtime-action-policy-engine-test.ts:7:console.log('\n=== IASEVERO RUNTIME ACTION POLICY ENGINE ===\n')
+scripts/runtime-action-policy-engine-test.ts:8:console.log(report)
+scripts/runtime-profiler/runtime-cognitive-response-profiler-test.ts:8:console.log(
+scripts/runtime-profiler/runtime-cognitive-response-profiler-test.ts:12:console.log(report)
+scripts/runtime-executive-authority/runtime-executive-authority-test.ts:8:console.log(
+scripts/runtime-executive-authority/runtime-executive-authority-test.ts:12:console.log(report)
+scripts/runtime-decision-gate-test.ts:10:console.log('\n=== IASEVERO RUNTIME DECISION GATE ===\n')
+scripts/runtime-decision-gate-test.ts:11:console.log(report)
+scripts/runtime-action-engine-test.ts:10:console.log('\n=== IASEVERO RUNTIME ACTION ENGINE ===\n')
+scripts/runtime-action-engine-test.ts:12:console.log('\nACTION:\n')
+scripts/runtime-action-engine-test.ts:13:console.log(action)
+scripts/runtime-action-engine-test.ts:15:console.log('\nEVENTS:\n')
+scripts/runtime-action-engine-test.ts:16:console.log(readRuntimeEvents())
+scripts/runtime-action-engine-test.ts:18:console.log('\nTELEMETRY:\n')
+scripts/runtime-action-engine-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/runtime-executive-state/runtime-executive-state-test.ts:11:console.log(
+scripts/runtime-executive-state/runtime-executive-state-test.ts:15:console.log(report)
+scripts/runtime-master-orchestrator-test.ts:7:console.log('\n=== IASEVERO RUNTIME MASTER ORCHESTRATOR ===\n')
+scripts/runtime-master-orchestrator-test.ts:8:console.log(report)
+scripts/runtime-causal-influence-engine/runtime-causal-influence-engine-test.ts:8:console.log(
+scripts/runtime-causal-influence-engine/runtime-causal-influence-engine-test.ts:12:console.log(report)
+scripts/runtime-unified-operational-graph/runtime-unified-operational-graph-test.ts:50:console.log(
+scripts/runtime-unified-operational-graph/runtime-unified-operational-graph-test.ts:54:console.log(report)
+scripts/runtime-brain-matrix-test.ts:5:console.log('\n=== IASEVERO RUNTIME BRAIN MATRIX ===\n')
+scripts/runtime-brain-matrix-test.ts:6:console.log(matrix)
+scripts/runtime-decision-fusion-engine-test.ts:8:console.log('\n=== IASEVERO RUNTIME DECISION FUSION ENGINE ===\n')
+scripts/runtime-decision-fusion-engine-test.ts:10:console.log(report)
+scripts/runtime-provider-authority/runtime-provider-authority-test.ts:11:console.log(
+scripts/runtime-provider-authority/runtime-provider-authority-test.ts:15:console.log(report)
+scripts/runtime-executive-governance-layer/runtime-executive-governance-layer-test.ts:12:console.log(
+scripts/runtime-executive-governance-layer/runtime-executive-governance-layer-test.ts:16:console.log(report)
+scripts/runtime-adaptive-decision/runtime-adaptive-decision-layer-test.ts:7:console.log(
+scripts/runtime-adaptive-decision/runtime-adaptive-decision-layer-test.ts:11:console.log(report)
+scripts/runtime-load-balancer-test.ts:6:console.log('\n=== IASEVERO RUNTIME LOAD BALANCER ===\n')
+scripts/runtime-load-balancer-test.ts:8:console.log(balanceRuntimeLoad('observe', 'low'))
+scripts/runtime-load-balancer-test.ts:9:console.log(balanceRuntimeLoad('stabilize', 'high'))
+scripts/runtime-load-balancer-test.ts:10:console.log(balanceRuntimeLoad('recover-runtime', 'high'))
+scripts/runtime-load-balancer-test.ts:11:console.log(balanceRuntimeLoad('contain-runtime', 'critical'))
+scripts/runtime-live-cognitive-loop/runtime-live-cognitive-loop-test.ts:8:console.log(
+scripts/runtime-live-cognitive-loop/runtime-live-cognitive-loop-test.ts:12:console.log(report)
+scripts/runtime-tool-registry-test.ts:7:console.log('\n=== IASEVERO RUNTIME TOOL REGISTRY ===\n')
+scripts/runtime-tool-registry-test.ts:8:console.log(registry)
+scripts/runtime-tool-orchestrator-test.ts:8:console.log(
+scripts/runtime-tool-orchestrator-test.ts:12:console.log(report)
+scripts/runtime-adaptive-execution-engine-test.ts:7:console.log('\n=== IASEVERO ADAPTIVE EXECUTION ENGINE ===\n')
+scripts/runtime-adaptive-execution-engine-test.ts:8:console.log(report)
+scripts/runtime-cognitive-state-test.ts:5:console.log('\n=== IASEVERO RUNTIME COGNITIVE STATE ===\n')
+scripts/runtime-cognitive-state-test.ts:7:console.log(state)
+scripts/runtime-operational-test.ts:39:console.log('\n=== IASEVERO OPERATIONAL LOOP ===\n')
+scripts/runtime-operational-test.ts:41:console.log('RECOVERY:')
+scripts/runtime-operational-test.ts:42:console.log(recovery)
+scripts/runtime-operational-test.ts:44:console.log('\nAUTONOMOUS:')
+scripts/runtime-operational-test.ts:45:console.log(autonomous)
+scripts/runtime-operational-test.ts:47:console.log('\nTELEMETRY:')
+scripts/runtime-operational-test.ts:48:console.log(telemetry)
+scripts/runtime-operational-test.ts:50:console.log('\nSNAPSHOT:')
+scripts/runtime-operational-test.ts:51:console.log(snapshot)
+scripts/runtime-operational-test.ts:53:console.log('\nSTATUS:')
+scripts/runtime-operational-test.ts:54:console.log({
+scripts/runtime-execution-scheduler/runtime-execution-scheduler-test.ts:8:console.log(
+scripts/runtime-execution-scheduler/runtime-execution-scheduler-test.ts:12:console.log(report)
+scripts/runtime-policy-engine-test.ts:8:console.log('\n=== IASEVERO RUNTIME POLICY ENGINE ===\n')
+scripts/runtime-policy-engine-test.ts:9:console.log(policy)
+scripts/runtime-consensus-engine/runtime-consensus-engine-test.ts:8:console.log(
+scripts/runtime-consensus-engine/runtime-consensus-engine-test.ts:12:console.log(report)
+scripts/runtime-neural-coordination/runtime-neural-coordination-test.ts:40:console.log(
+scripts/runtime-neural-coordination/runtime-neural-coordination-test.ts:44:console.log(report)
+scripts/executive-runtime-core/executive-runtime-core-test.ts:8:console.log(
+scripts/executive-runtime-core/executive-runtime-core-test.ts:12:console.log(report)
+scripts/runtime-state-transition-engine-test.ts:5:console.log('\n=== IASEVERO RUNTIME STATE TRANSITION ENGINE ===\n')
+scripts/runtime-state-transition-engine-test.ts:6:console.log(transition)
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:8:console.log(
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:12:console.log(report)
+scripts/runtime-learning-signals-test.ts:8:console.log('\n=== IASEVERO RUNTIME LEARNING SIGNALS ===\n')
+scripts/runtime-learning-signals-test.ts:9:console.log(report)
+scripts/runtime-execution-arbitrator/runtime-execution-arbitrator-test.ts:8:console.log(
+scripts/runtime-execution-arbitrator/runtime-execution-arbitrator-test.ts:12:console.log(report)
+scripts/runtime-risk-escalation-test.ts:8:console.log(
+scripts/runtime-risk-escalation-test.ts:12:console.log(report)
+scripts/runtime-executive-governor/runtime-executive-governor-test.ts:8:console.log(
+scripts/runtime-executive-governor/runtime-executive-governor-test.ts:12:console.log(report)
+scripts/runtime-queue-manager-test.ts:14:console.log('\n=== IASEVERO RUNTIME QUEUE MANAGER ===\n')
+scripts/runtime-queue-manager-test.ts:16:console.log('\nQUEUE:\n')
+scripts/runtime-queue-manager-test.ts:17:console.log(readRuntimeQueue())
+scripts/runtime-queue-manager-test.ts:19:console.log('\nDEQUEUE:\n')
+scripts/runtime-queue-manager-test.ts:20:console.log(dequeueRuntimeAction())
+scripts/runtime-queue-manager-test.ts:22:console.log('\nQUEUE AFTER:\n')
+scripts/runtime-queue-manager-test.ts:23:console.log(readRuntimeQueue())
+scripts/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric-test.ts:8:console.log(
+scripts/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric-test.ts:12:console.log(report)
+scripts/runtime-predictive-telemetry-test.ts:10:console.log('\n=== IASEVERO RUNTIME PREDICTIVE TELEMETRY ===\n')
+scripts/runtime-predictive-telemetry-test.ts:12:console.log('\nPREDICTIVE:\n')
+scripts/runtime-predictive-telemetry-test.ts:13:console.log(predictive)
+scripts/runtime-predictive-telemetry-test.ts:15:console.log('\nTELEMETRY:\n')
+scripts/runtime-predictive-telemetry-test.ts:16:console.log(telemetry)
+scripts/runtime-confidence-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME CONFIDENCE INTELLIGENCE ===\n')
+scripts/runtime-confidence-intelligence-test.ts:8:console.log(report)
+scripts/runtime-task-planner-test.ts:9:console.log('\n=== IASEVERO RUNTIME TASK PLANNER ===\n')
+scripts/runtime-task-planner-test.ts:10:console.log(plan)
+scripts/runtime-autonomous-response-intelligence-test.ts:8:console.log(
+scripts/runtime-autonomous-response-intelligence-test.ts:12:console.log(report)
+scripts/runtime-resilience-engine-test.ts:7:console.log('\n=== IASEVERO RUNTIME RESILIENCE ENGINE ===\n')
+scripts/runtime-resilience-engine-test.ts:8:console.log(report)
+scripts/runtime-decision-loop-test.ts:5:console.log('\n=== IASEVERO RUNTIME DECISION LOOP ===\n')
+scripts/runtime-decision-loop-test.ts:6:console.log(loop)
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:13:console.log('\n=== IASEVERO RUNTIME CORE IDENTITY ===\n')
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:14:console.log(evaluateRuntimeCoreIdentity())
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:16:console.log('\n=== IASEVERO RUNTIME ATTENTION REGISTRY ===\n')
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:17:console.log(evaluateRuntimeAttentionRegistry())
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:19:console.log('\n=== IASEVERO RUNTIME META CONTROLLER ===\n')
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:20:console.log(evaluateRuntimeMetaController())
+scripts/runtime-optimization-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME OPTIMIZATION INTELLIGENCE ===\n')
+scripts/runtime-optimization-intelligence-test.ts:8:console.log(report)
+scripts/runtime-persistence-fabric-test.ts:46:console.log(
+scripts/runtime-persistence-fabric-test.ts:50:console.log({
+scripts/runtime-persistence-fabric-test.ts:56:console.log('\n=== GOVERNANCE FILES ===\n')
+scripts/runtime-persistence-fabric-test.ts:57:console.log(
+scripts/runtime-persistence-fabric-test.ts:61:console.log('\n=== TIMELINE FILES ===\n')
+scripts/runtime-persistence-fabric-test.ts:62:console.log(
+scripts/runtime-persistence-fabric-test.ts:66:console.log('\n=== RECOVERY FILES ===\n')
+scripts/runtime-persistence-fabric-test.ts:67:console.log(
+scripts/runtime-governance-matrix/runtime-execution-governance-matrix-test.ts:7:console.log(
+scripts/runtime-governance-matrix/runtime-execution-governance-matrix-test.ts:11:console.log(report)
+scripts/runtime-retention-manager-test.ts:5:console.log('\n=== IASEVERO RUNTIME RETENTION MANAGER ===\n')
+scripts/runtime-retention-manager-test.ts:6:console.log(retention)
+scripts/runtime-strategic-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME STRATEGIC INTELLIGENCE ===\n')
+scripts/runtime-strategic-intelligence-test.ts:8:console.log(report)
+scripts/runtime-reflection-feedback/runtime-reflection-feedback-test.ts:8:console.log(
+scripts/runtime-reflection-feedback/runtime-reflection-feedback-test.ts:12:console.log(report)
+scripts/runtime-cognitive-bus/runtime-cognitive-bus-test.ts:8:console.log(
+scripts/runtime-cognitive-bus/runtime-cognitive-bus-test.ts:12:console.log(report)
+scripts/runtime-governance-enforcement-test.ts:7:console.log('\n=== IASEVERO GOVERNANCE ENFORCEMENT ===\n')
+scripts/runtime-governance-enforcement-test.ts:9:console.log(enforcement)
+scripts/runtime-neural-synchronization/runtime-neural-synchronization-test.ts:45:console.log(
+scripts/runtime-neural-synchronization/runtime-neural-synchronization-test.ts:49:console.log(report)
+scripts/runtime-awareness-matrix/runtime-awareness-matrix-test.ts:37:console.log(
+scripts/runtime-awareness-matrix/runtime-awareness-matrix-test.ts:41:console.log(report)
+scripts/runtime-adaptive-scheduler-test.ts:8:console.log('\n=== IASEVERO RUNTIME ADAPTIVE SCHEDULER ===\n')
+scripts/runtime-adaptive-scheduler-test.ts:9:console.log(schedule)
+scripts/runtime-persistence-memory/runtime-persistence-memory-test.ts:8:console.log(
+scripts/runtime-persistence-memory/runtime-persistence-memory-test.ts:12:console.log(report)
+scripts/runtime-execution-cortex/runtime-execution-cortex-test.ts:37:console.log(
+scripts/runtime-execution-cortex/runtime-execution-cortex-test.ts:41:console.log(report)
+scripts/runtime-consciousness-test.ts:7:console.log('\n=== IASEVERO RUNTIME CONSCIOUSNESS ===\n')
+scripts/runtime-consciousness-test.ts:9:console.log(report)
+scripts/runtime-operational-mode-test.ts:7:console.log('\n=== IASEVERO RUNTIME OPERATIONAL MODE ===\n')
+scripts/runtime-operational-mode-test.ts:9:console.log(report)
+scripts/runtime-autonomous-supervisor-test.ts:5:console.log('\n=== IASEVERO RUNTIME AUTONOMOUS SUPERVISOR ===\n')
+scripts/runtime-autonomous-supervisor-test.ts:6:console.log(supervision)
+scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:8:console.log(
+scripts/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator-test.ts:12:console.log(report)
+scripts/runtime-temporal-drift-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME TEMPORAL DRIFT INTELLIGENCE ===\n')
+scripts/runtime-temporal-drift-intelligence-test.ts:8:console.log(report)
+scripts/runtime-autonomous-regulation/runtime-autonomous-regulation-test.ts:40:console.log(
+scripts/runtime-autonomous-regulation/runtime-autonomous-regulation-test.ts:44:console.log(report)
+scripts/runtime-dispatch-controller/runtime-dispatch-controller-test.ts:8:console.log(
+scripts/runtime-dispatch-controller/runtime-dispatch-controller-test.ts:12:console.log(report)
+scripts/runtime-execution-orchestrator-test.ts:8:console.log(
+scripts/runtime-execution-orchestrator-test.ts:12:console.log(execution)
+scripts/runtime-execution-router/runtime-execution-router-test.ts:8:console.log(
+scripts/runtime-execution-router/runtime-execution-router-test.ts:12:console.log(report)
+scripts/runtime-queue-manager/runtime-queue-manager-test.ts:8:console.log(
+scripts/runtime-queue-manager/runtime-queue-manager-test.ts:12:console.log(report)
+scripts/runtime-adaptive-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME ADAPTIVE INTELLIGENCE ===\n')
+scripts/runtime-adaptive-intelligence-test.ts:9:console.log(report)
+scripts/runtime-execution-pipeline/runtime-execution-pipeline-test.ts:8:console.log(
+scripts/runtime-execution-pipeline/runtime-execution-pipeline-test.ts:12:console.log(report)
+scripts/runtime-policy-enforcement-test.ts:12:console.log('\n=== IASEVERO POLICY ENFORCEMENT ===\n')
+scripts/runtime-policy-enforcement-test.ts:13:console.log(report)
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:40:console.log(
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:44:console.log(report)
+scripts/runtime-enforcement-authority/runtime-enforcement-authority-test.ts:12:console.log(
+scripts/runtime-enforcement-authority/runtime-enforcement-authority-test.ts:16:console.log(report)
+scripts/runtime-consciousness-integration-test.ts:8:console.log(
+scripts/runtime-consciousness-integration-test.ts:12:console.log(report)
+scripts/runtime-causal-propagation/runtime-causal-propagation-test.ts:55:console.log(
+scripts/runtime-causal-propagation/runtime-causal-propagation-test.ts:59:console.log(report)
+scripts/runtime-event-bus-test.ts:19:console.log('\n=== IASEVERO RUNTIME EVENT BUS ===\n')
+scripts/runtime-event-bus-test.ts:20:console.log(readRuntimeEvents())
+scripts/runtime-operational-integration/runtime-operational-integration-test.ts:8:console.log(
+scripts/runtime-operational-integration/runtime-operational-integration-test.ts:12:console.log(report)
+scripts/runtime-unified-intelligence-test.ts:7:console.log('\n=== IASEVERO UNIFIED RUNTIME INTELLIGENCE ===\n')
+scripts/runtime-unified-intelligence-test.ts:9:console.log(report)
+scripts/runtime-severity-governance-test.ts:8:console.log('\n=== IASEVERO RUNTIME SEVERITY GOVERNANCE ===\n')
+scripts/runtime-severity-governance-test.ts:9:console.log(governance)
+scripts/runtime-lifecycle-manager/runtime-lifecycle-manager-test.ts:7:console.log(
+scripts/runtime-lifecycle-manager/runtime-lifecycle-manager-test.ts:11:console.log(report)
+scripts/runtime-event-subscribers-test.ts:11:    console.log('\n[SUPERVISOR REACTION]\n')
+scripts/runtime-event-subscribers-test.ts:12:    console.log(event)
+scripts/runtime-event-subscribers-test.ts:26:console.log('\n=== IASEVERO RUNTIME EVENT SUBSCRIBERS ===\n')
+scripts/runtime-event-subscribers-test.ts:28:console.log(getRuntimeSubscribers())
+scripts/runtime-integrity-validator-test.ts:8:console.log(
+scripts/runtime-integrity-validator-test.ts:12:console.log(report)
+scripts/runtime-predictive-stabilization-test.ts:12:console.log(
+scripts/runtime-predictive-stabilization-test.ts:16:console.log(predictive)
+scripts/runtime-distributed-trace-engine-test.ts:54:console.log('\n=== IASEVERO DISTRIBUTED TRACE ENGINE ===\n')
+scripts/runtime-distributed-trace-engine-test.ts:55:console.log(readRuntimeTraceGraph())
+scripts/runtime-timeline-engine-test.ts:16:console.log(
+scripts/runtime-timeline-engine-test.ts:20:console.log(timeline)
+scripts/runtime-event-stream-engine-test.ts:31:console.log('\n=== IASEVERO RUNTIME EVENT STREAM ENGINE ===\n')
+scripts/runtime-event-stream-engine-test.ts:32:console.log(readRuntimeEventStream())
+scripts/runtime-feedback-integration-test.ts:8:console.log(
+scripts/runtime-feedback-integration-test.ts:12:console.log(feedback)
+scripts/runtime-cognitive-arbitration-test.ts:8:console.log(
+scripts/runtime-cognitive-arbitration-test.ts:12:console.log(report)
+scripts/runtime-execution-profiles/runtime-cognitive-execution-profiles-test.ts:8:console.log(
+scripts/runtime-execution-profiles/runtime-cognitive-execution-profiles-test.ts:12:console.log(report)
+scripts/executive-runtime-context/executive-runtime-context-test.ts:12:console.log(
+scripts/executive-runtime-context/executive-runtime-context-test.ts:16:console.log(report)
+scripts/runtime-state-engine/runtime-operational-state-engine-test.ts:8:console.log(
+scripts/runtime-state-engine/runtime-operational-state-engine-test.ts:12:console.log(report)
+scripts/runtime-lane-supervisor-test.ts:14:console.log('\n=== IASEVERO RUNTIME LANE SUPERVISOR ===\n')
+scripts/runtime-lane-supervisor-test.ts:15:console.log(report)
+scripts/runtime-execution-coordinator-test.ts:10:console.log('\n=== IASEVERO RUNTIME EXECUTION COORDINATOR ===\n')
+scripts/runtime-execution-coordinator-test.ts:12:console.log('\nCOORDINATOR:\n')
+scripts/runtime-execution-coordinator-test.ts:13:console.log(result)
+scripts/runtime-execution-coordinator-test.ts:15:console.log('\nEVENTS:\n')
+scripts/runtime-execution-coordinator-test.ts:16:console.log(readRuntimeEvents())
+scripts/runtime-execution-coordinator-test.ts:18:console.log('\nTELEMETRY:\n')
+scripts/runtime-execution-coordinator-test.ts:19:console.log(readRuntimeTelemetry())
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:58:console.log(
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:62:console.log(report)
+scripts/runtime-self-healing-coordinator-test.ts:5:console.log('\n=== IASEVERO RUNTIME SELF-HEALING COORDINATOR ===\n')
+scripts/runtime-self-healing-coordinator-test.ts:6:console.log(report)
+scripts/runtime-state-cognition-engine-test.ts:8:console.log('\n=== IASEVERO RUNTIME STATE COGNITION ENGINE ===\n')
+scripts/runtime-state-cognition-engine-test.ts:10:console.log(report)
+scripts/runtime-feedback-telemetry-test.ts:8:console.log('\n=== IASEVERO FEEDBACK TELEMETRY ===\n')
+scripts/runtime-feedback-telemetry-test.ts:10:console.log('\nFEEDBACK:\n')
+scripts/runtime-feedback-telemetry-test.ts:11:console.log(feedback)
+scripts/runtime-feedback-telemetry-test.ts:13:console.log('\nTELEMETRY:\n')
+scripts/runtime-feedback-telemetry-test.ts:14:console.log(telemetry)
+scripts/runtime-execution-bridge/runtime-execution-profile-bridge-test.ts:8:console.log(
+scripts/runtime-execution-bridge/runtime-execution-profile-bridge-test.ts:12:console.log(report)
+scripts/runtime-cognitive-gateway-test.ts:5:console.log('\n=== IASEVERO RUNTIME COGNITIVE GATEWAY ===\n')
+scripts/runtime-cognitive-gateway-test.ts:6:console.log(decision)
+scripts/runtime-telemetry-fabric-test.ts:23:console.log('\n=== IASEVERO RUNTIME TELEMETRY FABRIC ===\n')
+scripts/runtime-telemetry-fabric-test.ts:24:console.log(events)
+scripts/runtime-recovery-engine-test.ts:8:console.log(
+scripts/runtime-recovery-engine-test.ts:12:console.log(state)
+scripts/runtime-transition-controller/runtime-transition-controller-test.ts:8:console.log(
+scripts/runtime-transition-controller/runtime-transition-controller-test.ts:12:console.log(report)
+scripts/runtime-governance-center-test.ts:17:console.log('\n=== IASEVERO RUNTIME GOVERNANCE CENTER ===\n')
+scripts/runtime-governance-center-test.ts:18:console.log(report)
+scripts/runtime-evaluation-engine-test.ts:7:console.log('\n=== IASEVERO RUNTIME EVALUATION ENGINE ===\n')
+scripts/runtime-evaluation-engine-test.ts:8:console.log(report)
+scripts/runtime-trust-engine-test.ts:7:console.log('\n=== IASEVERO RUNTIME TRUST ENGINE ===\n')
+scripts/runtime-trust-engine-test.ts:9:console.log(report)
+scripts/runtime-execution-criticality-intelligence-test.ts:7:console.log('\n=== IASEVERO RUNTIME EXECUTION CRITICALITY INTELLIGENCE ===\n')
+scripts/runtime-execution-criticality-intelligence-test.ts:8:console.log(report)
+scripts/runtime-telemetry-correlation-test.ts:8:console.log('\n=== IASEVERO RUNTIME TELEMETRY CORRELATION ===\n')
+scripts/runtime-telemetry-correlation-test.ts:9:console.log(correlation)
+scripts/runtime-execution-graph-engine-test.ts:7:console.log('\n=== IASEVERO EXECUTION GRAPH ENGINE ===\n')
+scripts/runtime-execution-graph-engine-test.ts:8:console.log(graph)
+scripts/runtime-adaptive-response-test.ts:5:console.log('\n=== IASEVERO RUNTIME ADAPTIVE RESPONSE ===\n')
+scripts/runtime-adaptive-response-test.ts:6:console.log(response)
+scripts/runtime-unified-context-test.ts:5:console.log('\n=== IASEVERO RUNTIME UNIFIED CONTEXT ===\n')
+scripts/runtime-unified-context-test.ts:6:console.log(context)
+scripts/runtime-workflow-coordinator-test.ts:7:console.log('\n=== IASEVERO WORKFLOW COORDINATOR ===\n')
+scripts/runtime-workflow-coordinator-test.ts:8:console.log(workflow)
+scripts/runtime-state-replay-engine-test.ts:8:console.log(
+scripts/runtime-state-replay-engine-test.ts:12:console.log(replay)
+scripts/runtime-memory-persistence-loop-test.ts:5:console.log('\n=== IASEVERO RUNTIME MEMORY PERSISTENCE LOOP ===\n')
+scripts/runtime-memory-persistence-loop-test.ts:6:console.log(memory)
+scripts/runtime-memory-consolidation/runtime-memory-consolidation-test.ts:8:console.log(
+scripts/runtime-memory-consolidation/runtime-memory-consolidation-test.ts:12:console.log(report)

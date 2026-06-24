@@ -1,0 +1,10 @@
+app/lib/runtime-core/runtime-tool-orchestrator.ts:28:  const tools = registry.tools.map((tool: any) => ({
+app/lib/runtime-core/runtime-tool-orchestrator.ts:40:    tools.filter((t: any) => t.selected).length
+app/lib/runtime-core/runtime-tool-orchestrator.ts:43:    tools.filter((t: any) => !t.selected).length
+app/lib/memory-filter.ts:1:export function extractRelevantContext(history: any[]) {
+app/lib/memory.ts:6:type Memory = Record<string, any>
+app/lib/memory.ts:25:export function setUser(userId: string, data: any) {
+scripts/runtime-operational-test.ts:13:  evaluateRuntimeRecovery(awareness as any)
+scripts/runtime-operational-test.ts:17:    awareness as any,
+scripts/runtime-operational-test.ts:18:    recovery as any
+scripts/runtime-operational-test.ts:25:  } as any)
