@@ -1,0 +1,20 @@
+IASevero v151.0
+
+Runtime Architecture Map
+
+CONFIRMED EXECUTION CHAIN
+buildRuntimeBrainMatrix()
+  -> buildRuntimeUnifiedContext()
+  -> evaluateRuntimeCognitiveState()
+  -> analyzeRuntimeIntelligence()
+  -> resolveProviderRoute()
+
+CONFIRMED RESPONSIBILITIES
+Brain Matrix: runtime brain construction
+Unified Context: runtime context aggregation
+Cognitive State: runtime cognitive state evaluation
+Runtime Intelligence: operational intelligence analysis
+Provider Route: provider selection and routing
+
+STATUS
+Prepared for deeper execution flow mapping.
