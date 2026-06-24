@@ -1,0 +1,17 @@
+IASevero v153.0
+
+Runtime Quality Gate
+
+GOAL
+Establish an enterprise-grade quality gate for runtime evolution.
+
+QUALITY DOMAINS
+Source inventory
+Import map
+Code risk markers
+Configuration surface
+Build safety
+Regression safety
+
+STATUS
+Prepared for quality gate review.
