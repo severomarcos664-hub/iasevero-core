@@ -1,0 +1,125 @@
+app/runtime/state/runtime-state-kernel.ts:  | 'intelligence'
+app/runtime/state/runtime-state-kernel.ts:    'intelligence',
+app/runtime/consciousness/runtime-consciousness-layer.ts:    const intelligence =
+app/runtime/consciousness/runtime-consciousness-layer.ts:      intelligence,
+app/runtime/consciousness/runtime-consciousness-layer.ts:      stable: intelligence >= 80,
+app/runtime/capabilities/runtime-capability-registry.ts:  intelligence: [
+app/runtime/mesh/runtime-intelligence-mesh.ts:export class RuntimeIntelligenceMesh {
+app/runtime/mesh/runtime-intelligence-mesh.ts:export const runtimeIntelligenceMesh =
+app/runtime/mesh/runtime-intelligence-mesh.ts:  new RuntimeIntelligenceMesh()
+app/runtime/central-runtime-manifest.ts:    intelligence: [
+app/runtime/central-runtime-manifest.ts:      'runtime-intelligence',
+app/runtime/central-runtime-manifest.ts:      'runtime-intelligence-policy'
+app/capabilities/page.tsx:      "Runtime Unified Intelligence Bus",
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:export function evaluateRuntimeAdaptiveIntelligence() {
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:    source: 'runtime-adaptive-intelligence-engine',
+app/lib/runtime-core/runtime-action-policy-engine.ts:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:} from './runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:  source: 'runtime-strategic-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:export function evaluateRuntimeStrategicIntelligence():
+app/lib/runtime-core/runtime-strategic-intelligence.ts:    source: 'runtime-strategic-intelligence',
+app/lib/runtime-core/runtime-optimization-intelligence.ts:  source: 'runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:    source: 'runtime-optimization-intelligence',
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:  evaluateRuntimeStrategicIntelligence,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:} from './runtime-strategic-intelligence'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:  source: 'runtime-risk-escalation-intelligence'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:    evaluateRuntimeStrategicIntelligence()
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:    source: 'runtime-risk-escalation-intelligence',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:} from './runtime-temporal-drift-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  source: 'runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:    source: 'runtime-execution-criticality-intelligence',
+app/lib/runtime-core/runtime-confidence-intelligence.ts:} from './runtime-risk-escalation-intelligence'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:  source: 'runtime-confidence-intelligence'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:    source: 'runtime-confidence-intelligence',
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:  source: 'runtime-temporal-drift-intelligence'
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:    source: 'runtime-temporal-drift-intelligence',
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:} from './runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-cognitive-state.ts:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/runtime-core/runtime-cognitive-state.ts:          intelligence.recoveryFrequency +
+app/lib/runtime-core/runtime-cognitive-state.ts:          intelligence.recoveryFrequency +
+app/lib/zero-cost-brain.ts:export function localIntelligence(message: string, context: string): string {
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeConfidence } from '@/app/lib/runtime-core/runtime-confidence-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeRiskEscalation } from '@/app/lib/runtime-core/runtime-risk-escalation-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeAdaptiveIntelligence } from '@/app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:export function evaluateUnifiedRuntimeIntelligence() {
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:  const adaptive = evaluateRuntimeAdaptiveIntelligence()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:    source: 'runtime-unified-intelligence-bus',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:  const unified = evaluateUnifiedRuntimeIntelligence()
+app/lib/providers/local.ts:import { localIntelligence } from '../zero-cost-brain'
+app/lib/providers/local.ts:  const intelligent = localIntelligence(text, contextSummary(userId) || '')
+app/lib/orchestrator/runtime-graph-registry.ts:    module: 'RuntimeIntelligence',
+app/lib/orchestrator/runtime-graph-registry.ts:      'RuntimeIntelligence'
+app/lib/orchestrator/runtime-architecture-index.ts:  | 'intelligence'
+app/lib/orchestrator/runtime-architecture-index.ts:    name: 'RuntimeIntelligencePolicy',
+app/lib/orchestrator/runtime-architecture-index.ts:    name: 'RuntimeIntelligence',
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-intelligence.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:    layer: 'intelligence',
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-architecture-auditor.ts:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-architecture-auditor.ts:    intelligence
+app/lib/orchestrator/health-intelligence.ts:export function getHealthIntelligence() {
+app/lib/orchestrator/runtime-policy-engine.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-policy-engine.ts:export function evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-policy-engine.ts:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-policy-engine.ts:  if (intelligence.degradationRisk === 'high') {
+app/lib/orchestrator/runtime-policy-engine.ts:  if (intelligence.degradationRisk === 'medium') {
+app/lib/orchestrator/runtime-dependency-validator.ts:    'intelligence',
+app/lib/orchestrator/runtime-dependency-validator.ts:  intelligence: [
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:  intelligence: RuntimeIntelligenceReport,
+app/lib/orchestrator/runtime-supervisor.ts:    intelligence.degradationRisk === 'high' ? 25 : 0,
+app/lib/orchestrator/runtime-supervisor.ts:  const operationalScore = intelligence.operationalScore
+app/lib/orchestrator/runtime-decision-engine.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:const intelligence = analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-decision-engine.ts:  `intelligence:${intelligence.operationalScore}:${intelligence.degradationRisk}`
+app/lib/orchestrator/runtime-decision-engine.ts:  `intelligence:${intelligence.stabilityRate}:${intelligence.recoveryFrequency}`
+app/lib/orchestrator/runtime-decision-engine.ts:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-decision-engine.ts:  intelligence
+app/lib/orchestrator/runtime-decision-engine.ts:} else if (intelligence.degradationRisk === 'high') {
+app/lib/orchestrator/runtime-structural-health.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-structural-health.ts:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-structural-health.ts:    intelligence.degradationRisk === 'high'
+app/lib/orchestrator/runtime-structural-health.ts:      : intelligence.degradationRisk === 'medium'
+app/lib/orchestrator/runtime-intelligence.ts:export type RuntimeIntelligenceReport = {
+app/lib/orchestrator/runtime-intelligence.ts:export function analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-intelligence.ts:): RuntimeIntelligenceReport {
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:export interface RuntimeSignalIntelligenceReport {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:    evaluateUnifiedRuntimeIntelligence()
+scripts/runtime-risk-escalation-test.ts:} from '../app/lib/runtime-core/runtime-risk-escalation-intelligence'
+scripts/runtime-confidence-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-confidence-intelligence'
+scripts/runtime-confidence-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME CONFIDENCE INTELLIGENCE ===\n')
+scripts/runtime-task-planner-test.ts:  'criar comandos profissionais para integrar execution intelligence na IASevero',
+scripts/runtime-autonomous-response-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-autonomous-response-intelligence'
+scripts/runtime-autonomous-response-intelligence-test.ts:  '\n=== IASEVERO RUNTIME AUTONOMOUS RESPONSE INTELLIGENCE ===\n'
+scripts/runtime-optimization-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-optimization-intelligence'
+scripts/runtime-optimization-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME OPTIMIZATION INTELLIGENCE ===\n')
+scripts/runtime-strategic-intelligence-test.ts:  evaluateRuntimeStrategicIntelligence,
+scripts/runtime-strategic-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-strategic-intelligence'
+scripts/runtime-strategic-intelligence-test.ts:const report = evaluateRuntimeStrategicIntelligence()
+scripts/runtime-strategic-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME STRATEGIC INTELLIGENCE ===\n')
+scripts/runtime-temporal-drift-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-temporal-drift-intelligence'
+scripts/runtime-temporal-drift-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME TEMPORAL DRIFT INTELLIGENCE ===\n')
+scripts/runtime-adaptive-intelligence-test.ts:  evaluateRuntimeAdaptiveIntelligence,
+scripts/runtime-adaptive-intelligence-test.ts:} from '../app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+scripts/runtime-adaptive-intelligence-test.ts:const report = evaluateRuntimeAdaptiveIntelligence()
+scripts/runtime-adaptive-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME ADAPTIVE INTELLIGENCE ===\n')
+scripts/runtime-unified-intelligence-test.ts:  evaluateUnifiedRuntimeIntelligence,
+scripts/runtime-unified-intelligence-test.ts:} from '../app/lib/runtime-unified/runtime-unified-intelligence-bus'
+scripts/runtime-unified-intelligence-test.ts:const report = evaluateUnifiedRuntimeIntelligence()
+scripts/runtime-unified-intelligence-test.ts:console.log('\n=== IASEVERO UNIFIED RUNTIME INTELLIGENCE ===\n')
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:  RuntimeSignalIntelligenceReport
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:} from '../../app/lib/runtime-signal-intelligence/runtime-signal-intelligence'
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:const report: RuntimeSignalIntelligenceReport = {
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:  source: 'runtime-signal-intelligence',
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:    'Runtime signal intelligence active.',
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:  '\n=== IASEVERO RUNTIME SIGNAL INTELLIGENCE ===\n'
+scripts/runtime-execution-criticality-intelligence-test.ts:} from '../app/lib/runtime-core/runtime-execution-criticality-intelligence'
+scripts/runtime-execution-criticality-intelligence-test.ts:console.log('\n=== IASEVERO RUNTIME EXECUTION CRITICALITY INTELLIGENCE ===\n')

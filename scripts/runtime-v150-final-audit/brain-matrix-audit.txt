@@ -1,0 +1,6 @@
+app/lib/runtime-core/runtime-unified-context.ts:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:  const brain = buildRuntimeBrainMatrix()
+app/lib/orchestrator/runtime-brain-matrix.ts:export type RuntimeBrainMatrixState = {
+app/lib/orchestrator/runtime-brain-matrix.ts:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {

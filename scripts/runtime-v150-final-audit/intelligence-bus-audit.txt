@@ -1,0 +1,13 @@
+app/lib/runtime-core/runtime-cognitive-state.ts:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:} from '@/app/lib/runtime-cognitive-bus/runtime-cognitive-bus'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  source: 'runtime-cognitive-bus'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    source: 'runtime-cognitive-bus',
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:    source: 'runtime-unified-intelligence-bus',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/orchestrator/runtime-architecture-index.ts:    file: 'runtime-intelligence.ts',
+app/lib/orchestrator/runtime-architecture-auditor.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-policy-engine.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-structural-health.ts:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'

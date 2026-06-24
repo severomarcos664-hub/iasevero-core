@@ -1,0 +1,276 @@
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:export function evaluateRuntimeAdaptiveIntelligence() {
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:export function evaluateRuntimeCognitiveResponseProfiler() {
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:    evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-state/runtime-executive-state.ts:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:export function evaluateRuntimeExecutiveState(
+app/lib/runtime-executive-state/runtime-executive-state.ts:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:export function evaluateRuntimeCausalInfluence():
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:export function evaluateRuntimeExecutiveGovernanceLayer(
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:  evaluateRuntimeExecutionGovernanceMatrix,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:export function evaluateRuntimeAdaptiveDecisionLayer() {
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:  const matrix = evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:  evaluateRuntimeCausalInfluence,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:export function evaluateRuntimeLiveCognitiveLoop():
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:    evaluateRuntimeCausalInfluence()
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:export function evaluateRuntimeExecutionScheduler():
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-core/runtime-state-cognition-engine.ts:export function evaluateRuntimeStateCognition(): RuntimeStateCognition {
+app/lib/runtime-core/runtime-adaptive-response.ts:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-adaptive-response.ts:export function evaluateRuntimeAdaptiveResponse(): RuntimeAdaptiveResponse {
+app/lib/runtime-core/runtime-adaptive-response.ts:  const state = evaluateRuntimeCognitiveState()
+app/lib/runtime-core/runtime-action-policy-engine.ts:  evaluateRuntimeAutonomousResponse,
+app/lib/runtime-core/runtime-action-policy-engine.ts:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:export function evaluateRuntimeAdaptiveExecution():
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-strategic-intelligence.ts:  evaluateRuntimeOptimization,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:export function evaluateRuntimeStrategicIntelligence():
+app/lib/runtime-core/runtime-strategic-intelligence.ts:  const optimization = evaluateRuntimeOptimization()
+app/lib/runtime-core/runtime-policy-engine.ts:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-policy-engine.ts:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-policy-engine.ts:export function evaluateRuntimePolicy(): RuntimePolicyDecision {
+app/lib/runtime-core/runtime-policy-engine.ts:  const severity = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-policy-engine.ts:  const predictive = evaluateRuntimePredictiveStabilization()
+app/lib/runtime-core/runtime-retention-manager.ts:export function evaluateRuntimeRetention():
+app/lib/runtime-core/runtime-severity-governance.ts:export function evaluateRuntimeSeverityGovernance():
+app/lib/runtime-core/runtime-execution-orchestrator.ts:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:export function evaluateRuntimeExecutionOrchestrator():
+app/lib/runtime-core/runtime-execution-orchestrator.ts:  const adaptive = evaluateRuntimeAdaptiveResponse()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:export function evaluateRuntimeOptimization():
+app/lib/runtime-core/runtime-predictive-stabilization.ts:import { evaluateRuntimeSeverityGovernance }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:export function evaluateRuntimePredictiveStabilization():
+app/lib/runtime-core/runtime-predictive-stabilization.ts:  const governance = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-master-orchestrator.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:  const governance = evaluateRuntimeGovernanceCenter()
+app/lib/runtime-core/runtime-master-orchestrator.ts:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:  evaluateRuntimeStrategicIntelligence,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:export function evaluateRuntimeRiskEscalation():
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:    evaluateRuntimeStrategicIntelligence()
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  evaluateRuntimeTemporalDrift,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  evaluateRuntimeDecisionFusion,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:export function evaluateRuntimeExecutionCriticality():
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  const drift = evaluateRuntimeTemporalDrift()
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:  const fusion = evaluateRuntimeDecisionFusion()
+app/lib/runtime-core/runtime-resilience-engine.ts:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-resilience-engine.ts:export function evaluateRuntimeResilience():
+app/lib/runtime-core/runtime-resilience-engine.ts:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-confidence-intelligence.ts:  evaluateRuntimeRiskEscalation,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:export function evaluateRuntimeConfidence():
+app/lib/runtime-core/runtime-confidence-intelligence.ts:    evaluateRuntimeRiskEscalation()
+app/lib/runtime-core/runtime-evaluation-engine.ts:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-evaluation-engine.ts:  evaluateRuntimeResilience,
+app/lib/runtime-core/runtime-evaluation-engine.ts:export function evaluateRuntimeExecutionQuality():
+app/lib/runtime-core/runtime-evaluation-engine.ts:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-evaluation-engine.ts:  const resilience = evaluateRuntimeResilience()
+app/lib/runtime-core/runtime-governance-enforcement.ts:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-governance-enforcement.ts:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-execution-coordinator.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:  evaluateRuntimeStateCognition,
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:export function evaluateRuntimeTemporalDrift():
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:  const cognition = evaluateRuntimeStateCognition()
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:  evaluateRuntimeExecutionCriticality,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:export function evaluateRuntimeAutonomousResponse():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:    evaluateRuntimeExecutionCriticality()
+app/lib/runtime-core/runtime-decision-gate.ts:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeAwareness } from '../orchestrator/runtime-awareness'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-state.ts:export function evaluateRuntimeCognitiveState(): RuntimeCognitiveState {
+app/lib/runtime-core/runtime-cognitive-state.ts:  const awareness = evaluateRuntimeAwareness({
+app/lib/runtime-core/runtime-cognitive-state.ts:  const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/runtime-core/runtime-cognitive-state.ts:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-governance-center.ts:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-governance-center.ts:export function evaluateRuntimeGovernanceCenter():
+app/lib/runtime-core/runtime-governance-center.ts:  const severity = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-governance-center.ts:  const predictive = evaluateRuntimePredictiveStabilization()
+app/lib/runtime-core/runtime-governance-center.ts:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:  const governance = evaluateRuntimeGovernanceCenter()
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:export function evaluateRuntimeDecisionFusion(): RuntimeFusionDecision {
+app/lib/runtime-core/runtime-decision-loop.ts:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-decision-loop.ts:  const execution = evaluateRuntimeExecutionOrchestrator()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:export function evaluateRuntimeCognitiveGateway(): RuntimeCognitiveDecision {
+app/lib/runtime-core/runtime-learning-signals.ts:  evaluateRuntimeExecutionQuality,
+app/lib/runtime-core/runtime-learning-signals.ts:    evaluateRuntimeExecutionQuality()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:  evaluateRuntimePersistenceMemory,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:  evaluateRuntimeExecutionGovernanceMatrix,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:export function evaluateRuntimeConsensusEngine():
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:    evaluateRuntimePersistenceMemory()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:    evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/executive-runtime-core/executive-runtime-core.ts:  evaluateRuntimeExecutiveGovernor,
+app/lib/executive-runtime-core/executive-runtime-core.ts:  evaluateRuntimeAdaptiveExecutionCoordinator,
+app/lib/executive-runtime-core/executive-runtime-core.ts:    evaluateRuntimeExecutiveGovernor()
+app/lib/executive-runtime-core/executive-runtime-core.ts:    evaluateRuntimeAdaptiveExecutionCoordinator()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:  evaluateRuntimeConsciousness,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:export function evaluateRuntimeConsciousnessIntegration() {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:    evaluateRuntimeConsciousness()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:    evaluateRuntimeActionPolicy()
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:export function evaluateRuntimeExecutionArbitrator():
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:  evaluateRuntimeLiveCognitiveLoop,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:    evaluateRuntimeLiveCognitiveLoop()
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:  evaluateRuntimeCognitiveBus,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:export function evaluateRuntimeCognitiveStateFabric():
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:    evaluateRuntimeCognitiveBus()
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:export function evaluateRuntimeCoreIdentity():
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:  evaluateRuntimeCoreIdentity,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:  evaluateRuntimeAttentionRegistry,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:export function evaluateRuntimeMetaController():
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:  const identity = evaluateRuntimeCoreIdentity()
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:  const attention = evaluateRuntimeAttentionRegistry()
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:export function evaluateRuntimeAttentionRegistry():
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  evaluateRuntimeExecutionProfileBridge,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:export function evaluateRuntimeExecutionGovernanceMatrix() {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  const bridge = evaluateRuntimeExecutionProfileBridge()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  const consciousness = evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:  const arbitration = evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeCoreIdentity,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeAttentionRegistry,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeMetaController,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:export function evaluateRuntimeCognitiveBus():
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeCoreIdentity()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeAttentionRegistry()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeMetaController()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:    evaluateRuntimeMemoryConsolidation()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeConfidence } from '@/app/lib/runtime-core/runtime-confidence-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeRiskEscalation } from '@/app/lib/runtime-core/runtime-risk-escalation-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:import { evaluateRuntimeAdaptiveIntelligence } from '@/app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:  const confidence = evaluateRuntimeConfidence()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:  const escalation = evaluateRuntimeRiskEscalation()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:  const adaptive = evaluateRuntimeAdaptiveIntelligence()
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:  evaluateRuntimeLifecycleManager,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:export function evaluateRuntimePersistenceMemory():
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:    evaluateRuntimeLifecycleManager()
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:  evaluateRuntimeExecutiveGovernor,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:export function evaluateRuntimeAdaptiveExecutionCoordinator():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:export function evaluateRuntimeDispatchController() {
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-execution-router/runtime-execution-router.ts:  evaluateRuntimeDispatchController,
+app/lib/runtime-execution-router/runtime-execution-router.ts:export function evaluateRuntimeExecutionRouter() {
+app/lib/runtime-execution-router/runtime-execution-router.ts:    evaluateRuntimeDispatchController()
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:export function evaluateRuntimeOperationalMode() {
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:export function evaluateRuntimeQueueManager():
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:    evaluateRuntimeExecutionArbitrator()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  evaluateRuntimeAdaptiveDecisionLayer,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:  evaluateRuntimeQueueManager,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:    evaluateRuntimeAdaptiveDecisionLayer()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:    evaluateRuntimeExecutionArbitrator()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:    evaluateRuntimeQueueManager()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:  evaluateRuntimeExecutiveGovernanceLayer
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:export function evaluateRuntimeEnforcementAuthority(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:    evaluateRuntimeExecutiveGovernanceLayer(
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  evaluateRuntimeMetaController,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  evaluateRuntimeExecutionRouter,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:export function evaluateRuntimeOperationalIntegration():
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  const meta = evaluateRuntimeMetaController()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:  const router = evaluateRuntimeExecutionRouter()
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:  evaluateRuntimeTransitionController,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:export function evaluateRuntimeLifecycleManager() {
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:  const transition = evaluateRuntimeTransitionController()
+app/lib/orchestrator/runtime-budget-control.ts:export function evaluateRuntimeBudget(
+app/lib/orchestrator/runtime-governor.ts:export function evaluateRuntimeGovernance(
+app/lib/orchestrator/runtime-policy-engine.ts:export function evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-policy.ts:export function evaluateRuntimePolicy(
+app/lib/orchestrator/runtime-awareness.ts:export function evaluateRuntimeAwareness(
+app/lib/orchestrator/runtime-recovery.ts:export function evaluateRuntimeRecovery(
+app/lib/orchestrator/runtime-supervisor.ts:export function evaluateRuntimeSupervisor(
+app/lib/orchestrator/central-runtime-core.ts:import { evaluateRuntimeEvolution } from './evolution-engine'
+app/lib/orchestrator/central-runtime-core.ts:  const evolution = evaluateRuntimeEvolution()
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-execution-pipeline.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-execution-pipeline.ts:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:  const governance = evaluateRuntimeGovernance(
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeBudget } from './runtime-budget-control'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeRecovery } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:const budget = evaluateRuntimeBudget(context)
+app/lib/orchestrator/runtime-decision-engine.ts:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:  const awareness = evaluateRuntimeAwareness(runtimeRegistry)
+app/lib/orchestrator/runtime-decision-engine.ts:const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/orchestrator/runtime-decision-engine.ts:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-memory.ts:export function evaluateRuntimeMemory(
+app/lib/orchestrator/evolution-engine.ts:export function evaluateRuntimeEvolution() {
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:  evaluateRuntimeCognitiveResponseProfiler,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:export function evaluateRuntimeCognitiveExecutionProfile() {
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:    evaluateRuntimeCognitiveResponseProfiler()
+app/lib/runtime-trust/runtime-trust-engine.ts:  evaluateRuntimeOperationalMode,
+app/lib/runtime-trust/runtime-trust-engine.ts:export function evaluateRuntimeTrustEngine() {
+app/lib/runtime-trust/runtime-trust-engine.ts:  const operational = evaluateRuntimeOperationalMode()
+app/lib/executive-runtime-context/executive-runtime-context.ts:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:  evaluateRuntimeExecutiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/executive-runtime-context/executive-runtime-context.ts:    evaluateRuntimeExecutiveState(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:  evaluateRuntimeAdaptiveDecisionLayer,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:export function evaluateRuntimeOperationalStateEngine() {
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:    evaluateRuntimeAdaptiveDecisionLayer()
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:  evaluateRuntimeCognitiveExecutionProfile
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:export function evaluateRuntimeExecutionProfileBridge() {
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:    evaluateRuntimeCognitiveExecutionProfile()
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:  evaluateRuntimeOperationalStateEngine,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:export function evaluateRuntimeTransitionController() {
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:    evaluateRuntimeOperationalStateEngine()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:export function evaluateRuntimeCognitiveArbitration() {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:    evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:  evaluateRuntimeTrustEngine,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:  evaluateRuntimeOperationalMode,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:export function evaluateRuntimeConsciousness() {
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:  const trust = evaluateRuntimeTrustEngine()
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:  const operational = evaluateRuntimeOperationalMode()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:    evaluateRuntimeReflectionFeedback()
