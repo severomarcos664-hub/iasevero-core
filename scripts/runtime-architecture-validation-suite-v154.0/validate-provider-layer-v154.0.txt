@@ -1,0 +1,17 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:6:  resolveProviderRoute
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:9:export interface RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:30:): RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:36:    resolveProviderRoute(message, intent)
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/orchestrator/decision-pipeline.ts:2:import { resolveProviderRoute } from './routing'
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/routing.ts:12:export function resolveProviderRoute(
+app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/provider.ts:4:export async function runProvider(
+scripts/runtime-provider-authority/runtime-provider-authority-test.ts:2:  evaluateRuntimeProviderAuthority
+scripts/runtime-provider-authority/runtime-provider-authority-test.ts:6:  evaluateRuntimeProviderAuthority(

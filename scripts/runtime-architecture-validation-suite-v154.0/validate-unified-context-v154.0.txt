@@ -1,0 +1,5 @@
+app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+scripts/runtime-unified-context-test.ts:1:import { buildRuntimeUnifiedContext } from '../app/lib/runtime-core/runtime-unified-context'
+scripts/runtime-unified-context-test.ts:3:const context = buildRuntimeUnifiedContext()

@@ -1,0 +1,7 @@
+app/api/chat/route.ts:11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+scripts/runtime-decision-gate-test.ts:2:  evaluateRuntimeDecisionGate,
+scripts/runtime-decision-gate-test.ts:5:const report = evaluateRuntimeDecisionGate(

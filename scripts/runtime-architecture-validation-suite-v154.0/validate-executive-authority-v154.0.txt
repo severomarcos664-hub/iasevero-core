@@ -1,0 +1,98 @@
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:3:import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
+app/api/chat/route.ts:113:const executiveAuthority =
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/api/chat/route.ts:116:if (!executiveAuthority.executionAllowed) {
+app/api/chat/route.ts:120:    runtime: executiveAuthority,
+app/api/chat/route.ts:125:    const executiveState =
+app/api/chat/route.ts:151:        executiveAuthority,
+app/api/chat/route.ts:152:        executiveState,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:3:} from '../executive-runtime-core/executive-runtime-core'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:5:export interface RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:8:  source: 'runtime-executive-authority'
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:24:RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:37:      'runtime-executive-authority',
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-executive-state/runtime-executive-state.ts:18:  source: 'runtime-executive-state'
+app/lib/runtime-executive-state/runtime-executive-state.ts:20:  executiveState: ExecutiveRuntimeState
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:47:  const executiveState: ExecutiveRuntimeState =
+app/lib/runtime-executive-state/runtime-executive-state.ts:58:      `executive-state-${Date.now()}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:64:      'runtime-executive-state',
+app/lib/runtime-executive-state/runtime-executive-state.ts:66:    executiveState,
+app/lib/runtime-executive-state/runtime-executive-state.ts:84:      `Executive Runtime State active: ${executiveState}.`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:87:      `state:${executiveState}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:20:  source: 'runtime-executive-governance-layer'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:26:  executiveState: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:49:      : context.executiveState === 'protected'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:67:    source: 'runtime-executive-governance-layer',
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:73:    executiveState: context.executiveState,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:88:      `state:${context.executiveState}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:3:} from '../runtime-executive-governor/runtime-executive-governor'
+app/lib/executive-runtime-core/executive-runtime-core.ts:18:  source: 'executive-runtime-core'
+app/lib/executive-runtime-core/executive-runtime-core.ts:21:  authority: 'central-executive-runtime-core'
+app/lib/executive-runtime-core/executive-runtime-core.ts:24:  executiveDecision: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:53:      : governor.executiveDecision === 'expand' &&
+app/lib/executive-runtime-core/executive-runtime-core.ts:59:    coreId: `executive-core-${Date.now()}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:61:    source: 'executive-runtime-core',
+app/lib/executive-runtime-core/executive-runtime-core.ts:64:    authority: 'central-executive-runtime-core',
+app/lib/executive-runtime-core/executive-runtime-core.ts:67:    executiveDecision: governor.executiveDecision,
+app/lib/executive-runtime-core/executive-runtime-core.ts:80:      `Executive Runtime Core active: ${coreState}.`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:85:      `decision:${governor.executiveDecision}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:3:} from '../runtime-executive-authority/runtime-executive-authority'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:5:export interface RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:8:  source: 'runtime-executive-authority-gateway'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:22:RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:29:    source: 'runtime-executive-authority-gateway',
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:14:  source: 'runtime-executive-governor'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:18:  executiveDecision: RuntimeExecutiveDecision
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:38:  const executiveDecision: RuntimeExecutiveDecision =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:49:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:51:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:53:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:58:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:60:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:62:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:69:    source: 'runtime-executive-governor',
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:74:    executiveDecision,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:94:      `Runtime executive governor decision: ${executiveDecision}.`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:98:      `decision:${executiveDecision}`,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:3:} from '../runtime-executive-governor/runtime-executive-governor'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:57:      : governor.executiveDecision === 'expand'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:7:} from '../runtime-executive-governance-layer/runtime-executive-governance-layer'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:25:  executiveState: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:71:    executiveState: governance.executiveState,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:83:      `state:${governance.executiveState}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+app/lib/executive-runtime-context/executive-runtime-context.ts:7:} from '../runtime-executive-state/runtime-executive-state'
+app/lib/executive-runtime-context/executive-runtime-context.ts:16:  source: 'executive-runtime-context'
+app/lib/executive-runtime-context/executive-runtime-context.ts:22:  executiveState: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/executive-runtime-context/executive-runtime-context.ts:55:    contextId: `executive-context-${Date.now()}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:57:    source: 'executive-runtime-context',
+app/lib/executive-runtime-context/executive-runtime-context.ts:63:    executiveState: state.executiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:73:      ? 'Executive Runtime Context approved execution.'
+app/lib/executive-runtime-context/executive-runtime-context.ts:74:      : 'Executive Runtime Context restricted execution.',
+app/lib/executive-runtime-context/executive-runtime-context.ts:79:      `state:${state.executiveState}`,
+scripts/runtime-executive-authority/runtime-executive-authority-test.ts:2:  evaluateRuntimeExecutiveAuthority,
+scripts/runtime-executive-authority/runtime-executive-authority-test.ts:3:} from '../../app/lib/runtime-executive-authority/runtime-executive-authority'
+scripts/runtime-executive-authority/runtime-executive-authority-test.ts:6:  evaluateRuntimeExecutiveAuthority()
+scripts/runtime-executive-state/runtime-executive-state-test.ts:3:} from '../../app/lib/runtime-executive-state/runtime-executive-state'
+scripts/runtime-executive-governance-layer/runtime-executive-governance-layer-test.ts:3:} from '../../app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer'
+scripts/executive-runtime-core/executive-runtime-core-test.ts:3:} from '../../app/lib/executive-runtime-core/executive-runtime-core'
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:3:} from '../../app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+scripts/runtime-executive-authority-gateway/runtime-executive-authority-gateway-test.ts:6:  evaluateRuntimeExecutiveAuthorityGateway()
+scripts/runtime-executive-governor/runtime-executive-governor-test.ts:3:} from '../../app/lib/runtime-executive-governor/runtime-executive-governor'
+scripts/executive-runtime-context/executive-runtime-context-test.ts:3:} from '../../app/lib/executive-runtime-context/executive-runtime-context'
