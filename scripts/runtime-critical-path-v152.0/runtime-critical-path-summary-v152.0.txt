@@ -1,0 +1,24 @@
+IASevero v152.0
+
+Runtime Critical Path Analysis
+
+GOAL
+Identify the minimum critical path required to process a request into a governed response.
+
+CRITICAL PATH CANDIDATES
+API Route
+Decision Gate
+Action Policy
+Executive Authority
+Runtime Unified Context
+Brain Matrix
+Cognitive State
+Runtime Intelligence
+Provider Authority
+Provider Route
+Execution
+Telemetry / Trace
+Response
+
+STATUS
+Prepared for critical path review.
