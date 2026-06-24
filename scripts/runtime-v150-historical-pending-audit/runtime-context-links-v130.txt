@@ -1,0 +1,7 @@
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:    buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:export interface ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:): ExecutiveRuntimeContextReport {

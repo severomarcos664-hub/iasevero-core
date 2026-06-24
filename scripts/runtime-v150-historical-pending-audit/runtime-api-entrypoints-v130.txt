@@ -1,0 +1,5 @@
+app/api/runtime/telemetry/route.ts:export async function GET() {
+app/api/runtime/status/route.ts:export async function GET() {
+app/api/health/route.ts:export async function GET() {
+app/api/chat/route.ts:export async function POST(req: Request) {
+app/api/job/route.ts:export async function GET(req: Request) {

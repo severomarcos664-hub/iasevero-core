@@ -1,0 +1,7 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:export interface RuntimeProviderAuthorityReport {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:): RuntimeProviderAuthorityReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:    evaluateRuntimeProviderAuthority(message, intent)

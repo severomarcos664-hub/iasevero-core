@@ -1,0 +1,16 @@
+app/api/chat/route.ts:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:  evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:export interface RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:RuntimeExecutiveAuthorityReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:export interface RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:    evaluateRuntimeExecutiveAuthority()
+app/lib/executive-runtime-context/executive-runtime-context.ts:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:    evaluateRuntimeExecutiveAuthorityGateway()

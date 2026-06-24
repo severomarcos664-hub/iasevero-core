@@ -1,0 +1,7 @@
+app/api/chat/route.ts:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:const actionPolicy = evaluateRuntimeActionPolicy()
+app/lib/runtime-core/runtime-action-policy-engine.ts:export type RuntimeActionPolicyReport = {
+app/lib/runtime-core/runtime-action-policy-engine.ts:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:RuntimeActionPolicyReport {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:    evaluateRuntimeActionPolicy()
