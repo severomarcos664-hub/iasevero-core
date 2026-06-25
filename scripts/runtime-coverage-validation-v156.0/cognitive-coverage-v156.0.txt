@@ -1,0 +1,488 @@
+app/runtime/optimization/runtime-optimization-engine.ts:4:  memoryPressure: number
+app/runtime/optimization/runtime-optimization-engine.ts:21:      metrics.memoryPressure > 80,
+app/runtime/state/runtime-state-kernel.ts:13:  | 'intelligence'
+app/runtime/state/runtime-state-kernel.ts:26:    'intelligence',
+app/runtime/runtime-manifest.ts:14:    'runtime-operational-memory',
+app/runtime/consciousness/runtime-consciousness-layer.ts:10:    const intelligence =
+app/runtime/consciousness/runtime-consciousness-layer.ts:19:      intelligence,
+app/runtime/consciousness/runtime-consciousness-layer.ts:20:      stable: intelligence >= 80,
+app/runtime/capabilities/runtime-capability-registry.ts:23:  intelligence: [
+app/runtime/central-runtime-manifest.ts:8:      'runtime-context',
+app/runtime/central-runtime-manifest.ts:35:    intelligence: [
+app/runtime/central-runtime-manifest.ts:37:      'runtime-intelligence',
+app/runtime/central-runtime-manifest.ts:38:      'runtime-intelligence-policy'
+app/runtime-dashboard/page.tsx:5:  { title: "Memory", status: "READY", detail: "Runtime memory foundation available." },
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:17:    source: 'runtime-adaptive-intelligence-engine',
+app/lib/context-smart.ts:1:import { contextSummary } from './context'
+app/lib/context-smart.ts:4:  const raw = contextSummary(userId)
+app/lib/context-smart.ts:20:  if (lower.includes('memoria') || lower.includes('contexto')) {
+app/lib/context-smart.ts:21:    insights.push('Usuário interessado em memória e contexto')
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:3:} from '@/app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:10:    arbitration.runtimeGlobalMode === 'cognitive-orchestration'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:34:      arbitration.cognitiveStable,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:48:      `stable:${arbitration.cognitiveStable}`,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:3:} from '@/app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:24:  cognitiveCoherence: number
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:47:    fabric.cognitiveCoherence >= 95 &&
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:96:    cognitiveCoherence:
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:97:      fabric.cognitiveCoherence,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:118:      `coherence:${fabric.cognitiveCoherence}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:43:  const context =
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:47:    !context.executionAllowed
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:49:      : context.executiveState === 'protected'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:60:      : context.executionPriority === 'high'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:72:    executionAllowed: context.executionAllowed,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:73:    executiveState: context.executiveState,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:75:    allowExternal: context.allowExternal,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:79:    executionRoute: context.executionRoute,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:88:      `state:${context.executiveState}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:90:      `external:${context.allowExternal}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:93:      `route:${context.executionRoute}`,
+app/lib/iasevero-core.ts:2:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+app/lib/iasevero-core.ts:4:import { localBrain } from './local-brain'
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:17:    workflowStable: matrix.cognitiveStable,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:7:} from '../runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:18:  source: 'runtime-live-cognitive-loop'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:20:  cognitiveState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:32:  cognitiveCoherence: number
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:57:      : influence.cognitiveCoherence >= 95
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:73:    source: 'runtime-live-cognitive-loop',
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:75:    cognitiveState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:98:    cognitiveCoherence:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:99:      influence.cognitiveCoherence,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:119:      `coherence:${influence.cognitiveCoherence}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:1:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+app/lib/runtime-core/runtime-adaptive-response.ts:23:  if (state.cognitiveState === 'critical') {
+app/lib/runtime-core/runtime-adaptive-response.ts:29:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:37:  if (state.cognitiveState === 'overloaded') {
+app/lib/runtime-core/runtime-adaptive-response.ts:43:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:51:  if (state.cognitiveState === 'degrading') {
+app/lib/runtime-core/runtime-adaptive-response.ts:57:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:65:  if (state.cognitiveState === 'focused') {
+app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+app/lib/runtime-core/runtime-adaptive-response.ts:84:    memoryMode: 'session',
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:21:      title: 'Analyze runtime context',
+app/lib/runtime-core/runtime-strategic-intelligence.ts:3:} from './runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:21:  source: 'runtime-strategic-intelligence'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:71:    source: 'runtime-strategic-intelligence',
+app/lib/runtime-core/runtime-optimization-intelligence.ts:14:  source: 'runtime-optimization-intelligence'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:51:    source: 'runtime-optimization-intelligence',
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:5:  source: 'runtime-unified-context'
+app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+app/lib/runtime-core/runtime-unified-context.ts:18:    source: 'runtime-unified-context',
+app/lib/runtime-core/runtime-unified-context.ts:19:    brain,
+app/lib/runtime-core/runtime-unified-context.ts:20:    operational: brain.operational,
+app/lib/runtime-core/runtime-unified-context.ts:21:    globalState: brain.globalState,
+app/lib/runtime-core/runtime-unified-context.ts:22:    operationalScore: brain.operationalScore,
+app/lib/runtime-core/runtime-unified-context.ts:23:    recommendation: brain.recommendation,
+app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:3:} from './runtime-strategic-intelligence'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:23:  source: 'runtime-risk-escalation-intelligence'
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:76:    source: 'runtime-risk-escalation-intelligence',
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:3:} from './runtime-temporal-drift-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:18:  source: 'runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:45:    source: 'runtime-execution-criticality-intelligence',
+app/lib/runtime-core/runtime-confidence-intelligence.ts:3:} from './runtime-risk-escalation-intelligence'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:15:  source: 'runtime-confidence-intelligence'
+app/lib/runtime-core/runtime-confidence-intelligence.ts:56:    source: 'runtime-confidence-intelligence',
+app/lib/runtime-core/runtime-tool-registry.ts:2:  | 'memory'
+app/lib/runtime-core/runtime-tool-registry.ts:39:      id: 'memory.search',
+app/lib/runtime-core/runtime-tool-registry.ts:40:      category: 'memory',
+app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+app/lib/runtime-core/runtime-governance-enforcement.ts:1:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:8:  source: 'runtime-temporal-drift-intelligence'
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:36:    source: 'runtime-temporal-drift-intelligence',
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:3:} from './runtime-execution-criticality-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:93:      title: 'Analyze request and runtime context',
+app/lib/runtime-core/runtime-cognitive-state.ts:3:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:4:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-state.ts:16:  cognitiveState:
+app/lib/runtime-core/runtime-cognitive-state.ts:38:    memoryPressure: 90,
+app/lib/runtime-core/runtime-cognitive-state.ts:48:      'memory-pressure-high',
+app/lib/runtime-core/runtime-cognitive-state.ts:57:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/runtime-core/runtime-cognitive-state.ts:67:          intelligence.recoveryFrequency +
+app/lib/runtime-core/runtime-cognitive-state.ts:79:          intelligence.recoveryFrequency +
+app/lib/runtime-core/runtime-cognitive-state.ts:98:  const cognitiveState =
+app/lib/runtime-core/runtime-cognitive-state.ts:123:    cognitiveState === 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:125:      : cognitiveState === 'overloaded'
+app/lib/runtime-core/runtime-cognitive-state.ts:127:        : cognitiveState === 'degrading'
+app/lib/runtime-core/runtime-cognitive-state.ts:137:    cognitiveState,
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:16:  memoryInfluence: boolean
+app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+app/lib/runtime-core/runtime-feedback-integration.ts:31:    memory.stabilityRate >= 90 &&
+app/lib/runtime-core/runtime-feedback-integration.ts:34:      : memory.stabilityRate >= 70
+app/lib/runtime-core/runtime-feedback-integration.ts:36:      : memory.stabilityRate >= 50
+app/lib/runtime-core/runtime-feedback-integration.ts:51:    memoryInfluence: true,
+app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+app/lib/runtime-core/runtime-feedback-integration.ts:86:      memoryInfluence: true,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:6:  source: 'runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+app/lib/runtime-core/runtime-cognitive-gateway.ts:21:  if (!context.operational) reasoning.push('runtime-not-operational')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:26:  const memory = context.brain.operationalMemory
+app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:55:    source: 'runtime-cognitive-gateway',
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:39:  const memory =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:50:      memory.runtimeEvolution !== 'degrading',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:53:      memory.historicalStability >= 80,
+app/lib/executive-runtime-core/executive-runtime-core.ts:33:  cognitiveCoherence: number
+app/lib/executive-runtime-core/executive-runtime-core.ts:76:    cognitiveCoherence: governor.cognitiveCoherence,
+app/lib/executive-runtime-core/executive-runtime-core.ts:92:      `coherence:${governor.cognitiveCoherence}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:3:} from '../runtime-live-cognitive-loop/runtime-live-cognitive-loop'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:25:  cognitiveCoherence: number
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:43:      : loop.cognitiveCoherence >= 95 &&
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:87:    cognitiveCoherence:
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:88:      loop.cognitiveCoherence,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:103:      `coherence:${loop.cognitiveCoherence}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:3:} from '@/app/lib/runtime-cognitive-bus/runtime-cognitive-bus'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:13:  source: 'runtime-cognitive-state-fabric'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:30:  cognitiveCoherence: number
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:44:  const cognitiveCoherence =
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:56:      : cognitiveCoherence >= 95
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:66:    source: 'runtime-cognitive-state-fabric',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:83:    cognitiveCoherence,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:90:        ? 'Runtime cognitive state fabric coherent.'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:91:        : 'Runtime cognitive state fabric restricted.',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:102:      `coherence:${cognitiveCoherence}`,
+app/lib/zero-cost-brain.ts:2:export function localIntelligence(message: string, context: string): string {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:11:} from '@/app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine'
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:53:    cognitiveStable: arbitration.cognitiveStable,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:70:      `stable:${arbitration.cognitiveStable}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:3:} from '@/app/lib/runtime-cognitive-core/runtime-core-identity'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:7:} from '@/app/lib/runtime-cognitive-core/runtime-attention-registry'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:11:} from '@/app/lib/runtime-cognitive-core/runtime-meta-controller'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:23:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:33:  source: 'runtime-cognitive-bus'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:75:  const memory =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:97:    source: 'runtime-cognitive-bus',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:138:        ? 'Runtime cognitive bus synchronized.'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:139:        : 'Runtime cognitive bus restricted.',
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:1:import { evaluateRuntimeConfidence } from '@/app/lib/runtime-core/runtime-confidence-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:2:import { evaluateRuntimeRiskEscalation } from '@/app/lib/runtime-core/runtime-risk-escalation-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:3:import { evaluateRuntimeAdaptiveIntelligence } from '@/app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:26:    source: 'runtime-unified-intelligence-bus',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:15:  memoryId: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:95:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:117:        ? 'Runtime persistence memory healthy.'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:119:          ? 'Runtime memory stable.'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:30:  cognitiveCoherence: number
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:48:      : governor.cognitiveCoherence >= 95
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:81:    cognitiveCoherence:
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:82:      governor.cognitiveCoherence,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:97:      `coherence:${governor.cognitiveCoherence}`,
+app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:3:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:21:  cognitiveState: RuntimeCognitiveState
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:22:  cognitiveMode: RuntimeCognitiveMode
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:37:  const context =
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:52:    context.executionAllowed &&
+app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:3:} from '@/app/lib/runtime-cognitive-core/runtime-meta-controller'
+app/lib/providers/local.ts:2:import { localIntelligence } from '../zero-cost-brain'
+app/lib/providers/local.ts:3:import { smartContext } from '../context-smart';
+app/lib/providers/local.ts:9:import { contextSummary, saveTurn } from '../context'
+app/lib/providers/local.ts:57:  if (text.toLowerCase() === 'contexto') {
+app/lib/providers/local.ts:58:    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+app/lib/providers/local.ts:80:  if (intent === 'memory') {
+app/lib/providers/local.ts:87:  const intelligent = localIntelligence(text, contextSummary(userId) || '')
+app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-architecture-index.ts:7:  | 'memory'
+app/lib/orchestrator/runtime-architecture-index.ts:15:  | 'intelligence'
+app/lib/orchestrator/runtime-architecture-index.ts:36:    file: 'runtime-context.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:38:    responsibility: 'manter contexto transitório da execução atual',
+app/lib/orchestrator/runtime-architecture-index.ts:45:    responsibility: 'avaliar política baseada no contexto runtime',
+app/lib/orchestrator/runtime-architecture-index.ts:71:    file: 'runtime-memory.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:72:    layer: 'memory',
+app/lib/orchestrator/runtime-architecture-index.ts:73:    responsibility: 'governar modo de memória e janela de contexto',
+app/lib/orchestrator/runtime-architecture-index.ts:127:    file: 'runtime-intelligence.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:128:    layer: 'intelligence',
+app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/runtime-snapshot.ts:12:  memoryMode: string
+app/lib/orchestrator/runtime-snapshot.ts:54:    memoryMode: 'unknown'
+app/lib/orchestrator/runtime-architecture-auditor.ts:4:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-architecture-auditor.ts:18:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-architecture-auditor.ts:22:    intelligence
+app/lib/orchestrator/runtime-operational-memory.ts:9:  memoryModePattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:34:      memoryModePattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:47:  const memoryModePattern = dominant(snapshots.map((snapshot) => snapshot.memoryMode))
+app/lib/orchestrator/runtime-operational-memory.ts:78:    memoryModePattern,
+app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-policy-engine.ts:1:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-policy-engine.ts:21:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-policy-engine.ts:24:  if (intelligence.degradationRisk === 'high') {
+app/lib/orchestrator/runtime-policy-engine.ts:37:  if (intelligence.degradationRisk === 'medium') {
+app/lib/orchestrator/runtime-state-registry.ts:11:  memoryPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:23:  memoryPressure: 0,
+app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+app/lib/orchestrator/runtime-policy.ts:24:  if (context.allowExternal) {
+app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-execution-control.ts:15:  if (!context.stable) {
+app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-context.ts:19:    source: 'runtime-context'
+app/lib/orchestrator/runtime-context.ts:48:      source: 'runtime-context',
+app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+app/lib/orchestrator/runtime-context.ts:63:    ...context,
+app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:76:  lastRuntimeState = context
+app/lib/orchestrator/runtime-context.ts:77:  return context
+app/lib/orchestrator/runtime-awareness.ts:18:    registry.memoryPressure +
+app/lib/orchestrator/runtime-dependency-validator.ts:24:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:32:    'intelligence',
+app/lib/orchestrator/runtime-dependency-validator.ts:39:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:45:  intelligence: [
+app/lib/orchestrator/runtime-dependency-validator.ts:66:    'memory'
+app/lib/orchestrator/event-logger.ts:3:const memory: IASeveroEvent[] = []
+app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+app/lib/orchestrator/event-logger.ts:8:  if (memory.length > 1000) {
+app/lib/orchestrator/event-logger.ts:9:    memory.shift()
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-provider-governor.ts:14:  if (!context.stable) {
+app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-supervisor.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:19:  intelligence: RuntimeIntelligenceReport,
+app/lib/orchestrator/runtime-supervisor.ts:26:    intelligence.degradationRisk === 'high' ? 25 : 0,
+app/lib/orchestrator/runtime-supervisor.ts:31:  const operationalScore = intelligence.operationalScore
+app/lib/orchestrator/runtime-contracts.ts:20:  memoryMode: string
+app/lib/orchestrator/runtime-contracts.ts:21:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-contracts.ts:22:  memoryPressure: number
+app/lib/orchestrator/runtime-event-processor.ts:8:} from './runtime-operational-memory'
+app/lib/orchestrator/runtime-event-processor.ts:33:    actions.push('memory-registered')
+app/lib/orchestrator/metrics.ts:4:import { getMemoryPolicy } from './memory-governor'
+app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:49:    context,
+app/lib/orchestrator/runtime-execution-pipeline.ts:54:    context,
+app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:16:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:62:  let context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:76:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:81:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:85:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:86:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:90:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:94:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:95:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:99:const executionControl = evaluateExecutionControl(context)
+app/lib/orchestrator/runtime-decision-engine.ts:105:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:106:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:110:const budget = evaluateRuntimeBudget(context)
+app/lib/orchestrator/runtime-decision-engine.ts:116:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:117:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:127:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:128:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:132:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:134:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:137:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:138:    context,
+app/lib/orchestrator/runtime-decision-engine.ts:139:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:143:    runtimeHealth: context.stable ? 'healthy' : 'degraded',
+app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimePressure: context.safeMode ? 60 : 20,
+app/lib/orchestrator/runtime-decision-engine.ts:146:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:148:    degradationState: !context.stable || !executionControl.allowed,
+app/lib/orchestrator/runtime-decision-engine.ts:149:    recoveryMode: !context.stable
+app/lib/orchestrator/runtime-decision-engine.ts:152:  if (!context.stable) {
+app/lib/orchestrator/runtime-decision-engine.ts:161:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:162:    context,
+app/lib/orchestrator/runtime-decision-engine.ts:173:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:174:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:179:if (!context.stable) {
+app/lib/orchestrator/runtime-decision-engine.ts:207:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:208:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:212:const enforcement = enforceRuntimeExecution(context, governance)
+app/lib/orchestrator/runtime-decision-engine.ts:216:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:217:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:234:  memoryMode: memory.memoryMode
+app/lib/orchestrator/runtime-decision-engine.ts:238:const intelligence = analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-decision-engine.ts:243:  `intelligence:${intelligence.operationalScore}:${intelligence.degradationRisk}`
+app/lib/orchestrator/runtime-decision-engine.ts:246:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:247:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:248:  `intelligence:${intelligence.stabilityRate}:${intelligence.recoveryFrequency}`
+app/lib/orchestrator/runtime-decision-engine.ts:253:  intelligence
+app/lib/orchestrator/runtime-decision-engine.ts:260:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:261:  context,
+app/lib/orchestrator/runtime-decision-engine.ts:271:} else if (intelligence.degradationRisk === 'high') {
+app/lib/orchestrator/runtime-decision-engine.ts:285:    context,
+app/lib/orchestrator/runtime-decision-engine.ts:294:    memory,
+app/lib/orchestrator/runtime-causal-trace.ts:12:    memoryMode: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:44:      memoryMode: latest?.memoryMode ?? null,
+app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-memory.ts:4:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+app/lib/orchestrator/runtime-memory.ts:6:  contextWindow: number
+app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-memory.ts:14:  if (!context.stable) {
+app/lib/orchestrator/runtime-memory.ts:16:      memoryEnabled: false,
+app/lib/orchestrator/runtime-memory.ts:17:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:18:      contextWindow: 2,
+app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+app/lib/orchestrator/runtime-memory.ts:26:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:27:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:28:      contextWindow: 4,
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-memory.ts:36:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:37:      memoryMode: 'session',
+app/lib/orchestrator/runtime-memory.ts:38:      contextWindow: 12,
+app/lib/orchestrator/runtime-memory.ts:45:    memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',
+app/lib/orchestrator/runtime-memory.ts:47:    contextWindow: 24,
+app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/runtime-brain-matrix.ts:5:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+app/lib/orchestrator/runtime-brain-matrix.ts:10:  sourceOfTruth: 'runtime-brain-matrix'
+app/lib/orchestrator/runtime-brain-matrix.ts:36:    sourceOfTruth: 'runtime-brain-matrix',
+app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:31:  if (!context.stable) {
+app/lib/orchestrator/runtime-structural-health.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-structural-health.ts:13:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-structural-health.ts:23:    intelligence.degradationRisk === 'high'
+app/lib/orchestrator/runtime-structural-health.ts:25:      : intelligence.degradationRisk === 'medium'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:33:    source: 'runtime-cognitive-execution-profiles',
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:45:        ? 'Advanced cognitive execution profile enabled.'
+app/lib/executive-runtime-context/executive-runtime-context.ts:14:  contextId: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:16:  source: 'executive-runtime-context'
+app/lib/executive-runtime-context/executive-runtime-context.ts:55:    contextId: `executive-context-${Date.now()}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:57:    source: 'executive-runtime-context',
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:3:} from '@/app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles'
+app/lib/context.ts:4:const FILE = path.join(process.cwd(), 'context.json')
+app/lib/context.ts:36:export function contextSummary(userId: string) {
+app/lib/router.ts:4:  | 'memory'
+app/lib/router.ts:16:  if (m.includes('memoria') || m.includes('memória')) return 'memory'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:3:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:26:      ? 'cognitive-orchestration'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:40:      'runtime-cognitive-arbitration-engine',
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:48:    cognitiveStable:
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:54:        ? 'Runtime cognitive arbitration fully synchronized.'
+app/lib/decision-engine.ts:15:  if (msg.includes('qual meu nome') || msg.includes('meu nome?')) return 'memory_query'
+app/lib/decision-engine.ts:23:  const context = buildSystemContext(
+app/lib/decision-engine.ts:31:    context,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:11:  memoryId: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:13:  source: 'runtime-memory-consolidation'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:24:  memoryStrength: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:38:  const memoryStrength =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:49:      : memoryStrength >= 90
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:54:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:56:    source: 'runtime-memory-consolidation',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:75:    memoryStrength,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:85:        ? 'Runtime memory consolidation active.'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:86:        : 'Runtime memory consolidation restricted.',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:95:      `memoryStrength:${memoryStrength}`,
+scripts/runtime-profiler/runtime-cognitive-response-profiler-test.ts:3:} from '../../app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+scripts/runtime-brain-matrix-test.ts:1:import { buildRuntimeBrainMatrix } from '../app/lib/orchestrator/runtime-brain-matrix'
+scripts/runtime-live-cognitive-loop/runtime-live-cognitive-loop-test.ts:3:} from '../../app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop'
+scripts/runtime-cognitive-state-test.ts:1:import { evaluateRuntimeCognitiveState } from '../app/lib/runtime-core/runtime-cognitive-state'
+scripts/runtime-operational-test.ts:36:    memoryMode: 'protected'
+scripts/runtime-risk-escalation-test.ts:3:} from '../app/lib/runtime-core/runtime-risk-escalation-intelligence'
+scripts/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric-test.ts:3:} from '../../app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+scripts/runtime-confidence-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-confidence-intelligence'
+scripts/runtime-task-planner-test.ts:6:  'criar comandos profissionais para integrar execution intelligence na IASevero',
+scripts/runtime-autonomous-response-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-autonomous-response-intelligence'
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:3:} from '../../app/lib/runtime-cognitive-core/runtime-core-identity'
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:7:} from '../../app/lib/runtime-cognitive-core/runtime-attention-registry'
+scripts/runtime-cognitive-core/runtime-cognitive-core-test.ts:11:} from '../../app/lib/runtime-cognitive-core/runtime-meta-controller'
+scripts/runtime-optimization-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-optimization-intelligence'
+scripts/runtime-strategic-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-strategic-intelligence'
+scripts/runtime-cognitive-bus/runtime-cognitive-bus-test.ts:3:} from '../../app/lib/runtime-cognitive-bus/runtime-cognitive-bus'
+scripts/runtime-persistence-memory/runtime-persistence-memory-test.ts:3:} from '../../app/lib/runtime-persistence-memory/runtime-persistence-memory'
+scripts/runtime-temporal-drift-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-temporal-drift-intelligence'
+scripts/runtime-adaptive-intelligence-test.ts:3:} from '../app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:3:} from '../../app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine'
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:10:  source: 'runtime-cognitive-state-engine',
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:12:  cognitiveState: 'adaptive',
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:13:  cognitiveMode: 'adapt',
+scripts/runtime-cognitive-state-engine/runtime-cognitive-state-engine-test.ts:28:    'Runtime cognitive state adaptive and stable.',
+scripts/runtime-unified-intelligence-test.ts:3:} from '../app/lib/runtime-unified/runtime-unified-intelligence-bus'
+scripts/runtime-cognitive-arbitration-test.ts:3:} from '../app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine'
+scripts/runtime-execution-profiles/runtime-cognitive-execution-profiles-test.ts:3:} from '../../app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles'
+scripts/executive-runtime-context/executive-runtime-context-test.ts:3:} from '../../app/lib/executive-runtime-context/executive-runtime-context'
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:3:} from '../../app/lib/runtime-signal-intelligence/runtime-signal-intelligence'
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:10:  source: 'runtime-signal-intelligence',
+scripts/runtime-signal-intelligence/runtime-signal-intelligence-test.ts:39:    'Runtime signal intelligence active.',
+scripts/runtime-cognitive-gateway-test.ts:1:import { evaluateRuntimeCognitiveGateway } from '../app/lib/runtime-core/runtime-cognitive-gateway'
+scripts/runtime-execution-criticality-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-execution-criticality-intelligence'
+scripts/runtime-unified-context-test.ts:1:import { buildRuntimeUnifiedContext } from '../app/lib/runtime-core/runtime-unified-context'
+scripts/runtime-unified-context-test.ts:3:const context = buildRuntimeUnifiedContext()
+scripts/runtime-unified-context-test.ts:6:console.log(context)
+scripts/runtime-memory-persistence-loop-test.ts:1:import { runRuntimeMemoryPersistenceLoop } from '../app/lib/runtime-core/runtime-memory-persistence-loop'
+scripts/runtime-memory-persistence-loop-test.ts:3:const memory = runRuntimeMemoryPersistenceLoop()
+scripts/runtime-memory-persistence-loop-test.ts:6:console.log(memory)
+scripts/runtime-memory-consolidation/runtime-memory-consolidation-test.ts:3:} from '../../app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
