@@ -1,0 +1,15 @@
+IASevero v164.0
+
+Runtime Integration Audit
+
+GOAL
+Audit integration links between Runtime Validation Engine, Validation Orchestrator, Enterprise Pipeline, Health Center, Health API and Integration Center.
+
+AUDIT DOMAINS
+Runtime validation links
+Runtime report inventory
+Runtime script inventory
+Integration chain consistency
+
+STATUS
+Prepared for runtime integration audit review.
