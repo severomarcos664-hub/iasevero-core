@@ -1,0 +1,16 @@
+IASevero v166.0
+
+Runtime Dependency Graph
+
+GOAL
+Map runtime dependencies, coupling points and architectural dependency domains.
+
+GRAPH DOMAINS
+Internal imports
+Runtime domain dependencies
+Runtime coupling map
+Runtime script map
+Dependency graph consistency
+
+STATUS
+Prepared for runtime dependency graph review.
