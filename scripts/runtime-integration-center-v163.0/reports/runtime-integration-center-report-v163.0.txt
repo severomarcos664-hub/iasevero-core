@@ -1,0 +1,12 @@
+IASevero v163.0
+
+Runtime Integration Center
+
+GOAL
+Validate integration between Health API, Health Center, Enterprise Pipeline, Validation Orchestrator and Validation Engine.
+
+STATUS
+PASS
+
+NEXT STEP
+Connect integration center to existing runtime validation components.
