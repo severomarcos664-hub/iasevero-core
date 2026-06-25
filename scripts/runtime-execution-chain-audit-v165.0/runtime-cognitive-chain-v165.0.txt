@@ -1,0 +1,31 @@
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:2:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:37:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:6:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:47:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-core/runtime-adaptive-response.ts:1:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-adaptive-response.ts:21:  const state = evaluateRuntimeCognitiveState()
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+app/lib/runtime-core/runtime-cognitive-state.ts:3:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:34:export function evaluateRuntimeCognitiveState(): RuntimeCognitiveState {
+app/lib/runtime-core/runtime-cognitive-state.ts:57:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:39:export function evaluateRuntimeCognitiveStateFabric():
+app/lib/orchestrator/runtime-architecture-auditor.ts:4:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-architecture-auditor.ts:18:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-decision-engine.ts:16:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:238:const intelligence = analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+app/lib/orchestrator/runtime-intelligence.ts:13:export function analyzeRuntimeIntelligence(
+scripts/runtime-brain-matrix-test.ts:1:import { buildRuntimeBrainMatrix } from '../app/lib/orchestrator/runtime-brain-matrix'
+scripts/runtime-brain-matrix-test.ts:3:const matrix = buildRuntimeBrainMatrix()
+scripts/runtime-cognitive-state-test.ts:1:import { evaluateRuntimeCognitiveState } from '../app/lib/runtime-core/runtime-cognitive-state'
+scripts/runtime-cognitive-state-test.ts:3:const state = evaluateRuntimeCognitiveState()
+scripts/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric-test.ts:2:  evaluateRuntimeCognitiveStateFabric,
+scripts/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric-test.ts:6:  evaluateRuntimeCognitiveStateFabric()
+scripts/runtime-unified-context-test.ts:1:import { buildRuntimeUnifiedContext } from '../app/lib/runtime-core/runtime-unified-context'
+scripts/runtime-unified-context-test.ts:3:const context = buildRuntimeUnifiedContext()

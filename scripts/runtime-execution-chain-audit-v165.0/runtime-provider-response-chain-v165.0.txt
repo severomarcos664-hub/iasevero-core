@@ -1,0 +1,774 @@
+app/layout.tsx:4:  return (
+app/runtime/scheduler/runtime-scheduler.ts:10:    return
+app/runtime/scheduler/runtime-scheduler.ts:35:  return schedulerRunning
+app/runtime/queue/runtime-action-queue.ts:15:  return runtimeQueue.shift()
+app/runtime/queue/runtime-action-queue.ts:19:  return runtimeQueue.length
+app/runtime/queue/runtime-action-queue.ts:23:  return [...runtimeQueue]
+app/runtime/arbitration/runtime-arbitration-layer.ts:17:    return 'delay'
+app/runtime/arbitration/runtime-arbitration-layer.ts:21:    return 'allow'
+app/runtime/arbitration/runtime-arbitration-layer.ts:24:  return 'allow'
+app/runtime/integration/runtime-integration-layer.ts:32:    return { accepted: false, decision }
+app/runtime/integration/runtime-integration-layer.ts:52:  return {
+app/runtime/integration/runtime-integration-layer.ts:64:  return sortRuntimeActionsByPriority(actions)
+app/runtime/evolution/runtime-evolution-engine.ts:17:    return {
+app/runtime/neural/runtime-neural-adaptation-engine.ts:15:    return {
+app/runtime/cognitive/runtime-cognitive-layer.ts:20:    return {
+app/runtime/optimization/runtime-optimization-engine.ts:16:  return {
+app/runtime/awareness/runtime-awareness-engine.ts:26:    return {
+app/runtime/awareness/runtime-awareness-engine.ts:33:    return {
+app/runtime/awareness/runtime-awareness-engine.ts:39:  return {
+app/runtime/events/runtime-event-bus.ts:37:    return {
+app/runtime/stability/runtime-stability-matrix.ts:20:    return {
+app/runtime/policy/runtime-policy-decision-engine.ts:18:  return {
+app/runtime/state/runtime-state-kernel.ts:18:  return scope === 'kernel'
+app/runtime/state/runtime-state-kernel.ts:22:  return [
+app/runtime/state/runtime-state-kernel.ts:36:    return canReadRuntimeState(scope)
+app/runtime/state/runtime-state-kernel.ts:40:    return canMutateRuntimeState(scope)
+app/runtime/state/runtime-state-kernel.ts:43:  return false
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:15:  return telemetryEvents
+app/runtime/governance/runtime-governance-brain.ts:10:    return {
+app/runtime/consciousness/runtime-consciousness-layer.ts:18:    return {
+app/runtime/transactions/runtime-transaction-engine.ts:20:  return {
+app/runtime/transactions/runtime-transaction-engine.ts:33:    return { ...transaction, status: 'rejected' }
+app/runtime/transactions/runtime-transaction-engine.ts:36:  return { ...transaction, status: 'validated' }
+app/runtime/transactions/runtime-transaction-engine.ts:43:    return { ...transaction, status: 'rejected' }
+app/runtime/transactions/runtime-transaction-engine.ts:46:  return { ...transaction, status: 'committed' }
+app/runtime/transactions/runtime-transaction-engine.ts:52:  return { ...transaction, status: 'rolled_back' }
+app/runtime/coordination/runtime-coordination-intelligence.ts:17:    return 'conflicted'
+app/runtime/coordination/runtime-coordination-intelligence.ts:21:    return 'congested'
+app/runtime/coordination/runtime-coordination-intelligence.ts:25:    return 'busy'
+app/runtime/coordination/runtime-coordination-intelligence.ts:28:  return 'stable'
+app/runtime/recovery/runtime-recovery-engine.ts:19:    return entry
+app/runtime/recovery/runtime-recovery-engine.ts:28:      return null
+app/runtime/recovery/runtime-recovery-engine.ts:33:    return target
+app/runtime/recovery/runtime-recovery-engine.ts:37:    return this.recoveryLog
+app/runtime/capabilities/runtime-capability-registry.ts:5:    'validate-provider',
+app/runtime/capabilities/runtime-capability-registry.ts:12:    'resolve-provider',
+app/runtime/mesh/runtime-intelligence-mesh.ts:19:    return {
+app/runtime/flow/runtime-flow-controller.ts:20:    return {
+app/runtime/flow/runtime-flow-controller.ts:27:    return this.activeTasks.has(taskId)
+app/runtime/simulation/runtime-simulation-engine.ts:21:    return {
+app/runtime/simulation/runtime-simulation-engine.ts:28:    return {
+app/runtime/simulation/runtime-simulation-engine.ts:34:  return {
+app/runtime/autonomy/runtime-autonomy-engine.ts:16:  return {
+app/runtime/runtime-lifecycle.ts:2:  return {
+app/runtime/priority/runtime-priority-engine.ts:23:  return [...actions].sort((a, b) => {
+app/runtime/priority/runtime-priority-engine.ts:24:    return (
+app/runtime/central-runtime-manifest.ts:20:      'runtime-provider-governor',
+app/runtime-health/page.tsx:45:  return (
+app/page.tsx:8:  return (
+app/runtime-dashboard/page.tsx:13:  return (
+app/console/page.tsx:27:    if (!text || loading) return
+app/console/page.tsx:53:        data.response ||
+app/console/page.tsx:84:  return (
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:131:      'chat.response.generated',
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:11:  return NextResponse.json({
+app/capabilities/page.tsx:66:  return (
+app/operations-center/page.tsx:34:  return (
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:13:  return {
+app/lib/context-smart.ts:6:  if (!raw) return ""
+app/lib/context-smart.ts:24:  return insights.join(' | ')
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:9:  const responseProfile =
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:11:      ? 'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:13:        ? 'balanced-adaptive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:14:        : 'restricted-runtime-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:23:  return {
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:28:      'runtime-cognitive-response-profiler',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:30:    responseProfile,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:40:      responseProfile ===
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:41:      'advanced-cognitive-response'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:42:        ? 'Runtime cognitive response profiler operating at maximum orchestration.'
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:43:        : 'Runtime response profiler operating under restricted execution.',
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:46:      `profile:${responseProfile}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:29:  return {
+app/lib/runtime-executive-state/runtime-executive-state.ts:7:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/runtime-executive-state/runtime-executive-state.ts:23:  provider: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:41:  const provider =
+app/lib/runtime-executive-state/runtime-executive-state.ts:50:      : !provider.allowExternal
+app/lib/runtime-executive-state/runtime-executive-state.ts:56:  return {
+app/lib/runtime-executive-state/runtime-executive-state.ts:69:      provider.executionAllowed,
+app/lib/runtime-executive-state/runtime-executive-state.ts:71:    provider:
+app/lib/runtime-executive-state/runtime-executive-state.ts:72:      provider.provider,
+app/lib/runtime-executive-state/runtime-executive-state.ts:75:      provider.allowExternal,
+app/lib/runtime-executive-state/runtime-executive-state.ts:78:      provider.executionPolicy,
+app/lib/runtime-executive-state/runtime-executive-state.ts:81:      provider.runtimeAction,
+app/lib/runtime-executive-state/runtime-executive-state.ts:88:      `allowed:${provider.executionAllowed}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:89:      `provider:${provider.provider}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:90:      `external:${provider.allowExternal}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:92:      `action:${provider.runtimeAction}`
+app/lib/config.ts:10:  return {
+app/lib/config.ts:24:  return {
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:80:  return {
+app/lib/nlp.ts:2:  return (text || '')
+app/lib/nlp.ts:12:  return normalizeText(text)
+app/lib/nlp.ts:21:  if (!A.size || !B.size) return 0
+app/lib/nlp.ts:28:  return common / Math.max(A.size, B.size)
+app/lib/nlp.ts:108:  return bestScore >= 0.34 ? bestIntent : null
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:6:  resolveProviderRoute
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:12:  source: 'runtime-provider-authority'
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:14:  provider: string
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:36:    resolveProviderRoute(message, intent)
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:45:  return {
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:47:      `provider-authority-${Date.now()}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:53:      'runtime-provider-authority',
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:55:    provider:
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:56:      route.provider,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:81:      `provider:${route.provider}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:27:  provider: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:64:  return {
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+app/lib/iasevero-core.ts:1:import { runProvider } from './provider'
+app/lib/iasevero-core.ts:8:  if (nome?.[2]) return { key: 'nome', value: nome[2].trim() }
+app/lib/iasevero-core.ts:11:  if (projeto?.[2]) return { key: 'projeto', value: projeto[2].trim() }
+app/lib/iasevero-core.ts:13:  return null
+app/lib/iasevero-core.ts:26:    return { reply: direct, job: null, userId }
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/iasevero-core.ts:38:  return { reply, job: null, userId }
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:31:  return {
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:70:  return {
+app/lib/tools-exec.ts:14:    return {
+app/lib/tools-exec.ts:20:  return {
+app/lib/tools-exec.ts:27:  return "Logs analisados em modo seguro: nenhum erro crítico detectado."
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:74:  return {
+app/lib/runtime-core/runtime-state-cognition-engine.ts:37:  return {
+app/lib/runtime-core/runtime-adaptive-response.ts:5:  source: 'runtime-adaptive-response'
+app/lib/runtime-core/runtime-adaptive-response.ts:12:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-adaptive-response.ts:24:    return {
+app/lib/runtime-core/runtime-adaptive-response.ts:26:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:28:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:38:    return {
+app/lib/runtime-core/runtime-adaptive-response.ts:40:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:42:      providerMode: 'local',
+app/lib/runtime-core/runtime-adaptive-response.ts:52:    return {
+app/lib/runtime-core/runtime-adaptive-response.ts:54:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:56:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:66:    return {
+app/lib/runtime-core/runtime-adaptive-response.ts:68:      source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:70:      providerMode: 'hybrid',
+app/lib/runtime-core/runtime-adaptive-response.ts:79:  return {
+app/lib/runtime-core/runtime-adaptive-response.ts:81:    source: 'runtime-adaptive-response',
+app/lib/runtime-core/runtime-adaptive-response.ts:83:    providerMode: 'hybrid',
+app/lib/runtime-core/runtime-action-policy-engine.ts:3:} from './runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:25:    response.autonomousAction === 'contain'
+app/lib/runtime-core/runtime-action-policy-engine.ts:28:    response.autonomousAction === 'recover'
+app/lib/runtime-core/runtime-action-policy-engine.ts:31:    response.autonomousAction === 'monitor'
+app/lib/runtime-core/runtime-action-policy-engine.ts:33:  return {
+app/lib/runtime-core/runtime-action-policy-engine.ts:38:    action: response.autonomousAction,
+app/lib/runtime-core/runtime-action-policy-engine.ts:44:      response.autonomousAction === 'continue' ||
+app/lib/runtime-core/runtime-action-policy-engine.ts:45:      response.autonomousAction === 'monitor',
+app/lib/runtime-core/runtime-action-policy-engine.ts:48:      response.autonomousAction === 'continue',
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:66:      `allowTools:${response.autonomousAction === 'continue' || response.autonomousAction === 'monitor'}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:67:      `allowExternalCalls:${response.autonomousAction === 'continue'}`,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:45:  return {
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:40:  return {
+app/lib/runtime-core/runtime-execution-graph-engine.ts:45:      title: 'Synthesize final response',
+app/lib/runtime-core/runtime-execution-graph-engine.ts:52:  return {
+app/lib/runtime-core/runtime-lane-supervisor.ts:52:  return {
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:36:  return {
+app/lib/runtime-core/runtime-strategic-intelligence.ts:68:  return {
+app/lib/runtime-core/runtime-policy-engine.ts:41:  return {
+app/lib/runtime-core/runtime-retention-manager.ts:18:  return {
+app/lib/runtime-core/runtime-policy-enforcement.ts:41:    return {
+app/lib/runtime-core/runtime-policy-enforcement.ts:49:    return {
+app/lib/runtime-core/runtime-policy-enforcement.ts:57:    return {
+app/lib/runtime-core/runtime-policy-enforcement.ts:64:  return {
+app/lib/runtime-core/runtime-severity-governance.ts:37:  return {
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:14:  providerMode: 'local' | 'hybrid' | 'openai'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:37:  return {
+app/lib/runtime-core/runtime-execution-orchestrator.ts:43:    providerMode: adaptive.providerMode,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:48:  return {
+app/lib/runtime-core/runtime-predictive-stabilization.ts:89:  return result
+app/lib/runtime-core/runtime-master-orchestrator.ts:24:  return {
+app/lib/runtime-core/runtime-state-transition-engine.ts:57:  return {
+app/lib/runtime-core/runtime-event-bus.ts:13:  return `rbus_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
+app/lib/runtime-core/runtime-event-bus.ts:31:  return normalizedEvent
+app/lib/runtime-core/runtime-event-bus.ts:35:  return [...runtimeEventBus]
+app/lib/runtime-core/runtime-unified-context.ts:16:  return {
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:28:  return {
+app/lib/runtime-core/runtime-event-stream-engine.ts:9:  | 'response.generated'
+app/lib/runtime-core/runtime-event-stream-engine.ts:51:  return event
+app/lib/runtime-core/runtime-event-stream-engine.ts:55:  return [...runtimeEventStream]
+app/lib/runtime-core/runtime-persistence-fabric.ts:47:  return filepath
+app/lib/runtime-core/runtime-persistence-fabric.ts:60:    return []
+app/lib/runtime-core/runtime-persistence-fabric.ts:66:  return files.sort()
+app/lib/runtime-core/runtime-persistence-fabric.ts:75:  return {
+app/lib/runtime-core/runtime-contracts.ts:50:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:73:  return {
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:42:  return {
+app/lib/runtime-core/runtime-resilience-engine.ts:42:  return {
+app/lib/runtime-core/runtime-recovery-engine.ts:24:    return null
+app/lib/runtime-core/runtime-recovery-engine.ts:31:    return null
+app/lib/runtime-core/runtime-recovery-engine.ts:34:  return path.join(dir, files.at(-1)!)
+app/lib/runtime-core/runtime-recovery-engine.ts:77:  return {
+app/lib/runtime-core/runtime-load-balancer.ts:42:  return {
+app/lib/runtime-core/runtime-telemetry-correlation.ts:34:  return {
+app/lib/runtime-core/runtime-telemetry-fabric.ts:21:  return `rtel_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
+app/lib/runtime-core/runtime-telemetry-fabric.ts:39:  return normalizedEvent
+app/lib/runtime-core/runtime-telemetry-fabric.ts:43:  return [...runtimeTelemetryBuffer]
+app/lib/runtime-core/runtime-confidence-intelligence.ts:53:  return {
+app/lib/runtime-core/runtime-tool-registry.ts:83:  return {
+app/lib/runtime-core/runtime-queue-manager.ts:46:    return weight[b.priority] - weight[a.priority]
+app/lib/runtime-core/runtime-queue-manager.ts:49:  return item
+app/lib/runtime-core/runtime-queue-manager.ts:57:  return runtimeQueue.shift()
+app/lib/runtime-core/runtime-queue-manager.ts:65:  return [...runtimeQueue]
+app/lib/runtime-core/runtime-evaluation-engine.ts:86:  return {
+app/lib/runtime-core/runtime-governance-enforcement.ts:6:  providerLocked: boolean
+app/lib/runtime-core/runtime-governance-enforcement.ts:19:  const providerLocked =
+app/lib/runtime-core/runtime-governance-enforcement.ts:29:  return {
+app/lib/runtime-core/runtime-governance-enforcement.ts:33:    providerLocked,
+app/lib/runtime-core/runtime-governance-enforcement.ts:35:    forcedProvider: gateway.provider as 'local' | 'hybrid' | 'openai',
+app/lib/runtime-core/runtime-governance-enforcement.ts:53:      `provider:${gateway.provider}`,
+app/lib/runtime-core/runtime-execution-coordinator.ts:58:  return result
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:33:  return {
+app/lib/runtime-core/runtime-workflow-coordinator.ts:30:  return {
+app/lib/runtime-core/runtime-execution-bridge.ts:31:  return {
+app/lib/runtime-core/runtime-integrity-validator.ts:26:    return false
+app/lib/runtime-core/runtime-integrity-validator.ts:32:  return files.length > 0
+app/lib/runtime-core/runtime-integrity-validator.ts:72:  return {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:14:  responseId: string
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:16:  source: 'runtime-autonomous-response-intelligence'
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:43:  return {
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:44:    responseId: `response_${Date.now()}`,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:46:    source: 'runtime-autonomous-response-intelligence',
+app/lib/runtime-core/runtime-task-planner.ts:48:    return 'diagnostic'
+app/lib/runtime-core/runtime-task-planner.ts:57:    return 'implementation'
+app/lib/runtime-core/runtime-task-planner.ts:65:    return 'analysis'
+app/lib/runtime-core/runtime-task-planner.ts:68:  return 'general'
+app/lib/runtime-core/runtime-task-planner.ts:117:      title: 'Synthesize final operational response',
+app/lib/runtime-core/runtime-task-planner.ts:124:  return {
+app/lib/runtime-core/runtime-adaptive-coordination.ts:75:  return {
+app/lib/runtime-core/runtime-decision-gate.ts:26:  return {
+app/lib/runtime-core/runtime-timeline-engine.ts:52:  return {
+app/lib/runtime-core/runtime-action-engine.ts:76:  return result
+app/lib/runtime-core/runtime-state-replay-engine.ts:31:    return []
+app/lib/runtime-core/runtime-state-replay-engine.ts:34:  return fs
+app/lib/runtime-core/runtime-state-replay-engine.ts:83:  return {
+app/lib/runtime-core/runtime-cognitive-state.ts:37:    providerPressure: 70,
+app/lib/runtime-core/runtime-cognitive-state.ts:131:  return {
+app/lib/runtime-core/runtime-governance-center.ts:54:  return {
+app/lib/runtime-core/runtime-feedback-integration.ts:92:  return result
+app/lib/runtime-core/runtime-event-subscribers.ts:42:  return emittedEvent
+app/lib/runtime-core/runtime-event-subscribers.ts:46:  return [...runtimeSubscribers]
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:42:  return {
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:39:  return {
+app/lib/runtime-core/runtime-decision-loop.ts:8:  providerMode: string
+app/lib/runtime-core/runtime-decision-loop.ts:41:  return {
+app/lib/runtime-core/runtime-decision-loop.ts:46:    providerMode: execution.providerMode,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:8:  provider: RuntimeProvider
+app/lib/runtime-core/runtime-cognitive-gateway.ts:46:  const provider: RuntimeProvider =
+app/lib/runtime-core/runtime-cognitive-gateway.ts:53:  return {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:57:    provider,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:65:        ? 'Gateway recomenda contenção operacional e provider local.'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:29:  return node
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:33:  return [...runtimeTraceGraph]
+app/lib/runtime-core/runtime-learning-signals.ts:32:  return {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:70:  return {
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:83:  return {
+app/lib/executive-runtime-core/executive-runtime-core.ts:58:  return {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:26:  return {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:25:  return {
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:83:  return {
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:66:  return {
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:63:  return {
+app/lib/fallback.ts:6:  if (!intent) return null
+app/lib/fallback.ts:7:  return buildAnswer(intent, text)
+app/lib/memory-filter.ts:2:  return history
+app/lib/local-brain.ts:5:    return facts.nome
+app/lib/local-brain.ts:11:    return 'Controle de custo ativo. Prioridade: execução local, limite de chamadas externas, cache e validação antes de qualquer integração paga.'
+app/lib/local-brain.ts:15:    return 'Erro detectado. Próximo passo seguro: parar processos duplicados, limpar .next, rodar build e validar logs antes de alterar código.'
+app/lib/local-brain.ts:18:  return null
+app/lib/zero-cost-brain.ts:21:  return `🧠 IASevero
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:30:  return {
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:48:  return {
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:46:  return {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:38:  return {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:51:    responseIntensity: bridge.responseIntensity,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:69:      `intensity:${bridge.responseIntensity}`,
+app/lib/core-identity.ts:13:    return 'IASevero foi criada por Marcos Julio Severo.'
+app/lib/core-identity.ts:16:  return null
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:65:  return {
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:94:  return {
+app/lib/learning.ts:8:  response?: string
+app/lib/learning.ts:16:  return (text || '')
+app/lib/learning.ts:30:  return inter / union
+app/lib/learning.ts:34:  try { return JSON.parse(fs.readFileSync(FILE, 'utf-8')) }
+app/lib/learning.ts:35:  catch { return [] }
+app/lib/learning.ts:41:    .filter(i => i.response || i.uses < 3)
+app/lib/learning.ts:67:    .filter(x => x.approved && x.response)
+app/lib/learning.ts:76:  if (!best) return null
+app/lib/learning.ts:82:  return best.item.response || null
+app/lib/learning.ts:85:export function teach(message: string, response: string) {
+app/lib/learning.ts:91:    item.response = response
+app/lib/learning.ts:96:      response,
+app/lib/learning.ts:112:  if (!item) return false
+app/lib/learning.ts:118:  return true
+app/lib/learning.ts:122:  return load()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:22:  return {
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:94:  return {
+app/lib/mode.ts:17:    return mode
+app/lib/mode.ts:20:  return 'safe'
+app/lib/mode.ts:26:  return mode === 'openai' || mode === 'hybrid'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:61:  return {
+app/lib/memory.ts:10:    return JSON.parse(fs.readFileSync(FILE, 'utf-8'))
+app/lib/memory.ts:12:    return {}
+app/lib/memory.ts:22:  return db[userId] || {}
+app/lib/response-quality.ts:2:  return [
+app/lib/response-quality.ts:15:    return 'Sistema ativo. Resposta insuficiente detectada; prossiga com diagnóstico objetivo e seguro.'
+app/lib/response-quality.ts:19:    return answer.includes('1️⃣') ? answer : `1️⃣ ${answer}`
+app/lib/response-quality.ts:22:  return answer
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:64:  return {
+app/lib/runtime-execution-router/runtime-execution-router.ts:64:  return {
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:26:  return {
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:90:  return {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:95:  return {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:24:  provider: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:55:  return {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:70:    provider: governance.provider,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:82:      `provider:${governance.provider}`,
+app/lib/local-memory.ts:20:    return JSON.parse(fs.readFileSync(FILE, 'utf8'))
+app/lib/local-memory.ts:22:    return {}
+app/lib/local-memory.ts:33:  return db[userId]
+app/lib/local-memory.ts:53:  return db[userId]?.history || []
+app/lib/local-memory.ts:58:  return db[userId]?.facts || {}
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:65:  return {
+app/lib/answer.ts:3:    return 'IASevero foi criada por Marcos Julio Severo. Este núcleo local mantém identidade fixa, memória protegida e evolução controlada.'
+app/lib/answer.ts:7:    return 'Humildade é reconhecer limites, aprender constantemente, corrigir erros e respeitar os outros sem se considerar superior.'
+app/lib/answer.ts:11:    return [
+app/lib/answer.ts:14:      '1. usar provider local primeiro;',
+app/lib/answer.ts:22:    return [
+app/lib/answer.ts:34:    return [
+app/lib/answer.ts:47:    return [
+app/lib/answer.ts:58:  return 'Ainda não sei responder isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:43:  return {
+app/lib/queue.ts:14:  return job
+app/lib/queue.ts:18:  return queue[id]
+app/lib/queue.ts:24:    return
+app/lib/executor.ts:11:    return "Execução manual recomendada: build não roda dentro do chat para evitar lentidão."
+app/lib/executor.ts:15:    return "Bloqueado por segurança: servidor já deve estar rodando."
+app/lib/executor.ts:19:    return "Bloqueado por segurança."
+app/lib/executor.ts:24:    return output.trim() || "Executado com sucesso."
+app/lib/executor.ts:26:    return "Execução falhou de forma controlada."
+app/lib/providers/local.ts:15:    if (m.includes('build')) return 'Erro no build detectado. Rode: rm -rf .next && npm run build'
+app/lib/providers/local.ts:16:    if (m.includes('next')) return 'Problema com Next.js detectado. Verifique dependências e rode npm install.'
+app/lib/providers/local.ts:17:    return 'Erro detectado. Execute: ./security_check.sh && ./verify_iasevero.sh'
+app/lib/providers/local.ts:21:    if (m.includes('api')) return 'Evite APIs externas. Use provider local para manter custo zero.'
+app/lib/providers/local.ts:22:    return 'Modo custo zero ativo: manter local, sem API externa e sem deploy desnecessário.'
+app/lib/providers/local.ts:26:    return 'Deploy detectado. Só subir com build OK, security_check OK, verify OK e rollback pronto.'
+app/lib/providers/local.ts:30:    if (m.includes('token')) return 'Token exposto é risco crítico. Revogue imediatamente e gere outro.'
+app/lib/providers/local.ts:31:    return 'Segurança detectada. Nunca exponha tokens, chaves ou secrets.'
+app/lib/providers/local.ts:34:  return null
+app/lib/providers/local.ts:38:  return text
+app/lib/providers/local.ts:44:export async function localProvider(message: string, userId = 'local') {
+app/lib/providers/local.ts:49:    return output
+app/lib/providers/local.ts:52:  if (!text) return reply('Entrada vazia.')
+app/lib/providers/local.ts:55:  if (command) return reply(command)
+app/lib/providers/local.ts:58:    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+app/lib/providers/local.ts:62:  if (fixed) return reply(fixed)
+app/lib/providers/local.ts:70:      return reply(`Registrado. Use: aprovar: ${q.trim()}`)
+app/lib/providers/local.ts:72:    return reply('Formato correto: ensinar: pergunta => resposta')
+app/lib/providers/local.ts:77:    return reply(approve(q) ? `Aprovado: ${q}` : 'Não encontrado.')
+app/lib/providers/local.ts:81:    return reply(JSON.stringify(listMemory(), null, 2))
+app/lib/providers/local.ts:85:  if (learned) return reply(learned)
+app/lib/providers/local.ts:88:  if (intelligent && intelligent.length > 40) return reply(intelligent)
+app/lib/providers/local.ts:91:  if (fallback) return reply(fallback)
+app/lib/providers/local.ts:95:    if (learnedPart) return reply(learnedPart)
+app/lib/providers/local.ts:99:  if (dynamic) return reply(dynamic)
+app/lib/providers/local.ts:102:  if (hybrid) return reply(hybrid)
+app/lib/providers/local.ts:106:  return reply('Ainda não sei isso com segurança. Posso aprender se você usar: ensinar: pergunta => resposta')
+app/lib/providers/hybrid.ts:7:    return null
+app/lib/providers/hybrid.ts:12:    // aqui no futuro entra OpenAI ou outro provider
+app/lib/providers/hybrid.ts:13:    return null
+app/lib/providers/hybrid.ts:16:  return null
+app/lib/orchestrator/runtime-autonomous-decision.ts:27:    return {
+app/lib/orchestrator/runtime-autonomous-decision.ts:37:    return {
+app/lib/orchestrator/runtime-autonomous-decision.ts:45:  return {
+app/lib/orchestrator/runtime-topology-validator.ts:53:  return {
+app/lib/orchestrator/runtime-budget-control.ts:5:  providerBudgetAllowed: boolean
+app/lib/orchestrator/runtime-budget-control.ts:15:    return {
+app/lib/orchestrator/runtime-budget-control.ts:17:      providerBudgetAllowed: false,
+app/lib/orchestrator/runtime-budget-control.ts:19:      reason: 'Modo seguro bloqueia provider externo.'
+app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-budget-control.ts:24:    return {
+app/lib/orchestrator/runtime-budget-control.ts:26:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-budget-control.ts:33:    return {
+app/lib/orchestrator/runtime-budget-control.ts:35:      providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-budget-control.ts:41:  return {
+app/lib/orchestrator/runtime-budget-control.ts:43:    providerBudgetAllowed: true,
+app/lib/orchestrator/runtime-architecture-index.ts:6:  | 'provider'
+app/lib/orchestrator/runtime-architecture-index.ts:59:    responsibility: 'controlar risco de custo e provider externo',
+app/lib/orchestrator/runtime-architecture-index.ts:64:    file: 'runtime-provider-governor.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:65:    layer: 'provider',
+app/lib/orchestrator/runtime-architecture-index.ts:66:    responsibility: 'governar provider recomendado e bloqueios',
+app/lib/orchestrator/runtime-architecture-index.ts:135:  return runtimeArchitectureIndex
+app/lib/orchestrator/learning-engine.ts:16:      acc[d.provider] =
+app/lib/orchestrator/learning-engine.ts:17:        (acc[d.provider] || 0) + 1
+app/lib/orchestrator/learning-engine.ts:18:      return acc
+app/lib/orchestrator/learning-engine.ts:21:  return {
+app/lib/orchestrator/runtime-snapshot.ts:7:  provider: string
+app/lib/orchestrator/runtime-snapshot.ts:49:    provider: 'local',
+app/lib/orchestrator/runtime-snapshot.ts:67:  return safeSnapshot
+app/lib/orchestrator/runtime-snapshot.ts:75:  return JSON.parse(
+app/lib/orchestrator/policy.ts:22:      return {
+app/lib/orchestrator/policy.ts:35:    return {
+app/lib/orchestrator/policy.ts:42:  return {
+app/lib/orchestrator/runtime-architecture-auditor.ts:32:  return {
+app/lib/orchestrator/memory-governor.ts:9:  return {
+app/lib/orchestrator/memory-governor.ts:19:  return history.slice(-policy.maxHistoryItems)
+app/lib/orchestrator/memory-governor.ts:23:  if (!key || !value) return false
+app/lib/orchestrator/memory-governor.ts:24:  if (key.length > 80) return false
+app/lib/orchestrator/memory-governor.ts:25:  if (value.length > 300) return false
+app/lib/orchestrator/memory-governor.ts:26:  return true
+app/lib/orchestrator/health-intelligence.ts:10:  return {
+app/lib/orchestrator/audit-trail.ts:6:  return {
+app/lib/orchestrator/runtime-operational-memory.ts:8:  providerPattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:20:  return [...map.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'unknown'
+app/lib/orchestrator/runtime-operational-memory.ts:28:    return {
+app/lib/orchestrator/runtime-operational-memory.ts:33:      providerPattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:46:  const providerPattern = dominant(snapshots.map((snapshot) => snapshot.provider))
+app/lib/orchestrator/runtime-operational-memory.ts:72:  return {
+app/lib/orchestrator/runtime-operational-memory.ts:77:    providerPattern,
+app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-governor.ts:6:  providerAllowed: boolean
+app/lib/orchestrator/runtime-governor.ts:17:    return {
+app/lib/orchestrator/runtime-governor.ts:19:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:27:    return {
+app/lib/orchestrator/runtime-governor.ts:29:      providerAllowed: false,
+app/lib/orchestrator/runtime-governor.ts:31:      reason: 'Governance bloqueou provider externo.',
+app/lib/orchestrator/runtime-governor.ts:36:  return {
+app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+app/lib/orchestrator/runtime-policy-engine.ts:25:    return {
+app/lib/orchestrator/runtime-policy-engine.ts:38:    return {
+app/lib/orchestrator/runtime-policy-engine.ts:50:  return {
+app/lib/orchestrator/runtime-state-registry.ts:10:  providerPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:22:  providerPressure: 0,
+app/lib/orchestrator/runtime-state-registry.ts:32:  return runtimeRegistry
+app/lib/orchestrator/runtime-state-registry.ts:45:  return runtimeRegistry
+app/lib/orchestrator/runtime-state-registry.ts:61:  return runtimeRegistry
+app/lib/orchestrator/runtime-guardian.ts:25:    return {
+app/lib/orchestrator/runtime-guardian.ts:36:  return {
+app/lib/orchestrator/runtime-policy.ts:15:    return {
+app/lib/orchestrator/runtime-policy.ts:25:    return {
+app/lib/orchestrator/runtime-policy.ts:34:  return {
+app/lib/orchestrator/trace.ts:4:  provider: string
+app/lib/orchestrator/trace.ts:26:  return traces.slice(-20)
+app/lib/orchestrator/state-engine.ts:17:  return runtimeState
+app/lib/orchestrator/state-engine.ts:29:  return runtimeState
+app/lib/orchestrator/state-engine.ts:39:  return runtimeState
+app/lib/orchestrator/runtime-execution-control.ts:16:    return {
+app/lib/orchestrator/runtime-execution-control.ts:26:    return {
+app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-execution-control.ts:36:    return {
+app/lib/orchestrator/runtime-execution-control.ts:45:  return {
+app/lib/orchestrator/provider-reputation.ts:6:const providers: Record<string, ProviderStats> = {}
+app/lib/orchestrator/provider-reputation.ts:9:  provider: string,
+app/lib/orchestrator/provider-reputation.ts:12:  if (!providers[provider]) {
+app/lib/orchestrator/provider-reputation.ts:13:    providers[provider] = {
+app/lib/orchestrator/provider-reputation.ts:20:    providers[provider].safe++
+app/lib/orchestrator/provider-reputation.ts:22:    providers[provider].risky++
+app/lib/orchestrator/provider-reputation.ts:25:  return providers[provider]
+app/lib/orchestrator/provider-reputation.ts:29:  return providers
+app/lib/orchestrator/runtime-coordinator.ts:41:  return {
+app/lib/orchestrator/runtime-context.ts:8:  provider: RuntimeProvider
+app/lib/orchestrator/runtime-context.ts:25:  return {
+app/lib/orchestrator/runtime-context.ts:37:    provider: input?.provider || 'local',
+app/lib/orchestrator/runtime-context.ts:62:  return {
+app/lib/orchestrator/runtime-context.ts:77:  return context
+app/lib/orchestrator/runtime-context.ts:81:  return lastRuntimeState
+app/lib/orchestrator/runtime-awareness.ts:17:    registry.providerPressure +
+app/lib/orchestrator/runtime-awareness.ts:27:    return {
+app/lib/orchestrator/runtime-awareness.ts:37:    return {
+app/lib/orchestrator/runtime-awareness.ts:47:    return {
+app/lib/orchestrator/runtime-awareness.ts:56:  return {
+app/lib/orchestrator/runtime-dependency-validator.ts:23:    'provider',
+app/lib/orchestrator/runtime-dependency-validator.ts:38:    'provider',
+app/lib/orchestrator/runtime-dependency-validator.ts:120:  return {
+app/lib/orchestrator/runtime-recovery.ts:16:    return {
+app/lib/orchestrator/runtime-recovery.ts:26:    return {
+app/lib/orchestrator/runtime-recovery.ts:36:    return {
+app/lib/orchestrator/runtime-recovery.ts:45:  return {
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-provider-governor.ts:4:  providerLocked: boolean
+app/lib/orchestrator/runtime-provider-governor.ts:15:    return {
+app/lib/orchestrator/runtime-provider-governor.ts:16:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:24:    return {
+app/lib/orchestrator/runtime-provider-governor.ts:25:      providerLocked: true,
+app/lib/orchestrator/runtime-provider-governor.ts:28:      reason: 'SafeMode bloqueia provider externo.'
+app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-provider-governor.ts:33:    return {
+app/lib/orchestrator/runtime-provider-governor.ts:34:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+app/lib/orchestrator/runtime-provider-governor.ts:42:    return {
+app/lib/orchestrator/runtime-provider-governor.ts:43:      providerLocked: false,
+app/lib/orchestrator/runtime-provider-governor.ts:50:  return {
+app/lib/orchestrator/runtime-provider-governor.ts:51:    providerLocked: false,
+app/lib/orchestrator/runtime-event-bus.ts:36:  return runtimeEventBus
+app/lib/orchestrator/runtime-event-bus.ts:42:  return runtimeEventBus.filter(
+app/lib/orchestrator/runtime-supervisor.ts:47:  return {
+app/lib/orchestrator/runtime-supervisor.ts:61:  return {
+app/lib/orchestrator/runtime-telemetry.ts:21:  return {
+app/lib/orchestrator/runtime-limiter.ts:14:  return limits
+app/lib/orchestrator/runtime-limiter.ts:22:  return {
+app/lib/orchestrator/runtime.ts:14:    return {
+app/lib/orchestrator/runtime.ts:22:  return {
+app/lib/orchestrator/runtime-dependency-scanner.ts:49:  return {
+app/lib/orchestrator/runtime-contracts.ts:15:  provider: string
+app/lib/orchestrator/runtime-contracts.ts:45:  provider: string
+app/lib/orchestrator/runtime-contracts.ts:54:    return {
+app/lib/orchestrator/runtime-contracts.ts:62:    return {
+app/lib/orchestrator/runtime-contracts.ts:69:  return {
+app/lib/orchestrator/runtime-contracts.ts:80:    return {
+app/lib/orchestrator/runtime-contracts.ts:87:  return {
+app/lib/orchestrator/runtime-contracts.ts:98:    return {
+app/lib/orchestrator/runtime-contracts.ts:105:  return {
+app/lib/orchestrator/runtime-event-processor.ts:52:  return {
+app/lib/orchestrator/metrics.ts:12:  return {
+app/lib/orchestrator/runtime-self-healing.ts:18:    return {
+app/lib/orchestrator/runtime-self-healing.ts:28:    return {
+app/lib/orchestrator/runtime-self-healing.ts:36:  return {
+app/lib/orchestrator/events.ts:4:  provider?: string
+app/lib/orchestrator/events.ts:14:  return {
+app/lib/orchestrator/decision-memory.ts:4:  provider: string
+app/lib/orchestrator/decision-memory.ts:20:  return record
+app/lib/orchestrator/decision-memory.ts:24:  return history.slice(-20)
+app/lib/orchestrator/central-runtime-core.ts:21:  return {
+app/lib/orchestrator/runtime-execution-pipeline.ts:24:  provider?: RuntimeProvider
+app/lib/orchestrator/runtime-execution-pipeline.ts:39:    provider: input.provider ?? 'local',
+app/lib/orchestrator/runtime-execution-pipeline.ts:70:    return {
+app/lib/orchestrator/runtime-execution-pipeline.ts:125:  return {
+app/lib/orchestrator/runtime-incidents.ts:39:  return incident
+app/lib/orchestrator/runtime-incidents.ts:43:  return runtimeIncidents
+app/lib/orchestrator/runtime-dependency-graph.ts:22:  return {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:7:  providerEscalation: boolean
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:19:    return {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:22:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:30:    return {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:33:      providerEscalation: false,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:41:    return {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:44:      providerEscalation: true,
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:51:  return {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:54:    providerEscalation: true,
+app/lib/orchestrator/queue-governor.ts:28:    if (priorityDiff !== 0) return priorityDiff
+app/lib/orchestrator/queue-governor.ts:29:    return a.createdAt.localeCompare(b.createdAt)
+app/lib/orchestrator/queue-governor.ts:51:  return normalizedTask
+app/lib/orchestrator/queue-governor.ts:55:  return [...queue]
+app/lib/orchestrator/queue-governor.ts:59:  return {
+app/lib/orchestrator/queue-governor.ts:71:  return queue.find((task) => task.status === 'queued') ?? null
+app/lib/orchestrator/queue-governor.ts:82:    return null
+app/lib/orchestrator/queue-governor.ts:92:  return task
+app/lib/orchestrator/queue-governor.ts:99:    return null
+app/lib/orchestrator/queue-governor.ts:104:  return updateTaskStatus(id, 'running')
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:58:  const provider = (routing.provider === 'openai' || routing.provider === 'hybrid')
+app/lib/orchestrator/runtime-decision-engine.ts:59:    ? routing.provider as RuntimeProvider
+app/lib/orchestrator/runtime-decision-engine.ts:64:    provider,
+app/lib/orchestrator/runtime-decision-engine.ts:65:    allowExternal: routing.provider !== 'local',
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:118:  `budget:${budget.providerBudgetAllowed ? 'allowed' : 'blocked'}:${budget.estimatedCostLevel}`
+app/lib/orchestrator/runtime-decision-engine.ts:121:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:124:  `providerGovernor:${providerGovernor.escalationLevel}:${providerGovernor.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:129:  `provider:${providerGovernor.recommendedProvider}:${providerGovernor.providerLocked}`
+app/lib/orchestrator/runtime-decision-engine.ts:145:    providerPressure: providerGovernor.providerLocked ? 80 : 25,
+app/lib/orchestrator/runtime-decision-engine.ts:229:  provider,
+app/lib/orchestrator/runtime-decision-engine.ts:283:return {
+app/lib/orchestrator/runtime-causal-trace.ts:7:    provider: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:27:  if (latest?.provider) causalSignals.push(`provider:${latest.provider}`)
+app/lib/orchestrator/runtime-causal-trace.ts:35:  return {
+app/lib/orchestrator/runtime-causal-trace.ts:39:      provider: latest?.provider ?? null,
+app/lib/orchestrator/hybrid-router.ts:8:    return {
+app/lib/orchestrator/hybrid-router.ts:9:      provider: 'local',
+app/lib/orchestrator/hybrid-router.ts:17:  return {
+app/lib/orchestrator/hybrid-router.ts:18:    provider: selected.provider,
+app/lib/orchestrator/executor.ts:2:  provider: string
+app/lib/orchestrator/executor.ts:9:  provider: string
+app/lib/orchestrator/executor.ts:18:    return {
+app/lib/orchestrator/executor.ts:20:      provider: 'blocked',
+app/lib/orchestrator/executor.ts:25:  return {
+app/lib/orchestrator/executor.ts:27:    provider: input.provider,
+app/lib/orchestrator/adaptive-protection.ts:14:    return {
+app/lib/orchestrator/adaptive-protection.ts:25:  return {
+app/lib/orchestrator/runtime-task-planner.ts:76:  return {
+app/lib/orchestrator/runtime-action-executor.ts:33:    return {
+app/lib/orchestrator/runtime-action-executor.ts:41:  return {
+app/lib/orchestrator/runtime-memory.ts:15:    return {
+app/lib/orchestrator/runtime-memory.ts:25:    return {
+app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+app/lib/orchestrator/runtime-memory.ts:35:    return {
+app/lib/orchestrator/runtime-memory.ts:44:  return {
+app/lib/orchestrator/self-healing.ts:10:    return {
+app/lib/orchestrator/self-healing.ts:20:  return {
+app/lib/orchestrator/diagnostics.ts:33:  return {
+app/lib/orchestrator/decision-pipeline.ts:2:import { resolveProviderRoute } from './routing'
+app/lib/orchestrator/decision-pipeline.ts:10:  provider: string
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/decision-pipeline.ts:20:    provider: route.provider,
+app/lib/orchestrator/decision-pipeline.ts:28:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:36:    provider: execution.provider,
+app/lib/orchestrator/decision-pipeline.ts:42:  return {
+app/lib/orchestrator/decision-pipeline.ts:44:    provider: execution.provider,
+app/lib/orchestrator/runtime-brain-matrix.ts:33:  return {
+app/lib/orchestrator/intelligent-selector.ts:1:import { getProviderReputation } from './provider-reputation'
+app/lib/orchestrator/intelligent-selector.ts:4:  const providers = getProviderReputation()
+app/lib/orchestrator/intelligent-selector.ts:6:  const ranked = Object.entries(providers)
+app/lib/orchestrator/intelligent-selector.ts:11:      return {
+app/lib/orchestrator/intelligent-selector.ts:12:        provider: name,
+app/lib/orchestrator/intelligent-selector.ts:19:    return {
+app/lib/orchestrator/intelligent-selector.ts:20:      provider: 'local',
+app/lib/orchestrator/intelligent-selector.ts:21:      reason: 'Nenhum provider analisado.'
+app/lib/orchestrator/intelligent-selector.ts:25:  return {
+app/lib/orchestrator/intelligent-selector.ts:26:    provider: ranked[0].provider,
+app/lib/orchestrator/runtime-enforcement.ts:16:    return {
+app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+app/lib/orchestrator/runtime-enforcement.ts:24:    return {
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/runtime-enforcement.ts:32:    return {
+app/lib/orchestrator/runtime-enforcement.ts:39:  return {
+app/lib/orchestrator/runtime-structural-health.ts:58:  return {
+app/lib/orchestrator/awareness-engine.ts:10:  return {
+app/lib/orchestrator/evolution-engine.ts:12:      'Reduzir uso de providers instáveis.'
+app/lib/orchestrator/evolution-engine.ts:28:  return {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:29:  return runtimeLifecycle
+app/lib/orchestrator/runtime-lifecycle-manager.ts:52:  return runtimeLifecycle
+app/lib/orchestrator/runtime-lifecycle-manager.ts:56:  return runtimeLifecycle.currentState === 'operational'
+app/lib/orchestrator/runtime-lifecycle-manager.ts:60:  return runtimeLifecycle.currentState === 'degraded'
+app/lib/orchestrator/runtime-lifecycle-manager.ts:64:  return runtimeLifecycle.currentState === 'recovery'
+app/lib/orchestrator/runtime-conscious-loop.ts:33:  return {
+app/lib/orchestrator/runtime-intelligence.ts:18:    return {
+app/lib/orchestrator/runtime-intelligence.ts:37:  const providerMap = new Map<string, number>()
+app/lib/orchestrator/runtime-intelligence.ts:42:    providerMap.set(
+app/lib/orchestrator/runtime-intelligence.ts:43:      snapshot.provider,
+app/lib/orchestrator/runtime-intelligence.ts:44:      (providerMap.get(snapshot.provider) || 0) + 1
+app/lib/orchestrator/runtime-intelligence.ts:54:    [...providerMap.entries()]
+app/lib/orchestrator/runtime-intelligence.ts:87:  return {
+app/lib/orchestrator/routing.ts:7:  provider: 'local' | 'openai' | 'hybrid'
+app/lib/orchestrator/routing.ts:12:export function resolveProviderRoute(
+app/lib/orchestrator/routing.ts:20:    provider: runtime.mode,
+app/lib/orchestrator/routing.ts:28:    return {
+app/lib/orchestrator/routing.ts:29:      provider: 'local',
+app/lib/orchestrator/routing.ts:36:    return {
+app/lib/orchestrator/routing.ts:37:      provider: 'local',
+app/lib/orchestrator/routing.ts:44:    return {
+app/lib/orchestrator/routing.ts:45:      provider: 'openai',
+app/lib/orchestrator/routing.ts:52:    return {
+app/lib/orchestrator/routing.ts:53:      provider: intent === 'cost' ? 'local' : 'hybrid',
+app/lib/orchestrator/routing.ts:61:  return {
+app/lib/orchestrator/routing.ts:62:    provider: 'local',
+app/lib/orchestrator/routing.ts:64:    reason: 'Fallback seguro para provider local.'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:3:} from '@/app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:10:    profiler.responseProfile === 'advanced-cognitive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:12:      : profiler.responseProfile === 'balanced-adaptive-response'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:22:  const responseIntensity =
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:29:  return {
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:36:    responseIntensity,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:50:      `intensity:${responseIntensity}`,
+app/lib/fresh.ts:4:  return (
+app/lib/runtime-trust/runtime-trust-engine.ts:25:  return {
+app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+app/lib/executive-runtime-context/executive-runtime-context.ts:23:  provider: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:46:  const provider =
+app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+app/lib/executive-runtime-context/executive-runtime-context.ts:54:  return {
+app/lib/executive-runtime-context/executive-runtime-context.ts:64:    provider: provider.provider,
+app/lib/executive-runtime-context/executive-runtime-context.ts:65:    allowExternal: provider.allowExternal,
+app/lib/executive-runtime-context/executive-runtime-context.ts:81:      `provider:${provider.provider}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:83:      `external:${provider.allowExternal}`,
+app/lib/validator.ts:16:  return {
+app/lib/validator.ts:24:    return reply + "\n\nValidação IASevero: resposta contém ação prática sugerida."
+app/lib/validator.ts:27:  return reply + "\n\nValidação IASevero: resposta segura, sem comando necessário."
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:37:  return {
+app/lib/tools-logs.ts:6:    return "Logs do sistema:\n" + logs.slice(0, 300)
+app/lib/tools-logs.ts:8:    return "Erro ao ler logs."
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:10:    execution.responseIntensity === 'high'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:12:      : execution.responseIntensity === 'medium'
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:21:  return {
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:34:    responseIntensity:
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:35:      execution.responseIntensity,
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:57:      `intensity:${execution.responseIntensity}`,
+app/lib/provider.ts:1:import { localProvider } from './providers/local'
+app/lib/provider.ts:4:export async function runProvider(
+app/lib/provider.ts:8:  const provider = route?.provider || 'local'
+app/lib/provider.ts:10:  if (provider !== 'local') {
+app/lib/provider.ts:12:      '[IASevero] provider externo bloqueado:',
+app/lib/provider.ts:13:      provider
+app/lib/provider.ts:16:    return await localProvider(message)
+app/lib/provider.ts:19:  return await localProvider(message)
+app/lib/context.ts:15:    return JSON.parse(fs.readFileSync(FILE, 'utf-8'))
+app/lib/context.ts:17:    return []
+app/lib/context.ts:39:  if (!db.length) return null
+app/lib/context.ts:41:  return db
+app/lib/router.ts:14:  if (m.startsWith('ensinar:')) return 'learn'
+app/lib/router.ts:15:  if (m.startsWith('aprovar:')) return 'approve'
+app/lib/router.ts:16:  if (m.includes('memoria') || m.includes('memória')) return 'memory'
+app/lib/router.ts:17:  if (m.includes('token') || m.includes('chave') || m.includes('secret') || m.includes('segurança')) return 'security'
+app/lib/router.ts:18:  if (m.includes('custo') || m.includes('gratis') || m.includes('zero')) return 'cost'
+app/lib/router.ts:19:  if (m.includes('deploy') || m.includes('cloud run') || m.includes('subir')) return 'deploy'
+app/lib/router.ts:20:  if (m.includes('erro') || m.includes('bug') || m.includes('falha')) return 'diagnostic'
+app/lib/router.ts:22:  return 'general'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:38:  return {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:35:  return {
+app/lib/tools.ts:3:    return [
+app/lib/tools.ts:11:    return [
+app/lib/tools.ts:19:    return [
+app/lib/tools.ts:26:  return []
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:29:  return {
+app/lib/observability.ts:4:  provider?: string
+app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+app/lib/decision-engine.ts:12:  if (msg.includes('erro') || msg.includes('bug') || msg.includes('falhou')) return 'diagnostic'
+app/lib/decision-engine.ts:13:  if (msg.includes('custo') || msg.includes('api cara') || msg.includes('zero cost')) return 'cost_control'
+app/lib/decision-engine.ts:14:  if (msg.includes('comando') || msg.includes('shell')) return 'shell_execution'
+app/lib/decision-engine.ts:15:  if (msg.includes('qual meu nome') || msg.includes('meu nome?')) return 'memory_query'
+app/lib/decision-engine.ts:17:  return 'general'
+app/lib/decision-engine.ts:29:  return {
+app/lib/decision-engine.ts:43:  return improveLocalAnswer(message, answer)
+app/lib/command-detector.ts:5:    return 'Comando detectado: npm run dev. Use esse comando no Shell para iniciar o servidor local de desenvolvimento.'
+app/lib/command-detector.ts:9:    return 'Comando detectado: npm run build. Ele valida se o projeto compila corretamente antes de rodar ou publicar.'
+app/lib/command-detector.ts:13:    return 'Comando detectado: rm -rf .next. Ele limpa o build anterior do Next.js para evitar cache corrompido.'
+app/lib/command-detector.ts:17:    return 'Comando detectado: security_check. Ele verifica riscos básicos antes de avançar.'
+app/lib/command-detector.ts:21:    return 'Comando detectado: verify_iasevero. Ele valida se a estrutura principal da IASevero está íntegra.'
+app/lib/command-detector.ts:24:  return null
+app/lib/env.ts:9:    return 'local'
+app/lib/env.ts:13:    return 'local'
+app/lib/env.ts:16:  return mode as IASeveroMode
+app/lib/env.ts:22:  return {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:53:  return {
+scripts/runtime-profiler/runtime-cognitive-response-profiler-test.ts:3:} from '../../app/lib/runtime-profiler/runtime-cognitive-response-profiler'
+scripts/runtime-provider-authority/runtime-provider-authority-test.ts:3:} from '../../app/lib/runtime-provider-authority/runtime-provider-authority'
+scripts/runtime/runtime-anti-fragmentation-scanner.mjs:13:    target: /(governor|policy|budget|provider-governor|enforcement)/
+scripts/runtime/runtime-anti-fragmentation-scanner.mjs:41:  return results
+scripts/runtime/enforcement/runtime-responsibility-enforcer.mjs:60:  return results
+scripts/runtime/enforcement/rules/runtime-layer-authority.mjs:15:      'runtime-provider-governor'
+scripts/runtime/enforcement/runtime-layer-enforcer.mjs:25:  return results
+scripts/runtime/graph/runtime-dependency-graph.mjs:39:    return match ? match[1] : null
+scripts/runtime/resolver/runtime-layer-resolver.mjs:22:    'runtime-provider-governor',
+scripts/runtime/resolver/runtime-layer-resolver.mjs:76:  return results
+scripts/runtime/resolver/runtime-layer-resolver.mjs:83:        return layer
+scripts/runtime/resolver/runtime-layer-resolver.mjs:88:  return 'auxiliary'
+scripts/runtime-operational-test.ts:31:    provider: recovery.recommendedProvider,
+scripts/runtime-autonomous-response-intelligence-test.ts:3:} from '../app/lib/runtime-core/runtime-autonomous-response-intelligence'
+scripts/regression-local.mjs:9:  'app/lib/response-quality.ts',
+scripts/regression-local.mjs:28:  core.includes('runProvider'),
+scripts/runtime-distributed-trace-engine-test.ts:46:  'response.generated',
+scripts/runtime-distributed-trace-engine-test.ts:50:    response: 'runtime operational',
+scripts/runtime-event-stream-engine-test.ts:27:publishRuntimeStreamEvent('response.generated', correlationId, {
+scripts/runtime-health-center-v161.0/runtime-health-center-v161.0.mjs:12:  return existsSync(path) ? 'PASS' : 'MISSING';
+scripts/runtime-adaptive-response-test.ts:1:import { evaluateRuntimeAdaptiveResponse } from '../app/lib/runtime-core/runtime-adaptive-response'
+scripts/runtime-adaptive-response-test.ts:3:const response = evaluateRuntimeAdaptiveResponse()
+scripts/runtime-adaptive-response-test.ts:6:console.log(response)

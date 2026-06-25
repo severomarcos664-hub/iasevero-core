@@ -1,0 +1,79 @@
+app/runtime/scheduler/runtime-scheduler.ts:8:export async function processRuntimeQueue() {
+app/runtime/contracts/runtime-capability-contracts.ts:7:  | 'route'
+app/runtime/capabilities/runtime-capability-registry.ts:13:    'route-runtime-request'
+app/runtime/central-runtime-manifest.ts:26:      'hybrid-router'
+app/page.tsx:6:  const router = useRouter()
+app/page.tsx:215:          onClick={() => router.push('/console')}
+app/console/page.tsx:36:        method: 'POST',
+app/api/runtime/telemetry/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/telemetry/route.ts:6:export async function GET() {
+app/api/runtime/telemetry/route.ts:9:  return NextResponse.json({
+app/api/runtime/status/route.ts:1:import { NextResponse } from 'next/server'
+app/api/runtime/status/route.ts:4:export async function GET() {
+app/api/runtime/status/route.ts:7:  return NextResponse.json({
+app/api/health/route.ts:1:import { NextResponse } from 'next/server'
+app/api/health/route.ts:5:export async function GET() {
+app/api/health/route.ts:6:  return NextResponse.json({
+app/api/chat/route.ts:1:import { NextResponse } from 'next/server'
+app/api/chat/route.ts:26:export async function POST(req: Request) {
+app/api/chat/route.ts:33:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:37:      return NextResponse.json({
+app/api/chat/route.ts:58:      return NextResponse.json({
+app/api/chat/route.ts:72:      return NextResponse.json({
+app/api/chat/route.ts:80:      return NextResponse.json({
+app/api/chat/route.ts:117:  return NextResponse.json({
+app/api/chat/route.ts:140:    return NextResponse.json({
+app/api/chat/route.ts:158:    return NextResponse.json({
+app/api/job/route.ts:1:import { NextResponse } from "next/server"
+app/api/job/route.ts:5:export async function GET(req: Request) {
+app/api/job/route.ts:11:  return NextResponse.json({
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:66:      `route:${core.executionRoute}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:35:  const route =
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:41:      !route.allowExternal ||
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:56:      route.provider,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:59:      route.allowExternal,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:81:      `provider:${route.provider}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:82:      `external:${route.allowExternal}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:87:      `route:${authority.executionRoute}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:88:      `route:${route.reason}`
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:93:      `route:${context.executionRoute}`,
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+app/lib/executive-runtime-core/executive-runtime-core.ts:89:      `route:${coordinator.executionRoute}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:60:      `route:${authority.executionRoute}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:106:      `route:${integration.executionRoute}`,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:94:      `route:${executionRoute}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:39:  const routeWindowMs =
+app/lib/runtime-execution-router/runtime-execution-router.ts:61:  const routerStable =
+app/lib/runtime-execution-router/runtime-execution-router.ts:65:    routerId: `router-${Date.now()}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:69:      'runtime-execution-router',
+app/lib/runtime-execution-router/runtime-execution-router.ts:74:    routeWindowMs,
+app/lib/runtime-execution-router/runtime-execution-router.ts:78:    routerStable,
+app/lib/runtime-execution-router/runtime-execution-router.ts:99:      `route:${executionRoute}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:101:      `stable:${routerStable}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:102:      `window:${routeWindowMs}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:86:      `route:${governance.executionRoute}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:11:} from '@/app/lib/runtime-execution-router/runtime-execution-router'
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:48:  const router = evaluateRuntimeExecutionRouter()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:53:    router.executionAllowed
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:80:    executionRoute: router.executionRoute,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:97:      `route:${router.executionRoute}`,
+app/lib/providers/local.ts:8:import { detectIntent } from '../router'
+app/lib/providers/local.ts:44:export async function localProvider(message: string, userId = 'local') {
+app/lib/providers/hybrid.ts:2:export async function hybridProvider(message: string): Promise<string | null> {
+app/lib/orchestrator/runtime-decision-engine.ts:2:import { resolveHybridProvider } from './hybrid-router'
+app/lib/orchestrator/runtime-action-executor.ts:20:export async function executeRuntimeAction(
+app/lib/orchestrator/decision-pipeline.ts:17:  const route = resolveProviderRoute(message, intent)
+app/lib/orchestrator/decision-pipeline.ts:20:    provider: route.provider,
+app/lib/orchestrator/decision-pipeline.ts:21:    allowed: policy.allowed && route.allowExternal !== false,
+app/lib/orchestrator/decision-pipeline.ts:22:    reason: policy.allowed ? route.reason : policy.reason
+app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+app/lib/provider.ts:4:export async function runProvider(
+app/lib/provider.ts:6:  route?: ProviderRoute
+app/lib/provider.ts:8:  const provider = route?.provider || 'local'
+scripts/runtime/runtime-anti-fragmentation-scanner.mjs:18:    target: /(execution-control|action-executor|hybrid-router)/
+scripts/runtime/enforcement/rules/runtime-layer-authority.mjs:6:      'hybrid-router'
+scripts/runtime/resolver/runtime-layer-resolver.mjs:30:    'hybrid-router',
+scripts/runtime-awareness-matrix/runtime-awareness-matrix-test.ts:33:    'route:adaptive-execution'
+scripts/regression-local.mjs:10:  'app/api/chat/route.ts',
+scripts/runtime-execution-cortex/runtime-execution-cortex-test.ts:33:    'route:adaptive-execution'
+scripts/runtime-execution-router/runtime-execution-router-test.ts:3:} from '../../app/lib/runtime-execution-router/runtime-execution-router'
