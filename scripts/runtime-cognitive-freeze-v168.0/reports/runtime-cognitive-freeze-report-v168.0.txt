@@ -1,0 +1,34 @@
+IASevero v168.0
+
+Runtime Cognitive Freeze Baseline
+
+PURPOSE
+Freeze the current functional cognitive runtime baseline before Brain Kernel unification.
+
+CONFIRMED STATE
+- Web interface operational.
+- /api/chat operational.
+- Local provider responding.
+- Build previously approved.
+- Runtime cognitive components discovered.
+- Brain Matrix, Runtime Intelligence and Unified Intelligence Bus present.
+- Memory, Planner, Decision Engine, Executive Authority and Execution Pipeline present.
+
+SAFETY DECISION
+No destructive refactor.
+No direct replacement of existing cognitive modules.
+Brain Kernel unification must happen incrementally.
+Each step must pass build and regression before preservation.
+
+CANDIDATE BRAIN HIERARCHY
+- Brain Kernel: Runtime Brain Matrix
+- Integration Bus: Runtime Unified Intelligence Bus
+- Analysis Engine: Runtime Intelligence
+- Planning: Runtime Task Planner
+- Memory: Runtime Memory + Decision Memory
+- Decision: Runtime Decision Engine
+- Authority: Executive Runtime Authority
+- Execution: Runtime Execution Pipeline
+
+NEXT STEP
+Create cognitive call graph and define official Brain Kernel contract.
