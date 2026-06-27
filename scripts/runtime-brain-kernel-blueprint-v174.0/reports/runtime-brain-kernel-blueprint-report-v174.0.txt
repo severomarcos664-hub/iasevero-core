@@ -1,0 +1,53 @@
+IASevero v174.0
+
+Runtime Brain Kernel Blueprint
+
+MISSION
+Consolidate the official Brain Kernel architecture from contract, call graph, ownership, validation and gap analysis.
+
+OFFICIAL BRAIN KERNEL BLUEPRINT
+
+1. Entry Layer
+Runtime Context prepares the operational input.
+
+2. State Layer
+Runtime Brain Matrix owns the global cognitive state.
+
+3. Analysis Layer
+Runtime Intelligence analyzes risk, readiness, stability and operational signals.
+
+4. Integration Layer
+Runtime Unified Intelligence Bus integrates cognitive signals.
+
+5. Planning Layer
+Runtime Task Planner converts intent into controlled plans.
+
+6. Decision Layer
+Runtime Decision Engine owns final runtime decision.
+
+7. Authority Layer
+Executive Runtime Authority authorizes or blocks execution.
+
+8. Execution Layer
+Runtime Execution Pipeline executes approved actions.
+
+9. Provider Layer
+Provider Governor / Router selects local, hybrid or external providers according to policy.
+
+10. Response Layer
+The API returns the final response with runtime metadata and trace.
+
+ARCHITECTURAL PRINCIPLE
+The Brain Kernel is not a single large model.
+The Brain Kernel is the permanent cognitive coordinator of IASevero.
+
+TECHNOLOGY PRINCIPLE
+Models, tools, memories and providers are replaceable capabilities.
+The Brain Kernel remains the stable coordination layer.
+
+ZERO COST PRINCIPLE
+Local-first is mandatory.
+External models remain disabled unless explicitly authorized by policy.
+
+NEXT PHASE
+Begin incremental integration only after this blueprint is preserved.

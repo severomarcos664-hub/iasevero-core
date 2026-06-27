@@ -1,0 +1,11 @@
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:11:import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+app/api/chat/route.ts:64:    const runtimeDecision = executeRuntimeDecisionEngine()
+app/api/chat/route.ts:67:    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+app/lib/runtime-core/runtime-state-transition-engine.ts:2:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+app/lib/runtime-core/runtime-state-transition-engine.ts:24:  const loop = runRuntimeDecisionLoop()
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-core/runtime-decision-loop.ts:20:export function runRuntimeDecisionLoop(): RuntimeDecisionLoopResult {
+app/lib/orchestrator/runtime-decision-engine.ts:23:export function executeRuntimeDecisionEngine() {

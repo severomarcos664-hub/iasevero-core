@@ -1,0 +1,32 @@
+IASevero v172.0
+
+Runtime Brain Kernel Validation
+
+MISSION
+Validate the official Brain Kernel contract against the real runtime implementation.
+
+VALIDATION TARGETS
+- Runtime Brain Matrix
+- Runtime Intelligence
+- Runtime Unified Intelligence Bus
+- Runtime Task Planner
+- Runtime Decision Engine
+- Executive Runtime Authority
+- Runtime Execution Pipeline
+
+VALIDATION QUESTIONS
+1. Does each official Brain Kernel component exist?
+2. Is each component referenced by the runtime?
+3. Does the runtime have duplicated decision centers?
+4. Does the runtime preserve local-first execution?
+5. Is the system ready for incremental Brain Kernel unification?
+
+SAFETY RULES
+- Documentation only.
+- No runtime modification.
+- No destructive refactor.
+- No external provider activation.
+- Local-first remains mandatory.
+
+EXPECTED RESULT
+Evidence package for deciding the first safe Brain Kernel integration step.

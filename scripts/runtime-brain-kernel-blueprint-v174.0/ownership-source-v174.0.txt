@@ -1,0 +1,40 @@
+IASevero v171.0
+
+Runtime Brain Kernel Ownership Map
+
+MISSION
+Define official ownership boundaries for the IASevero Brain Kernel.
+
+OWNERSHIP DOMAINS
+1. Memory Ownership
+2. Intelligence Ownership
+3. Planning Ownership
+4. Decision Ownership
+5. Execution Ownership
+6. Authority Ownership
+7. Provider Ownership
+
+PRINCIPLE
+Each cognitive responsibility must have one official owner and multiple consumers.
+
+TARGET ARCHITECTURE
+- Runtime Brain Matrix owns global cognitive state.
+- Runtime Memory owns persistent and operational memory.
+- Runtime Intelligence owns analysis.
+- Runtime Unified Intelligence Bus owns signal integration.
+- Runtime Task Planner owns planning.
+- Runtime Decision Engine owns decision.
+- Executive Runtime Authority owns authorization.
+- Runtime Execution Pipeline owns execution.
+- Provider Governor / Router owns provider selection.
+
+SAFETY RULES
+- Documentation only.
+- No runtime modification.
+- No destructive refactor.
+- No external provider activation.
+- Local-first remains mandatory.
+- Build and regression required before any future code integration.
+
+NEXT STEP
+Validate ownership boundaries against the real call graph and identify duplicate decision centers.

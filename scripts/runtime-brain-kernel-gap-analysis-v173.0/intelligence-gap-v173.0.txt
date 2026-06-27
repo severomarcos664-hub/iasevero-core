@@ -1,0 +1,15 @@
+app/lib/runtime-core/runtime-cognitive-state.ts:3:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:57:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-architecture-auditor.ts:4:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-architecture-auditor.ts:18:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-policy-engine.ts:1:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-policy-engine.ts:21:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-supervisor.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:19:  intelligence: RuntimeIntelligenceReport,
+app/lib/orchestrator/runtime-decision-engine.ts:16:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:238:const intelligence = analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-structural-health.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-structural-health.ts:13:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-intelligence.ts:3:export type RuntimeIntelligenceReport = {
+app/lib/orchestrator/runtime-intelligence.ts:13:export function analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-intelligence.ts:15:): RuntimeIntelligenceReport {
