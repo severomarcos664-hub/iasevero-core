@@ -1,0 +1,25 @@
+IASevero v170.0
+
+Runtime Brain Kernel Call Graph
+
+MISSION
+Map the real cognitive execution flow without changing the runtime.
+
+GOALS
+- Identify the official execution entry.
+- Validate the Brain Matrix position.
+- Validate Runtime Intelligence.
+- Validate Unified Intelligence Bus.
+- Validate Task Planner.
+- Validate Decision Engine.
+- Validate Executive Authority.
+- Validate Execution Pipeline.
+
+RULES
+- Documentation only.
+- No runtime modification.
+- No destructive refactor.
+- Build and regression remain mandatory before any structural change.
+
+EXPECTED RESULT
+Official Runtime Brain Call Graph ready for validation.
