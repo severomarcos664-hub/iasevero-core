@@ -1,0 +1,54 @@
+IASevero v169.0
+
+Runtime Brain Kernel Contract
+
+PURPOSE
+Define the official cognitive coordination contract for IASevero before any structural unification.
+
+OFFICIAL COGNITIVE CHAIN
+1. Runtime Context
+2. Runtime Brain Matrix
+3. Runtime Intelligence
+4. Runtime Unified Intelligence Bus
+5. Runtime Task Planner
+6. Runtime Decision Engine
+7. Executive Runtime Authority
+8. Runtime Execution Pipeline
+9. Provider / Response
+
+RESPONSIBILITIES
+
+Runtime Context
+Creates the operational input context for the cognitive runtime.
+
+Runtime Brain Matrix
+Acts as the official Brain Kernel state source.
+
+Runtime Intelligence
+Analyzes runtime intelligence, risk, readiness and operational signals.
+
+Runtime Unified Intelligence Bus
+Integrates intelligence signals and distributes unified cognitive state.
+
+Runtime Task Planner
+Transforms intent into controlled execution plans.
+
+Runtime Decision Engine
+Makes final runtime decision before execution.
+
+Executive Runtime Authority
+Authorizes or blocks execution.
+
+Runtime Execution Pipeline
+Executes approved actions and returns response.
+
+SAFETY RULES
+- No destructive refactor.
+- No external provider activation by default.
+- Local-first execution remains mandatory.
+- Brain Kernel unification must be incremental.
+- Every change must pass build and regression.
+- Every approved step must be committed, tagged and pushed.
+
+NEXT STEP
+Validate this contract against the real runtime call graph before code unification.
