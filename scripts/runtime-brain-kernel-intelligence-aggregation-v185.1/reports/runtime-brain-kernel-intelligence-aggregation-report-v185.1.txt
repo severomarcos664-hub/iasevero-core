@@ -1,0 +1,32 @@
+IASevero v185.1
+
+Runtime Brain Kernel Intelligence Aggregation
+
+PURPOSE
+Define the Brain Kernel as an operational intelligence aggregator, not a duplicate runtime module.
+
+CONFIRMED EXISTING INTELLIGENCE SOURCES
+- Runtime Risk Escalation Intelligence
+- Runtime Execution Criticality Intelligence
+- Runtime Recovery Engine
+- Runtime Resilience Engine
+- Runtime Telemetry Correlation
+- Runtime Governance / Policy / Enforcement
+
+ARCHITECTURAL DECISION
+The Brain Kernel must consume and consolidate existing intelligence signals.
+
+It must not recreate risk, severity, recovery, resilience, telemetry or governance logic.
+
+TARGET ROLE
+The Brain Kernel should emit a unified operational recommendation based on existing runtime signals.
+
+SAFETY RULES
+- No destructive refactor.
+- No duplicated intelligence modules.
+- No provider activation.
+- Local-first remains mandatory.
+- Build and regression remain mandatory before preservation.
+
+NEXT STEP
+Validate the safest integration point for Brain Kernel aggregation inside the current runtime flow.
