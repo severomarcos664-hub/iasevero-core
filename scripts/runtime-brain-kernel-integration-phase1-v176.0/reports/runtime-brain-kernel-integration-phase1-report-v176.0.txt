@@ -1,0 +1,22 @@
+IASevero v176.0
+
+Runtime Brain Kernel Integration Phase 1 Readiness
+
+MISSION
+Prepare the first safe Brain Kernel integration step.
+
+PHASE 1 TARGET
+Runtime Context + Runtime Brain Matrix + Unified Context.
+
+OBJECTIVE
+Validate where the runtime context is created, where Brain Matrix state is consumed, and where the unified context can become the official entry layer for Brain Kernel coordination.
+
+SAFETY RULES
+- No provider activation.
+- No external model usage.
+- No destructive refactor.
+- No runtime behavior change in this readiness step.
+- Local-first remains mandatory.
+
+NEXT STEP
+If readiness is confirmed, implement the smallest possible integration point between Runtime Context and Brain Matrix.

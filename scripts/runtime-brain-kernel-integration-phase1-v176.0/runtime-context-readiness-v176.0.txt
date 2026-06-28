@@ -1,0 +1,55 @@
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/orchestrator/runtime-graph-registry.ts:5:    module: 'RuntimeContext',
+app/lib/orchestrator/runtime-graph-registry.ts:11:      'RuntimeContext'
+app/lib/orchestrator/runtime-graph-registry.ts:17:      'RuntimeContext'
+app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-architecture-index.ts:35:    name: 'RuntimeContext',
+app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:4:export type RuntimeContext = {
+app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+app/lib/orchestrator/runtime-context.ts:56:export function appendRuntimeTrace(
+app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+app/lib/orchestrator/runtime-context.ts:59:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:75:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:62:  let context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:76:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `provider:${provider}`)
+app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:85:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:94:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:105:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:116:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:127:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:137:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:161:  context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:173:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:207:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:216:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:246:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-decision-engine.ts:260:context = appendRuntimeTrace(
+app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
