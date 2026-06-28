@@ -1,0 +1,8 @@
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:5:export function evaluateUnifiedRuntimeIntelligence() {
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:26:    source: 'runtime-unified-intelligence-bus',
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:3:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:6:  const unified = evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:3:} from '@/app/lib/runtime-unified/runtime-unified-intelligence-bus'
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:11:    evaluateUnifiedRuntimeIntelligence()

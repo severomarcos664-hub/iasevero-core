@@ -1,0 +1,33 @@
+IASevero v175.0
+
+Runtime Brain Kernel Integration Roadmap
+
+MISSION
+
+Define the official incremental integration sequence without modifying the runtime.
+
+INTEGRATION ORDER
+
+1. Runtime Context
+2. Runtime Brain Matrix
+3. Runtime Intelligence
+4. Runtime Unified Intelligence Bus
+5. Runtime Task Planner
+6. Runtime Decision Engine
+7. Executive Runtime Authority
+8. Runtime Execution Pipeline
+9. Provider Governor
+10. API Response
+
+PRINCIPLES
+
+- Local-first.
+- Zero-cost.
+- Incremental integration only.
+- One validated step at a time.
+- Build and regression after every integration.
+
+EXPECTED RESULT
+
+Official Brain Kernel integration roadmap approved before any runtime code change.
+
