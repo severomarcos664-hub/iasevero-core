@@ -1,0 +1,32 @@
+IASevero v177.0
+
+Runtime Brain Kernel Coordination Contract
+
+MISSION
+Define the first operational coordination contract for the IASevero Brain Kernel without destructive refactor.
+
+OFFICIAL COORDINATION CHAIN
+1. Runtime Context
+2. Runtime Brain Matrix
+3. Runtime Intelligence
+4. Runtime Unified Intelligence Bus
+5. Runtime Decision Engine
+6. Runtime Execution Pipeline
+
+COORDINATION PRINCIPLE
+The Brain Kernel does not replace existing modules.
+The Brain Kernel coordinates validated modules in a stable execution order.
+
+PHASE 1 IMPLEMENTATION RULE
+Create the smallest possible coordination layer that references the existing modules without changing their internal behavior.
+
+SAFETY RULES
+- No provider activation.
+- No external model usage.
+- No destructive refactor.
+- No removal of existing modules.
+- Local-first remains mandatory.
+- Build must pass before preservation.
+
+EXPECTED RESULT
+A safe contract for implementing the first Brain Kernel coordination layer.
