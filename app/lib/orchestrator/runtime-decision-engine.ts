@@ -19,6 +19,7 @@ import { registerRuntimeIncident } from './runtime-incidents'
 import { enforceRuntimeExecution } from './runtime-enforcement'
 import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
 import { transitionRuntimeLifecycle } from './runtime-lifecycle-manager'
+import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
 
 export function executeRuntimeDecisionEngine() {
   const consciousness = executeRuntimeConsciousLoop()
