@@ -1,0 +1,34 @@
+IASevero v190.0
+
+Runtime Unified Intelligence Pipeline
+
+STATUS
+Blueprint validated.
+
+PURPOSE
+Define the canonical execution pipeline for Runtime Unified Intelligence.
+
+PIPELINE
+
+Runtime Risk Escalation Intelligence
+        ↓
+Runtime Execution Criticality Intelligence
+        ↓
+Runtime Confidence Intelligence
+        ↓
+Runtime Governance
+        ↓
+Runtime Brain Kernel Coordinator
+        ↓
+Runtime Unified Intelligence Aggregation
+        ↓
+Runtime Unified Intelligence Contract
+        ↓
+Runtime Unified Intelligence Schema
+        ↓
+Runtime Unified Intelligence Adapter
+        ↓
+Runtime Unified Intelligence Object
+        ↓
+Execution Pipeline
+
