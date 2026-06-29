@@ -1,0 +1,35 @@
+IASevero v187.0
+
+Runtime Unified Intelligence Contract
+
+PURPOSE
+Define the canonical operational intelligence contract produced by the Runtime Brain Kernel.
+
+CANONICAL OUTPUT
+
+- confidence
+- risk
+- criticality
+- governance
+- recommendation
+- executionPriority
+- executionAllowed
+- operationalState
+- source
+- timestamp
+
+ARCHITECTURAL PRINCIPLE
+
+The Runtime Brain Kernel consumes existing intelligence modules and produces a single operational decision object.
+
+IMPLEMENTATION RULES
+
+- No duplicated intelligence.
+- No destructive refactor.
+- Local-first.
+- Build before preservation.
+- Regression before preservation.
+
+EXPECTED RESULT
+
+A stable contract for future Runtime Unified Intelligence implementations.
