@@ -1,0 +1,29 @@
+IASevero v186.0
+
+Runtime Unified Intelligence Aggregation
+
+PURPOSE
+Define the next Brain Kernel evolution as a unified intelligence aggregation layer.
+
+CONFIRMED SIGNAL SOURCES
+- evaluateRuntimeRiskEscalation()
+- evaluateRuntimeExecutionCriticality()
+- evaluateRuntimeConfidence()
+- coordinateRuntimeBrainKernel()
+- executeRuntimeDecisionEngine()
+
+ARCHITECTURAL DECISION
+The Brain Kernel should consolidate risk, criticality and confidence into one unified operational recommendation.
+
+IMPLEMENTATION RULE
+No new intelligence module should be created before consuming the existing intelligence sources.
+
+SAFETY RULES
+- No destructive refactor.
+- No provider activation.
+- No external model usage.
+- Local-first remains mandatory.
+- Build and regression before preservation.
+
+EXPECTED RESULT
+A validated blueprint for Runtime Unified Intelligence Aggregation before functional implementation.
