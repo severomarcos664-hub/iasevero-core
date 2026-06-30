@@ -1,0 +1,2 @@
+app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
