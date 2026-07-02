@@ -1,0 +1,29 @@
+IASevero v209.0
+
+Canonical Execution Map
+
+STATUS
+Runtime execution chain audited and documented.
+
+CANONICAL FLOW
+/api/chat/route.ts
+-> evaluateRuntimeDecisionGate()
+-> evaluateRuntimeActionPolicy()
+-> runRuntimeExecutionBridge()
+-> runRuntimeMasterOrchestrator()
+-> evaluateRuntimeExecutiveAuthorityGateway()
+-> evaluateRuntimeExecutiveState()
+-> iaseveroCore()
+-> buildDecision()
+-> buildSystemContext()
+-> runProvider()
+-> improveLocalAnswer()
+-> NextResponse.json()
+
+ARCHITECTURAL DECISION
+No new module was created.
+No runtime behavior was changed.
+The current objective is consolidation and ownership clarity.
+
+NEXT
+v210.0 should identify duplicated decision responsibilities before adding new capabilities.
