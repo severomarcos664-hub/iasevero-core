@@ -1,0 +1,31 @@
+IASevero v210.0
+
+Runtime Ownership Audit
+
+STATUS
+Ownership audit initialized.
+
+OBJECTIVE
+Map runtime responsibility boundaries without changing runtime behavior.
+
+OWNERSHIP AREAS
+- API entrypoint
+- Decision
+- Governance
+- Authority
+- Context
+- Memory
+- Orchestration
+- Execution
+- Provider
+- Telemetry
+- Recovery
+- Response quality
+
+RULE
+No new module created.
+No runtime behavior changed.
+Audit-only version.
+
+NEXT
+Use collected exports and ownership signals to identify duplicated responsibilities in v211.0.
