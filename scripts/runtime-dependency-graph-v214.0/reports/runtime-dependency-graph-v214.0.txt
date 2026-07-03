@@ -1,0 +1,26 @@
+IASevero v214.0
+
+Runtime Dependency Graph Audit
+
+STATUS
+Dependency graph audit initialized.
+
+OBJECTIVE
+Map runtime dependencies before code consolidation.
+
+AUDITED AREAS
+- Imports
+- Local dependencies
+- Critical runtime dependencies
+- Orchestrator dependencies
+- Provider dependencies
+- Memory dependencies
+- Decision/context dependencies
+
+RULE
+No new module created.
+No runtime behavior changed.
+Audit-only version.
+
+NEXT
+v215.0 should use this dependency map to plan safe runtime consolidation.
