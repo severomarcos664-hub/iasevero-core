@@ -1,0 +1,566 @@
+app/lib/executive-runtime-context/executive-runtime-context.ts:6:  evaluateRuntimeExecutiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:7:} from '../runtime-executive-state/runtime-executive-state'
+app/lib/executive-runtime-context/executive-runtime-context.ts:22:  executiveState: string
+app/lib/executive-runtime-context/executive-runtime-context.ts:43:  const state =
+app/lib/executive-runtime-context/executive-runtime-context.ts:44:    evaluateRuntimeExecutiveState(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+app/lib/executive-runtime-context/executive-runtime-context.ts:63:    executiveState: state.executiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:79:      `state:${state.executiveState}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:9:export type ExecutiveRuntimeCoreState =
+app/lib/executive-runtime-core/executive-runtime-core.ts:20:  coreState: ExecutiveRuntimeCoreState
+app/lib/executive-runtime-core/executive-runtime-core.ts:48:  const coreState: ExecutiveRuntimeCoreState =
+app/lib/executive-runtime-core/executive-runtime-core.ts:63:    coreState,
+app/lib/executive-runtime-core/executive-runtime-core.ts:80:      `Executive Runtime Core active: ${coreState}.`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:83:      `core:${coreState}`,
+app/lib/orchestrator/adaptive-protection.ts:2:import { updateState } from './state-engine'
+app/lib/orchestrator/adaptive-protection.ts:8:    updateState({
+app/lib/orchestrator/adaptive-protection.ts:20:  updateState({
+app/lib/orchestrator/audit-trail.ts:3:import { getState } from './state-engine'
+app/lib/orchestrator/audit-trail.ts:8:    state: getState(),
+app/lib/orchestrator/awareness-engine.ts:1:import { getState } from './state-engine'
+app/lib/orchestrator/awareness-engine.ts:6:  const state = getState()
+app/lib/orchestrator/awareness-engine.ts:12:      safe: state.safe,
+app/lib/orchestrator/awareness-engine.ts:13:      mode: state.mode,
+app/lib/orchestrator/awareness-engine.ts:14:      risk: state.lastRisk || 'low'
+app/lib/orchestrator/health-intelligence.ts:3:import { getState } from './state-engine'
+app/lib/orchestrator/health-intelligence.ts:8:  const state = getState()
+app/lib/orchestrator/health-intelligence.ts:13:      mode: state.mode,
+app/lib/orchestrator/health-intelligence.ts:14:      safe: state.safe
+app/lib/orchestrator/metrics.ts:1:import { getState } from './state-engine'
+app/lib/orchestrator/metrics.ts:7:  const state = getState()
+app/lib/orchestrator/metrics.ts:15:    state,
+app/lib/orchestrator/metrics.ts:19:    healthy: state.safe === true
+app/lib/orchestrator/queue-governor.ts:10:  status: RuntimeTaskStatus
+app/lib/orchestrator/queue-governor.ts:33:export function addTask(task: Omit<RuntimeTask, 'updatedAt' | 'status' | 'attempts' | 'maxAttempts'> & {
+app/lib/orchestrator/queue-governor.ts:34:  status?: RuntimeTaskStatus
+app/lib/orchestrator/queue-governor.ts:43:    status: task.status ?? 'queued',
+app/lib/orchestrator/queue-governor.ts:61:    queued: queue.filter((task) => task.status === 'queued').length,
+app/lib/orchestrator/queue-governor.ts:62:    running: queue.filter((task) => task.status === 'running').length,
+app/lib/orchestrator/queue-governor.ts:63:    completed: queue.filter((task) => task.status === 'completed').length,
+app/lib/orchestrator/queue-governor.ts:64:    failed: queue.filter((task) => task.status === 'failed').length,
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/queue-governor.ts:71:  return queue.find((task) => task.status === 'queued') ?? null
+app/lib/orchestrator/queue-governor.ts:76:  status: RuntimeTaskStatus,
+app/lib/orchestrator/queue-governor.ts:85:  task.status = status
+app/lib/orchestrator/runtime-architecture-index.ts:8:  | 'state'
+app/lib/orchestrator/runtime-architecture-index.ts:23:  status: 'stable' | 'foundation' | 'legacy'
+app/lib/orchestrator/runtime-architecture-index.ts:32:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:39:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:46:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:53:    status: 'foundation'
+app/lib/orchestrator/runtime-architecture-index.ts:60:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:67:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:74:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:77:    name: 'RuntimeStateRegistry',
+app/lib/orchestrator/runtime-architecture-index.ts:78:    file: 'runtime-state-registry.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:79:    layer: 'state',
+app/lib/orchestrator/runtime-architecture-index.ts:81:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:88:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:95:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:102:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:109:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:116:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:123:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:130:    status: 'stable'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:4:export type RuntimeAutonomousState = {
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:16:): RuntimeAutonomousState {
+app/lib/orchestrator/runtime-awareness.ts:1:import type { RuntimeStateRegistry } from './runtime-state-registry'
+app/lib/orchestrator/runtime-awareness.ts:12:  registry: RuntimeStateRegistry
+app/lib/orchestrator/runtime-awareness.ts:26:  if (registry.degradationState) {
+app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+app/lib/orchestrator/runtime-brain-matrix.ts:13:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+app/lib/orchestrator/runtime-brain-matrix.ts:39:    globalState: supervision.globalState,
+app/lib/orchestrator/runtime-causal-trace.ts:6:  latestState: {
+app/lib/orchestrator/runtime-causal-trace.ts:38:    latestState: {
+app/lib/orchestrator/runtime-conscious-loop.ts:13:export type RuntimeConsciousState = {
+app/lib/orchestrator/runtime-conscious-loop.ts:23:  RuntimeConsciousState {
+app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+app/lib/orchestrator/runtime-context.ts:73:export function setLastRuntimeState(
+app/lib/orchestrator/runtime-context.ts:76:  lastRuntimeState = context
+app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+app/lib/orchestrator/runtime-context.ts:81:  return lastRuntimeState
+app/lib/orchestrator/runtime-contracts.ts:7:  status: RuntimeContractStatus
+app/lib/orchestrator/runtime-contracts.ts:56:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:64:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:71:    status: 'valid',
+app/lib/orchestrator/runtime-contracts.ts:82:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:89:    status: 'valid',
+app/lib/orchestrator/runtime-contracts.ts:100:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:107:    status: 'valid',
+app/lib/orchestrator/runtime-decision-engine.ts:10:import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
+app/lib/orchestrator/runtime-decision-engine.ts:149:    degradationState: !context.stable || !executionControl.allowed,
+app/lib/orchestrator/runtime-decision-engine.ts:154:    appendRuntimeWarning('Runtime instável detectado pelo State Registry.')
+app/lib/orchestrator/runtime-decision-engine.ts:183:    'runtime-state',
+app/lib/orchestrator/runtime-dependency-validator.ts:25:    'state',
+app/lib/orchestrator/runtime-dependency-validator.ts:40:    'state',
+app/lib/orchestrator/runtime-dependency-validator.ts:49:    'state'
+app/lib/orchestrator/runtime-dependency-validator.ts:55:    'state'
+app/lib/orchestrator/runtime-dependency-validator.ts:65:    'state',
+app/lib/orchestrator/runtime-dependency-validator.ts:71:    'state'
+app/lib/orchestrator/runtime-guardian.ts:3:import { updateState } from './state-engine'
+app/lib/orchestrator/runtime-guardian.ts:20:    updateState({
+app/lib/orchestrator/runtime-guardian.ts:31:  updateState({
+app/lib/orchestrator/runtime-lifecycle-manager.ts:1:export type RuntimeLifecycleState =
+app/lib/orchestrator/runtime-lifecycle-manager.ts:10:  from: RuntimeLifecycleState
+app/lib/orchestrator/runtime-lifecycle-manager.ts:11:  to: RuntimeLifecycleState
+app/lib/orchestrator/runtime-lifecycle-manager.ts:17:  currentState: RuntimeLifecycleState
+app/lib/orchestrator/runtime-lifecycle-manager.ts:18:  previousState: RuntimeLifecycleState | null
+app/lib/orchestrator/runtime-lifecycle-manager.ts:23:  currentState: 'booting',
+app/lib/orchestrator/runtime-lifecycle-manager.ts:24:  previousState: null,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:33:  next: RuntimeLifecycleState,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:37:    from: runtimeLifecycle.currentState,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:44:    currentState: next,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:45:    previousState: runtimeLifecycle.currentState,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:56:  return runtimeLifecycle.currentState === 'operational'
+app/lib/orchestrator/runtime-lifecycle-manager.ts:60:  return runtimeLifecycle.currentState === 'degraded'
+app/lib/orchestrator/runtime-lifecycle-manager.ts:64:  return runtimeLifecycle.currentState === 'recovery'
+app/lib/orchestrator/runtime-memory.ts:3:export type RuntimeMemoryState = {
+app/lib/orchestrator/runtime-memory.ts:13:): RuntimeMemoryState {
+app/lib/orchestrator/runtime-state-registry.ts:7:export type RuntimeStateRegistry = {
+app/lib/orchestrator/runtime-state-registry.ts:13:  degradationState: boolean
+app/lib/orchestrator/runtime-state-registry.ts:19:let runtimeRegistry: RuntimeStateRegistry = {
+app/lib/orchestrator/runtime-state-registry.ts:25:  degradationState: false,
+app/lib/orchestrator/runtime-state-registry.ts:31:export function getRuntimeRegistry(): RuntimeStateRegistry {
+app/lib/orchestrator/runtime-state-registry.ts:36:  partial: Partial<RuntimeStateRegistry>
+app/lib/orchestrator/runtime-state-registry.ts:37:): RuntimeStateRegistry {
+app/lib/orchestrator/runtime-state-registry.ts:50:): RuntimeStateRegistry {
+app/lib/orchestrator/runtime-structural-health.ts:6:  status: 'healthy' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-structural-health.ts:37:  const status =
+app/lib/orchestrator/runtime-structural-health.ts:60:    status,
+app/lib/orchestrator/runtime-supervisor.ts:7:  globalState:
+app/lib/orchestrator/runtime-supervisor.ts:33:  const globalState: 'stable' | 'warning' | 'critical' =
+app/lib/orchestrator/runtime-supervisor.ts:41:    globalState === 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:43:      : globalState === 'warning'
+app/lib/orchestrator/runtime-supervisor.ts:48:    globalState,
+app/lib/orchestrator/runtime-supervisor.ts:57:  globalState: 'stable' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-supervisor.ts:63:    globalState: 'stable',
+app/lib/orchestrator/runtime-task-planner.ts:4:  status:
+app/lib/orchestrator/runtime-task-planner.ts:34:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:39:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:44:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:58:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:63:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:72:      status: 'pending'
+app/lib/orchestrator/runtime-telemetry.ts:2:  RuntimeConsciousState
+app/lib/orchestrator/runtime-telemetry.ts:13:  consciousness: RuntimeConsciousState
+app/lib/orchestrator/runtime.ts:11:  const status = getRuntimeStatus()
+app/lib/orchestrator/runtime.ts:13:  if (status.mode === 'openai' && !status.openaiConfigured) {
+app/lib/orchestrator/runtime.ts:23:    mode: status.mode,
+app/lib/orchestrator/runtime.ts:24:    allowExternal: status.mode === 'openai' || status.mode === 'hybrid',
+app/lib/orchestrator/runtime.ts:25:    safe: status.safe,
+app/lib/orchestrator/runtime.ts:26:    reason: status.mode === 'local'
+app/lib/orchestrator/self-healing.ts:2:import { resetState } from './state-engine'
+app/lib/orchestrator/self-healing.ts:16:  resetState()
+app/lib/orchestrator/state-engine.ts:1:export type IASeveroState = {
+app/lib/orchestrator/state-engine.ts:10:let runtimeState: IASeveroState = {
+app/lib/orchestrator/state-engine.ts:16:export function getState(): IASeveroState {
+app/lib/orchestrator/state-engine.ts:17:  return runtimeState
+app/lib/orchestrator/state-engine.ts:20:export function updateState(
+app/lib/orchestrator/state-engine.ts:21:  data: Partial<IASeveroState>
+app/lib/orchestrator/state-engine.ts:22:): IASeveroState {
+app/lib/orchestrator/state-engine.ts:23:  runtimeState = {
+app/lib/orchestrator/state-engine.ts:24:    ...runtimeState,
+app/lib/orchestrator/state-engine.ts:29:  return runtimeState
+app/lib/orchestrator/state-engine.ts:32:export function resetState(): IASeveroState {
+app/lib/orchestrator/state-engine.ts:33:  runtimeState = {
+app/lib/orchestrator/state-engine.ts:39:  return runtimeState
+app/lib/queue.ts:5:  status: 'pending' | 'running' | 'done'
+app/lib/queue.ts:12:  const job: Job = { id, steps, results: [], status: 'pending' }
+app/lib/queue.ts:23:    job.status = 'done'
+app/lib/queue.ts:27:  job.status = 'running'
+app/lib/queue.ts:34:    job.status = 'done'
+app/lib/runner.ts:6:    if (job.status !== 'done') {
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:2:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:3:} from '@/app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:37:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:1:export type RuntimePropagationState =
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:20:  propagationState: RuntimePropagationState
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:25:export type RuntimeCognitiveBusState =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:35:  busState: RuntimeCognitiveBusState
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:40:  integrationState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:41:  reflectionState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:87:  const busState: RuntimeCognitiveBusState =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:99:    busState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:110:    integrationState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:111:      integration.integrationState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:113:    reflectionState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:114:      reflection.reflectionState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:142:      `bus:${busState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:146:      `integration:${integration.integrationState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:147:      `reflection:${reflection.reflectionState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:13:  status: RuntimeCoreIdentityStatus
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:41:    status: 'valid',
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:56:    identityStatus: identity.status,
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:1:export type RuntimeCognitiveState =
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:14:export interface RuntimeCognitiveStateReport {
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:21:  cognitiveState: RuntimeCognitiveState
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:5:export type RuntimeCognitiveFabricState =
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:10:export interface RuntimeCognitiveStateFabricReport {
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:13:  source: 'runtime-cognitive-state-fabric'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:15:  fabricState: RuntimeCognitiveFabricState
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:16:  globalState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:21:  integrationState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:22:  reflectionState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:39:export function evaluateRuntimeCognitiveStateFabric():
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:40:RuntimeCognitiveStateFabricReport {
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:45:    bus.busState === 'synchronized' &&
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:53:  const fabricState: RuntimeCognitiveFabricState =
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:60:  const globalState =
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:66:    source: 'runtime-cognitive-state-fabric',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:68:    fabricState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:69:    globalState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:74:    integrationState: bus.integrationState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:75:    reflectionState: bus.reflectionState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:90:        ? 'Runtime cognitive state fabric coherent.'
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:91:        : 'Runtime cognitive state fabric restricted.',
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:94:      `fabric:${fabricState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:95:      `global:${globalState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:99:      `integration:${bus.integrationState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:100:      `reflection:${bus.reflectionState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:24:  const executionState =
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:38:    executionState,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:52:      `execution:${executionState}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:9:  workflowState: string
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:28:    workflow.operationalState !== 'stable' ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:34:      : workflow.operationalState !== 'stable'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:45:    workflowState: workflow.operationalState,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:61:      `workflow:${workflow.operationalState}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:1:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-adaptive-response.ts:21:  const state = evaluateRuntimeCognitiveState()
+app/lib/runtime-core/runtime-adaptive-response.ts:23:  if (state.cognitiveState === 'critical') {
+app/lib/runtime-core/runtime-adaptive-response.ts:33:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:37:  if (state.cognitiveState === 'overloaded') {
+app/lib/runtime-core/runtime-adaptive-response.ts:47:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:51:  if (state.cognitiveState === 'degrading') {
+app/lib/runtime-core/runtime-adaptive-response.ts:61:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:65:  if (state.cognitiveState === 'focused') {
+app/lib/runtime-core/runtime-adaptive-response.ts:75:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:88:    reasoning: state.reasoning,
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:1:import { transitionRuntimeState } from './runtime-state-transition-engine'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:9:    previousState: string
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:10:    nextState: string
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:17:  const transition = transitionRuntimeState()
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:20:    transition.nextState === 'stable'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:22:      : transition.nextState === 'observing'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:24:        : transition.nextState === 'throttled'
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:34:      previousState: transition.previousState,
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:35:      nextState: transition.nextState,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+app/lib/runtime-core/runtime-cognitive-state.ts:6:export type RuntimeCognitiveState = {
+app/lib/runtime-core/runtime-cognitive-state.ts:16:  cognitiveState:
+app/lib/runtime-core/runtime-cognitive-state.ts:34:export function evaluateRuntimeCognitiveState(): RuntimeCognitiveState {
+app/lib/runtime-core/runtime-cognitive-state.ts:41:    degradationState: false,
+app/lib/runtime-core/runtime-cognitive-state.ts:98:  const cognitiveState =
+app/lib/runtime-core/runtime-cognitive-state.ts:123:    cognitiveState === 'critical'
+app/lib/runtime-core/runtime-cognitive-state.ts:125:      : cognitiveState === 'overloaded'
+app/lib/runtime-core/runtime-cognitive-state.ts:127:        : cognitiveState === 'degrading'
+app/lib/runtime-core/runtime-cognitive-state.ts:137:    cognitiveState,
+app/lib/runtime-core/runtime-contracts.ts:1:export type RuntimeGlobalState =
+app/lib/runtime-core/runtime-contracts.ts:60:  globalState: RuntimeGlobalState
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:69:      `status:${runtimeStatus}`
+app/lib/runtime-core/runtime-decision-gate.ts:6:  operationalState: string
+app/lib/runtime-core/runtime-decision-gate.ts:33:    operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-decision-gate.ts:41:    recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:6:  status: 'ok' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:15:  status: 'ok' | 'warning' | 'critical',
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:23:    status,
+app/lib/runtime-core/runtime-evaluation-engine.ts:42:    adaptive.workflowState === 'stable' &&
+app/lib/runtime-core/runtime-execution-bridge.ts:9:    runtime.operationalState === 'stable' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:23:      operationalState: runtime.operationalState,
+app/lib/runtime-core/runtime-execution-bridge.ts:27:      recovery: runtime.recovery.operationalState,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:6:  status: 'pending' | 'ready' | 'running' | 'completed'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:24:      status: 'completed'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:32:      status: 'ready'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:40:      status: 'pending'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:48:      status: 'pending'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:1:import { getRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-master-orchestrator.ts:7:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:16:  const recovery = recoverRuntimeState()
+app/lib/runtime-core/runtime-master-orchestrator.ts:18:  const operationalState =
+app/lib/runtime-core/runtime-master-orchestrator.ts:28:    operationalState,
+app/lib/runtime-core/runtime-master-orchestrator.ts:39:      operationalState === 'stable'
+app/lib/runtime-core/runtime-master-orchestrator.ts:44:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-persistence-fabric.ts:13:    | 'runtime-state'
+app/lib/runtime-core/runtime-policy-enforcement.ts:4:  operationalState: string
+app/lib/runtime-core/runtime-recovery-engine.ts:7:export type RuntimeRecoveryState = {
+app/lib/runtime-core/runtime-recovery-engine.ts:13:  operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:37:export function recoverRuntimeState():
+app/lib/runtime-core/runtime-recovery-engine.ts:38:  RuntimeRecoveryState {
+app/lib/runtime-core/runtime-recovery-engine.ts:64:  let operationalState:
+app/lib/runtime-core/runtime-recovery-engine.ts:70:    operationalState = 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:72:    operationalState = 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:74:    operationalState = 'critical'
+app/lib/runtime-core/runtime-recovery-engine.ts:88:    operationalState,
+app/lib/runtime-core/runtime-recovery-engine.ts:91:      operationalState === 'stable'
+app/lib/runtime-core/runtime-recovery-engine.ts:93:        : operationalState === 'partial'
+app/lib/runtime-core/runtime-recovery-engine.ts:101:      `state:${operationalState}`,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:2:import { recoverRuntimeState } from './runtime-recovery-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:3:import { replayRuntimeState } from './runtime-state-replay-engine'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:26:  const recovery = recoverRuntimeState()
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:27:  const replay = replayRuntimeState()
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:32:    recovery.operationalState === 'critical' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:36:        recovery.operationalState === 'partial'
+app/lib/runtime-core/runtime-state-cognition-engine.ts:1:export interface RuntimeStateCognition {
+app/lib/runtime-core/runtime-state-cognition-engine.ts:7:  currentState: string
+app/lib/runtime-core/runtime-state-cognition-engine.ts:8:  previousState: string
+app/lib/runtime-core/runtime-state-cognition-engine.ts:23:export function evaluateRuntimeStateCognition(): RuntimeStateCognition {
+app/lib/runtime-core/runtime-state-cognition-engine.ts:24:  const currentState = 'stable-performance'
+app/lib/runtime-core/runtime-state-cognition-engine.ts:25:  const previousState = 'stable-performance'
+app/lib/runtime-core/runtime-state-cognition-engine.ts:41:    source: 'runtime-state-cognition-engine',
+app/lib/runtime-core/runtime-state-cognition-engine.ts:43:    currentState,
+app/lib/runtime-core/runtime-state-cognition-engine.ts:44:    previousState,
+app/lib/runtime-core/runtime-state-cognition-engine.ts:57:      `current:${currentState}`,
+app/lib/runtime-core/runtime-state-cognition-engine.ts:58:      `previous:${previousState}`,
+app/lib/runtime-core/runtime-state-cognition-engine.ts:65:      `status:${cognitionStatus}`
+app/lib/runtime-core/runtime-state-replay-engine.ts:12:export type RuntimeReplayState = {
+app/lib/runtime-core/runtime-state-replay-engine.ts:43:export function replayRuntimeState():
+app/lib/runtime-core/runtime-state-replay-engine.ts:44:  RuntimeReplayState {
+app/lib/runtime-core/runtime-state-replay-engine.ts:88:      'runtime-state-replay-engine',
+app/lib/runtime-core/runtime-state-transition-engine.ts:1:import { updateRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-state-transition-engine.ts:4:export type RuntimeTransitionState =
+app/lib/runtime-core/runtime-state-transition-engine.ts:11:export type RuntimeStateTransitionResult = {
+app/lib/runtime-core/runtime-state-transition-engine.ts:13:  source: 'runtime-state-transition-engine'
+app/lib/runtime-core/runtime-state-transition-engine.ts:14:  previousState: RuntimeTransitionState
+app/lib/runtime-core/runtime-state-transition-engine.ts:15:  nextState: RuntimeTransitionState
+app/lib/runtime-core/runtime-state-transition-engine.ts:21:let currentTransitionState: RuntimeTransitionState = 'stable'
+app/lib/runtime-core/runtime-state-transition-engine.ts:23:export function transitionRuntimeState(): RuntimeStateTransitionResult {
+app/lib/runtime-core/runtime-state-transition-engine.ts:25:  const previousState = currentTransitionState
+app/lib/runtime-core/runtime-state-transition-engine.ts:27:  const nextState: RuntimeTransitionState =
+app/lib/runtime-core/runtime-state-transition-engine.ts:38:  currentTransitionState = nextState
+app/lib/runtime-core/runtime-state-transition-engine.ts:41:    recoveryMode: nextState === 'recovery',
+app/lib/runtime-core/runtime-state-transition-engine.ts:42:    degradationState: nextState === 'contained' || nextState === 'recovery',
+app/lib/runtime-core/runtime-state-transition-engine.ts:44:      nextState === 'stable'
+app/lib/runtime-core/runtime-state-transition-engine.ts:46:        : nextState === 'observing'
+app/lib/runtime-core/runtime-state-transition-engine.ts:48:          : nextState === 'throttled'
+app/lib/runtime-core/runtime-state-transition-engine.ts:52:      `transition:${previousState}->${nextState}`,
+app/lib/runtime-core/runtime-state-transition-engine.ts:59:    source: 'runtime-state-transition-engine',
+app/lib/runtime-core/runtime-state-transition-engine.ts:60:    previousState,
+app/lib/runtime-core/runtime-state-transition-engine.ts:61:    nextState,
+app/lib/runtime-core/runtime-state-transition-engine.ts:63:    reason: `Runtime transition applied: ${previousState} -> ${nextState}`,
+app/lib/runtime-core/runtime-state-transition-engine.ts:66:      `transition:${previousState}->${nextState}`,
+app/lib/runtime-core/runtime-task-planner.ts:11:  status:
+app/lib/runtime-core/runtime-task-planner.ts:96:      status: 'ready',
+app/lib/runtime-core/runtime-task-planner.ts:104:      status: intent === 'implementation' ? 'ready' : 'pending',
+app/lib/runtime-core/runtime-task-planner.ts:112:      status: 'pending',
+app/lib/runtime-core/runtime-task-planner.ts:120:      status: 'pending',
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:2:  evaluateRuntimeStateCognition,
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:3:} from './runtime-state-cognition-engine'
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:19:  const cognition = evaluateRuntimeStateCognition()
+app/lib/runtime-core/runtime-tool-orchestrator.ts:53:      workflow.operationalState === 'stable',
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:21:    globalState: brain.globalState,
+app/lib/runtime-core/runtime-unified-intelligence-factory.ts:6:  governanceState: string
+app/lib/runtime-core/runtime-unified-intelligence-factory.ts:9:  operationalState: string
+app/lib/runtime-core/runtime-unified-intelligence-factory.ts:23:    governanceState: input.governanceState ?? 'unknown',
+app/lib/runtime-core/runtime-unified-intelligence-factory.ts:26:    operationalState: input.operationalState ?? 'unknown',
+app/lib/runtime-core/runtime-unified-intelligence-validator.ts:14:  'governanceState',
+app/lib/runtime-core/runtime-unified-intelligence-validator.ts:17:  'operationalState',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:8:  operationalState: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:21:    graph.nodes.filter(n => n.status === 'completed').length
+app/lib/runtime-core/runtime-workflow-coordinator.ts:24:    graph.nodes.filter(n => n.status !== 'completed').length
+app/lib/runtime-core/runtime-workflow-coordinator.ts:34:    operationalState:
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:25:  executiveState: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:71:    executiveState: governance.executiveState,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:83:      `state:${governance.executiveState}`,
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:1:export type RuntimeCortexState =
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:21:  cortexState: RuntimeCortexState
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:21:export type RuntimePipelineState =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:38:  pipelineState: RuntimePipelineState
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:72:  const pipelineState: RuntimePipelineState =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:75:      : queue.queueState === 'critical'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:82:    pipelineState === 'fully-operational'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:84:      : pipelineState === 'controlled'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:86:        : pipelineState === 'throttled'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:105:    pipelineState,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:139:      `queue:${queue.queueState}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:11:  coreState: string
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:34:    coreState:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:35:      authority.coreState,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:56:      `core:${authority.coreState}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:12:  coreState: string
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:42:    coreState:
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:43:      core.coreState,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:58:      `Runtime Executive Authority active: ${core.coreState}.`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:62:      `core:${core.coreState}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:26:  executiveState: string
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:49:      : context.executiveState === 'protected'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:73:    executiveState: context.executiveState,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:88:      `state:${context.executiveState}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:9:export type ExecutiveRuntimeState =
+app/lib/runtime-executive-state/runtime-executive-state.ts:15:export interface RuntimeExecutiveStateReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:16:  stateId: string
+app/lib/runtime-executive-state/runtime-executive-state.ts:18:  source: 'runtime-executive-state'
+app/lib/runtime-executive-state/runtime-executive-state.ts:20:  executiveState: ExecutiveRuntimeState
+app/lib/runtime-executive-state/runtime-executive-state.ts:33:export function evaluateRuntimeExecutiveState(
+app/lib/runtime-executive-state/runtime-executive-state.ts:36:): RuntimeExecutiveStateReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:47:  const executiveState: ExecutiveRuntimeState =
+app/lib/runtime-executive-state/runtime-executive-state.ts:57:    stateId:
+app/lib/runtime-executive-state/runtime-executive-state.ts:58:      `executive-state-${Date.now()}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:64:      'runtime-executive-state',
+app/lib/runtime-executive-state/runtime-executive-state.ts:66:    executiveState,
+app/lib/runtime-executive-state/runtime-executive-state.ts:84:      `Executive Runtime State active: ${executiveState}.`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:87:      `state:${executiveState}`,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:35:          ? 'stabilize-runtime-state'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:53:    currentState: transition.currentState,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:55:    nextState: transition.nextState,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:70:      `current:${transition.currentState}`,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:72:      `next:${transition.nextState}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:6:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:7:} from '../runtime-cognitive-state-fabric/runtime-cognitive-state-fabric'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:20:  cognitiveState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:35:  reflectionState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:47:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:68:      : 'observe-runtime-state'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:75:    cognitiveState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:76:      fabric.globalState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:104:    reflectionState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:105:      fabric.reflectionState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:121:      `reflection:${fabric.reflectionState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:5:export type RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:17:  reflectionState: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:18:  integrationState: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:60:    reflectionState:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:61:      reflection.reflectionState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:63:    integrationState:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:64:      reflection.integrationState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:90:      `reflection:${reflection.reflectionState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:91:      `integration:${reflection.integrationState}`,
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:1:export type RuntimeNeuralState =
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:20:  neuralState: RuntimeNeuralState
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:1:export type RuntimeSynchronizationState =
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:20:  synchronizationState: RuntimeSynchronizationState
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:13:export type RuntimeOperationalIntegrationState =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:24:  integrationState: RuntimeOperationalIntegrationState
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:30:  pipelineState: string
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:55:  const integrationState: RuntimeOperationalIntegrationState =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:70:    integrationState,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:76:    pipelineState: pipeline.pipelineState,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:92:      `integration:${integrationState}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:7:  operationalState: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:22:  currentState: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:43:      operationalState: 'adaptive-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:52:      operationalState: 'stabilization-runtime',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:61:      operationalState: lifecycle.currentState,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:105:    currentState:
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:106:      lifecycle.currentState,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:127:      `state:${lifecycle.currentState}`,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:5:export type RuntimeQueueState =
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:22:  queueState: RuntimeQueueState
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:69:  const queueState: RuntimeQueueState =
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:79:    queueState === 'healthy'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:81:      : queueState === 'elevated'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:83:        : queueState === 'critical'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:88:    queueState !== 'overflow'
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:100:    queueState,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:124:      `state:${queueState}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:5:export type RuntimeReflectionState =
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:16:  reflectionState: RuntimeReflectionState
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:18:  integrationState: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:56:  const reflectionState: RuntimeReflectionState =
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:70:    reflectionState,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:72:    integrationState: integration.integrationState,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:101:      `reflection:${reflectionState}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:102:      `integration:${integration.integrationState}`,
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:1:export type RuntimeSignalState =
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:20:  signalState: RuntimeSignalState
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:5:export type RuntimeOperationalState =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:12:export function evaluateRuntimeOperationalStateEngine() {
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:16:  const operationalState: RuntimeOperationalState =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:26:    operationalState === 'fully-operational'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:28:      : operationalState === 'stabilization-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:30:        : operationalState === 'throttled-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:35:    operationalState !== 'containment-runtime'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:38:    stateId: `runtime-state-${Date.now()}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:42:      'runtime-operational-state-engine',
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:44:    operationalState,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:63:        ? 'Runtime operational state validated.'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:67:      `state:${operationalState}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:2:  evaluateRuntimeOperationalStateEngine,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:3:} from '@/app/lib/runtime-state-engine/runtime-operational-state-engine'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:13:  const state =
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:14:    evaluateRuntimeOperationalStateEngine()
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:17:    state.operationalState === 'fully-operational'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:19:      : state.operationalState === 'throttled-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:21:        : state.operationalState === 'stabilization-runtime'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:23:          : state.executionAllowed
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:27:  const nextState =
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:48:    currentState:
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:49:      state.operationalState,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:53:    nextState,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:56:      state.riskLevel,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:59:      state.executionAllowed,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:62:      state.runtimeStable,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:76:      `current:${state.operationalState}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:78:      `next:${nextState}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:79:      `risk:${state.riskLevel}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:80:      `allowed:${state.executionAllowed}`,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:81:      `stable:${state.runtimeStable}`,
+app/runtime/awareness/runtime-awareness-engine.ts:8:export interface RuntimeAwarenessState {
+app/runtime/awareness/runtime-awareness-engine.ts:15:): RuntimeAwarenessState {
+app/runtime/capabilities/runtime-capability-registry.ts:7:    'read-runtime-state'
+app/runtime/central-runtime-manifest.ts:4:  status: 'stable',
+app/runtime/central-runtime-manifest.ts:9:      'runtime-state-registry',
+app/runtime/central-runtime-manifest.ts:59:    runtimeStateRequiresSingleAuthority: true
+app/runtime/consciousness/runtime-consciousness-layer.ts:1:export interface RuntimeConsciousnessState {
+app/runtime/consciousness/runtime-consciousness-layer.ts:9:  analyze(state: RuntimeConsciousnessState) {
+app/runtime/consciousness/runtime-consciousness-layer.ts:12:        state.awareness +
+app/runtime/consciousness/runtime-consciousness-layer.ts:13:        state.governance +
+app/runtime/consciousness/runtime-consciousness-layer.ts:14:        state.autonomy +
+app/runtime/consciousness/runtime-consciousness-layer.ts:15:        state.recovery
+app/runtime/consciousness/runtime-consciousness-layer.ts:21:      adaptive: state.autonomy >= 75,
+app/runtime/consciousness/runtime-consciousness-layer.ts:22:      protected: state.governance >= 80
+app/runtime/governance/runtime-governance-brain.ts:1:export interface RuntimeGovernanceState {
+app/runtime/governance/runtime-governance-brain.ts:9:  evaluate(state: RuntimeGovernanceState) {
+app/runtime/governance/runtime-governance-brain.ts:12:        state.runtimeHealth >= 80 &&
+app/runtime/governance/runtime-governance-brain.ts:13:        state.policyStability >= 80,
+app/runtime/governance/runtime-governance-brain.ts:16:        state.autonomyLevel >= 70,
+app/runtime/governance/runtime-governance-brain.ts:19:        state.recoveryReadiness >= 75,
+app/runtime/governance/runtime-governance-brain.ts:22:        state.runtimeHealth < 60
+app/runtime/recovery/runtime-recovery-engine.ts:1:export interface RuntimeRecoveryState {
+app/runtime/recovery/runtime-recovery-engine.ts:8:  private recoveryLog: RuntimeRecoveryState[] = []
+app/runtime/recovery/runtime-recovery-engine.ts:11:    const entry: RuntimeRecoveryState = {
+app/runtime/recovery/runtime-recovery-engine.ts:36:  getRecoveryState() {
+app/runtime/state/runtime-state-events.ts:5:export function emitRuntimeStateChanged(
+app/runtime/state/runtime-state-events.ts:11:    type: 'runtime.state.changed',
+app/runtime/state/runtime-state-events.ts:12:    source: 'runtime-state-kernel',
+app/runtime/state/runtime-state-kernel.ts:1:import { emitRuntimeStateChanged } from './runtime-state-events'
+app/runtime/state/runtime-state-kernel.ts:2:export type RuntimeStateAccessMode =
+app/runtime/state/runtime-state-kernel.ts:8:export type RuntimeStateScope =
+app/runtime/state/runtime-state-kernel.ts:17:export function canMutateRuntimeState(scope: RuntimeStateScope): boolean {
+app/runtime/state/runtime-state-kernel.ts:21:export function canReadRuntimeState(scope: RuntimeStateScope): boolean {
+app/runtime/state/runtime-state-kernel.ts:31:export function validateRuntimeStateAccess(
+app/runtime/state/runtime-state-kernel.ts:32:  scope: RuntimeStateScope,
+app/runtime/state/runtime-state-kernel.ts:33:  mode: RuntimeStateAccessMode
+app/runtime/state/runtime-state-kernel.ts:36:    return canReadRuntimeState(scope)
+app/runtime/state/runtime-state-kernel.ts:40:    return canMutateRuntimeState(scope)
+app/runtime/state/runtime-state-kernel.ts:47:export function notifyRuntimeStateChange(
+app/runtime/state/runtime-state-kernel.ts:51:  emitRuntimeStateChanged(key, value)
+app/runtime/telemetry/runtime-telemetry-subscriber.ts:9:  runtimeEventBus.subscribe('runtime.state.changed', event => {
+app/runtime/transactions/runtime-transaction-engine.ts:12:  status: RuntimeTransactionStatus
+app/runtime/transactions/runtime-transaction-engine.ts:24:    status: 'created',
+app/runtime/transactions/runtime-transaction-engine.ts:33:    return { ...transaction, status: 'rejected' }
+app/runtime/transactions/runtime-transaction-engine.ts:36:  return { ...transaction, status: 'validated' }
+app/runtime/transactions/runtime-transaction-engine.ts:42:  if (transaction.status !== 'validated') {
+app/runtime/transactions/runtime-transaction-engine.ts:43:    return { ...transaction, status: 'rejected' }
+app/runtime/transactions/runtime-transaction-engine.ts:46:  return { ...transaction, status: 'committed' }
+app/runtime/transactions/runtime-transaction-engine.ts:52:  return { ...transaction, status: 'rolled_back' }
