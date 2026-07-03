@@ -125,7 +125,12 @@ if (!executiveAuthority.executionAllowed) {
     const executiveState =
   evaluateRuntimeExecutiveState(message, 'general')
 
-const result = await iaseveroCore(message, userId)
+const finalExecutionAllowed =
+      runtimeMaster.executionAllowed &&
+      executiveAuthority.executionAllowed &&
+      executiveState.executionAllowed
+
+    const result = await iaseveroCore(message, userId)
 
     const traceResponse = createRuntimeTraceNode(
       'chat.response.generated',
@@ -147,7 +152,7 @@ const result = await iaseveroCore(message, userId)
         healing: runtimeMaster.healing.decision,
         recovery: runtimeMaster.recovery.operationalState,
         correlationId: runtimeMaster.correlationId,
-        executionAllowed: runtimeMaster.executionAllowed,
+        executionAllowed: finalExecutionAllowed,
         executiveAuthority,
         executiveState,
         traceId: traceResponse.id,
