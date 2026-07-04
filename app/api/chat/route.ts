@@ -130,6 +130,24 @@ const finalExecutionAllowed =
       executiveAuthority.executionAllowed &&
       executiveState.executionAllowed
 
+    if (!finalExecutionAllowed) {
+      return NextResponse.json({
+        reply: 'Execução bloqueada pela autorização final do Runtime.',
+        job: null,
+        runtime: {
+          operationalState: runtimeMaster.operationalState,
+          governance: runtimeMaster.governance.decision,
+          integrity: runtimeMaster.integrity.integrity,
+          healing: runtimeMaster.healing.decision,
+          recovery: runtimeMaster.recovery.operationalState,
+          correlationId: runtimeMaster.correlationId,
+          executionAllowed: finalExecutionAllowed,
+          executiveAuthority,
+          executiveState,
+        }
+      })
+    }
+
     const result = await iaseveroCore(message, userId)
 
     const traceResponse = createRuntimeTraceNode(
