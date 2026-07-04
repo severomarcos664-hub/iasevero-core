@@ -13,6 +13,7 @@ import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-acti
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 import { createRuntimeTaskPlan } from '@/app/lib/orchestrator/runtime-task-planner'
+import { executeRuntimePipeline } from '@/app/lib/orchestrator/runtime-execution-pipeline'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -151,6 +152,12 @@ const finalExecutionAllowed =
 
     const runtimePlan = createRuntimeTaskPlan(message)
 
+    const pipelineResult = executeRuntimePipeline({
+      requestId: runtimeMaster.correlationId,
+      message,
+      provider: 'local',
+    })
+
     const result = await iaseveroCore(message, userId)
 
     const traceResponse = createRuntimeTraceNode(
@@ -167,6 +174,7 @@ const finalExecutionAllowed =
       reply: result.reply,
       job: result.job || null,
       plan: runtimePlan,
+      pipeline: pipelineResult,
       runtime: {
         operationalState: runtimeMaster.operationalState,
         governance: runtimeMaster.governance.decision,
