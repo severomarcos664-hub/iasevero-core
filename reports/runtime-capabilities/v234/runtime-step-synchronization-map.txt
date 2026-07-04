@@ -1,0 +1,29 @@
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:55:          ? 'Adaptive execution recommends retrying pending steps.'
+app/lib/runtime-core/runtime-task-planner.ts:1:export type RuntimeTaskStep = {
+app/lib/runtime-core/runtime-task-planner.ts:34:  steps: RuntimeTaskStep[]
+app/lib/runtime-core/runtime-task-planner.ts:89:  const steps: RuntimeTaskStep[] = [
+app/lib/runtime-core/runtime-task-planner.ts:131:    steps,
+app/lib/runtime-core/runtime-task-planner.ts:138:      `steps:${steps.length}`,
+app/lib/queue.ts:3:  steps: string[]
+app/lib/queue.ts:10:export function createJob(steps: string[]): Job {
+app/lib/queue.ts:12:  const job: Job = { id, steps, results: [], status: 'pending' }
+app/lib/queue.ts:22:  if (job.steps.length === 0) {
+app/lib/queue.ts:28:  const step = job.steps.shift()!
+app/lib/queue.ts:33:  if (job.steps.length === 0) {
+app/lib/orchestrator/runtime-execution-pipeline.ts:7:  markTaskRunning,
+app/lib/orchestrator/runtime-execution-pipeline.ts:8:  updateTaskStatus,
+app/lib/orchestrator/runtime-execution-pipeline.ts:97:  markTaskRunning(task.id)
+app/lib/orchestrator/runtime-execution-pipeline.ts:109:  updateTaskStatus(
+app/lib/orchestrator/queue-governor.ts:74:export function updateTaskStatus(
+app/lib/orchestrator/queue-governor.ts:95:export function markTaskRunning(id: string) {
+app/lib/orchestrator/queue-governor.ts:104:  return updateTaskStatus(id, 'running')
+app/lib/orchestrator/runtime-task-planner.ts:1:export type RuntimeTaskStep = {
+app/lib/orchestrator/runtime-task-planner.ts:14:  steps: RuntimeTaskStep[]
+app/lib/orchestrator/runtime-task-planner.ts:23:  const steps: RuntimeTaskStep[] = []
+app/lib/orchestrator/runtime-task-planner.ts:30:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:54:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:68:  if (steps.length === 0) {
+app/lib/orchestrator/runtime-task-planner.ts:69:    steps.push({
+app/lib/orchestrator/runtime-task-planner.ts:79:    steps
+app/api/chat/route.ts:155:    const pipelineResult = executeRuntimePipeline({
+app/api/chat/route.ts:177:      pipeline: pipelineResult,
