@@ -12,6 +12,7 @@ import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-deci
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+import { createRuntimeTaskPlan } from '@/app/lib/orchestrator/runtime-task-planner'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -148,6 +149,8 @@ const finalExecutionAllowed =
       })
     }
 
+    const runtimePlan = createRuntimeTaskPlan(message)
+
     const result = await iaseveroCore(message, userId)
 
     const traceResponse = createRuntimeTraceNode(
@@ -163,6 +166,7 @@ const finalExecutionAllowed =
     return NextResponse.json({
       reply: result.reply,
       job: result.job || null,
+      plan: runtimePlan,
       runtime: {
         operationalState: runtimeMaster.operationalState,
         governance: runtimeMaster.governance.decision,
