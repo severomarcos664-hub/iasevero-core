@@ -1,0 +1,11 @@
+app/lib/response-quality.ts:16:            ? 'planning'
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-task-planner.ts:30:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:54:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:69:    steps.push({
+app/lib/decision-engine.ts:18:  if (msg.includes('planejar') || msg.includes('plano') || msg.includes('roadmap')) return 'planning'
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:64:    const runtimeDecision = executeRuntimeDecisionEngine()

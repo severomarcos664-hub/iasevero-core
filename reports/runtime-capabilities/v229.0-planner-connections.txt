@@ -1,0 +1,14 @@
+app/lib/runtime-core/runtime-master-orchestrator.ts:26:    source: 'runtime-master-orchestrator',
+app/lib/runtime-core/runtime-execution-bridge.ts:1:import { runRuntimeMasterOrchestrator } from './runtime-master-orchestrator'
+app/lib/runtime-core/runtime-task-planner.ts:19:  source: 'runtime-task-planner'
+app/lib/runtime-core/runtime-task-planner.ts:126:    source: 'runtime-task-planner',
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:3:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:3:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:36:  source: 'runtime-execution-pipeline'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:103:      'runtime-execution-pipeline',
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:7:} from '@/app/lib/runtime-execution-pipeline/runtime-execution-pipeline'
+app/lib/orchestrator/runtime-execution-pipeline.ts:10:} from './queue-governor'
+app/lib/orchestrator/runtime-execution-pipeline.ts:40:    reason: 'runtime-execution-pipeline',
+app/lib/orchestrator/self-healing.ts:3:import { clearQueue } from './queue-governor'
+app/api/runtime/telemetry/route.ts:4:from '@/app/lib/runtime-core/runtime-master-orchestrator'
+app/api/runtime/status/route.ts:2:import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
