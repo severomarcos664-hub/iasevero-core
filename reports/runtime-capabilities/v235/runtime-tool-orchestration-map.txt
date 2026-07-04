@@ -1,0 +1,29 @@
+app/lib/iasevero-core.ts:16:export async function iaseveroCore(message: string, userId = 'local') {
+app/lib/iasevero-core.ts:26:    return { reply: direct, job: null, userId }
+app/lib/iasevero-core.ts:38:  return { reply, job: null, userId }
+app/lib/queue.ts:12:  const job: Job = { id, steps, results: [], status: 'pending' }
+app/lib/queue.ts:21:export function runNextStep(job: Job, exec: (cmd: string) => string) {
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-execution-pipeline.ts:21:export function executeRuntimePipeline(input: {
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-task-planner.ts:17:export function createRuntimeTaskPlan(
+app/api/chat/route.ts:4:import { iaseveroCore } from '@/app/lib/iasevero-core'
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:15:import { createRuntimeTaskPlan } from '@/app/lib/orchestrator/runtime-task-planner'
+app/api/chat/route.ts:16:import { executeRuntimePipeline } from '@/app/lib/orchestrator/runtime-execution-pipeline'
+app/api/chat/route.ts:35:      return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
+app/api/chat/route.ts:41:        job: null
+app/api/chat/route.ts:62:        job: null
+app/api/chat/route.ts:66:    const runtimeDecision = executeRuntimeDecisionEngine()
+app/api/chat/route.ts:76:        job: null,
+app/api/chat/route.ts:84:        job: null,
+app/api/chat/route.ts:121:    job: null,
+app/api/chat/route.ts:138:        job: null,
+app/api/chat/route.ts:153:    const runtimePlan = createRuntimeTaskPlan(message)
+app/api/chat/route.ts:155:    const pipelineResult = executeRuntimePipeline({
+app/api/chat/route.ts:161:    const result = await iaseveroCore(message, userId)
+app/api/chat/route.ts:175:      job: result.job || null,
+app/api/chat/route.ts:195:      job: null
+app/api/job/route.ts:13:    job: id ? getJob(id) || null : null
