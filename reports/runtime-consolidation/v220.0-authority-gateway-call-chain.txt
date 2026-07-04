@@ -1,0 +1,9 @@
+app/api/chat/route.ts:2:import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
+app/api/chat/route.ts:114:  evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()

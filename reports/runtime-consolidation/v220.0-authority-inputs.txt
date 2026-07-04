@@ -1,0 +1,20 @@
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:3:} from '../runtime-executive-authority/runtime-executive-authority'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:8:  source: 'runtime-executive-authority-gateway'
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:23:  const authority =
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:27:    gatewayId: `authority-gateway-${Date.now()}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:29:    source: 'runtime-executive-authority-gateway',
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:31:    executionAllowed:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:32:      authority.executionAllowed,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:35:      authority.coreState,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:38:      authority.executionPolicy,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:44:      authority.executionPriority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:47:      authority.executionRoute,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:50:      authority.executionAllowed
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:56:      `core:${authority.coreState}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:60:      `route:${authority.executionRoute}`,

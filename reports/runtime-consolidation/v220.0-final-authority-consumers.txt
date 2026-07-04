@@ -1,0 +1,14 @@
+app/api/chat/route.ts:103:      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+app/api/chat/route.ts:116:if (!executiveAuthority.executionAllowed) {
+app/api/chat/route.ts:128:const finalExecutionAllowed =
+app/api/chat/route.ts:129:      runtimeMaster.executionAllowed &&
+app/api/chat/route.ts:130:      executiveAuthority.executionAllowed &&
+app/api/chat/route.ts:131:      executiveState.executionAllowed
+app/api/chat/route.ts:133:    if (!finalExecutionAllowed) {
+app/api/chat/route.ts:144:          executionAllowed: finalExecutionAllowed,
+app/api/chat/route.ts:173:        executionAllowed: finalExecutionAllowed,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:14:  finalExecutionAllowed: boolean
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:51:  const finalExecutionAllowed =
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:60:    finalExecutionAllowed,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:74:      finalExecutionAllowed
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:79:      `allowed:${finalExecutionAllowed}`,
