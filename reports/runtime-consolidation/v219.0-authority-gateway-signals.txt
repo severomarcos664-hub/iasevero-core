@@ -1,0 +1,6 @@
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:10:  executionAllowed: boolean
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:31:    executionAllowed:
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:32:      authority.executionAllowed,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:50:      authority.executionAllowed
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
