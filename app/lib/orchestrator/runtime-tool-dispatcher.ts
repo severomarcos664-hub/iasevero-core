@@ -6,13 +6,21 @@ export type RuntimeToolExecution = {
 export function dispatchRuntimeTool(
   stepId: string,
   priority = 'normal',
-  operationalState = 'stable'
+  operationalState = 'stable',
+  executionAllowed = true
 ): RuntimeToolExecution {
+
+  if (!executionAllowed) {
+    return {
+      executor: 'queue-governor',
+      reason: 'Execução bloqueada pela governança.'
+    }
+  }
 
   if (operationalState === 'critical') {
     return {
       executor: 'queue-governor',
-      reason: 'Estado crítico detectado.'
+      reason: 'Estado operacional crítico.'
     }
   }
 
