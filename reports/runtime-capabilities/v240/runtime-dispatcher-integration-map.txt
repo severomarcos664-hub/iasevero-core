@@ -1,0 +1,12 @@
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:1:export type RuntimeToolExecution = {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:6:export function dispatchRuntimeTool(stepId: string): RuntimeToolExecution {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-execution-pipeline.ts:21:export function executeRuntimePipeline(input: {
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:16:import { executeRuntimePipeline } from '@/app/lib/orchestrator/runtime-execution-pipeline'
+app/api/chat/route.ts:66:    const runtimeDecision = executeRuntimeDecisionEngine()
+app/api/chat/route.ts:155:    const pipelineResult = executeRuntimePipeline({
