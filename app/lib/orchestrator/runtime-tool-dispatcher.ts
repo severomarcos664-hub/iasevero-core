@@ -8,7 +8,9 @@ export function dispatchRuntimeTool(
   priority = 'normal',
   operationalState = 'stable',
   executionAllowed = true,
-  governance = 'approved'
+  governance = 'approved',
+  confidence = 1,
+  provider = 'local'
 ): RuntimeToolExecution {
 
   if (!executionAllowed || governance !== 'approved') {
@@ -18,10 +20,24 @@ export function dispatchRuntimeTool(
     }
   }
 
+  if (confidence < 0.50) {
+    return {
+      executor: 'runtime-decision-engine',
+      reason: 'Baixa confiança detectada.'
+    }
+  }
+
   if (operationalState === 'critical') {
     return {
       executor: 'queue-governor',
       reason: 'Estado operacional crítico.'
+    }
+  }
+
+  if (provider !== 'local') {
+    return {
+      executor: 'runtime-decision-engine',
+      reason: 'Provider externo requer validação.'
     }
   }
 
