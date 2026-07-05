@@ -1,0 +1,254 @@
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:63:      `policy:${core.executionPolicy}`,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:65:      `priority:${core.executionPriority}`,
+app/lib/runtime-executive-state/runtime-executive-state.ts:91:      `policy:${provider.executionPolicy}`,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:114:      `priority:${schedulerPriority}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:23:  priority: RuntimeGovernancePriority
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:55:  const priority: RuntimeGovernancePriority =
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:70:    priority,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:82:      `REGL decision: ${decision} / priority: ${priority}.`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:86:      `priority:${priority}`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:18:    policyAllowed: matrix.globalExecutionAllowed,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:104:      `priority:${executionPriority}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:6:  policyId: string
+app/lib/runtime-core/runtime-action-policy-engine.ts:8:  source: 'runtime-action-policy-engine'
+app/lib/runtime-core/runtime-action-policy-engine.ts:34:    policyId: `action_policy_${Date.now()}`,
+app/lib/runtime-core/runtime-action-policy-engine.ts:36:    source: 'runtime-action-policy-engine',
+app/lib/runtime-core/runtime-action-policy-engine.ts:56:        ? 'Action policy: containment enforced.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:58:          ? 'Action policy: recovery mode required.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:60:            ? 'Action policy: monitoring required.'
+app/lib/runtime-core/runtime-action-policy-engine.ts:61:            : 'Action policy: execution approved.',
+app/lib/runtime-core/runtime-lane-supervisor.ts:30:    queue.filter(item => item.priority === 'critical').length
+app/lib/runtime-core/runtime-lane-supervisor.ts:33:    queue.filter(item => item.priority === 'high').length
+app/lib/runtime-core/runtime-lane-supervisor.ts:36:    queue.filter(item => item.priority === 'normal').length
+app/lib/runtime-core/runtime-lane-supervisor.ts:39:    queue.filter(item => item.priority === 'low').length
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:12:  priority: RuntimeSchedulePriority
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:23:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:25:  const priority: RuntimeSchedulePriority =
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:26:    policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:28:      : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:30:        : policy.policyLevel === 'preventive'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:32:          : policy.policyLevel === 'observe'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:39:    priority,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:40:    scheduledAction: policy.requiredAction,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:42:      priority === 'critical' ||
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:43:      priority === 'high',
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:45:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:47:        : priority === 'high'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:49:          : priority === 'normal'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:53:      priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:55:        : priority === 'high'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:57:          : priority === 'normal'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:61:      ...policy.reasoning,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:62:      `schedule:${priority}`,
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:64:        priority === 'critical'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:66:          : priority === 'high'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:68:            : priority === 'normal'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:24:  priority: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-core/runtime-strategic-intelligence.ts:65:  const priority =
+app/lib/runtime-core/runtime-strategic-intelligence.ts:75:    priority,
+app/lib/runtime-core/runtime-policy-engine.ts:7:  source: 'runtime-policy-engine'
+app/lib/runtime-core/runtime-policy-engine.ts:10:  policyLevel: 'normal' | 'observe' | 'preventive' | 'restricted' | 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:19:  const policyLevel =
+app/lib/runtime-core/runtime-policy-engine.ts:31:    policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:33:      : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:35:        : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:37:          : policyLevel === 'observe'
+app/lib/runtime-core/runtime-policy-engine.ts:43:    source: 'runtime-policy-engine',
+app/lib/runtime-core/runtime-policy-engine.ts:44:    allowed: policyLevel !== 'critical',
+app/lib/runtime-core/runtime-policy-engine.ts:46:    policyLevel,
+app/lib/runtime-core/runtime-policy-engine.ts:48:      policyLevel === 'critical'
+app/lib/runtime-core/runtime-policy-engine.ts:50:        : policyLevel === 'restricted'
+app/lib/runtime-core/runtime-policy-engine.ts:52:          : policyLevel === 'preventive'
+app/lib/runtime-core/runtime-policy-engine.ts:54:            : policyLevel === 'observe'
+app/lib/runtime-core/runtime-policy-engine.ts:60:      `policy:${policyLevel}`,
+app/lib/runtime-core/runtime-policy-enforcement.ts:66:    reason: 'runtime policy approved',
+app/lib/runtime-core/runtime-optimization-intelligence.ts:16:  priority: 'low' | 'medium' | 'high'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:37:  const priority =
+app/lib/runtime-core/runtime-optimization-intelligence.ts:54:    priority,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:70:      `priority:${priority}`,
+app/lib/runtime-core/runtime-master-orchestrator.ts:3:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:12:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-master-orchestrator.ts:32:    policy,
+app/lib/runtime-core/runtime-master-orchestrator.ts:47:      `policy:${policy.policyLevel}`,
+app/lib/runtime-core/runtime-event-bus.ts:6:  priority: 'low' | 'normal' | 'high' | 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:18:  priority: RuntimeQueuePriority
+app/lib/runtime-core/runtime-load-balancer.ts:26:  priority: RuntimeQueuePriority
+app/lib/runtime-core/runtime-load-balancer.ts:30:    priority === 'critical'
+app/lib/runtime-core/runtime-load-balancer.ts:32:      : priority === 'high'
+app/lib/runtime-core/runtime-load-balancer.ts:38:  enqueueRuntimeAction(action, priority)
+app/lib/runtime-core/runtime-load-balancer.ts:47:    priority,
+app/lib/runtime-core/runtime-load-balancer.ts:60:      `priority:${priority}`,
+app/lib/runtime-core/runtime-queue-manager.ts:11:  priority: RuntimeQueuePriority
+app/lib/runtime-core/runtime-queue-manager.ts:19:  priority: RuntimeQueuePriority = 'normal',
+app/lib/runtime-core/runtime-queue-manager.ts:29:    priority,
+app/lib/runtime-core/runtime-queue-manager.ts:46:    return weight[b.priority] - weight[a.priority]
+app/lib/runtime-core/runtime-execution-coordinator.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:8:  policyLevel: string
+app/lib/runtime-core/runtime-execution-coordinator.ts:19:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-execution-coordinator.ts:22:    policy.requiredAction,
+app/lib/runtime-core/runtime-execution-coordinator.ts:23:    policy.reason
+app/lib/runtime-core/runtime-execution-coordinator.ts:29:    policyLevel: policy.policyLevel,
+app/lib/runtime-core/runtime-execution-coordinator.ts:30:    allowed: policy.allowed,
+app/lib/runtime-core/runtime-execution-coordinator.ts:31:    selectedAction: policy.requiredAction,
+app/lib/runtime-core/runtime-execution-coordinator.ts:34:      policy.allowed
+app/lib/runtime-core/runtime-execution-coordinator.ts:35:        ? `Coordinator executou ação permitida: ${policy.requiredAction}.`
+app/lib/runtime-core/runtime-execution-coordinator.ts:36:        : `Coordinator executou ação restritiva: ${policy.requiredAction}.`,
+app/lib/runtime-core/runtime-execution-coordinator.ts:38:      ...policy.reasoning,
+app/lib/runtime-core/runtime-execution-coordinator.ts:48:      policy.policyLevel === 'critical'
+app/lib/runtime-core/runtime-execution-coordinator.ts:50:        : policy.policyLevel === 'restricted'
+app/lib/runtime-core/runtime-execution-coordinator.ts:54:    message: `Runtime execution coordinated with action ${policy.requiredAction}.`,
+app/lib/runtime-core/runtime-task-planner.ts:26:  priority:
+app/lib/runtime-core/runtime-task-planner.ts:81:  const priority =
+app/lib/runtime-core/runtime-task-planner.ts:129:    priority,
+app/lib/runtime-core/runtime-task-planner.ts:136:      `priority:${priority}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:11:  policyAllowed: boolean;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:31:    !input.policyAllowed ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:88:      `policyAllowed:${input.policyAllowed}`,
+app/lib/runtime-core/runtime-action-engine.ts:58:    priority:
+app/lib/runtime-core/runtime-governance-center.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-governance-center.ts:30:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-governance-center.ts:37:      : policy.requiredAction === 'recover'
+app/lib/runtime-core/runtime-governance-center.ts:64:      policy.requiredAction,
+app/lib/runtime-core/runtime-governance-center.ts:82:      ...policy.reasoning,
+app/lib/executive-runtime-core/executive-runtime-core.ts:86:      `policy:${governor.executionPolicy}`,
+app/lib/executive-runtime-core/executive-runtime-core.ts:88:      `priority:${coordinator.executionPriority}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:7:} from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:13:  const policy =
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:18:    policy.allowExecution
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:39:      policy.allowExecution,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:48:      `execution:${policy.allowExecution}`,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:6:  | 'priority-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:64:      ? 'priority-runtime'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:116:      `priority:${executionPriority}`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:99:      `policy:${executionPolicy}`,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:36:      : attention.priority === 'critical'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:38:        : attention.priority === 'high'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:40:          : attention.priority === 'medium'
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:58:    attentionPriority: attention.priority,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:16:  priority: 'low' | 'medium' | 'high' | 'critical'
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:37:  const priority =
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:52:    priority,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:63:      `priority:${priority}`,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:93:      `priority:${executionPriority}`,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:12:  | 'priority-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:32:      ? 'priority-runtime'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:101:      `priority:${pipeline.executionPriority}`,
+app/lib/runtime-execution-router/runtime-execution-router.ts:6:  | 'priority-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:22:    dispatch.dispatchTarget === 'priority-runtime'
+app/lib/runtime-execution-router/runtime-execution-router.ts:23:      ? 'priority-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:40:    executionLane === 'priority-lane'
+app/lib/runtime-execution-router/runtime-execution-router.ts:49:    executionLane === 'priority-lane'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:33:export type RuntimeExecutionPipelineReport = {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:55:RuntimeExecutionPipelineReport {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:137:      `priority:${scheduler.executionPriority}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:63:    governancePriority: governance.priority,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:67:    executionPriority: governance.priority,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:81:      `priority:${governance.priority}`,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:84:      `policy:${governance.executionPolicy}`,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:95:      `priority:${meta.attentionPriority}`,
+app/lib/orchestrator/runtime-autonomous-decision.ts:13:  priority:
+app/lib/orchestrator/runtime-autonomous-decision.ts:30:      priority: 'high',
+app/lib/orchestrator/runtime-autonomous-decision.ts:40:      priority: 'medium',
+app/lib/orchestrator/runtime-autonomous-decision.ts:48:    priority: 'low',
+app/lib/orchestrator/runtime-decision-engine.ts.bak:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts.bak:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.bak:81:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts.bak:83:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts.bak:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts.bak:90:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts.bak:257:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts.bak:262:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-decision-engine.ts.bak:289:    policy,
+app/lib/orchestrator/runtime-architecture-index.ts:16:  | 'policy'
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-architecture-index.ts:43:    file: 'runtime-policy.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:50:    file: 'runtime-policy-engine.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:51:    layer: 'policy',
+app/lib/orchestrator/policy.ts:25:        reason: `Comando bloqueado pela policy: ${pattern}`
+app/lib/orchestrator/memory-governor.ts:18:  const policy = getMemoryPolicy()
+app/lib/orchestrator/memory-governor.ts:19:  return history.slice(-policy.maxHistoryItems)
+app/lib/orchestrator/runtime-governor.ts:2:import type { RuntimePolicyDecision } from './runtime-policy'
+app/lib/orchestrator/runtime-governor.ts:14:  policy: RuntimePolicyDecision
+app/lib/orchestrator/runtime-governor.ts:16:  if (!policy.allowed) {
+app/lib/orchestrator/runtime-governor.ts:21:      reason: policy.reason,
+app/lib/orchestrator/runtime-governor.ts:22:      severity: policy.severity
+app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+app/lib/orchestrator/runtime-governor.ts:39:    safeModeRequired: policy.forceSafeMode,
+app/lib/orchestrator/runtime-governor.ts:41:    severity: policy.severity
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:82:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:84:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:88:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:91:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:258:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:263:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:290:    policy,
+app/lib/orchestrator/runtime-tool-dispatcher.ts:1:export type RuntimeToolExecution = {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:6:export function dispatchRuntimeTool(stepId: string): RuntimeToolExecution {
+app/lib/orchestrator/runtime-dependency-validator.ts:33:    'policy'
+app/lib/orchestrator/runtime-dependency-validator.ts:42:    'policy'
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:81:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:83:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:87:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:90:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:257:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:262:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:289:    policy,
+app/lib/orchestrator/runtime-execution-pipeline.ts:2:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:50:    policy,
+app/lib/orchestrator/runtime-execution-pipeline.ts:91:    priority: 'medium',
+app/lib/orchestrator/queue-governor.ts:9:  priority: RuntimeTaskPriority
+app/lib/orchestrator/queue-governor.ts:19:const priorityLevel: Record<RuntimeTaskPriority, number> = {
+app/lib/orchestrator/queue-governor.ts:27:    const priorityDiff = priorityLevel[b.priority] - priorityLevel[a.priority]
+app/lib/orchestrator/queue-governor.ts:28:    if (priorityDiff !== 0) return priorityDiff
+app/lib/orchestrator/runtime-decision-engine.ts:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:82:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:84:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts:88:  `policy:${policy.allowed ? 'allowed' : 'blocked'}:${policy.severity}`
+app/lib/orchestrator/runtime-decision-engine.ts:91:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:258:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:263:  `policy:${runtimePolicy.forceLocalMode}:${runtimePolicy.throttleRequests}`
+app/lib/orchestrator/runtime-decision-engine.ts:290:    policy,
+app/lib/orchestrator/decision-pipeline.ts:1:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/decision-pipeline.ts:16:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/decision-pipeline.ts:21:    allowed: policy.allowed && route.allowExternal !== false,
+app/lib/orchestrator/decision-pipeline.ts:22:    reason: policy.allowed ? route.reason : policy.reason
+app/lib/orchestrator/decision-pipeline.ts:25:  const risk = policy.risk
+app/lib/orchestrator/decision-pipeline.ts:38:    safe: policy.allowed,
+app/lib/orchestrator/decision-pipeline.ts:43:    allowed: policy.allowed,
+app/lib/orchestrator/routing.ts:4:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/routing.ts:25:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/routing.ts:27:  if (!policy.allowed) {
+app/lib/orchestrator/routing.ts:31:      reason: policy.reason
+app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:5:export type RuntimeOperationalState =
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:12:export function evaluateRuntimeOperationalStateEngine() {
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:16:  const operationalState: RuntimeOperationalState =
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:2:  evaluateRuntimeOperationalStateEngine,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:14:    evaluateRuntimeOperationalStateEngine()
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:12:import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+app/api/chat/route.ts:66:    const runtimeDecision = executeRuntimeDecisionEngine()

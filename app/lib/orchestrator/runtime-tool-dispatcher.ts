@@ -3,7 +3,25 @@ export type RuntimeToolExecution = {
   reason: string
 }
 
-export function dispatchRuntimeTool(stepId: string): RuntimeToolExecution {
+export function dispatchRuntimeTool(
+  stepId: string,
+  priority = 'normal',
+  operationalState = 'stable'
+): RuntimeToolExecution {
+
+  if (operationalState === 'critical') {
+    return {
+      executor: 'queue-governor',
+      reason: 'Estado crítico detectado.'
+    }
+  }
+
+  if (priority === 'high') {
+    return {
+      executor: 'runtime-decision-engine',
+      reason: 'Prioridade alta.'
+    }
+  }
 
   if (stepId.includes('plan')) {
     return {
