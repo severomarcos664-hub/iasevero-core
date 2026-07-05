@@ -7,10 +7,11 @@ export function dispatchRuntimeTool(
   stepId: string,
   priority = 'normal',
   operationalState = 'stable',
-  executionAllowed = true
+  executionAllowed = true,
+  governance = 'approved'
 ): RuntimeToolExecution {
 
-  if (!executionAllowed) {
+  if (!executionAllowed || governance !== 'approved') {
     return {
       executor: 'queue-governor',
       reason: 'Execução bloqueada pela governança.'
