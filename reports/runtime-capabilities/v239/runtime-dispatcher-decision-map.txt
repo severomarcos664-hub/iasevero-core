@@ -1,0 +1,17 @@
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:33:export type RuntimeExecutionPipelineReport = {
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:55:RuntimeExecutionPipelineReport {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:6:export function dispatchRuntimeTool(stepId: string): RuntimeToolExecution {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:66:    const runtimeDecision = executeRuntimeDecisionEngine()

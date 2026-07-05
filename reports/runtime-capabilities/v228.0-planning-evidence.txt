@@ -1,0 +1,124 @@
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:7:} from '../orchestrator/routing'
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:17:    workflowStable: matrix.cognitiveStable,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:2:import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-tool-orchestrator.ts:15:  workflowStable: boolean
+app/lib/runtime-core/runtime-tool-orchestrator.ts:26:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-tool-orchestrator.ts:52:    workflowStable:
+app/lib/runtime-core/runtime-tool-orchestrator.ts:53:      workflow.operationalState === 'stable',
+app/lib/runtime-core/runtime-tool-orchestrator.ts:63:      workflow.executionAllowed,
+app/lib/runtime-core/runtime-tool-orchestrator.ts:66:      workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:3:} from './runtime-workflow-coordinator'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:9:  workflowState: string
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:24:  const workflow = coordinateRuntimeWorkflow()
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:27:    !workflow.executionAllowed ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:28:    workflow.operationalState !== 'stable' ||
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:29:    workflow.pendingSteps > workflow.completedSteps + 3
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:32:    !workflow.executionAllowed
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:34:      : workflow.operationalState !== 'stable'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:45:    workflowState: workflow.operationalState,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:46:    executionAllowed: workflow.executionAllowed,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:53:        ? 'Adaptive execution approved: continue workflow.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:55:          ? 'Adaptive execution recommends retrying pending steps.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:57:            ? 'Adaptive execution recommends workflow stabilization.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:58:            : 'Adaptive execution blocked workflow.',
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:61:      `workflow:${workflow.operationalState}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:62:      `allowed:${workflow.executionAllowed}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:63:      `completed:${workflow.completedSteps}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:64:      `pending:${workflow.pendingSteps}`,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:1:import { getRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:12:  source: 'runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:39:    source: 'runtime-execution-orchestrator',
+app/lib/runtime-core/runtime-master-orchestrator.ts:26:    source: 'runtime-master-orchestrator',
+app/lib/runtime-core/runtime-state-transition-engine.ts:1:import { updateRuntimeRegistry } from '../orchestrator/runtime-state-registry'
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-tool-registry.ts:6:  | 'workflow'
+app/lib/runtime-core/runtime-tool-registry.ts:50:      id: 'workflow.analysis',
+app/lib/runtime-core/runtime-tool-registry.ts:55:      fallback: 'workflow.safe-analysis',
+app/lib/runtime-core/runtime-evaluation-engine.ts:11:} from './runtime-tool-orchestrator'
+app/lib/runtime-core/runtime-evaluation-engine.ts:42:    adaptive.workflowState === 'stable' &&
+app/lib/runtime-core/runtime-evaluation-engine.ts:104:            ? 'Runtime execution is degraded; review workflow and tools.'
+app/lib/runtime-core/runtime-workflow-coordinator.ts:6:  workflowId: string
+app/lib/runtime-core/runtime-workflow-coordinator.ts:31:    workflowId: `workflow_${Date.now()}`,
+app/lib/runtime-core/runtime-execution-bridge.ts:1:import { runRuntimeMasterOrchestrator } from './runtime-master-orchestrator'
+app/lib/runtime-core/runtime-task-planner.ts:19:  source: 'runtime-task-planner'
+app/lib/runtime-core/runtime-task-planner.ts:20:  taskId: string
+app/lib/runtime-core/runtime-task-planner.ts:34:  steps: RuntimeTaskStep[]
+app/lib/runtime-core/runtime-task-planner.ts:71:export function planRuntimeTask(message: string): RuntimeTaskPlan {
+app/lib/runtime-core/runtime-task-planner.ts:86:  const taskId =
+app/lib/runtime-core/runtime-task-planner.ts:87:    `task_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`
+app/lib/runtime-core/runtime-task-planner.ts:89:  const steps: RuntimeTaskStep[] = [
+app/lib/runtime-core/runtime-task-planner.ts:91:      id: `${taskId}_analysis`,
+app/lib/runtime-core/runtime-task-planner.ts:99:      id: `${taskId}_execution`,
+app/lib/runtime-core/runtime-task-planner.ts:101:      title: 'Prepare controlled execution plan',
+app/lib/runtime-core/runtime-task-planner.ts:107:      id: `${taskId}_validation`,
+app/lib/runtime-core/runtime-task-planner.ts:115:      id: `${taskId}_synthesis`,
+app/lib/runtime-core/runtime-task-planner.ts:126:    source: 'runtime-task-planner',
+app/lib/runtime-core/runtime-task-planner.ts:127:    taskId,
+app/lib/runtime-core/runtime-task-planner.ts:131:    steps,
+app/lib/runtime-core/runtime-task-planner.ts:133:      'Task planned with controlled execution, validation, and synthesis.',
+app/lib/runtime-core/runtime-task-planner.ts:138:      `steps:${steps.length}`,
+app/lib/runtime-core/runtime-adaptive-coordination.ts:10:  workflowStable: boolean;
+app/lib/runtime-core/runtime-adaptive-coordination.ts:41:    !input.workflowStable ||
+app/lib/runtime-core/runtime-adaptive-coordination.ts:70:        ? 'Stabilization recommended. Reduce autonomy and monitor workflow quality.'
+app/lib/runtime-core/runtime-adaptive-coordination.ts:87:      `workflowStable:${input.workflowStable}`,
+app/lib/runtime-core/runtime-cognitive-state.ts:1:import { evaluateRuntimeAwareness } from '../orchestrator/runtime-awareness'
+app/lib/runtime-core/runtime-cognitive-state.ts:2:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:3:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-decision-loop.ts:1:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+app/lib/response-quality.ts:15:          : msg.includes('planejar') || msg.includes('plano') || msg.includes('roadmap')
+app/lib/response-quality.ts:16:            ? 'planning'
+app/lib/queue.ts:3:  steps: string[]
+app/lib/queue.ts:10:export function createJob(steps: string[]): Job {
+app/lib/queue.ts:12:  const job: Job = { id, steps, results: [], status: 'pending' }
+app/lib/queue.ts:22:  if (job.steps.length === 0) {
+app/lib/queue.ts:28:  const step = job.steps.shift()!
+app/lib/queue.ts:29:  const result = exec(step)
+app/lib/queue.ts:31:  job.results.push(`[${step}] -> ${result}`)
+app/lib/queue.ts:33:  if (job.steps.length === 0) {
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-architecture-index.ts:94:    responsibility: 'gerar plano de recuperação e cooldown',
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-execution-pipeline.ts:16:  taskId?: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:87:  const task = addTask({
+app/lib/orchestrator/runtime-execution-pipeline.ts:97:  markTaskRunning(task.id)
+app/lib/orchestrator/runtime-execution-pipeline.ts:104:      taskId: task.id,
+app/lib/orchestrator/runtime-execution-pipeline.ts:110:    task.id,
+app/lib/orchestrator/runtime-execution-pipeline.ts:120:      taskId: task.id,
+app/lib/orchestrator/runtime-execution-pipeline.ts:127:    taskId: task.id,
+app/lib/orchestrator/queue-governor.ts:33:export function addTask(task: Omit<RuntimeTask, 'updatedAt' | 'status' | 'attempts' | 'maxAttempts'> & {
+app/lib/orchestrator/queue-governor.ts:41:    ...task,
+app/lib/orchestrator/queue-governor.ts:43:    status: task.status ?? 'queued',
+app/lib/orchestrator/queue-governor.ts:44:    attempts: task.attempts ?? 0,
+app/lib/orchestrator/queue-governor.ts:45:    maxAttempts: task.maxAttempts ?? 3,
+app/lib/orchestrator/queue-governor.ts:61:    queued: queue.filter((task) => task.status === 'queued').length,
+app/lib/orchestrator/queue-governor.ts:62:    running: queue.filter((task) => task.status === 'running').length,
+app/lib/orchestrator/queue-governor.ts:63:    completed: queue.filter((task) => task.status === 'completed').length,
+app/lib/orchestrator/queue-governor.ts:64:    failed: queue.filter((task) => task.status === 'failed').length,
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/queue-governor.ts:71:  return queue.find((task) => task.status === 'queued') ?? null
+app/lib/orchestrator/queue-governor.ts:79:  const task = queue.find((item) => item.id === id)
+app/lib/orchestrator/queue-governor.ts:81:  if (!task) {
+app/lib/orchestrator/queue-governor.ts:85:  task.status = status
+app/lib/orchestrator/queue-governor.ts:86:  task.updatedAt = new Date().toISOString()
+app/lib/orchestrator/queue-governor.ts:89:    task.reason = reason
+app/lib/orchestrator/queue-governor.ts:92:  return task
+app/lib/orchestrator/queue-governor.ts:96:  const task = queue.find((item) => item.id === id)
+app/lib/orchestrator/queue-governor.ts:98:  if (!task) {
+app/lib/orchestrator/queue-governor.ts:102:  task.attempts += 1
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-task-planner.ts:14:  steps: RuntimeTaskStep[]
+app/lib/orchestrator/runtime-task-planner.ts:23:  const steps: RuntimeTaskStep[] = []
+app/lib/orchestrator/runtime-task-planner.ts:30:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:54:    steps.push(
+app/lib/orchestrator/runtime-task-planner.ts:68:  if (steps.length === 0) {
+app/lib/orchestrator/runtime-task-planner.ts:69:    steps.push({
+app/lib/orchestrator/runtime-task-planner.ts:79:    steps
+app/lib/provider.ts:2:import type { ProviderRoute } from './orchestrator/routing'
+app/lib/decision-engine.ts:18:  if (msg.includes('planejar') || msg.includes('plano') || msg.includes('roadmap')) return 'planning'
+app/api/runtime/telemetry/route.ts:4:from '@/app/lib/runtime-core/runtime-master-orchestrator'
+app/api/runtime/status/route.ts:2:import { runRuntimeMasterOrchestrator } from '@/app/lib/runtime-core/runtime-master-orchestrator'
+app/api/chat/route.ts:6:import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
+app/api/chat/route.ts:7:import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
+app/api/chat/route.ts:8:import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
+app/api/chat/route.ts:64:    const runtimeDecision = executeRuntimeDecisionEngine()

@@ -1,5 +1,105 @@
 [
   {
+    "timestamp": "2026-07-04T23:15:23.624Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-07-04T23:15:23.622Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
+    "timestamp": "2026-07-04T22:59:01.269Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-07-04T22:59:01.268Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
+    "timestamp": "2026-07-04T22:20:24.577Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-07-04T22:20:24.576Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
+    "timestamp": "2026-07-04T22:07:48.761Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-07-04T22:07:48.759Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
+    "timestamp": "2026-06-26T23:53:11.376Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "local",
+    "awareness": "unknown",
+    "recovery": false,
+    "stabilization": "unknown",
+    "memoryMode": "unknown"
+  },
+  {
+    "timestamp": "2026-06-26T23:53:11.374Z",
+    "stable": true,
+    "provider": "local",
+    "mode": "hybrid",
+    "awareness": "low",
+    "recovery": false,
+    "stabilization": "stable",
+    "memoryMode": "session"
+  },
+  {
     "timestamp": "2026-05-23T12:22:27.016Z",
     "stable": true,
     "provider": "local",

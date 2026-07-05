@@ -1,0 +1,44 @@
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:15:export interface RuntimeExecutiveStateReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:33:export function evaluateRuntimeExecutiveState(
+app/lib/runtime-executive-state/runtime-executive-state.ts:36:): RuntimeExecutiveStateReport {
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:5:export interface RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:22:RuntimeExecutiveAuthorityGatewayReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:2:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:39:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:14:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:70:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:9:export interface RuntimeEnforcementAuthorityReport {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:31:export function evaluateRuntimeEnforcementAuthority(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:35:): RuntimeEnforcementAuthorityReport {
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:13:export type RuntimeOperationalIntegrationState =
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:19:export interface RuntimeOperationalIntegrationReport {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:24:  integrationState: RuntimeOperationalIntegrationState
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:44:export function evaluateRuntimeOperationalIntegration():
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:45:RuntimeOperationalIntegrationReport {
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:55:  const integrationState: RuntimeOperationalIntegrationState =
+app/lib/orchestrator/runtime-decision-engine.ts.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-decision-engine.ts.v185.bak:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts.v184.bak:23:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:6:  evaluateRuntimeExecutiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/executive-runtime-context/executive-runtime-context.ts:44:    evaluateRuntimeExecutiveState(message, intent)
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {

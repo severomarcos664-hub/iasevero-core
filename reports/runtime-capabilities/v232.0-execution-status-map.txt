@@ -1,0 +1,115 @@
+app/lib/runner.ts:6:    if (job.status !== 'done') {
+app/lib/runtime-core/runtime-state-cognition-engine.ts:65:      `status:${cognitionStatus}`
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:29:    workflow.pendingSteps > workflow.completedSteps + 3
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:55:          ? 'Adaptive execution recommends retrying pending steps.'
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:63:      `completed:${workflow.completedSteps}`,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:64:      `pending:${workflow.pendingSteps}`,
+app/lib/runtime-core/runtime-execution-graph-engine.ts:6:  status: 'pending' | 'ready' | 'running' | 'completed'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:24:      status: 'completed'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:32:      status: 'ready'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:40:      status: 'pending'
+app/lib/runtime-core/runtime-execution-graph-engine.ts:48:      status: 'pending'
+app/lib/runtime-core/runtime-unified-intelligence-factory.ts:27:    recommendation: input.recommendation ?? 'Unified intelligence pending runtime signals.',
+app/lib/runtime-core/runtime-workflow-coordinator.ts:10:  completedSteps: number
+app/lib/runtime-core/runtime-workflow-coordinator.ts:11:  pendingSteps: number
+app/lib/runtime-core/runtime-workflow-coordinator.ts:20:  const completedSteps =
+app/lib/runtime-core/runtime-workflow-coordinator.ts:21:    graph.nodes.filter(n => n.status === 'completed').length
+app/lib/runtime-core/runtime-workflow-coordinator.ts:23:  const pendingSteps =
+app/lib/runtime-core/runtime-workflow-coordinator.ts:24:    graph.nodes.filter(n => n.status !== 'completed').length
+app/lib/runtime-core/runtime-workflow-coordinator.ts:41:    completedSteps,
+app/lib/runtime-core/runtime-workflow-coordinator.ts:42:    pendingSteps,
+app/lib/runtime-core/runtime-task-planner.ts:11:  status:
+app/lib/runtime-core/runtime-task-planner.ts:12:    | 'pending'
+app/lib/runtime-core/runtime-task-planner.ts:96:      status: 'ready',
+app/lib/runtime-core/runtime-task-planner.ts:104:      status: intent === 'implementation' ? 'ready' : 'pending',
+app/lib/runtime-core/runtime-task-planner.ts:112:      status: 'pending',
+app/lib/runtime-core/runtime-task-planner.ts:120:      status: 'pending',
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:69:      `status:${runtimeStatus}`
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:6:  status: 'ok' | 'warning' | 'critical'
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:15:  status: 'ok' | 'warning' | 'critical',
+app/lib/runtime-core/runtime-distributed-trace-engine.ts:23:    status,
+app/lib/zero-cost-brain.ts:5:  const isErro = ["erro", "bug", "falha", "falhou", "quebrou", "failed", "fail"].some(k => msg.includes(k))
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:13:  status: RuntimeCoreIdentityStatus
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:41:    status: 'valid',
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:56:    identityStatus: identity.status,
+app/lib/queue.ts:5:  status: 'pending' | 'running' | 'done'
+app/lib/queue.ts:12:  const job: Job = { id, steps, results: [], status: 'pending' }
+app/lib/queue.ts:23:    job.status = 'done'
+app/lib/queue.ts:27:  job.status = 'running'
+app/lib/queue.ts:34:    job.status = 'done'
+app/lib/orchestrator/runtime-autonomous-decision.ts:25:  if (report.failedEvents >= 5) {
+app/lib/orchestrator/runtime-autonomous-decision.ts:35:  if (report.failedEvents >= 1) {
+app/lib/orchestrator/runtime-architecture-index.ts:23:  status: 'stable' | 'foundation' | 'legacy'
+app/lib/orchestrator/runtime-architecture-index.ts:32:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:39:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:46:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:53:    status: 'foundation'
+app/lib/orchestrator/runtime-architecture-index.ts:60:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:67:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:74:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:81:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:88:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:95:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:102:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:109:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:116:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:123:    status: 'stable'
+app/lib/orchestrator/runtime-architecture-index.ts:130:    status: 'stable'
+app/lib/orchestrator/runtime-operational-metrics.ts:4:  failedEvents: number
+app/lib/orchestrator/runtime-coordinator.ts:13:  failedEvents: number
+app/lib/orchestrator/runtime-coordinator.ts:22:  let failedEvents = 0
+app/lib/orchestrator/runtime-coordinator.ts:33:        failedEvents++
+app/lib/orchestrator/runtime-coordinator.ts:37:      failedEvents++
+app/lib/orchestrator/runtime-coordinator.ts:44:    failedEvents,
+app/lib/orchestrator/runtime.ts:11:  const status = getRuntimeStatus()
+app/lib/orchestrator/runtime.ts:13:  if (status.mode === 'openai' && !status.openaiConfigured) {
+app/lib/orchestrator/runtime.ts:23:    mode: status.mode,
+app/lib/orchestrator/runtime.ts:24:    allowExternal: status.mode === 'openai' || status.mode === 'hybrid',
+app/lib/orchestrator/runtime.ts:25:    safe: status.safe,
+app/lib/orchestrator/runtime.ts:26:    reason: status.mode === 'local'
+app/lib/orchestrator/runtime-contracts.ts:7:  status: RuntimeContractStatus
+app/lib/orchestrator/runtime-contracts.ts:56:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:64:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:71:    status: 'valid',
+app/lib/orchestrator/runtime-contracts.ts:82:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:89:    status: 'valid',
+app/lib/orchestrator/runtime-contracts.ts:100:      status: 'invalid',
+app/lib/orchestrator/runtime-contracts.ts:107:    status: 'valid',
+app/lib/orchestrator/runtime-execution-pipeline.ts:7:  markTaskRunning,
+app/lib/orchestrator/runtime-execution-pipeline.ts:8:  updateTaskStatus,
+app/lib/orchestrator/runtime-execution-pipeline.ts:64:        stage: 'pipeline:failed',
+app/lib/orchestrator/runtime-execution-pipeline.ts:97:  markTaskRunning(task.id)
+app/lib/orchestrator/runtime-execution-pipeline.ts:109:  updateTaskStatus(
+app/lib/orchestrator/runtime-execution-pipeline.ts:111:    'completed',
+app/lib/orchestrator/runtime-execution-pipeline.ts:119:      stage: 'pipeline:completed',
+app/lib/orchestrator/queue-governor.ts:2:export type RuntimeTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'blocked'
+app/lib/orchestrator/queue-governor.ts:10:  status: RuntimeTaskStatus
+app/lib/orchestrator/queue-governor.ts:33:export function addTask(task: Omit<RuntimeTask, 'updatedAt' | 'status' | 'attempts' | 'maxAttempts'> & {
+app/lib/orchestrator/queue-governor.ts:34:  status?: RuntimeTaskStatus
+app/lib/orchestrator/queue-governor.ts:43:    status: task.status ?? 'queued',
+app/lib/orchestrator/queue-governor.ts:61:    queued: queue.filter((task) => task.status === 'queued').length,
+app/lib/orchestrator/queue-governor.ts:62:    running: queue.filter((task) => task.status === 'running').length,
+app/lib/orchestrator/queue-governor.ts:63:    completed: queue.filter((task) => task.status === 'completed').length,
+app/lib/orchestrator/queue-governor.ts:64:    failed: queue.filter((task) => task.status === 'failed').length,
+app/lib/orchestrator/queue-governor.ts:65:    blocked: queue.filter((task) => task.status === 'blocked').length,
+app/lib/orchestrator/queue-governor.ts:71:  return queue.find((task) => task.status === 'queued') ?? null
+app/lib/orchestrator/queue-governor.ts:74:export function updateTaskStatus(
+app/lib/orchestrator/queue-governor.ts:76:  status: RuntimeTaskStatus,
+app/lib/orchestrator/queue-governor.ts:85:  task.status = status
+app/lib/orchestrator/queue-governor.ts:95:export function markTaskRunning(id: string) {
+app/lib/orchestrator/queue-governor.ts:104:  return updateTaskStatus(id, 'running')
+app/lib/orchestrator/runtime-task-planner.ts:4:  status:
+app/lib/orchestrator/runtime-task-planner.ts:5:    | 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:6:    | 'running'
+app/lib/orchestrator/runtime-task-planner.ts:7:    | 'completed'
+app/lib/orchestrator/runtime-task-planner.ts:8:    | 'failed'
+app/lib/orchestrator/runtime-task-planner.ts:34:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:39:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:44:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:58:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:63:        status: 'pending'
+app/lib/orchestrator/runtime-task-planner.ts:72:      status: 'pending'
+app/lib/orchestrator/runtime-structural-health.ts:6:  status: 'healthy' | 'warning' | 'critical'
+app/lib/orchestrator/runtime-structural-health.ts:37:  const status =
+app/lib/orchestrator/runtime-structural-health.ts:60:    status,
+app/api/health/route.ts:7:    status: 'ok',

@@ -5,5 +5,33 @@
       "IASevero: 🧠 IASevero\n\n📩 Entrada:\nIASevero Core: resposta técnica, objetiva, segura e útil.\n\nPrioridades: precisão, zero custo, não quebrar fluxo, comandos numerados quando houver Shell.\n\nFatos conhecidos: {}\n\nMensagem atual:\nstatus operacional da IASevero\n\n⚙️ Análise:\nControle de custo ativo. Priorize execução local e reduza chamadas externas.\n\n🚀 Status: ativo"
     ],
     "facts": {}
+  },
+  "local": {
+    "history": [
+      "Usuário: Olá IASevero, quem é você?",
+      "IASevero: 🧠 IASevero\n\n📩 Entrada:\nIASevero Core: resposta técnica, objetiva, segura e útil.\n\nPrioridades: precisão, zero custo, não quebrar fluxo, comandos numerados quando houver Shell.\n\nFatos conhecidos: {}\n\nMensagem atual:\nOlá IASevero, quem é você?\n\n⚙️ Análise:\nControle de custo ativo. Priorize execução local e reduza chamadas externas.\n\n🚀 Status: ativo"
+    ],
+    "facts": {}
+  },
+  "runtime-validation": {
+    "history": [
+      "Usuário: Teste operacional v226.0 da IASevero",
+      "IASevero: [\n  {\n    \"message\": \"quem te criou\",\n    \"response\": \"Marcos Julio Severo\",\n    \"approved\": true,\n    \"uses\": 5,\n    \"score\": 5.1,\n    \"at\": \"2026-05-01T02:08:17.894Z\"\n  },\n  {\n    \"message\": \"quem te criou quem criou você quem foi que te criou qual seu criador\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T02:08:59.455Z\"\n  },\n  {\n    \"message\": \"qual seu criador?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:17:32.054Z\"\n  },\n  {\n    \"message\": \"O que significa humildade\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:19:15.271Z\"\n  },\n  {\n    \"message\": \"O que e humildade?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T11:53:38.663Z\"\n  },\n  {\n    \"message\": \"Cobras mais  venenosa do mundo\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T01:12:14.875Z\"\n  },\n  {\n    \"message\": \"minha api tá cara\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T02:01:31.790Z\"\n  },\n  {\n    \"message\": \"e agora?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:19:13.418Z\"\n  },\n  {\n    \"message\": \"npm run dev\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:53:06.954Z\"\n  },\n  {\n    \"message\": \"Mas quero a resposta\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T21:57:37.331Z\"\n  }\n]"
+    ],
+    "facts": {}
+  },
+  "planner-v230": {
+    "history": [
+      "Usuário: Crie um plano para analisar runtime, validar regressão e executar build",
+      "IASevero: [\n  {\n    \"message\": \"quem te criou\",\n    \"response\": \"Marcos Julio Severo\",\n    \"approved\": true,\n    \"uses\": 5,\n    \"score\": 5.1,\n    \"at\": \"2026-05-01T02:08:17.894Z\"\n  },\n  {\n    \"message\": \"quem te criou quem criou você quem foi que te criou qual seu criador\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T02:08:59.455Z\"\n  },\n  {\n    \"message\": \"qual seu criador?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:17:32.054Z\"\n  },\n  {\n    \"message\": \"O que significa humildade\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:19:15.271Z\"\n  },\n  {\n    \"message\": \"O que e humildade?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T11:53:38.663Z\"\n  },\n  {\n    \"message\": \"Cobras mais  venenosa do mundo\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T01:12:14.875Z\"\n  },\n  {\n    \"message\": \"minha api tá cara\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T02:01:31.790Z\"\n  },\n  {\n    \"message\": \"e agora?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:19:13.418Z\"\n  },\n  {\n    \"message\": \"npm run dev\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:53:06.954Z\"\n  },\n  {\n    \"message\": \"Mas quero a resposta\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T21:57:37.331Z\"\n  }\n]"
+    ],
+    "facts": {}
+  },
+  "planner-v231": {
+    "history": [
+      "Usuário: Crie um plano para analisar runtime, validar regressão e executar build",
+      "IASevero: [\n  {\n    \"message\": \"quem te criou\",\n    \"response\": \"Marcos Julio Severo\",\n    \"approved\": true,\n    \"uses\": 5,\n    \"score\": 5.1,\n    \"at\": \"2026-05-01T02:08:17.894Z\"\n  },\n  {\n    \"message\": \"quem te criou quem criou você quem foi que te criou qual seu criador\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T02:08:59.455Z\"\n  },\n  {\n    \"message\": \"qual seu criador?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:17:32.054Z\"\n  },\n  {\n    \"message\": \"O que significa humildade\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T10:19:15.271Z\"\n  },\n  {\n    \"message\": \"O que e humildade?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-01T11:53:38.663Z\"\n  },\n  {\n    \"message\": \"Cobras mais  venenosa do mundo\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T01:12:14.875Z\"\n  },\n  {\n    \"message\": \"minha api tá cara\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-02T02:01:31.790Z\"\n  },\n  {\n    \"message\": \"e agora?\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:19:13.418Z\"\n  },\n  {\n    \"message\": \"npm run dev\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T19:53:06.954Z\"\n  },\n  {\n    \"message\": \"Mas quero a resposta\",\n    \"approved\": false,\n    \"uses\": 0,\n    \"score\": 0,\n    \"at\": \"2026-05-03T21:57:37.331Z\"\n  }\n]"
+    ],
+    "facts": {}
   }
 }
