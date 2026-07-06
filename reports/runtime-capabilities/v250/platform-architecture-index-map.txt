@@ -1,0 +1,15 @@
+# Platform Architecture Index Map
+
+Arquivo bruto removido do versionamento.
+
+Motivo:
+- O mapa bruto excedeu o limite do GitHub.
+- O relatório completo deve ser gerado sob demanda.
+- O Git deve preservar apenas documentação leve.
+
+Diretórios ignorados em auditorias futuras:
+- node_modules
+- .next
+- snapshots
+- .git
+- reports grandes
