@@ -6,7 +6,6 @@ import { iaseveroCore } from '@/app/lib/iasevero-core'
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
-import { runRuntimeExecutionBridge } from '@/app/lib/runtime-core/runtime-execution-bridge'
 import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
@@ -86,7 +85,7 @@ const consciousness = evaluateRuntimeConsciousnessIntegration()
       })
     }
 
-    const runtimeMaster = runRuntimeExecutionBridge(message, userId)
+    const runtimeMaster = decisionGate
 
     const traceRequest = createRuntimeTraceNode(
       'chat.request.received',
