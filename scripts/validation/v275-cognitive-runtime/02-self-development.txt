@@ -1,0 +1,53 @@
+OK: governed self-development proposal generated safely.
+{
+  "generatedAt": "2026-07-11T14:59:29.900Z",
+  "source": "runtime-governed-self-development",
+  "mode": "proposal-only",
+  "evidenceScore": 0.8267,
+  "governanceApproved": true,
+  "executionAllowed": false,
+  "directCodeMutationAllowed": false,
+  "status": "proposal-created",
+  "proposal": {
+    "id": "self-development-1783781969901",
+    "objectiveId": "improve-runtime-planning",
+    "title": "Governed improvement proposal: Improve planning quality while preserving governance",
+    "rationale": [
+      "runtime-evaluation:planning-quality=0.61 confidence=0.82",
+      "runtime-telemetry:workflow-completion-rate=0.74 confidence=0.87",
+      "runtime-memory:repeated-planning-failures=3 confidence=0.79"
+    ],
+    "expectedBenefits": [
+      "Improve runtime capability without bypassing the matrix.",
+      "Preserve traceability, reversibility and governance.",
+      "Generate measurable evidence before permanent adoption."
+    ],
+    "successCriteria": [
+      "Planning accuracy improves",
+      "No governance bypass occurs",
+      "All changes remain reversible"
+    ],
+    "riskScore": 20,
+    "reversible": true,
+    "requiresHumanApproval": true,
+    "allowedEnvironment": "sandbox-only",
+    "prohibitedActions": [
+      "Direct mutation of production code",
+      "Automatic push to remote repositories",
+      "Automatic credential or secret access",
+      "Unapproved external network access",
+      "Destructive file, database or infrastructure operations",
+      "Bypassing matrix, policy, governance or enforcement"
+    ]
+  },
+  "reasoning": [
+    "objective:improve-runtime-planning",
+    "evidenceScore:0.8267",
+    "riskScore:20",
+    "matrixApproved:true",
+    "ethicsApproved:true",
+    "integrityApproved:true",
+    "Direct production mutation remains prohibited."
+  ],
+  "recommendation": "Submit the proposal to matrix and human approval before sandbox execution."
+}

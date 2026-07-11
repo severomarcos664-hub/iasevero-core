@@ -1,0 +1,22 @@
+app/lib/iasevero-core.ts:3:import { buildDecision, validateDecisionAnswer } from './decision-engine'
+app/lib/iasevero-core.ts:30:  const decision = buildDecision({ message, facts, history })
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:3:export type RuntimeBrainKernelCoordination = {
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:12:export function coordinateRuntimeBrainKernel(): RuntimeBrainKernelCoordination {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/orchestrator/runtime-decision-engine.ts:22:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+app/lib/decision-engine.ts:23:export function buildDecision(input: DecisionInput) {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()

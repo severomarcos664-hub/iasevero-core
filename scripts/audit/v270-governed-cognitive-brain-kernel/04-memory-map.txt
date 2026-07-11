@@ -1,0 +1,389 @@
+app/lib/iasevero-core.ts:2:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+app/lib/iasevero-core.ts:4:import { localBrain } from './local-brain'
+app/lib/iasevero-core.ts:21:  const direct = localBrain(message, facts)
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:35:  reflectionState: string
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:104:    reflectionState:
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:105:      fabric.reflectionState,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:121:      `reflection:${fabric.reflectionState}`,
+app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+app/lib/runtime-core/runtime-adaptive-response.ts:29:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:43:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:57:      memoryMode: 'protected',
+app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+app/lib/runtime-core/runtime-adaptive-response.ts:84:    memoryMode: 'session',
+app/lib/runtime-core/runtime-retention-manager.ts:4:  maxSnapshots: number
+app/lib/runtime-core/runtime-retention-manager.ts:14:  const maxSnapshots = 100
+app/lib/runtime-core/runtime-retention-manager.ts:21:    maxSnapshots,
+app/lib/runtime-core/runtime-retention-manager.ts:28:      `maxSnapshots:${maxSnapshots}`,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:17:  snapshotRequired: boolean
+app/lib/runtime-core/runtime-execution-orchestrator.ts:49:    snapshotRequired: true,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:39:export interface CognitiveMemory {
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:104:  memory: CognitiveMemory;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:122:  retrieveMemory(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:125:  ): Promise<CognitiveMemory>;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:152:  consolidateMemory(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:153:    current: CognitiveMemory,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:155:  ): Promise<CognitiveMemory>;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:240:    memory: {
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:301:    const retrievedMemory = await adapters.retrieveMemory(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:308:      memory: retrievedMemory,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:457:    const consolidatedMemory = await adapters.consolidateMemory(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:458:      state.memory,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:472:      memory: consolidatedMemory,
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+app/lib/runtime-core/runtime-unified-context.ts:19:    brain,
+app/lib/runtime-core/runtime-unified-context.ts:20:    operational: brain.operational,
+app/lib/runtime-core/runtime-unified-context.ts:21:    globalState: brain.globalState,
+app/lib/runtime-core/runtime-unified-context.ts:22:    operationalScore: brain.operationalScore,
+app/lib/runtime-core/runtime-unified-context.ts:23:    recommendation: brain.recommendation,
+app/lib/runtime-core/runtime-contracts.ts:30:export type RuntimeMemoryMode =
+app/lib/runtime-core/runtime-contracts.ts:47:export type RuntimeSnapshotContract = {
+app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+app/lib/runtime-core/runtime-tool-registry.ts:2:  | 'memory'
+app/lib/runtime-core/runtime-tool-registry.ts:39:      id: 'memory.search',
+app/lib/runtime-core/runtime-tool-registry.ts:40:      category: 'memory',
+app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+app/lib/runtime-core/runtime-cognitive-state.ts:38:    memoryPressure: 90,
+app/lib/runtime-core/runtime-cognitive-state.ts:48:      'memory-pressure-high',
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:16:  memoryInfluence: boolean
+app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+app/lib/runtime-core/runtime-feedback-integration.ts:31:    memory.stabilityRate >= 90 &&
+app/lib/runtime-core/runtime-feedback-integration.ts:34:      : memory.stabilityRate >= 70
+app/lib/runtime-core/runtime-feedback-integration.ts:36:      : memory.stabilityRate >= 50
+app/lib/runtime-core/runtime-feedback-integration.ts:51:    memoryInfluence: true,
+app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+app/lib/runtime-core/runtime-feedback-integration.ts:86:      memoryInfluence: true,
+app/lib/runtime-core/runtime-decision-loop.ts:16:  snapshotRequired: boolean
+app/lib/runtime-core/runtime-decision-loop.ts:49:    snapshotRequired: execution.snapshotRequired,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:26:  const memory = context.brain.operationalMemory
+app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:3:export type RuntimeBrainKernelCoordination = {
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:5:  source: 'runtime-brain-kernel-coordinator'
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:12:export function coordinateRuntimeBrainKernel(): RuntimeBrainKernelCoordination {
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:17:    source: 'runtime-brain-kernel-coordinator',
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:3:export type RuntimeMemorySnapshot = {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:10:export type RuntimeMemoryPersistenceResult = {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:13:  totalSnapshots: number
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:21:const runtimeMemoryHistory: RuntimeMemorySnapshot[] = []
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:23:export function runRuntimeMemoryPersistenceLoop():
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:24:RuntimeMemoryPersistenceResult {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:28:  runtimeMemoryHistory.unshift({
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:35:  if (runtimeMemoryHistory.length > 25) {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:36:    runtimeMemoryHistory.pop()
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:39:  const totalSnapshots = runtimeMemoryHistory.length
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:42:    runtimeMemoryHistory.filter(
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:47:    runtimeMemoryHistory.filter(
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:52:    totalSnapshots === 0
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:54:      : Math.floor((stableCount / totalSnapshots) * 100)
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:73:    totalSnapshots,
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:79:      `snapshots:${totalSnapshots}`,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:2:  evaluateRuntimePersistenceMemory,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:39:  const memory =
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:40:    evaluateRuntimePersistenceMemory()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:50:      memory.runtimeEvolution !== 'degrading',
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:53:      memory.historicalStability >= 80,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:22:  reflectionState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:75:    reflectionState: bus.reflectionState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:100:      `reflection:${bus.reflectionState}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+app/lib/local-brain.ts:1:export function localBrain(message: string, facts: Record<string, string>): string | null {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:5:export type RuntimeReflectionState =
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:11:export interface RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:12:  reflectionId: string
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:16:  reflectionState: RuntimeReflectionState
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:37:RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:56:  const reflectionState: RuntimeReflectionState =
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:66:    reflectionId: `reflection-${Date.now()}`,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:70:    reflectionState,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:101:      `reflection:${reflectionState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:23:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:41:  reflectionState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:72:  const reflection =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:75:  const memory =
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:80:    reflection.pipelineStable &&
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:113:    reflectionState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:114:      reflection.reflectionState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:126:      reflection.adaptationScore,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:147:      `reflection:${reflection.reflectionState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:150:      `adaptation:${reflection.adaptationScore}`,
+app/lib/learning.ts:121:export function listMemory() {
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:14:export type RuntimePersistenceMemoryReport = {
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:15:  memoryId: string
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:19:  totalSnapshots: number
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:31:  snapshots: RuntimePersistenceRecord[]
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:34:export function evaluateRuntimePersistenceMemory():
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:35:RuntimePersistenceMemoryReport {
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:40:  const snapshots: RuntimePersistenceRecord[] = [
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:71:    snapshots.filter(
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:72:      snapshot => snapshot.runtimeStable
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:77:      (stableCount / snapshots.length) * 100
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:95:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:101:    totalSnapshots: snapshots.length,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:117:        ? 'Runtime persistence memory healthy.'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:119:          ? 'Runtime memory stable.'
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:123:      `snapshots:${snapshots.length}`,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:131:    snapshots,
+app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
+app/lib/memory.ts:6:type Memory = Record<string, any>
+app/lib/memory.ts:8:function load(): Memory {
+app/lib/memory.ts:16:function save(data: Memory) {
+app/lib/response-quality.ts:17:            : msg.includes('memória') || msg.includes('memory') || msg.includes('meu nome')
+app/lib/response-quality.ts:18:              ? 'memory'
+app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+app/lib/local-memory.ts:5:type UserMemory = {
+app/lib/local-memory.ts:10:type MemoryDB = Record<string, UserMemory>
+app/lib/local-memory.ts:17:function readMemory(): MemoryDB {
+app/lib/local-memory.ts:26:function writeMemory(data: MemoryDB) {
+app/lib/local-memory.ts:31:function getUser(db: MemoryDB, userId: string): UserMemory {
+app/lib/local-memory.ts:37:  const db = readMemory()
+app/lib/local-memory.ts:41:  writeMemory(db)
+app/lib/local-memory.ts:45:  const db = readMemory()
+app/lib/local-memory.ts:48:  writeMemory(db)
+app/lib/local-memory.ts:52:  const db = readMemory()
+app/lib/local-memory.ts:57:  const db = readMemory()
+app/lib/providers/local.ts:2:import { localIntelligence } from '../zero-cost-brain'
+app/lib/providers/local.ts:7:import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
+app/lib/providers/local.ts:80:  if (intent === 'memory') {
+app/lib/providers/local.ts:81:    return reply(JSON.stringify(listMemory(), null, 2))
+app/lib/orchestrator/runtime-graph-registry.ts:21:    module: 'RuntimeSnapshot',
+app/lib/orchestrator/runtime-graph-registry.ts:29:      'RuntimeSnapshot',
+app/lib/orchestrator/runtime-architecture-index.ts:7:  | 'memory'
+app/lib/orchestrator/runtime-architecture-index.ts:14:  | 'snapshot'
+app/lib/orchestrator/runtime-architecture-index.ts:70:    name: 'RuntimeMemory',
+app/lib/orchestrator/runtime-architecture-index.ts:71:    file: 'runtime-memory.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:72:    layer: 'memory',
+app/lib/orchestrator/runtime-architecture-index.ts:115:    responsibility: 'registrar snapshots de telemetria em memória',
+app/lib/orchestrator/runtime-architecture-index.ts:119:    name: 'RuntimeSnapshot',
+app/lib/orchestrator/runtime-architecture-index.ts:120:    file: 'runtime-snapshot.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:121:    layer: 'snapshot',
+app/lib/orchestrator/runtime-architecture-index.ts:122:    responsibility: 'persistir snapshots operacionais locais',
+app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/runtime-snapshot.ts:4:export type RuntimeSnapshot = {
+app/lib/orchestrator/runtime-snapshot.ts:12:  memoryMode: string
+app/lib/orchestrator/runtime-snapshot.ts:15:const SNAPSHOT_DIR = path.join(process.cwd(), 'runtime')
+app/lib/orchestrator/runtime-snapshot.ts:16:const SNAPSHOT_FILE = path.join(
+app/lib/orchestrator/runtime-snapshot.ts:17:  SNAPSHOT_DIR,
+app/lib/orchestrator/runtime-snapshot.ts:18:  'runtime-snapshots.json'
+app/lib/orchestrator/runtime-snapshot.ts:21:function ensureRuntimeSnapshotFile() {
+app/lib/orchestrator/runtime-snapshot.ts:23:  if (!fs.existsSync(SNAPSHOT_DIR)) {
+app/lib/orchestrator/runtime-snapshot.ts:24:    fs.mkdirSync(SNAPSHOT_DIR, { recursive: true })
+app/lib/orchestrator/runtime-snapshot.ts:27:  if (!fs.existsSync(SNAPSHOT_FILE)) {
+app/lib/orchestrator/runtime-snapshot.ts:29:      SNAPSHOT_FILE,
+app/lib/orchestrator/runtime-snapshot.ts:35:export function persistRuntimeSnapshot(
+app/lib/orchestrator/runtime-snapshot.ts:36:  snapshot?: RuntimeSnapshot
+app/lib/orchestrator/runtime-snapshot.ts:37:): RuntimeSnapshot {
+app/lib/orchestrator/runtime-snapshot.ts:39:  ensureRuntimeSnapshotFile()
+app/lib/orchestrator/runtime-snapshot.ts:43:      fs.readFileSync(SNAPSHOT_FILE, 'utf8')
+app/lib/orchestrator/runtime-snapshot.ts:46:  const safeSnapshot: RuntimeSnapshot = snapshot || {
+app/lib/orchestrator/runtime-snapshot.ts:54:    memoryMode: 'unknown'
+app/lib/orchestrator/runtime-snapshot.ts:58:    safeSnapshot,
+app/lib/orchestrator/runtime-snapshot.ts:63:    SNAPSHOT_FILE,
+app/lib/orchestrator/runtime-snapshot.ts:67:  return safeSnapshot
+app/lib/orchestrator/runtime-snapshot.ts:70:export function readRuntimeSnapshots():
+app/lib/orchestrator/runtime-snapshot.ts:71:RuntimeSnapshot[] {
+app/lib/orchestrator/runtime-snapshot.ts:73:  ensureRuntimeSnapshotFile()
+app/lib/orchestrator/runtime-snapshot.ts:76:    fs.readFileSync(SNAPSHOT_FILE, 'utf8')
+app/lib/orchestrator/memory-governor.ts:1:export type MemoryPolicy = {
+app/lib/orchestrator/memory-governor.ts:8:export function getMemoryPolicy(): MemoryPolicy {
+app/lib/orchestrator/memory-governor.ts:18:  const policy = getMemoryPolicy()
+app/lib/orchestrator/runtime-operational-memory.ts:1:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-operational-memory.ts:3:export type RuntimeOperationalMemory = {
+app/lib/orchestrator/runtime-operational-memory.ts:5:  snapshotCount: number
+app/lib/orchestrator/runtime-operational-memory.ts:9:  memoryModePattern: string
+app/lib/orchestrator/runtime-operational-memory.ts:23:export function buildRuntimeOperationalMemory(): RuntimeOperationalMemory {
+app/lib/orchestrator/runtime-operational-memory.ts:24:  const snapshots = readRuntimeSnapshots()
+app/lib/orchestrator/runtime-operational-memory.ts:25:  const total = snapshots.length
+app/lib/orchestrator/runtime-operational-memory.ts:30:      snapshotCount: 0,
+app/lib/orchestrator/runtime-operational-memory.ts:34:      memoryModePattern: 'unknown',
+app/lib/orchestrator/runtime-operational-memory.ts:40:  const recoveryCount = snapshots.filter((snapshot) => snapshot.recovery).length
+app/lib/orchestrator/runtime-operational-memory.ts:41:  const stableCount = snapshots.filter((snapshot) => snapshot.stable).length
+app/lib/orchestrator/runtime-operational-memory.ts:46:  const providerPattern = dominant(snapshots.map((snapshot) => snapshot.provider))
+app/lib/orchestrator/runtime-operational-memory.ts:47:  const memoryModePattern = dominant(snapshots.map((snapshot) => snapshot.memoryMode))
+app/lib/orchestrator/runtime-operational-memory.ts:74:    snapshotCount: total,
+app/lib/orchestrator/runtime-operational-memory.ts:78:    memoryModePattern,
+app/lib/orchestrator/runtime-operational-memory.ts:85:export type RuntimeMemoryEvent = {
+app/lib/orchestrator/runtime-operational-memory.ts:95:const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+app/lib/orchestrator/runtime-operational-memory.ts:98:  event: RuntimeMemoryEvent
+app/lib/orchestrator/runtime-operational-memory.ts:99:): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:100:  runtimeMemoryEvents.unshift(event)
+app/lib/orchestrator/runtime-operational-memory.ts:102:  if (runtimeMemoryEvents.length > 100) {
+app/lib/orchestrator/runtime-operational-memory.ts:103:    runtimeMemoryEvents.length = 100
+app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-operational-memory.ts:109:export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-state-registry.ts:11:  memoryPressure: number
+app/lib/orchestrator/runtime-state-registry.ts:23:  memoryPressure: 0,
+app/lib/orchestrator/runtime-awareness.ts:18:    registry.memoryPressure +
+app/lib/orchestrator/runtime-dependency-validator.ts:24:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:31:    'snapshot',
+app/lib/orchestrator/runtime-dependency-validator.ts:39:    'memory',
+app/lib/orchestrator/runtime-dependency-validator.ts:46:    'snapshot',
+app/lib/orchestrator/runtime-dependency-validator.ts:66:    'memory'
+app/lib/orchestrator/runtime-dependency-validator.ts:69:  snapshot: [
+app/lib/orchestrator/event-logger.ts:3:const memory: IASeveroEvent[] = []
+app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+app/lib/orchestrator/event-logger.ts:8:  if (memory.length > 1000) {
+app/lib/orchestrator/event-logger.ts:9:    memory.shift()
+app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+app/lib/orchestrator/runtime-contracts.ts:19:export type RuntimeMemoryContract = {
+app/lib/orchestrator/runtime-contracts.ts:20:  memoryMode: string
+app/lib/orchestrator/runtime-contracts.ts:21:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-contracts.ts:22:  memoryPressure: number
+app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+app/lib/orchestrator/runtime-event-processor.ts:8:} from './runtime-operational-memory'
+app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+app/lib/orchestrator/runtime-event-processor.ts:33:    actions.push('memory-registered')
+app/lib/orchestrator/metrics.ts:4:import { getMemoryPolicy } from './memory-governor'
+app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+app/lib/orchestrator/decision-memory.ts:27:export function clearDecisionMemory() {
+app/lib/orchestrator/central-runtime-core.ts:4:import { persistRuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/central-runtime-core.ts:19:  const snapshot = persistRuntimeSnapshot()
+app/lib/orchestrator/central-runtime-core.ts:26:    snapshot,
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:15:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-decision-engine.ts:22:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+app/lib/orchestrator/runtime-decision-engine.ts:133:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:135:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:140:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+app/lib/orchestrator/runtime-decision-engine.ts:147:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+app/lib/orchestrator/runtime-decision-engine.ts:227:persistRuntimeSnapshot({
+app/lib/orchestrator/runtime-decision-engine.ts:235:  memoryMode: memory.memoryMode
+app/lib/orchestrator/runtime-decision-engine.ts:240:  readRuntimeSnapshots()
+app/lib/orchestrator/runtime-decision-engine.ts:295:    memory,
+app/lib/orchestrator/runtime-causal-trace.ts:1:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-causal-trace.ts:5:  snapshotCount: number
+app/lib/orchestrator/runtime-causal-trace.ts:12:    memoryMode: string | null
+app/lib/orchestrator/runtime-causal-trace.ts:19:  const snapshots = readRuntimeSnapshots()
+app/lib/orchestrator/runtime-causal-trace.ts:20:  const latest = snapshots[0] ?? null
+app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+app/lib/orchestrator/runtime-causal-trace.ts:37:    snapshotCount: snapshots.length,
+app/lib/orchestrator/runtime-causal-trace.ts:44:      memoryMode: latest?.memoryMode ?? null,
+app/lib/orchestrator/runtime-memory.ts:3:export type RuntimeMemoryState = {
+app/lib/orchestrator/runtime-memory.ts:4:  memoryEnabled: boolean
+app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+app/lib/orchestrator/runtime-memory.ts:13:): RuntimeMemoryState {
+app/lib/orchestrator/runtime-memory.ts:16:      memoryEnabled: false,
+app/lib/orchestrator/runtime-memory.ts:17:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:26:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:27:      memoryMode: 'isolated',
+app/lib/orchestrator/runtime-memory.ts:36:      memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:37:      memoryMode: 'session',
+app/lib/orchestrator/runtime-memory.ts:45:    memoryEnabled: true,
+app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',
+app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/self-healing.ts:18:  clearDecisionMemory()
+app/lib/orchestrator/runtime-brain-matrix.ts:2:import { readRuntimeSnapshots } from './runtime-snapshot'
+app/lib/orchestrator/runtime-brain-matrix.ts:5:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+app/lib/orchestrator/runtime-brain-matrix.ts:10:  sourceOfTruth: 'runtime-brain-matrix'
+app/lib/orchestrator/runtime-brain-matrix.ts:16:  snapshots: {
+app/lib/orchestrator/runtime-brain-matrix.ts:18:    latest: ReturnType<typeof readRuntimeSnapshots>[number] | null
+app/lib/orchestrator/runtime-brain-matrix.ts:22:  operationalMemory: ReturnType<typeof buildRuntimeOperationalMemory>
+app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+app/lib/orchestrator/runtime-brain-matrix.ts:27:  const snapshots = readRuntimeSnapshots()
+app/lib/orchestrator/runtime-brain-matrix.ts:28:  const latest = snapshots[0] ?? null
+app/lib/orchestrator/runtime-brain-matrix.ts:31:  const operationalMemory = buildRuntimeOperationalMemory()
+app/lib/orchestrator/runtime-brain-matrix.ts:36:    sourceOfTruth: 'runtime-brain-matrix',
+app/lib/orchestrator/runtime-brain-matrix.ts:42:    snapshots: {
+app/lib/orchestrator/runtime-brain-matrix.ts:43:      total: snapshots.length,
+app/lib/orchestrator/runtime-brain-matrix.ts:48:    operationalMemory,
+app/lib/orchestrator/runtime-lifecycle-manager.ts:16:export type RuntimeLifecycleSnapshot = {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:22:let runtimeLifecycle: RuntimeLifecycleSnapshot = {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:28:export function getRuntimeLifecycle(): RuntimeLifecycleSnapshot {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:35:): RuntimeLifecycleSnapshot {
+app/lib/orchestrator/runtime-intelligence.ts:1:import type { RuntimeSnapshot } from './runtime-snapshot'
+app/lib/orchestrator/runtime-intelligence.ts:14:  snapshots: RuntimeSnapshot[]
+app/lib/orchestrator/runtime-intelligence.ts:17:  if (!snapshots.length) {
+app/lib/orchestrator/runtime-intelligence.ts:29:  const stableCount = snapshots.filter(
+app/lib/orchestrator/runtime-intelligence.ts:33:  const recoveryCount = snapshots.filter(
+app/lib/orchestrator/runtime-intelligence.ts:40:  for (const snapshot of snapshots) {
+app/lib/orchestrator/runtime-intelligence.ts:43:      snapshot.provider,
+app/lib/orchestrator/runtime-intelligence.ts:44:      (providerMap.get(snapshot.provider) || 0) + 1
+app/lib/orchestrator/runtime-intelligence.ts:48:      snapshot.mode,
+app/lib/orchestrator/runtime-intelligence.ts:49:      (modeMap.get(snapshot.mode) || 0) + 1
+app/lib/orchestrator/runtime-intelligence.ts:62:    Math.floor((stableCount / snapshots.length) * 100)
+app/lib/orchestrator/runtime-intelligence.ts:65:    Math.floor((recoveryCount / snapshots.length) * 100)
+app/lib/router.ts:4:  | 'memory'
+app/lib/router.ts:16:  if (m.includes('memoria') || m.includes('memória')) return 'memory'
+app/lib/decision-engine.ts:17:  if (msg.includes('memória') || msg.includes('memory') || msg.includes('qual meu nome') || msg.includes('meu nome?')) return 'memory-query'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:5:export type RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:11:  memoryId: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:13:  source: 'runtime-memory-consolidation'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:17:  reflectionState: string
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:24:  memoryStrength: number
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:35:  const reflection =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:38:  const memoryStrength =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:39:    reflection.adaptationScore >= 90 &&
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:40:    reflection.pipelineStable
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:42:      : reflection.pipelineStable
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:47:    !reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:49:      : memoryStrength >= 90
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:54:    memoryId: `memory-${Date.now()}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:56:    source: 'runtime-memory-consolidation',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:60:    reflectionState:
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:61:      reflection.reflectionState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:64:      reflection.integrationState,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:67:      reflection.executionAllowed,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:70:      reflection.pipelineStable,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:73:      reflection.adaptationScore,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:75:    memoryStrength,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:78:      reflection.queueUtilization,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:81:      reflection.consensusRatio,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:84:      reflection.executionAllowed
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:85:        ? 'Runtime memory consolidation active.'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:86:        : 'Runtime memory consolidation restricted.',
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:90:      `reflection:${reflection.reflectionState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:91:      `integration:${reflection.integrationState}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:92:      `allowed:${reflection.executionAllowed}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:93:      `stable:${reflection.pipelineStable}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:94:      `adaptation:${reflection.adaptationScore}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:95:      `memoryStrength:${memoryStrength}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:96:      `queue:${reflection.queueUtilization}`,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:97:      `consensus:${reflection.consensusRatio}`,

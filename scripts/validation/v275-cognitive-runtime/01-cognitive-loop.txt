@@ -1,0 +1,21 @@
+OK: governed cognitive core loop completed successfully.
+{
+  "objective": "objective-improve-planning",
+  "completed": true,
+  "stopReason": "objective-completed",
+  "iterations": 1,
+  "progressScore": 100,
+  "accumulatedRisk": 10,
+  "memoryEvidence": 2,
+  "phases": [
+    "observe",
+    "remember",
+    "plan",
+    "authorize",
+    "execute",
+    "evaluate",
+    "learn",
+    "stop"
+  ],
+  "recommendation": "Objective completed within matrix, policy and risk constraints."
+}

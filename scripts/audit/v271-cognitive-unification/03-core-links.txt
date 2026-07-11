@@ -1,0 +1,133 @@
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+app/lib/runtime-core/runtime-state-transition-engine.ts:2:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+app/lib/runtime-core/runtime-state-transition-engine.ts:24:  const loop = runRuntimeDecisionLoop()
+app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+app/lib/runtime-core/runtime-contracts.ts:30:export type RuntimeMemoryMode =
+app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:6:  evaluateRuntimeDecisionFusion,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:31:  const fusion = evaluateRuntimeDecisionFusion()
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-core/runtime-cognitive-state.ts:3:import { analyzeRuntimeIntelligence } from '../orchestrator/runtime-intelligence'
+app/lib/runtime-core/runtime-cognitive-state.ts:57:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:24:export function evaluateRuntimeDecisionFusion(): RuntimeFusionDecision {
+app/lib/runtime-core/runtime-decision-loop.ts:3:export type RuntimeDecisionLoopResult = {
+app/lib/runtime-core/runtime-decision-loop.ts:20:export function runRuntimeDecisionLoop(): RuntimeDecisionLoopResult {
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:3:export type RuntimeBrainKernelCoordination = {
+app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:12:export function coordinateRuntimeBrainKernel(): RuntimeBrainKernelCoordination {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:3:export type RuntimeMemorySnapshot = {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:10:export type RuntimeMemoryPersistenceResult = {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:21:const runtimeMemoryHistory: RuntimeMemorySnapshot[] = []
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:23:export function runRuntimeMemoryPersistenceLoop():
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:24:RuntimeMemoryPersistenceResult {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:28:  runtimeMemoryHistory.unshift({
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:35:  if (runtimeMemoryHistory.length > 25) {
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:36:    runtimeMemoryHistory.pop()
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:39:  const totalSnapshots = runtimeMemoryHistory.length
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:42:    runtimeMemoryHistory.filter(
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:47:    runtimeMemoryHistory.filter(
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:5:export function evaluateUnifiedRuntimeIntelligence() {
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:6:  const unified = evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+app/lib/orchestrator/runtime-graph-registry.ts:5:    module: 'RuntimeContext',
+app/lib/orchestrator/runtime-graph-registry.ts:11:      'RuntimeContext'
+app/lib/orchestrator/runtime-graph-registry.ts:17:      'RuntimeContext'
+app/lib/orchestrator/runtime-graph-registry.ts:27:    module: 'RuntimeIntelligence',
+app/lib/orchestrator/runtime-graph-registry.ts:37:      'RuntimeIntelligence'
+app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-architecture-index.ts:35:    name: 'RuntimeContext',
+app/lib/orchestrator/runtime-architecture-index.ts:49:    name: 'RuntimeIntelligencePolicy',
+app/lib/orchestrator/runtime-architecture-index.ts:70:    name: 'RuntimeMemory',
+app/lib/orchestrator/runtime-architecture-index.ts:126:    name: 'RuntimeIntelligence',
+app/lib/orchestrator/runtime-architecture-auditor.ts:4:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-architecture-auditor.ts:18:  const intelligence = analyzeRuntimeIntelligence([])
+app/lib/orchestrator/runtime-operational-memory.ts:85:export type RuntimeMemoryEvent = {
+app/lib/orchestrator/runtime-operational-memory.ts:95:const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+app/lib/orchestrator/runtime-operational-memory.ts:98:  event: RuntimeMemoryEvent
+app/lib/orchestrator/runtime-operational-memory.ts:99:): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:100:  runtimeMemoryEvents.unshift(event)
+app/lib/orchestrator/runtime-operational-memory.ts:102:  if (runtimeMemoryEvents.length > 100) {
+app/lib/orchestrator/runtime-operational-memory.ts:103:    runtimeMemoryEvents.length = 100
+app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-operational-memory.ts:109:export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+app/lib/orchestrator/runtime-policy-engine.ts:1:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-policy-engine.ts:20:export function evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-policy-engine.ts:21:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:4:export type RuntimeContext = {
+app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+app/lib/orchestrator/runtime-context.ts:59:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+app/lib/orchestrator/runtime-context.ts:75:): RuntimeContext {
+app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+app/lib/orchestrator/runtime-supervisor.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-supervisor.ts:19:  intelligence: RuntimeIntelligenceReport,
+app/lib/orchestrator/runtime.ts:3:export type RuntimeDecision = {
+app/lib/orchestrator/runtime.ts:10:export function resolveRuntimeDecision(): RuntimeDecision {
+app/lib/orchestrator/runtime-contracts.ts:19:export type RuntimeMemoryContract = {
+app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:16:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+app/lib/orchestrator/runtime-decision-engine.ts:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+app/lib/orchestrator/runtime-decision-engine.ts:22:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:63:  let context = createRuntimeContext({
+app/lib/orchestrator/runtime-decision-engine.ts:133:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:239:const intelligence = analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-decision-engine.ts:253:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-memory.ts:3:export type RuntimeMemoryState = {
+app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+app/lib/orchestrator/runtime-memory.ts:13:): RuntimeMemoryState {
+app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+app/lib/orchestrator/runtime-structural-health.ts:2:import type { RuntimeIntelligenceReport } from './runtime-intelligence'
+app/lib/orchestrator/runtime-structural-health.ts:13:  intelligence: RuntimeIntelligenceReport
+app/lib/orchestrator/runtime-intelligence.ts:3:export type RuntimeIntelligenceReport = {
+app/lib/orchestrator/runtime-intelligence.ts:13:export function analyzeRuntimeIntelligence(
+app/lib/orchestrator/runtime-intelligence.ts:15:): RuntimeIntelligenceReport {
+app/lib/orchestrator/routing.ts:1:import { resolveRuntimeDecision } from './runtime'
+app/lib/orchestrator/routing.ts:16:  const runtime = resolveRuntimeDecision()
+app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:11:    evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:5:export type RuntimeMemoryState =
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =

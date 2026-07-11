@@ -1,0 +1,1166 @@
+scripts/audit/v271-cognitive-unification/03-core-links.txt:1:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:2:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+scripts/audit/v271-cognitive-unification/03-core-links.txt:3:app/lib/runtime-core/runtime-state-transition-engine.ts:2:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:4:app/lib/runtime-core/runtime-state-transition-engine.ts:24:  const loop = runRuntimeDecisionLoop()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:5:app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:6:app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+scripts/audit/v271-cognitive-unification/03-core-links.txt:7:app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+scripts/audit/v271-cognitive-unification/03-core-links.txt:8:app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:9:app/lib/runtime-core/runtime-contracts.ts:30:export type RuntimeMemoryMode =
+scripts/audit/v271-cognitive-unification/03-core-links.txt:10:app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+scripts/audit/v271-cognitive-unification/03-core-links.txt:11:app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:6:  evaluateRuntimeDecisionFusion,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:12:app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:31:  const fusion = evaluateRuntimeDecisionFusion()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:13:app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:14:app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:15:app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:18:app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:19:app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:20:app/lib/runtime-core/runtime-decision-fusion-engine.ts:24:export function evaluateRuntimeDecisionFusion(): RuntimeFusionDecision {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:21:app/lib/runtime-core/runtime-decision-loop.ts:3:export type RuntimeDecisionLoopResult = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:22:app/lib/runtime-core/runtime-decision-loop.ts:20:export function runRuntimeDecisionLoop(): RuntimeDecisionLoopResult {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:23:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:3:export type RuntimeBrainKernelCoordination = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:24:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:12:export function coordinateRuntimeBrainKernel(): RuntimeBrainKernelCoordination {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:25:app/lib/runtime-core/runtime-memory-persistence-loop.ts:3:export type RuntimeMemorySnapshot = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:26:app/lib/runtime-core/runtime-memory-persistence-loop.ts:10:export type RuntimeMemoryPersistenceResult = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:27:app/lib/runtime-core/runtime-memory-persistence-loop.ts:21:const runtimeMemoryHistory: RuntimeMemorySnapshot[] = []
+scripts/audit/v271-cognitive-unification/03-core-links.txt:28:app/lib/runtime-core/runtime-memory-persistence-loop.ts:23:export function runRuntimeMemoryPersistenceLoop():
+scripts/audit/v271-cognitive-unification/03-core-links.txt:29:app/lib/runtime-core/runtime-memory-persistence-loop.ts:24:RuntimeMemoryPersistenceResult {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:30:app/lib/runtime-core/runtime-memory-persistence-loop.ts:28:  runtimeMemoryHistory.unshift({
+scripts/audit/v271-cognitive-unification/03-core-links.txt:31:app/lib/runtime-core/runtime-memory-persistence-loop.ts:35:  if (runtimeMemoryHistory.length > 25) {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:32:app/lib/runtime-core/runtime-memory-persistence-loop.ts:36:    runtimeMemoryHistory.pop()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:33:app/lib/runtime-core/runtime-memory-persistence-loop.ts:39:  const totalSnapshots = runtimeMemoryHistory.length
+scripts/audit/v271-cognitive-unification/03-core-links.txt:34:app/lib/runtime-core/runtime-memory-persistence-loop.ts:42:    runtimeMemoryHistory.filter(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:35:app/lib/runtime-core/runtime-memory-persistence-loop.ts:47:    runtimeMemoryHistory.filter(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:36:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:37:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:41:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:42:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:43:app/lib/orchestrator/runtime-graph-registry.ts:5:    module: 'RuntimeContext',
+scripts/audit/v271-cognitive-unification/03-core-links.txt:44:app/lib/orchestrator/runtime-graph-registry.ts:11:      'RuntimeContext'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:45:app/lib/orchestrator/runtime-graph-registry.ts:17:      'RuntimeContext'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:48:app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:49:app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:50:app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+scripts/audit/v271-cognitive-unification/03-core-links.txt:51:app/lib/orchestrator/runtime-architecture-index.ts:35:    name: 'RuntimeContext',
+scripts/audit/v271-cognitive-unification/03-core-links.txt:53:app/lib/orchestrator/runtime-architecture-index.ts:70:    name: 'RuntimeMemory',
+scripts/audit/v271-cognitive-unification/03-core-links.txt:57:app/lib/orchestrator/runtime-operational-memory.ts:85:export type RuntimeMemoryEvent = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:58:app/lib/orchestrator/runtime-operational-memory.ts:95:const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+scripts/audit/v271-cognitive-unification/03-core-links.txt:59:app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:60:app/lib/orchestrator/runtime-operational-memory.ts:98:  event: RuntimeMemoryEvent
+scripts/audit/v271-cognitive-unification/03-core-links.txt:61:app/lib/orchestrator/runtime-operational-memory.ts:99:): RuntimeMemoryEvent[] {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:62:app/lib/orchestrator/runtime-operational-memory.ts:100:  runtimeMemoryEvents.unshift(event)
+scripts/audit/v271-cognitive-unification/03-core-links.txt:63:app/lib/orchestrator/runtime-operational-memory.ts:102:  if (runtimeMemoryEvents.length > 100) {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:64:app/lib/orchestrator/runtime-operational-memory.ts:103:    runtimeMemoryEvents.length = 100
+scripts/audit/v271-cognitive-unification/03-core-links.txt:65:app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+scripts/audit/v271-cognitive-unification/03-core-links.txt:66:app/lib/orchestrator/runtime-operational-memory.ts:109:export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:67:app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+scripts/audit/v271-cognitive-unification/03-core-links.txt:68:app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:69:app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:73:app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:74:app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:75:app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:76:app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:77:app/lib/orchestrator/runtime-context.ts:4:export type RuntimeContext = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:78:app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:79:app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+scripts/audit/v271-cognitive-unification/03-core-links.txt:80:app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:81:app/lib/orchestrator/runtime-context.ts:59:): RuntimeContext {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:82:app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+scripts/audit/v271-cognitive-unification/03-core-links.txt:83:app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:84:app/lib/orchestrator/runtime-context.ts:75:): RuntimeContext {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:85:app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:86:app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:87:app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:90:app/lib/orchestrator/runtime.ts:3:export type RuntimeDecision = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:91:app/lib/orchestrator/runtime.ts:10:export function resolveRuntimeDecision(): RuntimeDecision {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:92:app/lib/orchestrator/runtime-contracts.ts:19:export type RuntimeMemoryContract = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:93:app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+scripts/audit/v271-cognitive-unification/03-core-links.txt:94:app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+scripts/audit/v271-cognitive-unification/03-core-links.txt:95:app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:96:app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+scripts/audit/v271-cognitive-unification/03-core-links.txt:97:app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:98:app/lib/orchestrator/runtime-decision-engine.ts:16:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:99:app/lib/orchestrator/runtime-decision-engine.ts:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:100:app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:101:app/lib/orchestrator/runtime-decision-engine.ts:22:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:102:app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:103:app/lib/orchestrator/runtime-decision-engine.ts:63:  let context = createRuntimeContext({
+scripts/audit/v271-cognitive-unification/03-core-links.txt:104:app/lib/orchestrator/runtime-decision-engine.ts:133:const memory = evaluateRuntimeMemory(context)
+scripts/audit/v271-cognitive-unification/03-core-links.txt:105:app/lib/orchestrator/runtime-decision-engine.ts:239:const intelligence = analyzeRuntimeIntelligence(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:106:app/lib/orchestrator/runtime-decision-engine.ts:253:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:107:app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:108:app/lib/orchestrator/runtime-memory.ts:3:export type RuntimeMemoryState = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:109:app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:110:app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/03-core-links.txt:111:app/lib/orchestrator/runtime-memory.ts:13:): RuntimeMemoryState {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:112:app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:113:app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:114:app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:115:app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/03-core-links.txt:121:app/lib/orchestrator/routing.ts:1:import { resolveRuntimeDecision } from './runtime'
+scripts/audit/v271-cognitive-unification/03-core-links.txt:122:app/lib/orchestrator/routing.ts:16:  const runtime = resolveRuntimeDecision()
+scripts/audit/v271-cognitive-unification/03-core-links.txt:123:app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:124:app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+scripts/audit/v271-cognitive-unification/03-core-links.txt:125:app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:128:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:5:export type RuntimeMemoryState =
+scripts/audit/v271-cognitive-unification/03-core-links.txt:129:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:130:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+scripts/audit/v271-cognitive-unification/03-core-links.txt:131:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+scripts/audit/v271-cognitive-unification/03-core-links.txt:132:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {
+scripts/audit/v271-cognitive-unification/03-core-links.txt:133:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:2:app/lib/context-smart.ts:1:import { contextSummary } from './context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:3:app/lib/context-smart.ts:3:export function smartContext(userId: string) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:4:app/lib/context-smart.ts:4:  const raw = contextSummary(userId)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:5:app/lib/context-smart.ts:20:  if (lower.includes('memoria') || lower.includes('contexto')) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:6:app/lib/context-smart.ts:21:    insights.push('Usuário interessado em memória e contexto')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:14:app/lib/runtime-executive-authority/runtime-executive-authority.ts:5:export interface RuntimeExecutiveAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:15:app/lib/runtime-executive-authority/runtime-executive-authority.ts:6:  authorityId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:16:app/lib/runtime-executive-authority/runtime-executive-authority.ts:8:  source: 'runtime-executive-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:17:app/lib/runtime-executive-authority/runtime-executive-authority.ts:10:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:18:app/lib/runtime-executive-authority/runtime-executive-authority.ts:13:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:19:app/lib/runtime-executive-authority/runtime-executive-authority.ts:16:  executionPriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:20:app/lib/runtime-executive-authority/runtime-executive-authority.ts:17:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:21:app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:22:app/lib/runtime-executive-authority/runtime-executive-authority.ts:24:RuntimeExecutiveAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:23:app/lib/runtime-executive-authority/runtime-executive-authority.ts:30:    authorityId:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:24:app/lib/runtime-executive-authority/runtime-executive-authority.ts:31:      `runtime-authority-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:25:app/lib/runtime-executive-authority/runtime-executive-authority.ts:37:      'runtime-executive-authority',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:26:app/lib/runtime-executive-authority/runtime-executive-authority.ts:39:    executionAllowed:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:27:app/lib/runtime-executive-authority/runtime-executive-authority.ts:40:      core.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:28:app/lib/runtime-executive-authority/runtime-executive-authority.ts:45:    executionPolicy:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:29:app/lib/runtime-executive-authority/runtime-executive-authority.ts:46:      core.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:30:app/lib/runtime-executive-authority/runtime-executive-authority.ts:51:    executionPriority:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:31:app/lib/runtime-executive-authority/runtime-executive-authority.ts:52:      core.executionPriority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:32:app/lib/runtime-executive-authority/runtime-executive-authority.ts:54:    executionRoute:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:33:app/lib/runtime-executive-authority/runtime-executive-authority.ts:55:      core.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:34:app/lib/runtime-executive-authority/runtime-executive-authority.ts:58:      `Runtime Executive Authority active: ${core.coreState}.`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:35:app/lib/runtime-executive-authority/runtime-executive-authority.ts:61:      `allowed:${core.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:36:app/lib/runtime-executive-authority/runtime-executive-authority.ts:63:      `policy:${core.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:37:app/lib/runtime-executive-authority/runtime-executive-authority.ts:65:      `priority:${core.executionPriority}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:38:app/lib/runtime-executive-authority/runtime-executive-authority.ts:66:      `route:${core.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:39:app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:40:app/lib/runtime-executive-state/runtime-executive-state.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:41:app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:42:app/lib/runtime-executive-state/runtime-executive-state.ts:7:} from '../runtime-provider-authority/runtime-provider-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:45:app/lib/runtime-executive-state/runtime-executive-state.ts:38:  const authority =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:46:app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:47:app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:48:app/lib/runtime-executive-state/runtime-executive-state.ts:48:    !authority.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:49:app/lib/runtime-executive-state/runtime-executive-state.ts:52:      : authority.executionPolicy === 'adaptive-growth'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:81:app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:82:app/lib/runtime-provider-authority/runtime-provider-authority.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:83:app/lib/runtime-provider-authority/runtime-provider-authority.ts:9:export interface RuntimeProviderAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:84:app/lib/runtime-provider-authority/runtime-provider-authority.ts:10:  authorityId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:85:app/lib/runtime-provider-authority/runtime-provider-authority.ts:12:  source: 'runtime-provider-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:86:app/lib/runtime-provider-authority/runtime-provider-authority.ts:16:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:87:app/lib/runtime-provider-authority/runtime-provider-authority.ts:18:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:88:app/lib/runtime-provider-authority/runtime-provider-authority.ts:20:  executionPriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:89:app/lib/runtime-provider-authority/runtime-provider-authority.ts:21:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:90:app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:91:app/lib/runtime-provider-authority/runtime-provider-authority.ts:30:): RuntimeProviderAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:92:app/lib/runtime-provider-authority/runtime-provider-authority.ts:32:  const authority =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:93:app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:94:app/lib/runtime-provider-authority/runtime-provider-authority.ts:38:  const executionAllowed =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:95:app/lib/runtime-provider-authority/runtime-provider-authority.ts:39:    authority.executionAllowed &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:96:app/lib/runtime-provider-authority/runtime-provider-authority.ts:42:      authority.executionPolicy !== 'protection-first'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:97:app/lib/runtime-provider-authority/runtime-provider-authority.ts:46:    authorityId:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:98:app/lib/runtime-provider-authority/runtime-provider-authority.ts:47:      `provider-authority-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:99:app/lib/runtime-provider-authority/runtime-provider-authority.ts:53:      'runtime-provider-authority',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:100:app/lib/runtime-provider-authority/runtime-provider-authority.ts:61:    executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:101:app/lib/runtime-provider-authority/runtime-provider-authority.ts:63:    executionPolicy:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:102:app/lib/runtime-provider-authority/runtime-provider-authority.ts:64:      authority.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:103:app/lib/runtime-provider-authority/runtime-provider-authority.ts:67:      authority.runtimeAction,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:104:app/lib/runtime-provider-authority/runtime-provider-authority.ts:69:    executionPriority:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:105:app/lib/runtime-provider-authority/runtime-provider-authority.ts:70:      authority.executionPriority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:106:app/lib/runtime-provider-authority/runtime-provider-authority.ts:72:    executionRoute:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:107:app/lib/runtime-provider-authority/runtime-provider-authority.ts:73:      authority.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:108:app/lib/runtime-provider-authority/runtime-provider-authority.ts:76:      executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:109:app/lib/runtime-provider-authority/runtime-provider-authority.ts:77:        ? 'Provider execution approved.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:110:app/lib/runtime-provider-authority/runtime-provider-authority.ts:78:        : 'Provider execution blocked.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:111:app/lib/runtime-provider-authority/runtime-provider-authority.ts:83:      `allowed:${executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:112:app/lib/runtime-provider-authority/runtime-provider-authority.ts:84:      `policy:${authority.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:113:app/lib/runtime-provider-authority/runtime-provider-authority.ts:85:      `action:${authority.runtimeAction}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:114:app/lib/runtime-provider-authority/runtime-provider-authority.ts:86:      `priority:${authority.executionPriority}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:115:app/lib/runtime-provider-authority/runtime-provider-authority.ts:87:      `route:${authority.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:116:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:2:  buildExecutiveRuntimeContext,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:117:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:118:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:5:export type RuntimeGovernanceDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:123:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:22:  decision: RuntimeGovernanceDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:130:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:43:  const context =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:131:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:44:    buildExecutiveRuntimeContext(message, userId, intent)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:132:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:46:  const decision: RuntimeGovernanceDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:133:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:47:    !context.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:134:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:49:      : context.executiveState === 'protected'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:135:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:51:      : context.executionPolicy === 'adaptive-growth'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:137:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:56:    decision === 'restrict'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:138:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:58:      : decision === 'protect'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:139:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:60:      : context.executionPriority === 'high'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:142:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:69:    decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:143:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:72:    executionAllowed: context.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:144:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:73:    executiveState: context.executiveState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:145:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:74:    provider: context.provider,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:146:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:75:    allowExternal: context.allowExternal,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:147:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:77:    executionPolicy: context.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:148:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:78:    runtimeAction: context.runtimeAction,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:149:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:79:    executionRoute: context.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:150:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:82:      `REGL decision: ${decision} / priority: ${priority}.`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:151:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:85:      `decision:${decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:152:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:87:      `allowed:${context.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:153:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:88:      `state:${context.executiveState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:154:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:89:      `provider:${context.provider}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:155:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:90:      `external:${context.allowExternal}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:156:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:91:      `policy:${context.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:157:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:92:      `action:${context.runtimeAction}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:158:app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:93:      `route:${context.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:159:app/lib/iasevero-core.ts:2:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:160:app/lib/iasevero-core.ts:3:import { buildDecision, validateDecisionAnswer } from './decision-engine'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:161:app/lib/iasevero-core.ts:4:import { localBrain } from './local-brain'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:162:app/lib/iasevero-core.ts:21:  const direct = localBrain(message, facts)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:163:app/lib/iasevero-core.ts:30:  const decision = buildDecision({ message, facts, history })
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:164:app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:165:app/lib/iasevero-core.ts:33:  const reply = validateDecisionAnswer(message, rawReply)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:166:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:2:  evaluateRuntimeExecutionGovernanceMatrix,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:167:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:3:} from '@/app/lib/runtime-governance-matrix/runtime-execution-governance-matrix'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:168:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:9:export function evaluateRuntimeAdaptiveDecisionLayer() {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:169:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:10:  const matrix = evaluateRuntimeExecutionGovernanceMatrix()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:170:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:13:    governance: matrix.globalExecutionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:171:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:16:    evaluationScore: matrix.governanceScore,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:172:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:18:    policyAllowed: matrix.globalExecutionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:173:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:19:    resilienceActive: matrix.executionConsensus,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:174:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:22:  const adaptiveDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:175:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:24:      ? 'continue-advanced-execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:176:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:26:        ? 'stabilize-runtime-before-execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:177:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:29:          : 'contain-runtime-execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:178:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:32:    decisionId: `adaptive-decision-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:179:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:35:    source: 'runtime-adaptive-decision-layer',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:180:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:37:    adaptiveDecision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:181:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:40:    executionProfile: coordination.executionProfile,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:182:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:43:    governanceMode: matrix.governanceMode,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:183:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:44:    governanceScore: matrix.governanceScore,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:184:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:45:    globalExecutionAllowed: matrix.globalExecutionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:185:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:51:      `decision:${adaptiveDecision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:186:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:54:      `profile:${coordination.executionProfile}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:187:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:56:      `governance:${matrix.governanceMode}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:188:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:57:      `score:${matrix.governanceScore}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:189:app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:58:      `allowed:${matrix.globalExecutionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:190:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:9:export type RuntimeLoopDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:193:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:25:  decision: RuntimeLoopDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:195:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:34:  memoryState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:196:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:35:  reflectionState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:197:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:52:  const decision: RuntimeLoopDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:199:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:62:    decision === 'accelerate'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:201:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:64:      : decision === 'stabilize'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:202:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:66:      : decision === 'contain'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:207:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:84:    decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:210:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:101:    memoryState:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:211:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:102:      fabric.memoryState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:212:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:104:    reflectionState:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:213:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:105:      fabric.reflectionState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:214:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:110:      `Runtime live loop decision: ${decision}.`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:216:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:114:      `decision:${decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:218:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:120:      `memory:${fabric.memoryState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:219:app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:121:      `reflection:${fabric.reflectionState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:256:app/lib/runtime-core/runtime-adaptive-response.ts:13:  memoryMode: 'protected' | 'session' | 'persistent'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:257:app/lib/runtime-core/runtime-adaptive-response.ts:29:      memoryMode: 'protected',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:258:app/lib/runtime-core/runtime-adaptive-response.ts:43:      memoryMode: 'protected',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:259:app/lib/runtime-core/runtime-adaptive-response.ts:57:      memoryMode: 'protected',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:260:app/lib/runtime-core/runtime-adaptive-response.ts:71:      memoryMode: 'persistent',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:261:app/lib/runtime-core/runtime-adaptive-response.ts:84:    memoryMode: 'session',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:290:app/lib/runtime-core/runtime-execution-graph-engine.ts:21:      title: 'Analyze runtime context',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:304:app/lib/runtime-core/runtime-policy-engine.ts:5:export type RuntimePolicyDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:305:app/lib/runtime-core/runtime-policy-engine.ts:15:export function evaluateRuntimePolicy(): RuntimePolicyDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:309:app/lib/runtime-core/runtime-policy-enforcement.ts:59:      reason: 'runtime governance restriction',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:337:app/lib/runtime-core/runtime-predictive-stabilization.ts:64:      ...governance.reasoning,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:342:app/lib/runtime-core/runtime-master-orchestrator.ts:20:    governance.decision === 'NORMAL_OPERATION'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:344:app/lib/runtime-core/runtime-master-orchestrator.ts:45:      `decision:${governance.decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:345:app/lib/runtime-core/runtime-master-orchestrator.ts:48:      `healing:${healing.decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:346:app/lib/runtime-core/runtime-state-transition-engine.ts:2:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:347:app/lib/runtime-core/runtime-state-transition-engine.ts:24:  const loop = runRuntimeDecisionLoop()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:350:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:39:export interface CognitiveMemory {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:353:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:104:  memory: CognitiveMemory;
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:354:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:122:  retrieveMemory(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:355:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:125:  ): Promise<CognitiveMemory>;
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:358:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:152:  consolidateMemory(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:359:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:153:    current: CognitiveMemory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:360:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:155:  ): Promise<CognitiveMemory>;
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:361:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:240:    memory: {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:363:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:301:    const retrievedMemory = await adapters.retrieveMemory(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:364:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:308:      memory: retrievedMemory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:366:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:346:          'The planner did not produce a valid reversible action.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:371:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:429:        stopReason: 'execution-failed',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:375:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:457:    const consolidatedMemory = await adapters.consolidateMemory(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:376:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:458:      state.memory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:377:app/lib/runtime-core/runtime-governed-cognitive-loop.ts:472:      memory: consolidatedMemory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:380:app/lib/runtime-core/runtime-unified-context.ts:1:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:381:app/lib/runtime-core/runtime-unified-context.ts:3:export type RuntimeUnifiedContext = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:382:app/lib/runtime-core/runtime-unified-context.ts:5:  source: 'runtime-unified-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:383:app/lib/runtime-core/runtime-unified-context.ts:6:  brain: ReturnType<typeof buildRuntimeBrainMatrix>
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:384:app/lib/runtime-core/runtime-unified-context.ts:8:  globalState: ReturnType<typeof buildRuntimeBrainMatrix>['globalState']
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:385:app/lib/runtime-core/runtime-unified-context.ts:13:export function buildRuntimeUnifiedContext(): RuntimeUnifiedContext {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:386:app/lib/runtime-core/runtime-unified-context.ts:14:  const brain = buildRuntimeBrainMatrix()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:387:app/lib/runtime-core/runtime-unified-context.ts:18:    source: 'runtime-unified-context',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:388:app/lib/runtime-core/runtime-unified-context.ts:19:    brain,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:389:app/lib/runtime-core/runtime-unified-context.ts:20:    operational: brain.operational,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:390:app/lib/runtime-core/runtime-unified-context.ts:21:    globalState: brain.globalState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:391:app/lib/runtime-core/runtime-unified-context.ts:22:    operationalScore: brain.operationalScore,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:392:app/lib/runtime-core/runtime-unified-context.ts:23:    recommendation: brain.recommendation,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:404:app/lib/runtime-core/runtime-contracts.ts:30:export type RuntimeMemoryMode =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:405:app/lib/runtime-core/runtime-contracts.ts:55:  memoryMode: RuntimeMemoryMode
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:406:app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:6:  evaluateRuntimeDecisionFusion,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:407:app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:7:} from './runtime-decision-fusion-engine'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:413:app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:31:  const fusion = evaluateRuntimeDecisionFusion()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:440:app/lib/runtime-core/runtime-tool-registry.ts:2:  | 'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:442:app/lib/runtime-core/runtime-tool-registry.ts:39:      id: 'memory.search',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:443:app/lib/runtime-core/runtime-tool-registry.ts:40:      category: 'memory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:444:app/lib/runtime-core/runtime-tool-registry.ts:44:      fallback: 'memory.local',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:492:app/lib/runtime-core/runtime-execution-bridge.ts:10:    runtime.governance.decision === 'NORMAL_OPERATION' ||
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:493:app/lib/runtime-core/runtime-execution-bridge.ts:11:    runtime.governance.decision === 'STABILIZATION_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:498:app/lib/runtime-core/runtime-execution-bridge.ts:24:      governance: runtime.governance.decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:499:app/lib/runtime-core/runtime-execution-bridge.ts:26:      healing: runtime.healing.decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:512:app/lib/runtime-core/runtime-task-planner.ts:7:    | 'execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:513:app/lib/runtime-core/runtime-task-planner.ts:19:  source: 'runtime-task-planner'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:514:app/lib/runtime-core/runtime-task-planner.ts:93:      title: 'Analyze request and runtime context',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:515:app/lib/runtime-core/runtime-task-planner.ts:99:      id: `${taskId}_execution`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:516:app/lib/runtime-core/runtime-task-planner.ts:101:      title: 'Prepare controlled execution plan',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:517:app/lib/runtime-core/runtime-task-planner.ts:102:      type: 'execution',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:518:app/lib/runtime-core/runtime-task-planner.ts:126:    source: 'runtime-task-planner',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:519:app/lib/runtime-core/runtime-task-planner.ts:133:      'Task planned with controlled execution, validation, and synthesis.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:532:app/lib/runtime-core/runtime-decision-gate.ts:1:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:533:app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:534:app/lib/runtime-core/runtime-decision-gate.ts:7:  governance: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:535:app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:536:app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:537:app/lib/runtime-core/runtime-decision-gate.ts:19:  const runtime = runRuntimeExecutionBridge(message, userId)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:538:app/lib/runtime-core/runtime-decision-gate.ts:22:    runtime.governance.decision !== 'NORMAL_OPERATION' ||
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:539:app/lib/runtime-core/runtime-decision-gate.ts:24:    runtime.healing.decision === 'CONTAINMENT_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:540:app/lib/runtime-core/runtime-decision-gate.ts:30:      ? 'runtime execution blocked by governance'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:541:app/lib/runtime-core/runtime-decision-gate.ts:31:      : 'runtime execution approved',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:542:app/lib/runtime-core/runtime-decision-gate.ts:35:    governance: runtime.governance.decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:543:app/lib/runtime-core/runtime-decision-gate.ts:39:    healing: runtime.healing.decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:587:app/lib/runtime-core/runtime-cognitive-state.ts:38:    memoryPressure: 90,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:589:app/lib/runtime-core/runtime-cognitive-state.ts:48:      'memory-pressure-high',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:595:app/lib/runtime-core/runtime-governance-center.ts:7:export type RuntimeGovernanceDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:598:app/lib/runtime-core/runtime-governance-center.ts:17:  decision: RuntimeGovernanceDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:604:app/lib/runtime-core/runtime-governance-center.ts:34:  const decision: RuntimeGovernanceDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:605:app/lib/runtime-core/runtime-governance-center.ts:46:    decision === 'CONTAINMENT_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:606:app/lib/runtime-core/runtime-governance-center.ts:48:      : decision === 'RECOVERY_REQUIRED' || decision === 'THROTTLING_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:607:app/lib/runtime-core/runtime-governance-center.ts:50:        : decision === 'STABILIZATION_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:609:app/lib/runtime-core/runtime-governance-center.ts:58:    decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:611:app/lib/runtime-core/runtime-governance-center.ts:61:      decision !== 'CONTAINMENT_REQUIRED',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:612:app/lib/runtime-core/runtime-governance-center.ts:69:      decision === 'CONTAINMENT_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:614:app/lib/runtime-core/runtime-governance-center.ts:71:        : decision === 'RECOVERY_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:616:app/lib/runtime-core/runtime-governance-center.ts:73:          : decision === 'THROTTLING_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:618:app/lib/runtime-core/runtime-governance-center.ts:75:            : decision === 'STABILIZATION_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:621:app/lib/runtime-core/runtime-governance-center.ts:85:      `decision:${decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:622:app/lib/runtime-core/runtime-feedback-integration.ts:1:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:623:app/lib/runtime-core/runtime-feedback-integration.ts:5:export type RuntimeFeedbackLevel =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:624:app/lib/runtime-core/runtime-feedback-integration.ts:11:export type RuntimeFeedbackIntegration = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:625:app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:626:app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:627:app/lib/runtime-core/runtime-feedback-integration.ts:16:  memoryInfluence: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:628:app/lib/runtime-core/runtime-feedback-integration.ts:22:export function integrateRuntimeFeedback():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:629:app/lib/runtime-core/runtime-feedback-integration.ts:23:RuntimeFeedbackIntegration {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:630:app/lib/runtime-core/runtime-feedback-integration.ts:25:  const memory = runRuntimeMemoryPersistenceLoop()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:631:app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:632:app/lib/runtime-core/runtime-feedback-integration.ts:31:    memory.stabilityRate >= 90 &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:633:app/lib/runtime-core/runtime-feedback-integration.ts:34:      : memory.stabilityRate >= 70
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:634:app/lib/runtime-core/runtime-feedback-integration.ts:36:      : memory.stabilityRate >= 50
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:635:app/lib/runtime-core/runtime-feedback-integration.ts:40:  const result: RuntimeFeedbackIntegration = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:636:app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:637:app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:638:app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:639:app/lib/runtime-core/runtime-feedback-integration.ts:51:    memoryInfluence: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:640:app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:641:app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:642:app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:643:app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:644:app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:645:app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:646:app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:647:app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:648:app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:649:app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:650:app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:651:app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:652:app/lib/runtime-core/runtime-feedback-integration.ts:86:      memoryInfluence: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:654:app/lib/runtime-core/runtime-self-healing-coordinator.ts:6:export type RuntimeSelfHealingDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:655:app/lib/runtime-core/runtime-self-healing-coordinator.ts:15:  decision: RuntimeSelfHealingDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:658:app/lib/runtime-core/runtime-self-healing-coordinator.ts:30:  const decision: RuntimeSelfHealingDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:659:app/lib/runtime-core/runtime-self-healing-coordinator.ts:33:    governance.decision === 'CONTAINMENT_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:660:app/lib/runtime-core/runtime-self-healing-coordinator.ts:46:    decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:661:app/lib/runtime-core/runtime-self-healing-coordinator.ts:49:      decision !== 'NO_HEALING_REQUIRED',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:663:app/lib/runtime-core/runtime-self-healing-coordinator.ts:52:      decision === 'NO_HEALING_REQUIRED' ||
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:664:app/lib/runtime-core/runtime-self-healing-coordinator.ts:53:      decision === 'REPLAY_RECOMMENDED',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:665:app/lib/runtime-core/runtime-self-healing-coordinator.ts:56:      decision === 'CONTAINMENT_REQUIRED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:666:app/lib/runtime-core/runtime-self-healing-coordinator.ts:58:        : decision === 'RECOVERY_RECOMMENDED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:667:app/lib/runtime-core/runtime-self-healing-coordinator.ts:60:          : decision === 'REPLAY_RECOMMENDED'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:668:app/lib/runtime-core/runtime-self-healing-coordinator.ts:68:      ...governance.reasoning,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:669:app/lib/runtime-core/runtime-self-healing-coordinator.ts:69:      `selfHealing:${decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:670:app/lib/runtime-core/runtime-decision-fusion-engine.ts:1:export interface RuntimeFusionDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:671:app/lib/runtime-core/runtime-decision-fusion-engine.ts:18:  executionMode: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:672:app/lib/runtime-core/runtime-decision-fusion-engine.ts:24:export function evaluateRuntimeDecisionFusion(): RuntimeFusionDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:673:app/lib/runtime-core/runtime-decision-fusion-engine.ts:36:  const executionMode = 'adaptive-performance'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:674:app/lib/runtime-core/runtime-decision-fusion-engine.ts:43:    source: 'runtime-decision-fusion-engine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:675:app/lib/runtime-core/runtime-decision-fusion-engine.ts:56:    executionMode,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:676:app/lib/runtime-core/runtime-decision-fusion-engine.ts:68:      `mode:${executionMode}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:677:app/lib/runtime-core/runtime-decision-loop.ts:1:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:678:app/lib/runtime-core/runtime-decision-loop.ts:3:export type RuntimeDecisionLoopResult = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:679:app/lib/runtime-core/runtime-decision-loop.ts:5:  source: 'runtime-decision-loop'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:680:app/lib/runtime-core/runtime-decision-loop.ts:7:  executionAction: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:681:app/lib/runtime-core/runtime-decision-loop.ts:20:export function runRuntimeDecisionLoop(): RuntimeDecisionLoopResult {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:682:app/lib/runtime-core/runtime-decision-loop.ts:21:  const execution = evaluateRuntimeExecutionOrchestrator()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:683:app/lib/runtime-core/runtime-decision-loop.ts:24:    execution.action === 'normal-operation'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:684:app/lib/runtime-core/runtime-decision-loop.ts:26:      : execution.action === 'throttle-runtime'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:685:app/lib/runtime-core/runtime-decision-loop.ts:28:        : execution.action === 'containment-mode'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:686:app/lib/runtime-core/runtime-decision-loop.ts:33:    execution.action === 'normal-operation'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:687:app/lib/runtime-core/runtime-decision-loop.ts:35:      : execution.action === 'throttle-runtime'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:688:app/lib/runtime-core/runtime-decision-loop.ts:37:        : execution.action === 'containment-mode'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:689:app/lib/runtime-core/runtime-decision-loop.ts:43:    source: 'runtime-decision-loop',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:690:app/lib/runtime-core/runtime-decision-loop.ts:45:    executionAction: execution.action,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:691:app/lib/runtime-core/runtime-decision-loop.ts:46:    providerMode: execution.providerMode,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:692:app/lib/runtime-core/runtime-decision-loop.ts:48:    telemetryRequired: execution.telemetryRequired,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:693:app/lib/runtime-core/runtime-decision-loop.ts:49:    snapshotRequired: execution.snapshotRequired,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:694:app/lib/runtime-core/runtime-decision-loop.ts:51:      ...execution.reasoning,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:695:app/lib/runtime-core/runtime-cognitive-gateway.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:696:app/lib/runtime-core/runtime-cognitive-gateway.ts:4:export type RuntimeCognitiveDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:697:app/lib/runtime-core/runtime-cognitive-gateway.ts:17:export function evaluateRuntimeCognitiveGateway(): RuntimeCognitiveDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:698:app/lib/runtime-core/runtime-cognitive-gateway.ts:18:  const context = buildRuntimeUnifiedContext()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:699:app/lib/runtime-core/runtime-cognitive-gateway.ts:21:  if (!context.operational) reasoning.push('runtime-not-operational')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:700:app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:701:app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:702:app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:703:app/lib/runtime-core/runtime-cognitive-gateway.ts:26:  const memory = context.brain.operationalMemory
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:704:app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:705:app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:706:app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:707:app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:708:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:1:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:709:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:3:export type RuntimeBrainKernelCoordination = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:710:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:5:  source: 'runtime-brain-kernel-coordinator'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:711:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:7:  unifiedContext: ReturnType<typeof buildRuntimeUnifiedContext>
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:712:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:12:export function coordinateRuntimeBrainKernel(): RuntimeBrainKernelCoordination {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:713:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:13:  const unifiedContext = buildRuntimeUnifiedContext()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:714:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:17:    source: 'runtime-brain-kernel-coordinator',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:715:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:19:    unifiedContext,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:716:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:20:    coordinationReady: unifiedContext.operational,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:717:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:21:    recommendation: unifiedContext.recommendation,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:718:app/lib/runtime-core/runtime-learning-signals.ts:2:  evaluateRuntimeExecutionQuality,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:719:app/lib/runtime-core/runtime-learning-signals.ts:14:  executionScore: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:720:app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:721:app/lib/runtime-core/runtime-learning-signals.ts:40:    executionScore:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:722:app/lib/runtime-core/runtime-memory-persistence-loop.ts:3:export type RuntimeMemorySnapshot = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:723:app/lib/runtime-core/runtime-memory-persistence-loop.ts:10:export type RuntimeMemoryPersistenceResult = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:724:app/lib/runtime-core/runtime-memory-persistence-loop.ts:12:  source: 'runtime-memory-persistence-loop'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:725:app/lib/runtime-core/runtime-memory-persistence-loop.ts:21:const runtimeMemoryHistory: RuntimeMemorySnapshot[] = []
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:726:app/lib/runtime-core/runtime-memory-persistence-loop.ts:23:export function runRuntimeMemoryPersistenceLoop():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:727:app/lib/runtime-core/runtime-memory-persistence-loop.ts:24:RuntimeMemoryPersistenceResult {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:728:app/lib/runtime-core/runtime-memory-persistence-loop.ts:28:  runtimeMemoryHistory.unshift({
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:729:app/lib/runtime-core/runtime-memory-persistence-loop.ts:35:  if (runtimeMemoryHistory.length > 25) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:730:app/lib/runtime-core/runtime-memory-persistence-loop.ts:36:    runtimeMemoryHistory.pop()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:731:app/lib/runtime-core/runtime-memory-persistence-loop.ts:39:  const totalSnapshots = runtimeMemoryHistory.length
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:732:app/lib/runtime-core/runtime-memory-persistence-loop.ts:42:    runtimeMemoryHistory.filter(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:733:app/lib/runtime-core/runtime-memory-persistence-loop.ts:47:    runtimeMemoryHistory.filter(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:734:app/lib/runtime-core/runtime-memory-persistence-loop.ts:72:    source: 'runtime-memory-persistence-loop',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:735:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:2:  evaluateRuntimePersistenceMemory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:736:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:3:} from '@/app/lib/runtime-persistence-memory/runtime-persistence-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:742:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:39:  const memory =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:743:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:40:    evaluateRuntimePersistenceMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:748:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:50:      memory.runtimeEvolution !== 'degrading',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:749:app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:53:      memory.historicalStability >= 80,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:762:app/lib/executive-runtime-core/executive-runtime-core.ts:21:  authority: 'central-executive-runtime-core'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:764:app/lib/executive-runtime-core/executive-runtime-core.ts:24:  executiveDecision: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:770:app/lib/executive-runtime-core/executive-runtime-core.ts:49:    !governor.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:771:app/lib/executive-runtime-core/executive-runtime-core.ts:53:      : governor.executiveDecision === 'expand' &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:773:app/lib/executive-runtime-core/executive-runtime-core.ts:64:    authority: 'central-executive-runtime-core',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:774:app/lib/executive-runtime-core/executive-runtime-core.ts:66:    executionAllowed: governor.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:775:app/lib/executive-runtime-core/executive-runtime-core.ts:67:    executiveDecision: governor.executiveDecision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:776:app/lib/executive-runtime-core/executive-runtime-core.ts:68:    executionPolicy: governor.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:779:app/lib/executive-runtime-core/executive-runtime-core.ts:73:    executionIntensity: governor.executionIntensity,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:780:app/lib/executive-runtime-core/executive-runtime-core.ts:84:      `allowed:${governor.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:781:app/lib/executive-runtime-core/executive-runtime-core.ts:85:      `decision:${governor.executiveDecision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:782:app/lib/executive-runtime-core/executive-runtime-core.ts:86:      `policy:${governor.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:785:app/lib/executive-runtime-core/executive-runtime-core.ts:94:      `intensity:${governor.executionIntensity}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:786:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:787:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:3:} from '../runtime-executive-authority/runtime-executive-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:788:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:5:export interface RuntimeExecutiveAuthorityGatewayReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:789:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:8:  source: 'runtime-executive-authority-gateway'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:790:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:10:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:791:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:12:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:792:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:14:  executionPriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:793:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:15:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:794:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:795:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:22:RuntimeExecutiveAuthorityGatewayReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:796:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:23:  const authority =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:797:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:798:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:27:    gatewayId: `authority-gateway-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:799:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:29:    source: 'runtime-executive-authority-gateway',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:800:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:31:    executionAllowed:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:801:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:32:      authority.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:802:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:35:      authority.coreState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:803:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:37:    executionPolicy:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:804:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:38:      authority.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:805:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:41:      authority.runtimeAction,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:806:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:43:    executionPriority:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:807:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:44:      authority.executionPriority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:808:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:46:    executionRoute:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:809:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:47:      authority.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:810:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:50:      authority.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:811:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:51:        ? 'Runtime Executive Authority Gateway approved execution.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:812:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:52:        : 'Runtime Executive Authority Gateway blocked execution.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:813:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:55:      `allowed:${authority.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:814:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:56:      `core:${authority.coreState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:815:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:57:      `policy:${authority.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:816:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:58:      `action:${authority.runtimeAction}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:817:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:59:      `priority:${authority.executionPriority}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:818:app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:60:      `route:${authority.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:875:app/lib/runtime-executive-governor/runtime-executive-governor.ts:5:export type RuntimeExecutiveDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:876:app/lib/runtime-executive-governor/runtime-executive-governor.ts:16:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:877:app/lib/runtime-executive-governor/runtime-executive-governor.ts:18:  executiveDecision: RuntimeExecutiveDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:878:app/lib/runtime-executive-governor/runtime-executive-governor.ts:19:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:879:app/lib/runtime-executive-governor/runtime-executive-governor.ts:22:  executionIntensity: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:880:app/lib/runtime-executive-governor/runtime-executive-governor.ts:38:  const executiveDecision: RuntimeExecutiveDecision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:881:app/lib/runtime-executive-governor/runtime-executive-governor.ts:39:    !loop.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:882:app/lib/runtime-executive-governor/runtime-executive-governor.ts:48:  const executionPolicy =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:883:app/lib/runtime-executive-governor/runtime-executive-governor.ts:49:    executiveDecision === 'protect'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:884:app/lib/runtime-executive-governor/runtime-executive-governor.ts:51:      : executiveDecision === 'throttle'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:885:app/lib/runtime-executive-governor/runtime-executive-governor.ts:53:      : executiveDecision === 'expand'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:886:app/lib/runtime-executive-governor/runtime-executive-governor.ts:58:    executiveDecision === 'protect'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:887:app/lib/runtime-executive-governor/runtime-executive-governor.ts:60:      : executiveDecision === 'throttle'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:888:app/lib/runtime-executive-governor/runtime-executive-governor.ts:61:      ? 'reduce-execution-pressure'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:889:app/lib/runtime-executive-governor/runtime-executive-governor.ts:62:      : executiveDecision === 'expand'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:890:app/lib/runtime-executive-governor/runtime-executive-governor.ts:64:      : 'maintain-governed-execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:891:app/lib/runtime-executive-governor/runtime-executive-governor.ts:71:    executionAllowed:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:892:app/lib/runtime-executive-governor/runtime-executive-governor.ts:72:      loop.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:893:app/lib/runtime-executive-governor/runtime-executive-governor.ts:74:    executiveDecision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:894:app/lib/runtime-executive-governor/runtime-executive-governor.ts:75:    executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:895:app/lib/runtime-executive-governor/runtime-executive-governor.ts:78:    executionIntensity:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:896:app/lib/runtime-executive-governor/runtime-executive-governor.ts:79:      loop.executionIntensity,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:897:app/lib/runtime-executive-governor/runtime-executive-governor.ts:94:      `Runtime executive governor decision: ${executiveDecision}.`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:898:app/lib/runtime-executive-governor/runtime-executive-governor.ts:97:      `allowed:${loop.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:899:app/lib/runtime-executive-governor/runtime-executive-governor.ts:98:      `decision:${executiveDecision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:900:app/lib/runtime-executive-governor/runtime-executive-governor.ts:99:      `policy:${executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:901:app/lib/runtime-executive-governor/runtime-executive-governor.ts:105:      `intensity:${loop.executionIntensity}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:902:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:22:  reflectionState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:903:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:23:  memoryState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:907:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:61:    `${fabricState}:${bus.attentionFocus}:${bus.reflectionState}:${bus.memoryState}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:908:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:75:    reflectionState: bus.reflectionState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:909:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:76:    memoryState: bus.memoryState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:912:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:100:      `reflection:${bus.reflectionState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:913:app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:101:      `memory:${bus.memoryState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:914:app/lib/memory-filter.ts:1:export function extractRelevantContext(history: any[]) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:915:app/lib/local-brain.ts:1:export function localBrain(message: string, facts: Record<string, string>): string | null {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:916:app/lib/zero-cost-brain.ts:2:export function localIntelligence(message: string, context: string): string {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:968:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:5:export type RuntimeReflectionState =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:969:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:11:export interface RuntimeReflectionFeedbackReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:970:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:12:  reflectionId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:971:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:972:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:16:  reflectionState: RuntimeReflectionState
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:973:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:20:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:974:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:24:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:975:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:976:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:37:RuntimeReflectionFeedbackReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:977:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:56:  const reflectionState: RuntimeReflectionState =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:978:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:57:    !integration.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:979:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:66:    reflectionId: `reflection-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:980:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:981:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:70:    reflectionState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:982:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:74:    executionAllowed:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:983:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:75:      integration.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:984:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:83:    executionRoute:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:985:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:84:      integration.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:986:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:96:      integration.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:987:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:988:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:989:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:101:      `reflection:${reflectionState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:990:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:103:      `allowed:${integration.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:991:app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:106:      `route:${integration.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:992:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:993:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:994:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:995:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:23:} from '@/app/lib/runtime-memory-consolidation/runtime-memory-consolidation'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:996:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:41:  reflectionState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:997:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:42:  memoryState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:999:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:72:  const reflection =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1000:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1001:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:75:  const memory =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1002:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1003:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:80:    reflection.pipelineStable &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1004:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:81:    memory.memoryState === 'consolidating'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1006:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:113:    reflectionState:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1007:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:114:      reflection.reflectionState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1008:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:116:    memoryState:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1009:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:117:      memory.memoryState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1012:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:126:      reflection.adaptationScore,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1014:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:147:      `reflection:${reflection.reflectionState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1015:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:148:      `memory:${memory.memoryState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1016:app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:150:      `adaptation:${reflection.adaptationScore}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1021:app/lib/learning.ts:121:export function listMemory() {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1023:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:9:  governanceScore: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1024:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:14:export type RuntimePersistenceMemoryReport = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1025:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:15:  memoryId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1026:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:17:  source: 'runtime-persistence-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1027:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:34:export function evaluateRuntimePersistenceMemory():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1028:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:35:RuntimePersistenceMemoryReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1029:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:45:      governanceScore: 82,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1030:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:54:      governanceScore: 91,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1031:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:63:      governanceScore: 100,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1032:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:65:        lifecycle.executionAllowed ? 45 : 20,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1033:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:89:      ? 'runtime governance improving'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1034:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:91:        ? 'runtime governance stable'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1035:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:95:    memoryId: `memory-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1036:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:99:      'runtime-persistence-memory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1037:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:117:        ? 'Runtime persistence memory healthy.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1038:app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:119:          ? 'Runtime memory stable.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1054:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:44:    !governor.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1057:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:57:      : governor.executiveDecision === 'expand'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1063:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:70:      governor.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1065:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:73:      governor.executionIntensity,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1066:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:88:      governor.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1071:app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:99:      `intensity:${governor.executionIntensity}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1074:app/lib/memory.ts:4:const FILE = path.join(process.cwd(), 'memory.json')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1075:app/lib/memory.ts:6:type Memory = Record<string, any>
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1076:app/lib/memory.ts:8:function load(): Memory {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1077:app/lib/memory.ts:16:function save(data: Memory) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1078:app/lib/response-quality.ts:1:export function buildSystemContext(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1079:app/lib/response-quality.ts:17:            : msg.includes('memória') || msg.includes('memory') || msg.includes('meu nome')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1080:app/lib/response-quality.ts:18:              ? 'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1154:app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:2:  evaluateRuntimeAdaptiveDecisionLayer,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1155:app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:3:} from '@/app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1167:app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:57:  const decision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1168:app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:58:    evaluateRuntimeAdaptiveDecisionLayer()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1185:app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:135:      `decision:${decision.adaptiveDecision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1190:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:2:  buildExecutiveRuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1191:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:3:} from '../executive-runtime-context/executive-runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1192:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:6:  evaluateRuntimeExecutiveGovernanceLayer
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1193:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:7:} from '../runtime-executive-governance-layer/runtime-executive-governance-layer'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1194:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:9:export interface RuntimeEnforcementAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1195:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:12:  source: 'runtime-enforcement-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1196:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:14:  finalExecutionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1197:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:16:  governanceDecision: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1198:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:17:  governancePriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1199:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:19:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1200:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:21:  executionPriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1201:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:22:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1202:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:31:export function evaluateRuntimeEnforcementAuthority(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1203:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:35:): RuntimeEnforcementAuthorityReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1204:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:37:  const context =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1205:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:38:    buildExecutiveRuntimeContext(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1206:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:44:  const governance =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1207:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:45:    evaluateRuntimeExecutiveGovernanceLayer(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1208:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:51:  const finalExecutionAllowed =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1209:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:52:    context.executionAllowed &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1210:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:53:    governance.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1211:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:58:    source: 'runtime-enforcement-authority',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1212:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:60:    finalExecutionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1213:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:62:    governanceDecision: governance.decision,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1214:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:63:    governancePriority: governance.priority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1215:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:65:    executionPolicy: governance.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1216:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:66:    runtimeAction: governance.runtimeAction,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1217:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:67:    executionPriority: governance.priority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1218:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:68:    executionRoute: governance.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1219:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:70:    provider: governance.provider,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1220:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:71:    executiveState: governance.executiveState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1221:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:74:      finalExecutionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1222:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:75:        ? 'Runtime Enforcement Authority approved execution.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1223:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:76:        : 'Runtime Enforcement Authority blocked execution.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1224:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:79:      `allowed:${finalExecutionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1225:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:80:      `decision:${governance.decision}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1226:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:81:      `priority:${governance.priority}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1227:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:82:      `provider:${governance.provider}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1228:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:83:      `state:${governance.executiveState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1229:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:84:      `policy:${governance.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1230:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:85:      `action:${governance.runtimeAction}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1231:app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:86:      `route:${governance.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1232:app/lib/local-memory.ts:3:const FILE = 'data/memory.json'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1233:app/lib/local-memory.ts:5:type UserMemory = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1234:app/lib/local-memory.ts:10:type MemoryDB = Record<string, UserMemory>
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1235:app/lib/local-memory.ts:17:function readMemory(): MemoryDB {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1236:app/lib/local-memory.ts:26:function writeMemory(data: MemoryDB) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1237:app/lib/local-memory.ts:31:function getUser(db: MemoryDB, userId: string): UserMemory {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1238:app/lib/local-memory.ts:37:  const db = readMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1239:app/lib/local-memory.ts:41:  writeMemory(db)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1240:app/lib/local-memory.ts:45:  const db = readMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1241:app/lib/local-memory.ts:48:  writeMemory(db)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1242:app/lib/local-memory.ts:52:  const db = readMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1243:app/lib/local-memory.ts:57:  const db = readMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1266:app/lib/providers/local.ts:2:import { localIntelligence } from '../zero-cost-brain'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1267:app/lib/providers/local.ts:3:import { smartContext } from '../context-smart';
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1268:app/lib/providers/local.ts:7:import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1269:app/lib/providers/local.ts:9:import { contextSummary, saveTurn } from '../context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1270:app/lib/providers/local.ts:57:  if (text.toLowerCase() === 'contexto') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1271:app/lib/providers/local.ts:58:    return reply(contextSummary(userId) || 'Ainda não há contexto salvo para este usuário.')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1272:app/lib/providers/local.ts:80:  if (intent === 'memory') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1273:app/lib/providers/local.ts:81:    return reply(JSON.stringify(listMemory(), null, 2))
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1274:app/lib/providers/local.ts:87:  const intelligent = localIntelligence(text, contextSummary(userId) || '')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1275:app/lib/orchestrator/runtime-autonomous-decision.ts:5:export type RuntimeAutonomousDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1276:app/lib/orchestrator/runtime-autonomous-decision.ts:21:export function createAutonomousDecision(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1277:app/lib/orchestrator/runtime-autonomous-decision.ts:23:): RuntimeAutonomousDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1278:app/lib/orchestrator/runtime-graph-registry.ts:5:    module: 'RuntimeContext',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1279:app/lib/orchestrator/runtime-graph-registry.ts:11:      'RuntimeContext'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1280:app/lib/orchestrator/runtime-graph-registry.ts:17:      'RuntimeContext'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1281:app/lib/orchestrator/runtime-budget-control.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1282:app/lib/orchestrator/runtime-budget-control.ts:11:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1283:app/lib/orchestrator/runtime-budget-control.ts:14:  if (context.safeMode) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1284:app/lib/orchestrator/runtime-budget-control.ts:23:  if (context.provider === 'local') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1285:app/lib/orchestrator/runtime-budget-control.ts:32:  if (context.provider === 'hybrid') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1288:app/lib/orchestrator/runtime-architecture-index.ts:7:  | 'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1289:app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1290:app/lib/orchestrator/runtime-architecture-index.ts:29:    file: 'runtime-decision-engine.ts',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1291:app/lib/orchestrator/runtime-architecture-index.ts:35:    name: 'RuntimeContext',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1292:app/lib/orchestrator/runtime-architecture-index.ts:36:    file: 'runtime-context.ts',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1293:app/lib/orchestrator/runtime-architecture-index.ts:38:    responsibility: 'manter contexto transitório da execução atual',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1295:app/lib/orchestrator/runtime-architecture-index.ts:45:    responsibility: 'avaliar política baseada no contexto runtime',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1296:app/lib/orchestrator/runtime-architecture-index.ts:70:    name: 'RuntimeMemory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1297:app/lib/orchestrator/runtime-architecture-index.ts:71:    file: 'runtime-memory.ts',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1298:app/lib/orchestrator/runtime-architecture-index.ts:72:    layer: 'memory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1299:app/lib/orchestrator/runtime-architecture-index.ts:73:    responsibility: 'governar modo de memória e janela de contexto',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1300:app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1301:app/lib/orchestrator/learning-engine.ts:4:  const decisions = getRecentDecisions()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1302:app/lib/orchestrator/learning-engine.ts:6:  const risky = decisions.filter(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1303:app/lib/orchestrator/learning-engine.ts:10:  const safe = decisions.filter(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1304:app/lib/orchestrator/learning-engine.ts:15:    decisions.reduce((acc, d) => {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1305:app/lib/orchestrator/learning-engine.ts:22:    total: decisions.length,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1306:app/lib/orchestrator/runtime-snapshot.ts:12:  memoryMode: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1307:app/lib/orchestrator/runtime-snapshot.ts:54:    memoryMode: 'unknown'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1308:app/lib/orchestrator/memory-governor.ts:1:export type MemoryPolicy = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1309:app/lib/orchestrator/memory-governor.ts:8:export function getMemoryPolicy(): MemoryPolicy {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1310:app/lib/orchestrator/memory-governor.ts:18:  const policy = getMemoryPolicy()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1311:app/lib/orchestrator/runtime-operational-memory.ts:3:export type RuntimeOperationalMemory = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1312:app/lib/orchestrator/runtime-operational-memory.ts:9:  memoryModePattern: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1313:app/lib/orchestrator/runtime-operational-memory.ts:23:export function buildRuntimeOperationalMemory(): RuntimeOperationalMemory {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1314:app/lib/orchestrator/runtime-operational-memory.ts:34:      memoryModePattern: 'unknown',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1315:app/lib/orchestrator/runtime-operational-memory.ts:47:  const memoryModePattern = dominant(snapshots.map((snapshot) => snapshot.memoryMode))
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1316:app/lib/orchestrator/runtime-operational-memory.ts:78:    memoryModePattern,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1317:app/lib/orchestrator/runtime-operational-memory.ts:85:export type RuntimeMemoryEvent = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1318:app/lib/orchestrator/runtime-operational-memory.ts:95:const runtimeMemoryEvents: RuntimeMemoryEvent[] = []
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1319:app/lib/orchestrator/runtime-operational-memory.ts:97:export function registerRuntimeMemoryEvent(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1320:app/lib/orchestrator/runtime-operational-memory.ts:98:  event: RuntimeMemoryEvent
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1321:app/lib/orchestrator/runtime-operational-memory.ts:99:): RuntimeMemoryEvent[] {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1322:app/lib/orchestrator/runtime-operational-memory.ts:100:  runtimeMemoryEvents.unshift(event)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1323:app/lib/orchestrator/runtime-operational-memory.ts:102:  if (runtimeMemoryEvents.length > 100) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1324:app/lib/orchestrator/runtime-operational-memory.ts:103:    runtimeMemoryEvents.length = 100
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1325:app/lib/orchestrator/runtime-operational-memory.ts:106:  return runtimeMemoryEvents
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1326:app/lib/orchestrator/runtime-operational-memory.ts:109:export function readRuntimeMemoryEvents(): RuntimeMemoryEvent[] {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1327:app/lib/orchestrator/runtime-operational-memory.ts:110:  return runtimeMemoryEvents
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1328:app/lib/orchestrator/runtime-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1329:app/lib/orchestrator/runtime-governor.ts:2:import type { RuntimePolicyDecision } from './runtime-policy'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1330:app/lib/orchestrator/runtime-governor.ts:4:export type RuntimeGovernanceDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1331:app/lib/orchestrator/runtime-governor.ts:9:  severity: RuntimePolicyDecision['severity']
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1332:app/lib/orchestrator/runtime-governor.ts:12:export function evaluateRuntimeGovernance(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1333:app/lib/orchestrator/runtime-governor.ts:13:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1334:app/lib/orchestrator/runtime-governor.ts:14:  policy: RuntimePolicyDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1335:app/lib/orchestrator/runtime-governor.ts:15:): RuntimeGovernanceDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1336:app/lib/orchestrator/runtime-governor.ts:26:  if (context.allowExternal && !policy.allowExternal) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1337:app/lib/orchestrator/runtime-governor.ts:31:      reason: 'Governance bloqueou provider externo.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1338:app/lib/orchestrator/runtime-governor.ts:38:    providerAllowed: context.provider === 'local',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1339:app/lib/orchestrator/runtime-governor.ts:40:    reason: 'RuntimeGovernance aprovado.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1340:app/lib/orchestrator/runtime-policy-engine.ts:3:export type RuntimePolicyDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1341:app/lib/orchestrator/runtime-policy-engine.ts:13:  reduceContextWindow: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1342:app/lib/orchestrator/runtime-policy-engine.ts:22:): RuntimePolicyDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1343:app/lib/orchestrator/runtime-policy-engine.ts:30:      reduceContextWindow: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1344:app/lib/orchestrator/runtime-policy-engine.ts:43:      reduceContextWindow: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1345:app/lib/orchestrator/runtime-policy-engine.ts:55:    reduceContextWindow: false,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1346:app/lib/orchestrator/runtime-state-registry.ts:11:  memoryPressure: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1348:app/lib/orchestrator/runtime-state-registry.ts:23:  memoryPressure: 0,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1350:app/lib/orchestrator/runtime-policy.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1351:app/lib/orchestrator/runtime-policy.ts:3:export type RuntimePolicyDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1352:app/lib/orchestrator/runtime-policy.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1353:app/lib/orchestrator/runtime-policy.ts:13:): RuntimePolicyDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1354:app/lib/orchestrator/runtime-policy.ts:14:  if (context.safeMode) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1355:app/lib/orchestrator/runtime-policy.ts:24:  if (context.allowExternal) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1361:app/lib/orchestrator/runtime-tool-dispatcher.ts:25:      executor: 'runtime-decision-engine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1362:app/lib/orchestrator/runtime-tool-dispatcher.ts:39:      executor: 'runtime-decision-engine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1363:app/lib/orchestrator/runtime-tool-dispatcher.ts:46:      executor: 'runtime-decision-engine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1364:app/lib/orchestrator/runtime-tool-dispatcher.ts:53:      executor: 'runtime-task-planner',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1365:app/lib/orchestrator/runtime-tool-dispatcher.ts:54:      reason: 'Planner selecionado.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1366:app/lib/orchestrator/runtime-tool-dispatcher.ts:58:  if (stepId.includes('decision')) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1367:app/lib/orchestrator/runtime-tool-dispatcher.ts:60:      executor: 'runtime-decision-engine',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1368:app/lib/orchestrator/runtime-tool-dispatcher.ts:61:      reason: 'Decision Engine selecionado.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1370:app/lib/orchestrator/runtime-tool-dispatcher.ts:74:    reason: 'Execution Pipeline selecionado.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1371:app/lib/orchestrator/runtime-execution-control.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1374:app/lib/orchestrator/runtime-execution-control.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1376:app/lib/orchestrator/runtime-execution-control.ts:15:  if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1377:app/lib/orchestrator/runtime-execution-control.ts:25:  if (context.safeMode) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1378:app/lib/orchestrator/runtime-execution-control.ts:35:  if (context.provider === 'local') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1379:app/lib/orchestrator/runtime-context.ts:4:export type RuntimeContext = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1380:app/lib/orchestrator/runtime-context.ts:16:  decisions: string[]
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1381:app/lib/orchestrator/runtime-context.ts:19:    source: 'runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1382:app/lib/orchestrator/runtime-context.ts:24:export function createRuntimeContext(input?: Partial<RuntimeContext>): RuntimeContext {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1383:app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1384:app/lib/orchestrator/runtime-context.ts:45:    decisions: input?.decisions || [],
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1385:app/lib/orchestrator/runtime-context.ts:48:      source: 'runtime-context',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1386:app/lib/orchestrator/runtime-context.ts:57:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1387:app/lib/orchestrator/runtime-context.ts:59:): RuntimeContext {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1388:app/lib/orchestrator/runtime-context.ts:60:  const nextTrace = [...context.trace, entry]
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1389:app/lib/orchestrator/runtime-context.ts:63:    ...context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1390:app/lib/orchestrator/runtime-context.ts:71:let lastRuntimeState: RuntimeContext | null = null
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1391:app/lib/orchestrator/runtime-context.ts:74:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1392:app/lib/orchestrator/runtime-context.ts:75:): RuntimeContext {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1393:app/lib/orchestrator/runtime-context.ts:76:  lastRuntimeState = context
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1394:app/lib/orchestrator/runtime-context.ts:77:  return context
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1395:app/lib/orchestrator/runtime-context.ts:80:export function getLastRuntimeState(): RuntimeContext | null {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1396:app/lib/orchestrator/runtime-awareness.ts:18:    registry.memoryPressure +
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1400:app/lib/orchestrator/runtime-dependency-validator.ts:24:    'memory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1402:app/lib/orchestrator/runtime-dependency-validator.ts:39:    'memory',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1403:app/lib/orchestrator/runtime-dependency-validator.ts:66:    'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1404:app/lib/orchestrator/event-logger.ts:3:const memory: IASeveroEvent[] = []
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1405:app/lib/orchestrator/event-logger.ts:6:  memory.push(event)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1406:app/lib/orchestrator/event-logger.ts:8:  if (memory.length > 1000) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1407:app/lib/orchestrator/event-logger.ts:9:    memory.shift()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1408:app/lib/orchestrator/event-logger.ts:19:  return memory.slice(-20)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1409:app/lib/orchestrator/runtime-provider-governor.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1410:app/lib/orchestrator/runtime-provider-governor.ts:11:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1411:app/lib/orchestrator/runtime-provider-governor.ts:14:  if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1412:app/lib/orchestrator/runtime-provider-governor.ts:23:  if (context.safeMode) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1413:app/lib/orchestrator/runtime-provider-governor.ts:32:  if (context.provider === 'local') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1414:app/lib/orchestrator/runtime-provider-governor.ts:41:  if (context.provider === 'hybrid') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1415:app/lib/orchestrator/runtime.ts:3:export type RuntimeDecision = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1416:app/lib/orchestrator/runtime.ts:10:export function resolveRuntimeDecision(): RuntimeDecision {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1418:app/lib/orchestrator/runtime-contracts.ts:19:export type RuntimeMemoryContract = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1419:app/lib/orchestrator/runtime-contracts.ts:20:  memoryMode: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1420:app/lib/orchestrator/runtime-contracts.ts:21:  memoryEnabled: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1421:app/lib/orchestrator/runtime-contracts.ts:22:  memoryPressure: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1427:app/lib/orchestrator/runtime-event-processor.ts:7:  registerRuntimeMemoryEvent
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1428:app/lib/orchestrator/runtime-event-processor.ts:8:} from './runtime-operational-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1429:app/lib/orchestrator/runtime-event-processor.ts:25:    registerRuntimeMemoryEvent({
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1430:app/lib/orchestrator/runtime-event-processor.ts:33:    actions.push('memory-registered')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1431:app/lib/orchestrator/metrics.ts:4:import { getMemoryPolicy } from './memory-governor'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1432:app/lib/orchestrator/metrics.ts:10:  const memoryPolicy = getMemoryPolicy()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1433:app/lib/orchestrator/metrics.ts:18:    memoryPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1434:app/lib/orchestrator/runtime-self-healing.ts:2:  RuntimeAutonomousDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1435:app/lib/orchestrator/runtime-self-healing.ts:3:} from './runtime-autonomous-decision'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1436:app/lib/orchestrator/runtime-self-healing.ts:13:  decision: RuntimeAutonomousDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1437:app/lib/orchestrator/runtime-self-healing.ts:16:  if (decision.action === 'recover') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1438:app/lib/orchestrator/runtime-self-healing.ts:26:  if (decision.action === 'audit') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1439:app/lib/orchestrator/decision-memory.ts:1:type DecisionRecord = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1440:app/lib/orchestrator/decision-memory.ts:9:const history: DecisionRecord[] = []
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1441:app/lib/orchestrator/decision-memory.ts:11:export function rememberDecision(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1442:app/lib/orchestrator/decision-memory.ts:12:  record: DecisionRecord
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1443:app/lib/orchestrator/decision-memory.ts:23:export function getRecentDecisions() {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1444:app/lib/orchestrator/decision-memory.ts:27:export function clearDecisionMemory() {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1445:app/lib/orchestrator/runtime-execution-pipeline.ts:1:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1446:app/lib/orchestrator/runtime-execution-pipeline.ts:3:import { evaluateRuntimeGovernance } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1450:app/lib/orchestrator/runtime-execution-pipeline.ts:37:  const context = createRuntimeContext({
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1451:app/lib/orchestrator/runtime-execution-pipeline.ts:40:    reason: 'runtime-execution-pipeline',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1452:app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1454:app/lib/orchestrator/runtime-execution-pipeline.ts:49:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1456:app/lib/orchestrator/runtime-execution-pipeline.ts:54:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1458:app/lib/orchestrator/runtime-execution-pipeline.ts:82:      requestId: context.requestId,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1459:app/lib/orchestrator/runtime-execution-pipeline.ts:88:    id: context.requestId,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1461:app/lib/orchestrator/runtime-decision-engine.ts:5:import { evaluateRuntimeGovernance } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1462:app/lib/orchestrator/runtime-decision-engine.ts:6:import { evaluateExecutionControl } from './runtime-execution-control'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1463:app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1464:app/lib/orchestrator/runtime-decision-engine.ts:19:import { enforceRuntimeExecution } from './runtime-enforcement'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1465:app/lib/orchestrator/runtime-decision-engine.ts:20:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1466:app/lib/orchestrator/runtime-decision-engine.ts:22:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1467:app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1468:app/lib/orchestrator/runtime-decision-engine.ts:29:  const decisions: string[] = []
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1469:app/lib/orchestrator/runtime-decision-engine.ts:32:    decisions.push('Ativar modo seguro.')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1470:app/lib/orchestrator/runtime-decision-engine.ts:36:    decisions.push('Runtime recuperado automaticamente.')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1471:app/lib/orchestrator/runtime-decision-engine.ts:40:    decisions.push('Provider local forçado.')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1472:app/lib/orchestrator/runtime-decision-engine.ts:63:  let context = createRuntimeContext({
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1473:app/lib/orchestrator/runtime-decision-engine.ts:71:    decisions,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1474:app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1475:app/lib/orchestrator/runtime-decision-engine.ts:78:context = appendRuntimeTrace(context, `routing:${routing.mode}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1476:app/lib/orchestrator/runtime-decision-engine.ts:79:context = appendRuntimeTrace(context, `provider:${provider}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1477:app/lib/orchestrator/runtime-decision-engine.ts:80:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1478:app/lib/orchestrator/runtime-decision-engine.ts:82:const policy = evaluateRuntimePolicy(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1479:app/lib/orchestrator/runtime-decision-engine.ts:84:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1480:app/lib/orchestrator/runtime-decision-engine.ts:86:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1481:app/lib/orchestrator/runtime-decision-engine.ts:87:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1482:app/lib/orchestrator/runtime-decision-engine.ts:91:const governance = evaluateRuntimeGovernance(context, policy)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1483:app/lib/orchestrator/runtime-decision-engine.ts:93:decisions.push(`governance:${governance.severity}:${governance.reason}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1484:app/lib/orchestrator/runtime-decision-engine.ts:95:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1485:app/lib/orchestrator/runtime-decision-engine.ts:96:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1486:app/lib/orchestrator/runtime-decision-engine.ts:97:  `governance:${governance.executable ? 'executable' : 'blocked'}:${governance.severity}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1487:app/lib/orchestrator/runtime-decision-engine.ts:100:const executionControl = evaluateExecutionControl(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1488:app/lib/orchestrator/runtime-decision-engine.ts:102:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1489:app/lib/orchestrator/runtime-decision-engine.ts:103:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1490:app/lib/orchestrator/runtime-decision-engine.ts:106:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1491:app/lib/orchestrator/runtime-decision-engine.ts:107:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1492:app/lib/orchestrator/runtime-decision-engine.ts:108:  `execution:${executionControl.timeoutMs}:${executionControl.maxRetries}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1493:app/lib/orchestrator/runtime-decision-engine.ts:111:const budget = evaluateRuntimeBudget(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1494:app/lib/orchestrator/runtime-decision-engine.ts:113:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1495:app/lib/orchestrator/runtime-decision-engine.ts:117:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1496:app/lib/orchestrator/runtime-decision-engine.ts:118:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1497:app/lib/orchestrator/runtime-decision-engine.ts:122:const providerGovernor = evaluateProviderGovernor(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1498:app/lib/orchestrator/runtime-decision-engine.ts:124:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1499:app/lib/orchestrator/runtime-decision-engine.ts:128:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1500:app/lib/orchestrator/runtime-decision-engine.ts:129:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1501:app/lib/orchestrator/runtime-decision-engine.ts:133:const memory = evaluateRuntimeMemory(context)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1502:app/lib/orchestrator/runtime-decision-engine.ts:134:  decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1503:app/lib/orchestrator/runtime-decision-engine.ts:135:    `memory:${memory.memoryMode}:${memory.reason}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1504:app/lib/orchestrator/runtime-decision-engine.ts:138:  context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1505:app/lib/orchestrator/runtime-decision-engine.ts:139:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1506:app/lib/orchestrator/runtime-decision-engine.ts:140:    `memory:${memory.memoryEnabled ? 'enabled' : 'disabled'}:${memory.contextWindow}`
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1507:app/lib/orchestrator/runtime-decision-engine.ts:144:    runtimeHealth: context.stable ? 'healthy' : 'degraded',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1508:app/lib/orchestrator/runtime-decision-engine.ts:145:    runtimePressure: context.safeMode ? 60 : 20,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1509:app/lib/orchestrator/runtime-decision-engine.ts:147:    memoryPressure: memory.memoryMode === 'persistent' ? 50 : memory.memoryMode === 'session' ? 30 : 10,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1510:app/lib/orchestrator/runtime-decision-engine.ts:148:    executionPressure: executionControl.allowed ? 20 : 85,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1511:app/lib/orchestrator/runtime-decision-engine.ts:149:    degradationState: !context.stable || !executionControl.allowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1512:app/lib/orchestrator/runtime-decision-engine.ts:150:    recoveryMode: !context.stable
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1513:app/lib/orchestrator/runtime-decision-engine.ts:153:  if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1514:app/lib/orchestrator/runtime-decision-engine.ts:158:  decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1515:app/lib/orchestrator/runtime-decision-engine.ts:162:  context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1516:app/lib/orchestrator/runtime-decision-engine.ts:163:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1517:app/lib/orchestrator/runtime-decision-engine.ts:170:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1518:app/lib/orchestrator/runtime-decision-engine.ts:174:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1519:app/lib/orchestrator/runtime-decision-engine.ts:175:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1520:app/lib/orchestrator/runtime-decision-engine.ts:180:if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1521:app/lib/orchestrator/runtime-decision-engine.ts:204:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1522:app/lib/orchestrator/runtime-decision-engine.ts:208:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1523:app/lib/orchestrator/runtime-decision-engine.ts:209:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1524:app/lib/orchestrator/runtime-decision-engine.ts:213:const enforcement = enforceRuntimeExecution(context, governance)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1525:app/lib/orchestrator/runtime-decision-engine.ts:215:decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1526:app/lib/orchestrator/runtime-decision-engine.ts:217:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1527:app/lib/orchestrator/runtime-decision-engine.ts:218:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1528:app/lib/orchestrator/runtime-decision-engine.ts:235:  memoryMode: memory.memoryMode
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1529:app/lib/orchestrator/runtime-decision-engine.ts:243:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1530:app/lib/orchestrator/runtime-decision-engine.ts:247:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1531:app/lib/orchestrator/runtime-decision-engine.ts:248:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1532:app/lib/orchestrator/runtime-decision-engine.ts:257:decisions.push(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1533:app/lib/orchestrator/runtime-decision-engine.ts:261:context = appendRuntimeTrace(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1534:app/lib/orchestrator/runtime-decision-engine.ts:262:  context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1535:app/lib/orchestrator/runtime-decision-engine.ts:286:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1536:app/lib/orchestrator/runtime-decision-engine.ts:291:    governance,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1537:app/lib/orchestrator/runtime-decision-engine.ts:293:    executionControl,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1538:app/lib/orchestrator/runtime-decision-engine.ts:295:    memory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1539:app/lib/orchestrator/runtime-decision-engine.ts:300:    decisions,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1540:app/lib/orchestrator/runtime-causal-trace.ts:12:    memoryMode: string | null
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1541:app/lib/orchestrator/runtime-causal-trace.ts:28:  if (latest?.memoryMode) causalSignals.push(`memory:${latest.memoryMode}`)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1542:app/lib/orchestrator/runtime-causal-trace.ts:44:      memoryMode: latest?.memoryMode ?? null,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1547:app/lib/orchestrator/runtime-memory.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1548:app/lib/orchestrator/runtime-memory.ts:3:export type RuntimeMemoryState = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1549:app/lib/orchestrator/runtime-memory.ts:4:  memoryEnabled: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1550:app/lib/orchestrator/runtime-memory.ts:5:  memoryMode: 'isolated' | 'session' | 'persistent'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1551:app/lib/orchestrator/runtime-memory.ts:6:  contextWindow: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1552:app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1553:app/lib/orchestrator/runtime-memory.ts:12:  context: RuntimeContext
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1554:app/lib/orchestrator/runtime-memory.ts:13:): RuntimeMemoryState {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1555:app/lib/orchestrator/runtime-memory.ts:14:  if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1556:app/lib/orchestrator/runtime-memory.ts:16:      memoryEnabled: false,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1557:app/lib/orchestrator/runtime-memory.ts:17:      memoryMode: 'isolated',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1558:app/lib/orchestrator/runtime-memory.ts:18:      contextWindow: 2,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1559:app/lib/orchestrator/runtime-memory.ts:24:  if (context.safeMode) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1560:app/lib/orchestrator/runtime-memory.ts:26:      memoryEnabled: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1561:app/lib/orchestrator/runtime-memory.ts:27:      memoryMode: 'isolated',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1562:app/lib/orchestrator/runtime-memory.ts:28:      contextWindow: 4,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1563:app/lib/orchestrator/runtime-memory.ts:34:  if (context.provider === 'local') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1564:app/lib/orchestrator/runtime-memory.ts:36:      memoryEnabled: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1565:app/lib/orchestrator/runtime-memory.ts:37:      memoryMode: 'session',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1566:app/lib/orchestrator/runtime-memory.ts:38:      contextWindow: 12,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1567:app/lib/orchestrator/runtime-memory.ts:45:    memoryEnabled: true,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1568:app/lib/orchestrator/runtime-memory.ts:46:    memoryMode: 'persistent',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1569:app/lib/orchestrator/runtime-memory.ts:47:    contextWindow: 24,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1570:app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1571:app/lib/orchestrator/self-healing.ts:18:  clearDecisionMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1572:app/lib/orchestrator/decision-pipeline.ts:15:export function runDecisionPipeline(message: string, intent = 'general'): PipelineResult {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1573:app/lib/orchestrator/decision-pipeline.ts:19:  const execution = executeRoute({
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1574:app/lib/orchestrator/decision-pipeline.ts:27:  logEvent(createEvent('decision_pipeline', {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1575:app/lib/orchestrator/decision-pipeline.ts:28:    provider: execution.provider,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1576:app/lib/orchestrator/decision-pipeline.ts:30:    details: execution.reason
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1577:app/lib/orchestrator/decision-pipeline.ts:36:    provider: execution.provider,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1578:app/lib/orchestrator/decision-pipeline.ts:39:    reason: execution.reason
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1579:app/lib/orchestrator/decision-pipeline.ts:44:    provider: execution.provider,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1580:app/lib/orchestrator/decision-pipeline.ts:45:    executed: execution.executed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1581:app/lib/orchestrator/decision-pipeline.ts:46:    reason: execution.reason
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1582:app/lib/orchestrator/runtime-brain-matrix.ts:5:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1583:app/lib/orchestrator/runtime-brain-matrix.ts:7:export type RuntimeBrainMatrixState = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1584:app/lib/orchestrator/runtime-brain-matrix.ts:10:  sourceOfTruth: 'runtime-brain-matrix'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1585:app/lib/orchestrator/runtime-brain-matrix.ts:22:  operationalMemory: ReturnType<typeof buildRuntimeOperationalMemory>
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1586:app/lib/orchestrator/runtime-brain-matrix.ts:25:export function buildRuntimeBrainMatrix(): RuntimeBrainMatrixState {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1587:app/lib/orchestrator/runtime-brain-matrix.ts:31:  const operationalMemory = buildRuntimeOperationalMemory()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1588:app/lib/orchestrator/runtime-brain-matrix.ts:36:    sourceOfTruth: 'runtime-brain-matrix',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1589:app/lib/orchestrator/runtime-brain-matrix.ts:48:    operationalMemory,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1590:app/lib/orchestrator/runtime-enforcement.ts:1:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1591:app/lib/orchestrator/runtime-enforcement.ts:2:import type { RuntimeGovernanceDecision } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1593:app/lib/orchestrator/runtime-enforcement.ts:11:  context: RuntimeContext,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1594:app/lib/orchestrator/runtime-enforcement.ts:12:  governance: RuntimeGovernanceDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1596:app/lib/orchestrator/runtime-enforcement.ts:18:      reason: 'Governance bloqueou execução.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1598:app/lib/orchestrator/runtime-enforcement.ts:23:  if (context.safeMode && context.provider !== 'local') {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1599:app/lib/orchestrator/runtime-enforcement.ts:31:  if (!context.stable) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1600:app/lib/orchestrator/runtime-conscious-loop.ts:6:  createAutonomousDecision
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1601:app/lib/orchestrator/runtime-conscious-loop.ts:7:} from './runtime-autonomous-decision'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1602:app/lib/orchestrator/runtime-conscious-loop.ts:17:  decision: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1603:app/lib/orchestrator/runtime-conscious-loop.ts:27:  const decision =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1604:app/lib/orchestrator/runtime-conscious-loop.ts:28:    createAutonomousDecision(coordination)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1605:app/lib/orchestrator/runtime-conscious-loop.ts:31:    executeSelfHealing(decision)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1606:app/lib/orchestrator/runtime-conscious-loop.ts:38:    decision: decision.action,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1607:app/lib/orchestrator/routing.ts:1:import { resolveRuntimeDecision } from './runtime'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1608:app/lib/orchestrator/routing.ts:16:  const runtime = resolveRuntimeDecision()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1631:app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1632:app/lib/executive-runtime-context/executive-runtime-context.ts:3:} from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1633:app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1634:app/lib/executive-runtime-context/executive-runtime-context.ts:11:} from '../runtime-provider-authority/runtime-provider-authority'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1635:app/lib/executive-runtime-context/executive-runtime-context.ts:13:export interface ExecutiveRuntimeContextReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1636:app/lib/executive-runtime-context/executive-runtime-context.ts:14:  contextId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1637:app/lib/executive-runtime-context/executive-runtime-context.ts:16:  source: 'executive-runtime-context'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1638:app/lib/executive-runtime-context/executive-runtime-context.ts:21:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1639:app/lib/executive-runtime-context/executive-runtime-context.ts:26:  executionPolicy: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1640:app/lib/executive-runtime-context/executive-runtime-context.ts:28:  executionPriority: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1641:app/lib/executive-runtime-context/executive-runtime-context.ts:29:  executionRoute: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1642:app/lib/executive-runtime-context/executive-runtime-context.ts:35:export function buildExecutiveRuntimeContext(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1643:app/lib/executive-runtime-context/executive-runtime-context.ts:39:): ExecutiveRuntimeContextReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1644:app/lib/executive-runtime-context/executive-runtime-context.ts:40:  const authority =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1645:app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1646:app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1647:app/lib/executive-runtime-context/executive-runtime-context.ts:49:  const executionAllowed =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1648:app/lib/executive-runtime-context/executive-runtime-context.ts:50:    authority.executionAllowed &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1649:app/lib/executive-runtime-context/executive-runtime-context.ts:51:    state.executionAllowed &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1650:app/lib/executive-runtime-context/executive-runtime-context.ts:52:    provider.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1651:app/lib/executive-runtime-context/executive-runtime-context.ts:55:    contextId: `executive-context-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1652:app/lib/executive-runtime-context/executive-runtime-context.ts:57:    source: 'executive-runtime-context',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1653:app/lib/executive-runtime-context/executive-runtime-context.ts:62:    executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1654:app/lib/executive-runtime-context/executive-runtime-context.ts:67:    executionPolicy: authority.executionPolicy,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1655:app/lib/executive-runtime-context/executive-runtime-context.ts:68:    runtimeAction: authority.runtimeAction,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1656:app/lib/executive-runtime-context/executive-runtime-context.ts:69:    executionPriority: authority.executionPriority,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1657:app/lib/executive-runtime-context/executive-runtime-context.ts:70:    executionRoute: authority.executionRoute,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1658:app/lib/executive-runtime-context/executive-runtime-context.ts:72:    recommendation: executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1659:app/lib/executive-runtime-context/executive-runtime-context.ts:73:      ? 'Executive Runtime Context approved execution.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1660:app/lib/executive-runtime-context/executive-runtime-context.ts:74:      : 'Executive Runtime Context restricted execution.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1661:app/lib/executive-runtime-context/executive-runtime-context.ts:77:      `allowed:${executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1662:app/lib/executive-runtime-context/executive-runtime-context.ts:78:      `authority:${authority.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1663:app/lib/executive-runtime-context/executive-runtime-context.ts:80:      `stateAllowed:${state.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1664:app/lib/executive-runtime-context/executive-runtime-context.ts:82:      `providerAllowed:${provider.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1665:app/lib/executive-runtime-context/executive-runtime-context.ts:84:      `policy:${authority.executionPolicy}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1666:app/lib/executive-runtime-context/executive-runtime-context.ts:85:      `action:${authority.runtimeAction}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1667:app/lib/executive-runtime-context/executive-runtime-context.ts:86:      `priority:${authority.executionPriority}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1668:app/lib/executive-runtime-context/executive-runtime-context.ts:87:      `route:${authority.executionRoute}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1669:app/lib/runtime-state-engine/runtime-operational-state-engine.ts:2:  evaluateRuntimeAdaptiveDecisionLayer,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1670:app/lib/runtime-state-engine/runtime-operational-state-engine.ts:3:} from '@/app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1671:app/lib/runtime-state-engine/runtime-operational-state-engine.ts:14:    evaluateRuntimeAdaptiveDecisionLayer()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1704:app/lib/context.ts:4:const FILE = path.join(process.cwd(), 'context.json')
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1705:app/lib/context.ts:36:export function contextSummary(userId: string) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1706:app/lib/router.ts:4:  | 'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1707:app/lib/router.ts:16:  if (m.includes('memoria') || m.includes('memória')) return 'memory'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1723:app/lib/decision-engine.ts:1:import { buildSystemContext, improveLocalAnswer } from './response-quality'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1724:app/lib/decision-engine.ts:3:export type DecisionInput = {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1725:app/lib/decision-engine.ts:14:  if (msg.includes('comando') || msg.includes('shell') || msg.includes('terminal')) return 'shell-execution'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1726:app/lib/decision-engine.ts:17:  if (msg.includes('memória') || msg.includes('memory') || msg.includes('qual meu nome') || msg.includes('meu nome?')) return 'memory-query'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1727:app/lib/decision-engine.ts:23:export function buildDecision(input: DecisionInput) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1728:app/lib/decision-engine.ts:26:  const context = buildSystemContext(
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1729:app/lib/decision-engine.ts:34:    context,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1730:app/lib/decision-engine.ts:46:export function validateDecisionAnswer(message: string, answer: string) {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1731:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1732:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1733:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:5:export type RuntimeMemoryState =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1734:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:10:export interface RuntimeMemoryConsolidationReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1735:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:11:  memoryId: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1736:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:13:  source: 'runtime-memory-consolidation'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1737:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:15:  memoryState: RuntimeMemoryState
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1738:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:17:  reflectionState: string
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1739:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:20:  executionAllowed: boolean
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1740:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:24:  memoryStrength: number
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1741:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1742:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:34:RuntimeMemoryConsolidationReport {
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1743:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:35:  const reflection =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1744:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1745:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:38:  const memoryStrength =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1746:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:39:    reflection.adaptationScore >= 90 &&
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1747:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:40:    reflection.pipelineStable
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1748:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:42:      : reflection.pipelineStable
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1749:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:46:  const memoryState: RuntimeMemoryState =
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1750:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:47:    !reflection.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1751:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:49:      : memoryStrength >= 90
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1752:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:54:    memoryId: `memory-${Date.now()}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1753:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:56:    source: 'runtime-memory-consolidation',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1754:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:58:    memoryState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1755:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:60:    reflectionState:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1756:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:61:      reflection.reflectionState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1757:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:64:      reflection.integrationState,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1758:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:66:    executionAllowed:
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1759:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:67:      reflection.executionAllowed,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1760:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:70:      reflection.pipelineStable,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1761:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:73:      reflection.adaptationScore,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1762:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:75:    memoryStrength,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1763:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:78:      reflection.queueUtilization,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1764:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:81:      reflection.consensusRatio,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1765:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:84:      reflection.executionAllowed
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1766:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:85:        ? 'Runtime memory consolidation active.'
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1767:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:86:        : 'Runtime memory consolidation restricted.',
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1768:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:89:      `memory:${memoryState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1769:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:90:      `reflection:${reflection.reflectionState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1770:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:91:      `integration:${reflection.integrationState}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1771:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:92:      `allowed:${reflection.executionAllowed}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1772:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:93:      `stable:${reflection.pipelineStable}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1773:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:94:      `adaptation:${reflection.adaptationScore}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1774:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:95:      `memoryStrength:${memoryStrength}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1775:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:96:      `queue:${reflection.queueUtilization}`,
+scripts/audit/v271-cognitive-unification/01-unified-flow.txt:1776:app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:97:      `consensus:${reflection.consensusRatio}`,
+scripts/audit/v271-cognitive-unification/02-import-network.txt:1:app/lib/context-smart.ts:import { contextSummary } from './context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:3:app/lib/iasevero-core.ts:import { saveMessage, getHistory, saveFact, getFacts } from './local-memory'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:4:app/lib/iasevero-core.ts:import { buildDecision, validateDecisionAnswer } from './decision-engine'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:5:app/lib/iasevero-core.ts:import { localBrain } from './local-brain'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:28:app/lib/runtime-core/runtime-state-transition-engine.ts:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:29:app/lib/runtime-core/runtime-unified-context.ts:import { buildRuntimeBrainMatrix } from '../orchestrator/runtime-brain-matrix'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:46:app/lib/runtime-core/runtime-decision-gate.ts:import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:61:app/lib/runtime-core/runtime-feedback-integration.ts:import { runRuntimeMemoryPersistenceLoop } from './runtime-memory-persistence-loop'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:62:app/lib/runtime-core/runtime-feedback-integration.ts:import { superviseRuntimeAutonomously } from './runtime-autonomous-supervisor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:63:app/lib/runtime-core/runtime-feedback-integration.ts:import { emitRuntimeTelemetry } from './runtime-telemetry-fabric'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:68:app/lib/runtime-core/runtime-decision-loop.ts:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:69:app/lib/runtime-core/runtime-cognitive-gateway.ts:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:71:app/lib/runtime-core/runtime-brain-kernel-coordinator.ts:import { buildRuntimeUnifiedContext } from './runtime-unified-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:72:app/lib/runtime-core/runtime-memory-persistence-loop.ts:import { superviseRuntimeAutonomously } from './runtime-autonomous-supervisor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:75:app/lib/learning.ts:import fs from 'fs'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:76:app/lib/learning.ts:import path from 'path'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:80:app/lib/memory.ts:import fs from 'fs'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:81:app/lib/memory.ts:import path from 'path'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:82:app/lib/local-memory.ts:import fs from 'fs'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:85:app/lib/providers/local.ts:import { localIntelligence } from '../zero-cost-brain'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:86:app/lib/providers/local.ts:import { smartContext } from '../context-smart';
+scripts/audit/v271-cognitive-unification/02-import-network.txt:90:app/lib/providers/local.ts:import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:92:app/lib/providers/local.ts:import { contextSummary, saveTurn } from '../context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:96:app/lib/orchestrator/runtime-budget-control.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:97:app/lib/orchestrator/learning-engine.ts:import { getRecentDecisions } from './decision-memory'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:110:app/lib/orchestrator/runtime-operational-memory.ts:import { readRuntimeSnapshots } from './runtime-snapshot'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:111:app/lib/orchestrator/runtime-governor.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:112:app/lib/orchestrator/runtime-governor.ts:import type { RuntimePolicyDecision } from './runtime-policy'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:117:app/lib/orchestrator/runtime-policy.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:118:app/lib/orchestrator/runtime-execution-control.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:122:app/lib/orchestrator/runtime-provider-governor.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:131:app/lib/orchestrator/metrics.ts:import { getMemoryPolicy } from './memory-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:136:app/lib/orchestrator/runtime-execution-pipeline.ts:import { createRuntimeContext, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:138:app/lib/orchestrator/runtime-execution-pipeline.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:143:app/lib/orchestrator/runtime-decision-engine.ts:import { executeRuntimeConsciousLoop } from './runtime-conscious-loop'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:144:app/lib/orchestrator/runtime-decision-engine.ts:import { resolveHybridProvider } from './hybrid-router'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:145:app/lib/orchestrator/runtime-decision-engine.ts:import { executeSelfHealing } from './self-healing'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:146:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimePolicy } from './runtime-policy'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:147:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeGovernance } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:148:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateExecutionControl } from './runtime-execution-control'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:149:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeBudget } from './runtime-budget-control'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:150:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateProviderGovernor } from './runtime-provider-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:151:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeMemory } from './runtime-memory'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:152:app/lib/orchestrator/runtime-decision-engine.ts:import { updateRuntimeRegistry, appendRuntimeWarning } from './runtime-state-registry'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:153:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeAwareness } from './runtime-awareness'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:154:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeRecovery } from './runtime-recovery'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:155:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:156:app/lib/orchestrator/runtime-decision-engine.ts:import { generateRuntimeTelemetry } from './runtime-telemetry'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:157:app/lib/orchestrator/runtime-decision-engine.ts:import { persistRuntimeSnapshot, readRuntimeSnapshots } from './runtime-snapshot'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:158:app/lib/orchestrator/runtime-decision-engine.ts:import { analyzeRuntimeIntelligence } from './runtime-intelligence'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:159:app/lib/orchestrator/runtime-decision-engine.ts:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:160:app/lib/orchestrator/runtime-decision-engine.ts:import { registerRuntimeIncident } from './runtime-incidents'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:161:app/lib/orchestrator/runtime-decision-engine.ts:import { enforceRuntimeExecution } from './runtime-enforcement'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:162:app/lib/orchestrator/runtime-decision-engine.ts:import { createRuntimeContext, appendRuntimeTrace, type RuntimeMode, type RuntimeProvider } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:163:app/lib/orchestrator/runtime-decision-engine.ts:import { transitionRuntimeLifecycle } from './runtime-lifecycle-manager'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:164:app/lib/orchestrator/runtime-decision-engine.ts:import { coordinateRuntimeBrainKernel } from '../runtime-core/runtime-brain-kernel-coordinator'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:170:app/lib/orchestrator/runtime-memory.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:173:app/lib/orchestrator/self-healing.ts:import { clearQueue } from './queue-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:174:app/lib/orchestrator/self-healing.ts:import { clearDecisionMemory } from './decision-memory'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:176:app/lib/orchestrator/decision-pipeline.ts:import { evaluatePolicy } from './policy'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:177:app/lib/orchestrator/decision-pipeline.ts:import { resolveProviderRoute } from './routing'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:178:app/lib/orchestrator/decision-pipeline.ts:import { executeRoute } from './executor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:179:app/lib/orchestrator/decision-pipeline.ts:import { createEvent } from './events'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:180:app/lib/orchestrator/decision-pipeline.ts:import { logEvent } from './event-logger'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:181:app/lib/orchestrator/decision-pipeline.ts:import { addTrace } from './trace'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:182:app/lib/orchestrator/runtime-brain-matrix.ts:import { getOperationalMetrics } from './metrics'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:183:app/lib/orchestrator/runtime-brain-matrix.ts:import { readRuntimeSnapshots } from './runtime-snapshot'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:184:app/lib/orchestrator/runtime-brain-matrix.ts:import { superviseRuntime } from './runtime-supervisor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:185:app/lib/orchestrator/runtime-brain-matrix.ts:import { buildRuntimeCausalTraceMap } from './runtime-causal-trace'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:186:app/lib/orchestrator/runtime-brain-matrix.ts:import { buildRuntimeOperationalMemory } from './runtime-operational-memory'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:188:app/lib/orchestrator/runtime-enforcement.ts:import type { RuntimeContext } from './runtime-context'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:189:app/lib/orchestrator/runtime-enforcement.ts:import type { RuntimeGovernanceDecision } from './runtime-governor'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:195:app/lib/orchestrator/evolution-engine.ts:import { analyzeRuntimePatterns } from './learning-engine'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:198:app/lib/orchestrator/routing.ts:import { resolveRuntimeDecision } from './runtime'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:205:app/lib/context.ts:import fs from 'fs'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:206:app/lib/context.ts:import path from 'path'
+scripts/audit/v271-cognitive-unification/02-import-network.txt:207:app/lib/decision-engine.ts:import { buildSystemContext, improveLocalAnswer } from './response-quality'

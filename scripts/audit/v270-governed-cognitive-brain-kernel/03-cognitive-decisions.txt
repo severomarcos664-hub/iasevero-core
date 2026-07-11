@@ -1,0 +1,1057 @@
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:1:export function evaluateRuntimeAdaptiveIntelligence() {
+app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine.ts:35:    reasoning: [
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:2:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:5:export function evaluateRuntimeCognitiveResponseProfiler() {
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:7:    evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-profiler/runtime-cognitive-response-profiler.ts:45:    reasoning: [
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:2:  evaluateExecutiveRuntimeCore,
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:20:  reasoning: string[]
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:23:export function evaluateRuntimeExecutiveAuthority():
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:27:    evaluateExecutiveRuntimeCore()
+app/lib/runtime-executive-authority/runtime-executive-authority.ts:60:    reasoning: [
+app/lib/runtime-executive-state/runtime-executive-state.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-executive-state/runtime-executive-state.ts:6:  evaluateRuntimeProviderAuthority
+app/lib/runtime-executive-state/runtime-executive-state.ts:30:  reasoning: string[]
+app/lib/runtime-executive-state/runtime-executive-state.ts:33:export function evaluateRuntimeExecutiveState(
+app/lib/runtime-executive-state/runtime-executive-state.ts:39:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-executive-state/runtime-executive-state.ts:42:    evaluateRuntimeProviderAuthority(
+app/lib/runtime-executive-state/runtime-executive-state.ts:86:    reasoning: [
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:2:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:30:  reasoning: string[]
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:33:export function evaluateRuntimeCausalInfluence():
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:37:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-causal-influence-engine/runtime-causal-influence-engine.ts:112:    reasoning: [
+app/lib/runtime-unified-operational-graph/runtime-unified-operational-graph.ts:42:  reasoning: string[]
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:2:  evaluateRuntimeExecutiveAuthorityGateway
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:24:  reasoning: string[]
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:27:export function evaluateRuntimeProviderAuthority(
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:33:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:80:    reasoning: [
+app/lib/runtime-provider-authority/runtime-provider-authority.ts:88:      `route:${route.reason}`
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:5:export type RuntimeGovernanceDecision =
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:22:  decision: RuntimeGovernanceDecision
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:35:  reasoning: string[]
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:38:export function evaluateRuntimeExecutiveGovernanceLayer(
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:46:  const decision: RuntimeGovernanceDecision =
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:56:    decision === 'restrict'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:58:      : decision === 'protect'
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:69:    decision,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:82:      `REGL decision: ${decision} / priority: ${priority}.`,
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:84:    reasoning: [
+app/lib/runtime-executive-governance-layer/runtime-executive-governance-layer.ts:85:      `decision:${decision}`,
+app/lib/iasevero-core.ts:3:import { buildDecision, validateDecisionAnswer } from './decision-engine'
+app/lib/iasevero-core.ts:30:  const decision = buildDecision({ message, facts, history })
+app/lib/iasevero-core.ts:32:  const rawReply = await runProvider(decision.context)
+app/lib/iasevero-core.ts:33:  const reply = validateDecisionAnswer(message, rawReply)
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:2:  evaluateRuntimeExecutionGovernanceMatrix,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:9:export function evaluateRuntimeAdaptiveDecisionLayer() {
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:10:  const matrix = evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:22:  const adaptiveDecision =
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:32:    decisionId: `adaptive-decision-${Date.now()}`,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:35:    source: 'runtime-adaptive-decision-layer',
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:37:    adaptiveDecision,
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:50:    reasoning: [
+app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer.ts:51:      `decision:${adaptiveDecision}`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:2:  evaluateRuntimeCausalInfluence,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:6:  evaluateRuntimeCognitiveStateFabric,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:9:export type RuntimeLoopDecision =
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:25:  decision: RuntimeLoopDecision
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:40:  reasoning: string[]
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:43:export function evaluateRuntimeLiveCognitiveLoop():
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:47:    evaluateRuntimeCognitiveStateFabric()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:50:    evaluateRuntimeCausalInfluence()
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:52:  const decision: RuntimeLoopDecision =
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:62:    decision === 'accelerate'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:64:      : decision === 'stabilize'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:66:      : decision === 'contain'
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:84:    decision,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:110:      `Runtime live loop decision: ${decision}.`,
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:112:    reasoning: [
+app/lib/runtime-live-cognitive-loop/runtime-live-cognitive-loop.ts:114:      `decision:${decision}`,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:2:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:31:  reasoning: string[]
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:34:export function evaluateRuntimeExecutionScheduler():
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:38:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-execution-scheduler/runtime-execution-scheduler.ts:103:    reasoning: [
+app/lib/runtime-core/runtime-state-cognition-engine.ts:20:  reasoning: string[]
+app/lib/runtime-core/runtime-state-cognition-engine.ts:23:export function evaluateRuntimeStateCognition(): RuntimeStateCognition {
+app/lib/runtime-core/runtime-state-cognition-engine.ts:56:    reasoning: [
+app/lib/runtime-core/runtime-adaptive-response.ts:1:import { evaluateRuntimeCognitiveState } from './runtime-cognitive-state'
+app/lib/runtime-core/runtime-adaptive-response.ts:16:  reason: string
+app/lib/runtime-core/runtime-adaptive-response.ts:17:  reasoning: string[]
+app/lib/runtime-core/runtime-adaptive-response.ts:20:export function evaluateRuntimeAdaptiveResponse(): RuntimeAdaptiveResponse {
+app/lib/runtime-core/runtime-adaptive-response.ts:21:  const state = evaluateRuntimeCognitiveState()
+app/lib/runtime-core/runtime-adaptive-response.ts:32:      reason: 'Estado cognitivo crítico exige isolamento operacional.',
+app/lib/runtime-core/runtime-adaptive-response.ts:33:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:46:      reason: 'Estado sobrecarregado exige contenção e redução de pressão.',
+app/lib/runtime-core/runtime-adaptive-response.ts:47:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:60:      reason: 'Degradação operacional detectada; reduzir pressão.',
+app/lib/runtime-core/runtime-adaptive-response.ts:61:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:74:      reason: 'Estado focado permite operação supervisionada normal.',
+app/lib/runtime-core/runtime-adaptive-response.ts:75:      reasoning: state.reasoning,
+app/lib/runtime-core/runtime-adaptive-response.ts:87:    reason: 'Estado estável com observação contínua.',
+app/lib/runtime-core/runtime-adaptive-response.ts:88:    reasoning: state.reasoning,
+app/lib/runtime-core/runtime-action-policy-engine.ts:2:  evaluateRuntimeAutonomousResponse,
+app/lib/runtime-core/runtime-action-policy-engine.ts:17:  reasoning: string[]
+app/lib/runtime-core/runtime-action-policy-engine.ts:20:export function evaluateRuntimeActionPolicy():
+app/lib/runtime-core/runtime-action-policy-engine.ts:22:  const response = evaluateRuntimeAutonomousResponse()
+app/lib/runtime-core/runtime-action-policy-engine.ts:63:    reasoning: [
+app/lib/runtime-core/runtime-action-policy-engine.ts:64:      ...response.reasoning,
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:21:export function evaluateRuntimeAdaptiveExecution():
+app/lib/runtime-core/runtime-adaptive-execution-engine.ts:60:    reasoning: [
+app/lib/runtime-core/runtime-lane-supervisor.ts:21:  reasoning: string[]
+app/lib/runtime-core/runtime-lane-supervisor.ts:81:    reasoning: [
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:14:  executeImmediately: boolean
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:17:  reasoning: string[]
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:23:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:41:    executeImmediately:
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:60:    reasoning: [
+app/lib/runtime-core/runtime-adaptive-scheduler.ts:61:      ...policy.reasoning,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:2:  evaluateRuntimeOptimization,
+app/lib/runtime-core/runtime-strategic-intelligence.ts:28:  reasoning: string[]
+app/lib/runtime-core/runtime-strategic-intelligence.ts:31:export function evaluateRuntimeStrategicIntelligence():
+app/lib/runtime-core/runtime-strategic-intelligence.ts:34:  const optimization = evaluateRuntimeOptimization()
+app/lib/runtime-core/runtime-strategic-intelligence.ts:88:    reasoning: [
+app/lib/runtime-core/runtime-strategic-intelligence.ts:89:      ...optimization.reasoning,
+app/lib/runtime-core/runtime-policy-engine.ts:1:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-policy-engine.ts:2:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-policy-engine.ts:5:export type RuntimePolicyDecision = {
+app/lib/runtime-core/runtime-policy-engine.ts:11:  reason: string
+app/lib/runtime-core/runtime-policy-engine.ts:12:  reasoning: string[]
+app/lib/runtime-core/runtime-policy-engine.ts:15:export function evaluateRuntimePolicy(): RuntimePolicyDecision {
+app/lib/runtime-core/runtime-policy-engine.ts:16:  const severity = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-policy-engine.ts:17:  const predictive = evaluateRuntimePredictiveStabilization()
+app/lib/runtime-core/runtime-policy-engine.ts:47:    reason:
+app/lib/runtime-core/runtime-policy-engine.ts:57:    reasoning: [
+app/lib/runtime-core/runtime-policy-engine.ts:58:      ...severity.reasoning,
+app/lib/runtime-core/runtime-policy-engine.ts:59:      ...predictive.reasoning,
+app/lib/runtime-core/runtime-retention-manager.ts:9:  reasoning: string[]
+app/lib/runtime-core/runtime-retention-manager.ts:12:export function evaluateRuntimeRetention():
+app/lib/runtime-core/runtime-retention-manager.ts:27:    reasoning: [
+app/lib/runtime-core/runtime-policy-enforcement.ts:10:  reason: string
+app/lib/runtime-core/runtime-policy-enforcement.ts:43:      reason: 'runtime flood protection activated',
+app/lib/runtime-core/runtime-policy-enforcement.ts:51:      reason: 'payload exceeds runtime limit',
+app/lib/runtime-core/runtime-policy-enforcement.ts:59:      reason: 'runtime governance restriction',
+app/lib/runtime-core/runtime-policy-enforcement.ts:66:    reason: 'runtime policy approved',
+app/lib/runtime-core/runtime-severity-governance.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-severity-governance.ts:21:export function evaluateRuntimeSeverityGovernance():
+app/lib/runtime-core/runtime-severity-governance.ts:65:    reasoning: [
+app/lib/runtime-core/runtime-severity-governance.ts:66:      ...telemetry.reasoning,
+app/lib/runtime-core/runtime-execution-orchestrator.ts:2:import { evaluateRuntimeAdaptiveResponse } from './runtime-adaptive-response'
+app/lib/runtime-core/runtime-execution-orchestrator.ts:10:export type RuntimeExecutionPlan = {
+app/lib/runtime-core/runtime-execution-orchestrator.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-execution-orchestrator.ts:21:export function evaluateRuntimeExecutionOrchestrator():
+app/lib/runtime-core/runtime-execution-orchestrator.ts:22:  RuntimeExecutionPlan {
+app/lib/runtime-core/runtime-execution-orchestrator.ts:26:  const adaptive = evaluateRuntimeAdaptiveResponse()
+app/lib/runtime-core/runtime-execution-orchestrator.ts:51:    reasoning: [
+app/lib/runtime-core/runtime-execution-orchestrator.ts:52:      ...adaptive.reasoning,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:2:  generateRuntimeLearningSignal,
+app/lib/runtime-core/runtime-optimization-intelligence.ts:3:} from './runtime-learning-signals'
+app/lib/runtime-core/runtime-optimization-intelligence.ts:20:  reasoning: string[]
+app/lib/runtime-core/runtime-optimization-intelligence.ts:23:export function evaluateRuntimeOptimization():
+app/lib/runtime-core/runtime-optimization-intelligence.ts:26:  const signal = generateRuntimeLearningSignal()
+app/lib/runtime-core/runtime-optimization-intelligence.ts:67:    reasoning: [
+app/lib/runtime-core/runtime-optimization-intelligence.ts:68:      ...signal.reasoning,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:1:import { evaluateRuntimeSeverityGovernance }
+app/lib/runtime-core/runtime-predictive-stabilization.ts:17:  reasoning: string[]
+app/lib/runtime-core/runtime-predictive-stabilization.ts:20:export function evaluateRuntimePredictiveStabilization():
+app/lib/runtime-core/runtime-predictive-stabilization.ts:23:  const governance = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-predictive-stabilization.ts:63:    reasoning: [
+app/lib/runtime-core/runtime-predictive-stabilization.ts:64:      ...governance.reasoning,
+app/lib/runtime-core/runtime-predictive-stabilization.ts:80:    message: `Predictive stabilization evaluated with risk ${result.predictiveRisk}.`,
+app/lib/runtime-core/runtime-master-orchestrator.ts:1:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-master-orchestrator.ts:3:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-master-orchestrator.ts:10:  const governance = evaluateRuntimeGovernanceCenter()
+app/lib/runtime-core/runtime-master-orchestrator.ts:12:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-master-orchestrator.ts:20:    governance.decision === 'NORMAL_OPERATION'
+app/lib/runtime-core/runtime-master-orchestrator.ts:43:    reasoning: [
+app/lib/runtime-core/runtime-master-orchestrator.ts:45:      `decision:${governance.decision}`,
+app/lib/runtime-core/runtime-master-orchestrator.ts:48:      `healing:${healing.decision}`,
+app/lib/runtime-core/runtime-state-transition-engine.ts:2:import { runRuntimeDecisionLoop } from './runtime-decision-loop'
+app/lib/runtime-core/runtime-state-transition-engine.ts:17:  reason: string
+app/lib/runtime-core/runtime-state-transition-engine.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-state-transition-engine.ts:24:  const loop = runRuntimeDecisionLoop()
+app/lib/runtime-core/runtime-state-transition-engine.ts:63:    reason: `Runtime transition applied: ${previousState} -> ${nextState}`,
+app/lib/runtime-core/runtime-state-transition-engine.ts:64:    reasoning: [
+app/lib/runtime-core/runtime-state-transition-engine.ts:65:      ...loop.reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:4:  | 'plan'
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:6:  | 'execute'
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:7:  | 'evaluate'
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:8:  | 'learn'
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:11:export type CognitiveStopReason =
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:18:  | 'no-valid-plan';
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:55:export interface CognitivePlan {
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:68:  reason: string;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:84:  learnedEvidence: CognitiveEvidence[];
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:94:  reasoning: string[];
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:103:  stopReason: CognitiveStopReason | null;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:127:  createPlan(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:131:  ): Promise<CognitivePlan>;
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:139:  execute(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:145:  evaluate(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:154:    learnedEvidence: CognitiveEvidence[],
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:181:      reason: 'Destructive actions are prohibited by the objective contract.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:191:      reason: 'Non-reversible actions are prohibited.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:204:      reason: 'External access is not authorized for this objective.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:217:      reason: 'The action would exceed the objective risk limit.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:226:    reason: 'Action satisfies the local cognitive safety contract.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:239:    stopReason: null,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:261:    const reasoning: string[] = [];
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:272:    reasoning.push(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:281:        stopReason: 'insufficient-evidence',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:291:        reasoning: [
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:292:          ...reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:311:    phases.push('plan');
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:312:    const plan = await adapters.createPlan(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:318:    reasoning.push(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:319:      `plan:${plan.id}`,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:320:      `planConfidence:${normalizeConfidence(plan.confidence)}`,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:321:      ...plan.rationale,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:325:      plan.actions
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:334:        stopReason: 'no-valid-plan',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:344:        reasoning: [
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:345:          ...reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:346:          'The planner did not produce a valid reversible action.',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:381:      reason: localAuthorization.allowed
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:382:        ? matrixAuthorization.reason
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:383:        : localAuthorization.reason,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:386:    reasoning.push(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:389:      `authorizationReason:${finalAuthorization.reason}`,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:396:        stopReason:
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:410:        reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:416:    phases.push('execute');
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:417:    const execution = await adapters.execute(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:429:        stopReason: 'execution-failed',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:439:        reasoning: [
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:440:          ...reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:448:    phases.push('evaluate');
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:449:    const evaluation = await adapters.evaluate(
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:456:    phases.push('learn');
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:459:      evaluation.learnedEvidence,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:469:      stopReason: evaluation.objectiveSatisfied
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:484:      reasoning: [
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:485:        ...reasoning,
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:494:  if (!state.completed && state.stopReason === null) {
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:497:      stopReason: 'maximum-iterations-reached',
+app/lib/runtime-core/runtime-governed-cognitive-loop.ts:509:      : `Cognitive loop stopped: ${state.stopReason ?? 'unknown'}.`,
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:13:  reasoning: string[]
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:45:    reasoning: [
+app/lib/runtime-core/runtime-autonomous-supervisor.ts:46:      ...transition.reasoning,
+app/lib/runtime-core/runtime-event-stream-engine.ts:6:  | 'governance.evaluated'
+app/lib/runtime-core/runtime-unified-intelligence-engine.ts:8:export function executeRuntimeUnifiedIntelligence(input = {}) {
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:2:  evaluateRuntimeStrategicIntelligence,
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:36:  reasoning: string[]
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:39:export function evaluateRuntimeRiskEscalation():
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:43:    evaluateRuntimeStrategicIntelligence()
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:95:    reasoning: [
+app/lib/runtime-core/runtime-risk-escalation-intelligence.ts:96:      ...strategic.reasoning,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:2:  evaluateRuntimeTemporalDrift,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:6:  evaluateRuntimeDecisionFusion,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:7:} from './runtime-decision-fusion-engine'
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:24:  reasoning: string[]
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:27:export function evaluateRuntimeExecutionCriticality():
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:30:  const drift = evaluateRuntimeTemporalDrift()
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:31:  const fusion = evaluateRuntimeDecisionFusion()
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:64:    reasoning: [
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:65:      ...drift.reasoning,
+app/lib/runtime-core/runtime-execution-criticality-intelligence.ts:66:      ...fusion.reasoning,
+app/lib/runtime-core/runtime-resilience-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-resilience-engine.ts:23:  reasoning: string[]
+app/lib/runtime-core/runtime-resilience-engine.ts:26:export function evaluateRuntimeResilience():
+app/lib/runtime-core/runtime-resilience-engine.ts:29:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-resilience-engine.ts:91:    reasoning: [
+app/lib/runtime-core/runtime-resilience-engine.ts:92:      ...adaptive.reasoning,
+app/lib/runtime-core/runtime-recovery-engine.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-recovery-engine.ts:97:    reasoning: [
+app/lib/runtime-core/runtime-load-balancer.ts:21:  reasoning: string[]
+app/lib/runtime-core/runtime-load-balancer.ts:57:    reasoning: [
+app/lib/runtime-core/runtime-telemetry-correlation.ts:14:  reasoning: string[]
+app/lib/runtime-core/runtime-telemetry-correlation.ts:50:    reasoning: [
+app/lib/runtime-core/runtime-confidence-intelligence.ts:2:  evaluateRuntimeRiskEscalation,
+app/lib/runtime-core/runtime-confidence-intelligence.ts:22:  reasoning: string[]
+app/lib/runtime-core/runtime-confidence-intelligence.ts:25:export function evaluateRuntimeConfidence():
+app/lib/runtime-core/runtime-confidence-intelligence.ts:29:    evaluateRuntimeRiskEscalation()
+app/lib/runtime-core/runtime-confidence-intelligence.ts:84:    reasoning: [
+app/lib/runtime-core/runtime-confidence-intelligence.ts:85:      ...escalation.reasoning,
+app/lib/runtime-core/runtime-evaluation-engine.ts:2:  evaluateRuntimeAdaptiveExecution,
+app/lib/runtime-core/runtime-evaluation-engine.ts:6:  evaluateRuntimeResilience,
+app/lib/runtime-core/runtime-evaluation-engine.ts:28:  reasoning: string[]
+app/lib/runtime-core/runtime-evaluation-engine.ts:31:export function evaluateRuntimeExecutionQuality():
+app/lib/runtime-core/runtime-evaluation-engine.ts:34:  const adaptive = evaluateRuntimeAdaptiveExecution()
+app/lib/runtime-core/runtime-evaluation-engine.ts:35:  const resilience = evaluateRuntimeResilience()
+app/lib/runtime-core/runtime-evaluation-engine.ts:107:    reasoning: [
+app/lib/runtime-core/runtime-governance-enforcement.ts:1:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-governance-enforcement.ts:13:  enforcementReasoning: string[]
+app/lib/runtime-core/runtime-governance-enforcement.ts:17:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-governance-enforcement.ts:51:    enforcementReasoning: [
+app/lib/runtime-core/runtime-governance-enforcement.ts:52:      ...gateway.reasoning,
+app/lib/runtime-core/runtime-unified-intelligence-gateway.ts:2:  executeRuntimeUnifiedIntelligence,
+app/lib/runtime-core/runtime-unified-intelligence-gateway.ts:6:  return executeRuntimeUnifiedIntelligence(input)
+app/lib/runtime-core/runtime-execution-coordinator.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:2:import { executeRuntimeAction } from './runtime-action-engine'
+app/lib/runtime-core/runtime-execution-coordinator.ts:11:  actionExecuted: boolean
+app/lib/runtime-core/runtime-execution-coordinator.ts:13:  reasoning: string[]
+app/lib/runtime-core/runtime-execution-coordinator.ts:19:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-execution-coordinator.ts:21:  const action = executeRuntimeAction(
+app/lib/runtime-core/runtime-execution-coordinator.ts:23:    policy.reason
+app/lib/runtime-core/runtime-execution-coordinator.ts:32:    actionExecuted: action.executed,
+app/lib/runtime-core/runtime-execution-coordinator.ts:37:    reasoning: [
+app/lib/runtime-core/runtime-execution-coordinator.ts:38:      ...policy.reasoning,
+app/lib/runtime-core/runtime-execution-coordinator.ts:39:      ...action.reasoning,
+app/lib/runtime-core/runtime-execution-coordinator.ts:40:      `coordinator:executed`,
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:2:  evaluateRuntimeStateCognition,
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:14:  reasoning: string[]
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:17:export function evaluateRuntimeTemporalDrift():
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:19:  const cognition = evaluateRuntimeStateCognition()
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:48:    reasoning: [
+app/lib/runtime-core/runtime-temporal-drift-intelligence.ts:49:      ...cognition.reasoning,
+app/lib/runtime-core/runtime-execution-bridge.ts:10:    runtime.governance.decision === 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-execution-bridge.ts:11:    runtime.governance.decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-execution-bridge.ts:18:    message: 'Chat request evaluated by runtime execution bridge.',
+app/lib/runtime-core/runtime-execution-bridge.ts:24:      governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-execution-bridge.ts:26:      healing: runtime.healing.decision,
+app/lib/runtime-core/runtime-integrity-validator.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-integrity-validator.ts:92:    reasoning: [
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:2:  evaluateRuntimeExecutionCriticality,
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:25:  reasoning: string[]
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:28:export function evaluateRuntimeAutonomousResponse():
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:32:    evaluateRuntimeExecutionCriticality()
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:65:    reasoning: [
+app/lib/runtime-core/runtime-autonomous-response-intelligence.ts:66:      ...criticality.reasoning,
+app/lib/runtime-core/runtime-task-planner.ts:17:export type RuntimeTaskPlan = {
+app/lib/runtime-core/runtime-task-planner.ts:19:  source: 'runtime-task-planner'
+app/lib/runtime-core/runtime-task-planner.ts:36:  reasoning: string[]
+app/lib/runtime-core/runtime-task-planner.ts:39:function classifyIntent(message: string): RuntimeTaskPlan['intent'] {
+app/lib/runtime-core/runtime-task-planner.ts:71:export function planRuntimeTask(message: string): RuntimeTaskPlan {
+app/lib/runtime-core/runtime-task-planner.ts:101:      title: 'Prepare controlled execution plan',
+app/lib/runtime-core/runtime-task-planner.ts:126:    source: 'runtime-task-planner',
+app/lib/runtime-core/runtime-task-planner.ts:133:      'Task planned with controlled execution, validation, and synthesis.',
+app/lib/runtime-core/runtime-task-planner.ts:134:    reasoning: [
+app/lib/runtime-core/runtime-decision-gate.ts:3:export type RuntimeDecisionGateReport = {
+app/lib/runtime-core/runtime-decision-gate.ts:5:  reason: string
+app/lib/runtime-core/runtime-decision-gate.ts:14:export function evaluateRuntimeDecisionGate(
+app/lib/runtime-core/runtime-decision-gate.ts:17:): RuntimeDecisionGateReport {
+app/lib/runtime-core/runtime-decision-gate.ts:22:    runtime.governance.decision !== 'NORMAL_OPERATION' ||
+app/lib/runtime-core/runtime-decision-gate.ts:24:    runtime.healing.decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-core/runtime-decision-gate.ts:29:    reason: blocked
+app/lib/runtime-core/runtime-decision-gate.ts:35:    governance: runtime.governance.decision,
+app/lib/runtime-core/runtime-decision-gate.ts:39:    healing: runtime.healing.decision,
+app/lib/runtime-core/runtime-timeline-engine.ts:23:  reasoning: string[]
+app/lib/runtime-core/runtime-timeline-engine.ts:71:    reasoning: [
+app/lib/runtime-core/runtime-action-engine.ts:15:  executed: boolean
+app/lib/runtime-core/runtime-action-engine.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-action-engine.ts:21:export function executeRuntimeAction(
+app/lib/runtime-core/runtime-action-engine.ts:23:  reason: string
+app/lib/runtime-core/runtime-action-engine.ts:36:    executed: true,
+app/lib/runtime-core/runtime-action-engine.ts:48:    reasoning: [
+app/lib/runtime-core/runtime-action-engine.ts:50:      `reason:${reason}`,
+app/lib/runtime-core/runtime-action-engine.ts:57:    type: 'runtime-action-executed',
+app/lib/runtime-core/runtime-action-engine.ts:69:    type: 'runtime-action-executed',
+app/lib/runtime-core/runtime-action-engine.ts:72:    message: `Runtime action executed: ${action}.`,
+app/lib/runtime-core/runtime-governed-self-development.ts:70:  reasoning: string[];
+app/lib/runtime-core/runtime-governed-self-development.ts:147:      reasoning: [
+app/lib/runtime-core/runtime-governed-self-development.ts:161:      reasoning: [
+app/lib/runtime-core/runtime-governed-self-development.ts:176:      reasoning: [
+app/lib/runtime-core/runtime-governed-self-development.ts:198:      reasoning: [
+app/lib/runtime-core/runtime-governed-self-development.ts:243:    reasoning: [
+app/lib/runtime-core/runtime-governed-self-development.ts:254:        ? 'Execute the proposal only in an isolated sandbox and evaluate the result.'
+app/lib/runtime-core/runtime-state-replay-engine.ts:22:  reasoning: string[]
+app/lib/runtime-core/runtime-state-replay-engine.ts:104:    reasoning: [
+app/lib/runtime-core/runtime-cognitive-state.ts:1:import { evaluateRuntimeAwareness } from '../orchestrator/runtime-awareness'
+app/lib/runtime-core/runtime-cognitive-state.ts:2:import { evaluateRuntimeRecovery } from '../orchestrator/runtime-recovery'
+app/lib/runtime-core/runtime-cognitive-state.ts:4:import { evaluateRuntimeCognitiveGateway } from './runtime-cognitive-gateway'
+app/lib/runtime-core/runtime-cognitive-state.ts:31:  reasoning: string[]
+app/lib/runtime-core/runtime-cognitive-state.ts:34:export function evaluateRuntimeCognitiveState(): RuntimeCognitiveState {
+app/lib/runtime-core/runtime-cognitive-state.ts:35:  const awareness = evaluateRuntimeAwareness({
+app/lib/runtime-core/runtime-cognitive-state.ts:55:  const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/runtime-core/runtime-cognitive-state.ts:59:  const gateway = evaluateRuntimeCognitiveGateway()
+app/lib/runtime-core/runtime-cognitive-state.ts:114:  const reasoning = [
+app/lib/runtime-core/runtime-cognitive-state.ts:140:    reasoning
+app/lib/runtime-core/runtime-governance-center.ts:1:import { evaluateRuntimePolicy } from './runtime-policy-engine'
+app/lib/runtime-core/runtime-governance-center.ts:2:import { evaluateRuntimePredictiveStabilization } from './runtime-predictive-stabilization'
+app/lib/runtime-core/runtime-governance-center.ts:3:import { evaluateRuntimeSeverityGovernance } from './runtime-severity-governance'
+app/lib/runtime-core/runtime-governance-center.ts:7:export type RuntimeGovernanceDecision =
+app/lib/runtime-core/runtime-governance-center.ts:17:  decision: RuntimeGovernanceDecision
+app/lib/runtime-core/runtime-governance-center.ts:22:  reasoning: string[]
+app/lib/runtime-core/runtime-governance-center.ts:25:export function evaluateRuntimeGovernanceCenter():
+app/lib/runtime-core/runtime-governance-center.ts:28:  const severity = evaluateRuntimeSeverityGovernance()
+app/lib/runtime-core/runtime-governance-center.ts:29:  const predictive = evaluateRuntimePredictiveStabilization()
+app/lib/runtime-core/runtime-governance-center.ts:30:  const policy = evaluateRuntimePolicy()
+app/lib/runtime-core/runtime-governance-center.ts:34:  const decision: RuntimeGovernanceDecision =
+app/lib/runtime-core/runtime-governance-center.ts:46:    decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:48:      : decision === 'RECOVERY_REQUIRED' || decision === 'THROTTLING_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:50:        : decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:58:    decision,
+app/lib/runtime-core/runtime-governance-center.ts:61:      decision !== 'CONTAINMENT_REQUIRED',
+app/lib/runtime-core/runtime-governance-center.ts:69:      decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:71:        : decision === 'RECOVERY_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:73:          : decision === 'THROTTLING_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:75:            : decision === 'STABILIZATION_REQUIRED'
+app/lib/runtime-core/runtime-governance-center.ts:79:    reasoning: [
+app/lib/runtime-core/runtime-governance-center.ts:80:      ...severity.reasoning,
+app/lib/runtime-core/runtime-governance-center.ts:81:      ...predictive.reasoning,
+app/lib/runtime-core/runtime-governance-center.ts:82:      ...policy.reasoning,
+app/lib/runtime-core/runtime-governance-center.ts:83:      ...lanes.reasoning,
+app/lib/runtime-core/runtime-governance-center.ts:84:      ...schedule.reasoning,
+app/lib/runtime-core/runtime-governance-center.ts:85:      `decision:${decision}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:5:export type RuntimeFeedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:11:export type RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:13:  source: 'runtime-feedback-integration'
+app/lib/runtime-core/runtime-feedback-integration.ts:14:  feedbackLevel: RuntimeFeedbackLevel
+app/lib/runtime-core/runtime-feedback-integration.ts:19:  reasoning: string[]
+app/lib/runtime-core/runtime-feedback-integration.ts:22:export function integrateRuntimeFeedback():
+app/lib/runtime-core/runtime-feedback-integration.ts:23:RuntimeFeedbackIntegration {
+app/lib/runtime-core/runtime-feedback-integration.ts:30:  const feedbackLevel =
+app/lib/runtime-core/runtime-feedback-integration.ts:40:  const result: RuntimeFeedbackIntegration = {
+app/lib/runtime-core/runtime-feedback-integration.ts:44:      'runtime-feedback-integration' as const,
+app/lib/runtime-core/runtime-feedback-integration.ts:46:    feedbackLevel,
+app/lib/runtime-core/runtime-feedback-integration.ts:49:      feedbackLevel !== 'optimized',
+app/lib/runtime-core/runtime-feedback-integration.ts:56:      feedbackLevel === 'optimized'
+app/lib/runtime-core/runtime-feedback-integration.ts:58:        : feedbackLevel === 'stable'
+app/lib/runtime-core/runtime-feedback-integration.ts:60:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:64:    reasoning: [
+app/lib/runtime-core/runtime-feedback-integration.ts:65:      ...memory.reasoning,
+app/lib/runtime-core/runtime-feedback-integration.ts:66:      ...supervision.reasoning,
+app/lib/runtime-core/runtime-feedback-integration.ts:67:      `feedback:${feedbackLevel}`
+app/lib/runtime-core/runtime-feedback-integration.ts:72:    source: 'runtime-feedback-integration',
+app/lib/runtime-core/runtime-feedback-integration.ts:73:    type: 'runtime-feedback-cycle',
+app/lib/runtime-core/runtime-feedback-integration.ts:75:      feedbackLevel === 'critical'
+app/lib/runtime-core/runtime-feedback-integration.ts:77:        : feedbackLevel === 'warning'
+app/lib/runtime-core/runtime-feedback-integration.ts:81:      `feedback-${Date.now()}`,
+app/lib/runtime-core/runtime-feedback-integration.ts:83:      `Feedback integration executed with level ${feedbackLevel}.`,
+app/lib/runtime-core/runtime-feedback-integration.ts:85:      feedbackLevel,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:4:import { evaluateRuntimeGovernanceCenter } from './runtime-governance-center'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:6:export type RuntimeSelfHealingDecision =
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:15:  decision: RuntimeSelfHealingDecision
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:19:  reasoning: string[]
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:28:  const governance = evaluateRuntimeGovernanceCenter()
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:30:  const decision: RuntimeSelfHealingDecision =
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:33:    governance.decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:46:    decision,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:49:      decision !== 'NO_HEALING_REQUIRED',
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:52:      decision === 'NO_HEALING_REQUIRED' ||
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:53:      decision === 'REPLAY_RECOMMENDED',
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:56:      decision === 'CONTAINMENT_REQUIRED'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:58:        : decision === 'RECOVERY_RECOMMENDED'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:60:          : decision === 'REPLAY_RECOMMENDED'
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:64:    reasoning: [
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:65:      ...integrity.reasoning,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:66:      ...recovery.reasoning,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:67:      ...replay.reasoning,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:68:      ...governance.reasoning,
+app/lib/runtime-core/runtime-self-healing-coordinator.ts:69:      `selfHealing:${decision}`,
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:1:export interface RuntimeFusionDecision {
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:21:  reasoning: string[]
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:24:export function evaluateRuntimeDecisionFusion(): RuntimeFusionDecision {
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:43:    source: 'runtime-decision-fusion-engine',
+app/lib/runtime-core/runtime-decision-fusion-engine.ts:59:    reasoning: [
+app/lib/runtime-core/runtime-decision-loop.ts:1:import { evaluateRuntimeExecutionOrchestrator } from './runtime-execution-orchestrator'
+app/lib/runtime-core/runtime-decision-loop.ts:3:export type RuntimeDecisionLoopResult = {
+app/lib/runtime-core/runtime-decision-loop.ts:5:  source: 'runtime-decision-loop'
+app/lib/runtime-core/runtime-decision-loop.ts:17:  reasoning: string[]
+app/lib/runtime-core/runtime-decision-loop.ts:20:export function runRuntimeDecisionLoop(): RuntimeDecisionLoopResult {
+app/lib/runtime-core/runtime-decision-loop.ts:21:  const execution = evaluateRuntimeExecutionOrchestrator()
+app/lib/runtime-core/runtime-decision-loop.ts:43:    source: 'runtime-decision-loop',
+app/lib/runtime-core/runtime-decision-loop.ts:50:    reasoning: [
+app/lib/runtime-core/runtime-decision-loop.ts:51:      ...execution.reasoning,
+app/lib/runtime-core/runtime-cognitive-gateway.ts:4:export type RuntimeCognitiveDecision = {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:13:  reasoning: string[]
+app/lib/runtime-core/runtime-cognitive-gateway.ts:17:export function evaluateRuntimeCognitiveGateway(): RuntimeCognitiveDecision {
+app/lib/runtime-core/runtime-cognitive-gateway.ts:19:  const reasoning: string[] = []
+app/lib/runtime-core/runtime-cognitive-gateway.ts:21:  if (!context.operational) reasoning.push('runtime-not-operational')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:22:  if (context.globalState === 'critical') reasoning.push('global-critical')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:23:  if (context.globalState === 'warning') reasoning.push('global-warning')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:24:  if (context.operationalScore < 70) reasoning.push('low-operational-score')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:28:  if (memory.riskTrend === 'high') reasoning.push('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:29:  if (memory.stabilityTrend === 'degrading') reasoning.push('stability-degrading')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:30:  if (memory.recoveryFrequency >= 70) reasoning.push('recovery-frequency-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:33:    reasoning.includes('global-critical') || reasoning.includes('memory-risk-high')
+app/lib/runtime-core/runtime-cognitive-gateway.ts:35:      : reasoning.length > 0
+app/lib/runtime-core/runtime-cognitive-gateway.ts:62:    reasoning,
+app/lib/runtime-core/runtime-learning-signals.ts:2:  evaluateRuntimeExecutionQuality,
+app/lib/runtime-core/runtime-learning-signals.ts:5:export type RuntimeLearningSignal = {
+app/lib/runtime-core/runtime-learning-signals.ts:8:  source: 'runtime-learning-signals'
+app/lib/runtime-core/runtime-learning-signals.ts:15:  learningPriority:
+app/lib/runtime-core/runtime-learning-signals.ts:20:  reasoning: string[]
+app/lib/runtime-core/runtime-learning-signals.ts:23:export function generateRuntimeLearningSignal():
+app/lib/runtime-core/runtime-learning-signals.ts:24:RuntimeLearningSignal {
+app/lib/runtime-core/runtime-learning-signals.ts:27:    evaluateRuntimeExecutionQuality()
+app/lib/runtime-core/runtime-learning-signals.ts:35:    source: 'runtime-learning-signals',
+app/lib/runtime-core/runtime-learning-signals.ts:43:    learningPriority:
+app/lib/runtime-core/runtime-learning-signals.ts:52:    reasoning: [
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:18:  reasoning: string[]
+app/lib/runtime-core/runtime-memory-persistence-loop.ts:78:    reasoning: [
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:2:  evaluateRuntimePersistenceMemory,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:6:  evaluateRuntimeExecutionGovernanceMatrix,
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:26:  reasoning: string[]
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:36:export function evaluateRuntimeConsensusEngine():
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:40:    evaluateRuntimePersistenceMemory()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:43:    evaluateRuntimeExecutionGovernanceMatrix()
+app/lib/runtime-consensus-engine/runtime-consensus-engine.ts:108:    reasoning: [
+app/lib/runtime-neural-coordination/runtime-neural-coordination.ts:36:  reasoning: string[]
+app/lib/executive-runtime-core/executive-runtime-core.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/executive-runtime-core/executive-runtime-core.ts:6:  evaluateRuntimeAdaptiveExecutionCoordinator,
+app/lib/executive-runtime-core/executive-runtime-core.ts:24:  executiveDecision: string
+app/lib/executive-runtime-core/executive-runtime-core.ts:37:  reasoning: string[]
+app/lib/executive-runtime-core/executive-runtime-core.ts:40:export function evaluateExecutiveRuntimeCore():
+app/lib/executive-runtime-core/executive-runtime-core.ts:43:    evaluateRuntimeExecutiveGovernor()
+app/lib/executive-runtime-core/executive-runtime-core.ts:46:    evaluateRuntimeAdaptiveExecutionCoordinator()
+app/lib/executive-runtime-core/executive-runtime-core.ts:53:      : governor.executiveDecision === 'expand' &&
+app/lib/executive-runtime-core/executive-runtime-core.ts:67:    executiveDecision: governor.executiveDecision,
+app/lib/executive-runtime-core/executive-runtime-core.ts:82:    reasoning: [
+app/lib/executive-runtime-core/executive-runtime-core.ts:85:      `decision:${governor.executiveDecision}`,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:2:  evaluateRuntimeExecutiveAuthority,
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:18:  reasoning: string[]
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:21:export function evaluateRuntimeExecutiveAuthorityGateway():
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:24:    evaluateRuntimeExecutiveAuthority()
+app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway.ts:54:    reasoning: [
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:2:  evaluateRuntimeConsciousness,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:6:  evaluateRuntimeActionPolicy,
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:9:export function evaluateRuntimeConsciousnessIntegration() {
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:11:    evaluateRuntimeConsciousness()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:14:    evaluateRuntimeActionPolicy()
+app/lib/runtime-consciousness-integration/runtime-consciousness-integration.ts:46:    reasoning: [
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:2:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:12:  | 'execute'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:39:  reasoning: string[]
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:42:export function evaluateRuntimeExecutionArbitrator():
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:46:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:55:        ? 'execute'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:107:      executionAction === 'execute'
+app/lib/runtime-execution-arbitrator/runtime-execution-arbitrator.ts:115:    reasoning: [
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:2:  evaluateRuntimeLiveCognitiveLoop,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:5:export type RuntimeExecutiveDecision =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:18:  executiveDecision: RuntimeExecutiveDecision
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:29:  reasoning: string[]
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:32:export function evaluateRuntimeExecutiveGovernor():
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:36:    evaluateRuntimeLiveCognitiveLoop()
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:38:  const executiveDecision: RuntimeExecutiveDecision =
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:49:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:51:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:53:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:58:    executiveDecision === 'protect'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:60:      : executiveDecision === 'throttle'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:62:      : executiveDecision === 'expand'
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:74:    executiveDecision,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:94:      `Runtime executive governor decision: ${executiveDecision}.`,
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:96:    reasoning: [
+app/lib/runtime-executive-governor/runtime-executive-governor.ts:98:      `decision:${executiveDecision}`,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:2:  evaluateRuntimeCognitiveBus,
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:36:  reasoning: string[]
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:39:export function evaluateRuntimeCognitiveStateFabric():
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:42:    evaluateRuntimeCognitiveBus()
+app/lib/runtime-cognitive-state-fabric/runtime-cognitive-state-fabric.ts:93:    reasoning: [
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:16:  reasoning: string[]
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:19:export function evaluateRuntimeCoreIdentity():
+app/lib/runtime-cognitive-core/runtime-core-identity.ts:46:    reasoning: [
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:2:  evaluateRuntimeCoreIdentity,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:6:  evaluateRuntimeAttentionRegistry,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:25:  reasoning: string[]
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:28:export function evaluateRuntimeMetaController():
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:30:  const identity = evaluateRuntimeCoreIdentity()
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:31:  const attention = evaluateRuntimeAttentionRegistry()
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:65:    reasoning: [
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:66:      ...identity.reasoning,
+app/lib/runtime-cognitive-core/runtime-meta-controller.ts:67:      ...attention.reasoning,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:21:  reasoning: string[]
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:24:export function evaluateRuntimeAttentionRegistry():
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:26:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-cognitive-core/runtime-attention-registry.ts:61:    reasoning: [
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:2:  evaluateRuntimeExecutionProfileBridge,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:10:  evaluateRuntimeCognitiveArbitration,
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:13:export function evaluateRuntimeExecutionGovernanceMatrix() {
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:14:  const bridge = evaluateRuntimeExecutionProfileBridge()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:15:  const consciousness = evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:16:  const arbitration = evaluateRuntimeCognitiveArbitration()
+app/lib/runtime-governance-matrix/runtime-execution-governance-matrix.ts:62:    reasoning: [
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:2:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:6:  | 'learning'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:11:export interface RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:14:  source: 'runtime-reflection-feedback'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:33:  reasoning: string[]
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:36:export function evaluateRuntimeReflectionFeedback():
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:37:RuntimeReflectionFeedbackReport {
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:39:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:62:          ? 'learning'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:68:    source: 'runtime-reflection-feedback',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:97:        ? 'Runtime reflection feedback active.'
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:98:        : 'Runtime reflection feedback restricted.',
+app/lib/runtime-reflection-feedback/runtime-reflection-feedback.ts:100:    reasoning: [
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:2:  evaluateRuntimeCoreIdentity,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:6:  evaluateRuntimeAttentionRegistry,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:10:  evaluateRuntimeMetaController,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:14:  evaluateRuntimeOperationalIntegration,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:18:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:19:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:22:  evaluateRuntimeMemoryConsolidation,
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:54:  reasoning: string[]
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:57:export function evaluateRuntimeCognitiveBus():
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:61:    evaluateRuntimeCoreIdentity()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:64:    evaluateRuntimeAttentionRegistry()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:67:    evaluateRuntimeMetaController()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:70:    evaluateRuntimeOperationalIntegration()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:73:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:76:    evaluateRuntimeMemoryConsolidation()
+app/lib/runtime-cognitive-bus/runtime-cognitive-bus.ts:141:    reasoning: [
+app/lib/runtime-neural-synchronization/runtime-neural-synchronization.ts:39:  reasoning: string[]
+app/lib/runtime-awareness-matrix/runtime-awareness-matrix.ts:33:  reasoning: string[]
+app/lib/learning.ts:4:const FILE = path.join(process.cwd(), 'learning.json')
+app/lib/learning.ts:64:export function tryLearned(message: string) {
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:1:import { evaluateRuntimeConfidence } from '@/app/lib/runtime-core/runtime-confidence-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:2:import { evaluateRuntimeRiskEscalation } from '@/app/lib/runtime-core/runtime-risk-escalation-intelligence'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:3:import { evaluateRuntimeAdaptiveIntelligence } from '@/app/lib/runtime-adaptive/runtime-adaptive-intelligence-engine'
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:5:export function evaluateUnifiedRuntimeIntelligence() {
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:6:  const confidence = evaluateRuntimeConfidence()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:7:  const escalation = evaluateRuntimeRiskEscalation()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:8:  const adaptive = evaluateRuntimeAdaptiveIntelligence()
+app/lib/runtime-unified/runtime-unified-intelligence-bus.ts:40:    reasoning: [
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:2:  evaluateRuntimeLifecycleManager,
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:29:  reasoning: string[]
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:34:export function evaluateRuntimePersistenceMemory():
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:38:    evaluateRuntimeLifecycleManager()
+app/lib/runtime-persistence-memory/runtime-persistence-memory.ts:122:    reasoning: [
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:9:  | 'execute'
+app/lib/runtime-execution-cortex/runtime-execution-cortex.ts:35:  reasoning: string[]
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:2:  evaluateRuntimeExecutiveGovernor,
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:34:  reasoning: string[]
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:37:export function evaluateRuntimeAdaptiveExecutionCoordinator():
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:41:    evaluateRuntimeExecutiveGovernor()
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:57:      : governor.executiveDecision === 'expand'
+app/lib/runtime-adaptive-execution-coordinator/runtime-adaptive-execution-coordinator.ts:92:    reasoning: [
+app/lib/runtime-autonomous-regulation/runtime-autonomous-regulation.ts:36:  reasoning: string[]
+app/lib/response-quality.ts:15:          : msg.includes('planejar') || msg.includes('plano') || msg.includes('roadmap')
+app/lib/response-quality.ts:16:            ? 'planning'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:2:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:6:  | 'execute'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:17:export function evaluateRuntimeDispatchController() {
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:19:    evaluateRuntimeExecutionPipeline()
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:23:      ? 'execute'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:44:    dispatchMode === 'execute'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:53:    dispatchMode === 'execute'
+app/lib/runtime-dispatch-controller/runtime-dispatch-controller.ts:95:    reasoning: [
+app/lib/runtime-execution-router/runtime-execution-router.ts:2:  evaluateRuntimeDispatchController,
+app/lib/runtime-execution-router/runtime-execution-router.ts:17:export function evaluateRuntimeExecutionRouter() {
+app/lib/runtime-execution-router/runtime-execution-router.ts:19:    evaluateRuntimeDispatchController()
+app/lib/runtime-execution-router/runtime-execution-router.ts:31:    dispatch.dispatchMode === 'execute'
+app/lib/runtime-execution-router/runtime-execution-router.ts:97:    reasoning: [
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:5:export function evaluateRuntimeOperationalMode() {
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:6:  const unified = evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-operational/runtime-operational-mode-switcher.ts:49:    reasoning: [
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:2:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:35:  reasoning: string[]
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:38:export function evaluateRuntimeQueueManager():
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:42:    evaluateRuntimeExecutionArbitrator()
+app/lib/runtime-queue-manager/runtime-queue-manager.ts:123:    reasoning: [
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:2:  evaluateRuntimeAdaptiveDecisionLayer,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:3:} from '@/app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer'
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:6:  evaluateRuntimeConsensusEngine,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:10:  evaluateRuntimeExecutionScheduler,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:14:  evaluateRuntimeExecutionArbitrator,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:18:  evaluateRuntimeQueueManager,
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:51:  reasoning: string[]
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:54:export function evaluateRuntimeExecutionPipeline():
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:57:  const decision =
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:58:    evaluateRuntimeAdaptiveDecisionLayer()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:61:    evaluateRuntimeConsensusEngine()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:64:    evaluateRuntimeExecutionScheduler()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:67:    evaluateRuntimeExecutionArbitrator()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:70:    evaluateRuntimeQueueManager()
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:134:    reasoning: [
+app/lib/runtime-execution-pipeline/runtime-execution-pipeline.ts:135:      `decision:${decision.adaptiveDecision}`,
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:9:  | 'execute'
+app/lib/runtime-cognitive-state-engine/runtime-cognitive-state-engine.ts:37:  reasoning: string[]
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:6:  evaluateRuntimeExecutiveGovernanceLayer
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:16:  governanceDecision: string
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:28:  reasoning: string[]
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:31:export function evaluateRuntimeEnforcementAuthority(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:45:    evaluateRuntimeExecutiveGovernanceLayer(
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:62:    governanceDecision: governance.decision,
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:78:    reasoning: [
+app/lib/runtime-enforcement-authority/runtime-enforcement-authority.ts:80:      `decision:${governance.decision}`,
+app/lib/runtime-causal-propagation/runtime-causal-propagation.ts:45:  reasoning: string[]
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:2:  evaluateRuntimeMetaController,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:6:  evaluateRuntimeExecutionPipeline,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:10:  evaluateRuntimeExecutionRouter,
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:41:  reasoning: string[]
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:44:export function evaluateRuntimeOperationalIntegration():
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:46:  const meta = evaluateRuntimeMetaController()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:47:  const pipeline = evaluateRuntimeExecutionPipeline()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:48:  const router = evaluateRuntimeExecutionRouter()
+app/lib/runtime-operational-integration/runtime-operational-integration.ts:91:    reasoning: [
+app/lib/answer.ts:49:      'Execute nesta ordem:',
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:2:  evaluateRuntimeTransitionController,
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:15:export function evaluateRuntimeLifecycleManager() {
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:16:  const transition = evaluateRuntimeTransitionController()
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:37:            ? 'execute-runtime-recovery'
+app/lib/runtime-lifecycle-manager/runtime-lifecycle-manager.ts:66:    reasoning: [
+app/lib/providers/local.ts:7:import { logUnknown, tryLearned, teach, approve, listMemory } from '../learning'
+app/lib/providers/local.ts:17:    return 'Erro detectado. Execute: ./security_check.sh && ./verify_iasevero.sh'
+app/lib/providers/local.ts:66:  if (intent === 'learn') {
+app/lib/providers/local.ts:84:  const learned = tryLearned(text)
+app/lib/providers/local.ts:85:  if (learned) return reply(learned)
+app/lib/providers/local.ts:94:    const learnedPart = tryLearned(part)
+app/lib/providers/local.ts:95:    if (learnedPart) return reply(learnedPart)
+app/lib/orchestrator/runtime-autonomous-decision.ts:5:export type RuntimeAutonomousDecision = {
+app/lib/orchestrator/runtime-autonomous-decision.ts:12:  reason: string
+app/lib/orchestrator/runtime-autonomous-decision.ts:21:export function createAutonomousDecision(
+app/lib/orchestrator/runtime-autonomous-decision.ts:23:): RuntimeAutonomousDecision {
+app/lib/orchestrator/runtime-autonomous-decision.ts:29:      reason: 'Falhas elevadas detectadas.',
+app/lib/orchestrator/runtime-autonomous-decision.ts:39:      reason: 'Falhas moderadas detectadas.',
+app/lib/orchestrator/runtime-autonomous-decision.ts:47:    reason: 'Runtime operacional estável.',
+app/lib/orchestrator/runtime-topology-validator.ts:6:  reason: string
+app/lib/orchestrator/runtime-topology-validator.ts:40:        reason: 'Módulo excessivamente acoplado.'
+app/lib/orchestrator/runtime-topology-validator.ts:48:        reason: 'Dependência circular própria detectada.'
+app/lib/orchestrator/runtime-budget-control.ts:7:  reason: string
+app/lib/orchestrator/runtime-budget-control.ts:10:export function evaluateRuntimeBudget(
+app/lib/orchestrator/runtime-budget-control.ts:19:      reason: 'Modo seguro bloqueia provider externo.'
+app/lib/orchestrator/runtime-budget-control.ts:28:      reason: 'Provider local com baixo custo.'
+app/lib/orchestrator/runtime-budget-control.ts:37:      reason: 'Provider híbrido controlado.'
+app/lib/orchestrator/runtime-budget-control.ts:45:    reason: 'Provider externo permitido.'
+app/lib/orchestrator/runtime-architecture-index.ts:28:    name: 'RuntimeDecisionEngine',
+app/lib/orchestrator/runtime-architecture-index.ts:29:    file: 'runtime-decision-engine.ts',
+app/lib/orchestrator/runtime-architecture-index.ts:94:    responsibility: 'gerar plano de recuperação e cooldown',
+app/lib/orchestrator/learning-engine.ts:1:import { getRecentDecisions } from './decision-memory'
+app/lib/orchestrator/learning-engine.ts:4:  const decisions = getRecentDecisions()
+app/lib/orchestrator/learning-engine.ts:6:  const risky = decisions.filter(
+app/lib/orchestrator/learning-engine.ts:10:  const safe = decisions.filter(
+app/lib/orchestrator/learning-engine.ts:15:    decisions.reduce((acc, d) => {
+app/lib/orchestrator/learning-engine.ts:22:    total: decisions.length,
+app/lib/orchestrator/policy.ts:4:  reason: string
+app/lib/orchestrator/policy.ts:17:export function evaluatePolicy(message: string): PolicyResult {
+app/lib/orchestrator/policy.ts:25:        reason: `Comando bloqueado pela policy: ${pattern}`
+app/lib/orchestrator/policy.ts:38:      reason: 'Ação destrutiva detectada; exigir confirmação.'
+app/lib/orchestrator/policy.ts:45:    reason: 'Policy aprovada.'
+app/lib/orchestrator/runtime-architecture-auditor.ts:3:import { evaluateStructuralHealth } from './runtime-structural-health'
+app/lib/orchestrator/runtime-architecture-auditor.ts:20:  const structural = evaluateStructuralHealth(
+app/lib/orchestrator/memory-governor.ts:5:  reason: string
+app/lib/orchestrator/memory-governor.ts:13:    reason: 'Priorizar fatos importantes e limitar histórico para evitar crescimento excessivo.'
+app/lib/orchestrator/runtime-governor.ts:2:import type { RuntimePolicyDecision } from './runtime-policy'
+app/lib/orchestrator/runtime-governor.ts:4:export type RuntimeGovernanceDecision = {
+app/lib/orchestrator/runtime-governor.ts:8:  reason: string
+app/lib/orchestrator/runtime-governor.ts:9:  severity: RuntimePolicyDecision['severity']
+app/lib/orchestrator/runtime-governor.ts:12:export function evaluateRuntimeGovernance(
+app/lib/orchestrator/runtime-governor.ts:14:  policy: RuntimePolicyDecision
+app/lib/orchestrator/runtime-governor.ts:15:): RuntimeGovernanceDecision {
+app/lib/orchestrator/runtime-governor.ts:21:      reason: policy.reason,
+app/lib/orchestrator/runtime-governor.ts:31:      reason: 'Governance bloqueou provider externo.',
+app/lib/orchestrator/runtime-governor.ts:40:    reason: 'RuntimeGovernance aprovado.',
+app/lib/orchestrator/runtime-policy-engine.ts:3:export type RuntimePolicyDecision = {
+app/lib/orchestrator/runtime-policy-engine.ts:17:  reason: string
+app/lib/orchestrator/runtime-policy-engine.ts:20:export function evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-policy-engine.ts:22:): RuntimePolicyDecision {
+app/lib/orchestrator/runtime-policy-engine.ts:33:      reason: 'Containment ativado por degradação crítica.'
+app/lib/orchestrator/runtime-policy-engine.ts:46:      reason: 'Runtime sob pressão moderada.'
+app/lib/orchestrator/runtime-policy-engine.ts:58:    reason: 'Runtime operacional estável.'
+app/lib/orchestrator/runtime-guardian.ts:27:      reason: 'Runtime protegido automaticamente'
+app/lib/orchestrator/runtime-guardian.ts:38:    reason: 'Runtime estável'
+app/lib/orchestrator/runtime-policy.ts:3:export type RuntimePolicyDecision = {
+app/lib/orchestrator/runtime-policy.ts:5:  reason: string
+app/lib/orchestrator/runtime-policy.ts:11:export function evaluateRuntimePolicy(
+app/lib/orchestrator/runtime-policy.ts:13:): RuntimePolicyDecision {
+app/lib/orchestrator/runtime-policy.ts:17:      reason: 'Runtime em safeMode: execução permitida apenas em modo seguro.',
+app/lib/orchestrator/runtime-policy.ts:27:      reason: 'Provider externo bloqueado pela política local-first.',
+app/lib/orchestrator/runtime-policy.ts:36:    reason: 'RuntimePolicy aprovada em modo local.',
+app/lib/orchestrator/trace.ts:7:  reason: string
+app/lib/orchestrator/runtime-tool-dispatcher.ts:3:  reason: string
+app/lib/orchestrator/runtime-tool-dispatcher.ts:19:      reason: 'Execução bloqueada pela governança.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:25:      executor: 'runtime-decision-engine',
+app/lib/orchestrator/runtime-tool-dispatcher.ts:26:      reason: 'Baixa confiança detectada.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:33:      reason: 'Estado operacional crítico.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:39:      executor: 'runtime-decision-engine',
+app/lib/orchestrator/runtime-tool-dispatcher.ts:40:      reason: 'Provider externo requer validação.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:46:      executor: 'runtime-decision-engine',
+app/lib/orchestrator/runtime-tool-dispatcher.ts:47:      reason: 'Prioridade alta.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:51:  if (stepId.includes('plan')) {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:53:      executor: 'runtime-task-planner',
+app/lib/orchestrator/runtime-tool-dispatcher.ts:54:      reason: 'Planner selecionado.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:58:  if (stepId.includes('decision')) {
+app/lib/orchestrator/runtime-tool-dispatcher.ts:60:      executor: 'runtime-decision-engine',
+app/lib/orchestrator/runtime-tool-dispatcher.ts:61:      reason: 'Decision Engine selecionado.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:68:      reason: 'Queue Governor selecionado.'
+app/lib/orchestrator/runtime-tool-dispatcher.ts:74:    reason: 'Execution Pipeline selecionado.'
+app/lib/orchestrator/runtime-execution-control.ts:8:  reason: string
+app/lib/orchestrator/runtime-execution-control.ts:11:export function evaluateExecutionControl(
+app/lib/orchestrator/runtime-execution-control.ts:21:      reason: 'Runtime instável.'
+app/lib/orchestrator/runtime-execution-control.ts:31:      reason: 'Modo seguro ativo.'
+app/lib/orchestrator/runtime-execution-control.ts:41:      reason: 'Provider local controlado.'
+app/lib/orchestrator/runtime-execution-control.ts:50:    reason: 'Execução híbrida controlada.'
+app/lib/orchestrator/runtime-context.ts:14:  reason: string
+app/lib/orchestrator/runtime-context.ts:16:  decisions: string[]
+app/lib/orchestrator/runtime-context.ts:43:    reason: input?.reason || 'RuntimeContext inicial seguro.',
+app/lib/orchestrator/runtime-context.ts:45:    decisions: input?.decisions || [],
+app/lib/orchestrator/runtime-awareness.ts:11:export function evaluateRuntimeAwareness(
+app/lib/orchestrator/runtime-dependency-validator.ts:9:  reason: string
+app/lib/orchestrator/runtime-dependency-validator.ts:87:        reason: 'Nome duplicado detectado.'
+app/lib/orchestrator/runtime-dependency-validator.ts:97:        reason: 'Arquivo sem extensão TypeScript.'
+app/lib/orchestrator/runtime-dependency-validator.ts:105:        reason: 'Responsabilidade vazia.'
+app/lib/orchestrator/runtime-dependency-validator.ts:115:        reason: 'Layer sem política explícita.'
+app/lib/orchestrator/runtime-recovery.ts:3:export type RuntimeRecoveryPlan = {
+app/lib/orchestrator/runtime-recovery.ts:8:  reason: string
+app/lib/orchestrator/runtime-recovery.ts:11:export function evaluateRuntimeRecovery(
+app/lib/orchestrator/runtime-recovery.ts:13:): RuntimeRecoveryPlan {
+app/lib/orchestrator/runtime-recovery.ts:21:      reason: 'Runtime crítico exige isolamento.'
+app/lib/orchestrator/runtime-recovery.ts:31:      reason: 'Alta pressão operacional.'
+app/lib/orchestrator/runtime-recovery.ts:41:      reason: 'Runtime moderadamente pressionado.'
+app/lib/orchestrator/runtime-recovery.ts:50:    reason: 'Runtime operacional estável.'
+app/lib/orchestrator/runtime-provider-governor.ts:7:  reason: string
+app/lib/orchestrator/runtime-provider-governor.ts:10:export function evaluateProviderGovernor(
+app/lib/orchestrator/runtime-provider-governor.ts:19:      reason: 'Runtime instável exige isolamento local.'
+app/lib/orchestrator/runtime-provider-governor.ts:28:      reason: 'SafeMode bloqueia provider externo.'
+app/lib/orchestrator/runtime-provider-governor.ts:37:      reason: 'Provider local operacional.'
+app/lib/orchestrator/runtime-provider-governor.ts:46:      reason: 'Provider híbrido controlado.'
+app/lib/orchestrator/runtime-provider-governor.ts:54:    reason: 'Provider externo supervisionado.'
+app/lib/orchestrator/runtime-supervisor.ts:17:export function evaluateRuntimeSupervisor(
+app/lib/orchestrator/runtime.ts:3:export type RuntimeDecision = {
+app/lib/orchestrator/runtime.ts:7:  reason: string
+app/lib/orchestrator/runtime.ts:10:export function resolveRuntimeDecision(): RuntimeDecision {
+app/lib/orchestrator/runtime.ts:18:      reason: 'OpenAI não configurado; fallback local ativado.'
+app/lib/orchestrator/runtime.ts:26:    reason: status.mode === 'local'
+app/lib/orchestrator/runtime-dependency-scanner.ts:4:  reason: string
+app/lib/orchestrator/runtime-dependency-scanner.ts:35:          reason: `Dependência ausente: ${dependency}`
+app/lib/orchestrator/runtime-dependency-scanner.ts:43:          reason: 'Auto dependência detectada.'
+app/lib/orchestrator/runtime-contracts.ts:8:  reason: string
+app/lib/orchestrator/runtime-contracts.ts:34:  reason: string
+app/lib/orchestrator/runtime-contracts.ts:57:      reason: 'requestId ausente.'
+app/lib/orchestrator/runtime-contracts.ts:65:      reason: 'userId ausente.'
+app/lib/orchestrator/runtime-contracts.ts:72:    reason: 'Contrato válido.'
+app/lib/orchestrator/runtime-contracts.ts:83:      reason: 'healthScore inválido.'
+app/lib/orchestrator/runtime-contracts.ts:90:    reason: 'Contrato válido.'
+app/lib/orchestrator/runtime-contracts.ts:101:      reason: 'latência inválida.'
+app/lib/orchestrator/runtime-contracts.ts:108:    reason: 'Contrato válido.'
+app/lib/orchestrator/runtime-self-healing.ts:2:  RuntimeAutonomousDecision
+app/lib/orchestrator/runtime-self-healing.ts:3:} from './runtime-autonomous-decision'
+app/lib/orchestrator/runtime-self-healing.ts:9:  executedAt: string
+app/lib/orchestrator/runtime-self-healing.ts:12:export function executeSelfHealing(
+app/lib/orchestrator/runtime-self-healing.ts:13:  decision: RuntimeAutonomousDecision
+app/lib/orchestrator/runtime-self-healing.ts:16:  if (decision.action === 'recover') {
+app/lib/orchestrator/runtime-self-healing.ts:22:      executedAt: new Date().toISOString()
+app/lib/orchestrator/runtime-self-healing.ts:26:  if (decision.action === 'audit') {
+app/lib/orchestrator/runtime-self-healing.ts:32:      executedAt: new Date().toISOString()
+app/lib/orchestrator/runtime-self-healing.ts:40:    executedAt: new Date().toISOString()
+app/lib/orchestrator/decision-memory.ts:1:type DecisionRecord = {
+app/lib/orchestrator/decision-memory.ts:6:  reason: string
+app/lib/orchestrator/decision-memory.ts:9:const history: DecisionRecord[] = []
+app/lib/orchestrator/decision-memory.ts:11:export function rememberDecision(
+app/lib/orchestrator/decision-memory.ts:12:  record: DecisionRecord
+app/lib/orchestrator/decision-memory.ts:23:export function getRecentDecisions() {
+app/lib/orchestrator/decision-memory.ts:27:export function clearDecisionMemory() {
+app/lib/orchestrator/central-runtime-core.ts:2:import { evaluateRuntimeEvolution } from './evolution-engine'
+app/lib/orchestrator/central-runtime-core.ts:3:import { executeSelfHealing } from './self-healing'
+app/lib/orchestrator/central-runtime-core.ts:9:  const evolution = evaluateRuntimeEvolution()
+app/lib/orchestrator/central-runtime-core.ts:15:          reason: 'Runtime saudável.'
+app/lib/orchestrator/central-runtime-core.ts:17:      : executeSelfHealing()
+app/lib/orchestrator/runtime-execution-pipeline.ts:2:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-execution-pipeline.ts:3:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-execution-pipeline.ts:17:  reason: string
+app/lib/orchestrator/runtime-execution-pipeline.ts:21:export function executeRuntimePipeline(input: {
+app/lib/orchestrator/runtime-execution-pipeline.ts:40:    reason: 'runtime-execution-pipeline',
+app/lib/orchestrator/runtime-execution-pipeline.ts:46:  const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-execution-pipeline.ts:48:  const governance = evaluateRuntimeGovernance(
+app/lib/orchestrator/runtime-execution-pipeline.ts:65:        reason: enforcement.reason,
+app/lib/orchestrator/runtime-execution-pipeline.ts:72:      reason: enforcement.reason,
+app/lib/orchestrator/runtime-execution-pipeline.ts:103:      stage: 'pipeline:executed',
+app/lib/orchestrator/runtime-execution-pipeline.ts:128:    reason: 'Runtime pipeline executado.',
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:2:import type { RuntimeRecoveryPlan } from './runtime-recovery'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:10:  reason: string
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:13:export function evaluateAutonomousStabilization(
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:15:  recovery: RuntimeRecoveryPlan
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:25:      reason: 'Containment obrigatório.'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:36:      reason: 'Alta pressão operacional.'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:47:      reason: 'Runtime moderadamente pressionado.'
+app/lib/orchestrator/runtime-autonomous-stabilizer.ts:57:    reason: 'Runtime totalmente estável.'
+app/lib/orchestrator/queue-governor.ts:13:  reason?: string
+app/lib/orchestrator/queue-governor.ts:77:  reason?: string,
+app/lib/orchestrator/queue-governor.ts:88:  if (reason) {
+app/lib/orchestrator/queue-governor.ts:89:    task.reason = reason
+app/lib/orchestrator/runtime-decision-engine.ts:1:import { executeRuntimeConsciousLoop } from './runtime-conscious-loop'
+app/lib/orchestrator/runtime-decision-engine.ts:3:import { executeSelfHealing } from './self-healing'
+app/lib/orchestrator/runtime-decision-engine.ts:4:import { evaluateRuntimePolicy } from './runtime-policy'
+app/lib/orchestrator/runtime-decision-engine.ts:5:import { evaluateRuntimeGovernance } from './runtime-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:6:import { evaluateExecutionControl } from './runtime-execution-control'
+app/lib/orchestrator/runtime-decision-engine.ts:7:import { evaluateRuntimeBudget } from './runtime-budget-control'
+app/lib/orchestrator/runtime-decision-engine.ts:8:import { evaluateProviderGovernor } from './runtime-provider-governor'
+app/lib/orchestrator/runtime-decision-engine.ts:9:import { evaluateRuntimeMemory } from './runtime-memory'
+app/lib/orchestrator/runtime-decision-engine.ts:11:import { evaluateRuntimeAwareness } from './runtime-awareness'
+app/lib/orchestrator/runtime-decision-engine.ts:12:import { evaluateRuntimeRecovery } from './runtime-recovery'
+app/lib/orchestrator/runtime-decision-engine.ts:13:import { evaluateAutonomousStabilization } from './runtime-autonomous-stabilizer'
+app/lib/orchestrator/runtime-decision-engine.ts:17:import { evaluateRuntimeIntelligencePolicy } from './runtime-policy-engine'
+app/lib/orchestrator/runtime-decision-engine.ts:24:export function executeRuntimeDecisionEngine() {
+app/lib/orchestrator/runtime-decision-engine.ts:25:  const consciousness = executeRuntimeConsciousLoop()
+app/lib/orchestrator/runtime-decision-engine.ts:29:  const decisions: string[] = []
+app/lib/orchestrator/runtime-decision-engine.ts:32:    decisions.push('Ativar modo seguro.')
+app/lib/orchestrator/runtime-decision-engine.ts:36:    decisions.push('Runtime recuperado automaticamente.')
+app/lib/orchestrator/runtime-decision-engine.ts:40:    decisions.push('Provider local forçado.')
+app/lib/orchestrator/runtime-decision-engine.ts:47:          reason: 'Healing não necessário.'
+app/lib/orchestrator/runtime-decision-engine.ts:49:      : executeSelfHealing()
+app/lib/orchestrator/runtime-decision-engine.ts:70:    reason: routing.reason,
+app/lib/orchestrator/runtime-decision-engine.ts:71:    decisions,
+app/lib/orchestrator/runtime-decision-engine.ts:77:context = appendRuntimeTrace(context, 'runtime-decision-engine:start')
+app/lib/orchestrator/runtime-decision-engine.ts:80:context = appendRuntimeTrace(context, healing.healed ? 'self-healing:executed' : 'self-healing:skipped')
+app/lib/orchestrator/runtime-decision-engine.ts:82:const policy = evaluateRuntimePolicy(context)
+app/lib/orchestrator/runtime-decision-engine.ts:84:decisions.push(`policy:${policy.severity}:${policy.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts:91:const governance = evaluateRuntimeGovernance(context, policy)
+app/lib/orchestrator/runtime-decision-engine.ts:93:decisions.push(`governance:${governance.severity}:${governance.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts:100:const executionControl = evaluateExecutionControl(context)
+app/lib/orchestrator/runtime-decision-engine.ts:102:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:103:  `execution:${executionControl.allowed ? 'allowed' : 'blocked'}:${executionControl.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:111:const budget = evaluateRuntimeBudget(context)
+app/lib/orchestrator/runtime-decision-engine.ts:113:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:114:  `budget:${budget.estimatedCostLevel}:${budget.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:122:const providerGovernor = evaluateProviderGovernor(context)
+app/lib/orchestrator/runtime-decision-engine.ts:124:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:125:  `providerGovernor:${providerGovernor.escalationLevel}:${providerGovernor.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:133:const memory = evaluateRuntimeMemory(context)
+app/lib/orchestrator/runtime-decision-engine.ts:134:  decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:135:    `memory:${memory.memoryMode}:${memory.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:157:  const awareness = evaluateRuntimeAwareness(runtimeRegistry)
+app/lib/orchestrator/runtime-decision-engine.ts:158:  decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:168:const recovery = evaluateRuntimeRecovery(awareness)
+app/lib/orchestrator/runtime-decision-engine.ts:170:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:171:  `recovery:${recovery.recoveryMode}:${recovery.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:194:    recovery.reason
+app/lib/orchestrator/runtime-decision-engine.ts:199:const autonomous = evaluateAutonomousStabilization(
+app/lib/orchestrator/runtime-decision-engine.ts:204:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:205:  `autonomous:${autonomous.stabilizationLevel}:${autonomous.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:215:decisions.push(`enforcement:${enforcement.severity}:${enforcement.reason}`)
+app/lib/orchestrator/runtime-decision-engine.ts:243:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:253:const runtimePolicy = evaluateRuntimeIntelligencePolicy(
+app/lib/orchestrator/runtime-decision-engine.ts:257:decisions.push(
+app/lib/orchestrator/runtime-decision-engine.ts:258:  `policy:${runtimePolicy.enforcementLevel}:${runtimePolicy.reason}`
+app/lib/orchestrator/runtime-decision-engine.ts:300:    decisions,
+app/lib/orchestrator/hybrid-router.ts:11:      reason: 'Runtime inseguro.'
+app/lib/orchestrator/hybrid-router.ts:20:    reason: selected.reason
+app/lib/orchestrator/executor.ts:4:  reason: string
+app/lib/orchestrator/executor.ts:8:  executed: boolean
+app/lib/orchestrator/executor.ts:10:  reason: string
+app/lib/orchestrator/executor.ts:13:export function executeRoute(
+app/lib/orchestrator/executor.ts:19:      executed: false,
+app/lib/orchestrator/executor.ts:21:      reason: input.reason
+app/lib/orchestrator/executor.ts:26:    executed: true,
+app/lib/orchestrator/executor.ts:28:    reason: input.reason
+app/lib/orchestrator/adaptive-protection.ts:16:      reason: 'Modo seguro ativado automaticamente.'
+app/lib/orchestrator/adaptive-protection.ts:27:    reason: 'Runtime operacional.'
+app/lib/orchestrator/runtime-task-planner.ts:11:export type RuntimeTaskPlan = {
+app/lib/orchestrator/runtime-task-planner.ts:17:export function createRuntimeTaskPlan(
+app/lib/orchestrator/runtime-task-planner.ts:19:): RuntimeTaskPlan {
+app/lib/orchestrator/runtime-action-executor.ts:16:  executedAt: string
+app/lib/orchestrator/runtime-action-executor.ts:20:export async function executeRuntimeAction(
+app/lib/orchestrator/runtime-action-executor.ts:36:      executedAt: new Date().toISOString(),
+app/lib/orchestrator/runtime-action-executor.ts:44:    executedAt: new Date().toISOString(),
+app/lib/orchestrator/runtime-memory.ts:8:  reason: string
+app/lib/orchestrator/runtime-memory.ts:11:export function evaluateRuntimeMemory(
+app/lib/orchestrator/runtime-memory.ts:20:      reason: 'Runtime instável.'
+app/lib/orchestrator/runtime-memory.ts:30:      reason: 'SafeMode restringe memória.'
+app/lib/orchestrator/runtime-memory.ts:40:      reason: 'Provider local com memória expandida.'
+app/lib/orchestrator/runtime-memory.ts:49:    reason: 'Memória persistente supervisionada.'
+app/lib/orchestrator/self-healing.ts:4:import { clearDecisionMemory } from './decision-memory'
+app/lib/orchestrator/self-healing.ts:6:export function executeSelfHealing() {
+app/lib/orchestrator/self-healing.ts:12:      reason: 'Runtime saudável.'
+app/lib/orchestrator/self-healing.ts:18:  clearDecisionMemory()
+app/lib/orchestrator/self-healing.ts:22:    reason: 'Self-healing executado.'
+app/lib/orchestrator/decision-pipeline.ts:1:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/decision-pipeline.ts:3:import { executeRoute } from './executor'
+app/lib/orchestrator/decision-pipeline.ts:11:  executed: boolean
+app/lib/orchestrator/decision-pipeline.ts:12:  reason: string
+app/lib/orchestrator/decision-pipeline.ts:15:export function runDecisionPipeline(message: string, intent = 'general'): PipelineResult {
+app/lib/orchestrator/decision-pipeline.ts:16:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/decision-pipeline.ts:19:  const execution = executeRoute({
+app/lib/orchestrator/decision-pipeline.ts:22:    reason: policy.allowed ? route.reason : policy.reason
+app/lib/orchestrator/decision-pipeline.ts:27:  logEvent(createEvent('decision_pipeline', {
+app/lib/orchestrator/decision-pipeline.ts:30:    details: execution.reason
+app/lib/orchestrator/decision-pipeline.ts:39:    reason: execution.reason
+app/lib/orchestrator/decision-pipeline.ts:45:    executed: execution.executed,
+app/lib/orchestrator/decision-pipeline.ts:46:    reason: execution.reason
+app/lib/orchestrator/intelligent-selector.ts:21:      reason: 'Nenhum provider analisado.'
+app/lib/orchestrator/intelligent-selector.ts:27:    reason: 'Provider selecionado por reputação operacional.'
+app/lib/orchestrator/runtime-enforcement.ts:2:import type { RuntimeGovernanceDecision } from './runtime-governor'
+app/lib/orchestrator/runtime-enforcement.ts:6:  reason: string
+app/lib/orchestrator/runtime-enforcement.ts:12:  governance: RuntimeGovernanceDecision
+app/lib/orchestrator/runtime-enforcement.ts:18:      reason: 'Governance bloqueou execução.',
+app/lib/orchestrator/runtime-enforcement.ts:26:      reason: 'safeMode exige provider local.',
+app/lib/orchestrator/runtime-enforcement.ts:34:      reason: 'Runtime instável.',
+app/lib/orchestrator/runtime-enforcement.ts:41:    reason: 'RuntimeEnforcement aprovado.',
+app/lib/orchestrator/runtime-structural-health.ts:11:export function evaluateStructuralHealth(
+app/lib/orchestrator/evolution-engine.ts:1:import { analyzeRuntimePatterns } from './learning-engine'
+app/lib/orchestrator/evolution-engine.ts:4:export function evaluateRuntimeEvolution() {
+app/lib/orchestrator/runtime-lifecycle-manager.ts:12:  reason: string
+app/lib/orchestrator/runtime-lifecycle-manager.ts:34:  reason: string
+app/lib/orchestrator/runtime-lifecycle-manager.ts:39:    reason,
+app/lib/orchestrator/runtime-conscious-loop.ts:6:  createAutonomousDecision
+app/lib/orchestrator/runtime-conscious-loop.ts:7:} from './runtime-autonomous-decision'
+app/lib/orchestrator/runtime-conscious-loop.ts:10:  executeSelfHealing
+app/lib/orchestrator/runtime-conscious-loop.ts:17:  decision: string
+app/lib/orchestrator/runtime-conscious-loop.ts:22:export function executeRuntimeConsciousLoop():
+app/lib/orchestrator/runtime-conscious-loop.ts:27:  const decision =
+app/lib/orchestrator/runtime-conscious-loop.ts:28:    createAutonomousDecision(coordination)
+app/lib/orchestrator/runtime-conscious-loop.ts:31:    executeSelfHealing(decision)
+app/lib/orchestrator/runtime-conscious-loop.ts:38:    decision: decision.action,
+app/lib/orchestrator/routing.ts:1:import { resolveRuntimeDecision } from './runtime'
+app/lib/orchestrator/routing.ts:4:import { evaluatePolicy } from './policy'
+app/lib/orchestrator/routing.ts:9:  reason: string
+app/lib/orchestrator/routing.ts:16:  const runtime = resolveRuntimeDecision()
+app/lib/orchestrator/routing.ts:22:    details: runtime.reason
+app/lib/orchestrator/routing.ts:25:  const policy = evaluatePolicy(message)
+app/lib/orchestrator/routing.ts:31:      reason: policy.reason
+app/lib/orchestrator/routing.ts:39:      reason: runtime.reason
+app/lib/orchestrator/routing.ts:47:      reason: 'OpenAI autorizado por IASEVERO_MODE.'
+app/lib/orchestrator/routing.ts:55:      reason: intent === 'cost'
+app/lib/orchestrator/routing.ts:64:    reason: 'Fallback seguro para provider local.'
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:2:  evaluateRuntimeCognitiveResponseProfiler,
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:5:export function evaluateRuntimeCognitiveExecutionProfile() {
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:7:    evaluateRuntimeCognitiveResponseProfiler()
+app/lib/runtime-execution-profiles/runtime-cognitive-execution-profiles.ts:48:    reasoning: [
+app/lib/runtime-trust/runtime-trust-engine.ts:2:  evaluateRuntimeOperationalMode,
+app/lib/runtime-trust/runtime-trust-engine.ts:5:export function evaluateRuntimeTrustEngine() {
+app/lib/runtime-trust/runtime-trust-engine.ts:6:  const operational = evaluateRuntimeOperationalMode()
+app/lib/runtime-trust/runtime-trust-engine.ts:42:    reasoning: [
+app/lib/executive-runtime-context/executive-runtime-context.ts:2:  evaluateRuntimeExecutiveAuthorityGateway,
+app/lib/executive-runtime-context/executive-runtime-context.ts:6:  evaluateRuntimeExecutiveState,
+app/lib/executive-runtime-context/executive-runtime-context.ts:10:  evaluateRuntimeProviderAuthority,
+app/lib/executive-runtime-context/executive-runtime-context.ts:32:  reasoning: string[]
+app/lib/executive-runtime-context/executive-runtime-context.ts:41:    evaluateRuntimeExecutiveAuthorityGateway()
+app/lib/executive-runtime-context/executive-runtime-context.ts:44:    evaluateRuntimeExecutiveState(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:47:    evaluateRuntimeProviderAuthority(message, intent)
+app/lib/executive-runtime-context/executive-runtime-context.ts:76:    reasoning: [
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:2:  evaluateRuntimeAdaptiveDecisionLayer,
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:3:} from '@/app/lib/runtime-adaptive-decision/runtime-adaptive-decision-layer'
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:12:export function evaluateRuntimeOperationalStateEngine() {
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:14:    evaluateRuntimeAdaptiveDecisionLayer()
+app/lib/runtime-state-engine/runtime-operational-state-engine.ts:66:    reasoning: [
+app/lib/runtime-signal-intelligence/runtime-signal-intelligence.ts:47:  reasoning: string[]
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:2:  evaluateRuntimeCognitiveExecutionProfile
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:5:export function evaluateRuntimeExecutionProfileBridge() {
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:7:    evaluateRuntimeCognitiveExecutionProfile()
+app/lib/runtime-execution-bridge/runtime-execution-profile-bridge.ts:53:    reasoning: [
+app/lib/router.ts:2:  | 'learn'
+app/lib/router.ts:14:  if (m.startsWith('ensinar:')) return 'learn'
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:2:  evaluateRuntimeOperationalStateEngine,
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:12:export function evaluateRuntimeTransitionController() {
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:14:    evaluateRuntimeOperationalStateEngine()
+app/lib/runtime-transition-controller/runtime-transition-controller.ts:75:    reasoning: [
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:2:  evaluateUnifiedRuntimeIntelligence,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:6:  evaluateRuntimeConsciousnessIntegration,
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:9:export function evaluateRuntimeCognitiveArbitration() {
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:11:    evaluateUnifiedRuntimeIntelligence()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:14:    evaluateRuntimeConsciousnessIntegration()
+app/lib/runtime-arbitration/runtime-cognitive-arbitration-engine.ts:57:    reasoning: [
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:2:  evaluateRuntimeTrustEngine,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:6:  evaluateRuntimeOperationalMode,
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:9:export function evaluateRuntimeConsciousness() {
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:10:  const trust = evaluateRuntimeTrustEngine()
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:11:  const operational = evaluateRuntimeOperationalMode()
+app/lib/runtime-consciousness/runtime-consciousness-engine.ts:48:    reasoning: [
+app/lib/decision-engine.ts:3:export type DecisionInput = {
+app/lib/decision-engine.ts:18:  if (msg.includes('planejar') || msg.includes('plano') || msg.includes('roadmap')) return 'planning'
+app/lib/decision-engine.ts:23:export function buildDecision(input: DecisionInput) {
+app/lib/decision-engine.ts:46:export function validateDecisionAnswer(message: string, answer: string) {
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:2:  evaluateRuntimeReflectionFeedback,
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:3:} from '@/app/lib/runtime-reflection-feedback/runtime-reflection-feedback'
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:30:  reasoning: string[]
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:33:export function evaluateRuntimeMemoryConsolidation():
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:36:    evaluateRuntimeReflectionFeedback()
+app/lib/runtime-memory-consolidation/runtime-memory-consolidation.ts:88:    reasoning: [
