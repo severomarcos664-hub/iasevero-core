@@ -14,6 +14,14 @@ export type RuntimeTaskStep = {
     | 'blocked'
 }
 
+export type RuntimeTaskPlanningLearningContext = {
+  cycleCount: number
+  lastExecutionAllowed: boolean | null
+  lastRecommendation: string | null
+  lastReflectionState: string | null
+  lastConsensusRatio: number | null
+}
+
 export type RuntimeTaskPlan = {
   generatedAt: string
   source: 'runtime-task-planner'
@@ -32,6 +40,14 @@ export type RuntimeTaskPlan = {
     | 'medium'
     | 'high'
   steps: RuntimeTaskStep[]
+  learning: {
+    influenced: boolean
+    previousCycleCount: number
+    previousExecutionAllowed: boolean | null
+    previousRecommendation: string | null
+    previousReflectionState: string | null
+    previousConsensusRatio: number | null
+  }
   recommendation: string
   reasoning: string[]
 }
@@ -68,7 +84,10 @@ function classifyIntent(message: string): RuntimeTaskPlan['intent'] {
   return 'general'
 }
 
-export function planRuntimeTask(message: string): RuntimeTaskPlan {
+export function planRuntimeTask(
+  message: string,
+  learningContext?: RuntimeTaskPlanningLearningContext,
+): RuntimeTaskPlan {
   const intent = classifyIntent(message)
 
   const risk =
@@ -129,6 +148,21 @@ export function planRuntimeTask(message: string): RuntimeTaskPlan {
     priority,
     risk,
     steps,
+    learning: {
+      influenced:
+        learningContext !== undefined &&
+        learningContext.cycleCount > 0,
+      previousCycleCount:
+        learningContext?.cycleCount ?? 0,
+      previousExecutionAllowed:
+        learningContext?.lastExecutionAllowed ?? null,
+      previousRecommendation:
+        learningContext?.lastRecommendation ?? null,
+      previousReflectionState:
+        learningContext?.lastReflectionState ?? null,
+      previousConsensusRatio:
+        learningContext?.lastConsensusRatio ?? null,
+    },
     recommendation:
       'Task planned with controlled execution, validation, and synthesis.',
     reasoning: [
@@ -136,6 +170,10 @@ export function planRuntimeTask(message: string): RuntimeTaskPlan {
       `priority:${priority}`,
       `risk:${risk}`,
       `steps:${steps.length}`,
+      `learning-influenced:${
+        learningContext !== undefined &&
+        learningContext.cycleCount > 0
+      }`,
     ],
   }
 }

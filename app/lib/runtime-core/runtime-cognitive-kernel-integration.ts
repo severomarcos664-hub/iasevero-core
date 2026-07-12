@@ -53,7 +53,17 @@ export function runRuntimeCognitiveKernel(
   }
 
   const memory = buildRuntimeOperationalMemory()
-  const planning = planRuntimeTask(message)
+  const planning = planRuntimeTask(message, {
+    cycleCount: previousLearningState.cycleCount,
+    lastExecutionAllowed:
+      previousLearningState.lastExecutionAllowed,
+    lastRecommendation:
+      previousLearningState.lastRecommendation,
+    lastReflectionState:
+      previousLearningState.lastReflectionState,
+    lastConsensusRatio:
+      previousLearningState.lastConsensusRatio,
+  })
   const authority = evaluateRuntimeExecutiveAuthorityGateway()
 
   const execution = authority.executionAllowed
