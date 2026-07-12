@@ -9,6 +9,7 @@ export type RuntimeDecisionGateReport = {
   healing: string
   recovery: string
   correlationId: string
+  kernel: ReturnType<typeof runRuntimeCognitiveKernel>
 }
 
 export function evaluateRuntimeDecisionGate(
@@ -32,6 +33,7 @@ export function evaluateRuntimeDecisionGate(
       healing: 'not-executed',
       recovery: 'not-executed',
       correlationId: kernel.kernelId,
+      kernel,
     }
   }
 
@@ -52,5 +54,6 @@ export function evaluateRuntimeDecisionGate(
     healing: execution.healing.decision,
     recovery: execution.recovery.operationalState,
     correlationId: execution.correlationId,
+    kernel,
   }
 }

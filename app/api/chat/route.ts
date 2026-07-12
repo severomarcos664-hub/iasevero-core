@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server'
-import { evaluateRuntimeExecutiveAuthorityGateway } from "@/app/lib/runtime-executive-authority-gateway/runtime-executive-authority-gateway"
-import { evaluateRuntimeExecutiveState } from "@/app/lib/runtime-executive-state/runtime-executive-state"
 import { iaseveroCore } from '@/app/lib/iasevero-core'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
@@ -11,8 +9,6 @@ import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-deci
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
-import { createRuntimeTaskPlan } from '@/app/lib/orchestrator/runtime-task-planner'
-import { executeRuntimePipeline } from '@/app/lib/orchestrator/runtime-execution-pipeline'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -101,61 +97,24 @@ const consciousness = evaluateRuntimeConsciousnessIntegration()
     const traceRuntime = createRuntimeTraceNode(
       'chat.runtime.evaluated',
       traceRequest.id,
-      runtimeMaster.executionAllowed ? 'ok' : 'warning',
+      runtimeMaster.allowed ? 'ok' : 'warning',
       {
         operationalState: runtimeMaster.operationalState,
-        governance: runtimeMaster.governance.decision,
-        integrity: runtimeMaster.integrity.integrity,
-        healing: runtimeMaster.healing.decision,
-        recovery: runtimeMaster.recovery.operationalState,
+        governance: runtimeMaster.governance,
+        integrity: runtimeMaster.integrity,
+        healing: runtimeMaster.healing,
+        recovery: runtimeMaster.recovery,
       },
     )
 
-const executiveAuthority =
-  evaluateRuntimeExecutiveAuthorityGateway()
-
-if (!executiveAuthority.executionAllowed) {
-  return NextResponse.json({
-    reply: "Execução bloqueada pela Runtime Executive Authority.",
-    job: null,
-    runtime: executiveAuthority,
-  })
-}
-
-
-    const executiveState =
-  evaluateRuntimeExecutiveState(message, 'general')
-
-const finalExecutionAllowed =
-      runtimeMaster.executionAllowed &&
-      executiveAuthority.executionAllowed &&
-      executiveState.executionAllowed
-
-    if (!finalExecutionAllowed) {
-      return NextResponse.json({
-        reply: 'Execução bloqueada pela autorização final do Runtime.',
-        job: null,
-        runtime: {
-          operationalState: runtimeMaster.operationalState,
-          governance: runtimeMaster.governance.decision,
-          integrity: runtimeMaster.integrity.integrity,
-          healing: runtimeMaster.healing.decision,
-          recovery: runtimeMaster.recovery.operationalState,
-          correlationId: runtimeMaster.correlationId,
-          executionAllowed: finalExecutionAllowed,
-          executiveAuthority,
-          executiveState,
-        }
-      })
+const cognitiveKernel = decisionGate.kernel
+    const runtimePlan = cognitiveKernel.stages.planning
+    const pipelineResult = cognitiveKernel.stages.execution
+    const executiveAuthority = cognitiveKernel.stages.authority
+    const executiveState = {
+      executionAllowed: decisionGate.allowed,
+      source: 'runtime-cognitive-kernel',
     }
-
-    const runtimePlan = createRuntimeTaskPlan(message)
-
-    const pipelineResult = executeRuntimePipeline({
-      requestId: runtimeMaster.correlationId,
-      message,
-      provider: 'local',
-    })
 
     const result = await iaseveroCore(message, userId)
 
@@ -176,12 +135,12 @@ const finalExecutionAllowed =
       pipeline: pipelineResult,
       runtime: {
         operationalState: runtimeMaster.operationalState,
-        governance: runtimeMaster.governance.decision,
-        integrity: runtimeMaster.integrity.integrity,
-        healing: runtimeMaster.healing.decision,
-        recovery: runtimeMaster.recovery.operationalState,
+        governance: runtimeMaster.governance,
+        integrity: runtimeMaster.integrity,
+        healing: runtimeMaster.healing,
+        recovery: runtimeMaster.recovery,
         correlationId: runtimeMaster.correlationId,
-        executionAllowed: finalExecutionAllowed,
+        executionAllowed: runtimeMaster.allowed,
         executiveAuthority,
         executiveState,
         traceId: traceResponse.id,
