@@ -1,6 +1,10 @@
 import { buildRuntimeOperationalMemory } from '../orchestrator/runtime-operational-memory'
 import { evaluateRuntimeMemoryConsolidation } from '../runtime-memory-consolidation/runtime-memory-consolidation'
 import { evaluateRuntimeReflectionFeedback } from '../runtime-reflection-feedback/runtime-reflection-feedback'
+import {
+  readRuntimeCognitiveLearningState,
+  updateRuntimeCognitiveLearningState,
+} from '../runtime-cognitive-learning/runtime-cognitive-learning-state'
 import { evaluateRuntimeExecutiveAuthorityGateway } from '../runtime-executive-authority-gateway/runtime-executive-authority-gateway'
 import { planRuntimeTask } from './runtime-task-planner'
 import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
@@ -25,12 +29,18 @@ export type RuntimeCognitiveKernelReport = {
     reflection: ReturnType<typeof evaluateRuntimeReflectionFeedback>
     consolidation: ReturnType<typeof evaluateRuntimeMemoryConsolidation>
   }
+  learning: {
+    previous: ReturnType<typeof readRuntimeCognitiveLearningState>
+    current: ReturnType<typeof updateRuntimeCognitiveLearningState>
+  }
   reasoning: string[]
 }
 
 export function runRuntimeCognitiveKernel(
   input: RuntimeCognitiveKernelInput,
 ): RuntimeCognitiveKernelReport {
+  const previousLearningState = readRuntimeCognitiveLearningState()
+
   const message = input.message.trim()
   const userId = input.userId.trim()
 
@@ -55,8 +65,24 @@ export function runRuntimeCognitiveKernel(
 
   const completed = authority.executionAllowed && execution !== null
 
+  const kernelId = `runtime-cognitive-kernel-${Date.now()}`
+
+  const currentLearningState = updateRuntimeCognitiveLearningState({
+    lastKernelId: kernelId,
+    lastCorrelationId:
+      execution?.correlationId ?? kernelId,
+    lastExecutionAllowed: authority.executionAllowed,
+    lastStopReason: authority.executionAllowed
+      ? 'completed'
+      : 'blocked-by-authority',
+    lastRecommendation: reflection.recommendation,
+    lastReflectionState: reflection.reflectionState,
+    lastConsensusRatio: reflection.consensusRatio,
+  })
+
+
   return {
-    kernelId: `runtime-cognitive-kernel-${Date.now()}`,
+    kernelId,
     createdAt: new Date().toISOString(),
     source: 'runtime-cognitive-kernel-integration',
     completed,
@@ -70,8 +96,13 @@ export function runRuntimeCognitiveKernel(
       reflection,
       consolidation,
     },
+    learning: {
+      previous: previousLearningState,
+      current: currentLearningState,
+    },
     reasoning: [
       'Runtime operational memory loaded.',
+      `Previous learning cycles:${previousLearningState.cycleCount}.`,
       'Runtime task planning completed.',
       `Executive authority executionAllowed=${authority.executionAllowed}.`,
       execution
