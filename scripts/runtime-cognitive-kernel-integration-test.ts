@@ -30,7 +30,17 @@ if (report.executionAllowed) {
   assert.equal(report.stopReason, 'blocked-by-authority')
 }
 
-assert.equal(report.reasoning.length, 6)
+assert.ok(
+  report.reasoning.length >= 7,
+  'Kernel reasoning must include the canonical learning evidence',
+)
+
+assert.ok(
+  report.reasoning.some((entry) =>
+    entry.startsWith('Previous learning cycles:')
+  ),
+  'Kernel reasoning must expose the previous learning cycle count',
+)
 
 console.log(JSON.stringify(report, null, 2))
 console.log('OK: Runtime Cognitive Kernel integration completed under governance.')
