@@ -9,6 +9,9 @@ import { evaluateRuntimeExecutiveAuthorityGateway } from '../runtime-executive-a
 import { planRuntimeTask } from './runtime-task-planner'
 import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
 
+import {
+  adaptRuntimeTaskPlan,
+} from './runtime-adaptive-planning-policy'
 export type RuntimeCognitiveKernelInput = {
   message: string
   userId: string
@@ -53,7 +56,7 @@ export function runRuntimeCognitiveKernel(
   }
 
   const memory = buildRuntimeOperationalMemory()
-  const planning = planRuntimeTask(message, {
+  const basePlanning = planRuntimeTask(message, {
     cycleCount: previousLearningState.cycleCount,
     lastExecutionAllowed:
       previousLearningState.lastExecutionAllowed,
@@ -64,6 +67,11 @@ export function runRuntimeCognitiveKernel(
     lastConsensusRatio:
       previousLearningState.lastConsensusRatio,
   })
+
+  const planning = adaptRuntimeTaskPlan(
+    basePlanning,
+    previousLearningState,
+  )
   const authority = evaluateRuntimeExecutiveAuthorityGateway()
 
   const execution = authority.executionAllowed
