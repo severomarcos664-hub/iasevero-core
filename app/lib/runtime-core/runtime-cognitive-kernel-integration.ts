@@ -10,6 +10,12 @@ import { planRuntimeTask } from './runtime-task-planner'
 import { runRuntimeExecutionBridge } from './runtime-execution-bridge'
 
 import {
+  completeRuntimeAdaptiveExecutionStep,
+  createRuntimeAdaptiveExecutionState,
+  evaluateRuntimeAdaptiveExecution,
+} from './runtime-adaptive-execution-enforcement'
+
+import {
   adaptRuntimeTaskPlan,
 } from './runtime-adaptive-planning-policy'
 export type RuntimeCognitiveKernelInput = {
@@ -29,6 +35,13 @@ export type RuntimeCognitiveKernelReport = {
     planning: ReturnType<typeof planRuntimeTask>
     authority: ReturnType<typeof evaluateRuntimeExecutiveAuthorityGateway>
     execution: ReturnType<typeof runRuntimeExecutionBridge> | null
+    executionEnforcement: {
+      initialState: ReturnType<typeof createRuntimeAdaptiveExecutionState>
+      preExecutionState: ReturnType<typeof createRuntimeAdaptiveExecutionState>
+      preExecutionDecision: ReturnType<typeof evaluateRuntimeAdaptiveExecution>
+      finalState: ReturnType<typeof createRuntimeAdaptiveExecutionState>
+      finalDecision: ReturnType<typeof evaluateRuntimeAdaptiveExecution>
+    }
     reflection: ReturnType<typeof evaluateRuntimeReflectionFeedback>
     consolidation: ReturnType<typeof evaluateRuntimeMemoryConsolidation>
   }
@@ -74,12 +87,105 @@ export function runRuntimeCognitiveKernel(
   )
   const authority = evaluateRuntimeExecutiveAuthorityGateway()
 
-  const execution = authority.executionAllowed
-    ? runRuntimeExecutionBridge(message, userId)
-    : null
+  const initialExecutionState =
+    createRuntimeAdaptiveExecutionState(planning)
+
+  let preExecutionState = initialExecutionState
+
+  for (const step of [...planning.steps].sort(
+    (left, right) => left.order - right.order,
+  )) {
+    if (step.type === 'execution') {
+      break
+    }
+
+    const decision =
+      evaluateRuntimeAdaptiveExecution(
+        planning,
+        preExecutionState,
+      )
+
+    if (
+      !decision.executionAllowed ||
+      decision.currentStep?.id !== step.id
+    ) {
+      break
+    }
+
+    preExecutionState =
+      completeRuntimeAdaptiveExecutionStep(
+        planning,
+        preExecutionState,
+        step.id,
+      )
+  }
+
+  const preExecutionDecision =
+    evaluateRuntimeAdaptiveExecution(
+      planning,
+      preExecutionState,
+    )
+
+  const execution =
+    authority.executionAllowed &&
+    preExecutionDecision.executionAllowed &&
+    preExecutionDecision.currentStep?.type ===
+      'execution'
+      ? runRuntimeExecutionBridge(message, userId)
+      : null
+
+  let finalExecutionState = preExecutionState
+
+  if (
+    execution &&
+    preExecutionDecision.currentStep
+  ) {
+    finalExecutionState =
+      completeRuntimeAdaptiveExecutionStep(
+        planning,
+        finalExecutionState,
+        preExecutionDecision.currentStep.id,
+      )
+  }
 
   const reflection = evaluateRuntimeReflectionFeedback()
   const consolidation = evaluateRuntimeMemoryConsolidation()
+
+  if (execution) {
+    for (const step of [...planning.steps].sort(
+      (left, right) => left.order - right.order,
+    )) {
+      const decision =
+        evaluateRuntimeAdaptiveExecution(
+          planning,
+          finalExecutionState,
+        )
+
+      if (
+        !decision.executionAllowed ||
+        decision.currentStep?.id !== step.id
+      ) {
+        continue
+      }
+
+      if (step.type === 'execution') {
+        continue
+      }
+
+      finalExecutionState =
+        completeRuntimeAdaptiveExecutionStep(
+          planning,
+          finalExecutionState,
+          step.id,
+        )
+    }
+  }
+
+  const finalExecutionDecision =
+    evaluateRuntimeAdaptiveExecution(
+      planning,
+      finalExecutionState,
+    )
 
   const completed = authority.executionAllowed && execution !== null
 
@@ -111,6 +217,13 @@ export function runRuntimeCognitiveKernel(
       planning,
       authority,
       execution,
+      executionEnforcement: {
+        initialState: initialExecutionState,
+        preExecutionState,
+        preExecutionDecision,
+        finalState: finalExecutionState,
+        finalDecision: finalExecutionDecision,
+      },
       reflection,
       consolidation,
     },
@@ -123,6 +236,8 @@ export function runRuntimeCognitiveKernel(
       `Previous learning cycles:${previousLearningState.cycleCount}.`,
       'Runtime task planning completed.',
       `Executive authority executionAllowed=${authority.executionAllowed}.`,
+      `Execution enforcement preReason=${preExecutionDecision.reason}.`,
+      `Execution enforcement finalReason=${finalExecutionDecision.reason}.`,
       execution
         ? 'Execution Bridge executed the authorized operation.'
         : 'Execution was blocked before the Execution Bridge.',
