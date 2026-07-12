@@ -66,6 +66,44 @@ export function readRuntimePersistence(
   return files.sort()
 }
 
+export function readRuntimePersistenceRecords(
+  category: RuntimePersistenceRecord['category'],
+): RuntimePersistenceRecord[] {
+  const targetDir = path.join(ROOT, category)
+
+  if (!fs.existsSync(targetDir)) {
+    return []
+  }
+
+  const records: RuntimePersistenceRecord[] = []
+
+  for (const file of fs.readdirSync(targetDir).sort()) {
+    const targetFile = path.join(targetDir, file)
+
+    try {
+      const parsed = JSON.parse(
+        fs.readFileSync(targetFile, 'utf8'),
+      ) as Partial<RuntimePersistenceRecord>
+
+      if (
+        typeof parsed.id === 'string' &&
+        typeof parsed.timestamp === 'string' &&
+        typeof parsed.source === 'string' &&
+        parsed.category === category &&
+        'payload' in parsed
+      ) {
+        records.push(
+          parsed as RuntimePersistenceRecord,
+        )
+      }
+    } catch {
+      // Registros inválidos são ignorados com fallback seguro.
+    }
+  }
+
+  return records
+}
+
 export function buildRuntimePersistenceRecord(
   source: string,
   category: RuntimePersistenceRecord['category'],

@@ -88,3 +88,5 @@ backups/
 # Backups locais do runtime
 snapshots/
 snapshots-backup-*.tar.gz
+
+runtime/persistence/
