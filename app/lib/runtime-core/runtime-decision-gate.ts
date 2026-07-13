@@ -15,10 +15,12 @@ export type RuntimeDecisionGateReport = {
 export function evaluateRuntimeDecisionGate(
   message: string,
   userId: string,
-): RuntimeDecisionGateReport {
+  executionKey?: string,
+) {
   const kernel = runRuntimeCognitiveKernel({
     message,
     userId,
+    executionKey,
   })
 
   const execution = kernel.stages.execution

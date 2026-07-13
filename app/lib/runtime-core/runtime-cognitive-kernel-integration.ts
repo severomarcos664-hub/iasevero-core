@@ -1,3 +1,11 @@
+import {
+  persistRuntimeAdaptiveExecutionState,
+} from './runtime-adaptive-execution-persistence'
+
+import {
+  readLatestRuntimeAdaptiveExecutionStateByExecutionKey,
+} from './runtime-adaptive-execution-persistence'
+
 import { buildRuntimeOperationalMemory } from '../orchestrator/runtime-operational-memory'
 import { evaluateRuntimeMemoryConsolidation } from '../runtime-memory-consolidation/runtime-memory-consolidation'
 import { evaluateRuntimeReflectionFeedback } from '../runtime-reflection-feedback/runtime-reflection-feedback'
@@ -21,6 +29,7 @@ import {
 export type RuntimeCognitiveKernelInput = {
   message: string
   userId: string
+  executionKey?: string
 }
 
 export type RuntimeCognitiveKernelReport = {
@@ -42,6 +51,11 @@ export type RuntimeCognitiveKernelReport = {
       finalState: ReturnType<typeof createRuntimeAdaptiveExecutionState>
       finalDecision: ReturnType<typeof evaluateRuntimeAdaptiveExecution>
     }
+    executionPersistence: {
+      executionKey: string
+      source: 'new' | 'recovered'
+      taskId: string
+    }
     reflection: ReturnType<typeof evaluateRuntimeReflectionFeedback>
     consolidation: ReturnType<typeof evaluateRuntimeMemoryConsolidation>
   }
@@ -59,6 +73,9 @@ export function runRuntimeCognitiveKernel(
 
   const message = input.message.trim()
   const userId = input.userId.trim()
+  const executionKey =
+    input.executionKey?.trim() ||
+    `${userId}:${message}`
 
   if (!message) {
     throw new Error('Runtime Cognitive Kernel requires a non-empty message.')
@@ -81,16 +98,30 @@ export function runRuntimeCognitiveKernel(
       previousLearningState.lastConsensusRatio,
   })
 
-  const planning = adaptRuntimeTaskPlan(
-    basePlanning,
-    previousLearningState,
-  )
+  const recoveredExecution =
+    readLatestRuntimeAdaptiveExecutionStateByExecutionKey(
+      executionKey,
+    )
+
+  const planning =
+    recoveredExecution?.plan ??
+    adaptRuntimeTaskPlan(
+      basePlanning,
+      previousLearningState,
+    )
   const authority = evaluateRuntimeExecutiveAuthorityGateway()
 
   const initialExecutionState =
+    recoveredExecution?.state ??
     createRuntimeAdaptiveExecutionState(planning)
 
   let preExecutionState = initialExecutionState
+
+  persistRuntimeAdaptiveExecutionState(
+    planning,
+    preExecutionState,
+    executionKey,
+  )
 
   for (const step of [...planning.steps].sort(
     (left, right) => left.order - right.order,
@@ -205,6 +236,12 @@ export function runRuntimeCognitiveKernel(
   })
 
 
+  persistRuntimeAdaptiveExecutionState(
+    planning,
+    finalExecutionState,
+    executionKey,
+  )
+
   return {
     kernelId,
     createdAt: new Date().toISOString(),
@@ -223,6 +260,13 @@ export function runRuntimeCognitiveKernel(
         preExecutionDecision,
         finalState: finalExecutionState,
         finalDecision: finalExecutionDecision,
+      },
+      executionPersistence: {
+        executionKey,
+        source: recoveredExecution
+          ? 'recovered'
+          : 'new',
+        taskId: planning.taskId,
       },
       reflection,
       consolidation,

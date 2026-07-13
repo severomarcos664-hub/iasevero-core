@@ -22,6 +22,7 @@ const ADAPTIVE_EXECUTION_CATEGORY:
 export type RuntimeAdaptiveExecutionPersistencePayload = {
   schemaVersion: 1
   taskId: string
+  executionKey: string
   plan: RuntimeTaskPlan
   state: RuntimeAdaptiveExecutionState
   persistedAt: string
@@ -48,6 +49,8 @@ export function isRuntimeAdaptiveExecutionPersistencePayload(
     value.schemaVersion !== 1 ||
     typeof value.taskId !== 'string' ||
     value.taskId.length === 0 ||
+    typeof value.executionKey !== 'string' ||
+    value.executionKey.length === 0 ||
     typeof value.persistedAt !== 'string' ||
     !isRecord(value.plan) ||
     !isRecord(value.state)
@@ -71,7 +74,16 @@ export function isRuntimeAdaptiveExecutionPersistencePayload(
 export function persistRuntimeAdaptiveExecutionState(
   plan: RuntimeTaskPlan,
   state: RuntimeAdaptiveExecutionState,
+  executionKey: string = plan.taskId,
 ): RuntimePersistenceRecord {
+  const normalizedExecutionKey = executionKey.trim()
+
+  if (!normalizedExecutionKey) {
+    throw new Error(
+      'Runtime adaptive execution persistence requires an executionKey.',
+    )
+  }
+
   if (!plan.taskId) {
     throw new Error(
       'Runtime adaptive execution persistence requires a taskId.',
@@ -88,6 +100,7 @@ export function persistRuntimeAdaptiveExecutionState(
     RuntimeAdaptiveExecutionPersistencePayload = {
       schemaVersion: 1,
       taskId: plan.taskId,
+      executionKey: normalizedExecutionKey,
       plan,
       state,
       persistedAt: new Date().toISOString(),
@@ -102,6 +115,49 @@ export function persistRuntimeAdaptiveExecutionState(
   persistRuntimeRecord(record)
 
   return record
+}
+
+
+export function readLatestRuntimeAdaptiveExecutionStateByExecutionKey(
+  executionKey: string,
+): RuntimeAdaptiveExecutionPersistencePayload | null {
+  const normalizedExecutionKey = executionKey.trim()
+
+  if (!normalizedExecutionKey) {
+    throw new Error(
+      'Runtime adaptive execution persistence requires an executionKey.',
+    )
+  }
+
+  const records = readRuntimePersistenceRecords(
+    ADAPTIVE_EXECUTION_CATEGORY,
+  )
+
+  for (const record of [...records].reverse()) {
+    if (
+      record.source !==
+      'runtime-adaptive-execution-persistence'
+    ) {
+      continue
+    }
+
+    if (
+      !isRuntimeAdaptiveExecutionPersistencePayload(
+        record.payload,
+      )
+    ) {
+      continue
+    }
+
+    if (
+      record.payload.executionKey ===
+      normalizedExecutionKey
+    ) {
+      return record.payload
+    }
+  }
+
+  return null
 }
 
 export function readLatestRuntimeAdaptiveExecutionState(
