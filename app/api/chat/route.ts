@@ -25,6 +25,12 @@ export async function POST(req: Request) {
     const body = await req.json()
     const message = (body.message || '').toString().trim()
     const userId = body.userId || 'local'
+    const requestedExecutionKey =
+      typeof body.executionKey === 'string'
+        ? body.executionKey.trim()
+        : ''
+    const effectiveExecutionKey =
+      requestedExecutionKey || `${userId}:${message}`
 
     if (!message) {
       return NextResponse.json({ reply: 'Mensagem vazia.', job: null })
@@ -61,7 +67,11 @@ export async function POST(req: Request) {
     const runtimeDecision = executeRuntimeDecisionEngine()
     const runtimeState = superviseRuntime()
     const runtimeSnapshot = persistRuntimeSnapshot()
-    const decisionGate = evaluateRuntimeDecisionGate(message, userId)
+    const decisionGate = evaluateRuntimeDecisionGate(
+      message,
+      userId,
+      effectiveExecutionKey,
+    )
 const actionPolicy = evaluateRuntimeActionPolicy()
 const consciousness = evaluateRuntimeConsciousnessIntegration()
 
@@ -141,6 +151,13 @@ const cognitiveKernel = decisionGate.kernel
         recovery: runtimeMaster.recovery,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.allowed,
+        executionIdentity: {
+          executionKey: effectiveExecutionKey,
+          source:
+            cognitiveKernel.stages.executionPersistence.source,
+          taskId:
+            cognitiveKernel.stages.executionPersistence.taskId,
+        },
         executiveAuthority,
         executiveState,
         traceId: traceResponse.id,
