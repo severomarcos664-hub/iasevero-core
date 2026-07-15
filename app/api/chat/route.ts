@@ -172,7 +172,8 @@ const cognitiveKernel = decisionGate.kernel
         recovery: runtimeMaster.recovery,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.allowed,
-        executionIdentity: {
+        memoryRouting: cognitiveKernel.stages.memoryRouting,
+      executionIdentity: {
           executionKey: effectiveExecutionKey,
           source:
             cognitiveKernel.stages.executionPersistence.source,

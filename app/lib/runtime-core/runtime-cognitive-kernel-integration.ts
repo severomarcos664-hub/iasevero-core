@@ -7,6 +7,7 @@ import {
 } from './runtime-adaptive-execution-persistence'
 
 import { buildRuntimeOperationalMemory } from '../orchestrator/runtime-operational-memory'
+import { routeGovernedCognitiveMemory } from './runtime-governed-cognitive-memory-router'
 import { evaluateRuntimeMemoryConsolidation } from '../runtime-memory-consolidation/runtime-memory-consolidation'
 import { evaluateRuntimeReflectionFeedback } from '../runtime-reflection-feedback/runtime-reflection-feedback'
 import {
@@ -41,6 +42,7 @@ export type RuntimeCognitiveKernelReport = {
   stopReason: 'completed' | 'blocked-by-authority'
   stages: {
     memory: ReturnType<typeof buildRuntimeOperationalMemory>
+    memoryRouting: ReturnType<typeof routeGovernedCognitiveMemory>
     planning: ReturnType<typeof planRuntimeTask>
     authority: ReturnType<typeof evaluateRuntimeExecutiveAuthorityGateway>
     execution: ReturnType<typeof runRuntimeExecutionBridge> | null
@@ -86,6 +88,11 @@ export function runRuntimeCognitiveKernel(
   }
 
   const memory = buildRuntimeOperationalMemory()
+
+  const memoryRouting = routeGovernedCognitiveMemory({
+    query: message,
+    maxSelected: 5,
+  })
   const basePlanning = planRuntimeTask(message, {
     cycleCount: previousLearningState.cycleCount,
     lastExecutionAllowed:
@@ -251,6 +258,7 @@ export function runRuntimeCognitiveKernel(
     stopReason: completed ? 'completed' : 'blocked-by-authority',
     stages: {
       memory,
+      memoryRouting,
       planning,
       authority,
       execution,
@@ -277,6 +285,10 @@ export function runRuntimeCognitiveKernel(
     },
     reasoning: [
       'Runtime operational memory loaded.',
+      `Governed memory selected=${memoryRouting.selected.length}.`,
+      `Governed memory rejected=${memoryRouting.rejected.length}.`,
+      `Governed memory conflicts=${memoryRouting.conflicts.length}.`,
+      `Governed memory grounded=${memoryRouting.grounded}.`,
       `Previous learning cycles:${previousLearningState.cycleCount}.`,
       'Runtime task planning completed.',
       `Executive authority executionAllowed=${authority.executionAllowed}.`,
