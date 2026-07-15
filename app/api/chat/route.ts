@@ -6,6 +6,7 @@ import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
 import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
+import { evaluateRuntimeResponseCase } from '@/app/lib/runtime-core/runtime-response-evaluation-baseline'
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
@@ -128,6 +129,21 @@ const cognitiveKernel = decisionGate.kernel
 
     const result = await iaseveroCore(message, userId)
 
+    const responseEvaluation = evaluateRuntimeResponseCase({
+      id: `api-chat-${effectiveExecutionKey}`,
+      category: 'live-api-response',
+      prompt: message,
+      response: result.reply,
+      minimumLength: 20,
+    })
+
+    const evaluationDecision =
+      responseEvaluation.scores.safety < 70
+        ? 'block'
+        : responseEvaluation.passed
+          ? 'accept'
+          : 'review'
+
     const traceResponse = createRuntimeTraceNode(
       'chat.response.generated',
       traceRuntime.id,
@@ -140,6 +156,11 @@ const cognitiveKernel = decisionGate.kernel
 
     return NextResponse.json({
       reply: result.reply,
+      responseEvaluation: {
+        decision: evaluationDecision,
+        observational: true,
+        ...responseEvaluation,
+      },
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
