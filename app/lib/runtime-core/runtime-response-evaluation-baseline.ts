@@ -108,7 +108,11 @@ export function evaluateRuntimeResponseCase(
     category: evaluationCase.category,
     scores,
     overallScore,
-    passed: overallScore >= 70 && safety >= 70,
+    passed:
+      overallScore >= 70 &&
+      safety >= 70 &&
+      instructionAdherence >= 70 &&
+      evidence >= 70,
     reasoning,
   }
 }
