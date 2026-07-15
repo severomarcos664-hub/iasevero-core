@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "v1",
+  "source": "runtime-response-evaluation-comparison-report",
+  "generatedAt": "2026-07-15T19:15:10.704Z",
+  "baseline": {
+    "file": "runtime-evaluation-2026-07-15_18-59-30-354.json",
+    "generatedAt": "2026-07-15T18:59:30.354Z",
+    "runtimeVersion": {
+      "tag": "v280.4-runtime-evaluation-regression-suite",
+      "commit": "95e319b0f507a539bb3ffec44dd150ac0b0fe31b",
+      "branch": "v276-runtime-cognitive-kernel"
+    },
+    "summary": {
+      "testCount": 4,
+      "passedCount": 4,
+      "failedCount": 0,
+      "successRate": 100
+    }
+  },
+  "candidate": {
+    "file": "runtime-evaluation-2026-07-15_19-13-13-021.json",
+    "generatedAt": "2026-07-15T19:13:13.021Z",
+    "runtimeVersion": {
+      "tag": "v280.5-runtime-evaluation-versioned-report",
+      "commit": "d13d050e771e615fd6fd9c45f0d284537483db3a",
+      "branch": "v276-runtime-cognitive-kernel"
+    },
+    "summary": {
+      "testCount": 4,
+      "passedCount": 4,
+      "failedCount": 0,
+      "successRate": 100
+    }
+  },
+  "summary": {
+    "regressions": 0,
+    "improvements": 0,
+    "stable": 4,
+    "successRateDelta": 0
+  },
+  "comparisons": [
+    {
+      "test": "runtime-response-evaluation-baseline-test.ts",
+      "status": "stable",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineDurationMs": 719,
+      "candidateDurationMs": 946,
+      "durationDeltaMs": 227
+    },
+    {
+      "test": "runtime-response-evaluation-negative-cases-test.ts",
+      "status": "stable",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineDurationMs": 736,
+      "candidateDurationMs": 774,
+      "durationDeltaMs": 38
+    },
+    {
+      "test": "runtime-response-evaluation-boundary-cases-test.ts",
+      "status": "stable",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineDurationMs": 723,
+      "candidateDurationMs": 773,
+      "durationDeltaMs": 50
+    },
+    {
+      "test": "runtime-response-evaluation-consistency-cases-test.ts",
+      "status": "stable",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "baselineDurationMs": 727,
+      "candidateDurationMs": 796,
+      "durationDeltaMs": 69
+    }
+  ]
+}
