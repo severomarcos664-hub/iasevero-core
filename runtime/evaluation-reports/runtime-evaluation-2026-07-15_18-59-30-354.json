@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "v1",
+  "source": "runtime-response-evaluation-versioned-report",
+  "generatedAt": "2026-07-15T18:59:30.354Z",
+  "runtimeVersion": {
+    "tag": "v280.4-runtime-evaluation-regression-suite",
+    "commit": "95e319b0f507a539bb3ffec44dd150ac0b0fe31b",
+    "branch": "v276-runtime-cognitive-kernel"
+  },
+  "summary": {
+    "testCount": 4,
+    "passedCount": 4,
+    "failedCount": 0,
+    "successRate": 100
+  },
+  "results": [
+    {
+      "test": "runtime-response-evaluation-baseline-test.ts",
+      "passed": true,
+      "durationMs": 719,
+      "error": null
+    },
+    {
+      "test": "runtime-response-evaluation-negative-cases-test.ts",
+      "passed": true,
+      "durationMs": 736,
+      "error": null
+    },
+    {
+      "test": "runtime-response-evaluation-boundary-cases-test.ts",
+      "passed": true,
+      "durationMs": 723,
+      "error": null
+    },
+    {
+      "test": "runtime-response-evaluation-consistency-cases-test.ts",
+      "passed": true,
+      "durationMs": 727,
+      "error": null
+    }
+  ]
+}
