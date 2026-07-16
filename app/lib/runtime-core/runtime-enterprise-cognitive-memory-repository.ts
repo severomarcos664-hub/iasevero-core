@@ -152,6 +152,122 @@ type SQLiteEventRow = {
   checksum: string
 }
 
+export type MemoryRelationGraphResolutionInput = {
+  tenantId: string
+  userId: string
+  memoryIds: string[]
+  now?: string
+}
+
+export type MemoryRelationGraphResolution = {
+  source: 'runtime-enterprise-cognitive-memory-repository'
+  resolvedAt: string
+  tenantId: string
+  userId: string
+  requestedMemoryIds: string[]
+  eligibleMemoryIds: string[]
+  supersededMemoryIds: string[]
+  supportingRelations: EnterpriseMemoryRelationRecord[]
+  contradictionRelations: EnterpriseMemoryRelationRecord[]
+  supersessionRelations: EnterpriseMemoryRelationRecord[]
+  winnerMemoryId?: string
+  unresolved: boolean
+  temporalResolution?: TemporalMemoryConflictResolution
+  reasoning: string[]
+}
+
+export type TemporalMemoryConflictResolutionInput = {
+  tenantId: string
+  userId: string
+  memoryIds: string[]
+  now?: string
+}
+
+export type TemporalMemoryConflictCandidate = {
+  memoryId: string
+  status: EnterpriseMemoryStatus
+  sourceAuthority: number
+  confidence: number
+  version: number
+  observedAt: string
+  createdAt: string
+  validFrom: string
+  validUntil?: string
+  temporallyValid: boolean
+  eligible: boolean
+  score: number
+  rejectionReason?: string
+}
+
+export type TemporalMemoryConflictResolution = {
+  source: 'runtime-enterprise-cognitive-memory-repository'
+  resolvedAt: string
+  tenantId: string
+  userId: string
+  winnerMemoryId?: string
+  unresolved: boolean
+  candidates: TemporalMemoryConflictCandidate[]
+  reasoning: string[]
+}
+
+export type EnterpriseMemoryRelationType =
+  | 'supports'
+  | 'contradicts'
+  | 'supersedes'
+
+export type EnterpriseMemoryRelationRecord = {
+  relationId: string
+  tenantId: string
+  userId: string
+  sourceMemoryId: string
+  targetMemoryId: string
+  relationType: EnterpriseMemoryRelationType
+  source: string
+  sourceAuthority: number
+  confidence: number
+  reason: string
+  createdAt: string
+  checksum: string
+}
+
+export type AppendEnterpriseMemoryRelationInput = {
+  relationId?: string
+  tenantId: string
+  userId: string
+  sourceMemoryId: string
+  targetMemoryId: string
+  relationType: EnterpriseMemoryRelationType
+  source: string
+  sourceAuthority: number
+  confidence: number
+  reason: string
+  createdAt?: string
+}
+
+export type EnterpriseMemoryRelationScope = {
+  tenantId: string
+  userId: string
+  sourceMemoryId?: string
+  targetMemoryId?: string
+  relationTypes?: EnterpriseMemoryRelationType[]
+  limit?: number
+}
+
+type SQLiteMemoryRelationRow = {
+  relation_id: string
+  tenant_id: string
+  user_id: string
+  source_memory_id: string
+  target_memory_id: string
+  relation_type: string
+  source: string
+  source_authority: number
+  confidence: number
+  reason: string
+  created_at: string
+  checksum: string
+}
+
 type SQLiteMemoryRow = {
   memory_id: string
   tenant_id: string
@@ -280,6 +396,35 @@ function mapEventRow(
     payload: parseJsonRecord(row.payload_json),
     source: row.source,
     sourceAuthority: row.source_authority,
+    createdAt: row.created_at,
+    checksum: row.checksum,
+  }
+}
+
+function mapMemoryRelationRow(
+  row: SQLiteMemoryRelationRow,
+): EnterpriseMemoryRelationRecord {
+  if (
+    row.relation_type !== 'supports' &&
+    row.relation_type !== 'contradicts' &&
+    row.relation_type !== 'supersedes'
+  ) {
+    throw new Error(
+      `Unsupported memory relation type: ${row.relation_type}`,
+    )
+  }
+
+  return {
+    relationId: row.relation_id,
+    tenantId: row.tenant_id,
+    userId: row.user_id,
+    sourceMemoryId: row.source_memory_id,
+    targetMemoryId: row.target_memory_id,
+    relationType: row.relation_type,
+    source: row.source,
+    sourceAuthority: row.source_authority,
+    confidence: row.confidence,
+    reason: row.reason,
     createdAt: row.created_at,
     checksum: row.checksum,
   }
@@ -501,6 +646,77 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         execution_key,
         status
       );
+
+      CREATE TABLE IF NOT EXISTS
+        enterprise_memory_relations (
+          relation_id TEXT PRIMARY KEY,
+          tenant_id TEXT NOT NULL,
+          user_id TEXT NOT NULL,
+          source_memory_id TEXT NOT NULL,
+          target_memory_id TEXT NOT NULL,
+          relation_type TEXT NOT NULL CHECK (
+            relation_type IN (
+              'supports',
+              'contradicts',
+              'supersedes'
+            )
+          ),
+          source TEXT NOT NULL,
+          source_authority INTEGER NOT NULL CHECK (
+            source_authority BETWEEN 0 AND 100
+          ),
+          confidence INTEGER NOT NULL CHECK (
+            confidence BETWEEN 0 AND 100
+          ),
+          reason TEXT NOT NULL,
+          created_at TEXT NOT NULL,
+          checksum TEXT NOT NULL,
+          FOREIGN KEY (source_memory_id)
+            REFERENCES enterprise_cognitive_memories(memory_id),
+          FOREIGN KEY (target_memory_id)
+            REFERENCES enterprise_cognitive_memories(memory_id),
+          CHECK (source_memory_id <> target_memory_id)
+        );
+
+      CREATE INDEX IF NOT EXISTS
+        idx_enterprise_memory_relations_source
+      ON enterprise_memory_relations (
+        tenant_id,
+        user_id,
+        source_memory_id,
+        relation_type,
+        created_at
+      );
+
+      CREATE INDEX IF NOT EXISTS
+        idx_enterprise_memory_relations_target
+      ON enterprise_memory_relations (
+        tenant_id,
+        user_id,
+        target_memory_id,
+        relation_type,
+        created_at
+      );
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_relation_update
+      BEFORE UPDATE ON enterprise_memory_relations
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory relations are append-only'
+        );
+      END;
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_relation_delete
+      BEFORE DELETE ON enterprise_memory_relations
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory relations are append-only'
+        );
+      END;
     `)
   }
 
@@ -963,6 +1179,656 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
       .all(...parameters) as SQLiteMemoryRow[]
 
     return rows.map(mapMemoryRow)
+  }
+
+  appendMemoryRelation(
+    input: AppendEnterpriseMemoryRelationInput,
+  ): EnterpriseMemoryRelationRecord {
+    const relationId =
+      input.relationId ?? randomUUID()
+
+    const tenantId = assertNonEmpty(
+      input.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      input.userId,
+      'userId',
+    )
+
+    const sourceMemoryId = assertNonEmpty(
+      input.sourceMemoryId,
+      'sourceMemoryId',
+    )
+
+    const targetMemoryId = assertNonEmpty(
+      input.targetMemoryId,
+      'targetMemoryId',
+    )
+
+    if (sourceMemoryId === targetMemoryId) {
+      throw new Error(
+        'A memory cannot relate to itself.',
+      )
+    }
+
+    if (
+      input.relationType !== 'supports' &&
+      input.relationType !== 'contradicts' &&
+      input.relationType !== 'supersedes'
+    ) {
+      throw new Error(
+        `Unsupported memory relation type: ${input.relationType}`,
+      )
+    }
+
+    const sourceMemory = this.readMemoryById({
+      tenantId,
+      userId,
+      memoryId: sourceMemoryId,
+    })
+
+    const targetMemory = this.readMemoryById({
+      tenantId,
+      userId,
+      memoryId: targetMemoryId,
+    })
+
+    if (!sourceMemory || !targetMemory) {
+      throw new Error(
+        'Both related memories must exist in the same tenant and user scope.',
+      )
+    }
+
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+
+    const reason = assertNonEmpty(
+      input.reason,
+      'reason',
+    )
+
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    const confidence = assertScore(
+      input.confidence,
+      'confidence',
+    )
+
+    const createdAt =
+      input.createdAt ??
+      new Date().toISOString()
+
+    const checksum = sha256({
+      relationId,
+      tenantId,
+      userId,
+      sourceMemoryId,
+      targetMemoryId,
+      relationType: input.relationType,
+      source,
+      sourceAuthority,
+      confidence,
+      reason,
+      createdAt,
+    })
+
+    this.database
+      .prepare(`
+        INSERT INTO enterprise_memory_relations (
+          relation_id,
+          tenant_id,
+          user_id,
+          source_memory_id,
+          target_memory_id,
+          relation_type,
+          source,
+          source_authority,
+          confidence,
+          reason,
+          created_at,
+          checksum
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `)
+      .run(
+        relationId,
+        tenantId,
+        userId,
+        sourceMemoryId,
+        targetMemoryId,
+        input.relationType,
+        source,
+        sourceAuthority,
+        confidence,
+        reason,
+        createdAt,
+        checksum,
+      )
+
+    const row = this.database
+      .prepare(`
+        SELECT *
+        FROM enterprise_memory_relations
+        WHERE relation_id = ?
+      `)
+      .get(relationId) as
+        | SQLiteMemoryRelationRow
+        | undefined
+
+    if (!row) {
+      throw new Error(
+        'Persisted enterprise memory relation not found.',
+      )
+    }
+
+    return mapMemoryRelationRow(row)
+  }
+
+  readMemoryRelations(
+    scope: EnterpriseMemoryRelationScope,
+  ): EnterpriseMemoryRelationRecord[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const conditions = [
+      'tenant_id = ?',
+      'user_id = ?',
+    ]
+
+    const parameters: Array<string | number> = [
+      tenantId,
+      userId,
+    ]
+
+    if (scope.sourceMemoryId) {
+      conditions.push('source_memory_id = ?')
+      parameters.push(
+        assertNonEmpty(
+          scope.sourceMemoryId,
+          'sourceMemoryId',
+        ),
+      )
+    }
+
+    if (scope.targetMemoryId) {
+      conditions.push('target_memory_id = ?')
+      parameters.push(
+        assertNonEmpty(
+          scope.targetMemoryId,
+          'targetMemoryId',
+        ),
+      )
+    }
+
+    if (scope.relationTypes?.length) {
+      for (
+        const relationType
+        of scope.relationTypes
+      ) {
+        if (
+          relationType !== 'supports' &&
+          relationType !== 'contradicts' &&
+          relationType !== 'supersedes'
+        ) {
+          throw new Error(
+            `Unsupported memory relation type: ${relationType}`,
+          )
+        }
+      }
+
+      conditions.push(
+        `relation_type IN (${scope.relationTypes
+          .map(() => '?')
+          .join(', ')})`,
+      )
+
+      parameters.push(...scope.relationTypes)
+    }
+
+    parameters.push(limit)
+
+    const rows = this.database
+      .prepare(`
+        SELECT *
+        FROM enterprise_memory_relations
+        WHERE ${conditions.join('\n AND ')}
+        ORDER BY created_at ASC, relation_id ASC
+        LIMIT ?
+      `)
+      .all(...parameters) as
+        SQLiteMemoryRelationRow[]
+
+    return rows.map(mapMemoryRelationRow)
+  }
+
+  resolveTemporalMemoryConflict(
+    input: TemporalMemoryConflictResolutionInput,
+  ): TemporalMemoryConflictResolution {
+    const tenantId = assertNonEmpty(
+      input.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      input.userId,
+      'userId',
+    )
+
+    const resolvedAt =
+      input.now ?? new Date().toISOString()
+
+    const memoryIds = Array.from(
+      new Set(
+        input.memoryIds
+          .map((memoryId) =>
+            assertNonEmpty(
+              memoryId,
+              'memoryId',
+            ),
+          ),
+      ),
+    )
+
+    if (memoryIds.length < 2) {
+      throw new Error(
+        'At least two distinct memories are required for conflict resolution.',
+      )
+    }
+
+    const records = memoryIds.map(
+      (memoryId) => {
+        const record = this.readMemoryById({
+          tenantId,
+          userId,
+          memoryId,
+        })
+
+        if (!record) {
+          throw new Error(
+            `Memory ${memoryId} was not found in the requested scope.`,
+          )
+        }
+
+        return record
+      },
+    )
+
+    const candidates =
+      records.map(
+        (
+          record,
+        ): TemporalMemoryConflictCandidate => {
+          const temporallyValid =
+            record.validFrom <= resolvedAt &&
+            (
+              record.validUntil === undefined ||
+              record.validUntil > resolvedAt
+            )
+
+          const statusEligible =
+            record.status === 'active' ||
+            record.status === 'candidate'
+
+          const eligible =
+            statusEligible &&
+            temporallyValid
+
+          const statusWeight =
+            record.status === 'active'
+              ? 200
+              : record.status === 'candidate'
+                ? 100
+                : 0
+
+          const score =
+            statusWeight +
+            record.sourceAuthority * 10 +
+            record.confidence * 5 +
+            record.version
+
+          let rejectionReason:
+            | string
+            | undefined
+
+          if (!statusEligible) {
+            rejectionReason =
+              `status-${record.status}`
+          } else if (!temporallyValid) {
+            rejectionReason =
+              'outside-temporal-validity'
+          }
+
+          return {
+            memoryId: record.memoryId,
+            status: record.status,
+            sourceAuthority:
+              record.sourceAuthority,
+            confidence: record.confidence,
+            version: record.version,
+            observedAt: record.observedAt,
+            createdAt: record.createdAt,
+            validFrom: record.validFrom,
+            ...(record.validUntil
+              ? {
+                  validUntil:
+                    record.validUntil,
+                }
+              : {}),
+            temporallyValid,
+            eligible,
+            score,
+            ...(rejectionReason
+              ? {
+                  rejectionReason,
+                }
+              : {}),
+          }
+        },
+      )
+
+    const eligibleCandidates =
+      candidates
+        .filter(
+          (candidate) =>
+            candidate.eligible,
+        )
+        .sort((left, right) => {
+          if (
+            right.sourceAuthority !==
+            left.sourceAuthority
+          ) {
+            return (
+              right.sourceAuthority -
+              left.sourceAuthority
+            )
+          }
+
+          if (
+            right.confidence !==
+            left.confidence
+          ) {
+            return (
+              right.confidence -
+              left.confidence
+            )
+          }
+
+          if (
+            right.version !==
+            left.version
+          ) {
+            return (
+              right.version -
+              left.version
+            )
+          }
+
+          const observedComparison =
+            right.observedAt.localeCompare(
+              left.observedAt,
+            )
+
+          if (observedComparison !== 0) {
+            return observedComparison
+          }
+
+          const createdComparison =
+            right.createdAt.localeCompare(
+              left.createdAt,
+            )
+
+          if (createdComparison !== 0) {
+            return createdComparison
+          }
+
+          return right.memoryId.localeCompare(
+            left.memoryId,
+          )
+        })
+
+    const winner =
+      eligibleCandidates[0]
+
+    return {
+      source:
+        'runtime-enterprise-cognitive-memory-repository',
+      resolvedAt,
+      tenantId,
+      userId,
+      ...(winner
+        ? {
+            winnerMemoryId:
+              winner.memoryId,
+          }
+        : {}),
+      unresolved: !winner,
+      candidates,
+      reasoning: [
+        `candidateCount=${candidates.length}`,
+        `eligibleCount=${eligibleCandidates.length}`,
+        `winner=${winner?.memoryId ?? 'none'}`,
+        'Precedence: eligible status, temporal validity, source authority, confidence, version, observedAt, createdAt.',
+      ],
+    }
+  }
+
+  resolveMemoryRelationGraph(
+    input: MemoryRelationGraphResolutionInput,
+  ): MemoryRelationGraphResolution {
+    const tenantId = assertNonEmpty(
+      input.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      input.userId,
+      'userId',
+    )
+
+    const resolvedAt =
+      input.now ?? new Date().toISOString()
+
+    const requestedMemoryIds = Array.from(
+      new Set(
+        input.memoryIds.map(
+          (memoryId) =>
+            assertNonEmpty(
+              memoryId,
+              'memoryId',
+            ),
+        ),
+      ),
+    )
+
+    if (requestedMemoryIds.length < 1) {
+      throw new Error(
+        'At least one memory is required for relation graph resolution.',
+      )
+    }
+
+    for (const memoryId of requestedMemoryIds) {
+      const memory = this.readMemoryById({
+        tenantId,
+        userId,
+        memoryId,
+      })
+
+      if (!memory) {
+        throw new Error(
+          `Memory ${memoryId} was not found in the requested scope.`,
+        )
+      }
+    }
+
+    const requestedMemoryIdSet =
+      new Set(requestedMemoryIds)
+
+    const relations =
+      this.readMemoryRelations({
+        tenantId,
+        userId,
+        limit: 500,
+      }).filter(
+        (relation) =>
+          requestedMemoryIdSet.has(
+            relation.sourceMemoryId,
+          ) &&
+          requestedMemoryIdSet.has(
+            relation.targetMemoryId,
+          ),
+      )
+
+    const supportingRelations =
+      relations.filter(
+        (relation) =>
+          relation.relationType === 'supports',
+      )
+
+    const contradictionRelations =
+      relations.filter(
+        (relation) =>
+          relation.relationType ===
+          'contradicts',
+      )
+
+    const supersessionRelations =
+      relations.filter(
+        (relation) =>
+          relation.relationType ===
+          'supersedes',
+      )
+
+    const supersededMemoryIds = Array.from(
+      new Set(
+        supersessionRelations.map(
+          (relation) =>
+            relation.targetMemoryId,
+        ),
+      ),
+    )
+
+    const supersededMemoryIdSet =
+      new Set(supersededMemoryIds)
+
+    const eligibleMemoryIds =
+      requestedMemoryIds.filter(
+        (memoryId) =>
+          !supersededMemoryIdSet.has(
+            memoryId,
+          ),
+      )
+
+    let winnerMemoryId:
+      | string
+      | undefined
+
+    let temporalResolution:
+      | TemporalMemoryConflictResolution
+      | undefined
+
+    if (eligibleMemoryIds.length === 1) {
+      const onlyMemory =
+        this.readMemoryById({
+          tenantId,
+          userId,
+          memoryId:
+            eligibleMemoryIds[0],
+        })
+
+      const temporallyValid =
+        Boolean(
+          onlyMemory &&
+          onlyMemory.validFrom <=
+            resolvedAt &&
+          (
+            onlyMemory.validUntil ===
+              undefined ||
+            onlyMemory.validUntil >
+              resolvedAt
+          ),
+        )
+
+      const statusEligible =
+        onlyMemory?.status === 'active' ||
+        onlyMemory?.status === 'candidate'
+
+      if (
+        onlyMemory &&
+        temporallyValid &&
+        statusEligible
+      ) {
+        winnerMemoryId =
+          onlyMemory.memoryId
+      }
+    } else if (eligibleMemoryIds.length > 1) {
+      temporalResolution =
+        this.resolveTemporalMemoryConflict({
+          tenantId,
+          userId,
+          memoryIds: eligibleMemoryIds,
+          now: resolvedAt,
+        })
+
+      winnerMemoryId =
+        temporalResolution.winnerMemoryId
+    }
+
+    return {
+      source:
+        'runtime-enterprise-cognitive-memory-repository',
+      resolvedAt,
+      tenantId,
+      userId,
+      requestedMemoryIds,
+      eligibleMemoryIds,
+      supersededMemoryIds,
+      supportingRelations,
+      contradictionRelations,
+      supersessionRelations,
+      ...(winnerMemoryId
+        ? {
+            winnerMemoryId,
+          }
+        : {}),
+      unresolved: !winnerMemoryId,
+      ...(temporalResolution
+        ? {
+            temporalResolution,
+          }
+        : {}),
+      reasoning: [
+        `requested=${requestedMemoryIds.length}`,
+        `relations=${relations.length}`,
+        `supports=${supportingRelations.length}`,
+        `contradictions=${contradictionRelations.length}`,
+        `supersessions=${supersessionRelations.length}`,
+        `superseded=${supersededMemoryIds.length}`,
+        `eligible=${eligibleMemoryIds.length}`,
+        `winner=${winnerMemoryId ?? 'none'}`,
+        'Superseded memories are removed before temporal conflict resolution.',
+        'Contradictions and supporting relations remain explicit for auditability.',
+        'Final precedence remains governed by temporal validity, source authority, confidence, version and observation time.',
+      ],
+    }
   }
 
   close(): void {
