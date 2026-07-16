@@ -165,7 +165,7 @@ async function main(): Promise<void> {
         confidence: 100,
         observedAt,
         validFrom: observedAt,
-        validUntil: null,
+        validUntil: undefined,
         status: 'active',
         retentionPolicy: 'persistent',
         policyTags: [
