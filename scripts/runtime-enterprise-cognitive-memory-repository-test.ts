@@ -44,6 +44,67 @@ if (!event.checksum || event.sequence < 1) {
   throw new Error('Append-only event persistence failed.')
 }
 
+repository.appendEvent({
+  tenantId,
+  userId: userA,
+  executionKey,
+  eventType: 'decision',
+  payload: {
+    decision: 'store-memory-candidate',
+  },
+  source: 'runtime-enterprise-memory-test',
+  sourceAuthority: 90,
+})
+
+repository.appendEvent({
+  tenantId,
+  userId: userB,
+  executionKey,
+  eventType: 'message',
+  payload: {
+    message: 'Evento de outro usuário.',
+  },
+  source: 'runtime-enterprise-memory-test',
+  sourceAuthority: 80,
+})
+
+const scopedEvents = repository.readEvents({
+  tenantId,
+  userId: userA,
+  executionKey,
+  limit: 10,
+})
+
+if (
+  scopedEvents.length !== 2 ||
+  scopedEvents.some(
+    (candidate) =>
+      candidate.userId !== userA,
+  )
+) {
+  throw new Error(
+    'Governed Event Store reading or user isolation failed.',
+  )
+}
+
+const decisionEvents = repository.readEvents({
+  tenantId,
+  userId: userA,
+  executionKey,
+  eventTypes: ['decision'],
+  afterSequence: event.sequence,
+  limit: 10,
+})
+
+if (
+  decisionEvents.length !== 1 ||
+  decisionEvents[0]?.eventType !== 'decision'
+) {
+  throw new Error(
+    'Event type or sequence filtering failed.',
+  )
+}
+
 const memoryV1 = repository.createMemory({
   tenantId,
   userId: userA,
@@ -159,7 +220,10 @@ console.log({
   activeMemoryId: memoryV2.memoryId,
   activeVersion: memoryV2.version,
   recoveredCount: recovered.length,
+  scopedEventCount: scopedEvents.length,
+  decisionEventCount: decisionEvents.length,
   crossUserLeakage: 0,
+  eventReadIsolation: true,
   persistenceAfterRestart: true,
 })
 

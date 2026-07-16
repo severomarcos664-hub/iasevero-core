@@ -129,6 +129,15 @@ export type EnterpriseMemoryScope = {
   now?: string
 }
 
+export type EnterpriseMemoryEventScope = {
+  tenantId: string
+  userId: string
+  executionKey?: string
+  eventTypes?: EnterpriseMemoryEventType[]
+  afterSequence?: number
+  limit?: number
+}
+
 type SQLiteEventRow = {
   event_id: string
   sequence: number
@@ -764,6 +773,101 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     }
 
     return record
+  }
+
+  readEvents(
+    scope: EnterpriseMemoryEventScope,
+  ): EnterpriseMemoryEventRecord[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const conditions = [
+      'tenant_id = ?',
+      'user_id = ?',
+    ]
+
+    const parameters: Array<string | number> = [
+      tenantId,
+      userId,
+    ]
+
+    if (scope.executionKey) {
+      conditions.push('execution_key = ?')
+      parameters.push(
+        assertNonEmpty(
+          scope.executionKey,
+          'executionKey',
+        ),
+      )
+    }
+
+    if (scope.eventTypes?.length) {
+      for (const eventType of scope.eventTypes) {
+        if (
+          ![
+            'message',
+            'decision',
+            'execution',
+            'result',
+            'error',
+            'feedback',
+            'policy-change',
+          ].includes(eventType)
+        ) {
+          throw new Error(
+            `Unsupported event type: ${eventType}`,
+          )
+        }
+      }
+
+      conditions.push(
+        `event_type IN (${scope.eventTypes
+          .map(() => '?')
+          .join(', ')})`,
+      )
+
+      parameters.push(...scope.eventTypes)
+    }
+
+    if (
+      scope.afterSequence !== undefined
+    ) {
+      if (
+        !Number.isInteger(scope.afterSequence) ||
+        scope.afterSequence < 0
+      ) {
+        throw new Error(
+          'afterSequence must be a non-negative integer.',
+        )
+      }
+
+      conditions.push('sequence > ?')
+      parameters.push(scope.afterSequence)
+    }
+
+    parameters.push(limit)
+
+    const rows = this.database
+      .prepare(`
+        SELECT *
+        FROM enterprise_memory_events
+        WHERE ${conditions.join('\n AND ')}
+        ORDER BY sequence ASC
+        LIMIT ?
+      `)
+      .all(...parameters) as SQLiteEventRow[]
+
+    return rows.map(mapEventRow)
   }
 
   readMemoryById(input: {
