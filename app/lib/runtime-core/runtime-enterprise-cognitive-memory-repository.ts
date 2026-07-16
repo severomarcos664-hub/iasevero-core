@@ -17,7 +17,9 @@ type SQLiteModule = {
   DatabaseSync: new (path: string) => SQLiteDatabase
 }
 
-const { DatabaseSync } = require('node:sqlite') as SQLiteModule
+const { DatabaseSync } = require(
+  'node:sqlite',
+) as SQLiteModule
 
 export type EnterpriseMemoryType =
   | 'working'

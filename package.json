@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "test:chat": "curl -X POST http://localhost:3000/api/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Quem te criou?\"}'",

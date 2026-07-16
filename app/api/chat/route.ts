@@ -1,5 +1,14 @@
 import { NextResponse } from 'next/server'
-import { iaseveroCore } from '@/app/lib/iasevero-core'
+import {
+  iaseveroCore,
+  type GovernedMemoryContext,
+} from '@/app/lib/iasevero-core'
+import {
+  RuntimeEnterpriseCognitiveMemoryRepository,
+} from '@/app/lib/runtime-core/runtime-enterprise-cognitive-memory-repository'
+import {
+  retrieveHybridEnterpriseMemories,
+} from '@/app/lib/runtime-core/runtime-hybrid-memory-retrieval'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
@@ -26,6 +35,11 @@ export async function POST(req: Request) {
     const body = await req.json()
     const message = (body.message || '').toString().trim()
     const userId = body.userId || 'local'
+    const tenantId =
+      typeof body.tenantId === 'string' &&
+      body.tenantId.trim()
+        ? body.tenantId.trim()
+        : 'local'
     const requestedExecutionKey =
       typeof body.executionKey === 'string'
         ? body.executionKey.trim()
@@ -127,7 +141,71 @@ const cognitiveKernel = decisionGate.kernel
       source: 'runtime-cognitive-kernel',
     }
 
-    const result = await iaseveroCore(message, userId)
+    let governedMemoryContext:
+      | GovernedMemoryContext
+      | undefined
+
+    const memoryDatabasePath =
+      process.env.IASEVERO_MEMORY_DB_PATH ??
+      'data/enterprise-cognitive-memory.sqlite'
+
+    const memoryRepository =
+      new RuntimeEnterpriseCognitiveMemoryRepository(
+        memoryDatabasePath,
+      )
+
+    try {
+      const memoryRetrieval =
+        retrieveHybridEnterpriseMemories(
+          memoryRepository,
+          {
+            tenantId,
+            userId,
+            query: message,
+            limit: 6,
+            candidateLimit: 100,
+            minimumScore: 35,
+          },
+        )
+
+      if (memoryRetrieval.results.length > 0) {
+        governedMemoryContext = {
+          source:
+            'runtime-enterprise-cognitive-memory',
+          tenantId,
+          userId,
+          query: message,
+          selectedCount:
+            memoryRetrieval.selectedCount,
+          rejectedCount:
+            memoryRetrieval.rejectedCount,
+          grounded:
+            memoryRetrieval.selectedCount > 0,
+          items: memoryRetrieval.results.map(
+            ({ memory, score }) => ({
+              memoryId: memory.memoryId,
+              type: memory.type,
+              content: memory.content,
+              source: memory.source,
+              sourceAuthority:
+                memory.sourceAuthority,
+              confidence: memory.confidence,
+              observedAt: memory.observedAt,
+              score: score.total,
+            }),
+          ),
+          reasoning: memoryRetrieval.reasoning,
+        }
+      }
+    } finally {
+      memoryRepository.close()
+    }
+
+    const result = await iaseveroCore(
+      message,
+      userId,
+      governedMemoryContext,
+    )
 
     const responseEvaluation = evaluateRuntimeResponseCase({
       id: `api-chat-${effectiveExecutionKey}`,
