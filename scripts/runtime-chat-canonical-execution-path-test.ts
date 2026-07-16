@@ -131,6 +131,61 @@ assert.ok(
   'The canonical Kernel must expose enforcement evidence.',
 )
 
+
+assert.ok(
+  routeSource.includes(
+    'RuntimeEnterpriseCognitiveMemoryRepository',
+  ),
+  'The chat route must use the persistent enterprise memory repository.',
+)
+
+assert.ok(
+  routeSource.includes(
+    'retrieveHybridEnterpriseMemories',
+  ),
+  'The chat route must execute governed hybrid memory retrieval.',
+)
+
+assert.ok(
+  routeSource.includes('const tenantId ='),
+  'The chat route must resolve tenant identity.',
+)
+
+assert.ok(
+  routeSource.includes('const userId ='),
+  'The chat route must resolve user identity.',
+)
+
+assert.ok(
+  routeSource.includes('let governedMemoryContext:'),
+  'The chat route must declare the optional governed memory context.',
+)
+
+assert.ok(
+  routeSource.includes(
+    'if (memoryRetrieval.results.length > 0)',
+  ),
+  'Memory context must only be built when retrieval returns results.',
+)
+
+assert.ok(
+  routeSource.includes('finally {') &&
+    routeSource.includes('memoryRepository.close()'),
+  'The memory repository must be closed through a finally block.',
+)
+
+assert.match(
+  routeSource,
+  /iaseveroCore\s*\(\s*message\s*,\s*userId\s*,\s*governedMemoryContext\s*,?\s*\)/,
+  'Governed memory must enter the canonical IASevero Core call.',
+)
+
+assert.match(
+  routeSource,
+  /retrieveHybridEnterpriseMemories\s*\([\s\S]*?tenantId[\s\S]*?userId[\s\S]*?query:\s*message/,
+  'Retrieval must preserve tenant, user and query scope.',
+)
+
 console.log(
   'OK: /api/chat uses the canonical governed execution path.',
 )
