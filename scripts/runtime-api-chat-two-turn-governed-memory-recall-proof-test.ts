@@ -151,7 +151,7 @@ async function main(): Promise<void> {
         userId: ownerUserId,
         entityId: 'project:primary',
         executionKey: firstExecutionKey,
-        memoryType: 'semantic',
+        type: 'semantic',
         content:
           'O projeto principal do usuário é a IASevero.',
         structuredPayload: {
@@ -173,7 +173,7 @@ async function main(): Promise<void> {
           'two-turn-proof',
           'user-scoped',
         ],
-      } as never)
+      })
 
       assert.ok(
         activeMemory,
