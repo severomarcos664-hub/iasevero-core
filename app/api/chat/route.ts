@@ -9,6 +9,9 @@ import {
 import {
   retrieveHybridEnterpriseMemories,
 } from '@/app/lib/runtime-core/runtime-hybrid-memory-retrieval'
+import {
+  runMemoryConsolidationWorker,
+} from '@/app/lib/runtime-core/runtime-memory-consolidation-worker'
 
 import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-decision-engine'
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
@@ -146,9 +149,11 @@ const cognitiveKernel = decisionGate.kernel
       | undefined
 
     const memoryDatabasePath =
-      process.env.IASEVERO_MEMORY_DB_PATH ??
-      'data/enterprise-cognitive-memory.sqlite'
+    process.env.IASEVERO_MEMORY_DB_PATH ??
+    'data/enterprise-cognitive-memory.sqlite'
 
+
+  const result = await (async () => {
     const memoryRepository =
       new RuntimeEnterpriseCognitiveMemoryRepository(
         memoryDatabasePath,
@@ -197,17 +202,66 @@ const cognitiveKernel = decisionGate.kernel
           reasoning: memoryRetrieval.reasoning,
         }
       }
+
+      memoryRepository.appendEvent({
+        tenantId,
+        userId,
+        executionKey: effectiveExecutionKey,
+        eventType: 'message',
+        payload: {
+          message,
+        },
+        source: 'api-chat',
+        sourceAuthority: 90,
+      })
+
+      const coreResult = await iaseveroCore(
+        message,
+        userId,
+        governedMemoryContext,
+      )
+
+      memoryRepository.appendEvent({
+        tenantId,
+        userId,
+        executionKey: effectiveExecutionKey,
+        eventType: 'result',
+        payload: {
+          reply: coreResult.reply,
+          hasJob: Boolean(coreResult.job),
+        },
+        source: 'api-chat',
+        sourceAuthority: 90,
+      })
+
+      for (
+        const mode of [
+          'episodic',
+          'semantic',
+          'procedural',
+        ] as const
+      ) {
+        runMemoryConsolidationWorker(
+          memoryRepository,
+          {
+            tenantId,
+            userId,
+            executionKey:
+              effectiveExecutionKey,
+            mode,
+            sourceAuthority: 90,
+            confidence: 85,
+          },
+        )
+      }
+
+      return coreResult
     } finally {
       memoryRepository.close()
     }
+  })()
 
-    const result = await iaseveroCore(
-      message,
-      userId,
-      governedMemoryContext,
-    )
-
-    const responseEvaluation = evaluateRuntimeResponseCase({
+  const responseEvaluation = evaluateRuntimeResponseCase({
       id: `api-chat-${effectiveExecutionKey}`,
       category: 'live-api-response',
       prompt: message,
