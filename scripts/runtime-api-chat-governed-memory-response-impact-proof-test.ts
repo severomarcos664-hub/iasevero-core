@@ -64,12 +64,12 @@ async function callChat(input: {
 
 async function main(): Promise<void> {
   const temporaryDirectory = mkdtempSync(
-    join(tmpdir(), 'iasevero-two-turn-memory-proof-'),
+    join(tmpdir(), 'iasevero-memory-response-impact-proof-'),
   )
 
   const databasePath = join(
     temporaryDirectory,
-    'two-turn-memory.sqlite',
+    'memory-response-impact.sqlite',
   )
 
   const previousDatabasePath =
@@ -288,6 +288,11 @@ async function main(): Promise<void> {
       'The second-turn reply must not be empty.',
     )
 
+    assert.ok(
+      (secondTurn.body.reply as string).includes('IASevero'),
+      'The owner reply must use the selected IASevero memory.',
+    )
+
     /*
      * Same tenant, different user: no owner memory may be selected.
      */
@@ -333,8 +338,25 @@ async function main(): Promise<void> {
       'The owner memory must not leak into another user context.',
     )
 
+    const isolationReply =
+      typeof isolationTurn.body.reply === 'string'
+        ? isolationTurn.body.reply
+        : ''
+
+    assert.equal(
+      isolationReply.includes('IASevero'),
+      false,
+      'The owner memory must not leak into another user reply.',
+    )
+
+    assert.notEqual(
+      secondTurn.body.reply,
+      isolationReply,
+      'Governed memory must produce a visible response difference.',
+    )
+
     console.log(
-      'Runtime API chat two-turn governed memory recall proof passed.',
+      'Runtime API chat governed memory response impact proof passed.',
     )
 
     console.log({
@@ -361,6 +383,9 @@ async function main(): Promise<void> {
         replyProduced:
           typeof secondTurn.body.reply === 'string' &&
           secondTurn.body.reply.length > 0,
+        ownerReplyContainsIASevero:
+          typeof secondTurn.body.reply === 'string' &&
+          secondTurn.body.reply.includes('IASevero'),
       },
       isolationTurn: {
         selectedCount:
@@ -369,8 +394,12 @@ async function main(): Promise<void> {
         grounded:
           isolationTurn.body.runtime?.memoryRouting
             ?.grounded,
+        otherUserReplyContainsIASevero:
+          isolationReply.includes('IASevero'),
         crossUserLeakage: false,
       },
+      responseChangedByMemory:
+        secondTurn.body.reply !== isolationReply,
     })
   } finally {
     if (previousDatabasePath === undefined) {

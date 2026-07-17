@@ -206,7 +206,9 @@ const cognitiveKernel = decisionGate.kernel
       memoryRepository.appendEvent({
         tenantId,
         userId,
-        executionKey: effectiveExecutionKey,
+      executionKey: effectiveExecutionKey,
+        // Cross-turn recall is scoped by tenant and user.
+        // executionKey remains a trace identity, not a memory visibility boundary.
         eventType: 'message',
         payload: {
           message,
@@ -304,7 +306,20 @@ const cognitiveKernel = decisionGate.kernel
         recovery: runtimeMaster.recovery,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.allowed,
-        memoryRouting: cognitiveKernel.stages.memoryRouting,
+        memoryRouting:
+          governedMemoryContext ?? {
+            source: 'runtime-enterprise-cognitive-memory',
+            tenantId,
+            userId,
+            query: message,
+            selectedCount: 0,
+            rejectedCount: 0,
+            grounded: false,
+            items: [],
+            reasoning: [
+              'No governed memory was selected for this tenant and user.',
+            ],
+          },
       executionIdentity: {
           executionKey: effectiveExecutionKey,
           source:
