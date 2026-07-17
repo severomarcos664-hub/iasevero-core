@@ -219,13 +219,20 @@ function calculateMemoryScore(input: {
     executionKey: input.executionKey,
   })
 
+  const provenanceComplete =
+    input.memory.sourceEventIds.length > 0
+
+  const provenancePenalty =
+    provenanceComplete ? 0 : 8
+
   const total = clampScore(
     lexical * 0.35 +
       phrase * 0.15 +
       authority * 0.15 +
       confidence * 0.15 +
       recency * 0.1 +
-      scope * 0.1,
+      scope * 0.1 -
+      provenancePenalty,
   )
 
   const reasoning = [
@@ -235,6 +242,8 @@ function calculateMemoryScore(input: {
     `confidence=${confidence}`,
     `recency=${recency}`,
     `scope=${scope}`,
+    `provenanceComplete=${provenanceComplete}`,
+    `provenancePenalty=${provenancePenalty}`,
     `total=${total}`,
   ]
 
