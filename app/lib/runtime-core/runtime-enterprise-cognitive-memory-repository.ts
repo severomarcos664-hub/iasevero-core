@@ -95,6 +95,27 @@ export type CreateEnterpriseCognitiveMemoryInput = {
   supersedesMemoryId?: string
 }
 
+export type TransitionEnterpriseMemoryLifecycleInput = {
+  tenantId: string
+  userId: string
+  memoryId: string
+  targetStatus: 'revoked' | 'expired'
+  reason: string
+  source: string
+  sourceAuthority: number
+  executionKey?: string
+  transitionedAt?: string
+}
+
+export type EnterpriseMemoryLifecycleTransition = {
+  source: 'runtime-enterprise-cognitive-memory-repository'
+  memory: EnterpriseCognitiveMemoryRecord
+  event: EnterpriseMemoryEventRecord
+  previousStatus: EnterpriseMemoryStatus
+  targetStatus: 'revoked' | 'expired'
+  transitionedAt: string
+}
+
 export type EnterpriseCognitiveMemoryRecord = {
   memoryId: string
   tenantId: string
@@ -991,6 +1012,161 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     }
 
     return record
+  }
+
+  transitionMemoryLifecycle(
+    input: TransitionEnterpriseMemoryLifecycleInput,
+  ): EnterpriseMemoryLifecycleTransition {
+    const tenantId = assertNonEmpty(
+      input.tenantId,
+      'tenantId',
+    )
+    const userId = assertNonEmpty(
+      input.userId,
+      'userId',
+    )
+    const memoryId = assertNonEmpty(
+      input.memoryId,
+      'memoryId',
+    )
+    const reason = assertNonEmpty(
+      input.reason,
+      'reason',
+    )
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    if (
+      input.targetStatus !== 'revoked' &&
+      input.targetStatus !== 'expired'
+    ) {
+      throw new Error(
+        `Unsupported lifecycle target status: ${input.targetStatus}.`,
+      )
+    }
+
+    const current = this.readMemoryById({
+      tenantId,
+      userId,
+      memoryId,
+    })
+
+    if (!current) {
+      throw new Error(
+        'Memory selected for lifecycle transition was not found in the requested scope.',
+      )
+    }
+
+    if (
+      current.status === 'revoked' ||
+      current.status === 'expired' ||
+      current.status === 'superseded'
+    ) {
+      throw new Error(
+        `Memory lifecycle status ${current.status} is terminal.`,
+      )
+    }
+
+    const transitionedAt =
+      input.transitionedAt ??
+      new Date().toISOString()
+
+    const executionKey =
+      input.executionKey ??
+      current.executionKey ??
+      `memory-lifecycle:${memoryId}`
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      const updateResult = this.database
+        .prepare(
+          `
+            UPDATE enterprise_cognitive_memories
+            SET
+              status = ?,
+              updated_at = ?
+            WHERE memory_id = ?
+              AND tenant_id = ?
+              AND user_id = ?
+              AND status IN (
+                'candidate',
+                'active',
+                'disputed'
+              )
+          `,
+        )
+        .run(
+          input.targetStatus,
+          transitionedAt,
+          memoryId,
+          tenantId,
+          userId,
+        ) as {
+          changes: number
+        }
+
+      if (updateResult.changes !== 1) {
+        throw new Error(
+          'Memory lifecycle transition was not applied atomically.',
+        )
+      }
+
+      const event = this.appendEvent({
+        eventId: randomUUID(),
+        tenantId,
+        userId,
+        executionKey,
+        eventType: 'policy-change',
+        payload: {
+          action: 'memory-lifecycle-transition',
+          memoryId,
+          previousStatus: current.status,
+          targetStatus: input.targetStatus,
+          reason,
+          transitionedAt,
+          retentionPolicy:
+            current.retentionPolicy,
+          policyTags: current.policyTags,
+        },
+        source,
+        sourceAuthority,
+        createdAt: transitionedAt,
+      })
+
+      this.database.exec('COMMIT')
+
+      const transitionedMemory = this.readMemoryById({
+        tenantId,
+        userId,
+        memoryId,
+      })
+
+      if (!transitionedMemory) {
+        throw new Error(
+          'Transitioned memory could not be recovered.',
+        )
+      }
+
+      return {
+        source:
+          'runtime-enterprise-cognitive-memory-repository',
+        memory: transitionedMemory,
+        event,
+        previousStatus: current.status,
+        targetStatus: input.targetStatus,
+        transitionedAt,
+      }
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
   }
 
   readEvents(
