@@ -27,9 +27,15 @@ export type HybridMemoryRetrievalScore = {
   total: number
 }
 
+export type GraduatedMemoryTrustLevel =
+  | 'trusted'
+  | 'qualified'
+  | 'caution'
+
 export type HybridMemoryRetrievalResult = {
   memory: EnterpriseCognitiveMemoryRecord
   score: HybridMemoryRetrievalScore
+  trustLevel: GraduatedMemoryTrustLevel
   matchedTerms: string[]
   reasoning: string[]
 }
@@ -235,6 +241,16 @@ function calculateMemoryScore(input: {
       provenancePenalty,
   )
 
+  const trustLevel: GraduatedMemoryTrustLevel =
+    total >= 70 &&
+    authority >= 80 &&
+    confidence >= 80 &&
+    provenanceComplete
+      ? 'trusted'
+      : total >= 50
+        ? 'qualified'
+        : 'caution'
+
   const reasoning = [
     `lexical=${lexical}`,
     `phrase=${phrase}`,
@@ -245,6 +261,7 @@ function calculateMemoryScore(input: {
     `provenanceComplete=${provenanceComplete}`,
     `provenancePenalty=${provenancePenalty}`,
     `total=${total}`,
+    `trustLevel=${trustLevel}`,
   ]
 
   return {
@@ -258,6 +275,7 @@ function calculateMemoryScore(input: {
       scope,
       total,
     },
+    trustLevel,
     matchedTerms,
     reasoning,
   }
