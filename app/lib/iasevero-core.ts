@@ -64,6 +64,62 @@ export function buildGovernedMemoryContextText(
 }
 
 
+function buildGovernedMemoryReply(
+  message: string,
+  context?: GovernedMemoryContext,
+): string | null {
+  if (
+    !context?.grounded ||
+    context.selectedCount < 1 ||
+    !Array.isArray(context.items)
+  ) {
+    return null
+  }
+
+  const normalizedMessage = message
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+
+  const asksPrimaryProject =
+    normalizedMessage.includes('qual') &&
+    normalizedMessage.includes('projeto principal')
+
+  if (!asksPrimaryProject) {
+    return null
+  }
+
+  const selectedMemory = context.items.find((item) =>
+    item.content
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .includes('projeto principal'),
+  )
+
+  if (!selectedMemory) {
+    return null
+  }
+
+  const valueMatch = selectedMemory.content.match(
+    /projeto principal(?: do usu[aá]rio)? [ée] (.+?)[.!]?$/i,
+  )
+
+  if (!valueMatch?.[1]) {
+    return null
+  }
+
+  const value = valueMatch[1]
+    .trim()
+    .replace(/[.!]+$/, '')
+
+  if (!value) {
+    return null
+  }
+
+  return `Seu projeto principal é ${value}.`
+}
+
 function detectFact(message: string): { key: string; value: string } | null {
   const nome = message.match(/meu nome (é|e)\s+(.+)/i)
   if (nome?.[2]) return { key: 'nome', value: nome[2].trim() }
@@ -111,7 +167,15 @@ export async function iaseveroCore(
     history: decisionContextHistory,
   })
 
-  const rawReply = await runProvider(decision.context)
+  const governedMemoryReply = buildGovernedMemoryReply(
+    message,
+    governedMemoryContext,
+  )
+
+  const rawReply =
+    governedMemoryReply ??
+    await runProvider(decision.context)
+
   const reply = validateDecisionAnswer(message, rawReply)
 
   saveMessage(userId, `Usuário: ${message}`)
