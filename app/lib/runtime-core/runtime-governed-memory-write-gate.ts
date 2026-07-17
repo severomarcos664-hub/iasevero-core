@@ -27,6 +27,9 @@ export type GovernedMemoryWriteDecision = {
   duplicateDetected: boolean
   duplicateMemoryId?: string
   duplicateSimilarity: number
+  conflictDetected?: boolean
+  conflictingMemoryId?: string
+  supersedesMemoryId?: string
   memory?: EnterpriseCognitiveMemoryRecord
   reasoning: string[]
 }
@@ -182,6 +185,53 @@ function resolveTargetStatus(input: {
   return 'candidate'
 }
 
+type StructuredConflictIdentity = {
+  category: string
+  subject: string
+  value: string
+}
+
+function readStructuredString(
+  payload: unknown,
+  key: string,
+): string | undefined {
+  if (
+    !payload ||
+    typeof payload !== 'object' ||
+    Array.isArray(payload)
+  ) {
+    return undefined
+  }
+
+  const value = (payload as Record<string, unknown>)[key]
+
+  if (typeof value !== 'string' || !value.trim()) {
+    return undefined
+  }
+
+  return normalizeContent(value)
+}
+
+function resolveStructuredConflictIdentity(
+  payload: unknown,
+): StructuredConflictIdentity | undefined {
+  const category = readStructuredString(payload, 'category')
+  const subject =
+    readStructuredString(payload, 'subject') ??
+    readStructuredString(payload, 'key')
+  const value = readStructuredString(payload, 'value')
+
+  if (!category || !subject || !value) {
+    return undefined
+  }
+
+  return {
+    category,
+    subject,
+    value,
+  }
+}
+
 export function evaluateGovernedMemoryWrite(
   repository: RuntimeEnterpriseCognitiveMemoryRepository,
   input: GovernedMemoryWriteInput,
@@ -328,7 +378,50 @@ export function evaluateGovernedMemoryWrite(
     }
   }
 
-  if (duplicateMemory && highestSimilarity >= 92) {
+  const candidateConflictIdentity =
+    resolveStructuredConflictIdentity(input.structuredPayload)
+
+  const conflictingMemory =
+    !input.supersedesMemoryId && candidateConflictIdentity
+      ? activeMemories.find((memory) => {
+          if (memory.type !== input.type) {
+            return false
+          }
+
+          const existingConflictIdentity =
+            resolveStructuredConflictIdentity(
+              memory.structuredPayload,
+            )
+
+          return Boolean(
+            existingConflictIdentity &&
+              existingConflictIdentity.category ===
+                candidateConflictIdentity.category &&
+              existingConflictIdentity.subject ===
+                candidateConflictIdentity.subject &&
+              existingConflictIdentity.value !==
+                candidateConflictIdentity.value,
+          )
+        })
+      : undefined
+
+  const conflictDetected = Boolean(conflictingMemory)
+
+  const resolvedSupersedesMemoryId =
+    input.supersedesMemoryId ??
+    conflictingMemory?.memoryId
+
+  if (conflictingMemory) {
+    reasoning.push(
+      `Structured memory conflict detected with memory ${conflictingMemory.memoryId}; the new value will supersede the active value.`,
+    )
+  }
+
+  if (
+    duplicateMemory &&
+    highestSimilarity >= 92 &&
+    !conflictDetected
+  ) {
     reasoning.push(
       `Duplicate memory detected with similarity ${highestSimilarity}.`,
     )
@@ -347,7 +440,11 @@ export function evaluateGovernedMemoryWrite(
     }
   }
 
-  if (duplicateMemory && highestSimilarity >= 70) {
+  if (
+    duplicateMemory &&
+    highestSimilarity >= 70 &&
+    !conflictDetected
+  ) {
     reasoning.push(
       `Related memory detected with similarity ${highestSimilarity}; candidate review required.`,
     )
@@ -417,10 +514,10 @@ export function evaluateGovernedMemoryWrite(
     status: targetStatus,
     retentionPolicy,
     policyTags,
-    ...(input.supersedesMemoryId
+    ...(resolvedSupersedesMemoryId
       ? {
           supersedesMemoryId:
-            input.supersedesMemoryId,
+            resolvedSupersedesMemoryId,
         }
       : {}),
   })
@@ -441,6 +538,19 @@ export function evaluateGovernedMemoryWrite(
         }
       : {}),
     duplicateSimilarity: highestSimilarity,
+    conflictDetected,
+    ...(conflictingMemory
+      ? {
+          conflictingMemoryId:
+            conflictingMemory.memoryId,
+        }
+      : {}),
+    ...(resolvedSupersedesMemoryId
+      ? {
+          supersedesMemoryId:
+            resolvedSupersedesMemoryId,
+        }
+      : {}),
     memory,
     reasoning,
   }
