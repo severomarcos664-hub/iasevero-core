@@ -421,8 +421,36 @@ export function runMemoryConsolidationWorker(
     confidence,
   )
 
-  const proposals = proposal
-    ? [proposal]
+  const governedProposal = proposal
+    ? {
+        ...proposal,
+        structuredPayload: {
+          ...proposal.structuredPayload,
+          consolidationProvenance: {
+            manifestVersion: 1,
+            manifestId: [
+              'consolidation',
+              input.mode,
+              ...proposal.eventIds,
+            ].join(':'),
+            mode: input.mode,
+            sourceEventIds: [...proposal.eventIds],
+            sourceEventCount: proposal.eventIds.length,
+            firstSequence: proposal.firstSequence,
+            lastSequence: proposal.lastSequence,
+            sourceAuthority:
+              proposal.sourceAuthority,
+            confidence: proposal.confidence,
+            reversible: true,
+            requestedActivation: false,
+            supersessionApplied: false,
+          },
+        },
+      }
+    : undefined
+
+  const proposals = governedProposal
+    ? [governedProposal]
     : []
 
   const writeDecisions = proposals.map(
