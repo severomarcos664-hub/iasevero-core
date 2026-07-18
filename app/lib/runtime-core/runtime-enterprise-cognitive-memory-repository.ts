@@ -488,6 +488,338 @@ function mapMemoryRow(
   }
 }
 
+
+export type GovernedMemoryRedundancyRelationship =
+  | 'duplicate'
+  | 'near-duplicate'
+  | 'overlapping'
+  | 'independent'
+
+export type GovernedMemoryRedundancyCanonicalRecommendation = {
+  relationType: Extract<
+    EnterpriseMemoryRelationType,
+    'supports' | 'supersedes'
+  >
+  sourceMemoryId: string
+  targetMemoryId: string
+  reason: string
+}
+
+export type GovernedMemoryRedundancyDetectionInput = {
+  leftMemory: EnterpriseCognitiveMemoryRecord
+  rightMemory: EnterpriseCognitiveMemoryRecord
+}
+
+export type GovernedMemoryRedundancyDetectionResult = {
+  detectionVersion: 1
+  detectionId: string
+  tenantId: string
+  userId: string
+  memoryIds: [string, string]
+  redundancyScore: number
+  relationship: GovernedMemoryRedundancyRelationship
+  sharedEvidence: string[]
+  differences: string[]
+  consolidationRecommended: boolean
+  recommendedCanonicalRelation?:
+    GovernedMemoryRedundancyCanonicalRecommendation
+  mutationApplied: false
+}
+
+function normalizeMemoryRelationText(value: string): string {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function tokenizeMemoryRelationText(value: string): string[] {
+  return Array.from(
+    new Set(
+      normalizeMemoryRelationText(value)
+        .split(' ')
+        .filter((token) => token.length > 2),
+    ),
+  ).sort()
+}
+
+function calculateSetOverlap(
+  leftValues: string[],
+  rightValues: string[],
+): {
+  shared: string[]
+  unionSize: number
+  ratio: number
+} {
+  const leftSet = new Set(leftValues)
+  const rightSet = new Set(rightValues)
+
+  const shared = Array.from(leftSet)
+    .filter((value) => rightSet.has(value))
+    .sort()
+
+  const unionSize = new Set([
+    ...leftValues,
+    ...rightValues,
+  ]).size
+
+  return {
+    shared,
+    unionSize,
+    ratio:
+      unionSize === 0
+        ? 0
+        : shared.length / unionSize,
+  }
+}
+
+function clampRedundancyScore(value: number): number {
+  if (!Number.isFinite(value)) {
+    return 0
+  }
+
+  return Math.max(
+    0,
+    Math.min(100, Math.round(value)),
+  )
+}
+
+export function detectGovernedMemoryRedundancy(
+  input: GovernedMemoryRedundancyDetectionInput,
+): GovernedMemoryRedundancyDetectionResult {
+  const { leftMemory, rightMemory } = input
+
+  if (
+    leftMemory.tenantId !== rightMemory.tenantId ||
+    leftMemory.userId !== rightMemory.userId
+  ) {
+    throw new Error(
+      'Memory redundancy detection requires the same tenant and user scope.',
+    )
+  }
+
+  if (leftMemory.memoryId === rightMemory.memoryId) {
+    throw new Error(
+      'Memory redundancy detection requires two distinct memory records.',
+    )
+  }
+
+  const orderedMemories = [
+    leftMemory,
+    rightMemory,
+  ].sort((left, right) =>
+    left.memoryId.localeCompare(right.memoryId),
+  )
+
+  const [firstMemory, secondMemory] =
+    orderedMemories as [
+      EnterpriseCognitiveMemoryRecord,
+      EnterpriseCognitiveMemoryRecord,
+    ]
+
+  const leftNormalizedContent =
+    normalizeMemoryRelationText(leftMemory.content)
+
+  const rightNormalizedContent =
+    normalizeMemoryRelationText(rightMemory.content)
+
+  const exactContentMatch =
+    leftNormalizedContent.length > 0 &&
+    leftNormalizedContent === rightNormalizedContent
+
+  const tokenOverlap = calculateSetOverlap(
+    tokenizeMemoryRelationText(leftMemory.content),
+    tokenizeMemoryRelationText(rightMemory.content),
+  )
+
+  const eventOverlap = calculateSetOverlap(
+    leftMemory.sourceEventIds,
+    rightMemory.sourceEventIds,
+  )
+
+  const sameType =
+    leftMemory.type === rightMemory.type
+
+  const sameEntity =
+    Boolean(leftMemory.entityId) &&
+    leftMemory.entityId === rightMemory.entityId
+
+  const sameExecution =
+    Boolean(leftMemory.executionKey) &&
+    leftMemory.executionKey === rightMemory.executionKey
+
+  const sameStructuredPayload =
+    JSON.stringify(leftMemory.structuredPayload) ===
+    JSON.stringify(rightMemory.structuredPayload)
+
+  const contentContribution = exactContentMatch
+    ? 70
+    : Math.round(tokenOverlap.ratio * 55)
+
+  const eventContribution =
+    Math.round(eventOverlap.ratio * 15)
+
+  const typeContribution = sameType ? 10 : 0
+  const entityContribution = sameEntity ? 10 : 0
+  const executionContribution = sameExecution ? 5 : 0
+  const payloadContribution = sameStructuredPayload ? 10 : 0
+
+  const redundancyScore = clampRedundancyScore(
+    contentContribution +
+      eventContribution +
+      typeContribution +
+      entityContribution +
+      executionContribution +
+      payloadContribution,
+  )
+
+  let relationship:
+    GovernedMemoryRedundancyRelationship
+
+  if (
+    exactContentMatch &&
+    redundancyScore >= 90
+  ) {
+    relationship = 'duplicate'
+  } else if (redundancyScore >= 70) {
+    relationship = 'near-duplicate'
+  } else if (redundancyScore >= 40) {
+    relationship = 'overlapping'
+  } else {
+    relationship = 'independent'
+  }
+
+  const sharedEvidence: string[] = []
+
+  if (exactContentMatch) {
+    sharedEvidence.push('normalized-content:exact-match')
+  } else if (tokenOverlap.shared.length > 0) {
+    sharedEvidence.push(
+      `shared-tokens:${tokenOverlap.shared.join(',')}`,
+    )
+  }
+
+  if (eventOverlap.shared.length > 0) {
+    sharedEvidence.push(
+      `shared-source-events:${eventOverlap.shared.join(',')}`,
+    )
+  }
+
+  if (sameType) {
+    sharedEvidence.push(`same-type:${leftMemory.type}`)
+  }
+
+  if (sameEntity) {
+    sharedEvidence.push(
+      `same-entity:${String(leftMemory.entityId)}`,
+    )
+  }
+
+  if (sameExecution) {
+    sharedEvidence.push(
+      `same-execution:${String(leftMemory.executionKey)}`,
+    )
+  }
+
+  if (sameStructuredPayload) {
+    sharedEvidence.push('structured-payload:exact-match')
+  }
+
+  const differences: string[] = []
+
+  if (!exactContentMatch) {
+    differences.push('content:not-exact')
+  }
+
+  if (!sameType) {
+    differences.push(
+      `type:${leftMemory.type}!=${rightMemory.type}`,
+    )
+  }
+
+  if (!sameEntity) {
+    differences.push('entity:not-shared')
+  }
+
+  if (!sameExecution) {
+    differences.push('execution:not-shared')
+  }
+
+  if (!sameStructuredPayload) {
+    differences.push('structured-payload:not-exact')
+  }
+
+  const consolidationRecommended =
+    relationship === 'duplicate' ||
+    relationship === 'near-duplicate'
+
+  let recommendedCanonicalRelation:
+    GovernedMemoryRedundancyCanonicalRecommendation
+    | undefined
+
+  if (consolidationRecommended) {
+    const newerMemory =
+      leftMemory.version > rightMemory.version
+        ? leftMemory
+        : rightMemory.version > leftMemory.version
+          ? rightMemory
+          : Date.parse(leftMemory.updatedAt) >=
+              Date.parse(rightMemory.updatedAt)
+            ? leftMemory
+            : rightMemory
+
+    const olderMemory =
+      newerMemory.memoryId === leftMemory.memoryId
+        ? rightMemory
+        : leftMemory
+
+    recommendedCanonicalRelation =
+      relationship === 'duplicate' &&
+      newerMemory.version > olderMemory.version
+        ? {
+            relationType: 'supersedes',
+            sourceMemoryId: newerMemory.memoryId,
+            targetMemoryId: olderMemory.memoryId,
+            reason:
+              'A newer version duplicates the older memory within the same governed scope.',
+          }
+        : {
+            relationType: 'supports',
+            sourceMemoryId: firstMemory.memoryId,
+            targetMemoryId: secondMemory.memoryId,
+            reason:
+              'The memories contain strongly overlapping governed evidence.',
+          }
+  }
+
+  return {
+    detectionVersion: 1,
+    detectionId: [
+      'memory-redundancy',
+      leftMemory.tenantId,
+      leftMemory.userId,
+      firstMemory.memoryId,
+      secondMemory.memoryId,
+    ].join(':'),
+    tenantId: leftMemory.tenantId,
+    userId: leftMemory.userId,
+    memoryIds: [
+      firstMemory.memoryId,
+      secondMemory.memoryId,
+    ],
+    redundancyScore,
+    relationship,
+    sharedEvidence,
+    differences,
+    consolidationRecommended,
+    recommendedCanonicalRelation,
+    mutationApplied: false,
+  }
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
