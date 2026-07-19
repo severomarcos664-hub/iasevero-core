@@ -1,6 +1,10 @@
 import { createHash, randomUUID } from 'node:crypto'
 import { mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
+import type {
+  GovernedMemoryUtilityAssessment,
+} from './runtime-governed-memory-utility-assessment'
+
 type SQLiteStatement = {
   run: (...parameters: unknown[]) => unknown
   get: (...parameters: unknown[]) => unknown
@@ -820,6 +824,19 @@ export function detectGovernedMemoryRedundancy(
   }
 }
 
+
+export type AppendGovernedMemoryUtilityAssessmentInput = {
+  assessment: GovernedMemoryUtilityAssessment
+  createdAt?: string
+}
+
+export type GovernedMemoryUtilityAssessmentHistoryScope = {
+  tenantId: string
+  userId: string
+  memoryId?: string
+  limit?: number
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
@@ -866,6 +883,68 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         CURRENT_TIMESTAMP
       )
       ON CONFLICT(schema_key) DO NOTHING;
+
+
+      CREATE TABLE IF NOT EXISTS enterprise_memory_utility_assessments (
+        sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+        assessment_id TEXT NOT NULL UNIQUE,
+        assessment_version INTEGER NOT NULL CHECK (
+          assessment_version = 1
+        ),
+        tenant_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        memory_id TEXT NOT NULL,
+        evaluated_at TEXT NOT NULL,
+        utility_score INTEGER NOT NULL CHECK (
+          utility_score BETWEEN 0 AND 100
+        ),
+        recommendation TEXT NOT NULL CHECK (
+          recommendation IN (
+            'retain',
+            'demote',
+            'consolidate',
+            'expire',
+            'revoke',
+            'dispute'
+          )
+        ),
+        mutation_applied INTEGER NOT NULL CHECK (
+          mutation_applied = 0
+        ),
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY (memory_id)
+          REFERENCES enterprise_cognitive_memories(memory_id)
+      );
+
+      CREATE INDEX IF NOT EXISTS
+        idx_enterprise_memory_utility_assessments_scope
+      ON enterprise_memory_utility_assessments (
+        tenant_id,
+        user_id,
+        memory_id,
+        sequence
+      );
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_utility_assessment_update
+      BEFORE UPDATE ON enterprise_memory_utility_assessments
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory utility assessments are append-only'
+        );
+      END;
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_utility_assessment_delete
+      BEFORE DELETE ON enterprise_memory_utility_assessments
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory utility assessments are append-only'
+        );
+      END;
 
       CREATE TABLE IF NOT EXISTS enterprise_memory_events (
         sequence INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -2339,6 +2418,182 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         'Final precedence remains governed by temporal validity, source authority, confidence, version and observation time.',
       ],
     }
+  }
+
+
+  appendMemoryUtilityAssessment(
+    input: AppendGovernedMemoryUtilityAssessmentInput,
+  ): GovernedMemoryUtilityAssessment {
+    const assessment = input.assessment
+
+    const tenantId = assertNonEmpty(
+      assessment.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      assessment.userId,
+      'userId',
+    )
+
+    const memoryId = assertNonEmpty(
+      assessment.memoryId,
+      'memoryId',
+    )
+
+    const assessmentId = assertNonEmpty(
+      assessment.assessmentId,
+      'assessmentId',
+    )
+
+    if (assessment.assessmentVersion !== 1) {
+      throw new Error(
+        'Unsupported memory utility assessment version.',
+      )
+    }
+
+    if (
+      !Number.isInteger(assessment.utilityScore) ||
+      assessment.utilityScore < 0 ||
+      assessment.utilityScore > 100
+    ) {
+      throw new Error(
+        'Memory utility assessment score must be an integer between 0 and 100.',
+      )
+    }
+
+    if (assessment.mutationApplied !== false) {
+      throw new Error(
+        'Memory utility assessment persistence cannot record an applied mutation.',
+      )
+    }
+
+    if (!Number.isFinite(Date.parse(assessment.evaluatedAt))) {
+      throw new Error(
+        'Memory utility assessment evaluatedAt must be a valid ISO date.',
+      )
+    }
+
+    const memory = this.readMemoryById({
+      tenantId,
+      userId,
+      memoryId,
+    })
+
+    if (!memory) {
+      throw new Error(
+        'Memory utility assessment target was not found in the requested scope.',
+      )
+    }
+
+    const createdAt =
+      input.createdAt ?? new Date().toISOString()
+
+    if (!Number.isFinite(Date.parse(createdAt))) {
+      throw new Error(
+        'Memory utility assessment createdAt must be a valid ISO date.',
+      )
+    }
+
+    this.database
+      .prepare(`
+        INSERT INTO enterprise_memory_utility_assessments (
+          assessment_id,
+          assessment_version,
+          tenant_id,
+          user_id,
+          memory_id,
+          evaluated_at,
+          utility_score,
+          recommendation,
+          mutation_applied,
+          payload_json,
+          created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `)
+      .run(
+        assessmentId,
+        assessment.assessmentVersion,
+        tenantId,
+        userId,
+        memoryId,
+        assessment.evaluatedAt,
+        assessment.utilityScore,
+        assessment.recommendation,
+        0,
+        JSON.stringify(assessment),
+        createdAt,
+      )
+
+    return assessment
+  }
+
+  readMemoryUtilityAssessmentHistory(
+    scope: GovernedMemoryUtilityAssessmentHistoryScope,
+  ): GovernedMemoryUtilityAssessment[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const conditions = [
+      'tenant_id = ?',
+      'user_id = ?',
+    ]
+
+    const parameters: Array<string | number> = [
+      tenantId,
+      userId,
+    ]
+
+    if (scope.memoryId) {
+      conditions.push('memory_id = ?')
+      parameters.push(
+        assertNonEmpty(scope.memoryId, 'memoryId'),
+      )
+    }
+
+    parameters.push(limit)
+
+    const rows = this.database
+      .prepare(`
+        SELECT payload_json
+        FROM enterprise_memory_utility_assessments
+        WHERE ${conditions.join(' AND ')}
+        ORDER BY sequence ASC
+        LIMIT ?
+      `)
+      .all(...parameters) as Array<{
+        payload_json: string
+      }>
+
+    return rows.map((row) => {
+      const assessment = JSON.parse(
+        row.payload_json,
+      ) as GovernedMemoryUtilityAssessment
+
+      if (
+        assessment.tenantId !== tenantId ||
+        assessment.userId !== userId
+      ) {
+        throw new Error(
+          'Persisted memory utility assessment scope integrity failed.',
+        )
+      }
+
+      return assessment
+    })
   }
 
   close(): void {
