@@ -379,3 +379,240 @@ export function assessGovernedMemoryUtility(
     mutationApplied: false,
   }
 }
+
+export type GovernedMemoryUtilityReviewDecision = {
+  reviewVersion: 1
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  generatedAt: string
+  assessmentIds: string[]
+  assessmentCount: number
+  recommendation: GovernedMemoryUtilityRecommendation
+  recommendationCounts: Record<
+    GovernedMemoryUtilityRecommendation,
+    number
+  >
+  averageUtilityScore: number
+  latestUtilityScore: number
+  confidence: number
+  stable: boolean
+  divergent: boolean
+  requiresReview: boolean
+  reasoning: string[]
+  mutationApplied: false
+}
+
+export type GovernedMemoryUtilityReviewDecisionInput = {
+  assessments: GovernedMemoryUtilityAssessment[]
+  generatedAt: string
+}
+
+const REVIEW_RECOMMENDATIONS:
+  GovernedMemoryUtilityRecommendation[] = [
+    'retain',
+    'demote',
+    'consolidate',
+    'expire',
+    'revoke',
+    'dispute',
+  ]
+
+export function decideGovernedMemoryUtilityReview(
+  input: GovernedMemoryUtilityReviewDecisionInput,
+): GovernedMemoryUtilityReviewDecision {
+  if (input.assessments.length === 0) {
+    throw new Error(
+      'Governed memory utility review requires at least one assessment.',
+    )
+  }
+
+  assertIsoDate(input.generatedAt, 'generatedAt')
+
+  const assessments = [...input.assessments].sort(
+    (left, right) => {
+      const timeDifference =
+        Date.parse(left.evaluatedAt) -
+        Date.parse(right.evaluatedAt)
+
+      if (timeDifference !== 0) {
+        return timeDifference
+      }
+
+      return left.assessmentId.localeCompare(
+        right.assessmentId,
+      )
+    },
+  )
+
+  const first = assessments[0]
+
+  if (!first) {
+    throw new Error(
+      'Governed memory utility review could not resolve its first assessment.',
+    )
+  }
+
+  for (const assessment of assessments) {
+    if (assessment.assessmentVersion !== 1) {
+      throw new Error(
+        'Unsupported governed memory utility assessment version.',
+      )
+    }
+
+    if (assessment.mutationApplied !== false) {
+      throw new Error(
+        'Governed memory utility review cannot consume mutated assessments.',
+      )
+    }
+
+    assertIsoDate(
+      assessment.evaluatedAt,
+      'assessment.evaluatedAt',
+    )
+
+    if (
+      assessment.tenantId !== first.tenantId ||
+      assessment.userId !== first.userId ||
+      assessment.memoryId !== first.memoryId
+    ) {
+      throw new Error(
+        'Governed memory utility review assessments must share the same scope.',
+      )
+    }
+  }
+
+  const recommendationCounts =
+    Object.fromEntries(
+      REVIEW_RECOMMENDATIONS.map(
+        (recommendation) => [
+          recommendation,
+          0,
+        ],
+      ),
+    ) as Record<
+      GovernedMemoryUtilityRecommendation,
+      number
+    >
+
+  for (const assessment of assessments) {
+    recommendationCounts[
+      assessment.recommendation
+    ] += 1
+  }
+
+  const latestAssessment =
+    assessments[assessments.length - 1]
+
+  if (!latestAssessment) {
+    throw new Error(
+      'Governed memory utility review could not resolve its latest assessment.',
+    )
+  }
+
+  const highestCount = Math.max(
+    ...Object.values(recommendationCounts),
+  )
+
+  const tiedRecommendations =
+    REVIEW_RECOMMENDATIONS.filter(
+      (recommendation) =>
+        recommendationCounts[recommendation] ===
+        highestCount,
+    )
+
+  const recommendation =
+    tiedRecommendations.includes(
+      latestAssessment.recommendation,
+    )
+      ? latestAssessment.recommendation
+      : tiedRecommendations[0]
+
+  if (!recommendation) {
+    throw new Error(
+      'Governed memory utility review could not resolve a recommendation.',
+    )
+  }
+
+  const totalUtilityScore = assessments.reduce(
+    (total, assessment) =>
+      total + assessment.utilityScore,
+    0,
+  )
+
+  const averageUtilityScore = clampScore(
+    totalUtilityScore / assessments.length,
+  )
+
+  const confidence = clampScore(
+    (
+      recommendationCounts[recommendation] /
+      assessments.length
+    ) * 100,
+  )
+
+  const distinctRecommendations =
+    REVIEW_RECOMMENDATIONS.filter(
+      (candidate) =>
+        recommendationCounts[candidate] > 0,
+    )
+
+  const stable =
+    assessments.length >= 2 &&
+    distinctRecommendations.length === 1
+
+  const divergent =
+    distinctRecommendations.length > 1
+
+  const requiresReview =
+    recommendation !== 'retain' ||
+    divergent ||
+    averageUtilityScore < 60
+
+  const assessmentIds = assessments.map(
+    (assessment) => assessment.assessmentId,
+  )
+
+  const reasoning = [
+    `assessment-count=${assessments.length}`,
+    `recommendation=${recommendation}`,
+    `recommendation-support=${recommendationCounts[recommendation]}`,
+    `average-utility-score=${averageUtilityScore}`,
+    `latest-utility-score=${latestAssessment.utilityScore}`,
+    `stable=${stable}`,
+    `divergent=${divergent}`,
+    `requires-review=${requiresReview}`,
+    'No memory mutation was applied.',
+  ]
+
+  return {
+    reviewVersion: 1,
+    decisionId: [
+      'memory-utility-review',
+      first.tenantId,
+      first.userId,
+      first.memoryId,
+      ...assessmentIds,
+      recommendation,
+      input.generatedAt,
+    ].join(':'),
+    tenantId: first.tenantId,
+    userId: first.userId,
+    memoryId: first.memoryId,
+    generatedAt: input.generatedAt,
+    assessmentIds,
+    assessmentCount: assessments.length,
+    recommendation,
+    recommendationCounts,
+    averageUtilityScore,
+    latestUtilityScore:
+      latestAssessment.utilityScore,
+    confidence,
+    stable,
+    divergent,
+    requiresReview,
+    reasoning,
+    mutationApplied: false,
+  }
+}
