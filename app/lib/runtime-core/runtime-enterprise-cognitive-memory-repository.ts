@@ -3,6 +3,7 @@ import { mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
 import type {
   GovernedMemoryUtilityAssessment,
+  GovernedMemoryUtilityReviewDecision,
 } from './runtime-governed-memory-utility-assessment'
 
 type SQLiteStatement = {
@@ -837,6 +838,90 @@ export type GovernedMemoryUtilityAssessmentHistoryScope = {
   limit?: number
 }
 
+
+export type GovernedMemoryReviewRequestStatus =
+  | 'pending'
+  | 'accepted'
+  | 'rejected'
+  | 'cancelled'
+
+export type GovernedMemoryReviewEventType =
+  | 'review-requested'
+  | 'review-accepted'
+  | 'review-rejected'
+  | 'review-cancelled'
+
+export type GovernedMemoryReviewRequest = {
+  workflowVersion: 1
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  recommendation:
+    GovernedMemoryUtilityReviewDecision['recommendation']
+  status: GovernedMemoryReviewRequestStatus
+  createdAt: string
+  source: string
+  sourceAuthority: number
+  mutationApplied: false
+}
+
+export type GovernedMemoryReviewEvent = {
+  workflowVersion: 1
+  eventId: string
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  eventType: GovernedMemoryReviewEventType
+  resultingStatus: GovernedMemoryReviewRequestStatus
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason: string
+  createdAt: string
+  mutationApplied: false
+}
+
+export type CreateGovernedMemoryReviewRequestInput = {
+  decision: GovernedMemoryUtilityReviewDecision
+  requestId?: string
+  createdAt?: string
+  source: string
+  sourceAuthority: number
+}
+
+export type TransitionGovernedMemoryReviewRequestInput = {
+  eventId?: string
+  tenantId: string
+  userId: string
+  requestId: string
+  targetStatus: Exclude<
+    GovernedMemoryReviewRequestStatus,
+    'pending'
+  >
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason?: string
+  createdAt?: string
+}
+
+export type GovernedMemoryReviewRequestScope = {
+  tenantId: string
+  userId: string
+  requestId: string
+}
+
+export type GovernedMemoryReviewHistoryScope = {
+  tenantId: string
+  userId: string
+  requestId: string
+  limit?: number
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
@@ -943,6 +1028,146 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         SELECT RAISE(
           ABORT,
           'enterprise memory utility assessments are append-only'
+        );
+      END;
+
+
+      CREATE TABLE IF NOT EXISTS
+        enterprise_memory_review_requests (
+          sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+          request_id TEXT NOT NULL UNIQUE,
+          decision_id TEXT NOT NULL UNIQUE,
+          tenant_id TEXT NOT NULL,
+          user_id TEXT NOT NULL,
+          memory_id TEXT NOT NULL,
+          recommendation TEXT NOT NULL CHECK (
+            recommendation IN (
+              'retain',
+              'demote',
+              'consolidate',
+              'expire',
+              'revoke',
+              'dispute'
+            )
+          ),
+          decision_json TEXT NOT NULL,
+          source TEXT NOT NULL,
+          source_authority INTEGER NOT NULL CHECK (
+            source_authority BETWEEN 0 AND 100
+          ),
+          mutation_applied INTEGER NOT NULL CHECK (
+            mutation_applied = 0
+          ),
+          created_at TEXT NOT NULL,
+          FOREIGN KEY (memory_id)
+            REFERENCES enterprise_cognitive_memories(memory_id)
+        );
+
+      CREATE UNIQUE INDEX IF NOT EXISTS
+        idx_enterprise_memory_review_requests_decision
+      ON enterprise_memory_review_requests (
+        tenant_id,
+        user_id,
+        decision_id
+      );
+
+      CREATE INDEX IF NOT EXISTS
+        idx_enterprise_memory_review_requests_scope
+      ON enterprise_memory_review_requests (
+        tenant_id,
+        user_id,
+        memory_id,
+        sequence
+      );
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_review_request_update
+      BEFORE UPDATE ON enterprise_memory_review_requests
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory review requests are append-only'
+        );
+      END;
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_review_request_delete
+      BEFORE DELETE ON enterprise_memory_review_requests
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory review requests are append-only'
+        );
+      END;
+
+      CREATE TABLE IF NOT EXISTS
+        enterprise_memory_review_events (
+          sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+          event_id TEXT NOT NULL UNIQUE,
+          request_id TEXT NOT NULL,
+          decision_id TEXT NOT NULL,
+          tenant_id TEXT NOT NULL,
+          user_id TEXT NOT NULL,
+          memory_id TEXT NOT NULL,
+          event_type TEXT NOT NULL CHECK (
+            event_type IN (
+              'review-requested',
+              'review-accepted',
+              'review-rejected',
+              'review-cancelled'
+            )
+          ),
+          resulting_status TEXT NOT NULL CHECK (
+            resulting_status IN (
+              'pending',
+              'accepted',
+              'rejected',
+              'cancelled'
+            )
+          ),
+          actor_id TEXT NOT NULL,
+          source TEXT NOT NULL,
+          source_authority INTEGER NOT NULL CHECK (
+            source_authority BETWEEN 0 AND 100
+          ),
+          reason TEXT NOT NULL,
+          mutation_applied INTEGER NOT NULL CHECK (
+            mutation_applied = 0
+          ),
+          payload_json TEXT NOT NULL,
+          created_at TEXT NOT NULL,
+          FOREIGN KEY (request_id)
+            REFERENCES enterprise_memory_review_requests(request_id),
+          FOREIGN KEY (memory_id)
+            REFERENCES enterprise_cognitive_memories(memory_id)
+        );
+
+      CREATE INDEX IF NOT EXISTS
+        idx_enterprise_memory_review_events_scope
+      ON enterprise_memory_review_events (
+        tenant_id,
+        user_id,
+        request_id,
+        sequence
+      );
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_review_event_update
+      BEFORE UPDATE ON enterprise_memory_review_events
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory review events are append-only'
+        );
+      END;
+
+      CREATE TRIGGER IF NOT EXISTS
+        prevent_enterprise_memory_review_event_delete
+      BEFORE DELETE ON enterprise_memory_review_events
+      BEGIN
+        SELECT RAISE(
+          ABORT,
+          'enterprise memory review events are append-only'
         );
       END;
 
@@ -2594,6 +2819,438 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
 
       return assessment
     })
+  }
+
+
+  createMemoryReviewRequest(
+    input: CreateGovernedMemoryReviewRequestInput,
+  ): GovernedMemoryReviewRequest | undefined {
+    const decision = input.decision
+
+    if (!decision.requiresReview) {
+      return undefined
+    }
+
+    if (decision.mutationApplied !== false) {
+      throw new Error(
+        'A mutated review decision cannot create a governed review request.',
+      )
+    }
+
+    const requestId =
+      input.requestId ?? randomUUID()
+
+    const createdAt =
+      input.createdAt ?? new Date().toISOString()
+
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    const memory = this.readMemoryById({
+      tenantId: decision.tenantId,
+      userId: decision.userId,
+      memoryId: decision.memoryId,
+    })
+
+    if (!memory) {
+      throw new Error(
+        'Memory selected for governed review was not found in the requested scope.',
+      )
+    }
+
+    const request: GovernedMemoryReviewRequest = {
+      workflowVersion: 1,
+      requestId,
+      decisionId: decision.decisionId,
+      tenantId: decision.tenantId,
+      userId: decision.userId,
+      memoryId: decision.memoryId,
+      recommendation: decision.recommendation,
+      status: 'pending',
+      createdAt,
+      source,
+      sourceAuthority,
+      mutationApplied: false,
+    }
+
+    const requestedEvent: GovernedMemoryReviewEvent = {
+      workflowVersion: 1,
+      eventId: randomUUID(),
+      requestId,
+      decisionId: decision.decisionId,
+      tenantId: decision.tenantId,
+      userId: decision.userId,
+      memoryId: decision.memoryId,
+      eventType: 'review-requested',
+      resultingStatus: 'pending',
+      actorId: decision.userId,
+      source,
+      sourceAuthority,
+      reason:
+        'Governed memory review was requested from a review decision.',
+      createdAt,
+      mutationApplied: false,
+    }
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      this.database
+        .prepare(
+          `
+            INSERT INTO enterprise_memory_review_requests (
+              request_id,
+              decision_id,
+              tenant_id,
+              user_id,
+              memory_id,
+              recommendation,
+              decision_json,
+              source,
+              source_authority,
+              mutation_applied,
+              created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          request.requestId,
+          request.decisionId,
+          request.tenantId,
+          request.userId,
+          request.memoryId,
+          request.recommendation,
+          JSON.stringify(decision),
+          request.source,
+          request.sourceAuthority,
+          0,
+          request.createdAt,
+        )
+
+      this.database
+        .prepare(
+          `
+            INSERT INTO enterprise_memory_review_events (
+              event_id,
+              request_id,
+              decision_id,
+              tenant_id,
+              user_id,
+              memory_id,
+              event_type,
+              resulting_status,
+              actor_id,
+              source,
+              source_authority,
+              reason,
+              mutation_applied,
+              payload_json,
+              created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          requestedEvent.eventId,
+          requestedEvent.requestId,
+          requestedEvent.decisionId,
+          requestedEvent.tenantId,
+          requestedEvent.userId,
+          requestedEvent.memoryId,
+          requestedEvent.eventType,
+          requestedEvent.resultingStatus,
+          requestedEvent.actorId,
+          requestedEvent.source,
+          requestedEvent.sourceAuthority,
+          requestedEvent.reason,
+          0,
+          JSON.stringify(requestedEvent),
+          requestedEvent.createdAt,
+        )
+
+      this.database.exec('COMMIT')
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
+
+    return request
+  }
+
+  readMemoryReviewHistory(
+    scope: GovernedMemoryReviewHistoryScope,
+  ): GovernedMemoryReviewEvent[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const requestId = assertNonEmpty(
+      scope.requestId,
+      'requestId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const rows = this.database
+      .prepare(
+        `
+          SELECT payload_json
+          FROM enterprise_memory_review_events
+          WHERE tenant_id = ?
+            AND user_id = ?
+            AND request_id = ?
+          ORDER BY sequence ASC
+          LIMIT ?
+        `,
+      )
+      .all(
+        tenantId,
+        userId,
+        requestId,
+        limit,
+      ) as Array<{
+        payload_json: string
+      }>
+
+    return rows.map((row) => {
+      const event = JSON.parse(
+        row.payload_json,
+      ) as GovernedMemoryReviewEvent
+
+      if (
+        event.tenantId !== tenantId ||
+        event.userId !== userId ||
+        event.requestId !== requestId
+      ) {
+        throw new Error(
+          'Persisted memory review event scope integrity failed.',
+        )
+      }
+
+      return event
+    })
+  }
+
+  readMemoryReviewRequest(
+    scope: GovernedMemoryReviewRequestScope,
+  ): GovernedMemoryReviewRequest | undefined {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const requestId = assertNonEmpty(
+      scope.requestId,
+      'requestId',
+    )
+
+    const row = this.database
+      .prepare(
+        `
+          SELECT
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            recommendation,
+            source,
+            source_authority,
+            created_at
+          FROM enterprise_memory_review_requests
+          WHERE tenant_id = ?
+            AND user_id = ?
+            AND request_id = ?
+        `,
+      )
+      .get(
+        tenantId,
+        userId,
+        requestId,
+      ) as
+      | {
+          request_id: string
+          decision_id: string
+          tenant_id: string
+          user_id: string
+          memory_id: string
+          recommendation:
+            GovernedMemoryUtilityReviewDecision['recommendation']
+          source: string
+          source_authority: number
+          created_at: string
+        }
+      | undefined
+
+    if (!row) {
+      return undefined
+    }
+
+    const history = this.readMemoryReviewHistory({
+      tenantId,
+      userId,
+      requestId,
+      limit: 500,
+    })
+
+    const latest = history[history.length - 1]
+
+    if (!latest) {
+      throw new Error(
+        'Governed memory review request has no append-only history.',
+      )
+    }
+
+    return {
+      workflowVersion: 1,
+      requestId: row.request_id,
+      decisionId: row.decision_id,
+      tenantId: row.tenant_id,
+      userId: row.user_id,
+      memoryId: row.memory_id,
+      recommendation: row.recommendation,
+      status: latest.resultingStatus,
+      createdAt: row.created_at,
+      source: row.source,
+      sourceAuthority: row.source_authority,
+      mutationApplied: false,
+    }
+  }
+
+  transitionMemoryReviewRequest(
+    input: TransitionGovernedMemoryReviewRequestInput,
+  ): GovernedMemoryReviewEvent {
+    const current = this.readMemoryReviewRequest({
+      tenantId: input.tenantId,
+      userId: input.userId,
+      requestId: input.requestId,
+    })
+
+    if (!current) {
+      throw new Error(
+        'Governed memory review request was not found in the requested scope.',
+      )
+    }
+
+    if (current.status !== 'pending') {
+      throw new Error(
+        `Governed memory review request status ${current.status} is terminal.`,
+      )
+    }
+
+    const reason =
+      input.reason?.trim() ?? ''
+
+    if (
+      input.targetStatus === 'rejected' &&
+      reason.length === 0
+    ) {
+      throw new Error(
+        'Rejected governed memory review requests require a reason.',
+      )
+    }
+
+    const eventTypeByStatus = {
+      accepted: 'review-accepted',
+      rejected: 'review-rejected',
+      cancelled: 'review-cancelled',
+    } as const
+
+    const event: GovernedMemoryReviewEvent = {
+      workflowVersion: 1,
+      eventId: input.eventId ?? randomUUID(),
+      requestId: current.requestId,
+      decisionId: current.decisionId,
+      tenantId: current.tenantId,
+      userId: current.userId,
+      memoryId: current.memoryId,
+      eventType:
+        eventTypeByStatus[input.targetStatus],
+      resultingStatus: input.targetStatus,
+      actorId: assertNonEmpty(
+        input.actorId,
+        'actorId',
+      ),
+      source: assertNonEmpty(
+        input.source,
+        'source',
+      ),
+      sourceAuthority: assertScore(
+        input.sourceAuthority,
+        'sourceAuthority',
+      ),
+      reason:
+        reason ||
+        `Governed memory review request ${input.targetStatus}.`,
+      createdAt:
+        input.createdAt ?? new Date().toISOString(),
+      mutationApplied: false,
+    }
+
+    this.database
+      .prepare(
+        `
+          INSERT INTO enterprise_memory_review_events (
+            event_id,
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            event_type,
+            resulting_status,
+            actor_id,
+            source,
+            source_authority,
+            reason,
+            mutation_applied,
+            payload_json,
+            created_at
+          )
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `,
+      )
+      .run(
+        event.eventId,
+        event.requestId,
+        event.decisionId,
+        event.tenantId,
+        event.userId,
+        event.memoryId,
+        event.eventType,
+        event.resultingStatus,
+        event.actorId,
+        event.source,
+        event.sourceAuthority,
+        event.reason,
+        0,
+        JSON.stringify(event),
+        event.createdAt,
+      )
+
+    return event
   }
 
   close(): void {
