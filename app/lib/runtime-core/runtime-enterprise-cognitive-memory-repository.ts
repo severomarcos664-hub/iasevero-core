@@ -922,6 +922,98 @@ export type GovernedMemoryReviewHistoryScope = {
   limit?: number
 }
 
+
+export type GovernedMemoryActionAuthorizationStatus =
+  | 'pending'
+  | 'authorized'
+  | 'denied'
+  | 'expired'
+  | 'cancelled'
+
+export type GovernedMemoryActionAuthorizationEventType =
+  | 'authorization-requested'
+  | 'authorization-authorized'
+  | 'authorization-denied'
+  | 'authorization-expired'
+  | 'authorization-cancelled'
+
+export type GovernedMemoryActionAuthorization = {
+  workflowVersion: 1
+  authorizationId: string
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  proposedAction: string
+  status: GovernedMemoryActionAuthorizationStatus
+  createdAt: string
+  actorId: string
+  source: string
+  sourceAuthority: number
+  executionApplied: false
+  mutationApplied: false
+}
+
+export type GovernedMemoryActionAuthorizationEvent = {
+  workflowVersion: 1
+  eventId: string
+  authorizationId: string
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  eventType: GovernedMemoryActionAuthorizationEventType
+  resultingStatus: GovernedMemoryActionAuthorizationStatus
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason: string
+  createdAt: string
+  executionApplied: false
+  mutationApplied: false
+}
+
+export type CreateGovernedMemoryActionAuthorizationInput = {
+  reviewRequest: GovernedMemoryReviewRequest
+  authorizationId: string
+  proposedAction: string
+  actorId: string
+  source: string
+  sourceAuthority: number
+  createdAt?: string
+}
+
+export type TransitionGovernedMemoryActionAuthorizationInput = {
+  eventId: string
+  authorizationId: string
+  tenantId: string
+  userId: string
+  targetStatus: Exclude<
+    GovernedMemoryActionAuthorizationStatus,
+    'pending'
+  >
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason: string
+  createdAt?: string
+}
+
+export type GovernedMemoryActionAuthorizationScope = {
+  tenantId: string
+  userId: string
+  authorizationId: string
+}
+
+export type GovernedMemoryActionAuthorizationHistoryScope = {
+  tenantId: string
+  userId: string
+  authorizationId: string
+  limit?: number
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
