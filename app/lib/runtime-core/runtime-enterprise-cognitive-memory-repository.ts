@@ -1263,6 +1263,170 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         );
       END;
 
+    CREATE TABLE IF NOT EXISTS
+      enterprise_memory_action_authorizations (
+        sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+        authorization_id TEXT NOT NULL UNIQUE,
+        request_id TEXT NOT NULL UNIQUE,
+        decision_id TEXT NOT NULL,
+        tenant_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        memory_id TEXT NOT NULL,
+        proposed_action TEXT NOT NULL,
+        actor_id TEXT NOT NULL,
+        source TEXT NOT NULL,
+        source_authority INTEGER NOT NULL CHECK (
+          source_authority BETWEEN 0 AND 100
+        ),
+        execution_applied INTEGER NOT NULL CHECK (
+          execution_applied = 0
+        ),
+        mutation_applied INTEGER NOT NULL CHECK (
+          mutation_applied = 0
+        ),
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY (request_id)
+          REFERENCES enterprise_memory_review_requests(request_id),
+        FOREIGN KEY (memory_id)
+          REFERENCES enterprise_cognitive_memories(memory_id)
+      );
+
+    CREATE UNIQUE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_authorizations_request
+    ON enterprise_memory_action_authorizations (
+      tenant_id,
+      user_id,
+      request_id
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_authorizations_scope
+    ON enterprise_memory_action_authorizations (
+      tenant_id,
+      user_id,
+      memory_id,
+      sequence
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_authorizations_decision
+    ON enterprise_memory_action_authorizations (
+      tenant_id,
+      user_id,
+      decision_id
+    );
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_authorization_update
+    BEFORE UPDATE ON enterprise_memory_action_authorizations
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action authorizations are append-only'
+      );
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_authorization_delete
+    BEFORE DELETE ON enterprise_memory_action_authorizations
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action authorizations are append-only'
+      );
+    END;
+
+    CREATE TABLE IF NOT EXISTS
+      enterprise_memory_action_authorization_events (
+        sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_id TEXT NOT NULL UNIQUE,
+        authorization_id TEXT NOT NULL,
+        request_id TEXT NOT NULL,
+        decision_id TEXT NOT NULL,
+        tenant_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        memory_id TEXT NOT NULL,
+        event_type TEXT NOT NULL CHECK (
+          event_type IN (
+            'authorization-requested',
+            'authorization-authorized',
+            'authorization-denied',
+            'authorization-expired',
+            'authorization-cancelled'
+          )
+        ),
+        resulting_status TEXT NOT NULL CHECK (
+          resulting_status IN (
+            'pending',
+            'authorized',
+            'denied',
+            'expired',
+            'cancelled'
+          )
+        ),
+        actor_id TEXT NOT NULL,
+        source TEXT NOT NULL,
+        source_authority INTEGER NOT NULL CHECK (
+          source_authority BETWEEN 0 AND 100
+        ),
+        reason TEXT NOT NULL,
+        execution_applied INTEGER NOT NULL CHECK (
+          execution_applied = 0
+        ),
+        mutation_applied INTEGER NOT NULL CHECK (
+          mutation_applied = 0
+        ),
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY (authorization_id)
+          REFERENCES enterprise_memory_action_authorizations(
+            authorization_id
+          ),
+        FOREIGN KEY (request_id)
+          REFERENCES enterprise_memory_review_requests(request_id),
+        FOREIGN KEY (memory_id)
+          REFERENCES enterprise_cognitive_memories(memory_id)
+      );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_authorization_events_scope
+    ON enterprise_memory_action_authorization_events (
+      tenant_id,
+      user_id,
+      authorization_id,
+      sequence
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_authorization_events_request
+    ON enterprise_memory_action_authorization_events (
+      tenant_id,
+      user_id,
+      request_id,
+      sequence
+    );
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_authorization_event_update
+    BEFORE UPDATE ON enterprise_memory_action_authorization_events
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action authorization events are append-only'
+      );
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_authorization_event_delete
+    BEFORE DELETE ON enterprise_memory_action_authorization_events
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action authorization events are append-only'
+      );
+    END;
+
       CREATE TABLE IF NOT EXISTS enterprise_memory_events (
         sequence INTEGER PRIMARY KEY AUTOINCREMENT,
         event_id TEXT NOT NULL UNIQUE,
@@ -3077,6 +3241,252 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     return request
   }
 
+  createMemoryActionAuthorization(
+    input: CreateGovernedMemoryActionAuthorizationInput,
+  ): GovernedMemoryActionAuthorization {
+    const reviewRequest = input.reviewRequest
+
+    if (reviewRequest.status !== 'accepted') {
+      throw new Error(
+        'Only an accepted governed memory review request can originate an action authorization.',
+      )
+    }
+
+    const authorizationId = assertNonEmpty(
+      input.authorizationId,
+      'authorizationId',
+    )
+
+    const proposedAction = assertNonEmpty(
+      input.proposedAction,
+      'proposedAction',
+    )
+
+    const actorId = assertNonEmpty(
+      input.actorId,
+      'actorId',
+    )
+
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    const createdAt =
+      input.createdAt ?? new Date().toISOString()
+
+    const authorization: GovernedMemoryActionAuthorization = {
+      workflowVersion: 1,
+      authorizationId,
+      requestId: reviewRequest.requestId,
+      decisionId: reviewRequest.decisionId,
+      tenantId: reviewRequest.tenantId,
+      userId: reviewRequest.userId,
+      memoryId: reviewRequest.memoryId,
+      proposedAction,
+      status: 'pending',
+      createdAt,
+      actorId,
+      source,
+      sourceAuthority,
+      executionApplied: false,
+      mutationApplied: false,
+    }
+
+    const requestedEvent: GovernedMemoryActionAuthorizationEvent = {
+      workflowVersion: 1,
+      eventId: randomUUID(),
+      authorizationId: authorization.authorizationId,
+      requestId: authorization.requestId,
+      decisionId: authorization.decisionId,
+      tenantId: authorization.tenantId,
+      userId: authorization.userId,
+      memoryId: authorization.memoryId,
+      eventType: 'authorization-requested',
+      resultingStatus: 'pending',
+      actorId: authorization.actorId,
+      source: authorization.source,
+      sourceAuthority: authorization.sourceAuthority,
+      reason:
+        'Governed memory action authorization was requested from an accepted review request.',
+      createdAt,
+      executionApplied: false,
+      mutationApplied: false,
+    }
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      this.database
+        .prepare(
+          `
+          INSERT INTO enterprise_memory_action_authorizations (
+            authorization_id,
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            proposed_action,
+            actor_id,
+            source,
+            source_authority,
+            execution_applied,
+            mutation_applied,
+            payload_json,
+            created_at
+          )
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          authorization.authorizationId,
+          authorization.requestId,
+          authorization.decisionId,
+          authorization.tenantId,
+          authorization.userId,
+          authorization.memoryId,
+          authorization.proposedAction,
+          authorization.actorId,
+          authorization.source,
+          authorization.sourceAuthority,
+          0,
+          0,
+          JSON.stringify(authorization),
+          authorization.createdAt,
+        )
+
+      this.database
+        .prepare(
+          `
+          INSERT INTO enterprise_memory_action_authorization_events (
+            event_id,
+            authorization_id,
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            event_type,
+            resulting_status,
+            actor_id,
+            source,
+            source_authority,
+            reason,
+            execution_applied,
+            mutation_applied,
+            payload_json,
+            created_at
+          )
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          requestedEvent.eventId,
+          requestedEvent.authorizationId,
+          requestedEvent.requestId,
+          requestedEvent.decisionId,
+          requestedEvent.tenantId,
+          requestedEvent.userId,
+          requestedEvent.memoryId,
+          requestedEvent.eventType,
+          requestedEvent.resultingStatus,
+          requestedEvent.actorId,
+          requestedEvent.source,
+          requestedEvent.sourceAuthority,
+          requestedEvent.reason,
+          0,
+          0,
+          JSON.stringify(requestedEvent),
+          requestedEvent.createdAt,
+        )
+
+      this.database.exec('COMMIT')
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
+
+    return authorization
+  }
+
+  readMemoryActionAuthorizationHistory(
+    scope: GovernedMemoryActionAuthorizationHistoryScope,
+  ): GovernedMemoryActionAuthorizationEvent[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const authorizationId = assertNonEmpty(
+      scope.authorizationId,
+      'authorizationId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const rows = this.database
+      .prepare(
+        `
+        SELECT payload_json
+        FROM enterprise_memory_action_authorization_events
+        WHERE tenant_id = ?
+          AND user_id = ?
+          AND authorization_id = ?
+        ORDER BY sequence ASC
+        LIMIT ?
+        `,
+      )
+      .all(
+        tenantId,
+        userId,
+        authorizationId,
+        limit,
+      ) as Array<{
+        payload_json: string
+      }>
+
+    return rows.map((row) => {
+      const event = JSON.parse(
+        row.payload_json,
+      ) as GovernedMemoryActionAuthorizationEvent
+
+      if (
+        event.tenantId !== tenantId ||
+        event.userId !== userId ||
+        event.authorizationId !== authorizationId
+      ) {
+        throw new Error(
+          'Governed memory action authorization event violated scope isolation.',
+        )
+      }
+
+      if (
+        event.executionApplied !== false ||
+        event.mutationApplied !== false
+      ) {
+        throw new Error(
+          'Governed memory action authorization event applied execution or mutation.',
+        )
+      }
+
+      return event
+    })
+  }
+
   readMemoryReviewHistory(
     scope: GovernedMemoryReviewHistoryScope,
   ): GovernedMemoryReviewEvent[] {
@@ -3231,6 +3641,127 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     }
   }
 
+  readMemoryActionAuthorization(
+    scope: GovernedMemoryActionAuthorizationScope,
+  ): GovernedMemoryActionAuthorization | undefined {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const authorizationId = assertNonEmpty(
+      scope.authorizationId,
+      'authorizationId',
+    )
+
+    const row = this.database
+      .prepare(
+        `
+        SELECT
+          authorization_id,
+          request_id,
+          decision_id,
+          tenant_id,
+          user_id,
+          memory_id,
+          proposed_action,
+          actor_id,
+          source,
+          source_authority,
+          execution_applied,
+          mutation_applied,
+          created_at
+        FROM enterprise_memory_action_authorizations
+        WHERE tenant_id = ?
+          AND user_id = ?
+          AND authorization_id = ?
+        `,
+      )
+      .get(
+        tenantId,
+        userId,
+        authorizationId,
+      ) as
+      | {
+          authorization_id: string
+          request_id: string
+          decision_id: string
+          tenant_id: string
+          user_id: string
+          memory_id: string
+          proposed_action: string
+          actor_id: string
+          source: string
+          source_authority: number
+          execution_applied: number
+          mutation_applied: number
+          created_at: string
+        }
+      | undefined
+
+    if (!row) {
+      return undefined
+    }
+
+    if (
+      row.execution_applied !== 0 ||
+      row.mutation_applied !== 0
+    ) {
+      throw new Error(
+        'Governed memory action authorization applied execution or mutation.',
+      )
+    }
+
+    const history =
+      this.readMemoryActionAuthorizationHistory({
+        tenantId,
+        userId,
+        authorizationId,
+        limit: 500,
+      })
+
+    const latest = history[history.length - 1]
+
+    if (!latest) {
+      throw new Error(
+        'Governed memory action authorization has no append-only history.',
+      )
+    }
+
+    if (
+      latest.requestId !== row.request_id ||
+      latest.decisionId !== row.decision_id ||
+      latest.memoryId !== row.memory_id
+    ) {
+      throw new Error(
+        'Governed memory action authorization history violated identity linkage.',
+      )
+    }
+
+    return {
+      workflowVersion: 1,
+      authorizationId: row.authorization_id,
+      requestId: row.request_id,
+      decisionId: row.decision_id,
+      tenantId: row.tenant_id,
+      userId: row.user_id,
+      memoryId: row.memory_id,
+      proposedAction: row.proposed_action,
+      status: latest.resultingStatus,
+      createdAt: row.created_at,
+      actorId: row.actor_id,
+      source: row.source,
+      sourceAuthority: row.source_authority,
+      executionApplied: false,
+      mutationApplied: false,
+    }
+  }
+
   transitionMemoryReviewRequest(
     input: TransitionGovernedMemoryReviewRequestInput,
   ): GovernedMemoryReviewEvent {
@@ -3341,6 +3872,136 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
         JSON.stringify(event),
         event.createdAt,
       )
+
+    return event
+  }
+
+  transitionMemoryActionAuthorization(
+    input: TransitionGovernedMemoryActionAuthorizationInput,
+  ): GovernedMemoryActionAuthorizationEvent {
+    const current = this.readMemoryActionAuthorization({
+      tenantId: input.tenantId,
+      userId: input.userId,
+      authorizationId: input.authorizationId,
+    })
+
+    if (!current) {
+      throw new Error(
+        'Governed memory action authorization was not found in the requested scope.',
+      )
+    }
+
+    if (current.status !== 'pending') {
+      throw new Error(
+        `Governed memory action authorization status ${current.status} is terminal.`,
+      )
+    }
+
+    const reason =
+      input.reason?.trim() ?? ''
+
+    if (
+      input.targetStatus === 'denied' &&
+      reason.length === 0
+    ) {
+      throw new Error(
+        'Denied governed memory action authorizations require a reason.',
+      )
+    }
+
+    const eventTypeByStatus = {
+      authorized: 'authorization-authorized',
+      denied: 'authorization-denied',
+      expired: 'authorization-expired',
+      cancelled: 'authorization-cancelled',
+    } as const
+
+    const event: GovernedMemoryActionAuthorizationEvent = {
+      workflowVersion: 1,
+      eventId: input.eventId ?? randomUUID(),
+      authorizationId: current.authorizationId,
+      requestId: current.requestId,
+      decisionId: current.decisionId,
+      tenantId: current.tenantId,
+      userId: current.userId,
+      memoryId: current.memoryId,
+      eventType:
+        eventTypeByStatus[input.targetStatus],
+      resultingStatus: input.targetStatus,
+      actorId: assertNonEmpty(
+        input.actorId,
+        'actorId',
+      ),
+      source: assertNonEmpty(
+        input.source,
+        'source',
+      ),
+      sourceAuthority: assertScore(
+        input.sourceAuthority,
+        'sourceAuthority',
+      ),
+      reason:
+        reason ||
+        `Governed memory action authorization ${input.targetStatus}.`,
+      createdAt:
+        input.createdAt ?? new Date().toISOString(),
+      executionApplied: false,
+      mutationApplied: false,
+    }
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      this.database
+        .prepare(
+          `
+          INSERT INTO enterprise_memory_action_authorization_events (
+            event_id,
+            authorization_id,
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            event_type,
+            resulting_status,
+            actor_id,
+            source,
+            source_authority,
+            reason,
+            execution_applied,
+            mutation_applied,
+            payload_json,
+            created_at
+          )
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          event.eventId,
+          event.authorizationId,
+          event.requestId,
+          event.decisionId,
+          event.tenantId,
+          event.userId,
+          event.memoryId,
+          event.eventType,
+          event.resultingStatus,
+          event.actorId,
+          event.source,
+          event.sourceAuthority,
+          event.reason,
+          0,
+          0,
+          JSON.stringify(event),
+          event.createdAt,
+        )
+
+      this.database.exec('COMMIT')
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
 
     return event
   }
