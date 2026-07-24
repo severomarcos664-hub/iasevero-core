@@ -4308,6 +4308,224 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     return event
   }
 
+  readMemoryActionExecutionHistory(
+    scope: GovernedMemoryActionExecutionHistoryScope,
+  ): GovernedMemoryActionExecutionEvent[] {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const executionId = assertNonEmpty(
+      scope.executionId,
+      'executionId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 100, 500),
+    )
+
+    const rows = this.database
+      .prepare(
+        `
+          SELECT payload_json
+          FROM enterprise_memory_action_execution_events
+          WHERE tenant_id = ?
+            AND user_id = ?
+            AND execution_id = ?
+          ORDER BY sequence ASC
+          LIMIT ?
+        `,
+      )
+      .all(
+        tenantId,
+        userId,
+        executionId,
+        limit,
+      ) as Array<{
+        payload_json: string
+      }>
+
+    return rows.map((row) => {
+      const event = JSON.parse(
+        row.payload_json,
+      ) as GovernedMemoryActionExecutionEvent
+
+      if (
+        event.tenantId !== tenantId ||
+        event.userId !== userId ||
+        event.executionId !== executionId
+      ) {
+        throw new Error(
+          'Governed memory action execution event violated scope isolation.',
+        )
+      }
+
+      if (
+        typeof event.executionApplied !== 'boolean' ||
+        typeof event.mutationApplied !== 'boolean'
+      ) {
+        throw new Error(
+          'Governed memory action execution event contains invalid application flags.',
+        )
+      }
+
+      if (
+        event.mutationApplied === true &&
+        event.executionApplied !== true
+      ) {
+        throw new Error(
+          'Governed memory action execution event applied mutation without execution.',
+        )
+      }
+
+      if (
+        event.executionApplied === true &&
+        event.resultingStatus !== 'succeeded'
+      ) {
+        throw new Error(
+          'Governed memory action execution event applied execution outside succeeded status.',
+        )
+      }
+
+      return event
+    })
+  }
+
+  readMemoryActionExecution(
+    scope: GovernedMemoryActionExecutionScope,
+  ): GovernedMemoryActionExecution | undefined {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const executionId = assertNonEmpty(
+      scope.executionId,
+      'executionId',
+    )
+
+    const row = this.database
+      .prepare(
+        `
+          SELECT
+            execution_id,
+            authorization_id,
+            request_id,
+            decision_id,
+            tenant_id,
+            user_id,
+            memory_id,
+            proposed_action,
+            execution_key,
+            actor_id,
+            source,
+            source_authority,
+            execution_applied,
+            mutation_applied,
+            created_at
+          FROM enterprise_memory_action_executions
+          WHERE tenant_id = ?
+            AND user_id = ?
+            AND execution_id = ?
+        `,
+      )
+      .get(
+        tenantId,
+        userId,
+        executionId,
+      ) as
+      | {
+          execution_id: string
+          authorization_id: string
+          request_id: string
+          decision_id: string
+          tenant_id: string
+          user_id: string
+          memory_id: string
+          proposed_action: string
+          execution_key: string
+          actor_id: string
+          source: string
+          source_authority: number
+          execution_applied: number
+          mutation_applied: number
+          created_at: string
+        }
+      | undefined
+
+    if (!row) {
+      return undefined
+    }
+
+    if (
+      row.execution_applied !== 0 ||
+      row.mutation_applied !== 0
+    ) {
+      throw new Error(
+        'Governed memory action execution base record applied execution or mutation.',
+      )
+    }
+
+    const history =
+      this.readMemoryActionExecutionHistory({
+        tenantId,
+        userId,
+        executionId,
+        limit: 500,
+      })
+
+    const latest = history[history.length - 1]
+
+    if (!latest) {
+      throw new Error(
+        'Governed memory action execution has no append-only history.',
+      )
+    }
+
+    if (
+      latest.authorizationId !== row.authorization_id ||
+      latest.requestId !== row.request_id ||
+      latest.decisionId !== row.decision_id ||
+      latest.memoryId !== row.memory_id
+    ) {
+      throw new Error(
+        'Governed memory action execution history violated identity linkage.',
+      )
+    }
+
+    return {
+      workflowVersion: 1,
+      executionId: row.execution_id,
+      authorizationId: row.authorization_id,
+      requestId: row.request_id,
+      decisionId: row.decision_id,
+      tenantId: row.tenant_id,
+      userId: row.user_id,
+      memoryId: row.memory_id,
+      proposedAction: row.proposed_action,
+      executionKey: row.execution_key,
+      status: latest.resultingStatus,
+      createdAt: row.created_at,
+      actorId: row.actor_id,
+      source: row.source,
+      sourceAuthority: row.source_authority,
+      executionApplied: latest.executionApplied,
+      mutationApplied: latest.mutationApplied,
+    }
+  }
+
   createMemoryActionExecution(
     input: CreateGovernedMemoryActionExecutionInput,
   ): GovernedMemoryActionExecution {
