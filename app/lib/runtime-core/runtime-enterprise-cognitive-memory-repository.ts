@@ -1014,6 +1014,106 @@ export type GovernedMemoryActionAuthorizationHistoryScope = {
   limit?: number
 }
 
+export type GovernedMemoryActionExecutionStatus =
+  | 'pending'
+  | 'running'
+  | 'succeeded'
+  | 'failed'
+  | 'cancelled'
+
+export type GovernedMemoryActionExecutionEventType =
+  | 'execution-requested'
+  | 'execution-started'
+  | 'execution-succeeded'
+  | 'execution-failed'
+  | 'execution-cancelled'
+
+export type GovernedMemoryActionExecution = {
+  workflowVersion: 1
+  executionId: string
+  authorizationId: string
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  proposedAction: string
+  executionKey: string
+  status: GovernedMemoryActionExecutionStatus
+  createdAt: string
+  actorId: string
+  source: string
+  sourceAuthority: number
+  executionApplied: boolean
+  mutationApplied: boolean
+}
+
+export type GovernedMemoryActionExecutionEvent = {
+  workflowVersion: 1
+  eventId: string
+  executionId: string
+  authorizationId: string
+  requestId: string
+  decisionId: string
+  tenantId: string
+  userId: string
+  memoryId: string
+  eventType: GovernedMemoryActionExecutionEventType
+  resultingStatus: GovernedMemoryActionExecutionStatus
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason: string
+  result: Record<string, unknown> | null
+  error: string | null
+  createdAt: string
+  executionApplied: boolean
+  mutationApplied: boolean
+}
+
+export type CreateGovernedMemoryActionExecutionInput = {
+  authorization: GovernedMemoryActionAuthorization
+  executionId: string
+  executionKey: string
+  actorId: string
+  source: string
+  sourceAuthority: number
+  createdAt?: string
+}
+
+export type TransitionGovernedMemoryActionExecutionInput = {
+  eventId?: string
+  executionId: string
+  tenantId: string
+  userId: string
+  targetStatus: Exclude<
+    GovernedMemoryActionExecutionStatus,
+    'pending'
+  >
+  actorId: string
+  source: string
+  sourceAuthority: number
+  reason?: string
+  result?: Record<string, unknown>
+  error?: string
+  executionApplied?: boolean
+  mutationApplied?: boolean
+  createdAt?: string
+}
+
+export type GovernedMemoryActionExecutionScope = {
+  tenantId: string
+  userId: string
+  executionId: string
+}
+
+export type GovernedMemoryActionExecutionHistoryScope = {
+  tenantId: string
+  userId: string
+  executionId: string
+  limit?: number
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
@@ -1424,6 +1524,208 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
       SELECT RAISE(
         ABORT,
         'enterprise memory action authorization events are append-only'
+      );
+    END;
+
+
+    CREATE TABLE IF NOT EXISTS
+      enterprise_memory_action_executions (
+        sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+        execution_id TEXT NOT NULL UNIQUE,
+        authorization_id TEXT NOT NULL UNIQUE,
+        request_id TEXT NOT NULL,
+        decision_id TEXT NOT NULL,
+        tenant_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        memory_id TEXT NOT NULL,
+        proposed_action TEXT NOT NULL,
+        execution_key TEXT NOT NULL UNIQUE,
+        actor_id TEXT NOT NULL,
+        source TEXT NOT NULL,
+        source_authority INTEGER NOT NULL CHECK (
+          source_authority BETWEEN 0 AND 100
+        ),
+        execution_applied INTEGER NOT NULL CHECK (
+          execution_applied = 0
+        ),
+        mutation_applied INTEGER NOT NULL CHECK (
+          mutation_applied = 0
+        ),
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY (authorization_id)
+          REFERENCES enterprise_memory_action_authorizations(
+            authorization_id
+          ),
+        FOREIGN KEY (request_id)
+          REFERENCES enterprise_memory_review_requests(request_id),
+        FOREIGN KEY (memory_id)
+          REFERENCES enterprise_cognitive_memories(memory_id)
+      );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_executions_scope
+    ON enterprise_memory_action_executions (
+      tenant_id,
+      user_id,
+      execution_id
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_executions_request
+    ON enterprise_memory_action_executions (
+      tenant_id,
+      user_id,
+      request_id,
+      sequence
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_executions_decision
+    ON enterprise_memory_action_executions (
+      tenant_id,
+      user_id,
+      decision_id,
+      sequence
+    );
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_execution_update
+    BEFORE UPDATE ON enterprise_memory_action_executions
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action executions are append-only'
+      );
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_execution_delete
+    BEFORE DELETE ON enterprise_memory_action_executions
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action executions are append-only'
+      );
+    END;
+
+    CREATE TABLE IF NOT EXISTS
+      enterprise_memory_action_execution_events (
+        sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_id TEXT NOT NULL UNIQUE,
+        execution_id TEXT NOT NULL,
+        authorization_id TEXT NOT NULL,
+        request_id TEXT NOT NULL,
+        decision_id TEXT NOT NULL,
+        tenant_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        memory_id TEXT NOT NULL,
+        event_type TEXT NOT NULL CHECK (
+          event_type IN (
+            'execution-requested',
+            'execution-started',
+            'execution-succeeded',
+            'execution-failed',
+            'execution-cancelled'
+          )
+        ),
+        resulting_status TEXT NOT NULL CHECK (
+          resulting_status IN (
+            'pending',
+            'running',
+            'succeeded',
+            'failed',
+            'cancelled'
+          )
+        ),
+        actor_id TEXT NOT NULL,
+        source TEXT NOT NULL,
+        source_authority INTEGER NOT NULL CHECK (
+          source_authority BETWEEN 0 AND 100
+        ),
+        reason TEXT NOT NULL,
+        result_json TEXT,
+        error_text TEXT,
+        execution_applied INTEGER NOT NULL CHECK (
+          execution_applied IN (0, 1)
+        ),
+        mutation_applied INTEGER NOT NULL CHECK (
+          mutation_applied IN (0, 1)
+        ),
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+
+        CHECK (
+          execution_applied = 0
+          OR resulting_status = 'succeeded'
+        ),
+
+        CHECK (
+          mutation_applied = 0
+          OR execution_applied = 1
+        ),
+
+        CHECK (
+          resulting_status != 'failed'
+          OR length(trim(error_text)) > 0
+        ),
+
+        FOREIGN KEY (execution_id)
+          REFERENCES enterprise_memory_action_executions(execution_id),
+        FOREIGN KEY (authorization_id)
+          REFERENCES enterprise_memory_action_authorizations(
+            authorization_id
+          ),
+        FOREIGN KEY (request_id)
+          REFERENCES enterprise_memory_review_requests(request_id),
+        FOREIGN KEY (memory_id)
+          REFERENCES enterprise_cognitive_memories(memory_id)
+      );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_execution_events_scope
+    ON enterprise_memory_action_execution_events (
+      tenant_id,
+      user_id,
+      execution_id,
+      sequence
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_execution_events_authorization
+    ON enterprise_memory_action_execution_events (
+      tenant_id,
+      user_id,
+      authorization_id,
+      sequence
+    );
+
+    CREATE INDEX IF NOT EXISTS
+      idx_enterprise_memory_action_execution_events_request
+    ON enterprise_memory_action_execution_events (
+      tenant_id,
+      user_id,
+      request_id,
+      sequence
+    );
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_execution_event_update
+    BEFORE UPDATE ON enterprise_memory_action_execution_events
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action execution events are append-only'
+      );
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS
+      prevent_enterprise_memory_action_execution_event_delete
+    BEFORE DELETE ON enterprise_memory_action_execution_events
+    BEGIN
+      SELECT RAISE(
+        ABORT,
+        'enterprise memory action execution events are append-only'
       );
     END;
 
