@@ -4308,6 +4308,237 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     return event
   }
 
+  createMemoryActionExecution(
+    input: CreateGovernedMemoryActionExecutionInput,
+  ): GovernedMemoryActionExecution {
+    const suppliedAuthorization = input.authorization
+
+    const authorization =
+      this.readMemoryActionAuthorization({
+        tenantId: suppliedAuthorization.tenantId,
+        userId: suppliedAuthorization.userId,
+        authorizationId:
+          suppliedAuthorization.authorizationId,
+      })
+
+    if (!authorization) {
+      throw new Error(
+        'Governed memory action authorization was not found in the requested scope.',
+      )
+    }
+
+    if (authorization.status !== 'authorized') {
+      throw new Error(
+        `Governed memory action authorization status ${authorization.status} cannot create an execution.`,
+      )
+    }
+
+    if (
+      authorization.requestId !==
+        suppliedAuthorization.requestId ||
+      authorization.decisionId !==
+        suppliedAuthorization.decisionId ||
+      authorization.memoryId !==
+        suppliedAuthorization.memoryId ||
+      authorization.proposedAction !==
+        suppliedAuthorization.proposedAction
+    ) {
+      throw new Error(
+        'Governed memory action authorization identity linkage was violated.',
+      )
+    }
+
+    if (
+      authorization.executionApplied !== false ||
+      authorization.mutationApplied !== false
+    ) {
+      throw new Error(
+        'Governed memory action authorization already applied execution or mutation.',
+      )
+    }
+
+    const executionId = assertNonEmpty(
+      input.executionId,
+      'executionId',
+    )
+
+    const executionKey = assertNonEmpty(
+      input.executionKey,
+      'executionKey',
+    )
+
+    const actorId = assertNonEmpty(
+      input.actorId,
+      'actorId',
+    )
+
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    const createdAt =
+      input.createdAt ?? new Date().toISOString()
+
+    const execution: GovernedMemoryActionExecution = {
+      workflowVersion: 1,
+      executionId,
+      authorizationId: authorization.authorizationId,
+      requestId: authorization.requestId,
+      decisionId: authorization.decisionId,
+      tenantId: authorization.tenantId,
+      userId: authorization.userId,
+      memoryId: authorization.memoryId,
+      proposedAction: authorization.proposedAction,
+      executionKey,
+      status: 'pending',
+      createdAt,
+      actorId,
+      source,
+      sourceAuthority,
+      executionApplied: false,
+      mutationApplied: false,
+    }
+
+    const requestedEvent:
+      GovernedMemoryActionExecutionEvent = {
+        workflowVersion: 1,
+        eventId: randomUUID(),
+        executionId: execution.executionId,
+        authorizationId: execution.authorizationId,
+        requestId: execution.requestId,
+        decisionId: execution.decisionId,
+        tenantId: execution.tenantId,
+        userId: execution.userId,
+        memoryId: execution.memoryId,
+        eventType: 'execution-requested',
+        resultingStatus: 'pending',
+        actorId,
+        source,
+        sourceAuthority,
+        reason:
+          'Governed memory action execution was requested from an authorized action.',
+        result: null,
+        error: null,
+        createdAt,
+        executionApplied: false,
+        mutationApplied: false,
+      }
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      this.database
+        .prepare(
+          `
+            INSERT INTO enterprise_memory_action_executions (
+              execution_id,
+              authorization_id,
+              request_id,
+              decision_id,
+              tenant_id,
+              user_id,
+              memory_id,
+              proposed_action,
+              execution_key,
+              actor_id,
+              source,
+              source_authority,
+              execution_applied,
+              mutation_applied,
+              payload_json,
+              created_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `,
+        )
+        .run(
+          execution.executionId,
+          execution.authorizationId,
+          execution.requestId,
+          execution.decisionId,
+          execution.tenantId,
+          execution.userId,
+          execution.memoryId,
+          execution.proposedAction,
+          execution.executionKey,
+          execution.actorId,
+          execution.source,
+          execution.sourceAuthority,
+          0,
+          0,
+          JSON.stringify(execution),
+          execution.createdAt,
+        )
+
+      this.database
+        .prepare(
+          `
+            INSERT INTO enterprise_memory_action_execution_events (
+              event_id,
+              execution_id,
+              authorization_id,
+              request_id,
+              decision_id,
+              tenant_id,
+              user_id,
+              memory_id,
+              event_type,
+              resulting_status,
+              actor_id,
+              source,
+              source_authority,
+              reason,
+              result_json,
+              error_text,
+              execution_applied,
+              mutation_applied,
+              payload_json,
+              created_at
+            )
+            VALUES (
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+            )
+          `,
+        )
+        .run(
+          requestedEvent.eventId,
+          requestedEvent.executionId,
+          requestedEvent.authorizationId,
+          requestedEvent.requestId,
+          requestedEvent.decisionId,
+          requestedEvent.tenantId,
+          requestedEvent.userId,
+          requestedEvent.memoryId,
+          requestedEvent.eventType,
+          requestedEvent.resultingStatus,
+          requestedEvent.actorId,
+          requestedEvent.source,
+          requestedEvent.sourceAuthority,
+          requestedEvent.reason,
+          null,
+          null,
+          0,
+          0,
+          JSON.stringify(requestedEvent),
+          requestedEvent.createdAt,
+        )
+
+      this.database.exec('COMMIT')
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
+
+    return execution
+  }
+
   close(): void {
     this.database.close()
   }
