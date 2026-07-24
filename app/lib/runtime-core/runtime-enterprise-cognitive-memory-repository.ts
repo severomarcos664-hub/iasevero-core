@@ -4757,6 +4757,248 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     return execution
   }
 
+  transitionMemoryActionExecution(
+    input: TransitionGovernedMemoryActionExecutionInput,
+  ): GovernedMemoryActionExecutionEvent {
+    const executionId = assertNonEmpty(
+      input.executionId,
+      'executionId',
+    )
+
+    const tenantId = assertNonEmpty(
+      input.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      input.userId,
+      'userId',
+    )
+
+    const actorId = assertNonEmpty(
+      input.actorId,
+      'actorId',
+    )
+
+    const source = assertNonEmpty(
+      input.source,
+      'source',
+    )
+
+    const sourceAuthority = assertScore(
+      input.sourceAuthority,
+      'sourceAuthority',
+    )
+
+    const reason = input.reason?.trim() ?? ''
+    const errorText = input.error?.trim() || null
+    const result = input.result ?? null
+    const executionApplied =
+      input.executionApplied ?? false
+    const mutationApplied =
+      input.mutationApplied ?? false
+
+    if (
+      input.targetStatus === 'succeeded' &&
+      result === null
+    ) {
+      throw new Error(
+        'Succeeded governed memory action executions require a result.',
+      )
+    }
+
+    if (
+      input.targetStatus === 'failed' &&
+      errorText === null
+    ) {
+      throw new Error(
+        'Failed governed memory action executions require an error.',
+      )
+    }
+
+    if (
+      input.targetStatus === 'cancelled' &&
+      reason.length === 0
+    ) {
+      throw new Error(
+        'Cancelled governed memory action executions require a reason.',
+      )
+    }
+
+    if (
+      executionApplied === true &&
+      input.targetStatus !== 'succeeded'
+    ) {
+      throw new Error(
+        'Governed memory action execution can apply execution only when succeeded.',
+      )
+    }
+
+    if (
+      mutationApplied === true &&
+      executionApplied !== true
+    ) {
+      throw new Error(
+        'Governed memory action execution cannot apply mutation without execution.',
+      )
+    }
+
+    const allowedTransitions: Record<
+      GovernedMemoryActionExecutionStatus,
+      GovernedMemoryActionExecutionStatus[]
+    > = {
+      pending: ['running', 'cancelled'],
+      running: [
+        'succeeded',
+        'failed',
+        'cancelled',
+      ],
+      succeeded: [],
+      failed: [],
+      cancelled: [],
+    }
+
+    const eventTypeByStatus: Record<
+      Exclude<
+        GovernedMemoryActionExecutionStatus,
+        'pending'
+      >,
+      GovernedMemoryActionExecutionEventType
+    > = {
+      running: 'execution-started',
+      succeeded: 'execution-succeeded',
+      failed: 'execution-failed',
+      cancelled: 'execution-cancelled',
+    }
+
+    this.database.exec('BEGIN IMMEDIATE')
+
+    try {
+      const current = this.readMemoryActionExecution({
+        tenantId,
+        userId,
+        executionId,
+      })
+
+      if (!current) {
+        throw new Error(
+          'Governed memory action execution was not found in the requested scope.',
+        )
+      }
+
+      if (
+        !allowedTransitions[current.status].includes(
+          input.targetStatus,
+        )
+      ) {
+        throw new Error(
+          `Invalid governed memory action execution transition ${current.status} -> ${input.targetStatus}.`,
+        )
+      }
+
+      if (
+        current.executionApplied === true ||
+        current.mutationApplied === true
+      ) {
+        throw new Error(
+          'Governed memory action execution already applied execution or mutation.',
+        )
+      }
+
+      const event:
+        GovernedMemoryActionExecutionEvent = {
+          workflowVersion: 1,
+          eventId: input.eventId ?? randomUUID(),
+          executionId: current.executionId,
+          authorizationId: current.authorizationId,
+          requestId: current.requestId,
+          decisionId: current.decisionId,
+          tenantId: current.tenantId,
+          userId: current.userId,
+          memoryId: current.memoryId,
+          eventType:
+            eventTypeByStatus[input.targetStatus],
+          resultingStatus: input.targetStatus,
+          actorId,
+          source,
+          sourceAuthority,
+          reason:
+            reason ||
+            `Governed memory action execution transitioned to ${input.targetStatus}.`,
+          result,
+          error: errorText,
+          createdAt:
+            input.createdAt ??
+            new Date().toISOString(),
+          executionApplied,
+          mutationApplied,
+        }
+
+      this.database
+        .prepare(
+          `
+            INSERT INTO enterprise_memory_action_execution_events (
+              event_id,
+              execution_id,
+              authorization_id,
+              request_id,
+              decision_id,
+              tenant_id,
+              user_id,
+              memory_id,
+              event_type,
+              resulting_status,
+              actor_id,
+              source,
+              source_authority,
+              reason,
+              result_json,
+              error_text,
+              execution_applied,
+              mutation_applied,
+              payload_json,
+              created_at
+            )
+            VALUES (
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+            )
+          `,
+        )
+        .run(
+          event.eventId,
+          event.executionId,
+          event.authorizationId,
+          event.requestId,
+          event.decisionId,
+          event.tenantId,
+          event.userId,
+          event.memoryId,
+          event.eventType,
+          event.resultingStatus,
+          event.actorId,
+          event.source,
+          event.sourceAuthority,
+          event.reason,
+          event.result === null
+            ? null
+            : JSON.stringify(event.result),
+          event.error,
+          event.executionApplied ? 1 : 0,
+          event.mutationApplied ? 1 : 0,
+          JSON.stringify(event),
+          event.createdAt,
+        )
+
+      this.database.exec('COMMIT')
+
+      return event
+    } catch (error) {
+      this.database.exec('ROLLBACK')
+      throw error
+    }
+  }
+
   close(): void {
     this.database.close()
   }
