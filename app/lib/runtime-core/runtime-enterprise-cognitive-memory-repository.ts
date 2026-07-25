@@ -1114,6 +1114,63 @@ export type GovernedMemoryActionExecutionHistoryScope = {
   limit?: number
 }
 
+
+export type GovernedMemoryEndToEndAuditScope = {
+  tenantId: string
+  userId: string
+  requestId: string
+  authorizationId: string
+  executionId: string
+  limit?: number
+}
+
+export type GovernedMemoryEndToEndAuditStage =
+  | 'assessment'
+  | 'review'
+  | 'authorization'
+  | 'execution'
+
+export type GovernedMemoryEndToEndAuditTimelineEntry = {
+  stage: GovernedMemoryEndToEndAuditStage
+  eventId: string
+  eventType: string
+  resultingStatus: string | null
+  createdAt: string
+}
+
+export type GovernedMemoryEndToEndAuditReport = {
+  workflowVersion: 1
+  tenantId: string
+  userId: string
+  memoryId: string
+  decisionId: string
+  requestId: string
+  authorizationId: string
+  executionId: string
+  assessmentCount: number
+  reviewEventCount: number
+  authorizationEventCount: number
+  executionEventCount: number
+  totalEventCount: number
+  stagesPresent: {
+    assessment: boolean
+    review: boolean
+    authorization: boolean
+    execution: boolean
+  }
+  terminalStates: {
+    review: string
+    authorization: string
+    execution: string
+  }
+  timeline: GovernedMemoryEndToEndAuditTimelineEntry[]
+  violations: string[]
+  chainComplete: boolean
+  integrityValid: boolean
+  executionApplied: boolean
+  mutationApplied: boolean
+}
+
 export class RuntimeEnterpriseCognitiveMemoryRepository {
   private readonly database: SQLiteDatabase
 
@@ -4996,6 +5053,328 @@ export class RuntimeEnterpriseCognitiveMemoryRepository {
     } catch (error) {
       this.database.exec('ROLLBACK')
       throw error
+    }
+  }
+
+
+  readMemoryEndToEndAudit(
+    scope: GovernedMemoryEndToEndAuditScope,
+  ): GovernedMemoryEndToEndAuditReport {
+    const tenantId = assertNonEmpty(
+      scope.tenantId,
+      'tenantId',
+    )
+
+    const userId = assertNonEmpty(
+      scope.userId,
+      'userId',
+    )
+
+    const requestId = assertNonEmpty(
+      scope.requestId,
+      'requestId',
+    )
+
+    const authorizationId = assertNonEmpty(
+      scope.authorizationId,
+      'authorizationId',
+    )
+
+    const executionId = assertNonEmpty(
+      scope.executionId,
+      'executionId',
+    )
+
+    const limit = Math.max(
+      1,
+      Math.min(scope.limit ?? 500, 500),
+    )
+
+    const request = this.readMemoryReviewRequest({
+      tenantId,
+      userId,
+      requestId,
+    })
+
+    if (!request) {
+      throw new Error(
+        'Governed memory review request was not found in the requested audit scope.',
+      )
+    }
+
+    const authorization =
+      this.readMemoryActionAuthorization({
+        tenantId,
+        userId,
+        authorizationId,
+      })
+
+    if (!authorization) {
+      throw new Error(
+        'Governed memory action authorization was not found in the requested audit scope.',
+      )
+    }
+
+    const execution = this.readMemoryActionExecution({
+      tenantId,
+      userId,
+      executionId,
+    })
+
+    if (!execution) {
+      throw new Error(
+        'Governed memory action execution was not found in the requested audit scope.',
+      )
+    }
+
+    const assessmentHistory =
+      this.readMemoryUtilityAssessmentHistory({
+        tenantId,
+        userId,
+        memoryId: request.memoryId,
+        limit,
+      })
+
+    const reviewHistory = this.readMemoryReviewHistory({
+      tenantId,
+      userId,
+      requestId,
+      limit,
+    })
+
+    const authorizationHistory =
+      this.readMemoryActionAuthorizationHistory({
+        tenantId,
+        userId,
+        authorizationId,
+        limit,
+      })
+
+    const executionHistory =
+      this.readMemoryActionExecutionHistory({
+        tenantId,
+        userId,
+        executionId,
+        limit,
+      })
+
+    const violations: string[] = []
+
+    if (
+      authorization.requestId !== request.requestId ||
+      authorization.decisionId !== request.decisionId ||
+      authorization.memoryId !== request.memoryId
+    ) {
+      violations.push(
+        'Authorization identity linkage does not match the review request.',
+      )
+    }
+
+    if (
+      execution.authorizationId !==
+        authorization.authorizationId ||
+      execution.requestId !== request.requestId ||
+      execution.decisionId !== request.decisionId ||
+      execution.memoryId !== request.memoryId
+    ) {
+      violations.push(
+        'Execution identity linkage does not match the authorization and review request.',
+      )
+    }
+
+    if (reviewHistory.length === 0) {
+      violations.push(
+        'Review request has no append-only history.',
+      )
+    }
+
+    if (authorizationHistory.length === 0) {
+      violations.push(
+        'Action authorization has no append-only history.',
+      )
+    }
+
+    if (executionHistory.length === 0) {
+      violations.push(
+        'Action execution has no append-only history.',
+      )
+    }
+
+    const asRecord = (
+      value: unknown,
+    ): Record<string, unknown> =>
+      typeof value === 'object' &&
+      value !== null
+        ? value as Record<string, unknown>
+        : {}
+
+    const readString = (
+      record: Record<string, unknown>,
+      ...fields: string[]
+    ): string | null => {
+      for (const field of fields) {
+        const value = record[field]
+
+        if (
+          typeof value === 'string' &&
+          value.length > 0
+        ) {
+          return value
+        }
+      }
+
+      return null
+    }
+
+    const createTimelineEntry = (
+      stage: GovernedMemoryEndToEndAuditStage,
+      value: unknown,
+      index: number,
+    ): GovernedMemoryEndToEndAuditTimelineEntry => {
+      const record = asRecord(value)
+
+      return {
+        stage,
+        eventId:
+          readString(
+            record,
+            'eventId',
+            'assessmentId',
+          ) ??
+          `${stage}-event-${index + 1}`,
+        eventType:
+          readString(
+            record,
+            'eventType',
+            'assessmentType',
+            'recommendation',
+          ) ??
+          `${stage}-recorded`,
+        resultingStatus:
+          readString(
+            record,
+            'resultingStatus',
+            'status',
+            'recommendation',
+          ),
+        createdAt:
+          readString(
+            record,
+            'createdAt',
+            'assessedAt',
+          ) ??
+          '',
+      }
+    }
+
+    const timeline = [
+      ...assessmentHistory.map(
+        (event, index) =>
+          createTimelineEntry(
+            'assessment',
+            event,
+            index,
+          ),
+      ),
+      ...reviewHistory.map(
+        (event, index) =>
+          createTimelineEntry(
+            'review',
+            event,
+            index,
+          ),
+      ),
+      ...authorizationHistory.map(
+        (event, index) =>
+          createTimelineEntry(
+            'authorization',
+            event,
+            index,
+          ),
+      ),
+      ...executionHistory.map(
+        (event, index) =>
+          createTimelineEntry(
+            'execution',
+            event,
+            index,
+          ),
+      ),
+    ].sort((left, right) => {
+      const createdAtComparison =
+        left.createdAt.localeCompare(right.createdAt)
+
+      if (createdAtComparison !== 0) {
+        return createdAtComparison
+      }
+
+      return left.eventId.localeCompare(right.eventId)
+    })
+
+    const stagesPresent = {
+      assessment: assessmentHistory.length > 0,
+      review: reviewHistory.length > 0,
+      authorization:
+        authorizationHistory.length > 0,
+      execution: executionHistory.length > 0,
+    }
+
+    const chainComplete =
+      stagesPresent.assessment &&
+      stagesPresent.review &&
+      stagesPresent.authorization &&
+      stagesPresent.execution
+
+    const executionApplied =
+      authorization.executionApplied ||
+      execution.executionApplied ||
+      executionHistory.some(
+        (event) => event.executionApplied,
+      )
+
+    const mutationApplied =
+      request.mutationApplied ||
+      authorization.mutationApplied ||
+      execution.mutationApplied ||
+      reviewHistory.some(
+        (event) => event.mutationApplied,
+      ) ||
+      authorizationHistory.some(
+        (event) => event.mutationApplied,
+      ) ||
+      executionHistory.some(
+        (event) => event.mutationApplied,
+      )
+
+    return {
+      workflowVersion: 1,
+      tenantId,
+      userId,
+      memoryId: request.memoryId,
+      decisionId: request.decisionId,
+      requestId,
+      authorizationId,
+      executionId,
+      assessmentCount: assessmentHistory.length,
+      reviewEventCount: reviewHistory.length,
+      authorizationEventCount:
+        authorizationHistory.length,
+      executionEventCount: executionHistory.length,
+      totalEventCount: timeline.length,
+      stagesPresent,
+      terminalStates: {
+        review: request.status,
+        authorization: authorization.status,
+        execution: execution.status,
+      },
+      timeline,
+      violations,
+      chainComplete,
+      integrityValid:
+        chainComplete &&
+        violations.length === 0,
+      executionApplied,
+      mutationApplied,
     }
   }
 
