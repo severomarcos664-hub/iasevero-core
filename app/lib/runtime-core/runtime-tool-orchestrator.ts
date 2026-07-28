@@ -1,4 +1,7 @@
-import { createRuntimeToolRegistry } from './runtime-tool-registry'
+import {
+  createRuntimeToolRegistry,
+  type RuntimeTool,
+} from './runtime-tool-registry'
 import { coordinateRuntimeWorkflow } from './runtime-workflow-coordinator'
 
 export interface RuntimeOrchestratedTool {
@@ -25,7 +28,7 @@ export function orchestrateRuntimeTools(): RuntimeToolOrchestrationReport {
   const registry = createRuntimeToolRegistry()
   const workflow = coordinateRuntimeWorkflow()
 
-  const tools = registry.tools.map((tool: any) => ({
+  const tools = registry.tools.map((tool: RuntimeTool) => ({
     id: tool.id,
     selected: tool.allowed,
     strategy:
@@ -37,10 +40,10 @@ export function orchestrateRuntimeTools(): RuntimeToolOrchestrationReport {
   }))
 
   const selectedTools =
-    tools.filter((t: any) => t.selected).length
+    tools.filter((tool) => tool.selected).length
 
   const blockedTools =
-    tools.filter((t: any) => !t.selected).length
+    tools.filter((tool) => !tool.selected).length
 
   return {
     orchestrationId:

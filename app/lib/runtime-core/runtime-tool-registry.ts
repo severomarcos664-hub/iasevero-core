@@ -16,7 +16,7 @@ export type RuntimeTool = {
   risk: RuntimeToolRisk
   timeoutMs: number
   retries: number
-  fallback?: string
+  fallback: string
   allowed: boolean
   critical: boolean
 }
