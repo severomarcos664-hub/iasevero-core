@@ -20,6 +20,7 @@ import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distribut
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
 import { evaluateRuntimeResponseCase } from '@/app/lib/runtime-core/runtime-response-evaluation-baseline'
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
+import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orchestrator'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 const MAX_TEXT_LENGTH = 4000
@@ -278,6 +279,19 @@ const cognitiveKernel = decisionGate.kernel
           ? 'accept'
           : 'review'
 
+    const toolOrchestration = orchestrateRuntimeTools()
+
+    const toolGovernance = {
+      source: 'runtime-tool-orchestrator',
+      totalTools: toolOrchestration.totalTools,
+      selectedTools: toolOrchestration.selectedTools,
+      blockedTools: toolOrchestration.blockedTools,
+      workflowStable: toolOrchestration.workflowStable,
+      executionAllowed: toolOrchestration.executionAllowed,
+      strategy: toolOrchestration.strategy,
+      executionApplied: false,
+    } as const
+
     const traceResponse = createRuntimeTraceNode(
       'chat.response.generated',
       traceRuntime.id,
@@ -285,6 +299,7 @@ const cognitiveKernel = decisionGate.kernel
       {
         hasJob: Boolean(result.job),
         replyLength: result.reply.length,
+        toolGovernance,
       },
     )
 
@@ -306,6 +321,7 @@ const cognitiveKernel = decisionGate.kernel
         recovery: runtimeMaster.recovery,
         correlationId: runtimeMaster.correlationId,
         executionAllowed: runtimeMaster.allowed,
+        toolGovernance,
         memoryRouting:
           governedMemoryContext ?? {
             source: 'runtime-enterprise-cognitive-memory',
