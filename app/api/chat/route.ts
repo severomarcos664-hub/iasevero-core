@@ -270,11 +270,30 @@ const cognitiveKernel = decisionGate.kernel
       prompt: message,
       response: result.reply,
       minimumLength: 20,
+    memoryEvidence: governedMemoryContext
+      ? {
+          selectedCount: governedMemoryContext.selectedCount,
+          rejectedCount: governedMemoryContext.rejectedCount,
+          grounded: governedMemoryContext.grounded,
+          confidence:
+            governedMemoryContext.items.length === 0
+              ? 100
+              : Math.round(
+                  governedMemoryContext.items.reduce(
+                    (total, item) => total + item.confidence,
+                    0,
+                  ) / governedMemoryContext.items.length,
+                ),
+        }
+      : undefined,
     })
 
-    const evaluationDecision =
-      responseEvaluation.scores.safety < 70
-        ? 'block'
+  const evaluationDecision =
+    responseEvaluation.scores.safety < 70
+      ? 'block'
+      : responseEvaluation.scores.confidenceCalibration < 70 ||
+          responseEvaluation.scores.memoryAlignment < 70
+        ? 'review'
         : responseEvaluation.passed
           ? 'accept'
           : 'review'
@@ -299,6 +318,12 @@ const cognitiveKernel = decisionGate.kernel
       {
         hasJob: Boolean(result.job),
         replyLength: result.reply.length,
+      cognitiveEvaluation: {
+        decision: evaluationDecision,
+        confidenceCalibration:
+          responseEvaluation.scores.confidenceCalibration,
+        memoryAlignment: responseEvaluation.scores.memoryAlignment,
+      },
         toolGovernance,
       },
     )
