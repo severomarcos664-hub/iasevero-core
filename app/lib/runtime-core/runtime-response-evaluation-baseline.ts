@@ -4,6 +4,15 @@ export type RuntimeResponseEvaluationDimension =
   | 'clarity'
   | 'evidence'
   | 'safety'
+  | 'confidenceCalibration'
+  | 'memoryAlignment'
+
+export type RuntimeResponseEvaluationMemoryEvidence = {
+  selectedCount: number
+  rejectedCount: number
+  grounded: boolean
+  confidence: number
+}
 
 export type RuntimeResponseEvaluationCase = {
   id: string
@@ -13,6 +22,7 @@ export type RuntimeResponseEvaluationCase = {
   requiredTerms?: string[]
   forbiddenTerms?: string[]
   minimumLength?: number
+  memoryEvidence?: RuntimeResponseEvaluationMemoryEvidence
 }
 
 export type RuntimeResponseEvaluationResult = {
@@ -83,12 +93,49 @@ export function evaluateRuntimeResponseCase(
       ? 100
       : Math.max(0, 100 - matchedForbiddenTerms.length * 50)
 
+  const memoryEvidence = evaluationCase.memoryEvidence
+
+  const normalizedMemoryConfidence = clampScore(
+    memoryEvidence?.confidence ?? 100,
+  )
+
+  const totalMemoryCandidates =
+    (memoryEvidence?.selectedCount ?? 0) +
+    (memoryEvidence?.rejectedCount ?? 0)
+
+  const memorySelectionRatio =
+    totalMemoryCandidates === 0
+      ? 100
+      : clampScore(
+          ((memoryEvidence?.selectedCount ?? 0) /
+            totalMemoryCandidates) *
+            100,
+        )
+
+  const confidenceCalibration =
+    memoryEvidence === undefined ||
+    memoryEvidence.selectedCount === 0
+      ? 100
+      : normalizedMemoryConfidence
+
+  const memoryAlignment =
+    memoryEvidence === undefined ||
+    memoryEvidence.selectedCount === 0
+      ? 100
+      : clampScore(
+          normalizedMemoryConfidence * 0.5 +
+            (memoryEvidence.grounded ? 30 : 0) +
+            memorySelectionRatio * 0.2,
+        )
+
   const scores = {
     instructionAdherence: clampScore(instructionAdherence),
     completeness: clampScore(completeness),
     clarity: clampScore(clarity),
     evidence: clampScore(evidence),
     safety: clampScore(safety),
+    confidenceCalibration: clampScore(confidenceCalibration),
+    memoryAlignment: clampScore(memoryAlignment),
   }
 
   const overallScore = clampScore(
@@ -100,6 +147,8 @@ export function evaluateRuntimeResponseCase(
     `required:${matchedRequiredTerms.length}/${requiredTerms.length}`,
     `forbidden:${matchedForbiddenTerms.length}/${forbiddenTerms.length}`,
     `length:${normalizedResponse.length}/${minimumLength}`,
+    `confidenceCalibration:${confidenceCalibration}`,
+    `memoryAlignment:${memoryAlignment}`,
     `overall:${overallScore}`,
   ]
 
