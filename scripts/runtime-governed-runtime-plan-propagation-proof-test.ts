@@ -35,26 +35,30 @@ const responsePlanIndex = locate(
   'runtimePlan exposed in the API response',
 )
 
-const responseIndex = locate(
-  apiRoute,
-  /return\s+NextResponse\.json\s*\(/,
-  'HTTP response',
+const responseIndex = apiRoute.indexOf(
+  'return NextResponse.json(',
+  kernelPlanningIndex,
+)
+
+assert.ok(
+  responseIndex >= 0,
+  'The final HTTP response after runtimePlan assignment must exist.',
 )
 
 assert.ok(
   kernelPlanningIndex < responseIndex,
-  'The runtime plan must be resolved before the HTTP response.',
+  'The runtime plan must be resolved before the final HTTP response.',
 )
 
 assert.ok(
   responseIndex < responsePlanIndex,
-  'The plan field must be contained in the HTTP response object.',
+  'The plan field must be contained in the final HTTP response object.',
 )
 
 assert.match(
   kernelIntegration,
-  /createRuntimeTaskPlan\s*\(/,
-  'The Cognitive Kernel Integration must create a canonical runtime task plan.',
+  /planRuntimeTask\s*\(/,
+  'The Cognitive Kernel Integration must call the canonical planRuntimeTask planner.',
 )
 
 assert.match(
