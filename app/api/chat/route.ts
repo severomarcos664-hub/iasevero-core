@@ -300,13 +300,19 @@ const cognitiveKernel = decisionGate.kernel
 
     const toolOrchestration = orchestrateRuntimeTools()
 
+  const finalToolExecutionAllowed =
+    evaluationDecision === 'accept' &&
+    toolOrchestration.executionAllowed
+
     const toolGovernance = {
       source: 'runtime-tool-orchestrator',
       totalTools: toolOrchestration.totalTools,
       selectedTools: toolOrchestration.selectedTools,
       blockedTools: toolOrchestration.blockedTools,
       workflowStable: toolOrchestration.workflowStable,
-      executionAllowed: toolOrchestration.executionAllowed,
+      executionAllowed: finalToolExecutionAllowed,
+      cognitiveDecision: evaluationDecision,
+      cognitiveGateApplied: true,
       strategy: toolOrchestration.strategy,
       executionApplied: false,
     } as const
