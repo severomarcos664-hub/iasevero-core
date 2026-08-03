@@ -25,8 +25,8 @@ assert.match(
 
 assert.match(
   planner,
-  /export\s+function\s+createRuntimeTaskPlan\s*\(/,
-  'The canonical planner must export createRuntimeTaskPlan().',
+  /export\s+function\s+planRuntimeTask\s*\(/,
+  'The canonical planner must export planRuntimeTask().',
 )
 
 assert.match(
@@ -73,8 +73,8 @@ assert.match(
 
 assert.match(
   kernelIntegration,
-  /createRuntimeTaskPlan\s*\(/,
-  'The Cognitive Kernel Integration must create the runtime task plan.',
+  /planRuntimeTask\s*\(/,
+  'The Cognitive Kernel Integration must call the canonical planRuntimeTask planner.',
 )
 
 assert.match(
