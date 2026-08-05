@@ -106,8 +106,14 @@ assert.match(
 
 assert.doesNotMatch(
   apiRoute,
-  /from\s+['"][^'"]*runtime-tool-dispatcher['"]/,
-  'The API must not import the Runtime Tool Dispatcher before a governed handoff contract exists.',
+  /import\s*\{[^}]*\bdispatchRuntimeTool\b[^}]*\}\s*from\s*['"]@\/app\/lib\/orchestrator\/runtime-tool-dispatcher['"]/,
+  'The API must not import the real dispatchRuntimeTool function.',
+)
+
+assert.match(
+  apiRoute,
+  /import\s*\{\s*createRuntimeToolDispatchHandoff\s*\}\s*from\s*['"]@\/app\/lib\/orchestrator\/runtime-tool-dispatcher['"]/,
+  'The API may import the governed handoff creator without importing real dispatch.',
 )
 
 assert.doesNotMatch(
@@ -133,7 +139,8 @@ const result = {
   evaluationBeforeAuthorization: true,
   orchestratorAuthorizationRequired: true,
   finalAuthorizationGoverned: true,
-  dispatcherImportedByApi: false,
+  dispatcherExecutionFunctionImportedByApi: false,
+  governedHandoffCreatorImportedByApi: true,
   dispatcherCalledByApi: false,
   authorizationIsNotExecution: true,
   traceBeforeResponse: true,

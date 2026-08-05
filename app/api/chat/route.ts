@@ -1,3 +1,4 @@
+import { createRuntimeToolDispatchHandoff } from '@/app/lib/orchestrator/runtime-tool-dispatcher'
 import { NextResponse } from 'next/server'
 import {
   iaseveroCore,
@@ -334,6 +335,21 @@ const cognitiveKernel = decisionGate.kernel
       },
     )
 
+const toolDispatchHandoff =
+  createRuntimeToolDispatchHandoff({
+    executionKey: effectiveExecutionKey,
+    correlationId: runtimeMaster.correlationId,
+    traceId: traceResponse.id,
+    stepId:
+      cognitiveKernel.stages.executionPersistence.taskId,
+    finalAuthorization:
+      finalToolExecutionAllowed,
+    governance:
+      toolOrchestration.executionAllowed
+        ? 'approved'
+        : 'denied',
+  })
+
     return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -341,6 +357,7 @@ const cognitiveKernel = decisionGate.kernel
         observational: true,
         ...responseEvaluation,
       },
+      toolDispatchHandoff,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
