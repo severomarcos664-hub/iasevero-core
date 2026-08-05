@@ -74,3 +74,87 @@ export function dispatchRuntimeTool(
     reason: 'Execution Pipeline selecionado.'
   }
 }
+
+export type RuntimeToolDispatchHandoffInput = {
+  executionKey: string
+  correlationId: string
+  traceId: string
+  stepId: string
+  finalAuthorization: boolean
+  governance: 'approved' | 'denied'
+}
+
+export type RuntimeToolDispatchHandoff = {
+  executionKey: string
+  correlationId: string
+  traceId: string
+  stepId: string
+  finalAuthorization: boolean
+  governance: 'approved' | 'denied'
+  handoffStatus: 'authorized' | 'blocked'
+  dispatchApplied: false
+  executionApplied: false
+  mutationApplied: false
+  reason: string
+}
+
+function requireHandoffIdentity(
+  value: string,
+  field: string,
+): string {
+  const normalized = value.trim()
+
+  if (normalized.length === 0) {
+    throw new Error(
+      `Runtime tool dispatch handoff requires ${field}.`,
+    )
+  }
+
+  return normalized
+}
+
+export function createRuntimeToolDispatchHandoff(
+  input: RuntimeToolDispatchHandoffInput,
+): RuntimeToolDispatchHandoff {
+  const executionKey = requireHandoffIdentity(
+    input.executionKey,
+    'executionKey',
+  )
+
+  const correlationId = requireHandoffIdentity(
+    input.correlationId,
+    'correlationId',
+  )
+
+  const traceId = requireHandoffIdentity(
+    input.traceId,
+    'traceId',
+  )
+
+  const stepId = requireHandoffIdentity(
+    input.stepId,
+    'stepId',
+  )
+
+  const authorized =
+    input.finalAuthorization &&
+    input.governance === 'approved'
+
+  return {
+    executionKey,
+    correlationId,
+    traceId,
+    stepId,
+    finalAuthorization: input.finalAuthorization,
+    governance: input.governance,
+    handoffStatus: authorized
+      ? 'authorized'
+      : 'blocked',
+    dispatchApplied: false,
+    executionApplied: false,
+    mutationApplied: false,
+    reason: authorized
+      ? 'Governed dispatch handoff authorized without applying dispatch.'
+      : 'Governed dispatch handoff blocked before dispatch.',
+  }
+}
