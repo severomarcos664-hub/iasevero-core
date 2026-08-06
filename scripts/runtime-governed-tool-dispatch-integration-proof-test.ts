@@ -46,7 +46,7 @@ assert.match(
 
 assert.match(
   apiRoute,
-  /stepId:\s*cognitiveKernel\.stages\.executionPersistence\.taskId/s,
+  /stepId:\s*cognitiveKernel\.stages\.executionPersistence\.taskId/,
   'The handoff must preserve the cognitive task identity.',
 )
 
@@ -58,7 +58,7 @@ assert.match(
 
 assert.match(
   apiRoute,
-  /governance:\s*toolOrchestration\.executionAllowed\s*\?\s*['"]approved['"]\s*:\s*['"]denied['"]/s,
+  /governance:\s*toolOrchestration\.executionAllowed\s*\?\s*['"]approved['"]\s*:\s*['"]denied['"]/,
   'Orchestrator denial must be preserved as governance denial.',
 )
 
