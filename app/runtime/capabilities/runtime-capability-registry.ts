@@ -289,3 +289,61 @@ export function validateAppliedIntelligenceCapabilityMatrix(
     errors,
   };
 }
+
+export type AppliedIntelligenceCapabilityEligibilityReport = {
+  found: boolean
+  capabilityId: string
+  status: AppliedIntelligenceCapabilityStatus | null
+  implementationClaim: boolean
+  evidenceIds: readonly string[]
+  localFirst: boolean
+  externalProviderRequired: boolean
+  eligibleForAppliedUse: boolean
+  executionAuthorized: false
+  reason: string
+}
+
+export function getAppliedIntelligenceCapabilityEligibility(
+  capabilityId: string,
+): AppliedIntelligenceCapabilityEligibilityReport {
+  const capability = APPLIED_INTELLIGENCE_CAPABILITY_MATRIX.find(
+    (candidate) => candidate.id === capabilityId,
+  )
+
+  if (!capability) {
+    return {
+      found: false,
+      capabilityId,
+      status: null,
+      implementationClaim: false,
+      evidenceIds: [],
+      localFirst: false,
+      externalProviderRequired: false,
+      eligibleForAppliedUse: false,
+      executionAuthorized: false,
+      reason: 'Capability not found in the governed capability matrix.',
+    }
+  }
+
+  const eligibleForAppliedUse =
+    capability.status === 'proved' &&
+    capability.implementationClaim &&
+    capability.evidenceIds.length > 0 &&
+    capability.localFirst &&
+    !capability.externalProviderRequired
+
+  return {
+    found: true,
+    capabilityId: capability.id,
+    status: capability.status,
+    implementationClaim: capability.implementationClaim,
+    evidenceIds: [...capability.evidenceIds],
+    localFirst: capability.localFirst,
+    externalProviderRequired: capability.externalProviderRequired,
+    eligibleForAppliedUse,
+    executionAuthorized: false,
+    reason: eligibleForAppliedUse
+      ? 'Capability is proved and eligible for governed applied use; execution authorization remains external.'
+      : 'Capability is not eligible for governed applied use under the current capability evidence.',
+  }
+}
