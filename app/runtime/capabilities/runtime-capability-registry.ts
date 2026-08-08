@@ -399,3 +399,42 @@ export function decideAppliedIntelligenceCapability(
           : 'Capability eligibility does not support governed applied use.',
   }
 }
+
+export type AppliedIntelligenceCapabilityAuthorizationAssessment = {
+  capabilityId: string
+  decision: AppliedIntelligenceCapabilityDecision
+  capabilityFound: boolean
+  eligibilityResolved: true
+  decisionResolved: true
+  authorizationAssessed: true
+  executionAuthorized: false
+  dispatchApplied: false
+  executionApplied: false
+  mutationApplied: false
+  reason: string
+}
+
+export function assessAppliedIntelligenceCapabilityAuthorization(
+  capabilityId: string
+): AppliedIntelligenceCapabilityAuthorizationAssessment {
+  const decision = decideAppliedIntelligenceCapability(capabilityId)
+
+  return {
+    capabilityId,
+    decision: decision.decision,
+    capabilityFound: decision.capabilityFound,
+    eligibilityResolved: true,
+    decisionResolved: true,
+    authorizationAssessed: true,
+    executionAuthorized: false,
+    dispatchApplied: false,
+    executionApplied: false,
+    mutationApplied: false,
+    reason:
+      decision.decision === 'eligible'
+        ? 'Capability decision is eligible, but execution authorization remains external.'
+        : decision.decision === 'unknown'
+          ? 'Capability is not present in the governed capability matrix; execution is not authorized.'
+          : 'Capability decision is ineligible; execution is not authorized.',
+  }
+}
