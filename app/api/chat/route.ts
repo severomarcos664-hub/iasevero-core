@@ -18,6 +18,7 @@ import { executeRuntimeDecisionEngine } from '@/app/lib/orchestrator/runtime-dec
 import { superviseRuntime } from '@/app/lib/orchestrator/runtime-supervisor'
 import { persistRuntimeSnapshot } from '@/app/lib/orchestrator/runtime-snapshot'
 import { createRuntimeTraceNode } from '@/app/lib/runtime-core/runtime-distributed-trace-engine'
+import { getAppliedIntelligenceCapabilityEligibility } from '@/app/runtime/capabilities/runtime-capability-registry'
 import { evaluateRuntimeDecisionGate } from '@/app/lib/runtime-core/runtime-decision-gate'
 import { evaluateRuntimeResponseCase } from '@/app/lib/runtime-core/runtime-response-evaluation-baseline'
 import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-action-policy-engine'
@@ -318,11 +319,15 @@ const cognitiveKernel = decisionGate.kernel
       executionApplied: false,
     } as const
 
+    const capabilityEligibility =
+      getAppliedIntelligenceCapabilityEligibility('runtime-trace-integrity')
+
     const traceResponse = createRuntimeTraceNode(
       'chat.response.generated',
       traceRuntime.id,
       'ok',
       {
+        capabilityEligibility,
         hasJob: Boolean(result.job),
         replyLength: result.reply.length,
       cognitiveEvaluation: {
