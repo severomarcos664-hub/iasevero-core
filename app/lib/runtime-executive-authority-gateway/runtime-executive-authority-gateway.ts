@@ -1,5 +1,6 @@
 import {
   evaluateRuntimeExecutiveAuthority,
+  type RuntimeCapabilityAuthorizationConstraint,
 } from '../runtime-executive-authority/runtime-executive-authority'
 
 export interface RuntimeExecutiveAuthorityGatewayReport {
@@ -8,6 +9,9 @@ export interface RuntimeExecutiveAuthorityGatewayReport {
   source: 'runtime-executive-authority-gateway'
 
   executionAllowed: boolean
+
+  capabilityAuthorizationIntegrated: boolean
+  capabilityAuthorizationAllowsExecution: boolean
   coreState: string
   executionPolicy: string
   runtimeAction: string
@@ -18,10 +22,12 @@ export interface RuntimeExecutiveAuthorityGatewayReport {
   reasoning: string[]
 }
 
-export function evaluateRuntimeExecutiveAuthorityGateway():
+export function evaluateRuntimeExecutiveAuthorityGateway(
+  capabilityAuthorization?: RuntimeCapabilityAuthorizationConstraint,
+):
 RuntimeExecutiveAuthorityGatewayReport {
   const authority =
-    evaluateRuntimeExecutiveAuthority()
+    evaluateRuntimeExecutiveAuthority(capabilityAuthorization)
 
   return {
     gatewayId: `authority-gateway-${Date.now()}`,
@@ -30,6 +36,12 @@ RuntimeExecutiveAuthorityGatewayReport {
 
     executionAllowed:
       authority.executionAllowed,
+
+    capabilityAuthorizationIntegrated:
+      authority.capabilityAuthorizationIntegrated,
+
+    capabilityAuthorizationAllowsExecution:
+      authority.capabilityAuthorizationAllowsExecution,
 
     coreState:
       authority.coreState,

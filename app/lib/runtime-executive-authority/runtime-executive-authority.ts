@@ -9,6 +9,9 @@ export interface RuntimeExecutiveAuthorityReport {
 
   executionAllowed: boolean
 
+  capabilityAuthorizationIntegrated: boolean
+  capabilityAuthorizationAllowsExecution: boolean
+
   coreState: string
   executionPolicy: string
   runtimeAction: string
@@ -20,11 +23,33 @@ export interface RuntimeExecutiveAuthorityReport {
   reasoning: string[]
 }
 
-export function evaluateRuntimeExecutiveAuthority():
+export interface RuntimeCapabilityAuthorizationConstraint {
+  authorizationAssessed: boolean
+  decision: 'eligible' | 'ineligible' | 'unknown'
+  executionAuthorized: false
+}
+
+export function evaluateRuntimeExecutiveAuthority(
+  capabilityAuthorization?: RuntimeCapabilityAuthorizationConstraint,
+):
 RuntimeExecutiveAuthorityReport {
 
   const core =
     evaluateExecutiveRuntimeCore()
+
+  const capabilityAuthorizationIntegrated =
+    capabilityAuthorization !== undefined
+
+  const capabilityAuthorizationAllowsExecution =
+    !capabilityAuthorizationIntegrated ||
+    (
+      capabilityAuthorization.authorizationAssessed &&
+      capabilityAuthorization.decision === 'eligible'
+    )
+
+  const executionAllowed =
+    core.executionAllowed &&
+    capabilityAuthorizationAllowsExecution
 
   return {
     authorityId:
@@ -36,8 +61,10 @@ RuntimeExecutiveAuthorityReport {
     source:
       'runtime-executive-authority',
 
-    executionAllowed:
-      core.executionAllowed,
+    executionAllowed,
+
+    capabilityAuthorizationIntegrated,
+    capabilityAuthorizationAllowsExecution,
 
     coreState:
       core.coreState,
