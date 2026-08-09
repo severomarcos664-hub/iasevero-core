@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "iasevero-continuity-baseline",
+  "runtimeBaseline": {
+    "branch": "v276-runtime-cognitive-kernel",
+    "tag": "v287.8-governed-tool-execution-failure-timeout-retry-governance-proof",
+    "commit": "d316e3076467229a562d636980f240418f92514d",
+    "relationshipToContinuityHead": "ancestor-or-equal"
+  },
+  "ownership": {
+    "canonicalArchitectureRoot": "docs/architecture",
+    "continuityRoot": "docs/architecture/continuity",
+    "historicalContinuityPreserved": "scripts/platform-continuity-v107.0"
+  },
+  "claimGovernance": {
+    "allowedStatuses": [
+      "PROVED",
+      "PARTIALLY_PROVED",
+      "FOUNDATION",
+      "ROADMAP"
+    ],
+    "roadmapImpliesImplementation": false,
+    "proofRequiredForProved": true
+  },
+  "authority": {
+    "gitIsSourceOfTruth": true,
+    "chatContextIsSourceOfTruth": false,
+    "modelOutputIsAuthority": false
+  },
+  "executionConstraints": {
+    "localFirst": true,
+    "paidProviderRequiresExplicitAuthorization": true,
+    "externalMutationRequiresGovernedAuthorization": true
+  }
+}
