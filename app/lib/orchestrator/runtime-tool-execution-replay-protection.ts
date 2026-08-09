@@ -1,10 +1,12 @@
 import type {
   RuntimeToolExecutionInvocationEnvelope,
 } from './runtime-tool-execution-invocation-envelope'
-import {
-  executeRuntimeToolSafeLocal,
-  type RuntimeToolSafeLocalExecutionResult,
+import type {
+  RuntimeToolSafeLocalExecutionResult,
 } from './runtime-tool-safe-local-executor'
+import {
+  executeRuntimeToolWithAttemptGovernance,
+} from './runtime-tool-execution-attempt-governance'
 
 export type RuntimeToolExecutionReplayProtectedResult = {
   replayKey: string
@@ -83,7 +85,9 @@ export function createRuntimeToolExecutionReplayProtector():
         }
       }
 
-      const execution = executeRuntimeToolSafeLocal(envelope)
+      const governedAttempt =
+        executeRuntimeToolWithAttemptGovernance(envelope)
+      const execution = governedAttempt.execution
 
       if (execution.executionApplied) {
         appliedExecutions.add(replayKey)
