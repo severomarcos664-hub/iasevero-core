@@ -127,6 +127,23 @@ governed asynchronous cancellation / enforceable timeout.
 
 Status: `ROADMAP`
 
+
+Current evidence:
+
+- `v287.9-governed-controlled-external-read-contract-proof`
+  proves the governed external-read contract only.
+- The contract requires HTTPS, explicit host/resource allowlists,
+  read-only policy, zero external-cost authorization, secret denial,
+  and mandatory audit evidence.
+- `networkAccess=false`.
+- `externalReadApplied=false`.
+- `executionApplied=false`.
+- `externalMutation=false`.
+- `mutationApplied=false`.
+- `providerInvocation=false`.
+- Status remains `ROADMAP` because no external read effect has been
+  executed or proved.
+
 Goal:
 
 Allow explicitly governed, auditable, read-only external access after local execution safety is mature.

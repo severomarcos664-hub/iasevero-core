@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.8-governed-tool-execution-failure-timeout-retry-governance-proof",
-    "commit": "d316e3076467229a562d636980f240418f92514d",
+    "tag": "v287.9-governed-controlled-external-read-contract-proof",
+    "commit": "131b2f78c045b8099cc54a9b68b77a2892712109",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {

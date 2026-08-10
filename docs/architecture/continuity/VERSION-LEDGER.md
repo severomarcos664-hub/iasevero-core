@@ -506,3 +506,44 @@ A future chat MUST NOT:
 - treat an unpushed commit as remotely preserved;
 - treat a historical tag as proof of current behavior without checking later evolution;
 - promote roadmap to implementation because a similar filename exists.
+
+---
+
+## v287.9 — Governed Controlled External Read Contract Proof
+
+Tag: `v287.9-governed-controlled-external-read-contract-proof`
+
+Commit: `131b2f78c045b8099cc54a9b68b77a2892712109`
+
+Status: `PROVED` as a version-specific contract proof.
+
+Responsibility:
+
+- establish the canonical governed contract for a future controlled
+  external read without performing external access.
+
+Proved contract controls:
+
+- controlled executor boundary eligibility is required;
+- execution identity must match the governed invocation envelope;
+- HTTPS target requirement;
+- explicit host allowlist;
+- explicit resource allowlist;
+- read-only policy;
+- external cost is not authorized by this contract;
+- secret exposure is not permitted;
+- audit evidence is mandatory;
+- fail-closed behavior for host, resource, protocol, boundary,
+  identity, cost, secret, and audit mismatches.
+
+Explicit non-claims:
+
+- `networkAccess=false`;
+- `externalReadApplied=false`;
+- `executionApplied=false`;
+- `externalMutation=false`;
+- `mutationApplied=false`;
+- `providerInvocation=false`;
+- contract eligibility is not execution authorization;
+- contract proof is not external-read execution;
+- Controlled External Read technology remains `ROADMAP`.

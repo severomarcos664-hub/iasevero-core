@@ -164,6 +164,7 @@ Current proof evidence includes:
 - safe-local-execution proof;
 - idempotency/replay-protection proof;
 - failure/timeout-budget/retry-governance proof.
+- controlled-external-read-contract proof (v287.9, contract-only; no network effect).
 
 Current proved execution properties include:
 
@@ -179,6 +180,7 @@ Current proved execution properties include:
 - retry budget;
 - blocked execution not retried;
 - executor-error classification;
+- governed controlled external-read contract eligibility with HTTPS target validation, explicit host/resource allowlists, read-only policy, zero external-cost authorization, secret denial, and mandatory audit evidence;
 - attempt exhaustion.
 
 Current limitations:
@@ -189,6 +191,7 @@ Current limitations:
 - `timeoutMs` is a declared budget;
 - `timeoutEnforced=false`;
 - preemptive timeout is not proved;
+- governed external read execution is not proved by v287.9; networkAccess=false and externalReadApplied=false;
 - governed external mutation is not proved by this line.
 
 ---

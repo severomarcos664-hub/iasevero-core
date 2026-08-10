@@ -3,14 +3,14 @@
   "kind": "iasevero-advanced-technology-registry",
   "authority": {
     "source": "docs/architecture/continuity/ADVANCED-TECHNOLOGY-ROADMAP.md",
-    "sourceSha256": "ac1602da2685cfda056827127154a22186322d7cbb157182bb21a4912a64907c",
+    "sourceSha256": "424cee77fbac2a865ea7db589983c0605e4da7d9958840dbfab87dc67c30b635",
     "generatedFromCanonicalDocument": true,
     "manualStatusOverrideAllowed": false
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.8-governed-tool-execution-failure-timeout-retry-governance-proof",
-    "commit": "d316e3076467229a562d636980f240418f92514d"
+    "tag": "v287.9-governed-controlled-external-read-contract-proof",
+    "commit": "131b2f78c045b8099cc54a9b68b77a2892712109"
   },
   "claimGovernance": {
     "allowedStatuses": [
