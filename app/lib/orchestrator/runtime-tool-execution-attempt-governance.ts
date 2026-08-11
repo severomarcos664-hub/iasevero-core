@@ -1,3 +1,9 @@
+import {
+  evaluateRuntimeToolControlledExternalReadContract,
+  type RuntimeToolControlledExternalReadContractDecision,
+  type RuntimeToolControlledExternalReadContractInput,
+} from './runtime-tool-controlled-external-read-contract'
+
 import type {
   RuntimeToolExecutionInvocationEnvelope,
 } from './runtime-tool-execution-invocation-envelope'
@@ -30,7 +36,27 @@ export type RuntimeToolExecutionAttemptExecutor = (
   envelope: RuntimeToolExecutionInvocationEnvelope,
 ) => RuntimeToolSafeLocalExecutionResult
 
+export type RuntimeToolControlledExternalReadContractEvaluator = (
+  input: RuntimeToolControlledExternalReadContractInput,
+) => RuntimeToolControlledExternalReadContractDecision
+
+export type RuntimeToolControlledExternalReadAttemptGovernanceResult = {
+  contractEvaluated: true
+  contract: RuntimeToolControlledExternalReadContractDecision
+  executorInvoked: false
+  networkAccess: false
+  externalReadApplied: false
+  executionApplied: false
+  externalMutation: false
+  mutationApplied: false
+  providerInvocation: false
+}
+
 export type RuntimeToolExecutionAttemptGovernor = {
+  evaluateControlledExternalReadContract(
+    input: RuntimeToolControlledExternalReadContractInput,
+  ): RuntimeToolControlledExternalReadAttemptGovernanceResult
+
   execute(
     envelope: RuntimeToolExecutionInvocationEnvelope,
   ): RuntimeToolExecutionAttemptGovernanceResult
@@ -71,8 +97,30 @@ function createExecutorErrorExecution(
 export function createRuntimeToolExecutionAttemptGovernor(
   executor: RuntimeToolExecutionAttemptExecutor =
     executeRuntimeToolSafeLocal,
+  controlledExternalReadContractEvaluator:
+    RuntimeToolControlledExternalReadContractEvaluator =
+      evaluateRuntimeToolControlledExternalReadContract,
 ): RuntimeToolExecutionAttemptGovernor {
   return {
+    evaluateControlledExternalReadContract(
+      input: RuntimeToolControlledExternalReadContractInput,
+    ): RuntimeToolControlledExternalReadAttemptGovernanceResult {
+      const contract =
+        controlledExternalReadContractEvaluator(input)
+
+      return {
+        contractEvaluated: true,
+        contract,
+        executorInvoked: false,
+        networkAccess: false,
+        externalReadApplied: false,
+        executionApplied: false,
+        externalMutation: false,
+        mutationApplied: false,
+        providerInvocation: false,
+      }
+    },
+
     execute(
       envelope: RuntimeToolExecutionInvocationEnvelope,
     ): RuntimeToolExecutionAttemptGovernanceResult {
@@ -151,6 +199,13 @@ export function createRuntimeToolExecutionAttemptGovernor(
 
 const defaultRuntimeToolExecutionAttemptGovernor =
   createRuntimeToolExecutionAttemptGovernor()
+
+export function evaluateRuntimeToolControlledExternalReadWithAttemptGovernance(
+  input: RuntimeToolControlledExternalReadContractInput,
+): RuntimeToolControlledExternalReadAttemptGovernanceResult {
+  return defaultRuntimeToolExecutionAttemptGovernor
+    .evaluateControlledExternalReadContract(input)
+}
 
 export function executeRuntimeToolWithAttemptGovernance(
   envelope: RuntimeToolExecutionInvocationEnvelope,
