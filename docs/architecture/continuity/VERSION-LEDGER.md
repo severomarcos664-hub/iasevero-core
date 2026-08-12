@@ -598,3 +598,29 @@ Preserved boundaries:
 - contract eligibility is not execution authorization;
 - tool allowlist reconciliation is not external-read execution;
 - Controlled External Read technology remains `ROADMAP`.
+
+## v287.11.2 - Governed Continuity Pack v287.11 Runtime Baseline Sync Proof
+
+Status: `PROVED` as a version-specific continuity synchronization proof.
+
+Responsibility:
+
+- synchronize the canonical Continuity Pack `runtimeBaseline` with the already-proved v287.11 runtime proof;
+- preserve separation between runtime proof identity and Continuity Pack synchronization identity;
+- preserve all technology maturity classifications without automatic promotion.
+
+Runtime baseline synchronized to:
+
+- Tag: `v287.11-governed-controlled-external-read-tool-allowlist-proof`
+- Commit: `c2dc58ba85344889606ba5f182f9f9c2e0ae8495`
+
+Preserved boundaries:
+
+- no network access was added;
+- no external read was performed;
+- no execution was applied;
+- no external mutation was performed;
+- no mutation was applied;
+- no provider was invoked;
+- Controlled External Read remains `ROADMAP`;
+- synchronization metadata is not runtime execution evidence.

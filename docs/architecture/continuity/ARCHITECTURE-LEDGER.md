@@ -559,3 +559,29 @@ Explicit non-claims:
 - no mutation was applied;
 - no provider was invoked;
 - this proof does not promote Controlled External Read technology beyond `ROADMAP`.
+
+## v287.11.2 - Governed Continuity Pack v287.11 Runtime Baseline Sync Proof
+
+Status: `PROVED` as a version-specific continuity synchronization proof.
+
+Architectural responsibility:
+
+- align `current-baseline.json` and `advanced-technologies.json` with the proven v287.11 runtime baseline;
+- preserve Git/tag/commit as the primary source of truth;
+- preserve runtime proof identity independently from the Continuity Pack synchronization commit;
+- prevent stale runtime-baseline metadata from becoming continuity drift.
+
+Runtime baseline synchronized to:
+
+- Tag: `v287.11-governed-controlled-external-read-tool-allowlist-proof`
+- Commit: `c2dc58ba85344889606ba5f182f9f9c2e0ae8495`
+
+Explicit non-claims:
+
+- no network access;
+- no external read was performed;
+- no execution was applied;
+- no external mutation was performed;
+- no mutation was applied;
+- no provider was invoked;
+- this proof does not promote Controlled External Read beyond `ROADMAP`.
