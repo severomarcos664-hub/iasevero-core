@@ -130,8 +130,11 @@ Status: `ROADMAP`
 
 Current evidence:
 
+- `v287.10-governed-controlled-external-read-contract-integration-proof`
+  proves governed integration of the controlled external-read contract into
+  the execution-attempt governance path without performing external access.
 - `v287.9-governed-controlled-external-read-contract-proof`
-  proves the governed external-read contract only.
+  remains the foundational contract proof.
 - The contract requires HTTPS, explicit host/resource allowlists,
   read-only policy, zero external-cost authorization, secret denial,
   and mandatory audit evidence.

@@ -547,3 +547,28 @@ Explicit non-claims:
 - contract eligibility is not execution authorization;
 - contract proof is not external-read execution;
 - Controlled External Read technology remains `ROADMAP`.
+
+## v287.10 - Governed Controlled External Read Contract Integration Proof
+
+Tag: `v287.10-governed-controlled-external-read-contract-integration-proof`
+
+Commit: `c3bb924e988513fc559a93148e09c8ee7b208fbf`
+
+Status: `PROVED` as a version-specific integration proof.
+
+Responsibility:
+
+- integrate the canonical governed controlled external-read contract with the
+  execution-attempt governance path;
+- preserve fail-closed behavior without external access.
+
+Explicit non-claims:
+
+- `networkAccess=false`;
+- `externalReadApplied=false`;
+- `executionApplied=false`;
+- `externalMutation=false`;
+- `mutationApplied=false`;
+- `providerInvocation=false`;
+- integration proof is not external-read execution;
+- Controlled External Read technology remains `ROADMAP`.

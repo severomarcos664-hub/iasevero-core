@@ -510,3 +510,27 @@ A future chat MUST NOT:
 - infer mutation authorization from execution capability.
 
 When uncertain, preserve the lower-confidence status until evidence is recovered.
+
+## v287.10 - Governed Controlled External Read Contract Integration Proof
+
+Tag: `v287.10-governed-controlled-external-read-contract-integration-proof`
+
+Commit: `c3bb924e988513fc559a93148e09c8ee7b208fbf`
+
+Status: `PROVED` as a version-specific integration proof.
+
+Responsibility:
+
+- integrate the governed controlled external-read contract into the canonical
+  execution-attempt governance path without performing external access.
+
+Preserved boundaries:
+
+- `networkAccess=false`;
+- `externalReadApplied=false`;
+- `executionApplied=false`;
+- `externalMutation=false`;
+- `mutationApplied=false`;
+- `providerInvocation=false`;
+- contract eligibility is not execution authorization;
+- Controlled External Read technology remains `ROADMAP`.
