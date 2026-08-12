@@ -572,3 +572,29 @@ Explicit non-claims:
 - `providerInvocation=false`;
 - integration proof is not external-read execution;
 - Controlled External Read technology remains `ROADMAP`.
+
+## v287.11 - Governed Controlled External Read Tool Allowlist Proof
+
+Tag: `v287.11-governed-controlled-external-read-tool-allowlist-proof`
+
+Commit: `c2dc58ba85344889606ba5f182f9f9c2e0ae8495`
+
+Status: `PROVED` as a version-specific tool allowlist reconciliation proof.
+
+Responsibility:
+
+- reconcile the governed controlled external-read contract with the canonical Tool Registry allowlist;
+- require the contract tool identity to resolve to a registered and allowed tool;
+- preserve fail-closed behavior when tool registration or allowlist reconciliation fails.
+
+Preserved boundaries:
+
+- `networkAccess=false`;
+- `externalReadApplied=false`;
+- `executionApplied=false`;
+- `externalMutation=false`;
+- `mutationApplied=false`;
+- `providerInvocation=false`;
+- contract eligibility is not execution authorization;
+- tool allowlist reconciliation is not external-read execution;
+- Controlled External Read technology remains `ROADMAP`.
