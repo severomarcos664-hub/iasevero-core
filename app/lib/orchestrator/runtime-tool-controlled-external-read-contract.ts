@@ -1,3 +1,4 @@
+import { createRuntimeToolRegistry } from '../runtime-core/runtime-tool-registry'
 import type {
   RuntimeToolExecutionInvocationEnvelope,
 } from './runtime-tool-execution-invocation-envelope'
@@ -102,10 +103,25 @@ export function evaluateRuntimeToolControlledExternalReadContract(
     boundary.traceId === envelope.traceId &&
     boundary.stepId === envelope.stepId
 
-  const boundaryEligible =
-    boundary.invocationPrepared === true &&
+  const registry = createRuntimeToolRegistry()
+
+  const registeredTool =
+    registry.tools.find(
+      (candidate) => candidate.id === envelope.toolId,
+    ) ?? null
+
+  const registryToolRegistered = registeredTool !== null
+  const registryToolAllowed = registeredTool?.allowed === true
+
+  const toolAllowlistReconciled =
     boundary.toolRegistered === true &&
     boundary.toolAllowed === true &&
+    registryToolRegistered &&
+    registryToolAllowed
+
+  const boundaryEligible =
+    boundary.invocationPrepared === true &&
+    toolAllowlistReconciled &&
     boundary.policyMatched === true &&
     boundary.executorEligible === true &&
     boundary.executorBoundaryStatus === 'eligible' &&

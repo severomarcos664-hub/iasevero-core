@@ -303,11 +303,72 @@ assert(
   'missing audit requirement must fail closed',
 )
 
+
+const registryMissingTool = evaluateRuntimeToolControlledExternalReadContract({
+  ...baseInput,
+  envelope: {
+    ...baseInput.envelope,
+    toolId: 'tool.not.registered.v287.11',
+  },
+  boundary: {
+    ...baseInput.boundary,
+    toolId: 'tool.not.registered.v287.11',
+    toolRegistered: true,
+    toolAllowed: true,
+  },
+})
+
+negative()
+
+assert(
+  registryMissingTool.contractEligible === false &&
+    registryMissingTool.contractStatus === 'blocked',
+  'unregistered tool must fail closed even when boundary claims registered/allowed',
+)
+
+assert(
+  registryMissingTool.networkAccess === false &&
+    registryMissingTool.externalReadApplied === false &&
+    registryMissingTool.executionApplied === false &&
+    registryMissingTool.externalMutation === false &&
+    registryMissingTool.mutationApplied === false &&
+    registryMissingTool.providerInvocation === false,
+  'unregistered tool must preserve all no-effect invariants',
+)
+
+const registryBoundaryDivergence =
+  evaluateRuntimeToolControlledExternalReadContract({
+    ...baseInput,
+    boundary: {
+      ...baseInput.boundary,
+      toolRegistered: true,
+      toolAllowed: false,
+    },
+  })
+
+negative()
+
+assert(
+  registryBoundaryDivergence.contractEligible === false &&
+    registryBoundaryDivergence.contractStatus === 'blocked',
+  'registry/boundary allowlist divergence must fail closed',
+)
+
+assert(
+  registryBoundaryDivergence.networkAccess === false &&
+    registryBoundaryDivergence.externalReadApplied === false &&
+    registryBoundaryDivergence.executionApplied === false &&
+    registryBoundaryDivergence.externalMutation === false &&
+    registryBoundaryDivergence.mutationApplied === false &&
+    registryBoundaryDivergence.providerInvocation === false,
+  'allowlist divergence must preserve all no-effect invariants',
+)
+
 console.log(
   JSON.stringify(
     {
       version:
-        'v287.9-governed-controlled-external-read-contract-proof',
+        'v287.11-governed-controlled-external-read-tool-allowlist-proof',
 
       positive: {
         contractEligible:
