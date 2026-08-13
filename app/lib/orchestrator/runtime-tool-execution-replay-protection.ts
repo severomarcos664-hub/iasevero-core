@@ -5,8 +5,16 @@ import type {
   RuntimeToolSafeLocalExecutionResult,
 } from './runtime-tool-safe-local-executor'
 import {
-  executeRuntimeToolWithAttemptGovernance,
+executeRuntimeToolWithAttemptGovernance,
+  evaluateRuntimeToolControlledExternalReadWithAttemptGovernance,
+  reconcileRuntimeToolControlledExternalReadTimeoutPolicy,
+  type RuntimeToolControlledExternalReadAttemptGovernanceResult,
+  type RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult,
 } from './runtime-tool-execution-attempt-governance'
+
+import type {
+  RuntimeToolControlledExternalReadContractInput,
+} from './runtime-tool-controlled-external-read-contract'
 
 export type RuntimeToolExecutionReplayProtectedResult = {
   replayKey: string
@@ -16,10 +24,31 @@ export type RuntimeToolExecutionReplayProtectedResult = {
   execution: RuntimeToolSafeLocalExecutionResult
 }
 
+export type RuntimeToolControlledExternalReadReplayProtectionIntegrationResult = {
+  replayKey: string
+  replayDetected: boolean
+  replayBlocked: boolean
+
+  contract: RuntimeToolControlledExternalReadAttemptGovernanceResult
+  timeout: RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult
+
+  networkAccess: false
+  externalReadApplied: false
+  executionApplied: false
+  externalMutation: false
+  mutationApplied: false
+  providerInvocation: false
+}
+
 export type RuntimeToolExecutionReplayProtector = {
   execute(
     envelope: RuntimeToolExecutionInvocationEnvelope,
   ): RuntimeToolExecutionReplayProtectedResult
+
+  evaluateControlledExternalRead(
+    input: RuntimeToolControlledExternalReadContractInput,
+    envelope: RuntimeToolExecutionInvocationEnvelope,
+  ): RuntimeToolControlledExternalReadReplayProtectionIntegrationResult
 
   registeredExecutions(): number
 }
@@ -98,6 +127,55 @@ export function createRuntimeToolExecutionReplayProtector():
         replayDetected: false,
         replayBlocked: false,
         execution,
+      }
+    },
+
+    evaluateControlledExternalRead(input, envelope) {
+      const replayKey = createReplayKey(envelope)
+      const replayDetected = appliedExecutions.has(replayKey)
+
+      if (replayDetected) {
+        return {
+          replayKey,
+          replayDetected: true,
+          replayBlocked: true,
+          contract:
+            evaluateRuntimeToolControlledExternalReadWithAttemptGovernance(input),
+          timeout:
+            reconcileRuntimeToolControlledExternalReadTimeoutPolicy(
+              input,
+              envelope,
+            ),
+          networkAccess: false,
+          externalReadApplied: false,
+          executionApplied: false,
+          externalMutation: false,
+          mutationApplied: false,
+          providerInvocation: false,
+        }
+      }
+
+      const contract =
+        evaluateRuntimeToolControlledExternalReadWithAttemptGovernance(input)
+
+      const timeout =
+        reconcileRuntimeToolControlledExternalReadTimeoutPolicy(
+          input,
+          envelope,
+        )
+
+      return {
+        replayKey,
+        replayDetected: false,
+        replayBlocked: false,
+        contract,
+        timeout,
+        networkAccess: false,
+        externalReadApplied: false,
+        executionApplied: false,
+        externalMutation: false,
+        mutationApplied: false,
+        providerInvocation: false,
       }
     },
 
