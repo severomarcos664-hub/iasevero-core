@@ -40,6 +40,25 @@ export type RuntimeToolControlledExternalReadContractEvaluator = (
   input: RuntimeToolControlledExternalReadContractInput,
 ) => RuntimeToolControlledExternalReadContractDecision
 
+
+export type RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult = {
+  timeoutMs: number
+  timeoutPolicyValid: boolean
+  timeoutPolicyReconciled: boolean
+
+  contractEvaluated: true
+  contract: RuntimeToolControlledExternalReadContractDecision
+
+  executorInvoked: false
+  networkAccess: false
+  externalReadApplied: false
+  executionApplied: false
+
+  externalMutation: false
+  mutationApplied: false
+  providerInvocation: false
+}
+
 export type RuntimeToolControlledExternalReadAttemptGovernanceResult = {
   contractEvaluated: true
   contract: RuntimeToolControlledExternalReadContractDecision
@@ -56,6 +75,11 @@ export type RuntimeToolExecutionAttemptGovernor = {
   evaluateControlledExternalReadContract(
     input: RuntimeToolControlledExternalReadContractInput,
   ): RuntimeToolControlledExternalReadAttemptGovernanceResult
+
+  reconcileControlledExternalReadTimeoutPolicy(
+    input: RuntimeToolControlledExternalReadContractInput,
+    envelope: RuntimeToolExecutionInvocationEnvelope,
+  ): RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult
 
   execute(
     envelope: RuntimeToolExecutionInvocationEnvelope,
@@ -115,6 +139,42 @@ export function createRuntimeToolExecutionAttemptGovernor(
         networkAccess: false,
         externalReadApplied: false,
         executionApplied: false,
+        externalMutation: false,
+        mutationApplied: false,
+        providerInvocation: false,
+      }
+    },
+
+    reconcileControlledExternalReadTimeoutPolicy(
+      input: RuntimeToolControlledExternalReadContractInput,
+      envelope: RuntimeToolExecutionInvocationEnvelope,
+    ): RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult {
+      const contract =
+        controlledExternalReadContractEvaluator(input)
+
+      const timeoutMs = envelope.policy.timeoutMs
+
+      const timeoutPolicyValid =
+        Number.isFinite(timeoutMs) &&
+        timeoutMs > 0
+
+      const timeoutPolicyReconciled =
+        contract.contractEligible === true &&
+        timeoutPolicyValid
+
+      return {
+        timeoutMs,
+        timeoutPolicyValid,
+        timeoutPolicyReconciled,
+
+        contractEvaluated: true,
+        contract,
+
+        executorInvoked: false,
+        networkAccess: false,
+        externalReadApplied: false,
+        executionApplied: false,
+
         externalMutation: false,
         mutationApplied: false,
         providerInvocation: false,
@@ -205,6 +265,14 @@ export function evaluateRuntimeToolControlledExternalReadWithAttemptGovernance(
 ): RuntimeToolControlledExternalReadAttemptGovernanceResult {
   return defaultRuntimeToolExecutionAttemptGovernor
     .evaluateControlledExternalReadContract(input)
+}
+
+export function reconcileRuntimeToolControlledExternalReadTimeoutPolicy(
+  input: RuntimeToolControlledExternalReadContractInput,
+  envelope: RuntimeToolExecutionInvocationEnvelope,
+): RuntimeToolControlledExternalReadTimeoutPolicyReconciliationResult {
+  return defaultRuntimeToolExecutionAttemptGovernor
+    .reconcileControlledExternalReadTimeoutPolicy(input, envelope)
 }
 
 export function executeRuntimeToolWithAttemptGovernance(
