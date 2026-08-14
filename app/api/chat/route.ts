@@ -1,4 +1,6 @@
 import { createRuntimeToolDispatchHandoff } from '@/app/lib/orchestrator/runtime-tool-dispatcher'
+import { applyRuntimeToolDispatch } from '@/app/lib/orchestrator/runtime-tool-dispatch-application'
+import { evaluateRuntimeToolExecutionGate } from '@/app/lib/orchestrator/runtime-tool-execution-gate'
 import { NextResponse } from 'next/server'
 import {
   iaseveroCore,
@@ -355,6 +357,12 @@ const toolDispatchHandoff =
         : 'denied',
   })
 
+    const toolDispatchApplication =
+      applyRuntimeToolDispatch(toolDispatchHandoff)
+
+    const toolExecutionGate =
+      evaluateRuntimeToolExecutionGate(toolDispatchApplication)
+
     return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -363,6 +371,8 @@ const toolDispatchHandoff =
         ...responseEvaluation,
       },
       toolDispatchHandoff,
+      toolDispatchApplication,
+      toolExecutionGate,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
