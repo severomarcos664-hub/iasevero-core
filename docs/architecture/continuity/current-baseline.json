@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.18-governed-inbound-content-safety-proof",
-    "commit": "16a0a003a1994b9d23cadb7c01e41508753e97df",
+    "tag": "v287.19-governed-external-read-streaming-size-enforcement-proof",
+    "commit": "0c616d5a819431eb9eb10c03dec4ebb49cf743c3",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
