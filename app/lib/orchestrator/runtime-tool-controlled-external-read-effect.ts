@@ -19,6 +19,7 @@ export type RuntimeToolControlledExternalReadEffectResult = {
   providerInvocation: false
 
   httpStatus: number | null
+  contentType: string | null
   responseReceived: boolean
   responseBytes: number
 
@@ -51,6 +52,7 @@ export async function executeRuntimeToolControlledExternalReadEffect(
     providerInvocation: false,
 
     httpStatus: null,
+    contentType: null,
     responseReceived: false,
     responseBytes: 0,
 
@@ -114,6 +116,7 @@ export async function executeRuntimeToolControlledExternalReadEffect(
         mutationApplied: false,
         providerInvocation: false,
         httpStatus: response.status,
+        contentType: response.headers.get('content-type'),
         responseReceived: true,
         responseBytes: 0,
         body: null,
@@ -136,6 +139,7 @@ export async function executeRuntimeToolControlledExternalReadEffect(
         mutationApplied: false,
         providerInvocation: false,
         httpStatus: response.status,
+        contentType: response.headers.get('content-type'),
         responseReceived: true,
         responseBytes,
         body: null,
@@ -162,6 +166,7 @@ export async function executeRuntimeToolControlledExternalReadEffect(
       providerInvocation: false,
 
       httpStatus: response.status,
+      contentType: response.headers.get('content-type'),
       responseReceived: true,
       responseBytes,
 
@@ -186,6 +191,7 @@ export async function executeRuntimeToolControlledExternalReadEffect(
       providerInvocation: false,
 
       httpStatus: null,
+      contentType: null,
       responseReceived: false,
       responseBytes: 0,
 
