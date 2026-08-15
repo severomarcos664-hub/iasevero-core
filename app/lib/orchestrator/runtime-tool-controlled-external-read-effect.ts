@@ -29,6 +29,87 @@ export type RuntimeToolControlledExternalReadEffectResult = {
 
 const MAX_RESPONSE_BYTES = 256 * 1024
 
+export type RuntimeToolBoundedResponseBodyReadResult =
+  | {
+      exceeded: false
+      body: string
+      responseBytes: number
+    }
+  | {
+      exceeded: true
+      body: null
+      responseBytes: number
+    }
+
+export async function readRuntimeToolBoundedResponseBody(
+  response: Response,
+  maxBytes: number,
+): Promise<RuntimeToolBoundedResponseBodyReadResult> {
+  if (!Number.isFinite(maxBytes) || maxBytes <= 0) {
+    throw new Error(
+      'Bounded external-read response requires a positive finite byte budget.',
+    )
+  }
+
+  if (response.body === null) {
+    return {
+      exceeded: false,
+      body: '',
+      responseBytes: 0,
+    }
+  }
+
+  const reader = response.body.getReader()
+  const chunks: Uint8Array[] = []
+  let responseBytes = 0
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+
+      if (done) {
+        break
+      }
+
+      if (value === undefined) {
+        continue
+      }
+
+      responseBytes += value.byteLength
+
+      if (responseBytes > maxBytes) {
+        await reader.cancel(
+          'Controlled external read response exceeds size policy.',
+        )
+
+        return {
+          exceeded: true,
+          body: null,
+          responseBytes,
+        }
+      }
+
+      chunks.push(value)
+    }
+  } finally {
+    reader.releaseLock()
+  }
+
+  const bodyBytes = new Uint8Array(responseBytes)
+  let offset = 0
+
+  for (const chunk of chunks) {
+    bodyBytes.set(chunk, offset)
+    offset += chunk.byteLength
+  }
+
+  return {
+    exceeded: false,
+    body: new TextDecoder().decode(bodyBytes),
+    responseBytes,
+  }
+}
+
 export async function executeRuntimeToolControlledExternalReadEffect(
   input: RuntimeToolControlledExternalReadContractInput,
 ): Promise<RuntimeToolControlledExternalReadEffectResult> {
@@ -124,10 +205,15 @@ export async function executeRuntimeToolControlledExternalReadEffect(
       }
     }
 
-    const body = await response.text()
-    const responseBytes = Buffer.byteLength(body, 'utf8')
+    const boundedBody =
+      await readRuntimeToolBoundedResponseBody(
+        response,
+        MAX_RESPONSE_BYTES,
+      )
 
-    if (responseBytes > MAX_RESPONSE_BYTES) {
+    const responseBytes = boundedBody.responseBytes
+
+    if (boundedBody.exceeded) {
       return {
         contract,
         networkAttempted: true,
@@ -146,6 +232,8 @@ export async function executeRuntimeToolControlledExternalReadEffect(
         reason: 'Controlled external read response exceeds size policy.',
       }
     }
+
+    const body = boundedBody.body
 
     const succeeded =
       response.ok &&
