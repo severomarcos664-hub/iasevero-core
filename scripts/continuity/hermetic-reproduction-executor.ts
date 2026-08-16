@@ -65,7 +65,8 @@ export function executeHermeticReproduction(
     throw new Error('Unable to create detached reproduction worktree.')
   }
 
-  const reproducedCommit = spawnSync(
+  try {
+    const reproducedCommit = spawnSync(
     'git',
     ['rev-parse', 'HEAD'],
     {
@@ -128,9 +129,7 @@ export function executeHermeticReproduction(
     regressionSucceeded &&
     buildSucceeded
 
-  rmSync(worktreePath, { recursive: true, force: true })
-
-  return {
+    return {
     sourceIdentityVerified,
     tagIdentityVerified,
     lockfileVerified,
@@ -145,6 +144,18 @@ export function executeHermeticReproduction(
     networkRuntimeAccess: false,
     deploymentApplied: false,
     promotionApplied: false,
-    runtimeAuthorityGranted: false,
+      runtimeAuthorityGranted: false,
+    }
+  } finally {
+    const remove = run(
+      repositoryRoot,
+      'git',
+      ['worktree', 'remove', '--force', worktreePath],
+    )
+
+    if (remove !== 0) {
+      rmSync(worktreePath, { recursive: true, force: true })
+      run(repositoryRoot, 'git', ['worktree', 'prune'])
+    }
   }
 }
