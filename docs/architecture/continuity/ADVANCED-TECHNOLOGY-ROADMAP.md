@@ -989,3 +989,139 @@ When status is `FOUNDATION`, describe only the foundation actually evidenced.
 When status is `PARTIALLY_PROVED`, explicitly state the missing boundary.
 
 When status is `PROVED`, retain the proved scope and its limitations.
+
+
+---
+
+# STRATEGIC SOVEREIGNTY, AGENTIC AND CYBER-PHYSICAL EXTENSION
+
+These entries extend the strategic roadmap only.
+
+Their presence does NOT assert implementation, runtime availability,
+deployment authority, physical authority, or production readiness.
+
+## 41. Confidential Computing
+
+Status: `ROADMAP`
+
+Future objective:
+
+- protect sensitive information while data is in use;
+- evaluate trusted execution and workload-attestation mechanisms;
+- preserve tenant, user and execution isolation;
+- maintain local-first and sovereign deployment options.
+
+Invariant:
+
+`ENCRYPTION AT REST / IN TRANSIT != PROTECTION OF DATA IN USE`
+
+No confidential-computing runtime is claimed by this roadmap entry.
+
+## 42. Crypto-Agility / Post-Quantum Readiness
+
+Status: `ROADMAP`
+
+Future objective:
+
+- avoid permanent coupling to one cryptographic algorithm;
+- allow governed migration of signatures, hashes and attestations;
+- evaluate post-quantum algorithms when technically justified;
+- preserve provenance and compatibility during cryptographic transitions.
+
+Invariant:
+
+`CRYPTOGRAPHIC ALGORITHM != PERMANENT CRYPTOGRAPHIC DEPENDENCY`
+
+This roadmap entry does not claim post-quantum security.
+
+## 43. Cyber-Physical Authority Boundary
+
+Status: `ROADMAP`
+
+Future objective:
+
+- establish a separate authority boundary before any physical actuation;
+- require explicit safety policies and bounded authority;
+- distinguish digital execution from control of machines and environments;
+- support emergency stop, compensation and independent verification.
+
+Invariant:
+
+`DIGITAL AUTHORITY != CYBER-PHYSICAL AUTHORITY`
+
+No physical authority is currently granted.
+
+## 44. Physical / Embodied AI Governance
+
+Status: `ROADMAP`
+
+Future objective:
+
+- govern future robotics, devices, sensors and embodied agents;
+- separate observation, recommendation and actuation;
+- require bounded physical actions and safety verification;
+- maintain human approval where risk policy requires it.
+
+Invariant:
+
+`OBSERVATION != ACTUATION`
+
+A roadmap entry for embodied AI does not imply robotics capability.
+
+## 45. Edge Execution Governance
+
+Status: `ROADMAP`
+
+Future objective:
+
+- permit future governed execution near devices or data sources;
+- preserve identity, policy and telemetry outside centralized runtime;
+- define offline/degraded-mode authority limits;
+- maintain synchronization and reconciliation boundaries.
+
+Invariant:
+
+`EDGE EXECUTION != UNGOVERNED EXECUTION`
+
+No edge execution runtime is claimed.
+
+## 46. Governed Multi-Agent Architecture
+
+Status: `ROADMAP`
+
+Future objective:
+
+- allow specialized agents only when responsibilities are genuinely distinct;
+- require canonical ownership and explicit capability contracts;
+- isolate state, authority and resource budgets;
+- preserve correlation, auditability and deterministic governance boundaries.
+
+Invariants:
+
+`AGENT COLLABORATION != SHARED AUTHORITY`
+
+`MODEL CAPABILITY != OPERATIONAL AUTHORITY`
+
+A new agent MUST NOT be created merely to duplicate an existing owner.
+
+---
+
+## Strategic technology extension governance
+
+All sections 41-46 remain subject to sections 38-40.
+
+Therefore:
+
+`TECHNOLOGY ROADMAP ENTRY != IMPLEMENTATION`
+
+Technology presence does not imply:
+
+- implementation;
+- authorization;
+- execution;
+- deployment;
+- runtime authority;
+- physical authority;
+- autonomous learning.
+
+Autonomy MUST continue to grow through separately proved authority boundaries.

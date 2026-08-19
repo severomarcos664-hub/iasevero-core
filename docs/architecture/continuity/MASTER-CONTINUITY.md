@@ -290,3 +290,40 @@ At minimum, closeout MUST evaluate whether to update:
 - next verified frontier.
 
 The continuity integrity proof MUST then pass before final preservation.
+
+
+## 14. Strategic autonomy and sovereignty invariants
+
+Future IASevero evolution MUST preserve the following separations:
+
+`INTELLIGENCE != DECISION != AUTHORIZATION != EXECUTION != EFFECT != LEARNING`
+
+`AGENT COLLABORATION != SHARED AUTHORITY`
+
+`MODEL CAPABILITY != OPERATIONAL AUTHORITY`
+
+`DIGITAL AUTHORITY != CYBER-PHYSICAL AUTHORITY`
+
+`OBSERVATION != ACTUATION`
+
+`EDGE EXECUTION != UNGOVERNED EXECUTION`
+
+`TECHNOLOGY ROADMAP ENTRY != IMPLEMENTATION`
+
+Autonomy MUST increase through explicit, measurable and separately proved
+authority levels rather than through capability jumps.
+
+Multi-agent, confidential-computing, cryptographic-agility, edge and
+cyber-physical capabilities remain future technologies until promoted by
+the canonical technology-promotion contract with sufficient evidence.
+
+Technology choice MUST remain implementation-time governed and MUST consider
+technical maturity, licensing, local viability, external cost, performance,
+reproducibility, security, maintainability and integration risk.
+
+Git-backed continuity evidence wins whenever roadmap language, model output,
+chat context, external technology claims or future architectural proposals
+conflict with the verified state of IASevero.
+
+External technology information is evidence for evaluation, not authority to
+change implementation status, runtime authority or the verified baseline.

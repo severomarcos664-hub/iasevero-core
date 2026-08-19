@@ -282,6 +282,48 @@
       "name": "Governed Autonomous Operation",
       "category": "INTEGRATED COGNITIVE PLATFORM",
       "status": "ROADMAP"
+    },
+    {
+      "id": "confidential-computing",
+      "section": 41,
+      "name": "Confidential Computing",
+      "category": "VERIFICATION, RESILIENCE AND SECURITY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "crypto-agility-post-quantum-readiness",
+      "section": 42,
+      "name": "Crypto-Agility / Post-Quantum Readiness",
+      "category": "VERIFICATION, RESILIENCE AND SECURITY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "cyber-physical-authority-boundary",
+      "section": 43,
+      "name": "Cyber-Physical Authority Boundary",
+      "category": "EXECUTION AND AUTONOMY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "physical-embodied-ai-governance",
+      "section": 44,
+      "name": "Physical / Embodied AI Governance",
+      "category": "EXECUTION AND AUTONOMY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "edge-execution-governance",
+      "section": 45,
+      "name": "Edge Execution Governance",
+      "category": "EXECUTION AND AUTONOMY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "governed-multi-agent-architecture",
+      "section": 46,
+      "name": "Governed Multi-Agent Architecture",
+      "category": "INTEGRATED COGNITIVE PLATFORM",
+      "status": "ROADMAP"
     }
   ]
 }
