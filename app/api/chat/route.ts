@@ -7,6 +7,9 @@ import {
   createRuntimeToolExecutionAdapterRequest,
   evaluateRuntimeToolExecutionAdapter,
 } from '@/app/lib/orchestrator/runtime-tool-execution-adapter'
+import {
+  evaluateRuntimeToolControlledExternalReadIntegrationBoundary,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-integration-boundary'
 import { NextResponse } from "next/server"
 import {
   iaseveroCore,
@@ -377,6 +380,11 @@ const toolDispatchHandoff =
 
     const toolExecutionAdapter =
       evaluateRuntimeToolExecutionAdapter(toolExecutionAdapterRequest)
+
+    const toolControlledExternalReadIntegrationBoundary =
+      evaluateRuntimeToolControlledExternalReadIntegrationBoundary(
+        toolExecutionAdapter,
+      )
 
     return NextResponse.json({
       reply: result.reply,
