@@ -3,14 +3,14 @@
   "kind": "iasevero-advanced-technology-registry",
   "authority": {
     "source": "docs/architecture/continuity/ADVANCED-TECHNOLOGY-ROADMAP.md",
-    "sourceSha256": "20dcb35e37a43d71f51b43c04ae1e99b03b203fa0af5760d2662e688fe71edd5",
+    "sourceSha256": "61fe171b7b59fc2969049fee691e14d7f725e3cc3bd495789461abbbc441fbc2",
     "generatedFromCanonicalDocument": true,
     "manualStatusOverrideAllowed": false
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.11-governed-controlled-external-read-tool-allowlist-proof",
-    "commit": "c2dc58ba85344889606ba5f182f9f9c2e0ae8495"
+    "tag": "v287.19-governed-external-read-streaming-size-enforcement-proof",
+    "commit": "0c616d5a819431eb9eb10c03dec4ebb49cf743c3"
   },
   "claimGovernance": {
     "allowedStatuses": [
@@ -22,12 +22,12 @@
     "roadmapImpliesImplementation": false
   },
   "summary": {
-    "technologyCount": 36,
+    "technologyCount": 42,
     "statusCounts": {
       "FOUNDATION": 4,
       "PARTIALLY_PROVED": 6,
       "PROVED": 3,
-      "ROADMAP": 23
+      "ROADMAP": 29
     }
   },
   "technologies": [
