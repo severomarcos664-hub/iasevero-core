@@ -10,6 +10,9 @@ import {
 import {
   evaluateRuntimeToolControlledExternalReadIntegrationBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-integration-boundary'
+import {
+  evaluateRuntimeToolControlledExternalReadAuthorizationBoundary,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-authorization-boundary'
 import { NextResponse } from "next/server"
 import {
   iaseveroCore,
@@ -385,6 +388,23 @@ const toolDispatchHandoff =
       evaluateRuntimeToolControlledExternalReadIntegrationBoundary(
         toolExecutionAdapter,
       )
+
+    const toolControlledExternalReadAuthorizationBoundary =
+      evaluateRuntimeToolControlledExternalReadAuthorizationBoundary({
+        executionKey:
+          toolControlledExternalReadIntegrationBoundary.executionKey,
+        correlationId:
+          toolControlledExternalReadIntegrationBoundary.correlationId,
+        traceId:
+          toolControlledExternalReadIntegrationBoundary.traceId,
+        stepId:
+          toolControlledExternalReadIntegrationBoundary.stepId,
+        externalReadBoundaryEvaluated:
+          toolControlledExternalReadIntegrationBoundary.externalReadBoundaryEvaluated,
+        externalReadEligible:
+          toolControlledExternalReadIntegrationBoundary.externalReadEligible,
+        finalAuthorization: finalToolExecutionAllowed,
+      })
 
     return NextResponse.json({
       reply: result.reply,
