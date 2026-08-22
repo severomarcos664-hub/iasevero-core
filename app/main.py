@@ -1,3 +1,4 @@
+from app.health import router as health_router
 import asyncio
 from app.db.init_db import init_db
 
