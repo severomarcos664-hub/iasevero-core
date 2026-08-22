@@ -1,0 +1,7 @@
+IASevero validada em produção
+URL: https://iasevero-core-709131677330.us-central1.run.app
+health: OK
+ready: OK
+chat real: /chat
+api/chat: nao publicado nesta revisão
+proximo passo: ajustar prefixo /api e validar memoria
