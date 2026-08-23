@@ -9,8 +9,8 @@
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.38-governed-controlled-external-read-execution-gate-production-path-integration-proof",
-    "commit": "9239f140a852d991d766d6268729c758fc60eab6"
+    "tag": "v287.39-governed-controlled-external-read-effect-handoff-boundary-proof",
+    "commit": "c7a6bbeda5d4943ed97e54619a638a2b113f3058"
   },
   "claimGovernance": {
     "allowedStatuses": [
