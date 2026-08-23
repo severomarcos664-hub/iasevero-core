@@ -1106,9 +1106,203 @@ A new agent MUST NOT be created merely to duplicate an existing owner.
 
 ---
 
+## 47. Transformer / Attention Architecture
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate attention-based model architectures as governed model-development candidates;
+- preserve architecture neutrality across model providers and implementations;
+- benchmark quality, latency, memory use and context behavior before promotion;
+- keep model capability separate from operational authority.
+
+Invariant:
+
+`MODEL ARCHITECTURE != OPERATIONAL AUTHORITY`
+
+No transformer architecture is claimed as implemented by this roadmap entry.
+
+---
+
+## 48. Tokenization / Representation Engineering
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate tokenization and representation strategies under reproducible benchmarks;
+- measure vocabulary efficiency, multilingual behavior and representation quality;
+- preserve compatibility with governed model and retrieval boundaries;
+- avoid treating an installed tokenizer library as proof of architectural integration.
+
+Invariant:
+
+`LIBRARY AVAILABILITY != ARCHITECTURAL INTEGRATION`
+
+No tokenization architecture is claimed as implemented by this roadmap entry.
+
+---
+
+## 49. Neural Scaling Architecture
+
+Status: `ROADMAP`
+
+Future objective:
+
+- study empirical scaling behavior across model size, data, compute and quality;
+- use measured scaling evidence for capacity planning rather than speculative claims;
+- preserve explicit resource budgets and reproducibility requirements;
+- prevent scale from bypassing evaluation or governance gates.
+
+Invariant:
+
+`MODEL SCALE != MODEL QUALITY GUARANTEE`
+
+No neural scaling capability is claimed as implemented by this roadmap entry.
+
+---
+
+## 50. Self-Supervised Pretraining
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate governed self-supervised pretraining for long-term model sovereignty;
+- require provenance, licensing, quality and contamination controls for training data;
+- preserve reproducible training configuration and measurable evaluation gates;
+- separate pretraining capability from deployment and runtime authority.
+
+Invariant:
+
+`PRETRAINING != PRODUCTION READINESS`
+
+No self-supervised pretraining pipeline is claimed as implemented by this roadmap entry.
+
+---
+
+## 51. ML Compiler / Runtime Optimization
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate vendor-neutral graph, kernel and runtime optimization techniques;
+- improve inference efficiency only through reproducible measurements;
+- preserve correctness equivalence and regression verification across optimizations;
+- avoid coupling canonical architecture to a specific compiler or hardware vendor.
+
+Invariant:
+
+`OPTIMIZATION != CORRECTNESS PROOF`
+
+No ML compiler or runtime optimizer is claimed as implemented by this roadmap entry.
+
+---
+
+## 52. State Space Models
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate state space model architectures for efficient sequence processing;
+- benchmark latency, memory, throughput and long-context behavior against alternatives;
+- treat computational complexity as architecture- and operation-dependent;
+- require empirical evidence before claiming superiority over existing model families.
+
+Invariant:
+
+`STATE SPACE MODEL != INFINITE CONTEXT`
+
+No state space model is claimed as implemented by this roadmap entry.
+
+---
+
+## 53. Continuous-Time Neural Computation
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate continuous-time neural computation and differential-equation-based models;
+- investigate temporal dynamics, stability and resource efficiency;
+- require numerical validation, bounded error analysis and reproducible benchmarks;
+- keep continuous-time computation independent from claims of consciousness or autonomy.
+
+Invariant:
+
+`CONTINUOUS-TIME COMPUTATION != AUTONOMOUS AUTHORITY`
+
+No continuous-time neural runtime is claimed as implemented by this roadmap entry.
+
+---
+
+## 54. Search-Augmented Test-Time Reasoning
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate bounded search techniques such as tree search for difficult reasoning tasks;
+- combine candidate generation with independent evaluation where technically justified;
+- impose explicit compute, depth, branching and timeout budgets;
+- measure improvement empirically against deterministic baselines.
+
+Invariant:
+
+`SEARCH + VERIFICATION != ZERO ERROR`
+
+No search procedure, including MCTS, guarantees elimination of hallucination or error.
+
+---
+
+## 55. Neuro-Symbolic Verification
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate combinations of neural inference with symbolic constraints and formal methods;
+- use proof assistants or formal verification only where specifications are well defined;
+- preserve independent verification for safety-critical claims;
+- distinguish verified properties from unverified natural-language conclusions.
+
+Invariant:
+
+`FORMAL VERIFICATION != UNIVERSAL CORRECTNESS`
+
+No neuro-symbolic verifier is claimed as eliminating all model errors.
+
+---
+
+## 56. Active Inference for Governed Planning
+
+Status: `ROADMAP`
+
+Future objective:
+
+- evaluate active-inference principles for prediction, planning and policy selection;
+- restrict proposed improvements to governed evaluation and sandbox boundaries;
+- require explicit authorization before any state-changing effect;
+- preserve human-governed promotion and immutable authority boundaries.
+
+Invariants:
+
+`ACTIVE INFERENCE != SELF-MODIFICATION`
+
+`SELF-IMPROVEMENT != SELF-PROMOTION`
+
+`PROPOSAL != AUTHORIZATION`
+
+No autonomous runtime code rewriting or self-promotion authority is granted.
+
+---
+
 ## Strategic technology extension governance
 
-All sections 41-46 remain subject to sections 38-40.
+All sections 41-56 remain subject to sections 38-40.
 
 Therefore:
 

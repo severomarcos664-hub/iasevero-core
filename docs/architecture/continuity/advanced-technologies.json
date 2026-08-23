@@ -3,7 +3,7 @@
   "kind": "iasevero-advanced-technology-registry",
   "authority": {
     "source": "docs/architecture/continuity/ADVANCED-TECHNOLOGY-ROADMAP.md",
-    "sourceSha256": "61fe171b7b59fc2969049fee691e14d7f725e3cc3bd495789461abbbc441fbc2",
+    "sourceSha256": "102b5417e00febb9180c3f46d9f1e6328d38480c61494813e445795d19709216",
     "generatedFromCanonicalDocument": true,
     "manualStatusOverrideAllowed": false
   },
@@ -22,12 +22,12 @@
     "roadmapImpliesImplementation": false
   },
   "summary": {
-    "technologyCount": 42,
+    "technologyCount": 52,
     "statusCounts": {
       "FOUNDATION": 4,
       "PARTIALLY_PROVED": 6,
       "PROVED": 3,
-      "ROADMAP": 29
+      "ROADMAP": 39
     }
   },
   "technologies": [
@@ -323,6 +323,76 @@
       "section": 46,
       "name": "Governed Multi-Agent Architecture",
       "category": "INTEGRATED COGNITIVE PLATFORM",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "transformer-attention-architecture",
+      "section": 47,
+      "name": "Transformer / Attention Architecture",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "tokenization-representation-engineering",
+      "section": 48,
+      "name": "Tokenization / Representation Engineering",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "neural-scaling-architecture",
+      "section": 49,
+      "name": "Neural Scaling Architecture",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "self-supervised-pretraining",
+      "section": 50,
+      "name": "Self-Supervised Pretraining",
+      "category": "LEARNING AND ADAPTATION",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "ml-compiler-runtime-optimization",
+      "section": 51,
+      "name": "ML Compiler / Runtime Optimization",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "state-space-models",
+      "section": 52,
+      "name": "State Space Models",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "continuous-time-neural-computation",
+      "section": 53,
+      "name": "Continuous-Time Neural Computation",
+      "category": "MODEL DEVELOPMENT",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "search-augmented-test-time-reasoning",
+      "section": 54,
+      "name": "Search-Augmented Test-Time Reasoning",
+      "category": "PLANNING AND REASONING",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "neuro-symbolic-verification",
+      "section": 55,
+      "name": "Neuro-Symbolic Verification",
+      "category": "VERIFICATION, RESILIENCE AND SECURITY",
+      "status": "ROADMAP"
+    },
+    {
+      "id": "active-inference-planning",
+      "section": 56,
+      "name": "Active Inference for Governed Planning",
+      "category": "PLANNING AND REASONING",
       "status": "ROADMAP"
     }
   ]
