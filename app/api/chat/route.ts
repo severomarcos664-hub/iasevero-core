@@ -13,6 +13,9 @@ import {
 import {
   evaluateRuntimeToolControlledExternalReadAuthorizationBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-authorization-boundary'
+import {
+  evaluateRuntimeToolControlledExternalReadExecutionGate,
+} from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-execution-gate"
 import { NextResponse } from "next/server"
 import {
   iaseveroCore,
@@ -405,6 +408,32 @@ const toolDispatchHandoff =
           toolControlledExternalReadIntegrationBoundary.externalReadEligible,
         finalAuthorization: finalToolExecutionAllowed,
       })
+
+    const toolControlledExternalReadExecutionGate =
+    evaluateRuntimeToolControlledExternalReadExecutionGate({
+      executionKey:
+        toolControlledExternalReadAuthorizationBoundary.executionKey,
+      correlationId:
+        toolControlledExternalReadAuthorizationBoundary.correlationId,
+      traceId:
+        toolControlledExternalReadAuthorizationBoundary.traceId,
+      stepId:
+        toolControlledExternalReadAuthorizationBoundary.stepId,
+      externalReadAuthorizationEvaluated:
+        toolControlledExternalReadAuthorizationBoundary.externalReadAuthorizationEvaluated,
+      externalReadAuthorized:
+        toolControlledExternalReadAuthorizationBoundary.externalReadAuthorized,
+      networkAccess:
+        toolControlledExternalReadAuthorizationBoundary.networkAccess,
+      externalReadApplied:
+        toolControlledExternalReadAuthorizationBoundary.externalReadApplied,
+      executionApplied:
+        toolControlledExternalReadAuthorizationBoundary.executionApplied,
+      mutationApplied:
+        toolControlledExternalReadAuthorizationBoundary.mutationApplied,
+      providerInvocation:
+        toolControlledExternalReadAuthorizationBoundary.providerInvocation,
+    })
 
     return NextResponse.json({
       reply: result.reply,
