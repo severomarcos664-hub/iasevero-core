@@ -102,7 +102,7 @@ const ALLOWED_STATUSES = new Set([
   'ROADMAP',
 ])
 
-const EXPECTED_TECHNOLOGY_COUNT = 42
+const EXPECTED_TECHNOLOGY_COUNT = 52
 
 const REQUIRED_CONTINUITY_FILES = [
   'docs/architecture/continuity/current-baseline.json',
