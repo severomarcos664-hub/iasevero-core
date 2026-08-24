@@ -16,6 +16,9 @@ import {
 import {
   evaluateRuntimeToolControlledExternalReadExecutionGate,
 } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-execution-gate"
+import {
+  evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect-handoff-boundary'
 import { NextResponse } from "next/server"
 import {
   iaseveroCore,
@@ -435,7 +438,12 @@ const toolDispatchHandoff =
         toolControlledExternalReadAuthorizationBoundary.providerInvocation,
     })
 
-    return NextResponse.json({
+      const toolControlledExternalReadEffectHandoffBoundary =
+    evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary(
+      toolControlledExternalReadExecutionGate,
+    )
+
+return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
         decision: evaluationDecision,
