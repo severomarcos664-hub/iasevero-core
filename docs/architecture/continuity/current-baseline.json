@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.39-governed-controlled-external-read-effect-handoff-boundary-proof",
-    "commit": "c7a6bbeda5d4943ed97e54619a638a2b113f3058",
+    "tag": "v287.40-governed-controlled-external-read-effect-handoff-production-path-integration-proof",
+    "commit": "8daf95b0c29c45185cf31f759eacc34b61212b63",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
