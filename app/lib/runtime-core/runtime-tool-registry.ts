@@ -69,6 +69,17 @@ RuntimeToolRegistryReport {
     },
 
     {
+      id: 'external.read',
+      category: 'execution',
+      risk: 'high',
+      timeoutMs: 3000,
+      retries: 0,
+      fallback: 'execution.abort',
+      allowed: false,
+      critical: true,
+    },
+
+    {
       id: 'runtime.validation',
       category: 'validation',
       risk: 'medium',
