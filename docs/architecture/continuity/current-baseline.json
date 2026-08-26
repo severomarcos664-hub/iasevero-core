@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.43-governed-controlled-external-read-invocation-material-boundary-proof",
-    "commit": "35eb6c3d9eabe1f1e1f0a479fff8335ff98cd2dc",
+    "tag": "v287.44-governed-controlled-external-read-target-input-boundary-proof",
+    "commit": "3362cf92960b8d7f432ca4c85a9a2adf863fba69",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
