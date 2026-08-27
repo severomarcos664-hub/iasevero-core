@@ -19,6 +19,9 @@ import {
 import {
   evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect-handoff-boundary'
+import {
+  evaluateRuntimeExecutionBoundAuthority,
+} from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
 import { NextResponse } from "next/server"
 import {
   iaseveroCore,
@@ -443,6 +446,14 @@ const toolDispatchHandoff =
       toolControlledExternalReadExecutionGate,
     )
 
+    const executionBoundAuthority =
+      evaluateRuntimeExecutionBoundAuthority({
+        executionKey: effectiveExecutionKey,
+        executiveAuthority: {
+          executionAllowed: finalToolExecutionAllowed,
+        },
+      })
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -455,6 +466,7 @@ return NextResponse.json({
       toolExecutionGate,
       toolExecutionHandoff,
       toolExecutionAdapter,
+      executionBoundAuthority,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
