@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.45-governed-execution-bound-authority-proof",
-    "commit": "e3fa1b0352a1e4e147a9f9889113099e26f05b40",
+    "tag": "v287.46-governed-execution-bound-authority-production-path-integration-proof",
+    "commit": "57c70e10a3cef503c07c68707ce0f82c050d0e4f",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
