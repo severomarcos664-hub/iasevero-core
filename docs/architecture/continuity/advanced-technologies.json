@@ -9,8 +9,8 @@
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.44-governed-controlled-external-read-target-input-boundary-proof",
-    "commit": "3362cf92960b8d7f432ca4c85a9a2adf863fba69"
+    "tag": "v287.45-governed-execution-bound-authority-proof",
+    "commit": "e3fa1b0352a1e4e147a9f9889113099e26f05b40"
   },
   "claimGovernance": {
     "allowedStatuses": [
