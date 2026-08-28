@@ -23,6 +23,9 @@ import {
   evaluateRuntimeToolControlledExternalReadRequestTargetContract,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-request-target-contract'
 import {
+  evaluateRuntimeToolControlledExternalReadTargetInputBoundary,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-target-input-boundary'
+import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
 import { NextResponse } from "next/server"
@@ -455,6 +458,14 @@ const toolDispatchHandoff =
         externalReadTarget,
       })
 
+    const toolControlledExternalReadTargetInputBoundary =
+      toolControlledExternalReadRequestTarget.requestTargetEligible &&
+      toolControlledExternalReadRequestTarget.targetInput !== null
+        ? evaluateRuntimeToolControlledExternalReadTargetInputBoundary(
+            toolControlledExternalReadRequestTarget.targetInput,
+          )
+        : null
+
     const executionBoundAuthority =
       evaluateRuntimeExecutionBoundAuthority({
         executionKey: effectiveExecutionKey,
@@ -476,6 +487,7 @@ return NextResponse.json({
       toolExecutionHandoff,
       toolExecutionAdapter,
       toolControlledExternalReadRequestTarget,
+      toolControlledExternalReadTargetInputBoundary,
       executionBoundAuthority,
       job: result.job || null,
       plan: runtimePlan,
