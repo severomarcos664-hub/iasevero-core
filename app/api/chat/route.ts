@@ -20,6 +20,9 @@ import {
   evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect-handoff-boundary'
 import {
+  evaluateRuntimeToolControlledExternalReadRequestTargetContract,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-request-target-contract'
+import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
 import { NextResponse } from "next/server"
@@ -63,6 +66,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json()
     const message = (body.message || '').toString().trim()
+    const externalReadTarget = body.externalReadTarget
     const userId = body.userId || 'local'
     const tenantId =
       typeof body.tenantId === 'string' &&
@@ -446,6 +450,11 @@ const toolDispatchHandoff =
       toolControlledExternalReadExecutionGate,
     )
 
+    const toolControlledExternalReadRequestTarget =
+      evaluateRuntimeToolControlledExternalReadRequestTargetContract({
+        externalReadTarget,
+      })
+
     const executionBoundAuthority =
       evaluateRuntimeExecutionBoundAuthority({
         executionKey: effectiveExecutionKey,
@@ -466,6 +475,7 @@ return NextResponse.json({
       toolExecutionGate,
       toolExecutionHandoff,
       toolExecutionAdapter,
+      toolControlledExternalReadRequestTarget,
       executionBoundAuthority,
       job: result.job || null,
       plan: runtimePlan,
