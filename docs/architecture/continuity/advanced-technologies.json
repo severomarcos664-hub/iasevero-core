@@ -9,8 +9,8 @@
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.48-governed-controlled-external-read-request-target-production-path-integration-proof",
-    "commit": "7f396af6b62862c6d3b36d9dd073e859c2f0f78d"
+    "tag": "v287.49-governed-controlled-external-read-target-input-production-path-integration-proof",
+    "commit": "283e8bc6a25b43e93c56e7d82de2496debd8d540"
   },
   "claimGovernance": {
     "allowedStatuses": [
