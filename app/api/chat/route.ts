@@ -26,6 +26,9 @@ import {
   evaluateRuntimeToolControlledExternalReadTargetInputBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-target-input-boundary'
 import {
+  evaluateRuntimeToolControlledExternalReadInvocationMaterialBoundary,
+} from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-material-boundary'
+import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
 import { NextResponse } from "next/server"
@@ -466,6 +469,21 @@ const toolDispatchHandoff =
           )
         : null
 
+    const toolControlledExternalReadInvocationMaterialBoundary =
+      toolControlledExternalReadTargetInputBoundary !== null &&
+      toolControlledExternalReadTargetInputBoundary.targetInputEligible &&
+      toolControlledExternalReadTargetInputBoundary.target !== null &&
+      toolControlledExternalReadTargetInputBoundary.target.protocol === 'https:'
+        ? evaluateRuntimeToolControlledExternalReadInvocationMaterialBoundary({
+            handoff: toolControlledExternalReadEffectHandoffBoundary,
+            target: {
+              protocol: 'https',
+              host: toolControlledExternalReadTargetInputBoundary.target.host,
+              resource: toolControlledExternalReadTargetInputBoundary.target.resource,
+            },
+          })
+        : null
+
     const executionBoundAuthority =
       evaluateRuntimeExecutionBoundAuthority({
         executionKey: effectiveExecutionKey,
@@ -488,6 +506,7 @@ return NextResponse.json({
       toolExecutionAdapter,
       toolControlledExternalReadRequestTarget,
       toolControlledExternalReadTargetInputBoundary,
+      toolControlledExternalReadInvocationMaterialBoundary,
       executionBoundAuthority,
       job: result.job || null,
       plan: runtimePlan,
