@@ -28,6 +28,7 @@ import {
 import {
   evaluateRuntimeToolControlledExternalReadInvocationMaterialBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-material-boundary'
+import { prepareRuntimeToolControlledExternalReadInvocation } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-preparation';
 import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
@@ -484,6 +485,15 @@ const toolDispatchHandoff =
           })
         : null
 
+    const toolControlledExternalReadInvocationPreparation =
+      toolControlledExternalReadInvocationMaterialBoundary !== null &&
+      toolControlledExternalReadInvocationMaterialBoundary.materialPrepared &&
+      toolControlledExternalReadInvocationMaterialBoundary.preparationInput !== null
+        ? prepareRuntimeToolControlledExternalReadInvocation(
+            toolControlledExternalReadInvocationMaterialBoundary.preparationInput,
+          )
+        : null;
+
     const executionBoundAuthority =
       evaluateRuntimeExecutionBoundAuthority({
         executionKey: effectiveExecutionKey,
@@ -507,6 +517,7 @@ return NextResponse.json({
       toolControlledExternalReadRequestTarget,
       toolControlledExternalReadTargetInputBoundary,
       toolControlledExternalReadInvocationMaterialBoundary,
+      toolControlledExternalReadInvocationPreparation,
       executionBoundAuthority,
       job: result.job || null,
       plan: runtimePlan,
