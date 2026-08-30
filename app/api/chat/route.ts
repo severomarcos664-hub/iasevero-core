@@ -1,3 +1,4 @@
+import { createRuntimeToolExecutionInvocationEnvelope } from '@/app/lib/orchestrator/runtime-tool-execution-invocation-envelope'
 import { createRuntimeToolDispatchHandoff } from '@/app/lib/orchestrator/runtime-tool-dispatcher'
 import { applyRuntimeToolDispatch } from '@/app/lib/orchestrator/runtime-tool-dispatch-application'
 import { evaluateRuntimeToolExecutionGate } from '@/app/lib/orchestrator/runtime-tool-execution-gate'
@@ -527,6 +528,18 @@ const toolDispatchHandoff =
       : null
 
 
+
+const toolControlledExternalReadInvocationEnvelope =
+  toolExecutionAdapter !== null &&
+  toolControlledExternalReadInvocationPreparation !== null &&
+  toolControlledExternalReadContextualAdmissionAuthority !== null &&
+  toolControlledExternalReadContextualAdmissionAuthority.contextualAdmission
+    ? createRuntimeToolExecutionInvocationEnvelope(
+        toolExecutionAdapter,
+        toolControlledExternalReadInvocationPreparation,
+      )
+    : null
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -546,6 +559,7 @@ return NextResponse.json({
       executionBoundAuthority,
       toolControlledExternalReadContextualAdmissionGrantBoundary,
       toolControlledExternalReadContextualAdmissionAuthority,
+    toolControlledExternalReadInvocationEnvelope,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
