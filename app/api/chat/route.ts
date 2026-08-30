@@ -30,6 +30,7 @@ import {
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-material-boundary'
 import { prepareRuntimeToolControlledExternalReadInvocation } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-preparation';
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-grant-boundary'
+import { evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-authority'
 import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
@@ -512,6 +513,20 @@ const toolDispatchHandoff =
       : null
 
 
+  const toolControlledExternalReadContextualAdmissionAuthority =
+    toolControlledExternalReadInvocationPreparation !== null &&
+    toolControlledExternalReadContextualAdmissionGrantBoundary !== null &&
+    toolControlledExternalReadContextualAdmissionGrantBoundary.grantPrepared &&
+    toolControlledExternalReadContextualAdmissionGrantBoundary.contextualGrant !== null
+      ? evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority({
+          preparation: toolControlledExternalReadInvocationPreparation,
+          executionAuthority: executionBoundAuthority,
+          contextualGrant:
+            toolControlledExternalReadContextualAdmissionGrantBoundary.contextualGrant,
+        })
+      : null
+
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -530,6 +545,7 @@ return NextResponse.json({
       toolControlledExternalReadInvocationPreparation,
       executionBoundAuthority,
       toolControlledExternalReadContextualAdmissionGrantBoundary,
+      toolControlledExternalReadContextualAdmissionAuthority,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
