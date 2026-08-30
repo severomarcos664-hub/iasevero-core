@@ -1,3 +1,4 @@
+import { evaluateRuntimeToolControlledExecutorBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-executor-boundary'
 import { createRuntimeToolExecutionInvocationEnvelope } from '@/app/lib/orchestrator/runtime-tool-execution-invocation-envelope'
 import { createRuntimeToolDispatchHandoff } from '@/app/lib/orchestrator/runtime-tool-dispatcher'
 import { applyRuntimeToolDispatch } from '@/app/lib/orchestrator/runtime-tool-dispatch-application'
@@ -540,6 +541,14 @@ const toolControlledExternalReadInvocationEnvelope =
       )
     : null
 
+
+  const toolControlledExternalReadExecutorBoundary =
+    toolControlledExternalReadInvocationEnvelope !== null
+      ? evaluateRuntimeToolControlledExecutorBoundary(
+          toolControlledExternalReadInvocationEnvelope,
+        )
+      : null
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -560,6 +569,7 @@ return NextResponse.json({
       toolControlledExternalReadContextualAdmissionGrantBoundary,
       toolControlledExternalReadContextualAdmissionAuthority,
     toolControlledExternalReadInvocationEnvelope,
+    toolControlledExternalReadExecutorBoundary,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
