@@ -9,8 +9,8 @@
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.52-governed-controlled-external-read-contextual-admission-authority-proof",
-    "commit": "f97efbd3b89303f2e5b7a4d1215feaf4d550c34d"
+    "tag": "v287.53-governed-controlled-external-read-contextual-admission-grant-boundary-proof",
+    "commit": "2327a35482e4abc82e2e3c861c4f225759a20f20"
   },
   "claimGovernance": {
     "allowedStatuses": [
