@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.54-governed-controlled-external-read-contextual-admission-grant-production-path-integration-proof",
-    "commit": "127fcd25fb7ecbf604462806a6fac330554cef0d",
+    "tag": "v287.55-governed-controlled-external-read-contextual-admission-authority-production-path-integration-proof",
+    "commit": "d3b1ade6d0572ecf6d246939d9d358b12b033956",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
