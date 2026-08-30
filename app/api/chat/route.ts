@@ -29,6 +29,7 @@ import {
   evaluateRuntimeToolControlledExternalReadInvocationMaterialBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-material-boundary'
 import { prepareRuntimeToolControlledExternalReadInvocation } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-preparation';
+import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-grant-boundary'
 import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
@@ -502,6 +503,15 @@ const toolDispatchHandoff =
         },
       })
 
+  const toolControlledExternalReadContextualAdmissionGrantBoundary =
+    toolControlledExternalReadInvocationPreparation !== null
+      ? evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBoundary({
+          preparation: toolControlledExternalReadInvocationPreparation,
+          executionAuthority: executionBoundAuthority,
+        })
+      : null
+
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -519,6 +529,7 @@ return NextResponse.json({
       toolControlledExternalReadInvocationMaterialBoundary,
       toolControlledExternalReadInvocationPreparation,
       executionBoundAuthority,
+      toolControlledExternalReadContextualAdmissionGrantBoundary,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
