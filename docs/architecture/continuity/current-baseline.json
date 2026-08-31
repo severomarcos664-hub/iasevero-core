@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.56-governed-controlled-external-read-invocation-envelope-production-path-integration-proof",
-    "commit": "8a50cc71d84bbf2ed980bbd0370f822e0ff34706",
+    "tag": "v287.57-governed-controlled-external-read-executor-boundary-production-path-integration-proof",
+    "commit": "bd2c6fa5cc199158956c54ff357029e3eb6a0a76",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
