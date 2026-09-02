@@ -20,10 +20,8 @@ import {
 const ownerPath =
   'app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary.ts'
 
-const routePath = 'app/api/chat/route.ts'
 
 const ownerSource = readFileSync(ownerPath, 'utf8')
-const routeSource = readFileSync(routePath, 'utf8')
 
 const registry = createRuntimeToolRegistry()
 
@@ -200,16 +198,10 @@ assert.equal(
 )
 
 /*
- * Scope invariants:
- * v287.58 proves the owner only.
- * No production integration, no effect, no fetch.
+ * Permanent owner invariants:
+ * production-path integration is version-scoped and proved separately.
+ * This owner itself must never perform network I/O or execute the effect.
  */
-assert.equal(
-  routeSource.includes(
-    'evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary',
-  ),
-  false,
-)
 
 assert.equal(ownerSource.includes('fetch('), false)
 
