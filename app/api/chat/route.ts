@@ -33,6 +33,7 @@ import {
 import { prepareRuntimeToolControlledExternalReadInvocation } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-preparation';
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-grant-boundary'
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-authority'
+import { evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary'
 import {
   evaluateRuntimeExecutionBoundAuthority,
 } from '@/app/lib/runtime-executive-authority-gateway/runtime-execution-bound-authority'
@@ -549,6 +550,16 @@ const toolControlledExternalReadInvocationEnvelope =
         )
       : null
 
+const toolControlledExternalReadExecutorAdmissionBoundary =
+  toolControlledExternalReadExecutorBoundary !== null &&
+  toolControlledExternalReadContextualAdmissionAuthority !== null
+    ? evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary({
+        executorBoundary: toolControlledExternalReadExecutorBoundary,
+        contextualAdmissionAuthority:
+          toolControlledExternalReadContextualAdmissionAuthority,
+      })
+    : null
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -570,6 +581,7 @@ return NextResponse.json({
       toolControlledExternalReadContextualAdmissionAuthority,
     toolControlledExternalReadInvocationEnvelope,
     toolControlledExternalReadExecutorBoundary,
+    toolControlledExternalReadExecutorAdmissionBoundary,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
