@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.63-governed-controlled-external-read-allowlist-source-policy-authority-reconciliation-proof",
-    "commit": "d58a7aa7aae4663d8d0613a90551387f4d8eade4",
+    "tag": "v287.64-governed-controlled-external-read-allowlist-source-production-path-integration-proof",
+    "commit": "547ae4f64d2e214238d4777b7596fbc799cdc31b",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
