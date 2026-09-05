@@ -35,6 +35,7 @@ import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBounda
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-authority'
 import { evaluateRuntimeToolControlledExternalReadAllowlistSource } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-allowlist-source"
 import { evaluateRuntimeToolControlledExternalReadPolicyAuthority } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-policy-authority"
+import { evaluateRuntimeToolControlledExternalReadContract } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-contract"
 import { evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary'
 import {
   evaluateRuntimeExecutionBoundAuthority,
@@ -575,6 +576,27 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         )
       : null
 
+  const toolControlledExternalReadContract =
+    toolControlledExternalReadInvocationEnvelope !== null &&
+    toolControlledExternalReadExecutorBoundary !== null &&
+    toolControlledExternalReadTargetInputBoundary !== null &&
+    toolControlledExternalReadTargetInputBoundary.targetInputEligible &&
+    toolControlledExternalReadTargetInputBoundary.target !== null &&
+    toolControlledExternalReadTargetInputBoundary.target.protocol === 'https:' &&
+    toolControlledExternalReadPolicyAuthority !== null &&
+    toolControlledExternalReadPolicyAuthority.policyAuthorized
+      ? evaluateRuntimeToolControlledExternalReadContract({
+          envelope: toolControlledExternalReadInvocationEnvelope,
+          boundary: toolControlledExternalReadExecutorBoundary,
+          target: {
+            protocol: 'https:',
+            host: toolControlledExternalReadTargetInputBoundary.target.host,
+            resource: toolControlledExternalReadTargetInputBoundary.target.resource,
+          },
+          policy: toolControlledExternalReadPolicyAuthority.policy,
+        })
+      : null
+
 return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
@@ -599,6 +621,7 @@ return NextResponse.json({
     toolControlledExternalReadExecutorAdmissionBoundary,
     toolControlledExternalReadAllowlistSource,
     toolControlledExternalReadPolicyAuthority,
+    toolControlledExternalReadContract,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,

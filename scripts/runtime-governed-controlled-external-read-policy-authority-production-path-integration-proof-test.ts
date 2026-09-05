@@ -45,11 +45,21 @@ const effectCallCount = count(
 const fetchCallCount = count('fetch(')
 
 const policyOwnerFailClosed =
-  owner.includes('policyAuthorized: false') &&
+  owner.includes('function failClosedPolicy()') &&
   owner.includes('allowedHosts: []') &&
   owner.includes('allowedResources: []') &&
+  owner.includes('readOnly: true') &&
+  owner.includes('externalCostAllowed: false') &&
+  owner.includes('secretsPermitted: false') &&
+  owner.includes('auditRequired: true') &&
+  owner.includes('const policyAuthorized = isGovernedSourceValid(source)') &&
+  owner.includes(': failClosedPolicy()') &&
+  owner.includes('policyAuthorized,') &&
   owner.includes('networkAccess: false') &&
-  owner.includes('externalReadApplied: false')
+  owner.includes('externalReadApplied: false') &&
+  owner.includes('executionApplied: false') &&
+  owner.includes('mutationApplied: false') &&
+  owner.includes('providerInvocation: false')
 
 console.log({
   architecture:
@@ -108,8 +118,8 @@ assert.equal(
 
 assert.equal(
   contractCallCount,
-  0,
-  'external-read contract must not be production-integrated in this version',
+  1,
+  'controlled external-read contract must be production-integrated exactly once after policy authority',
 )
 
 assert.equal(

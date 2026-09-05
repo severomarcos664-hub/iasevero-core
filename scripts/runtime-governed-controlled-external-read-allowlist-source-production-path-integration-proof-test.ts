@@ -38,6 +38,6 @@ console.log({
 assert.equal(sourceCalls, 1)
 assert.equal(policyWithSource, true)
 assert.equal(sourceResponseExposure, true)
-assert.equal(contractCalls, 0)
+assert.equal(contractCalls, 1)
 assert.equal(effectCalls, 0)
 assert.equal(fetchCalls, 0)
