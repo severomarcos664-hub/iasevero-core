@@ -33,6 +33,7 @@ import {
 import { prepareRuntimeToolControlledExternalReadInvocation } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-invocation-preparation';
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-grant-boundary'
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-authority'
+import { evaluateRuntimeToolControlledExternalReadAllowlistSource } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-allowlist-source"
 import { evaluateRuntimeToolControlledExternalReadPolicyAuthority } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-policy-authority"
 import { evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary'
 import {
@@ -561,9 +562,17 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
       })
     : null
 
-  const toolControlledExternalReadPolicyAuthority =
+  const toolControlledExternalReadAllowlistSource =
     toolControlledExternalReadExecutorAdmissionBoundary !== null
-      ? evaluateRuntimeToolControlledExternalReadPolicyAuthority()
+      ? evaluateRuntimeToolControlledExternalReadAllowlistSource()
+      : null
+
+  const toolControlledExternalReadPolicyAuthority =
+    toolControlledExternalReadExecutorAdmissionBoundary !== null &&
+    toolControlledExternalReadAllowlistSource !== null
+      ? evaluateRuntimeToolControlledExternalReadPolicyAuthority(
+          toolControlledExternalReadAllowlistSource,
+        )
       : null
 
 return NextResponse.json({
@@ -588,6 +597,7 @@ return NextResponse.json({
     toolControlledExternalReadInvocationEnvelope,
     toolControlledExternalReadExecutorBoundary,
     toolControlledExternalReadExecutorAdmissionBoundary,
+    toolControlledExternalReadAllowlistSource,
     toolControlledExternalReadPolicyAuthority,
       job: result.job || null,
       plan: runtimePlan,
