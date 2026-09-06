@@ -35,6 +35,8 @@ import { evaluateRuntimeToolControlledExternalReadContextualAdmissionGrantBounda
 import { evaluateRuntimeToolControlledExternalReadContextualAdmissionAuthority } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-contextual-admission-authority'
 import { evaluateRuntimeToolControlledExternalReadAllowlistSource } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-allowlist-source"
 import { evaluateRuntimeToolControlledExternalReadPolicyAuthority } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-policy-authority"
+import { createRuntimeToolDnsResolverAdapter } from '@/app/lib/orchestrator/runtime-tool-external-read-dns-resolver-adapter'
+import { evaluateRuntimeToolDnsResolutionBoundary } from '@/app/lib/orchestrator/runtime-tool-external-read-dns-resolution-boundary'
 import { evaluateRuntimeToolControlledExternalReadContract } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-contract"
 import { evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary'
 import {
@@ -576,6 +578,17 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         )
       : null
 
+  const toolControlledExternalReadDnsResolution =
+    toolControlledExternalReadTargetInputBoundary !== null &&
+    toolControlledExternalReadTargetInputBoundary.targetInputEligible &&
+    toolControlledExternalReadTargetInputBoundary.target !== null &&
+    toolControlledExternalReadTargetInputBoundary.target.protocol === 'https:'
+      ? await evaluateRuntimeToolDnsResolutionBoundary(
+          toolControlledExternalReadTargetInputBoundary.target.host,
+          createRuntimeToolDnsResolverAdapter(async () => []).resolve,
+        )
+      : null
+
   const toolControlledExternalReadContract =
     toolControlledExternalReadInvocationEnvelope !== null &&
     toolControlledExternalReadExecutorBoundary !== null &&
@@ -621,6 +634,11 @@ return NextResponse.json({
     toolControlledExternalReadExecutorAdmissionBoundary,
     toolControlledExternalReadAllowlistSource,
     toolControlledExternalReadPolicyAuthority,
+    toolControlledExternalReadDnsResolution,
+    toolControlledExternalReadDnsResolvedAddresses:
+      toolControlledExternalReadDnsResolution?.resolvedAddresses ?? [],
+    toolControlledExternalReadDnsDestinationDecisions:
+      toolControlledExternalReadDnsResolution?.destinationDecisions ?? [],
     toolControlledExternalReadContract,
       job: result.job || null,
       plan: runtimePlan,
