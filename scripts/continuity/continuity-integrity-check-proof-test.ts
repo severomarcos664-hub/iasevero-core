@@ -317,7 +317,7 @@ try {
   assert.equal(
     positive.technologyRegistry
       .technologyCount,
-    52,
+    53,
   )
 
   /*

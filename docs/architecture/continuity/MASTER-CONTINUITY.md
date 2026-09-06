@@ -327,3 +327,64 @@ conflict with the verified state of IASevero.
 
 External technology information is evidence for evaluation, not authority to
 change implementation status, runtime authority or the verified baseline.
+
+## Governed Frontier Intelligence, Agentic Control & Evolution Architecture
+
+Status: ROADMAP / ARCHITECTURAL EXTENSION
+
+IASevero incorporates this architecture as an upper-level governed
+organization for future frontier intelligence, agentic control,
+context continuity, work orchestration, capability discovery,
+sovereign interaction/execution, evaluation and governed evolution.
+
+The architecture is composed of seven coordinated planes:
+
+1. Governed Intelligence Plane
+2. Governed Agent Control Plane
+3. Governed Context & Memory Continuity
+4. Governed Work Orchestration
+5. Governed Capability Discovery
+6. Sovereign Interaction & Execution Plane
+7. Evaluation & Evolution Plane
+
+These planes do not replace the current canonical execution chain,
+existing memory owners, technology registry, continuity system,
+governance boundaries or version progression.
+
+They organize and extend existing canonical capabilities.
+
+Permanent principles:
+
+- MODEL INTELLIGENCE != EXECUTION AUTHORITY
+- LONG CONTEXT != MEMORY
+- INTERNAL REASONING != GOVERNANCE EVIDENCE
+- DISCOVERY != INSTALLATION
+- INSTALLATION != AUTHORIZATION
+- AUTHORIZATION != EXECUTION
+- EXECUTION != PROMOTION
+- SELF-IMPROVEMENT WITHOUT SELF-PROMOTION
+
+Provider lifecycle remains explicitly separated:
+
+providerAvailable != providerAuthorized != providerSelected != providerInvoked
+
+Higher intelligence, benchmark performance or model capability does not
+grant additional execution, mutation, deployment or promotion authority.
+
+This architectural adoption does not claim implementation of:
+- GPT-6 Astra;
+- any specific frontier provider;
+- paid provider activation;
+- computer use;
+- MCP execution;
+- autonomous tool installation;
+- unrestricted external network access;
+- autonomous self-modification;
+- autonomous production promotion.
+
+All concrete capabilities require their own canonical owner,
+versioned implementation, executable proof, regression validation,
+Git evidence and governed promotion.
+
+The existing functional development sequence remains authoritative and
+must not be bypassed by this architectural extension.

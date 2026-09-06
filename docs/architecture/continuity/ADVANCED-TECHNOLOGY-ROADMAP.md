@@ -1319,3 +1319,127 @@ Technology presence does not imply:
 - autonomous learning.
 
 Autonomy MUST continue to grow through separately proved authority boundaries.
+
+## Governed Frontier Intelligence, Agentic Control & Evolution Architecture
+
+Status: ROADMAP
+
+Nature:
+Upper-level architectural extension for organizing frontier-model
+intelligence, governed agent control, context continuity, work
+orchestration, capability discovery, sovereign interaction/execution,
+evaluation and governed evolution.
+
+This roadmap entry does not claim runtime implementation.
+
+It extends and coordinates existing canonical IASevero capabilities
+instead of creating parallel owners.
+
+### Architectural planes
+
+1. Governed Intelligence Plane
+   - provider-agnostic model governance;
+   - model/provider capability profiling;
+   - routing by capability, cost, risk, privacy, latency, context,
+     tools and benchmark evidence;
+   - local-first and zero-external-cost preservation.
+
+2. Governed Agent Control Plane
+   - trajectory monitoring from observable execution evidence;
+   - independent action review;
+   - mid-task steering;
+   - scope control;
+   - governed mission continuity.
+
+3. Governed Context & Memory Continuity
+   - durable governed notes;
+   - searchable historical context;
+   - context-window manifests;
+   - provenance-aware retrieval;
+   - extension of canonical governed memory owners only.
+
+4. Governed Work Orchestration
+   - mission/task state;
+   - dependency graphs;
+   - WAITING_USER and WAITING_DEPENDENCY;
+   - continuation only for independent and already-authorized work.
+
+5. Governed Capability Discovery
+   - discovery of candidate tools, models, providers, MCP interfaces
+     and technologies;
+   - provenance and trust evaluation;
+   - sandbox benchmark;
+   - promotion proposal without autonomous promotion.
+
+6. Sovereign Interaction & Execution Plane
+   - governed computer use;
+   - capability-bounded shell/filesystem interaction;
+   - controlled network access;
+   - MCP adapters under IASevero authority;
+   - sandboxing, resource budgets and governed egress.
+
+7. Evaluation & Evolution Plane
+   - IASevero-owned benchmark suites;
+   - capability and regression evaluation;
+   - comparative model/provider evaluation;
+   - governed learning and adaptation proposals;
+   - promotion and rollback evidence.
+
+### Existing canonical technology relationships
+
+This architecture must reuse and extend existing owners including:
+
+- dynamic-model-routing
+- adaptive-cognitive-routing
+- governed-multi-agent-architecture
+- governed-autonomous-operation
+- hierarchical-governed-memory
+- durable-execution-journal
+- governed-tool-execution
+- controlled-external-read
+- governed-evaluation-contract
+- continual-learning-governance
+
+### Permanent governance constraints
+
+ROADMAP != IMPLEMENTATION
+
+ARCHITECTURAL ADOPTION != RUNTIME EXECUTION
+
+MODEL CAPABILITY != SYSTEM AUTHORITY
+
+DISCOVERY != INSTALLATION
+
+INSTALLATION != AUTHORIZATION
+
+AUTHORIZATION != EXECUTION
+
+EXECUTION != PROMOTION
+
+SELF-IMPROVEMENT WITHOUT SELF-PROMOTION
+
+No frontier model, external provider, agent, MCP server, discovered
+capability or learned behavior may acquire production authority merely
+because it demonstrates greater intelligence or benchmark performance.
+
+### Promotion requirements
+
+Individual capabilities may move beyond ROADMAP only through their own:
+
+- canonical owner confrontation;
+- executable RED/GREEN proof;
+- regression validation;
+- TypeScript/build validation when applicable;
+- provenance evidence;
+- Git commit/tag convergence;
+- governed promotion decision.
+
+This architecture does not by itself activate:
+- any paid provider;
+- GPT-6 Astra;
+- unrestricted network access;
+- computer use;
+- MCP execution;
+- autonomous installation;
+- autonomous self-modification;
+- autonomous production promotion.

@@ -585,3 +585,217 @@ Explicit non-claims:
 - no mutation was applied;
 - no provider was invoked;
 - this proof does not promote Controlled External Read beyond `ROADMAP`.
+
+## Governed Frontier Intelligence, Agentic Control & Evolution Architecture
+
+Status: ROADMAP / ARCHITECTURAL EXTENSION
+
+Purpose:
+Establish a governed upper-level architecture for integrating frontier
+intelligence, long-horizon agentic operation, capability discovery,
+controlled interaction, evaluation and governed evolution without
+replacing existing canonical IASevero owners or granting model-level
+execution authority.
+
+This architecture is organizational and contractual. It does not claim
+runtime implementation merely because a capability is documented here.
+
+### 1. Governed Intelligence Plane
+
+Responsibilities:
+- model and provider capability profiling;
+- provider-agnostic model routing;
+- selection by capability, cost, risk, privacy, latency, context,
+  tool requirements and benchmark evidence;
+- local-first and zero-external-cost policy preservation;
+- explicit provider authorization before invocation.
+
+Existing canonical technology relationships:
+- dynamic-model-routing
+- adaptive-cognitive-routing
+- governed-evaluation-contract
+
+Invariant:
+
+MODEL INTELLIGENCE != EXECUTION AUTHORITY
+
+Provider state separation:
+
+providerAvailable != providerAuthorized != providerSelected != providerInvoked
+
+A stronger model does not acquire additional system authority merely
+because its capability score is higher.
+
+### 2. Governed Agent Control Plane
+
+Responsibilities:
+- governed mission and task state;
+- trajectory monitoring using observable execution evidence;
+- independent action review;
+- mid-task steering;
+- scope and constraint preservation;
+- interruption or fail-closed transition when authority, scope,
+  budget or policy becomes invalid.
+
+Existing canonical technology relationships:
+- governed-multi-agent-architecture
+- governed-autonomous-operation
+- plan-simulation-counterfactual-evaluation
+- governed-world-model
+
+Governance evidence must be derived from observable artifacts such as
+requests, decisions, policies, authorizations, tool calls, effects,
+results and state transitions.
+
+Invariant:
+
+INTERNAL REASONING != GOVERNANCE EVIDENCE
+
+### 3. Governed Context & Memory Continuity
+
+Responsibilities:
+- durable governed notes;
+- searchable historical context;
+- context-window manifests;
+- historical retrieval with provenance;
+- linkage to existing governed memory lifecycle and consolidation;
+- retention and retrieval eligibility under canonical memory policy.
+
+This plane extends existing memory owners. It must not introduce a
+parallel memory subsystem.
+
+Existing canonical technology relationships:
+- hierarchical-governed-memory
+- memory-redundancy-conflict-resolution
+- governed-retrieval-augmented-generation
+- embedding-semantic-retrieval-layer
+
+Invariant:
+
+LONG CONTEXT != MEMORY
+
+Long inference context is transient model context. Governed memory remains
+persistent, scoped, provenance-bearing, lifecycle-controlled and auditable.
+
+### 4. Governed Work Orchestration
+
+Responsibilities:
+- task and mission state;
+- dependency graphs;
+- independent and dependent work classification;
+- WAITING_USER and WAITING_DEPENDENCY states;
+- continuation only for independent operations that are already
+  authorized;
+- durable execution continuity and recovery.
+
+Existing canonical technology relationships:
+- durable-execution-journal
+- governed-autonomous-operation
+
+Continuation does not imply new authority.
+
+### 5. Governed Capability Discovery
+
+Responsibilities:
+- discover candidate tools, models, providers, MCP interfaces and
+  technologies;
+- capture source provenance and trust metadata;
+- capability and risk classification;
+- sandbox evaluation;
+- benchmark comparison;
+- promotion proposal generation.
+
+Discovery must remain separate from installation, authorization,
+execution and promotion.
+
+Conceptual authority separation:
+
+DISCOVERY != INSTALLATION
+INSTALLATION != AUTHORIZATION
+AUTHORIZATION != EXECUTION
+EXECUTION != PROMOTION
+
+No discovered capability may self-promote into production authority.
+
+### 6. Sovereign Interaction & Execution Plane
+
+Responsibilities:
+- governed computer use;
+- governed shell and filesystem interaction;
+- controlled external network interaction;
+- MCP adapters under IASevero authority;
+- capability-bounded execution;
+- sandboxing and least privilege;
+- resource budgets;
+- controlled egress;
+- auditable effect boundaries.
+
+Existing canonical technology relationships:
+- governed-tool-execution
+- controlled-external-read
+- governed-external-mutation
+- cyber-physical-authority-boundary
+- physical-embodied-ai-governance
+- edge-execution-governance
+
+A model, agent, MCP server or external provider must never bypass
+IASevero authorization and execution boundaries.
+
+### 7. Evaluation & Evolution Plane
+
+Responsibilities:
+- IASevero-owned benchmark suites;
+- capability evaluation;
+- regression measurement;
+- model/provider comparative evaluation;
+- safety and governance evaluation;
+- novel-task adaptation evaluation;
+- governed learning proposals;
+- promotion evidence;
+- rollback evidence.
+
+Existing canonical technology relationships:
+- governed-evaluation-contract
+- reasoning-quality-evaluation
+- continual-learning-governance
+- feedback-learning
+- self-supervised-pretraining
+
+Permanent evolution principle:
+
+SELF-IMPROVEMENT WITHOUT SELF-PROMOTION
+
+Learning, adaptation or capability improvement does not grant authority
+to modify, deploy or promote production state autonomously.
+
+### Cross-plane governance
+
+The seven planes do not replace the current functional execution chain.
+They organize future capabilities around existing canonical owners.
+
+The following separations remain mandatory:
+
+INTELLIGENCE != AUTHORITY
+DECISION != AUTHORIZATION
+AUTHORIZATION != DISPATCH
+DISPATCH != EXECUTION
+EXECUTION != MUTATION
+OBSERVATION != EXECUTION
+NETWORK ACCESS != AUTONOMY
+AUTONOMY != SELF-MODIFICATION
+
+Higher model capability requires equal or stronger governance,
+containment, provenance and observability.
+
+This architectural extension does not claim:
+- GPT-6 Astra implementation;
+- provider activation;
+- paid API activation;
+- computer-use execution;
+- MCP execution;
+- unrestricted network access;
+- autonomous self-modification;
+- autonomous production promotion.
+
+All such capabilities remain subject to their own versioned
+implementation and executable proof.

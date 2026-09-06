@@ -3,7 +3,7 @@
   "kind": "iasevero-advanced-technology-registry",
   "authority": {
     "source": "docs/architecture/continuity/ADVANCED-TECHNOLOGY-ROADMAP.md",
-    "sourceSha256": "102b5417e00febb9180c3f46d9f1e6328d38480c61494813e445795d19709216",
+    "sourceSha256": "b011dea46003ed724d26ceaf50b523354523a5773e41977539a0df732dbdd238",
     "generatedFromCanonicalDocument": true,
     "manualStatusOverrideAllowed": false
   },
@@ -22,12 +22,12 @@
     "roadmapImpliesImplementation": false
   },
   "summary": {
-    "technologyCount": 52,
+    "technologyCount": 53,
     "statusCounts": {
       "FOUNDATION": 4,
       "PARTIALLY_PROVED": 6,
       "PROVED": 3,
-      "ROADMAP": 39
+      "ROADMAP": 40
     }
   },
   "technologies": [
@@ -394,6 +394,13 @@
       "name": "Active Inference for Governed Planning",
       "category": "PLANNING AND REASONING",
       "status": "ROADMAP"
+    },
+    {
+      "id": "governed-frontier-intelligence-agentic-control-evolution-architecture",
+      "name": "Governed Frontier Intelligence, Agentic Control & Evolution Architecture",
+      "status": "ROADMAP",
+      "category": "INTEGRATED COGNITIVE PLATFORM",
+      "section": 57
     }
   ]
 }
