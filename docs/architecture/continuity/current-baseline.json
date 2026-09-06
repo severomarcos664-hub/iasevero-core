@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.67-governed-frontier-intelligence-agentic-evolution-protocol-extension-proof",
-    "commit": "e73a3c203f589afff22516ab33fb3598f9c6362d",
+    "tag": "v287.68-governed-controlled-external-read-dns-resolution-production-path-integration-proof",
+    "commit": "c406ddc03bb1c020574f45982348612a402e1e84",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
