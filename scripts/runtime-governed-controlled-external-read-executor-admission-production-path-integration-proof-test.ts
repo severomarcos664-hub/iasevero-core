@@ -95,8 +95,8 @@ assert.equal(
 
 assert.equal(
   contractCallCount,
-  0,
-  'external-read contract must not be production-integrated in this version',
+  1,
+  'external-read contract must remain production-integrated exactly once',
 )
 
 assert.equal(

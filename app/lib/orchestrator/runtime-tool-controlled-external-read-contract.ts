@@ -31,6 +31,11 @@ export type RuntimeToolControlledExternalReadContractInput = {
   policy: RuntimeToolControlledExternalReadPolicy
 }
 
+export type RuntimeToolControlledExternalReadContractBinding = Readonly<{
+  target: Readonly<RuntimeToolControlledExternalReadTarget>
+  policy: Readonly<RuntimeToolControlledExternalReadPolicy>
+}>
+
 export type RuntimeToolControlledExternalReadContractDecision = {
   toolId: string
   executionKey: string
@@ -53,6 +58,7 @@ export type RuntimeToolControlledExternalReadContractDecision = {
 
   contractEligible: boolean
   contractStatus: 'eligible' | 'blocked'
+  contractBinding: RuntimeToolControlledExternalReadContractBinding | null
 
   networkAccess: false
   externalReadApplied: false
@@ -174,6 +180,25 @@ export function evaluateRuntimeToolControlledExternalReadContract(
     secretPolicyMatched &&
     auditRequired
 
+  const contractBinding: RuntimeToolControlledExternalReadContractBinding | null =
+    contractEligible
+      ? Object.freeze({
+          target: Object.freeze({
+            protocol: target.protocol,
+            host: normalizedHost,
+            resource: normalizedResource,
+          }),
+          policy: Object.freeze({
+            allowedHosts: Object.freeze([...policy.allowedHosts]),
+            allowedResources: Object.freeze([...policy.allowedResources]),
+            readOnly: policy.readOnly,
+            externalCostAllowed: policy.externalCostAllowed,
+            secretsPermitted: policy.secretsPermitted,
+            auditRequired: policy.auditRequired,
+          }),
+        })
+      : null
+
   let reason =
     'Governed controlled external-read contract is eligible without external access.'
 
@@ -234,6 +259,7 @@ export function evaluateRuntimeToolControlledExternalReadContract(
       contractEligible
         ? 'eligible'
         : 'blocked',
+    contractBinding,
 
     networkAccess: false,
     externalReadApplied: false,
