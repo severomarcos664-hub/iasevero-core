@@ -3,8 +3,8 @@
   "kind": "iasevero-continuity-baseline",
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.69-governed-external-read-dns-resolution-binding-pinning-proof",
-    "commit": "82d45c9b94e4a03f737c60586a3d1f5d5c1c5441",
+    "tag": "v287.70-governed-external-read-dns-rebinding-revalidation-proof",
+    "commit": "02de647e02992da5258723b05b8de337bb2e69a0",
     "relationshipToContinuityHead": "ancestor-or-equal"
   },
   "ownership": {
