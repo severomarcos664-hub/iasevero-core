@@ -1,3 +1,5 @@
+import { executeRuntimeToolControlledExternalReadEffect } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect'
+import { lookup } from 'node:dns/promises'
 import { evaluateRuntimeToolControlledExecutorBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-executor-boundary'
 import { createRuntimeToolExecutionInvocationEnvelope } from '@/app/lib/orchestrator/runtime-tool-execution-invocation-envelope'
 import { createRuntimeToolDispatchHandoff } from '@/app/lib/orchestrator/runtime-tool-dispatcher'
@@ -581,6 +583,19 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         )
       : null
 
+  const toolControlledExternalReadDnsResolver =
+    createRuntimeToolDnsResolverAdapter(async (hostname) => {
+      const addresses = await lookup(hostname, {
+        all: true,
+        verbatim: true,
+      })
+
+      return addresses.map(({ address, family }) => ({
+        address,
+        family: family === 6 ? 6 : 4,
+      }))
+    })
+
   const toolControlledExternalReadDnsResolution =
     toolControlledExternalReadTargetInputBoundary !== null &&
     toolControlledExternalReadTargetInputBoundary.targetInputEligible &&
@@ -588,7 +603,7 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     toolControlledExternalReadTargetInputBoundary.target.protocol === 'https:'
       ? await evaluateRuntimeToolDnsResolutionBoundary(
           toolControlledExternalReadTargetInputBoundary.target.host,
-          createRuntimeToolDnsResolverAdapter(async () => []).resolve,
+          toolControlledExternalReadDnsResolver.resolve,
         )
       : null
 
@@ -599,10 +614,19 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         )
       : null
 
+  const toolControlledExternalReadDnsRevalidationResolution =
+    toolControlledExternalReadDnsBinding?.bindingStatus === 'bound' &&
+    toolControlledExternalReadTargetInputBoundary?.target != null
+      ? await evaluateRuntimeToolDnsResolutionBoundary(
+          toolControlledExternalReadTargetInputBoundary.target.host,
+          toolControlledExternalReadDnsResolver.resolve,
+        )
+      : null
+
   const toolControlledExternalReadDnsRevalidation =
     revalidateRuntimeToolDnsResolutionBinding(
       toolControlledExternalReadDnsBinding,
-      toolControlledExternalReadDnsResolution,
+      toolControlledExternalReadDnsRevalidationResolution,
     )
 
   const toolControlledExternalReadRevalidatedEffectHandoff =
@@ -621,16 +645,55 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     toolControlledExternalReadTargetInputBoundary.target.protocol === 'https:' &&
     toolControlledExternalReadPolicyAuthority !== null &&
     toolControlledExternalReadPolicyAuthority.policyAuthorized
-      ? evaluateRuntimeToolControlledExternalReadContract({
-          envelope: toolControlledExternalReadInvocationEnvelope,
-          boundary: toolControlledExternalReadExecutorBoundary,
-          target: {
-            protocol: 'https:',
-            host: toolControlledExternalReadTargetInputBoundary.target.host,
-            resource: toolControlledExternalReadTargetInputBoundary.target.resource,
-          },
-          policy: toolControlledExternalReadPolicyAuthority.policy,
-        })
+      ? (() => {
+          const input = {
+            envelope: toolControlledExternalReadInvocationEnvelope,
+            boundary: toolControlledExternalReadExecutorBoundary,
+            target: {
+              protocol: 'https:' as const,
+              host: toolControlledExternalReadTargetInputBoundary.target.host,
+              resource: toolControlledExternalReadTargetInputBoundary.target.resource,
+            },
+            policy: toolControlledExternalReadPolicyAuthority.policy,
+          }
+
+          return {
+            input,
+            decision: evaluateRuntimeToolControlledExternalReadContract(input),
+          }
+        })()
+      : null
+
+    const toolControlledExternalReadPinnedResolvedAddress =
+    toolControlledExternalReadDnsRevalidation?.revalidationStatus === 'accepted'
+      ? toolControlledExternalReadDnsRevalidationResolution?.resolvedAddresses.find(
+          (candidate) =>
+            toolControlledExternalReadDnsRevalidation.revalidatedApprovedAddresses.includes(
+              candidate.address,
+            ),
+        ) ?? null
+      : null
+
+  const toolControlledExternalReadPinnedDestination =
+    toolControlledExternalReadPinnedResolvedAddress != null &&
+    toolControlledExternalReadTargetInputBoundary?.target != null
+      ? {
+          hostname: toolControlledExternalReadTargetInputBoundary.target.host,
+          address: toolControlledExternalReadPinnedResolvedAddress.address,
+          family: toolControlledExternalReadPinnedResolvedAddress.family,
+        }
+      : null
+
+  const toolControlledExternalReadEffect =
+    toolControlledExternalReadContract?.decision.contractEligible === true &&
+    toolControlledExternalReadContract.decision.contractStatus === 'eligible' &&
+    toolControlledExternalReadRevalidatedEffectHandoff.effectHandoffPrepared === true &&
+    toolControlledExternalReadDnsRevalidation?.revalidationStatus === 'accepted' &&
+    toolControlledExternalReadPinnedDestination != null
+      ? await executeRuntimeToolControlledExternalReadEffect(
+          toolControlledExternalReadContract.input,
+          toolControlledExternalReadPinnedDestination,
+        )
       : null
 
 return NextResponse.json({
@@ -664,7 +727,7 @@ return NextResponse.json({
       toolControlledExternalReadDnsResolution?.resolvedAddresses ?? [],
     toolControlledExternalReadDnsDestinationDecisions:
       toolControlledExternalReadDnsResolution?.destinationDecisions ?? [],
-    toolControlledExternalReadContract,
+    toolControlledExternalReadContract: toolControlledExternalReadContract?.decision ?? null,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
@@ -705,7 +768,7 @@ return NextResponse.json({
     })
 
   } catch (e) {
-    return NextResponse.json({
+  return NextResponse.json({
       reply: 'Erro interno controlado.',
       job: null
     })

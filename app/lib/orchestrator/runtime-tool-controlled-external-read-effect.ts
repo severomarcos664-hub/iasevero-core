@@ -1,3 +1,5 @@
+import { request as httpsRequest } from 'node:https'
+import { Readable } from 'node:stream'
 import {
   evaluateRuntimeToolControlledExternalReadContract,
   type RuntimeToolControlledExternalReadContractInput,
@@ -110,8 +112,67 @@ export async function readRuntimeToolBoundedResponseBody(
   }
 }
 
+export type RuntimeToolControlledExternalReadPinnedDestination = {
+  readonly hostname: string
+  readonly address: string
+  readonly family: 4 | 6
+}
+
+function requestRuntimeToolPinnedHttps(
+  url: URL,
+  pinned: RuntimeToolControlledExternalReadPinnedDestination,
+  timeoutMs: number,
+): Promise<Response> {
+  return new Promise((resolve, reject) => {
+    const request = httpsRequest(
+      {
+        protocol: 'https:',
+        hostname: pinned.address,
+        family: pinned.family,
+        port: url.port ? Number(url.port) : 443,
+        path: `${url.pathname}${url.search}`,
+        method: 'GET',
+        servername: pinned.hostname,
+        rejectUnauthorized: true,
+        headers: {
+          host: url.host,
+          accept: 'text/html,text/plain,application/json;q=0.9,*/*;q=0.1',
+          'user-agent': 'IASevero-Governed-External-Read/287.16',
+        },
+      },
+      (incoming) => {
+        const headers = new Headers()
+
+        for (const [name, value] of Object.entries(incoming.headers)) {
+          if (Array.isArray(value)) {
+            for (const item of value) headers.append(name, item)
+          } else if (value != null) {
+            headers.set(name, value)
+          }
+        }
+
+        resolve(
+          new Response(Readable.toWeb(incoming) as ReadableStream, {
+            status: incoming.statusCode ?? 502,
+            statusText: incoming.statusMessage ?? '',
+            headers,
+          }),
+        )
+      },
+    )
+
+    request.setTimeout(timeoutMs, () => {
+      request.destroy(new Error('Controlled external read HTTPS timeout.'))
+    })
+
+    request.on('error', reject)
+    request.end()
+  })
+}
+
 export async function executeRuntimeToolControlledExternalReadEffect(
   input: RuntimeToolControlledExternalReadContractInput,
+  pinnedDestination?: RuntimeToolControlledExternalReadPinnedDestination,
 ): Promise<RuntimeToolControlledExternalReadEffectResult> {
   const contract =
     evaluateRuntimeToolControlledExternalReadContract(input)
@@ -168,17 +229,37 @@ export async function executeRuntimeToolControlledExternalReadEffect(
   }
 
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      redirect: 'error',
-      credentials: 'omit',
-      cache: 'no-store',
-      signal: AbortSignal.timeout(input.envelope.policy.timeoutMs),
-      headers: {
-        accept: 'text/html,text/plain,application/json;q=0.9,*/*;q=0.1',
-        'user-agent': 'IASevero-Governed-External-Read/287.16',
-      },
-    })
+    if (
+      pinnedDestination != null &&
+      (
+        pinnedDestination.hostname.trim().toLowerCase() !==
+          input.target.host.trim().toLowerCase() ||
+        pinnedDestination.address.trim().length === 0
+      )
+    ) {
+      return blocked(
+        'Controlled external read pinned destination does not match governed target.',
+      )
+    }
+
+    const response =
+      pinnedDestination != null
+        ? await requestRuntimeToolPinnedHttps(
+            url,
+            pinnedDestination,
+            input.envelope.policy.timeoutMs,
+          )
+        : await fetch(url, {
+            method: 'GET',
+            redirect: 'error',
+            credentials: 'omit',
+            cache: 'no-store',
+            signal: AbortSignal.timeout(input.envelope.policy.timeoutMs),
+            headers: {
+              accept: 'text/html,text/plain,application/json;q=0.9,*/*;q=0.1',
+              'user-agent': 'IASevero-Governed-External-Read/287.16',
+            },
+          })
 
     const contentLength = response.headers.get('content-length')
     if (
