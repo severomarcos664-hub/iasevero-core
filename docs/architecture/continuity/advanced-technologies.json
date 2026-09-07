@@ -9,8 +9,8 @@
   },
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
-    "tag": "v287.70-governed-external-read-dns-rebinding-revalidation-proof",
-    "commit": "02de647e02992da5258723b05b8de337bb2e69a0"
+    "tag": "v287.71-governed-external-read-revalidated-destination-effect-handoff-proof",
+    "commit": "8830a695f25482550696c05d8b6d75b8de82e2cf"
   },
   "claimGovernance": {
     "allowedStatuses": [
