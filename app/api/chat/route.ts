@@ -572,7 +572,11 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
 
   const toolControlledExternalReadAllowlistSource =
     toolControlledExternalReadExecutorAdmissionBoundary !== null
-      ? evaluateRuntimeToolControlledExternalReadAllowlistSource()
+      ? evaluateRuntimeToolControlledExternalReadAllowlistSource({
+        sourceId: 'v287.72-first-real-https-proof',
+        allowedHosts: ['www.iana.org'],
+        allowedResources: ['/help/example-domains'],
+      })
       : null
 
   const toolControlledExternalReadPolicyAuthority =
@@ -728,6 +732,7 @@ return NextResponse.json({
     toolControlledExternalReadDnsDestinationDecisions:
       toolControlledExternalReadDnsResolution?.destinationDecisions ?? [],
     toolControlledExternalReadContract: toolControlledExternalReadContract?.decision ?? null,
+    toolControlledExternalReadEffect,
       job: result.job || null,
       plan: runtimePlan,
       pipeline: pipelineResult,
