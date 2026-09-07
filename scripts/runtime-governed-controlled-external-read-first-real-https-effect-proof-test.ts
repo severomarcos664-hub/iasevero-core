@@ -21,7 +21,7 @@ assert.equal(
 
 assert.equal(
   route.includes(
-    'toolControlledExternalReadContract.decision.contractEligible',
+    'toolControlledExternalReadContract?.decision.contractEligible === true',
   ),
   true,
   'production effect execution must depend on an eligible external-read contract',
