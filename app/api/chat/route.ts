@@ -37,6 +37,7 @@ import { evaluateRuntimeToolControlledExternalReadAllowlistSource } from "@/app/
 import { evaluateRuntimeToolControlledExternalReadPolicyAuthority } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-policy-authority"
 import { createRuntimeToolDnsResolverAdapter } from '@/app/lib/orchestrator/runtime-tool-external-read-dns-resolver-adapter'
 import { evaluateRuntimeToolDnsResolutionBoundary } from '@/app/lib/orchestrator/runtime-tool-external-read-dns-resolution-boundary'
+import { createRuntimeToolDnsResolutionBinding } from '@/app/lib/orchestrator/runtime-tool-external-read-dns-resolution-binding'
 import { evaluateRuntimeToolControlledExternalReadContract } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-contract"
 import { evaluateRuntimeToolControlledExternalReadExecutorAdmissionBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-executor-admission-boundary'
 import {
@@ -589,6 +590,14 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         )
       : null
 
+  const toolControlledExternalReadDnsBinding =
+    toolControlledExternalReadDnsResolution != null
+      ? createRuntimeToolDnsResolutionBinding(
+          toolControlledExternalReadDnsResolution,
+        )
+      : null
+
+
   const toolControlledExternalReadContract =
     toolControlledExternalReadInvocationEnvelope !== null &&
     toolControlledExternalReadExecutorBoundary !== null &&
@@ -635,6 +644,7 @@ return NextResponse.json({
     toolControlledExternalReadAllowlistSource,
     toolControlledExternalReadPolicyAuthority,
     toolControlledExternalReadDnsResolution,
+    toolControlledExternalReadDnsBinding,
     toolControlledExternalReadDnsResolvedAddresses:
       toolControlledExternalReadDnsResolution?.resolvedAddresses ?? [],
     toolControlledExternalReadDnsDestinationDecisions:
