@@ -20,6 +20,7 @@ import {
 } from "@/app/lib/orchestrator/runtime-tool-controlled-external-read-execution-gate"
 import {
   evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary,
+  evaluateRuntimeToolControlledExternalReadRevalidatedEffectHandoffBoundary,
 } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect-handoff-boundary'
 import {
   evaluateRuntimeToolControlledExternalReadRequestTargetContract,
@@ -602,6 +603,12 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     revalidateRuntimeToolDnsResolutionBinding(
       toolControlledExternalReadDnsBinding,
       toolControlledExternalReadDnsResolution,
+    )
+
+  const toolControlledExternalReadRevalidatedEffectHandoff =
+    evaluateRuntimeToolControlledExternalReadRevalidatedEffectHandoffBoundary(
+      toolControlledExternalReadExecutionGate,
+      toolControlledExternalReadDnsRevalidation,
     )
 
 

@@ -64,3 +64,40 @@ export function evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary(
       : 'Governed controlled external read effect handoff was blocked before effect invocation.',
   }
 }
+
+import type { RuntimeToolDnsRebindingRevalidation } from './runtime-tool-external-read-dns-rebinding-revalidation'
+
+export function evaluateRuntimeToolControlledExternalReadRevalidatedEffectHandoffBoundary(
+  executionGate: RuntimeToolControlledExternalReadExecutionGateDecision,
+  revalidation: RuntimeToolDnsRebindingRevalidation | null,
+): RuntimeToolControlledExternalReadEffectHandoffDecision {
+  const base =
+    evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary(
+      executionGate,
+    )
+
+  const revalidationAccepted =
+    revalidation != null &&
+    revalidation.revalidationStatus === 'accepted' &&
+    revalidation.bindingKey != null &&
+    revalidation.hostname.length > 0 &&
+    revalidation.revalidatedApprovedAddresses.length > 0
+
+  if (!base.effectHandoffPrepared || !revalidationAccepted) {
+    return {
+      ...base,
+      effectHandoffPrepared: false,
+      effectHandoffStatus: 'blocked',
+      reason:
+        'Governed controlled external read effect handoff blocked: DNS revalidation evidence is missing or rejected.',
+    }
+  }
+
+  return {
+    ...base,
+    effectHandoffPrepared: true,
+    effectHandoffStatus: 'prepared',
+    reason:
+      'Governed controlled external read effect handoff prepared with accepted DNS revalidation evidence.',
+  }
+}
