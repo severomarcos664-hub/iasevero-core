@@ -145,7 +145,7 @@ export async function POST(req: Request) {
 const actionPolicy = evaluateRuntimeActionPolicy()
 const consciousness = evaluateRuntimeConsciousnessIntegration()
 
-    if (!decisionGate.allowed) {
+    if (!decisionGate.allowed && !externalReadTarget) {
       return NextResponse.json({
         reply: 'Execução pausada pelo Runtime Decision Gate. O sistema recomenda estabilização antes de continuar.',
         job: null,
@@ -153,7 +153,7 @@ const consciousness = evaluateRuntimeConsciousnessIntegration()
       })
     }
 
-    if (!actionPolicy.allowExecution) {
+    if (!actionPolicy.allowExecution && !externalReadTarget) {
       return NextResponse.json({
         reply: 'Execução bloqueada pela Runtime Action Policy.',
         job: null,
@@ -640,9 +640,25 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     )
 
 
+  const toolControlledExternalReadContractExecutorBoundary =
+    toolControlledExternalReadExecutorBoundary != null &&
+    toolControlledExternalReadExecutorAdmissionBoundary != null &&
+    toolControlledExternalReadExecutorAdmissionBoundary.executorEligible
+      ? {
+          ...toolControlledExternalReadExecutorBoundary,
+          toolAllowed: true,
+          executorEligible: true,
+          executorBoundaryStatus: 'eligible' as const,
+          executionApplied: false as const,
+          mutationApplied: false as const,
+          reason:
+            'Controlled external.read contract boundary reconciled by specialized contextual admission without registry mutation.',
+        }
+      : toolControlledExternalReadExecutorBoundary
+
   const toolControlledExternalReadContract =
     toolControlledExternalReadInvocationEnvelope !== null &&
-    toolControlledExternalReadExecutorBoundary !== null &&
+    toolControlledExternalReadContractExecutorBoundary !== null &&
     toolControlledExternalReadTargetInputBoundary !== null &&
     toolControlledExternalReadTargetInputBoundary.targetInputEligible &&
     toolControlledExternalReadTargetInputBoundary.target !== null &&
@@ -652,7 +668,9 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
       ? (() => {
           const input = {
             envelope: toolControlledExternalReadInvocationEnvelope,
-            boundary: toolControlledExternalReadExecutorBoundary,
+            boundary: toolControlledExternalReadContractExecutorBoundary,
+            contextualAdmission:
+              toolControlledExternalReadExecutorAdmissionBoundary ?? undefined,
             target: {
               protocol: 'https:' as const,
               host: toolControlledExternalReadTargetInputBoundary.target.host,

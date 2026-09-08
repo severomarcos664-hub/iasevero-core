@@ -95,7 +95,7 @@ export function evaluateRuntimeToolControlledExternalReadTargetInputBoundary(
       ? input.target.resource.trim()
       : ''
 
-  const protocolValid = protocol === 'https'
+  const protocolValid = protocol === 'https' || protocol === 'https:'
   const hostValid = isValidHost(host)
   const resourceValid = isValidResource(resource)
   const originValid = isValidOrigin(input.origin)

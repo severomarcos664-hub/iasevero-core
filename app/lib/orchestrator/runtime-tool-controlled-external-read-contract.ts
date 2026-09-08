@@ -6,6 +6,9 @@ import type {
 import type {
   RuntimeToolControlledExecutorBoundaryDecision,
 } from './runtime-tool-controlled-executor-boundary'
+import type {
+  RuntimeToolControlledExternalReadExecutorAdmissionBoundaryDecision,
+} from './runtime-tool-controlled-external-read-executor-admission-boundary'
 
 export type RuntimeToolControlledExternalReadTarget = {
   protocol: 'https:'
@@ -26,6 +29,7 @@ export type RuntimeToolControlledExternalReadPolicy = {
 export type RuntimeToolControlledExternalReadContractInput = {
   envelope: RuntimeToolExecutionInvocationEnvelope
   boundary: RuntimeToolControlledExecutorBoundaryDecision
+  contextualAdmission?: RuntimeToolControlledExternalReadExecutorAdmissionBoundaryDecision
 
   target: RuntimeToolControlledExternalReadTarget
   policy: RuntimeToolControlledExternalReadPolicy
@@ -86,6 +90,7 @@ export function evaluateRuntimeToolControlledExternalReadContract(
   const {
     envelope,
     boundary,
+    contextualAdmission,
     target,
     policy,
   } = input
@@ -119,11 +124,34 @@ export function evaluateRuntimeToolControlledExternalReadContract(
   const registryToolRegistered = registeredTool !== null
   const registryToolAllowed = registeredTool?.allowed === true
 
+  const contextualAdmissionReconciled =
+    contextualAdmission !== undefined &&
+    contextualAdmission.toolId === envelope.toolId &&
+    contextualAdmission.executionKey === envelope.executionKey &&
+    contextualAdmission.correlationId === envelope.correlationId &&
+    contextualAdmission.traceId === envelope.traceId &&
+    contextualAdmission.stepId === envelope.stepId &&
+    contextualAdmission.identityMatched === true &&
+    contextualAdmission.invocationPrepared === true &&
+    contextualAdmission.toolRegistered === true &&
+    contextualAdmission.registryDefaultDenied === true &&
+    contextualAdmission.policyMatched === true &&
+    contextualAdmission.contextualAdmissionMatched === true &&
+    contextualAdmission.executorEligible === true &&
+    contextualAdmission.registryMutationApplied === false &&
+    contextualAdmission.networkAccess === false &&
+    contextualAdmission.externalReadApplied === false &&
+    contextualAdmission.executionApplied === false &&
+    contextualAdmission.mutationApplied === false &&
+    contextualAdmission.providerInvocation === false &&
+    registryToolRegistered &&
+    registryToolAllowed === false
+
   const toolAllowlistReconciled =
     boundary.toolRegistered === true &&
     boundary.toolAllowed === true &&
     registryToolRegistered &&
-    registryToolAllowed
+    (registryToolAllowed || contextualAdmissionReconciled)
 
   const boundaryEligible =
     boundary.invocationPrepared === true &&
