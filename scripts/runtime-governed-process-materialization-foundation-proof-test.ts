@@ -21,6 +21,7 @@ import {
   type GovernedProcessSpawner,
 } from '../app/lib/runtime-execution-plane/runtime-process-materialization'
 
+async function main() {
 const artifactSha256 = 'a'.repeat(64)
 const attestationSha256 = 'b'.repeat(64)
 
@@ -192,3 +193,10 @@ console.log({
 console.log(
   'Runtime governed process materialization foundation proof passed.',
 )
+
+}
+
+main().catch((error) => {
+  console.error(error)
+  process.exitCode = 1
+})
