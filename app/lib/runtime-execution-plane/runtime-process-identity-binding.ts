@@ -77,3 +77,86 @@ export function bindGovernedRuntimeProcessIdentity(
     networkAuthorityGranted: false,
   }
 }
+
+import type {
+  GovernedRuntimeRestartExecutionResult,
+} from './runtime-restart-execution-boundary'
+
+export type GovernedRuntimeProcessIdentityRebinding = {
+  schemaVersion: 1
+  kind: 'iasevero-governed-runtime-process-identity-rebinding'
+
+  instanceId: string
+  releaseIdentity: string
+  restartAuthorizationRecordId: string
+
+  previousProcessId: number
+  processId: number
+
+  restartExecutionVerified: true
+  previousProcessIdVerified: true
+  replacementProcessIdVerified: true
+  processIdentityRebound: true
+
+  readinessGranted: false
+  livenessGranted: false
+  deploymentApplied: false
+  runtimeAuthorityGranted: false
+  networkAuthorityGranted: false
+}
+
+export function rebindGovernedRuntimeProcessIdentity(
+  restart: GovernedRuntimeRestartExecutionResult,
+): GovernedRuntimeProcessIdentityRebinding {
+  if (
+    restart.restartAuthorizationVerified !== true ||
+    restart.restartExecutionPrepared !== true ||
+    restart.restartApplied !== true ||
+    restart.processIdentityRebindingRequired !== true ||
+    !Number.isSafeInteger(restart.previousProcessId) ||
+    restart.previousProcessId <= 0 ||
+    !Number.isSafeInteger(restart.newProcessId) ||
+    restart.newProcessId <= 0 ||
+    restart.newProcessId === restart.previousProcessId
+  ) {
+    throw new Error(
+      'Governed runtime process identity rebinding requires verified restart execution.',
+    )
+  }
+
+  if (
+    restart.readinessGranted !== false ||
+    restart.livenessGranted !== false ||
+    restart.deploymentApplied !== false ||
+    restart.runtimeAuthorityGranted !== false ||
+    restart.networkAuthorityGranted !== false
+  ) {
+    throw new Error(
+      'Governed runtime process identity rebinding requires mandatory post-restart revalidation.',
+    )
+  }
+
+  return {
+    schemaVersion: 1,
+    kind: 'iasevero-governed-runtime-process-identity-rebinding',
+
+    instanceId: restart.instanceId,
+    releaseIdentity: restart.releaseIdentity,
+    restartAuthorizationRecordId:
+      restart.restartAuthorizationRecordId,
+
+    previousProcessId: restart.previousProcessId,
+    processId: restart.newProcessId,
+
+    restartExecutionVerified: true,
+    previousProcessIdVerified: true,
+    replacementProcessIdVerified: true,
+    processIdentityRebound: true,
+
+    readinessGranted: false,
+    livenessGranted: false,
+    deploymentApplied: false,
+    runtimeAuthorityGranted: false,
+    networkAuthorityGranted: false,
+  }
+}
