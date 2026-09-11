@@ -102,3 +102,81 @@ export function recordGovernedRuntimeReadinessEvidence(
     networkAuthorityGranted: false,
   }
 }
+
+import type {
+  GovernedRuntimeReadinessCandidate,
+} from './runtime-readiness-candidate'
+
+export type GovernedRuntimeReadinessCandidateEvidenceInput = {
+  candidate: GovernedRuntimeReadinessCandidate
+
+  observedProcessId: number
+  observedHost: '127.0.0.1'
+  observedPort: 3000
+
+  transportReachable: boolean
+  applicationResponsive: boolean
+}
+
+export function recordGovernedRuntimeReadinessEvidenceFromCandidate(
+  input: GovernedRuntimeReadinessCandidateEvidenceInput,
+): GovernedRuntimeReadinessEvidence {
+  const { candidate } = input
+
+  if (
+    candidate.processIdentityVerified !== true ||
+    candidate.readinessEvaluationEligible !== true ||
+    !Number.isSafeInteger(candidate.processId) ||
+    candidate.processId <= 0
+  ) {
+    throw new Error(
+      'Governed runtime readiness evidence requires verified readiness candidate.',
+    )
+  }
+
+  if (
+    candidate.readinessGranted !== false ||
+    candidate.livenessGranted !== false ||
+    candidate.deploymentApplied !== false ||
+    candidate.runtimeAuthorityGranted !== false ||
+    candidate.networkAuthorityGranted !== false
+  ) {
+    throw new Error(
+      'Governed runtime readiness evidence requires zero inherited runtime authority.',
+    )
+  }
+
+  if (
+    input.observedProcessId !== candidate.processId ||
+    input.observedHost !== '127.0.0.1' ||
+    input.observedPort !== 3000
+  ) {
+    throw new Error(
+      'Governed runtime readiness evidence requires identity-bound candidate observation.',
+    )
+  }
+
+  return {
+    schemaVersion: 1,
+    kind: 'iasevero-governed-runtime-readiness-evidence',
+
+    instanceId: candidate.instanceId,
+    releaseIdentity: candidate.releaseIdentity,
+    authorizationRecordId: candidate.authorityRecordId,
+    processId: candidate.processId,
+
+    processIdentityVerified: true,
+    endpointSpecificationVerified: true,
+    probeEvidenceRecorded: true,
+
+    transportReachable: input.transportReachable,
+    applicationResponsive: input.applicationResponsive,
+
+    readinessGranted: false,
+    livenessGranted: false,
+    restartAuthorized: false,
+    deploymentApplied: false,
+    runtimeAuthorityGranted: false,
+    networkAuthorityGranted: false,
+  }
+}
