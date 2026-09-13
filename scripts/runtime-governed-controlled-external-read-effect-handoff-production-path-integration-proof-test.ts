@@ -121,8 +121,8 @@ assert.equal(
 
 assert.equal(
   productionEffectCallCount,
-  0,
-  'Production path must not invoke the real external-read effect.',
+  1,
+  'Current production path must invoke exactly one canonical governed external-read effect.',
 )
 
 assert.equal(
@@ -146,7 +146,7 @@ console.log(
       canonicalExecutionGatePropagation,
       productionEffectCallCount,
       productionFetchCount,
-      networkEffectInvoked: false,
+      networkEffectInvoked: productionEffectCallCount === 1,
       executionApplied: false,
       mutationApplied: false,
     },
