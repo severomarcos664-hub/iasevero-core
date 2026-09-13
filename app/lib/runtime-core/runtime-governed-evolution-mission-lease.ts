@@ -22,6 +22,10 @@ export type GovernedEvolutionMissionLease = {
   expiresAt: string
   leaseSequence: number
 
+  previousLeaseId?: string
+  previousRunnerId?: string
+  takeoverSequence?: number
+
   leaseAcquired: true
 
   executionAuthorized: false
@@ -98,6 +102,44 @@ function assertCanonicalLease(
   assertNonEmpty(lease.missionId, 'missionId')
   assertNonEmpty(lease.runnerId, 'runnerId')
   assertNonEmpty(lease.leaseId, 'leaseId')
+
+  const hasPreviousLeaseId =
+    lease.previousLeaseId !== undefined
+
+  const hasPreviousRunnerId =
+    lease.previousRunnerId !== undefined
+
+  const hasTakeoverSequence =
+    lease.takeoverSequence !== undefined
+
+  if (
+    hasPreviousLeaseId !== hasPreviousRunnerId ||
+    hasPreviousLeaseId !== hasTakeoverSequence
+  ) {
+    throw new Error(
+      'Governed evolution mission lease requires complete takeover provenance.',
+    )
+  }
+
+  if (hasPreviousLeaseId) {
+    assertNonEmpty(
+      lease.previousLeaseId as string,
+      'previousLeaseId',
+    )
+    assertNonEmpty(
+      lease.previousRunnerId as string,
+      'previousRunnerId',
+    )
+
+    if (
+      !Number.isSafeInteger(lease.takeoverSequence) ||
+      (lease.takeoverSequence as number) <= 0
+    ) {
+      throw new Error(
+        'Governed evolution mission lease requires positive takeoverSequence.',
+      )
+    }
+  }
 
   if (
     lease.executionAuthorized !== false ||
