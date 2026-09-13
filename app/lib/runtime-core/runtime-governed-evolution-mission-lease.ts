@@ -20,7 +20,7 @@ export type GovernedEvolutionMissionLease = {
 
   acquiredAt: string
   expiresAt: string
-  leaseSequence: 1
+  leaseSequence: number
 
   leaseAcquired: true
 
@@ -87,7 +87,8 @@ function assertCanonicalLease(
     lease.kind !==
       'iasevero-governed-evolution-mission-lease' ||
     lease.leaseAcquired !== true ||
-    lease.leaseSequence !== 1
+    !Number.isSafeInteger(lease.leaseSequence) ||
+    lease.leaseSequence <= 0
   ) {
     throw new Error(
       'Governed evolution mission lease requires canonical lease identity.',
