@@ -4,8 +4,8 @@
   "runtimeBaseline": {
     "branch": "v276-runtime-cognitive-kernel",
     "relationshipToContinuityHead": "ancestor-or-equal",
-    "tag": "v287.71-governed-external-read-revalidated-destination-effect-handoff-proof",
-    "commit": "8830a695f25482550696c05d8b6d75b8de82e2cf"
+    "tag": "v287.73.63-governed-sovereign-matrix-execution-plane-end-to-end-closure-proof",
+    "commit": "e476c7ecf67f649d8d91a46a2a149b4512b29b1"
   },
   "ownership": {
     "canonicalArchitectureRoot": "docs/architecture",
