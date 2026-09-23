@@ -30,6 +30,8 @@ export function integrateGovernedEvolutionMissionExecutiveAuthorityGateway(
     handoffEligible: pipeline.handoffEligible,
     handoffPrepared: pipeline.handoffPrepared,
     executiveAuthorityEvaluated,
+    executiveAuthorityAllowed:
+      executiveAuthorityEvaluated && executiveAuthority.executionAllowed === true,
     executiveExecutionAllowed:
       executiveAuthorityEvaluated && executiveAuthority.executionAllowed === true,
     executionKey: pipeline.executionKey,

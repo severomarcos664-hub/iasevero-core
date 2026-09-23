@@ -1,9 +1,9 @@
-import type { GovernedEvolutionMissionExecutiveAuthorityGatewayIntegrationDecision } from './runtime-governed-evolution-mission-executive-authority-gateway-integration';
+import { integrateGovernedEvolutionMissionExecutiveAuthorityGateway } from "./runtime-governed-evolution-mission-executive-authority-gateway-integration";
 
 export type GovernedEvolutionMissionExecutionBridgeHandoffInput = {
   missionId: string;
   proposalId: string;
-  executiveAuthorityDecision: GovernedEvolutionMissionExecutiveAuthorityGatewayIntegrationDecision;
+  executiveAuthorityDecision: ReturnType<typeof integrateGovernedEvolutionMissionExecutiveAuthorityGateway>;
 };
 
 export type GovernedEvolutionMissionExecutionBridgeHandoffDecision = {
