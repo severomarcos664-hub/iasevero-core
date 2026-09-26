@@ -739,6 +739,7 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     toolControlledExternalReadContract?.decision.contractEligible === true &&
     toolControlledExternalReadContract.decision.contractStatus === 'eligible' &&
     toolControlledExternalReadRevalidatedEffectHandoff.effectHandoffPrepared === true &&
+    governedEvolutionMissionControlledExternalReadEffectAdmissionIntegration.effectAdmissionPrepared === true &&
     toolControlledExternalReadDnsRevalidation?.revalidationStatus === 'accepted' &&
     toolControlledExternalReadPinnedDestination != null
       ? await executeRuntimeToolControlledExternalReadEffect(
