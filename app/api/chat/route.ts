@@ -73,6 +73,7 @@ import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-acti
 import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orchestrator'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -441,7 +442,18 @@ const toolDispatchHandoff =
         finalAuthorization: finalToolExecutionAllowed,
       })
 
-    const toolControlledExternalReadExecutionGate =
+    const governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding =
+  prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding({
+    executionKey: effectiveExecutionKey,
+    correlationId: toolControlledExternalReadAuthorizationBoundary.correlationId,
+    traceId: toolControlledExternalReadAuthorizationBoundary.traceId,
+    stepId: toolControlledExternalReadAuthorizationBoundary.stepId,
+    productionIntegrationPrepared:
+      toolControlledExternalReadIntegrationBoundary.externalReadEligible &&
+      finalToolExecutionAllowed,
+  })
+
+const toolControlledExternalReadExecutionGate =
     evaluateRuntimeToolControlledExternalReadExecutionGate({
       executionKey:
         toolControlledExternalReadAuthorizationBoundary.executionKey,
