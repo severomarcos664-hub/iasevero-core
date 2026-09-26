@@ -74,6 +74,7 @@ import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orc
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
+import { prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-effect-admission-integration'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -484,7 +485,23 @@ const toolControlledExternalReadExecutionGate =
       toolControlledExternalReadExecutionGate,
     )
 
-    const toolControlledExternalReadRequestTarget =
+    const governedEvolutionMissionControlledExternalReadEffectAdmissionIntegration =
+    prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration({
+      executionKey:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.executionKey,
+      correlationId:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.correlationId,
+      traceId:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.traceId,
+      stepId:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.stepId,
+      routeConsumerBindingPrepared:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.routeConsumerBindingPrepared,
+      effectHandoffPrepared:
+        toolControlledExternalReadEffectHandoffBoundary.effectHandoffPrepared,
+    })
+
+  const toolControlledExternalReadRequestTarget =
       evaluateRuntimeToolControlledExternalReadRequestTargetContract({
         externalReadTarget,
       })
