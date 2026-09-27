@@ -286,7 +286,7 @@ export function evaluateGovernedMemoryWrite(
   )
 
   if (
-    sensitivity === 'restricted' &&
+    (sensitivity === 'restricted' || sensitivity === 'confidential') &&
     input.allowSensitiveMemory !== true
   ) {
     reasoning.push(
