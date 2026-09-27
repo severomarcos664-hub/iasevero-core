@@ -1,6 +1,8 @@
 import { executeRuntimeToolControlledExternalReadEffect } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect'
 import { createRuntimeToolExternalReadEvidence } from '@/app/lib/orchestrator/runtime-tool-external-read-evidence'
 import { evaluateRuntimeToolInboundContentSafety } from '@/app/lib/orchestrator/runtime-tool-inbound-content-safety'
+import { evaluateRuntimeToolGovernedExternalContentCognitiveUseAuthority } from '@/app/lib/orchestrator/runtime-tool-governed-external-content-cognitive-use-authority'
+import { evaluateRuntimeToolGovernedExternalContentCognitiveAdmission } from '@/app/lib/orchestrator/runtime-tool-governed-external-content-cognitive-admission'
 import { lookup } from 'node:dns/promises'
 import { evaluateRuntimeToolControlledExecutorBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-executor-boundary'
 import { createRuntimeToolExecutionInvocationEnvelope } from '@/app/lib/orchestrator/runtime-tool-execution-invocation-envelope'
@@ -159,7 +161,7 @@ const consciousness = evaluateRuntimeConsciousnessIntegration()
     }
 
     if (!actionPolicy.allowExecution && !externalReadTarget) {
-      return NextResponse.json({
+return NextResponse.json({
         reply: 'Execução bloqueada pela Runtime Action Policy.',
         job: null,
         runtime: actionPolicy,
@@ -810,7 +812,39 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         : null
 
 
-return NextResponse.json({
+      const toolControlledExternalReadCognitiveUseAuthority =
+      evaluateRuntimeToolGovernedExternalContentCognitiveUseAuthority({
+        executionKey: effectiveExecutionKey,
+        correlationId:
+          toolControlledExternalReadAuthorizationBoundary.correlationId,
+        traceId: toolControlledExternalReadAuthorizationBoundary.traceId,
+        stepId: toolControlledExternalReadAuthorizationBoundary.stepId,
+        purpose: 'research',
+        explicitAuthorization:
+          body.cognitiveUseAuthorizationGranted === true,
+      })
+
+    const toolControlledExternalReadCognitiveAdmission =
+      toolControlledExternalReadInboundContentSafety !== null
+        ? evaluateRuntimeToolGovernedExternalContentCognitiveAdmission({
+            executionKey: effectiveExecutionKey,
+            correlationId:
+              toolControlledExternalReadAuthorizationBoundary.correlationId,
+            traceId:
+              toolControlledExternalReadAuthorizationBoundary.traceId,
+            stepId:
+              toolControlledExternalReadAuthorizationBoundary.stepId,
+            evidenceVerified:
+              toolControlledExternalReadInboundContentSafety.evidenceVerified,
+            inboundContentAccepted:
+              toolControlledExternalReadInboundContentSafety.inboundContentAccepted,
+            cognitiveUseAuthorizationGranted:
+              toolControlledExternalReadCognitiveUseAuthority
+                .cognitiveUseAuthorizationGranted,
+          })
+        : null
+
+      return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
         decision: evaluationDecision,
