@@ -1,8 +1,29 @@
 import assert from 'node:assert/strict'
+import {
+  existsSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs'
 import { POST } from '../app/api/chat/route'
 
 async function main(): Promise<void> {
-  const request = new Request('http://localhost/api/chat', {
+  const runtimeArtifacts = [
+    'context.json',
+    'data/memory.json',
+    'runtime/runtime-snapshots.json',
+    'data/enterprise-cognitive-memory.sqlite',
+  ]
+
+  const originalArtifacts = new Map(
+    runtimeArtifacts.map((file) => [
+      file,
+      existsSync(file) ? readFileSync(file) : null,
+    ]),
+  )
+
+  try {
+    const request = new Request('http://localhost/api/chat', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -89,9 +110,18 @@ async function main(): Promise<void> {
     providerInvocation: effect.providerInvocation,
   })
 
-  console.log(
-    'Runtime governed controlled external read production-path REAL HTTPS proof passed.',
-  )
+    console.log(
+      'Runtime governed controlled external read production-path REAL HTTPS proof passed.',
+    )
+  } finally {
+    for (const [file, original] of originalArtifacts) {
+      if (original === null) {
+        rmSync(file, { force: true })
+      } else {
+        writeFileSync(file, original)
+      }
+    }
+  }
 }
 
 main().catch((error) => {
