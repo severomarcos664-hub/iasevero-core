@@ -1,4 +1,6 @@
 import { executeRuntimeToolControlledExternalReadEffect } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect'
+import { createRuntimeToolExternalReadEvidence } from '@/app/lib/orchestrator/runtime-tool-external-read-evidence'
+import { evaluateRuntimeToolInboundContentSafety } from '@/app/lib/orchestrator/runtime-tool-inbound-content-safety'
 import { lookup } from 'node:dns/promises'
 import { evaluateRuntimeToolControlledExecutorBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-executor-boundary'
 import { createRuntimeToolExecutionInvocationEnvelope } from '@/app/lib/orchestrator/runtime-tool-execution-invocation-envelope'
@@ -782,6 +784,31 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
           toolControlledExternalReadPinnedDestination,
         )
       : null
+
+    const toolControlledExternalReadEvidence =
+      toolControlledExternalReadEffect?.externalReadApplied === true &&
+      toolControlledExternalReadContract !== null
+        ? createRuntimeToolExternalReadEvidence(
+            toolControlledExternalReadContract.input,
+            toolControlledExternalReadEffect,
+          )
+        : {
+            evidenceCreated: false as const,
+            evidence: null,
+            reason:
+              'Inbound content safety requires a completed governed external read.',
+          }
+
+    const toolControlledExternalReadInboundContentSafety =
+      toolControlledExternalReadEvidence.evidenceCreated === true &&
+      toolControlledExternalReadEvidence.evidence &&
+      typeof toolControlledExternalReadEffect?.body === 'string'
+        ? evaluateRuntimeToolInboundContentSafety(
+            toolControlledExternalReadEvidence.evidence,
+            toolControlledExternalReadEffect.body,
+          )
+        : null
+
 
 return NextResponse.json({
       reply: result.reply,
