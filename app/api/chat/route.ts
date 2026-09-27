@@ -75,6 +75,7 @@ import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orc
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
 import { prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-effect-admission-integration'
+import { evaluateGovernedMemoryWrite } from '@/app/lib/runtime-core/runtime-governed-memory-write-gate'
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -257,6 +258,22 @@ const cognitiveKernel = decisionGate.kernel
         }
       }
 
+      const governedMessageMemoryWrite = evaluateGovernedMemoryWrite(
+        memoryRepository,
+        {
+          tenantId,
+          userId,
+          executionKey: effectiveExecutionKey,
+          type: 'episodic',
+          content: message,
+          source: 'api-chat',
+          sourceAuthority: 90,
+          confidence: 100,
+            policyTags: ['production-route'],
+        },
+      )
+
+      if (governedMessageMemoryWrite.writeAllowed) {
       memoryRepository.appendEvent({
         tenantId,
         userId,
@@ -270,6 +287,7 @@ const cognitiveKernel = decisionGate.kernel
         source: 'api-chat',
         sourceAuthority: 90,
       })
+      }
 
       const coreResult = await iaseveroCore(
         message,
@@ -277,6 +295,22 @@ const cognitiveKernel = decisionGate.kernel
         governedMemoryContext,
       )
 
+      const governedResultMemoryWrite = evaluateGovernedMemoryWrite(
+        memoryRepository,
+        {
+          tenantId,
+          userId,
+          executionKey: effectiveExecutionKey,
+          type: 'episodic',
+          content: coreResult.reply,
+          source: 'api-chat',
+          sourceAuthority: 90,
+          confidence: 100,
+            policyTags: ['production-route'],
+        },
+      )
+
+      if (governedResultMemoryWrite.writeAllowed) {
       memoryRepository.appendEvent({
         tenantId,
         userId,
@@ -289,6 +323,7 @@ const cognitiveKernel = decisionGate.kernel
         source: 'api-chat',
         sourceAuthority: 90,
       })
+      }
 
       for (
         const mode of [
