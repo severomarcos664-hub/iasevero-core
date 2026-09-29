@@ -856,7 +856,11 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
           })
         : null
 
-      return NextResponse.json({
+      const toolControlledExternalReadCognitiveUseEnforced =
+      toolControlledExternalReadCognitiveUseAuthority.cognitiveUseAuthorizationGranted === true &&
+      toolControlledExternalReadCognitiveAdmission?.safeForCognitiveUse === true
+
+    return NextResponse.json({
       reply: result.reply,
       responseEvaluation: {
         decision: evaluationDecision,
