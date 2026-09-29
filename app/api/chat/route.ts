@@ -2,6 +2,7 @@ import { executeRuntimeToolControlledExternalReadEffect } from '@/app/lib/orches
 import { createRuntimeToolExternalReadEvidence } from '@/app/lib/orchestrator/runtime-tool-external-read-evidence'
 import { evaluateRuntimeToolInboundContentSafety } from '@/app/lib/orchestrator/runtime-tool-inbound-content-safety'
 import { evaluateRuntimeToolGovernedExternalContentCognitiveUseAuthority } from '@/app/lib/orchestrator/runtime-tool-governed-external-content-cognitive-use-authority'
+import { evaluateRuntimeToolUntrustedExternalContentSemanticInstructionBoundary } from '@/app/lib/orchestrator/runtime-tool-untrusted-external-content-semantic-instruction-boundary'
 import { evaluateRuntimeToolGovernedExternalContentCognitiveAdmission } from '@/app/lib/orchestrator/runtime-tool-governed-external-content-cognitive-admission'
 import { lookup } from 'node:dns/promises'
 import { evaluateRuntimeToolControlledExecutorBoundary } from '@/app/lib/orchestrator/runtime-tool-controlled-executor-boundary'
@@ -812,7 +813,16 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         : null
 
 
-      const toolControlledExternalReadCognitiveUseAuthority =
+      const toolControlledExternalReadSemanticInstructionBoundary =
+      toolControlledExternalReadInboundContentSafety !== null &&
+      toolControlledExternalReadInboundContentSafety.inboundContentAccepted === true &&
+      typeof toolControlledExternalReadEffect?.body === 'string'
+        ? evaluateRuntimeToolUntrustedExternalContentSemanticInstructionBoundary({
+            body: toolControlledExternalReadEffect.body,
+          })
+        : null
+
+    const toolControlledExternalReadCognitiveUseAuthority =
       evaluateRuntimeToolGovernedExternalContentCognitiveUseAuthority({
         executionKey: effectiveExecutionKey,
         correlationId:
@@ -821,7 +831,9 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
         stepId: toolControlledExternalReadAuthorizationBoundary.stepId,
         purpose: 'research',
         explicitAuthorization:
-          body.cognitiveUseAuthorizationGranted === true,
+          body.cognitiveUseAuthorizationGranted === true &&
+          toolControlledExternalReadSemanticInstructionBoundary !== null &&
+          toolControlledExternalReadSemanticInstructionBoundary.semanticInstructionBoundaryAccepted === true,
       })
 
     const toolControlledExternalReadCognitiveAdmission =
