@@ -81,18 +81,19 @@ for (const invariant of [
   'externalReadApplied',
   'executionApplied',
   'mutationApplied',
-  'providerInvocation',
 ]) {
-  const pattern = new RegExp(
-    `${invariant}:\\s*toolControlledExternalReadAuthorizationBoundary\\.${invariant}`,
-  )
-
   assert.match(
     route,
-    pattern,
-    `Execution Gate must inherit ${invariant} from the authorization boundary.`,
-  )
+    new RegExp(`${invariant}:\\s*researchMissionExternalReadAuthorizationIntegration\\.${invariant}`),
+    `Execution Gate must inherit canonical ${invariant} from research authorization integration.`,
+  );
 }
+
+assert.match(
+  route,
+  /providerInvocation:\s*toolControlledExternalReadAuthorizationBoundary\.providerInvocation/,
+  'Execution Gate must inherit canonical providerInvocation from the authorization boundary.',
+);
 
 assert.doesNotMatch(
   route,

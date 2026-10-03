@@ -83,6 +83,7 @@ import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orc
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 import { integrateGovernedResearchMissionExternalReadAuthorization } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-authorization-integration';
 import { prepareGovernedResearchMissionExternalReadExecutionGateIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-execution-gate-integration';
+import { prepareGovernedResearchMissionExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-effect-admission-integration';
 import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
 import { prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-effect-admission-integration'
 import { evaluateGovernedMemoryWrite } from '@/app/lib/runtime-core/runtime-governed-memory-write-gate'
@@ -560,10 +561,10 @@ const toolControlledExternalReadExecutionGate =
     correlationId: researchMissionExternalReadAuthorizationIntegration.correlationId,
     traceId: researchMissionExternalReadAuthorizationIntegration.traceId,
     stepId: researchMissionExternalReadAuthorizationIntegration.stepId,
-    externalReadAuthorizationEvaluated: true,
+    externalReadAuthorizationEvaluated:
+      toolControlledExternalReadAuthorizationBoundary.externalReadAuthorizationEvaluated,
     externalReadAuthorized:
-      researchMissionExternalReadAuthorizationIntegration.externalReadAuthorization ===
-      'requires-existing-controlled-authorization',
+      toolControlledExternalReadAuthorizationBoundary.externalReadAuthorized,
     networkAccess:
       researchMissionExternalReadAuthorizationIntegration.networkAccess,
     externalReadApplied:
@@ -752,6 +753,20 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     )
 
 
+  const governedResearchMissionExternalReadEffectAdmissionIntegration =
+    prepareGovernedResearchMissionExternalReadEffectAdmissionIntegration({
+      executionKey: toolControlledExternalReadExecutionGate.executionKey,
+      correlationId: toolControlledExternalReadExecutionGate.correlationId,
+      traceId: toolControlledExternalReadExecutionGate.traceId,
+      stepId: toolControlledExternalReadExecutionGate.stepId,
+      researchMissionExternalReadExecutionEligible:
+        toolControlledExternalReadExecutionGate.externalReadExecutionEligible === true,
+      routeConsumerBindingPrepared:
+        governedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding.routeConsumerBindingPrepared,
+      effectHandoffPrepared:
+        toolControlledExternalReadRevalidatedEffectHandoff.effectHandoffPrepared,
+    });
+
   const toolControlledExternalReadContractExecutorBoundary =
     toolControlledExternalReadExecutorBoundary != null &&
     toolControlledExternalReadExecutorAdmissionBoundary != null &&
@@ -823,6 +838,7 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
     toolControlledExternalReadContract.decision.contractStatus === 'eligible' &&
     toolControlledExternalReadRevalidatedEffectHandoff.effectHandoffPrepared === true &&
     governedEvolutionMissionControlledExternalReadEffectAdmissionIntegration.effectAdmissionPrepared === true &&
+      governedResearchMissionExternalReadEffectAdmissionIntegration.researchMissionEffectAdmissionPrepared === true &&
     toolControlledExternalReadDnsRevalidation?.revalidationStatus === 'accepted' &&
     toolControlledExternalReadPinnedDestination != null
       ? await executeRuntimeToolControlledExternalReadEffect(
