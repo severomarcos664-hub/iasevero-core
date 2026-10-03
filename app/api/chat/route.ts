@@ -1,3 +1,6 @@
+import { prepareGovernedResearchMissionExternalReadCapabilityRequestIntegration } from "@/app/lib/runtime-core/runtime-governed-research-mission-external-read-capability-request-integration";
+import { evaluateGovernedResearchMissionCognitiveKernelAdmissionIntegration } from "@/app/lib/runtime-core/runtime-governed-research-mission-cognitive-kernel-admission-integration";
+import { createGovernedResearchMissionContract } from "@/app/lib/runtime-core/runtime-governed-research-mission-contract";
 import { executeRuntimeToolControlledExternalReadEffect } from '@/app/lib/orchestrator/runtime-tool-controlled-external-read-effect'
 import { createRuntimeToolExternalReadEvidence } from '@/app/lib/orchestrator/runtime-tool-external-read-evidence'
 import { evaluateRuntimeToolInboundContentSafety } from '@/app/lib/orchestrator/runtime-tool-inbound-content-safety'
@@ -78,9 +81,12 @@ import { evaluateRuntimeActionPolicy } from '@/app/lib/runtime-core/runtime-acti
 import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orchestrator'
 
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
+import { integrateGovernedResearchMissionExternalReadAuthorization } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-authorization-integration';
+import { prepareGovernedResearchMissionExternalReadExecutionGateIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-execution-gate-integration';
 import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
 import { prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-effect-admission-integration'
 import { evaluateGovernedMemoryWrite } from '@/app/lib/runtime-core/runtime-governed-memory-write-gate'
+import { deriveGovernedResearchMissionId } from '@/app/lib/runtime-core/runtime-governed-research-mission-identity';
 const MAX_TEXT_LENGTH = 4000
 
 type RateLimitEntry = {
@@ -494,33 +500,83 @@ const toolDispatchHandoff =
       finalToolExecutionAllowed,
   })
 
-const toolControlledExternalReadExecutionGate =
-    evaluateRuntimeToolControlledExternalReadExecutionGate({
-      executionKey:
-        toolControlledExternalReadAuthorizationBoundary.executionKey,
-      correlationId:
-        toolControlledExternalReadAuthorizationBoundary.correlationId,
-      traceId:
-        toolControlledExternalReadAuthorizationBoundary.traceId,
-      stepId:
-        toolControlledExternalReadAuthorizationBoundary.stepId,
-      externalReadAuthorizationEvaluated:
-        toolControlledExternalReadAuthorizationBoundary.externalReadAuthorizationEvaluated,
-      externalReadAuthorized:
-        toolControlledExternalReadAuthorizationBoundary.externalReadAuthorized,
-      networkAccess:
-        toolControlledExternalReadAuthorizationBoundary.networkAccess,
-      externalReadApplied:
-        toolControlledExternalReadAuthorizationBoundary.externalReadApplied,
-      executionApplied:
-        toolControlledExternalReadAuthorizationBoundary.executionApplied,
-      mutationApplied:
-        toolControlledExternalReadAuthorizationBoundary.mutationApplied,
-      providerInvocation:
-        toolControlledExternalReadAuthorizationBoundary.providerInvocation,
-    })
 
-      const toolControlledExternalReadEffectHandoffBoundary =
+    const governedResearchMissionContract =
+  createGovernedResearchMissionContract({
+    missionId: deriveGovernedResearchMissionId({
+      objective: message,
+      scope: userId,
+    }),
+    objective: message,
+    executionKey: effectiveExecutionKey,
+    correlationId: runtimeMaster.correlationId,
+    traceId: traceResponse.id,
+    stepId: cognitiveKernel.stages.executionPersistence.taskId,
+  });
+
+const governedResearchMissionCognitiveKernelAdmission =
+  evaluateGovernedResearchMissionCognitiveKernelAdmissionIntegration({
+    contract: governedResearchMissionContract,
+  });
+
+  const toolControlledExternalReadRequestTarget =
+      evaluateRuntimeToolControlledExternalReadRequestTargetContract({
+        externalReadTarget,
+      })
+
+    const toolControlledExternalReadTargetInputBoundary =
+      toolControlledExternalReadRequestTarget.requestTargetEligible &&
+      toolControlledExternalReadRequestTarget.targetInput !== null
+        ? evaluateRuntimeToolControlledExternalReadTargetInputBoundary(
+            toolControlledExternalReadRequestTarget.targetInput,
+          )
+        : null
+
+const governedResearchMissionExternalReadCapabilityRequest =
+  toolControlledExternalReadRequestTarget.targetInput !== null
+    ? prepareGovernedResearchMissionExternalReadCapabilityRequestIntegration({
+        cognitiveKernelAdmissionIntegrationDecision: governedResearchMissionCognitiveKernelAdmission,
+        targetInput: toolControlledExternalReadRequestTarget.targetInput,
+      })
+    : null;
+
+const researchMissionExternalReadAuthorizationIntegration =
+      integrateGovernedResearchMissionExternalReadAuthorization({
+        researchMissionExternalReadCapabilityRequestEligible:
+      governedResearchMissionExternalReadCapabilityRequest !== null &&
+      governedResearchMissionExternalReadCapabilityRequest.researchMissionExternalReadCapabilityRequestEligible === true,
+        executionKey:
+          toolControlledExternalReadAuthorizationBoundary.executionKey,
+        correlationId:
+          toolControlledExternalReadAuthorizationBoundary.correlationId,
+        traceId:
+          toolControlledExternalReadAuthorizationBoundary.traceId,
+        stepId:
+          toolControlledExternalReadAuthorizationBoundary.stepId,
+      });
+const toolControlledExternalReadExecutionGate =
+  prepareGovernedResearchMissionExternalReadExecutionGateIntegration({
+    executionKey: researchMissionExternalReadAuthorizationIntegration.executionKey,
+    correlationId: researchMissionExternalReadAuthorizationIntegration.correlationId,
+    traceId: researchMissionExternalReadAuthorizationIntegration.traceId,
+    stepId: researchMissionExternalReadAuthorizationIntegration.stepId,
+    externalReadAuthorizationEvaluated: true,
+    externalReadAuthorized:
+      researchMissionExternalReadAuthorizationIntegration.externalReadAuthorization ===
+      'requires-existing-controlled-authorization',
+    networkAccess:
+      researchMissionExternalReadAuthorizationIntegration.networkAccess,
+    externalReadApplied:
+      researchMissionExternalReadAuthorizationIntegration.externalReadApplied,
+    executionApplied:
+      researchMissionExternalReadAuthorizationIntegration.executionApplied,
+    mutationApplied:
+      researchMissionExternalReadAuthorizationIntegration.mutationApplied,
+    providerInvocation:
+      toolControlledExternalReadAuthorizationBoundary.providerInvocation,
+  });
+
+const toolControlledExternalReadEffectHandoffBoundary =
     evaluateRuntimeToolControlledExternalReadEffectHandoffBoundary(
       toolControlledExternalReadExecutionGate,
     )
@@ -540,19 +596,6 @@ const toolControlledExternalReadExecutionGate =
       effectHandoffPrepared:
         toolControlledExternalReadEffectHandoffBoundary.effectHandoffPrepared,
     })
-
-  const toolControlledExternalReadRequestTarget =
-      evaluateRuntimeToolControlledExternalReadRequestTargetContract({
-        externalReadTarget,
-      })
-
-    const toolControlledExternalReadTargetInputBoundary =
-      toolControlledExternalReadRequestTarget.requestTargetEligible &&
-      toolControlledExternalReadRequestTarget.targetInput !== null
-        ? evaluateRuntimeToolControlledExternalReadTargetInputBoundary(
-            toolControlledExternalReadRequestTarget.targetInput,
-          )
-        : null
 
     const toolControlledExternalReadInvocationMaterialBoundary =
       toolControlledExternalReadTargetInputBoundary !== null &&
