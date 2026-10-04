@@ -83,7 +83,8 @@ import { orchestrateRuntimeTools } from '@/app/lib/runtime-core/runtime-tool-orc
 import { evaluateRuntimeConsciousnessIntegration } from '@/app/lib/runtime-consciousness-integration/runtime-consciousness-integration'
 import { integrateGovernedResearchMissionExternalReadAuthorization } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-authorization-integration';
 import { prepareGovernedResearchMissionExternalReadExecutionGateIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-execution-gate-integration';
-import { prepareGovernedResearchMissionExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-effect-admission-integration';
+import { prepareGovernedResearchMissionExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-effect-admission-integration'
+import { bindGovernedResearchMissionExternalReadEvidence } from '@/app/lib/runtime-core/runtime-governed-research-mission-external-read-evidence-binding';
 import { prepareGovernedEvolutionMissionControlledExternalReadProductionRouteConsumerBinding } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-production-route-consumer-binding'
 import { prepareGovernedEvolutionMissionControlledExternalReadEffectAdmissionIntegration } from '@/app/lib/runtime-core/runtime-governed-evolution-mission-controlled-external-read-effect-admission-integration'
 import { evaluateGovernedMemoryWrite } from '@/app/lib/runtime-core/runtime-governed-memory-write-gate'
@@ -861,7 +862,26 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
               'Inbound content safety requires a completed governed external read.',
           }
 
-    const toolControlledExternalReadInboundContentSafety =
+    const governedResearchMissionExternalReadEvidenceBinding =
+    governedResearchMissionContract !== null &&
+    toolControlledExternalReadEvidence.evidenceCreated === true
+      ? bindGovernedResearchMissionExternalReadEvidence({
+          missionId: governedResearchMissionContract.missionId,
+          missionExecutionKey: governedResearchMissionContract.executionKey,
+          missionCorrelationId: governedResearchMissionContract.correlationId,
+          missionTraceId: governedResearchMissionContract.traceId,
+          missionStepId: governedResearchMissionContract.stepId,
+          evidenceId: toolControlledExternalReadEvidence.evidence.evidenceId,
+          evidenceExecutionKey: toolControlledExternalReadEvidence.evidence.executionKey,
+          evidenceCorrelationId: toolControlledExternalReadEvidence.evidence.correlationId,
+          evidenceTraceId: toolControlledExternalReadEvidence.evidence.traceId,
+          evidenceStepId: toolControlledExternalReadEvidence.evidence.stepId,
+          evidenceCreated: toolControlledExternalReadEvidence.evidenceCreated,
+          provenanceStatus: toolControlledExternalReadEvidence.evidence.provenanceStatus,
+        })
+      : null;
+
+  const toolControlledExternalReadInboundContentSafety =
       toolControlledExternalReadEvidence.evidenceCreated === true &&
       toolControlledExternalReadEvidence.evidence &&
       typeof toolControlledExternalReadEffect?.body === 'string'
