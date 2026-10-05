@@ -261,6 +261,30 @@ export async function executeRuntimeToolControlledExternalReadEffect(
             },
           })
 
+    if (response.status >= 300 && response.status < 400) {
+      return {
+        contract,
+        networkAttempted: true,
+        networkCompleted: true,
+        networkAccess: true,
+
+        externalReadApplied: false,
+        executionApplied: false,
+
+        externalMutation: false,
+        mutationApplied: false,
+        providerInvocation: false,
+
+        httpStatus: response.status,
+        contentType: response.headers.get('content-type'),
+        responseReceived: true,
+        responseBytes: 0,
+
+        body: null,
+        reason: 'Controlled external read redirect response rejected.',
+      }
+    }
+
     const contentLength = response.headers.get('content-length')
     if (
       contentLength !== null &&
