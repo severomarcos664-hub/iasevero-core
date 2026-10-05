@@ -197,6 +197,26 @@ export function evaluateRuntimeToolNetworkDestination(
     }
   }
 
+  if (ipVersion === 6 && /^2001:0?db8:/i.test(comparableAddress)) {
+    return {
+      address: trimmedAddress,
+      ipVersion,
+      destinationEligible: false,
+      destinationStatus: 'blocked',
+      reason: 'Resolved network destination is IPv6 documentation address space.',
+    }
+  }
+
+  if (ipVersion === 6) {
+    return {
+      address: trimmedAddress,
+      ipVersion,
+      destinationEligible: true,
+      destinationStatus: 'eligible',
+      reason: 'Resolved network destination is eligible public IPv6 address space.',
+    }
+  }
+
   if (ipVersion === 4) {
     return {
       address: trimmedAddress,

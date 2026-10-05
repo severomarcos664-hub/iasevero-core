@@ -38,6 +38,17 @@ async function main() {
     return result
   }
 
+  const assertEligible = async (hostname: string, resolver: RuntimeToolDnsResolver) => {
+    const result = await evaluateRuntimeToolDnsResolutionBoundary(hostname, resolver)
+    assert.equal(result.resolutionEligible, true)
+    assertionCount++
+    assert.equal(result.resolutionStatus, 'eligible')
+    assertionCount++
+    assert.equal(result.destinationDecisions.every(decision => decision.destinationEligible === true && decision.destinationStatus === 'eligible'), true)
+    assertionCount++
+    return result
+  }
+
   const publicResolver: RuntimeToolDnsResolver = async hostname => {
     assert.equal(hostname, 'example.com')
     assertionCount++
@@ -140,15 +151,14 @@ async function main() {
   )
   assertionCount++
 
-  const unsupportedIpv6 = await assertBlocked(
+  const publicIpv6 = await assertEligible(
     'ipv6.example',
     async () => [{ address: '2001:4860:4860::8888', family: 6 }],
-    'DNS resolution produced one or more non-eligible network destinations.'
   )
 
   assert.equal(
-    unsupportedIpv6.destinationDecisions[0]?.destinationEligible,
-    false
+    publicIpv6.destinationDecisions[0]?.destinationEligible,
+    true
   )
   assertionCount++
 
@@ -161,7 +171,7 @@ async function main() {
     assertionCount,
     publicResolutionEligible: eligible.resolutionEligible,
     mixedResolutionEligible: mixed.resolutionEligible,
-    ipv6FailClosed: unsupportedIpv6.resolutionEligible === false,
+    ipv6PublicEligible: publicIpv6.resolutionEligible === true,
   })
 }
 

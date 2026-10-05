@@ -82,13 +82,13 @@ export async function evaluateRuntimeToolDnsResolutionBoundary(
     evaluateRuntimeToolNetworkDestination(address)
   )
 
-  const hasEligibleDestination = destinationDecisions.some(
+  const allDestinationsEligible = destinationDecisions.every(
     decision =>
       decision.destinationEligible === true &&
       decision.destinationStatus === 'eligible'
   )
 
-  if (!hasEligibleDestination) {
+  if (!allDestinationsEligible) {
     return {
       hostname: normalizedHostname,
       resolutionEligible: false,
@@ -96,7 +96,7 @@ export async function evaluateRuntimeToolDnsResolutionBoundary(
       resolvedAddresses,
       destinationDecisions,
       reason:
-        'DNS resolution produced no eligible network destinations.',
+        'DNS resolution produced one or more non-eligible network destinations.',
     }
   }
 

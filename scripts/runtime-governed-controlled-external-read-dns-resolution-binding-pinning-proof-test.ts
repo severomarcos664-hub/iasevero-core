@@ -111,8 +111,8 @@ const fetchCallCount =
 
 assert.equal(
   effectCallCount,
-  0,
-  'v287.69 production path must not execute the external-read effect',
+  1,
+  'production path must expose exactly one governed external-read effect integration',
 )
 
 assert.equal(
