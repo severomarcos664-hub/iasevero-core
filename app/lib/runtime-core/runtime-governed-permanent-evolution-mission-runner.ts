@@ -1,3 +1,4 @@
+import { evaluateRuntimeGovernedEvolutionProposalSandboxAuthorizationIntegration } from './runtime-governed-evolution-proposal-sandbox-authorization-integration';
 import type {
   CognitiveLoopAdapters,
   CognitiveLoopReport,
@@ -175,6 +176,29 @@ export async function runGovernedPermanentEvolutionMissionIteration(
     runGovernedSelfDevelopmentCycle(
       input.selfDevelopmentInput,
     )
+
+
+  const proposalAuthorization =
+    selfDevelopmentReport.proposal === null
+      ? null
+      : evaluateRuntimeGovernedEvolutionProposalSandboxAuthorizationIntegration({
+          executionKey: '',
+          proposal: {
+            id: selfDevelopmentReport.proposal.id,
+            allowedEnvironment: selfDevelopmentReport.proposal.allowedEnvironment,
+            reversible: selfDevelopmentReport.proposal.reversible,
+            requiresHumanApproval: selfDevelopmentReport.proposal.requiresHumanApproval,
+          },
+          sandboxExecutionAuthorized: false,
+          toolRegistered: false,
+          toolAllowed: false,
+          governanceApproved: false,
+          finalAuthorizationGranted: false,
+        });
+
+  if (proposalAuthorization?.executionAuthorized === true) {
+    throw new Error('UNEXPECTED_EVOLUTION_EXECUTION_AUTHORIZATION');
+  }
 
   const previousResearchIteration =
     resume.researchIteration
