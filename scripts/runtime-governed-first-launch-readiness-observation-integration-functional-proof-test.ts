@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import { composeGovernedFirstLaunch } from '../app/lib/runtime-execution-plane/runtime-first-launch-composition'
 import { prepareFirstLaunchPostSpawnReadiness } from '../app/lib/runtime-execution-plane/runtime-first-launch-post-spawn-readiness'
 import { integrateFirstLaunchReadinessObservation } from '../app/lib/runtime-execution-plane/runtime-first-launch-readiness-observation-integration'
+import { createVerifiedProcessIncarnationReadinessHandoff } from '../app/lib/runtime-execution-plane/runtime-verified-process-incarnation-readiness-handoff'
 import type { GovernedProcessSpawner } from '../app/lib/runtime-execution-plane/runtime-process-materialization'
 import { createGovernedReleaseRuntimeIdentity } from '../app/lib/runtime-release-identity/runtime-release-identity'
 import { createGovernedRuntimeInstanceIdentity } from '../app/lib/runtime-instance-identity/runtime-instance-identity'
@@ -67,9 +68,30 @@ async function main() {
   assert.equal(result.materialization.processId, 424242)
   const readinessCandidate = prepareFirstLaunchPostSpawnReadiness(result)
 
+  const verificationHandoff =
+    createVerifiedProcessIncarnationReadinessHandoff({
+      verification: {
+        schemaVersion: 1,
+        kind: 'iasevero-controlled-process-incarnation-verification-decision',
+        processId: readinessCandidate.processId,
+        bootId: 'fixture-first-launch-boot-id',
+        processStartTicks: 424242001,
+        verificationEvaluated: true,
+        identityMatched: true,
+        processIncarnationEvidenceRecorded: true,
+        processIncarnationVerified: true,
+        readinessGranted: false,
+        livenessGranted: false,
+        runtimeAuthorityGranted: false,
+        networkAuthorityGranted: false,
+      },
+      candidate: readinessCandidate,
+    })
+
   const observationIntegration =
     integrateFirstLaunchReadinessObservation({
       candidate: readinessCandidate,
+      verificationHandoff,
       probe: {
         observedProcessId: 424242,
         observedHost: '127.0.0.1',

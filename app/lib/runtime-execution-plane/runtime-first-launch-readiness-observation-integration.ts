@@ -1,3 +1,6 @@
+import type {
+  VerifiedProcessIncarnationReadinessHandoff,
+} from './runtime-verified-process-incarnation-readiness-handoff'
 import {
   recordGovernedRuntimeReadinessEvidenceFromCandidate,
 } from './runtime-readiness-evidence'
@@ -14,6 +17,7 @@ type ReadinessEvidenceInput =
 export type GovernedFirstLaunchReadinessObservationIntegrationInput = {
   candidate: ReadinessEvidenceInput['candidate']
   probe: Omit<ReadinessEvidenceInput, 'candidate'>
+  verificationHandoff: VerifiedProcessIncarnationReadinessHandoff
 }
 
 export type GovernedFirstLaunchReadinessObservationIntegrationResult = {
@@ -25,7 +29,25 @@ export type GovernedFirstLaunchReadinessObservationIntegrationResult = {
 export function integrateFirstLaunchReadinessObservation(
   input: GovernedFirstLaunchReadinessObservationIntegrationInput,
 ): GovernedFirstLaunchReadinessObservationIntegrationResult {
-  const { candidate, probe } = input
+  const { candidate, probe, verificationHandoff } = input
+
+  if (
+    verificationHandoff.processId !== candidate.processId ||
+    verificationHandoff.processIdentityVerified !== true ||
+    verificationHandoff.verificationEvaluated !== true ||
+    verificationHandoff.identityMatched !== true ||
+    verificationHandoff.processIncarnationEvidenceRecorded !== true ||
+    verificationHandoff.processIncarnationVerified !== true ||
+    verificationHandoff.readinessEvaluationEligible !== true ||
+    verificationHandoff.readinessGranted !== false ||
+    verificationHandoff.livenessGranted !== false ||
+    verificationHandoff.runtimeAuthorityGranted !== false ||
+    verificationHandoff.networkAuthorityGranted !== false
+  ) {
+    throw new Error(
+      'First-launch readiness observation integration requires canonical verified process-incarnation readiness handoff.',
+    )
+  }
 
   if (
     candidate.processIdentityVerified !== true ||
