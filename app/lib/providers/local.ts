@@ -51,6 +51,22 @@ export async function localProvider(message: string, userId = 'local') {
 
   if (!text) return reply('Entrada vazia.')
 
+  const codeRequest =
+    /\b(crie|criar|gere|gerar|escreva|implemente|implementar)\b/i.test(text) &&
+    /\b(código|codigo|função|funcao|typescript|javascript|python)\b/i.test(text)
+
+  if (codeRequest) {
+    const generated = await hybridProvider(text)
+    if (generated) return reply(generated)
+
+    return reply(
+      'Solicitação de geração de código reconhecida. ' +
+      'Nenhum modelo generativo está habilitado. ' +
+      'A memória histórica não será apresentada como código gerado.'
+    )
+  }
+
+
   const command = detectCommand(text)
   if (command) return reply(command)
 

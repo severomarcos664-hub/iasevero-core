@@ -1,3 +1,4 @@
+import { composeGovernedExternalResponse } from '@/app/lib/orchestrator/runtime-governed-external-response-composition'
 import { prepareGovernedResearchMissionExternalReadCapabilityRequestIntegration } from "@/app/lib/runtime-core/runtime-governed-research-mission-external-read-capability-request-integration";
 import { evaluateGovernedResearchMissionCognitiveKernelAdmissionIntegration } from "@/app/lib/runtime-core/runtime-governed-research-mission-cognitive-kernel-admission-integration";
 import { createGovernedResearchMissionContract } from "@/app/lib/runtime-core/runtime-governed-research-mission-contract";
@@ -161,7 +162,7 @@ export async function POST(req: Request) {
 const actionPolicy = evaluateRuntimeActionPolicy()
 const consciousness = evaluateRuntimeConsciousnessIntegration()
 
-    if (!decisionGate.allowed && !externalReadTarget) {
+    if (!decisionGate.allowed && externalReadTarget) {
       return NextResponse.json({
         reply: 'Execução pausada pelo Runtime Decision Gate. O sistema recomenda estabilização antes de continuar.',
         job: null,
@@ -940,7 +941,26 @@ const toolControlledExternalReadExecutorAdmissionBoundary =
       toolControlledExternalReadCognitiveAdmission?.safeForCognitiveUse === true
 
     return NextResponse.json({
-      reply: result.reply,
+      reply: composeGovernedExternalResponse({
+        coreReply: result.reply,
+        externalBody: toolControlledExternalReadEffect?.body ?? null,
+        sourceUrl:
+          toolControlledExternalReadTargetInputBoundary?.target?.protocol === 'https:' &&
+          toolControlledExternalReadTargetInputBoundary.target.host
+            ? new URL(
+                toolControlledExternalReadTargetInputBoundary.target.resource,
+                `https://${toolControlledExternalReadTargetInputBoundary.target.host}`
+              ).href
+            : null,
+        evidenceVerified:
+          toolControlledExternalReadEvidence?.evidenceCreated === true,
+        inboundContentAccepted:
+          toolControlledExternalReadInboundContentSafety?.inboundContentAccepted === true,
+        cognitiveUseAuthorizationGranted:
+          toolControlledExternalReadCognitiveUseAuthority?.cognitiveUseAuthorizationGranted === true,
+        safeForCognitiveUse:
+          toolControlledExternalReadCognitiveUseEnforced === true,
+      }).reply,
       responseEvaluation: {
         decision: evaluationDecision,
         observational: true,

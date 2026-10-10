@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {
   createRuntimeGovernedCodeProposal,
   type RuntimeGovernedCodeProposalInput,
-} from '../app/lib/runtime-core/runtime-governed-code-proposal.ts'
+} from '../app/lib/runtime-core/runtime-governed-code-proposal'
 
 const valid: RuntimeGovernedCodeProposalInput = {
   missionId: 'mission-001',

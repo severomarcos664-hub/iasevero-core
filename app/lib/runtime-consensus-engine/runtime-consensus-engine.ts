@@ -73,7 +73,9 @@ RuntimeConsensusEngineReport {
     )
 
   const executionConsensus =
-    consensusRatio >= 75
+    consensusRatio >= 75 &&
+    validators.governance &&
+    validators.execution
 
   const operationalMode =
     executionConsensus

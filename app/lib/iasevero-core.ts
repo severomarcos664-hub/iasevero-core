@@ -172,9 +172,14 @@ export async function iaseveroCore(
     governedMemoryContext,
   )
 
+  const codeGenerationRequest =
+    /\b(crie|criar|gere|gerar|escreva|implemente|implementar)\b/i.test(message) &&
+    /\b(código|codigo|função|funcao|typescript|javascript|python)\b/i.test(message)
+
   const rawReply =
-    governedMemoryReply ??
-    await runProvider(decision.context)
+    codeGenerationRequest
+      ? await runProvider(decision.context)
+      : governedMemoryReply ?? await runProvider(decision.context)
 
   const reply = validateDecisionAnswer(message, rawReply)
 
